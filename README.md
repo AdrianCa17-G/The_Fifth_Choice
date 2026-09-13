@@ -14,7 +14,7 @@ cuál de las cinco quintillizas termina.
 |---|---|---|
 | 0 · Núcleo | `00_definiciones.rpy` | ✅ Terminado |
 | 1 · Prólogo | `01_prologo.rpy` | ✅ Terminado — 7 escenas, arte y audio completos |
-| 2 · Capítulo 1 | `02_capitulo1.rpy` | ⬜ Siguiente — bloqueado por 3 decisiones de diseño |
+| 2 · Capítulo 1 | `02_capitulo1.rpy` | 🟨 En escritura — guion en `docs/CAP1.md`, apertura cerrada |
 | 3 · Capítulo 2 | `03_capitulo2.rpy` | ⬜ Pendiente |
 | 4 · Capítulo 3 | `04_capitulo3.rpy` | ⬜ Pendiente |
 | 5 · Finales | `05_finales.rpy` | ⬜ Pendiente |
@@ -28,6 +28,7 @@ cuál de las cinco quintillizas termina.
 |---|---|
 | Este README | Estructura, sistemas de juego, personajes, progreso |
 | [`docs/PROLOGO.md`](docs/PROLOGO.md) | Estado detallado del prólogo: escenas, guion, assets, problemas abiertos |
+| [`docs/CAP1.md`](docs/CAP1.md) | Capítulo 1: decisiones de diseño, estructura de hubs, guion y assets pendientes |
 | [`docs/GUIA_ARTE.md`](docs/GUIA_ARTE.md) | Generación de imágenes: PixAI, LoRAs, prompts, estándar de sprites, scripts de post |
 | [`docs/GUIA_AUDIO.md`](docs/GUIA_AUDIO.md) | Fuentes, licencias, escala de volumen, montaje |
 | [`docs/GUIA_RENPY.md`](docs/GUIA_RENPY.md) | Trampas del motor ya encontradas y convenciones de código |
@@ -46,6 +47,7 @@ Quintuplets/
     ├── README.md                       ← esta página
     ├── docs/
     │   ├── PROLOGO.md
+    │   ├── CAP1.md
     │   ├── GUIA_ARTE.md
     │   ├── GUIA_AUDIO.md
     │   └── GUIA_RENPY.md
@@ -57,7 +59,7 @@ Quintuplets/
     └── game/
         ├── audio/
         │   ├── bgm/                     8 pistas .ogg
-        │   ├── sfx/                     12 efectos .mp3
+        │   ├── sfx/                     11 efectos .mp3
         │   └── amb_viento.ogg
         ├── images/
         │   ├── bg/                      8 fondos, 1920×1080 WebP
@@ -165,13 +167,65 @@ contradecirlas en el texto:
 
 ## Sistema de finales
 
-Siete finales: cinco románticos, uno malo y uno secreto.
+Ocho finales: cinco románticos, dos malos y uno secreto.
 
 | Final | Condición |
 |---|---|
 | Ichika / Nino / Miku / Yotsuba / Itsuki | Más puntos con ella, mínimo 10 |
-| Final Malo | Ninguna alcanza 10 puntos → Futaro es despedido |
+| Final Malo temprano | Tres desaires en el Capítulo 1 → despido inmediato |
+| Final Malo | Ninguna alcanza 10 puntos al cerrar el Capítulo 3 |
 | Final Secreto | Completar las cinco rutas románticas |
+
+### Los dos finales malos no significan lo mismo
+
+Son dos fracasos distintos y se narran distinto.
+
+El **temprano** es el despido por no haber empezado nunca. Se dispara si el
+jugador elige la opción fría en los tres eventos del Capítulo 1. Maruo no está
+ni enojado: es seco y casi administrativo. Futaro vuelve a casa con la deuda
+intacta. Cierra en `bg_cuarto_mc`, donde empezó todo.
+
+El **del Capítulo 3** es el que ya estaba diseñado: llegó hasta el final, estuvo
+cerca de todas y no alcanzó a ninguna. Ese duele porque hubo recorrido.
+
+El primero es un portazo; el segundo es una despedida.
+
+### Por qué esto resuelve la contradicción de Maruo
+
+Maruo promete despido si una hermana reprueba. El juego mide afinidad. Eran dos
+condiciones distintas y solo se ejecutaba la segunda.
+
+Queda cerrado así: **la afinidad representa «logró llegar a ellas y por eso
+estudian»**. Cada capítulo cierra con las hermanas aprobando, así que la
+condición de Maruo se cumple mientras Futaro esté llegando a ellas. Si al final
+no lo consiguió, el Final Malo se narra como el despido que él anunció en el
+prólogo. Una sola condición, dicha una vez y ejecutada una vez.
+
+### El contador de desaires
+
+Va **aparte** de los puntos y también es invisible. Sube solo cuando el jugador
+elige la opción fría dentro de un evento de hermana — no la tibia, no la
+neutral: la que corta el vínculo. No resta afinidad.
+
+```renpy
+default desaires_cap1 = 0
+```
+
+Se lee una sola vez, al cerrar el Capítulo 1. Con 3 de 3, despido.
+
+La diferencia con el umbral de 10 importa: al jugador no lo despiden por **no
+haber sumado suficiente**, lo despiden por **haber dicho que no cada vez que
+pudo decir que sí**. Eso el jugador lo reconoce, porque se acuerda de haberlo
+elegido.
+
+**Aviso diegético.** Si al llegar al beat de la crisis de Nino el contador ya
+está alto, aparece una escena condicional corta: Maruo comenta que lleva un mes
+y no ve diferencia con los tutores anteriores. El jugador que va camino al
+despido recibe el aviso de boca del personaje que puso la condición, sin ver un
+número. El que va bien nunca sabe que esa escena existe.
+
+No hay cortes en el Capítulo 2. Un jugador que pasó el primero ya demostró que
+está jugando.
 
 ### Cálculo secreto
 
@@ -199,8 +253,26 @@ Es lo único que garantiza que `primera_conexion` se escriba una sola vez y que
 el desempate de toda la partida quede bien fijado.
 
 **El prólogo no otorga puntos.** Sus tres menús son cosméticos: cambian el
-diálogo inmediato y reconvergen. La primera decisión puntuada del juego está al
-inicio del Capítulo 1.
+diálogo inmediato y reconvergen. La primera decisión puntuada del juego es la
+elección de destino en el **primer hub del Capítulo 1**: el jugador no elige una
+respuesta, elige a quién va a buscar. Eso escribe `primera_conexion`.
+
+### Valores
+
+| Acción | Puntos |
+|---|---|
+| Evento de hermana, primera vez en el capítulo | +2 |
+| Decisión acertada dentro de ese evento | +1 |
+| Revisitarla en el mismo capítulo (escena corta, sin decisión) | +1 |
+| Preparar material para ella en la biblioteca | +1 |
+| Beats fijos de trama | 0 |
+
+Máximo por hermana y capítulo: **5**. Máximo en la partida: **15**.
+
+Con esto, el jugador que se concentra cruza el umbral de 10 durante el Capítulo
+3, que es donde debe pasar. El que alterna entre dos llega raspando con las dos
+y el desempate hace su trabajo. El que reparte entre las cinco se queda en seis
+o siete y cae en el Final Malo. El umbral de 10 funciona sin tocarlo.
 
 ---
 
@@ -224,25 +296,91 @@ Detalles de configuración en [`docs/GUIA_ARTE.md`](docs/GUIA_ARTE.md) y
 
 ---
 
-## Siguiente paso — Capítulo 1
+## Estructura de los capítulos
 
-El guion está bloqueado por **tres decisiones de diseño** que hay que cerrar
-antes de escribir una sola línea:
+Los tres capítulos que quedan no son lineales como el prólogo. Avanzan por
+**beats fijos** de guion, y entre beat y beat se abre un **hub**: el mapa, el
+jugador elige destino, ahí ocurre una escena, y el guion retoma. El tiempo entre
+medias lo cuenta el narrador, no el motor.
 
-1. **Cuántas decisiones puntuadas tendrá cada capítulo y con qué valores.**
-   De esto depende que el umbral de 10 sea alcanzable sin ser trivial.
-2. **Cuál es la primera decisión puntuada del juego.** Escribe
-   `primera_conexion` y con ella el desempate de toda la partida: es la decisión
-   de diseño más pesada del capítulo.
-3. **La contradicción de Maruo.** Él promete despido si una hermana reprueba;
-   el Final Malo se dispara por afinidad baja. Son dos condiciones distintas y
-   el juego solo ejecuta la segunda. Propuesta sobre la mesa: que la afinidad
-   represente «logró llegar a ellas y por eso estudian», y narrar el Final Malo
-   como el despido que Maruo anunció.
+Se descartó el modelo de calendario simulado. 60 días por capítulo con 6 eventos
+deja 162 días vacíos en la partida y pide unos 70 fondos contando franjas
+horarias. El hub da la misma libertad de elección sin un solo día muerto.
 
-En arte, el criterio ya está fijado: **generar expresiones solo contra guion
-escrito**, nunca contra suposición. `itsuki_timida` se generó antes de tener la
-escena y se quedó sin usar todo el prólogo.
+**Dos franjas horarias en todo el juego:** tarde y noche. El criterio es que si
+no hay una razón narrativa para que una franja exista, no se genera.
+
+### Esqueleto del Capítulo 1
+
+```
+APERTURA (fija) → HUB 1 → evento → BEAT Itsuki → HUB 2 → evento
+→ BEAT crisis de Nino → HUB 3 → evento → BEAT casa → EVENTO 6 (fijo)
+```
+
+Cuatro bloques de guion y tres hubs. **Se escriben cinco eventos de hermana y el
+jugador consume tres por partida**: dos hermanas se quedan sin evento cada vez.
+Eso es el mecanismo, no un agujero — es lo que hace que elegir pese. Los beats
+fijos existen para que las cinco tengan desarrollo aunque nadie las busque.
+
+### El mapa
+
+| Destino | Quién está ahí | Fondo |
+|---|---|---|
+| Aula, después de clases | Itsuki | ya existe |
+| Pista de atletismo | Yotsuba | pendiente |
+| Sala de ensayo | Ichika | pendiente |
+| Centro comercial | Nino | pendiente |
+| Biblioteca | Miku | pendiente |
+| Casa de Futaro | Raiha | ya existe |
+
+Cuatro fondos nuevos para todo el juego, reutilizados en los tres capítulos.
+
+A Itsuki se la cruza en el terreno de él y a las otras cuatro hay que ir a
+buscarlas al suyo. Sale gratis en arte y dice algo del personaje.
+
+**La biblioteca** tiene dos verbos y son excluyentes en la misma visita: buscar a
+Miku, o preparar material para una hermana concreta. Preparar material da un
+punto con ella y le da línea propia en el evento 6. Así la biblioteca no necesita
+una estadística de skills: lo que ganás no es un número, es una escena distinta
+al final del capítulo.
+
+El mapa crece y se encoge por capítulo. En el 1 el departamento es escenario de
+beats, no destino. En el 2 se abren los cuartos de las hermanas, que es la
+recompensa visible de haberse ganado su confianza. En el 3 el mapa se reduce:
+menos opciones, más presión.
+
+### Materias — reparto canónico
+
+Las cinco nacieron con el mismo potencial y cada una desvió su atención a una
+asignatura. Sumando el máximo de cada una sale un boletín perfecto, y eso cierra
+sobre las cinco materias del examen japonés sin sobras ni huecos.
+
+| Hermana | Materia |
+|---|---|
+| Ichika | Matemáticas |
+| Nino | Inglés |
+| Miku | Sociales / Historia |
+| Yotsuba | Japonés / Literatura |
+| Itsuki | Ciencias |
+
+Esto es la tesis del Capítulo 1: **no son cinco alumnas malas, son un estudiante
+completo repartido en cinco cuerpos.** Futaro no puede enseñarles a estudiar;
+tiene que entrar por el único sitio donde cada una ya sabe que es buena. Es lo
+que justifica el mapa, y hace que afinidad y rendimiento sean la misma medida.
+
+El Final Secreto queda dicho por la obra misma: completar las cinco rutas es
+reunir al estudiante perfecto.
+
+### Criterio de arte
+
+**Generar expresiones solo contra guion escrito**, nunca contra suposición.
+`itsuki_timida` se generó antes de tener la escena y se quedó sin usar todo el
+prólogo.
+
+Esto vale para todo el arte, no solo para las expresiones. El orden es: escribir
+el capítulo entero con marcadores, sacar la lista definitiva de assets del propio
+guion, y recién ahí generar. Escribir es lo barato y lo corregible; un CG hecho
+contra una escena que después cambia se tira entero.
 
 ---
 
