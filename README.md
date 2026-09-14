@@ -1,8 +1,9 @@
 # The Fifth Choice
 
 Fan visual novel basada en **Quintessential Quintuplets** (Go-toubun no Hanayome).
-El jugador vive los eventos canónicos del anime y sus decisiones determinan con
-cuál de las cinco quintillizas termina.
+Parte del arranque del anime y sigue por su cuenta: los personajes son los de la
+obra, la historia es propia. Las decisiones del jugador determinan con cuál de las
+cinco quintillizas termina.
 
 **Motor:** Ren'Py 8.5.3 · **Desarrollo:** Adrian (AdrianKiller17) · **Proyecto fan sin ánimo de lucro**
 
@@ -14,7 +15,7 @@ cuál de las cinco quintillizas termina.
 |---|---|---|
 | 0 · Núcleo | `00_definiciones.rpy` | ✅ Terminado |
 | 1 · Prólogo | `01_prologo.rpy` | ✅ Terminado — 7 escenas, arte y audio completos |
-| 2 · Capítulo 1 | `02_capitulo1.rpy` | 🟨 En escritura — guion en `docs/CAP1.md`, apertura cerrada |
+| 2 · Capítulo 1 | `02_capitulo1.rpy` | 🟨 En escritura — guion en `docs/CAP1.md`; apertura y evento de Miku cerrados |
 | 3 · Capítulo 2 | `03_capitulo2.rpy` | ⬜ Pendiente |
 | 4 · Capítulo 3 | `04_capitulo3.rpy` | ⬜ Pendiente |
 | 5 · Finales | `05_finales.rpy` | ⬜ Pendiente |
@@ -108,6 +109,12 @@ Los archivos de capítulo contienen **solo su `label` y sus CG propios**. Un CG 
 la ilustración de un momento concreto; si alguno acaba reutilizándose en otro
 capítulo, se sube a definiciones.
 
+Esto se cumple desde el reparto de bloques: el prólogo llegó a tener dentro los
+fondos, los sprites, los transforms y todo el audio, y de ahí subieron. Con ellos
+subieron `cg_calificacion`, `cg_maruo_reunion` y `cg_hermanas_estudiando`, que la
+apertura del Capítulo 1 reutiliza. Los otros diez CG del prólogo siguen en su
+archivo.
+
 `label start` vive en `00_definiciones.rpy` y en ningún otro sitio.
 
 ---
@@ -162,6 +169,13 @@ contradecirlas en el texto:
   generan así. Nunca describirla con el pelo largo en narración.
 - **Miku es castaña, no azul pálido.** El LoRA no da el tono azul. El color
   `#5DADE2` sigue valiendo para su caja de diálogo; lo que cambia es el pelo.
+- **Miku va de sudadera, no de uniforme.** Decisión propia, no limitación de la
+  herramienta. La separa visualmente de las otras cuatro justo en las escenas
+  donde el bloque de hermanas es el problema, y fuera de casa sigue vestida
+  igual: es su ropa, no un atuendo de escena.
+- **Sus audífonos van colgados del cuello**, nunca puestos, y subírselos es un
+  gesto con significado: es como cierra la puerta. Ninguna narración debe
+  describirlos «puestos» si el sprite los tiene abajo.
 
 ---
 
@@ -210,6 +224,8 @@ neutral: la que corta el vínculo. No resta afinidad.
 ```renpy
 default desaires_cap1 = 0
 ```
+
+Vive en `00_definiciones.rpy`, con los `puntos_*`.
 
 Se lee una sola vez, al cerrar el Capítulo 1. Con 3 de 3, despido.
 

@@ -100,8 +100,10 @@ es otra cosa distinta del personaje aunque se llame igual.
 
 ## 6. CG del prólogo
 
-Los trece se declaran en `01_prologo.rpy`, no en definiciones: son ilustraciones
-de momentos concretos de estas escenas.
+Diez se declaran en `01_prologo.rpy`: son ilustraciones de momentos concretos de
+estas escenas. Los otros tres —`cg_calificacion`, `cg_maruo_reunion` y
+`cg_hermanas_estudiando`— subieron a `00_definiciones.rpy` porque la apertura del
+Capítulo 1 los reutiliza.
 
 | Archivo | Escena | Qué es |
 |---|---|---|
@@ -177,7 +179,7 @@ del departamento.
 |---|---|---|
 | Ichika | Neutral / Sonriendo | `ichika_neutral` · `ichika_sonrisa` |
 | Nino | Neutral | `nino_neutral` |
-| Miku | Aburrida | `miku_aburrida` |
+| Miku | Neutral | `miku_neutral` |
 | Yotsuba | Sonriendo | `yotsuba_sonrisa` |
 | Itsuki | Neutral / Sonriendo / Molesta / Sorpresa | `itsuki_neutral` · `itsuki_sonrisa` · `itsuki_molesta` · `itsuki_sorpresa` |
 | Raiha | Hablando / Regaño | `raiha_hablando` · `raiha_regano` |
@@ -192,6 +194,10 @@ contra guion escrito.
 Se resolvió la confusión `neutral` / `neutral2` de Itsuki: el de brazos cruzados
 pasó a llamarse `itsuki_molesta` y el neutral real ocupa `itsuki_neutral`. El alias
 viejo `itsuki seria` ya no existe.
+
+Por ese mismo criterio, `miku_aburrida` pasó a `miku_neutral`. Los párpados a
+media asta son su cara en reposo, no una emoción; con el nombre viejo no habría
+forma de escribirla aburrida de verdad más adelante.
 
 ---
 
@@ -240,12 +246,6 @@ estas escenas:
   los personajes.** Isanari de cuerpo entero queda a un palmo de la campana
   extractora y encoge la habitación. En esa cocina conviene colocarlo hacia el
   hueco de la puerta, o reservar ese fondo para planos donde él no salga entero.
-- **Maruo promete una condición que el juego no ejecuta.** Dice que si una hermana
-  reprueba, despedido en el acto. Pero el Final Malo se dispara porque ninguna
-  llegó a 10 puntos de afinidad: son dos condiciones distintas. Hay que decidirlo
-  antes de escribir el Capítulo 1, porque cambia lo que significan los puntos. Lo
-  más limpio es que la afinidad represente «logró llegar a ellas y por eso
-  estudian», y narrar el Final Malo como el despido que Maruo anunció.
 - **Itsuki dice que acaba de transferirse** y que las materias son más difíciles.
   Sus cuatro hermanas van al mismo instituto, así que se transfirieron todas. Es
   coherente, pero conviene que lo sea a propósito y no por descuido.
@@ -256,6 +256,15 @@ Cambio de ropa y coleta de Raiha · nombres de sprites de Raiha ·
 `itsuki_timida` 24 px corta · `Ichika_sonrisa.png` con mayúscula ·
 contradicción texto-imagen en la escena 2 · composición del comedor ·
 el interfono que contradecía «toqué la puerta» · la campana pisando a `cotidiano`.
+
+**La condición de Maruo.** Prometía despido si una hermana reprobaba, y el juego
+medía afinidad: dos condiciones distintas de las que solo se ejecutaba una. Queda
+cerrado en el README — la afinidad representa «logró llegar a ellas y por eso
+estudian», y el Final Malo se narra como el despido que él anunció aquí.
+
+**«Auriculares» y «audífonos» en el mismo prólogo.** La escena 5 usaba una
+palabra y las escenas 7 y 5 la otra. Ahora las tres dicen audífonos, igual que el
+Capítulo 1.
 
 ---
 

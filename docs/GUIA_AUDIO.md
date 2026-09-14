@@ -91,6 +91,21 @@ volver a exportarlo comprime dos veces.
 | `derrota` | ピアノ09 | 魔王魂 |
 | `amb_viento` | 風 孤独感 | Springin' Sound Stock |
 
+### La novena pista — pendiente
+
+`descubrimiento`, para el Capítulo 1. Ninguna de las ocho sirve: `cotidiano` es
+transición, `hogar` está reservado a Futaro y las cinco restantes son tensión o
+derrota. Los cinco eventos de hermana necesitan lo mismo —algo tranquilo y con
+curiosidad, sin dulzura— y una sola pista los cubre.
+
+**Regla de uso: suena únicamente mientras habla la hermana**, entra cuando se
+suelta y sale en el momento en que se corta. Si acompaña también al razonamiento
+de Futaro deja de ser el tema de ellas y pasa a ser fondo, que es exactamente el
+error del que nació `cena`.
+
+Si no se produce, las escenas aguantan en silencio. En el evento de la biblioteca
+ni se nota: es una biblioteca.
+
 **`hogar` suena exactamente dos veces en todo el prólogo**: bajo el retrato
 familiar y en «Bien. Que sea difícil». Es el tema de Futaro. Si sonara también
 durante la cena dejaría de ser un tema y sería fondo — por eso existe `cena`.
@@ -285,6 +300,22 @@ Tres decisiones de montaje salieron de esa medición:
   `incomodo` tuviera que servir a dos escenas opuestas, y sin gastar una pista.
 - **`derrota` se corta antes del portazo de Nino.** Las cuatro puertas suenan sobre
   silencio, que pesa más, y la pista deja de dar cinco vueltas.
+
+### El silencio también es el sitio
+
+En el evento de la biblioteca el silencio no hay que fabricarlo, ya está en el
+escenario. Eso lo convierte en el mejor lugar del juego para estrenar una pista:
+cuando `descubrimiento` entra sobre una sala en la que no sonaba nada, la entrada
+se oye entera. La regla general que deja el prólogo se sostiene aquí sin esfuerzo
+— **una pista solo significa algo si antes hubo silencio.**
+
+### Un capítulo entero puede no necesitar efectos nuevos
+
+La apertura del Capítulo 1 y el evento de Miku se montan **con los doce efectos
+que ya existen**: timbre, hoja, papel, silla y las dos puertas. Antes de salir a
+buscar sonidos nuevos, revisar la tabla de arriba: los archivos ya están
+recortados, normalizados y calibrados contra la música, que es la parte cara. Un
+efecto nuevo cuesta una tarde; reutilizar uno cuesta escribir su nombre.
 
 ### La repetición idéntica es un recurso
 

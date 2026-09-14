@@ -100,7 +100,7 @@ plisada, y esa diferencia es justo lo que las hace distinguibles en pantalla.
 |---|---|---|
 | Ichika | Corto rosa pálido, flequillo en mechones separados de largo desigual con las puntas hacia dentro, silueta redondeada que se ahueca a los lados de la cara. Sin lazos. | Blazer azul marino con ribete blanco, camisa blanca, suéter amarillo atado a la cintura. |
 | Nino | Corto, rosa más oscuro y apagado, lazos negros con verde a ambos lados de la cabeza. | Blazer azul marino con ribete blanco, camisa blanca abotonada, calcetas blancas altas. |
-| Miku | Castaño, media melena. | Sudadera azul claro con capucha y cremallera, audífonos azules, medias oscuras. Sin blazer. |
+| Miku | Castaño, media melena. | Sudadera azul claro con capucha y cremallera, **audífonos azules colgados del cuello, nunca puestos**, medias oscuras. Sin blazer. |
 | Yotsuba | Corto naranja, cinta verde en la cabeza. | Chaleco amarillo, camisa blanca de manga corta, lazo verde a cuadros. |
 | Itsuki | Rojo intenso, muy largo (por debajo de la cintura), pasadores de estrella amarilla, un ahoge. | Chaleco rojo, camisa blanca de manga corta. Sin blazer. |
 
@@ -113,6 +113,14 @@ plisada, y esa diferencia es justo lo que las hace distinguibles en pantalla.
 Las marcas en negrita de Isanari y Raiha son correcciones que costaron tandas: el
 modelo tira a hacerle a él cuerpo de gimnasio y a ella la piel tostada, y ninguna
 de las dos cede sin tokens redundantes.
+
+**Miku es la única que no va de uniforme**, y es decisión de guion, no límite de
+la herramienta: la separa del bloque de hermanas justo en las escenas donde el
+bloque es el problema. Sus audífonos van **siempre al cuello**. Subírselos es un
+gesto narrativo —así cierra la puerta cuando alguien se acerca— y si un render se
+los pone en las orejas, el gesto deja de existir y hay líneas de diálogo que
+dejan de tener sentido. `headphones around neck, headphones resting on
+collarbone, not wearing headphones on ears`.
 
 ---
 
@@ -127,6 +135,13 @@ continuidad del elenco:
 - Eje horizontal: **el centro de la falda** (eje del cuerpo), no el centro del
   bounding box, porque los brazos y el pelo suelto lo desplazan.
 
+**Nombrar por expresión, nunca por rol.** La cara en reposo es `neutral` aunque
+parezca aburrida o seria. Con el nombre puesto por lo que transmite, la primera
+vez que haga falta la emoción de verdad no queda hueco: pasó con
+`itsuki_neutral2` y volvió a pasar con `miku_aburrida`. Y en la declaración de
+Ren'Py la expresión va como atributo con espacio, no con guion bajo — ahí está
+explicado en `GUIA_RENPY.md`.
+
 La normalización se hace **por distancia interpupilar**, lo único que no depende
 del peinado, la pose ni los accesorios. Normalizar por altura de lienzo o por
 bounding box fue el error original: las cinco medían 630×930 pero cada una estaba
@@ -136,7 +151,7 @@ a una escala distinta por dentro y en pantalla no parecían quintillizas.
 
 | Render | IPD crudo | Escala |
 |---|---|---|
-| `miku_aburrida` | 73,9 | 1,045 |
+| `miku_neutral` (antes `miku_aburrida`) | 73,9 | 1,045 |
 | `itsuki_molesta` | 60,8 | 1,270 |
 | `yotsuba_sonrisa` | 76,4 | **1,011** |
 | `nino_neutral` | 71,3 | 1,083 |
@@ -408,6 +423,33 @@ Todos los CG comparten este lenguaje. Cualquier CG nuevo debe cumplirlo:
   cara ocupa su propio espacio horizontal. Las composiciones a distintas
   profundidades son más cinematográficas y mucho más frágiles.
 
+### CG con Futaro en cuadro — el POV
+
+No tiene LoRA, así que de frente sale roto. El lenguaje ya validado en
+`cg_manija_edificio` y `cg_itsuki_azotea` es el que se repite en todos los CG
+nuevos donde él aparece:
+
+- **Primer término inferior**, sus manos o antebrazos sosteniendo algo (el pomo,
+  el cuaderno, el temario), **desenfocados y cortados por el borde del cuadro**.
+- **Nunca la cara, nunca el torso entero, nunca de frente.** Si hay que verle el
+  cuerpo, de espaldas y desenfocado.
+- **Un solo personaje con LoRA en el frame.** Él no cuenta porque no es un
+  personaje para el modelo: es un objeto en primer plano.
+
+`cg_pupitre_manana` y `cg_estudio_biblioteca` van los dos con esta receta. La
+ventaja no es solo técnica: un plano subjetivo obliga al jugador a mirar desde
+donde mira él, que es justo lo que hace el juego con el protagonista sin rostro.
+
+### CG en pareja — misma semilla, un solo cambio
+
+Cuando dos CG son el mismo plano con una diferencia deliberada —`cg_cinco_sentadas`
+contra `cg_hermanas_estudiando`, o `cg_miku_biblioteca` contra `cg_miku_sorpresa`—
+la lectura depende por completo de que todo lo demás coincida: encuadre, luz,
+distancia, sitio. **Generarlos en la misma sesión, partiendo de la misma semilla,
+y guardarla.** Si se hacen con semanas de diferencia no van a coincidir, y la
+comparación que sostiene la escena deja de leerse: el jugador ve dos ilustraciones
+distintas en vez de un antes y un después.
+
 ### CG de grupo — separar a las cinco
 
 Ichika, Nino e Itsuki están las tres en la gama rosa-roja y el modelo las promedia:
@@ -483,6 +525,8 @@ Cosas abiertas que afectan a todo el arte, no solo al prólogo:
 - **El pelo de Miku no coincide entre CG y sprite.** En los CG quedó castaño
   oscuro tras la corrección en Gemini; el sprite sigue en castaño claro. Hay que
   decidir cuál manda, porque si no la inconsistencia se arrastra a todo el juego.
+  **Esto se decide antes de generar el evento de la biblioteca**, que trae tres CG
+  suyos: si se generan sin resolverlo, el problema pasa de dos imágenes a cinco.
 - **La falda de `itsuki_neutral` es olivácea.** Color medio (92, 102, 74) frente a
   (90, 118, 63) del resto del set. Alternar esa expresión con otra en la misma
   escena hace que la falda cambie de tono en pantalla. Se corrige en post con un
@@ -499,6 +543,14 @@ Cosas abiertas que afectan a todo el arte, no solo al prólogo:
 - **Las gafas de Isanari cambian de sitio entre sus dos sprites**: caladas en el
   neutral, en la frente en la sonrisa. Decisión tomada: se asume. Lo único que
   conviene evitar es alternarlos en réplicas consecutivas.
-- **Faltan expresiones a Nino, Miku y Yotsuba.** Aplazado a propósito: se
-  generarán contra el guion del Capítulo 1 cuando esté escrito. La lección de
-  `itsuki_timida` es que generar contra suposición produce arte que no se usa.
+- **Faltan expresiones a Nino, Miku y Yotsuba.** Cuatro ya tienen guion detrás y
+  se pueden generar: `nino pillada` y `yotsuba incomoda` (apertura del Capítulo 1)
+  y `miku animada` y `miku encogida` (evento de la biblioteca). Las fichas de las
+  cuatro están en `docs/CAP1.md`. Para las que no tienen escena todavía sigue
+  valiendo la lección de `itsuki_timida`: generar contra suposición produce arte
+  que no se usa.
+- **La diferencia entre expresiones tiene que estar en la silueta.** Es la regla
+  que sale de las cuatro fichas nuevas y vale para todas las que vengan: a un 30 %
+  de tamaño la cara no se lee. `nino pillada` descruza los brazos, `yotsuba
+  incomoda` ocupa menos ancho, `miku animada` se queda sin nada delante del
+  cuerpo. Si dos expresiones tienen la misma silueta, en pantalla son la misma.

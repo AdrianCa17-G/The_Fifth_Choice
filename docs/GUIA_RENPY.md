@@ -16,6 +16,12 @@ variables, fondos, sprites, transforms, audio, funciones, la pantalla de nombre 
 Los archivos de capítulo contienen **solo su `label` y sus CG propios**. Si un CG
 se reutiliza en otro capítulo, sube a definiciones.
 
+Esto estuvo escrito antes que cumplido: el prólogo llevaba dentro los fondos, los
+sprites, los transforms y el audio entero, y funcionaba solo porque los `define`
+son globales. El Capítulo 1 habría colgado del archivo del prólogo. Antes de
+abrir un capítulo nuevo, comprobar que lo que va a usar está declarado donde
+corresponde.
+
 ### `label start` es único
 
 Vive en `00_definiciones.rpy` y en ningún otro archivo. Los demás usan
@@ -31,6 +37,21 @@ $ sumar_punto("nino", 2)
 Nunca tocar `puntos_*` a mano. El helper es lo único que garantiza que
 `primera_conexion` se escriba una sola vez, y de eso depende el desempate de toda
 la partida.
+
+### Las expresiones son atributos, no nombres
+
+```renpy
+image miku neutral = "sprites/miku_sprites/miku_neutral.png"   # bien
+image miku_animada = "sprites/miku_sprites/miku_animada.png"   # mal
+```
+
+Con guion bajo, Ren'Py no ve una expresión de Miku: ve un personaje distinto
+llamado `miku_animada`. `hide miku` no lo quita, `show miku` no lo reemplaza y
+acabas con dos Mikus en pantalla a la vez — el mismo destrozo que los sprites
+encimados, por otra puerta. El `.png` sí lleva guion bajo; la declaración no.
+
+Nombrar por expresión, nunca por rol: la cara en reposo es `neutral` aunque
+parezca aburrida. `miku_aburrida` hubo que renombrarlo por eso.
 
 ### Nombres de archivo
 
@@ -124,6 +145,17 @@ reorganizar las carpetas se acortaron tres `play music` sin tocar sus `define`, 
 el archivo quedó a medias: cinco pistas con prefijo y tres sin él, apuntando a
 nombres inexistentes.
 
+**Después de un CG hay que volver al fondo antes de mostrar un sprite.** `scene
+cg_lo_que_sea` deja el CG como escena; si el siguiente `show` no lleva delante su
+`scene bg_*`, el personaje aparece pegado encima de la ilustración. Va en la misma
+línea de guion:
+
+```renpy
+scene bg_biblioteca
+with dissolve
+show miku neutral at pj(0.5)
+```
+
 **Las pantallas se dibujan por encima de los sprites**, así que la caja de diálogo
 nunca queda tapada por un personaje.
 
@@ -151,12 +183,21 @@ Cuando algo «no hace nada», en este orden:
 Antes de dar por bueno un archivo grande, cruzar defines contra usos:
 
 ```python
-import re
-s = open("01_prologo.rpy", encoding="utf-8-sig").read()
+import re, glob
+s = "".join(open(f, encoding="utf-8-sig").read() for f in glob.glob("*.rpy"))
 defs  = set(re.findall(r'define audio\.(\w+)\s*=', s))
 plays = set(re.findall(r'play (?:sound|music|ambiente) (\w+)', s))
-print("sin uso:", defs - plays)
-print("sin define:", plays - defs)
+print("audio sin uso:", defs - plays)
+print("audio sin define:", plays - defs)
+
+imgs = {m.strip() for m in re.findall(r'^image ([\w ]+?)\s*=', s, re.M)}
+tags = {i.split()[0] for i in imgs}
+used = set(re.findall(r'^\s*(?:scene|show) ([a-z_]\w*)', s, re.M))
+print("sin declarar:", {u for u in used if u not in tags and u not in imgs})
 ```
+
+Sobre todos los `.rpy` a la vez, no sobre uno: desde que las declaraciones viven
+en definiciones y los usos en los capítulos, mirar un archivo suelto da falsos
+positivos en las dos direcciones.
 
 Es diez segundos y pilla justo el fallo que no se ve leyendo.

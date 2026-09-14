@@ -1,13 +1,15 @@
 ################################################################################
 ##  THE FIFTH CHOICE — Fan Visual Novel
-##  Archivo: 00_definiciones.rpy   (FASE 0 — Núcleo del proyecto)
+##  Archivo: 00_definiciones.rpy   (FASE 0 — Nucleo del proyecto)
 ##  Motor: Ren'Py 8.5.3
 ##
-##  Este archivo define personajes, variables globales, la pantalla de entrada
-##  de nombre y documenta la lógica del Cálculo Secreto de finales.
-##  No contiene narrativa: eso vive en 01_prologo.rpy en adelante.
+##  Aqui vive TODO lo que no es narrativa y lo comparte mas de un capitulo:
+##  personajes, variables, fondos, sprites, CG reutilizados, transforms,
+##  audio, funciones de apoyo, la pantalla de nombre y `label start`.
+##
+##  Los archivos de capitulo contienen SOLO su `label` y sus CG propios.
+##  Si un CG acaba usandose en un segundo capitulo, sube aqui.
 ################################################################################
-
 
 ################################################################################
 ##  1. PERSONAJES
@@ -53,6 +55,16 @@ define itsuki        = Character("Itsuki",           color=C_ITSUKI)
 define quintillizas = Character("Las quintillizas", color="#F4D03F")
 define voz          = Character("???",              color="#95A5A6")
 
+
+## --- Secundarios --------------------------------------------------------------
+## Viven aqui, no en el prologo: Raiha y Maruo vuelven en el Capitulo 1 y el
+## profesor y el padre reaparecen mas adelante.
+
+define isanari = Character("Isanari", color="#A9925C")
+define raiha   = Character("Raiha",   color="#F5B7B1")
+define maruo   = Character("Maruo",   color="#7F8C8D")
+define profe   = Character("Profesor", color="#909497")
+
 ## NOTA DE ASSETS:
 ## En escenas grupales el protagonista aparece como silueta oscura.
 ## Cuando tengas el asset, descomenta y ajusta la ruta:
@@ -95,9 +107,214 @@ default persistent.final_secreto_desbloqueado = False
 ## Opcional: registro de finales vistos, útil para una galería futura.
 default persistent.final_malo_visto = False
 
+## --- Contador de desaires del Capitulo 1 (INVISIBLE) -------------------------
+## Va aparte de los puntos y no resta afinidad. Sube solo cuando el jugador
+## elige la opcion fria dentro de un evento de hermana. Se lee una sola vez, al
+## cerrar el Capitulo 1: con 3 de 3, despido temprano.
+default desaires_cap1 = 0
+
 
 ################################################################################
-##  3. LÓGICA DEL CÁLCULO SECRETO  (documentación — se implementa en FASE 5)
+##  3. FONDOS BG
+################################################################################
+
+image bg_cuarto_mc     = "bg/cuarto_mc.webp"
+image bg_comedor       = "bg/comedor.webp"
+image bg_escuela     = "bg/escuela.webp"
+image bg_aula          = "bg/aula.webp"
+image bg_azotea        = "bg/azotea.webp"
+image bg_edificio      = "bg/edificio.webp" 
+image bg_entrada_edificio      = "bg/entrada_edificio.webp" 
+image bg_departamento  = "bg/departamento.webp"
+ 
+image bg_negro         = Solid("#000000")
+
+
+
+################################################################################
+##  4. FONDOS CG COMPARTIDOS
+##  Solo los que usa mas de un capitulo. Los trece CG del prologo siguen
+##  declarados en 01_prologo.rpy; estos tres subieron porque la apertura del
+##  Capitulo 1 los reutiliza sin tocarlos.
+################################################################################
+
+image cg_calificacion        = "cg/calificacion.webp"
+image cg_maruo_reunion       = "cg/maruo_umbral.webp"
+image cg_hermanas_estudiando = "cg/estudio_hermanas.webp"
+
+################################################################################
+##  5. SPRITES
+################################################################################
+
+image raiha hablando    = "sprites/raiha_sprites/raiha_hablando.png"
+image raiha regano      = "sprites/raiha_sprites/raiha_regano.png"
+
+image isanari neutral      = "sprites/isanari_sprites/isanari_neutral.png"
+image isanari sonriendo    = "sprites/isanari_sprites/isanari_sonrisa.png"
+
+image itsuki neutral   = "sprites/itsuki_sprites/itsuki_neutral.png"
+image itsuki sonriendo   = "sprites/itsuki_sprites/itsuki_sonrisa.png"
+image itsuki molesta   = "sprites/itsuki_sprites/itsuki_molesta.png"
+image itsuki sorprendida   = "sprites/itsuki_sprites/itsuki_sorpresa.png"
+
+image ichika neutral   = "sprites/ichika_sprites/ichika_neutral.png"
+image ichika sonriendo   = "sprites/ichika_sprites/ichika_sonrisa.png"
+
+image nino neutral   = "sprites/nino_sprites/nino_neutral.png"
+
+image miku neutral   = "sprites/miku_sprites/miku_neutral.png"
+
+image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonrisa.png"
+
+## --- Pendientes del Capitulo 1 -----------------------------------------------
+## Declararlos SIEMPRE como atributo, con espacio, igual que los de arriba.
+## `image nino_pillada` crearia un tag distinto de `nino`: `hide nino` no lo
+## quitaria y podrian convivir dos Ninos en pantalla. El .png si lleva guion
+## bajo; la declaracion no.
+# image nino pillada       = "sprites/nino_sprites/nino_pillada.png"
+# image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
+
+
+################################################################################
+##  6. TRANSFORMS
+################################################################################
+
+
+## Posiciones de la formación de las cinco hermanas.
+## Se usan solo en la escena 5; el resto de escenas van con literales.
+define X_ICHIKA  = 0.13
+define X_NINO    = 0.31
+define X_MIKU    = 0.50
+define X_YOTSUBA = 0.69
+define X_ITSUKI  = 0.87
+
+## REGLA DEL PROYECTO
+## Todo `show` lleva SIEMPRE su posición, aunque solo cambie el tinte.
+## `at` reemplaza el transform entero, no lo suma: si `pj_habla` no
+## declarara la x, Ren'Py tendría que heredarla del transform anterior, y
+## lo que hereda es el estado del instante. Con una animación a medias
+## (clic rápido o regresión) el sprite se congela donde iba y se encima.
+## Reafirmar la posición absoluta en cada show hace que eso no pueda pasar.
+
+transform pj(x=0.5):
+    xanchor 0.5
+    yanchor 1.0
+    xpos x
+    ypos 1.0
+    zoom 1.0
+    matrixcolor TintMatrix("#ffffff")
+
+transform pj_habla(x=0.5):
+    xanchor 0.5
+    yanchor 1.0
+    xpos x
+    ypos 1.0
+    ease 0.25 zoom 1.01 matrixcolor TintMatrix("#ffffff")
+
+transform pj_calla(x=0.5):
+    # Se encoge un poquito y se oscurece con un tono grisáceo suave
+    xanchor 0.5
+    yanchor 1.0
+    xpos x
+    ypos 1.0
+    ease 0.25 zoom 0.99 matrixcolor TintMatrix("#a0a0a0")
+
+## Los desplazamientos van como TRANSICIÓN, nunca como `ease` dentro del
+## transform. Un clic salta una transición a su estado final; un clic NO
+## adelanta una animación ATL. Esa diferencia era el origen del bug.
+##
+## `mover` SOLO mueve. Los parámetros enter/leave de MoveTransition piden un
+## transform con la posición de partida, no una transición: pasarles
+## `dissolve` revienta con AttributeError al renderizar. Quien entra en
+## escena se muestra en una sentencia aparte con `with dissolve`.
+define mover = MoveTransition(0.5)
+
+# Definir dissolve que dura 1.2 segundos
+define disolucion_lenta = Dissolve(1.2)
+
+
+################################################################################
+##  7. AUDIO
+##  El canal `ambiente` es aparte para que el viento de la azotea pueda sonar
+##  por debajo de la musica sin cortarla.
+################################################################################
+
+init python:
+    ## El canal `ambiente` va al mezclador de MUSICA, no al de efectos. Con
+    ## "sfx" el viento se comportaba como un golpe puntual: se ponia delante
+    ## del texto en vez de quedarse detras. Ademas, asi el jugador lo puede
+    ## regular desde el control de musica de las preferencias.
+    renpy.music.register_channel("ambiente", "music", loop=True)
+
+    ## Ducking: aparta la musica un instante para que un efecto suave se lea
+    ## por encima. La bajada es rapida y la vuelta lenta; al reves se nota.
+    ##
+    ## SOLO para sonidos sin ataque que compiten con una pista ya sonando. Los
+    ## impactos (portazo, puertas, campana) no lo necesitan, y si esto se usa
+    ## en todas partes deja de ser una excepcion y se oye como bombeo.
+    def duck(nivel=0.4, bajada=0.2, subida=1.5):
+        renpy.music.set_volume(nivel, delay=bajada, channel="music")
+        renpy.music.set_volume(1.0, delay=subida, channel="music")
+
+    renpy.music.set_volume(0.8, channel="music")
+
+## Musica --------------------------------------------------------------------
+## `hogar` suena SOLO dos veces en todo el prologo: bajo el retrato
+## familiar y en "Bien. Que sea difícil." Es el tema de Futaro. Si sonara
+## tambien durante la cena dejaria de ser un tema y seria fondo.
+define audio.hogar     = "audio/bgm/hogar.ogg"
+define audio.cena      = "audio/bgm/cena.ogg"
+define audio.cotidiano = "audio/bgm/cotidiano.ogg"
+define audio.incomodo  = "audio/bgm/incomodo.ogg"
+define audio.extraneza = "audio/bgm/extraneza.ogg"
+define audio.caos      = "audio/bgm/caos.ogg"
+define audio.contrato  = "audio/bgm/contrato.ogg"
+define audio.derrota   = "audio/bgm/derrota.ogg"
+
+## Ambiente (en bucle) -------------------------------------------------------
+define audio.amb_viento = "audio/amb_viento.ogg"
+
+## Efectos -------------------------------------------------------------------
+##
+## ESCALA DE VOLUMEN — la referencia es 2.5, no 1.0. Ren'Py multiplica de
+## verdad por encima de 1.0, y los efectos se calibraron contra la musica ya
+## sonando, no en abstracto.
+##
+##   2.5  portazo de Itsuki (el mas alto del prologo, a proposito) y los tres
+##        sonidos suaves de origen: papel, silla, bolsa. Estos ultimos estan
+##        arriba porque el archivo es flojo, no porque la escena lo pida.
+##   2.0  hoja, y la puerta de Nino en la escena 7.
+##   1.75 pasos de Yotsuba.
+##   1.5  campana, toque, pomo, puerta que abre Ichika.
+##   1.2  las tres puertas que se cierran despues de la de Nino.
+##   1.0  la puerta de Maruo: cierra "con la calma de quien ya dio una orden".
+##        Es el sonido mas bajo del prologo y esta bien que lo sea.
+##
+## Lo que no puede pasar es que un pomo suene como un portazo. Si hay que
+## subir algo, subir el archivo (comprimir + normalizar a -1 dB), no el numero.
+## Los archivos viven en `game/audio/sfx/` y por eso el nombre del archivo NO
+## repite el prefijo. La variable si lo conserva: en el guion, `play sound
+## sfx_timbre` se distingue de un vistazo de `play music cotidiano`, que es lo
+## que se pierde si se acortan los dos lados a la vez.
+##
+## El portazo de Itsuki se derivo de `puerta_cierra`: mismo impacto de hoja
+## contra marco, amplificado y con la entrada recortada. Son la misma puerta a
+## proposito. Si algun dia se sustituye uno, revisar el otro.
+define audio.sfx_papel_mesa    = "audio/sfx/papel_mesa.mp3"
+define audio.sfx_timbre        = "audio/sfx/timbre.mp3"
+define audio.sfx_silla         = "audio/sfx/silla.mp3"
+define audio.sfx_toque_puerta  = "audio/sfx/toque_puerta.mp3"
+define audio.sfx_manija        = "audio/sfx/manija.mp3"
+define audio.sfx_puerta_abre   = "audio/sfx/puerta_abre.mp3"
+define audio.sfx_correr        = "audio/sfx/correr.mp3"
+define audio.sfx_portazo       = "audio/sfx/portazo.mp3"
+define audio.sfx_bolsa         = "audio/sfx/bolsa.mp3"
+define audio.sfx_hoja          = "audio/sfx/hoja.mp3"
+define audio.sfx_puerta_cierra = "audio/sfx/puerta_cierra.mp3"
+
+
+################################################################################
+##  8. LÓGICA DEL CÁLCULO SECRETO  (documentación — se implementa en FASE 5)
 ################################################################################
 ##
 ##  CUÁNDO SE EJECUTA
@@ -176,7 +393,7 @@ default persistent.final_malo_visto = False
 
 
 ################################################################################
-##  4. FUNCIONES DE APOYO
+##  9. FUNCIONES DE APOYO
 ################################################################################
 
 init python:
@@ -205,7 +422,7 @@ init python:
 
 
 ################################################################################
-##  5. PANTALLA DE ENTRADA DE NOMBRE
+##  10. PANTALLA DE ENTRADA DE NOMBRE
 ################################################################################
 
 screen pantalla_nombre():
@@ -276,7 +493,7 @@ label configurar_nombre:
 
 
 ################################################################################
-##  6. PUNTO DE ENTRADA
+##  11. PUNTO DE ENTRADA
 ################################################################################
 ##  IMPORTANTE: `label start` vive AQUÍ y en ningún otro archivo.
 ##  01_prologo.rpy debe abrir con `label prologo:` — si define su propio
@@ -288,43 +505,3 @@ label start:
     call configurar_nombre
 
     jump prologo
-
-
-################################################################################
-##  7. PROPUESTA DE ARRANQUE DEL PRÓLOGO  (borrador para FASE 1)
-################################################################################
-##
-##  TONO: frío, cotidiano, ligeramente amargo. Nada de romance todavía.
-##  El prólogo debe vender el problema (dinero, deuda, orgullo), no a las chicas.
-##
-##  ESCENA 1 — Pantalla en negro, solo texto
-##      El protagonista se presenta por lo que le falta, no por lo que es:
-##      una deuda familiar, una beca que sostener, un padre ausente en horarios
-##      imposibles. Cierra con la idea de que estudiar es lo único que controla.
-##
-##  ESCENA 2 — Instituto Asaba, azotea o aula vacía
-##      Primer contacto hostil con una de las quintillizas (canónicamente
-##      Itsuki, por el incidente del asiento y el bento). El jugador aún no sabe
-##      que son cinco. Sin puntos en juego: esta escena solo instala el conflicto.
-##
-##  ESCENA 3 — La oferta
-##      El profesor / Maruo plantea el trabajo de tutor: paga muy por encima del
-##      mercado, cliente único, condición innegociable — las cinco deben
-##      graduarse. Aquí aparece por primera vez la palabra «despedido», que es
-##      la semilla narrativa del Final Malo.
-##
-##  ESCENA 4 — La revelación
-##      Puerta del apartamento. Cinco rostros idénticos. Corte a negro y título.
-##
-##  PRIMERA DECISIÓN CON PUNTAJE:
-##      Colocarla al final del Prólogo, cuando el jugador decide a quién dirigir
-##      la palabra primero. Esa elección escribe `primera_conexion` y, por tanto,
-##      define el criterio de desempate de toda la partida sin que él lo sepa.
-##      Ejemplo:
-##          menu:
-##              "Hablarle a la que parece más accesible.":
-##                  $ sumar_punto("yotsuba", 1)
-##              "Buscar a la que ya conozco.":
-##                  $ sumar_punto("itsuki", 1)
-##
-################################################################################
