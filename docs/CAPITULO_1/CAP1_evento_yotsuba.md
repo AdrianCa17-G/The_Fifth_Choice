@@ -127,6 +127,16 @@ concentración mental! ¡Es un método avalado por atletas de élite!
 
 **mc:** Sí.
 
+`[CG NUEVO — cg_yotsuba_rotulador: Yotsuba apoyada en la valla metálica
+de la pista, plano medio-corto. Brazo izquierdo levantado, mirando el
+rotulador en la muñeca con expresión entre avergonzada y descolocada.
+Pelo naranja suelto por el esfuerzo, mejillas ligeramente sonrojadas por
+la carrera. Chaleco amarillo, camisa manga corta, falda verde, medias
+oscuras hasta la rodilla, loafers marrones. Fondo: pista de tartán roja,
+gradas vacías, luz naranja de emergencia. Sin más personajes en el encuadre.
+Cámara a altura de ojo. Sostiene desde «Se pasó el dorso de la mano»
+hasta «Miró la pista, el rotulador, las gradas vacías».]`
+
 **narrador:** Se pasó el dorso de la mano por la frente y miró el rotulador
 de la muñeca como si le hubiera traicionado.
 
@@ -143,15 +153,11 @@ de la muñeca como si le hubiera traicionado.
 **narrador:** Lo procesó un segundo. Luego asintió con la solemnidad de quien
 acaba de recordar algo obvio.
 
-`[SPR yotsuba_sonrisa at pj(0.5)]`
-
 **yotsuba:** ¡Ah, claro! ¡Eso tiene sentido! ¡Pues bienvenido a la pista!
 
 **mc:** Gracias. ¿Por qué sigues aquí si el club ya se fue?
 
 **narrador:** La pregunta la pilló sin la exclamación preparada.
-
-`[SPR yotsuba_neutral at pj(0.5)]`
 
 **yotsuba:** …Quería terminar las series.
 
@@ -185,6 +191,8 @@ la cuenta.
 
 **narrador:** No contestó de inmediato. Miró la pista, el rotulador, las
 gradas vacías.
+
+`[SPR yotsuba_neutral at pj(0.5)]`
 
 **yotsuba:** Mis hermanas son mejores que yo en casi todo.
 
@@ -461,6 +469,7 @@ nadie debería confirmarle nunca.
 |---|---|---|---|
 | `bg_pista_atletismo` | BG | pendiente | Pista de tartán roja, luz naranja emergencia, gradas vacías, tarde avanzada |
 | `cg_yotsuba_pista` | CG | pendiente | Movimiento 1. Yotsuba de espaldas en plena carrera. Sostiene todo el bloque de llegada |
+| `cg_yotsuba_rotulador` | CG | pendiente | Movimiento 2. Yotsuba pillada con el rotulador en la muñeca, apoyada en la valla. |
 | `yotsuba_sorprendida` | sprite | pendiente | El momento de descubrimiento. Frenada en seco, ojos abiertos |
 | `yotsuba_neutral` | sprite | pendiente | Sin la sonrisa. Solo en la grieta y en los cierres de B y C |
 | `yotsuba_sonrisa` | sprite | ya existe (menú) | La sonrisa de siempre. Base del personaje |
@@ -475,6 +484,14 @@ punto de vista de Futaro observando sin que ella lo sepa. Si la cámara
 estuviera en la pista, rompería la asimetría que sostiene el movimiento 1.
 De espaldas porque si se ve su cara, el jugador ya sabe cómo está antes de
 que ella hable.
+
+**`cg_yotsuba_pista`** — Único momento donde Yotsuba no tiene sonrisa. 
+Si el generador le pone sonrisa, el CG miente sobre lo que está pasando.
+La cámara y la mirada de ella apuntan al rotulador en la muñeca. 
+Si no se lee claramente que está mirando algo escrito en su muñeca, 
+el CG pierde su razón de existir. Yotsuba está apoyada en la valla metálica
+lateral, no en la recta. Eso la enmarca y reduce el fondo, evitando que 
+la pista vacía compita con ella visualmente.
 
 **`yotsuba_neutral`** — el sprite más difícil del evento. Tiene que ser
 claramente Yotsuba sin la sonrisa, y las dos cosas son casi incompatibles en
