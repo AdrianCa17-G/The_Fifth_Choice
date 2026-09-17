@@ -1,8 +1,8 @@
 # Capítulo 1 — estado
 
-**En escritura.** Estructura cerrada, apertura terminada y el evento de Miku
-escrito (§8). Quedan cuatro eventos de hub, los tres beats fijos y el evento
-final.
+**En escritura.** Estructura cerrada, apertura terminada y los evento de Miku,
+Yotsuba e Itsuki escrito (§8). Quedan dos eventos de hub, los tres beats fijos 
+y el evento final.
 
 Lo transversal —cómo se genera el arte, cómo se monta el audio, las trampas del
 motor— está en las guías de `docs/`. Aquí solo vive lo propio de esta fase.
@@ -80,6 +80,9 @@ de sus hermanas que él no ve, y que eso tiene nombre y se califica. **Fría:**
 darle la razón y decirle que se concentre en correr. Suena amable y es lo peor
 que le puede decir nadie.
 
+**Escrito en §8.** Lo de arriba es el resumen; el guion cerrado, con sus tres
+ramas y sus assets, está al final de este documento.
+
 ### Ichika · Sala de ensayo
 
 Repasando un guion, sola, con tres horas de sueño. **Grieta:** no es floja, está
@@ -127,6 +130,9 @@ agradecer.
 
 Candidato de sprite: `itsuki_timida`, huérfano desde el prólogo, encaja en el
 momento en que pide ayuda sin pedir la respuesta.
+
+**Escrito en §8.** Lo de arriba es el resumen; el guion cerrado, con sus tres
+ramas y sus assets, está al final de este documento.
 
 ---
 
