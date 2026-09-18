@@ -169,7 +169,7 @@ merecía.
 **narrador:** Recogió el guion del suelo con un solo movimiento, como si llevara
 ensayado también eso.
 
-**mc:** ¿Cuánto dormiste anoche?
+**mc:** ¿Cuánto tiempo dormiste anoche?
 
 **ichika:** ¡Lo suficiente!
 
@@ -186,8 +186,11 @@ era la segunda.
 **narrador:** Guardó el horario doblándolo rápido, más rápido de lo necesario,
 antes de que yo pudiera leer lo que estaba tachado.
 
-**mc_pensamiento:** Dos latas de energizante. Un horario con algo tachado que no
-quiere que vea. Y ahora esto.
+**mc_pensamiento:** Dos latas de energizante.
+
+**mc_pensamiento:** Un horario con algo tachado que no quiere que vea. 
+
+**mc_pensamiento:** Y ahora esto.
 
 **mc_pensamiento:** Ninguna de las tres cosas es una casualidad sola.
 
@@ -208,33 +211,35 @@ mirando hacia cámara con la ceja levantada, como retando a que alguien diga alg
 Es el mismo minuto que `cg_ichika_desarmada` visto un paso después, con la
 máscara ya reconstruida.]`
 
-**narrador:** Se sentó en una de las sillas plegables, con el guion otra vez en
-la mano, y pasó una página sin leerla.
+**narrador:** Se sentó en una de las sillas plegables.
 
-`[SPR ichika sonrisa at pj(0.5)]`
+**narrador:** Con el guion otra vez en la mano, y pasó una página sin leerla.
 
 **ichika:** Bueno, ¿viniste a verme actuar o viniste a regañarme?
 
 **mc:** Vine a buscarte para las clases de mañana.
 
-**ichika:** ¡Qué aburrido! Yo esperaba algo con más drama.
+**ichika:** ¡Qué aburrido!
 
-**narrador:** Sonrió, esperando la broma de vuelta, la que suele devolverle
-cualquiera que hable con ella.
+**ichika:** Yo esperaba algo con más drama.
 
-**mc_pensamiento:** Tres cosas que acabo de ver y que ella tapó las tres con
+**narrador:** Sonrió, esperando la broma de vuelta.
+
+**narrador:**  La que suele devolverle cualquiera que hable con ella.
+
+**mc_pensamiento:** Tres cosas que acabo de ver y que ella escondió detras de
 un chiste.
 
-**mc_pensamiento:** Si le sigo la broma, la cuarta también va a quedar tapada.
+**mc_pensamiento:** Si le sigo la broma, la cuarta también va a quedar oculta.
 
 **mc_pensamiento:** Y no va a haber una quinta oportunidad hoy.
 
 ```
 MENÚ — ¿Cómo respondes?
 
-A) No decir nada. Quedarte callado, esperando.        [CÁLIDA]
-B) Seguirle la broma y cambiar de tema.                [TIBIA]
-C) "Si tienes tiempo para esto, tienes tiempo para estudiar."   [FRÍA]
+A) No decir nada. Sostenerle la mirada en silencio, dándole tiempo.         [CÁLIDA]
+B) Ceder. Reírte de la broma y dejar que oculte el tema.                     [TIBIA]
+C) "Si tienes energía para hacer chistes, tienes energía para estudiar."   [FRÍA]
 ```
 
 ---
@@ -270,7 +275,9 @@ C) "Si tienes tiempo para esto, tienes tiempo para estudiar."   [FRÍA]
 
 **mc:** ¿Esto qué?
 
-**ichika:** Todo. Las audiciones. Las clases.
+**ichika:** Todo.
+
+**ichika:** Las audiciones. Las clases.
 
 **ichika:** Fingir que puedo con las dos.
 
@@ -334,7 +341,9 @@ de vuelta.
 
 **mc:** ¿Qué tal un dragón?
 
-**ichika:** ¡Un dragón que además sabe matemáticas! ¡Perfecto para ti!
+**ichika:** ¡Un dragón que además sabe matemáticas!
+
+**ichika:** ¡Perfecto para ti!
 
 **narrador:** Se rió, esta vez de verdad, y la conversación se fue por ahí un
 rato.
@@ -367,7 +376,7 @@ en serio.
 
 ---
 
-### Movimiento 4C · Rama fría — «Si tienes tiempo para esto, tienes tiempo para estudiar.»
+### Movimiento 4C · Rama fría — «Si tienes energía para hacer chistes, tienes energía para estudiar.»
 
 `[$ desaires_cap1 += 1]`
 
