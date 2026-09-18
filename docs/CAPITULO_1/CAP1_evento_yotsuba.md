@@ -47,10 +47,14 @@ No se le explica cómo se aplica eso a un examen. Eso es del Capítulo 2.
 `[BG NUEVO — bg_pista_atletismo]` `[MUS stop fadeout 1.0]`
 
 **narrador:** La pista de atletismo estaba al fondo del edificio de deportes,
-detrás de la cancha de voleibol. Tardé diez minutos en encontrarla.
+detrás de la cancha de voleibol. 
+
+**narrador:** Tardé diez minutos en encontrarla.
 
 **narrador:** El club había cerrado. Las gradas estaban vacías y las luces de
-competición apagadas. Solo había encendido el sistema de emergencia, que daba
+competición apagadas. 
+
+**narrador:** Solo estaba encendido el sistema de emergencia, que daba
 una luz naranja pareja y sin sombras.
 
 `[CG NUEVO — cg_yotsuba_pista: Yotsuba de espaldas en la recta final de la
@@ -59,12 +63,15 @@ emergencia. Gradas vacías al fondo. Un solo personaje, sin nadie más. La
 cámara está en las gradas, a media altura, con el fondo de la pista abierto
 delante de ella. Sostiene los primeros tres bloques de narración.]`
 
-**narrador:** Seguía dando vueltas.
+**mc_pensamiento:** El club se había ido hace por lo menos media hora. 
+
+**mc_pensamiento:** Estaban marchandose a casa cuando salí de clase.
+
+**mc_pensamiento:** Ella sigue ahí.
 
 **mc_pensamiento:** Sola.
 
-**mc_pensamiento:** El club se había ido hace por lo menos media hora. Estaban
-recogiendo cuando yo salí de clase.
+**narrador:** Seguía dando vueltas, sin si quiera notar mi presencia.
 
 **narrador:** Fue la tercera vuelta cuando escuché lo que decía.
 
@@ -75,14 +82,14 @@ tuya! ¡Es tu vuelta favorita!
 
 **mc_pensamiento:** Y animándose a sí misma.
 
-**narrador:** Me quedé donde estaba.
+**narrador:** Me quedé observandola y memorizando el número de vueltas que llevaba.
 
 `[SFX sfx_pisadas_pista — pasos rítmicos de carrera, en loop suave]`
 
 **yotsuba:** ¡Veintidós! ¡Esto es fácil! ¡Podría hacer cien! ¡Bueno, quizás
-no cien, pero sí veinticinco! ¡Veinticinco es un número redondo!
+no cien, pero sí veinticinco! ¡Veinticinco es un número perfecto!
 
-**mc_pensamiento:** No es un número redondo.
+**mc_pensamiento:** No es un número perfecto.
 
 **narrador:** Lo estaba anotando. En la muñeca. Con rotulador.
 
@@ -98,20 +105,22 @@ no cien, pero sí veinticinco! ¡Veinticinco es un número redondo!
 
 `[SPR yotsuba_sorprendida at pj(0.5)]`
 
-**narrador:** Se paró en seco a mitad de la recta.
+**narrador:** Se paró en seco a mitad de la pista, murmurando algo entre dientes mientras contenía la respiración.
 
 **yotsuba:** …
 
-**mc:** Veintitrés.
+**mc:** Llevas veintitrés vueltas Yotsuba.
+
+**mc:** Te va a dar algo si sigues hablando contigo misma.
 
 **yotsuba:** ¡No estaba hablando sola! ¡Estaba haciendo técnica de
 concentración mental! ¡Es un método avalado por atletas de élite!
 
 **mc:** Ajá.
 
-**yotsuba:** ¡Lo leí en una revista!
+**yotsuba:** ¡Lo dijeron en un documental de la tele!
 
-**mc:** ¿Cuánto llevo aquí?
+**mc:** ¿Cuánto tiempo llevas aquí?
 
 **narrador:** Pausa.
 
@@ -119,7 +128,7 @@ concentración mental! ¡Es un método avalado por atletas de élite!
 
 **yotsuba:** …¿Cuánto llevas tú?
 
-**mc:** Las últimas ocho vueltas.
+**mc:** Tus últimas ocho vueltas.
 
 **yotsuba:** …
 
@@ -137,8 +146,8 @@ gradas vacías, luz naranja de emergencia. Sin más personajes en el encuadre.
 Cámara a altura de ojo. Sostiene desde «Se pasó el dorso de la mano»
 hasta «Miró la pista, el rotulador, las gradas vacías».]`
 
-**narrador:** Se pasó el dorso de la mano por la frente y miró el rotulador
-de la muñeca como si le hubiera traicionado.
+**narrador:** Se pasó el dorso de la mano por la frente y miró el rotulador de la muñeca con
+una mezcla de vergüenza y desconcierto
 
 `[SFX sfx_silencio_exterior — viento suave, pajaros lejanos]`
 
@@ -150,8 +159,9 @@ de la muñeca como si le hubiera traicionado.
 
 **mc:** Porque soy tu tutor.
 
-**narrador:** Lo procesó un segundo. Luego asintió con la solemnidad de quien
-acaba de recordar algo obvio.
+**narrador:** Lo procesó un segundo.
+
+**narrador:** Luego asintió con la solemnidad de quien acaba de recordar algo obvio.
 
 **yotsuba:** ¡Ah, claro! ¡Eso tiene sentido! ¡Pues bienvenido a la pista!
 
@@ -174,8 +184,9 @@ acaba de recordar algo obvio.
 **mc_pensamiento:** Eso es entre nueve y doce kilómetros, dependiendo del
 tamaño de la pista.
 
-**mc_pensamiento:** Sola. Con el rotulador en la muñeca porque si no pierde
-la cuenta.
+**mc_pensamiento:** Sola.
+
+**mc_pensamiento:** Con el rotulador en la muñeca porque si no pierde la cuenta.
 
 **mc:** ¿Entrenas así todos los días?
 
@@ -189,8 +200,9 @@ la cuenta.
 
 **mc:** ¿Cuáles son los tuyos?
 
-**narrador:** No contestó de inmediato. Miró la pista, el rotulador, las
-gradas vacías.
+**narrador:** No contestó de inmediato.
+
+**narrador:** Miró la pista, el rotulador, las gradas vacías.
 
 `[SPR yotsuba_neutral at pj(0.5)]`
 
@@ -198,8 +210,9 @@ gradas vacías.
 
 **narrador:** Lo dijo sin drama. Como quien dice que va a llover.
 
-**yotsuba:** Ichika actúa. Nino cocina. Miku sabe de historia. Itsuki
-estudia. Y yo…
+**yotsuba:** Ichika actúa. Nino cocina. Miku sabe de historia. Itsuki estudia.
+
+**yotsuba:** Y yo…
 
 **narrador:** Señaló la pista con la mano abierta.
 
@@ -213,7 +226,7 @@ contenta.
 **mc_pensamiento:** Pero lo que acaba de decir es que su única razón para
 estar aquí es no quedarse atrás.
 
-**mc_pensamiento:** Y lo dijo como si fuera un plan razonable.
+**mc_pensamiento:**  Como si destrozarse el cuerpo en esa pista fuera un precio justo por sentirse útil.
 
 ---
 
@@ -224,7 +237,9 @@ estar aquí es no quedarse atrás.
 **narrador:** Se limpió el rotulador de la muñeca con el reverso de la
 camiseta y volvió a mirarme con esa sonrisa intacta.
 
-**yotsuba:** ¡Bueno! ¡Si has venido a verme entrenar, puedes cronometrarme
+**yotsuba:** ¡Bueno! 
+
+**yotsuba:** ¡Si has venido a verme entrenar, puedes cronometrarme
 en la siguiente vuelta! ¡Soy más rápida cuando alguien mira!
 
 **mc_pensamiento:** Cambió de tema.
@@ -232,20 +247,21 @@ en la siguiente vuelta! ¡Soy más rápida cuando alguien mira!
 **mc_pensamiento:** Lo hizo tan rápido y con tanta energía que casi no lo
 noté.
 
-**narrador:** Pensé en lo que había visto estas últimas ocho vueltas. En lo
-que había dicho, y en lo que no.
+**narrador:** Pensé en lo que había visto estas últimas ocho vueltas.
+
+**narrador:** En lo que había dicho, y en lo que no.
 
 ```
 MENÚ — ¿Cómo respondes?
 
-A) "Lo que notas de tus hermanas también cuenta."   [CÁLIDA]
+A) "Tú vales tanto como cualquiera de tus hermanas."   [CÁLIDA]
 B) "Claro, dame el cronómetro."                     [TIBIA]
 C) "Entonces concéntrate en correr."                [FRÍA]
 ```
 
 ---
 
-### Movimiento 4A · Rama cálida — «Lo que notas de tus hermanas también cuenta.»
+### Movimiento 4A · Rama cálida — «Tú vales tanto como cualquiera de tus hermanas.»
 
 `[$ sumar_punto("yotsuba", 1)]`
 `[MUS descubrimiento — fade in volumen 3.5]`
@@ -266,28 +282,33 @@ después del siguiente parpadeo.
 
 **yotsuba:** …¿Qué me salté?
 
-**mc:** Esta mañana, en el desayuno, supiste que Nino no había dormido bien
+**mc:** Esta mañana, en el desayuno. Supiste que Nino no había dormido bien
 antes de que ella dijera nada.
 
 **yotsuba:** …Estaba un poco más callada que de costumbre.
 
 **mc:** Y ayer le dijiste a Miku que el libro que buscaba estaba en la
-segunda balda antes de que Miku abriera la boca.
+segunda planta antes de que Miku abriera la boca.
 
 **yotsuba:** Es que siempre lo deja ahí después de leerlo.
 
 **mc:** Y la semana pasada, cuando Ichika llegó tarde al departamento,
-fuiste la primera en saber si estaba cansada o si estaba preocupada. Y
-eran cosas distintas.
+fuiste la primera en saber si estaba cansada o si estaba preocupada. 
 
-**narrador:** Silencio. No el silencio de quien no tiene respuesta: el de
-quien está revisando si los datos son correctos.
+**mc:** Y eran cosas distintas.
+
+**narrador:** Hubo un breve silencio.
+
+**narrador:** No el silencio de quien no tiene respuesta: 
+el de quien está revisando si los datos son correctos.
 
 **yotsuba:** …¿Me estabas observando?
 
 **mc:** Soy tu tutor. Observar es parte del trabajo.
 
-**yotsuba:** Eso que describes no es nada especial. Cualquiera lo haría.
+**yotsuba:** Eso que describes no es nada especial.
+
+**yotsuba:** Cualquiera lo haría.
 
 **mc:** Ninguna de tus hermanas lo hace. Yo tampoco. Y lo intento.
 
@@ -297,15 +318,19 @@ quien está revisando si los datos son correctos.
 
 **yotsuba:** …Pero eso no entra en ningún examen.
 
-**mc:** En Lengua y Literatura entra algo que se llama comprensión lectora.
-No de libros: de personas. De lo que dicen y de lo que no dicen, de por
-qué un personaje hace lo que hace aunque no lo explique. Tú lo haces de
-forma natural con cinco personas a la vez.
+**mc:** En Literatura entra algo que se llama comprensión lectora.
+
+**mc:** Solo que tú no lo haces con libros. Lo haces con personas.
+
+**mc:** Sabes leer lo que dicen y lo que se callan, aunque no lo expliquen.
+
+**mc:** Tú lo haces de forma natural con cinco personas a la vez.
 
 **narrador:** No dijo nada. Miraba la pista, pero no la pista de verdad.
 
-**mc:** No te digo que sea suficiente para el examen. Te digo que el punto
-de partida no es cero. Nunca fue cero.
+**mc:** No te digo que sea suficiente para el examen. 
+
+**mc:** Te digo que el punto de partida no es cero. Nunca lo fue.
 
 **yotsuba:** …
 
@@ -325,8 +350,9 @@ de partida no es cero. Nunca fue cero.
 
 **mc:** Dame el cronómetro.
 
-**narrador:** Me lo pasó sin decir nada más. Pero cuando tomó la salida para
-la vuelta veinticuatro, no se animó en voz alta.
+**narrador:** Me lo pasó sin decir nada más.
+
+**narrador:** Cuando arrancó la vuelta veinticuatro, ya no le hizo falta gritar para darse ánimos.
 
 **narrador:** No hizo falta.
 
@@ -334,7 +360,7 @@ la vuelta veinticuatro, no se animó en voz alta.
 
 ### Movimiento 4B · Rama tibia — «Claro, dame el cronómetro.»
 
-*(sin puntos, sin desaire)*
+(sin puntos, sin desaire)
 
 **narrador:** Cogí el cronómetro que me tendió.
 
@@ -342,22 +368,21 @@ la vuelta veinticuatro, no se animó en voz alta.
 
 **mc:** Preparado.
 
-`[SFX sfx_pisadas_pista — arranca carrera]`
+[SFX sfx_pisadas_pista — arranca carrera]
 
-**narrador:** Salió disparada. Era rápida de verdad — no de-chica-que-entrena
-rápida, sino rápida de verdad.
+**narrador:** Salió disparada. Era rápida de verdad. 
 
-**narrador:** Cuando terminó la vuelta frenó delante de mí con los brazos
-abiertos, esperando el tiempo.
+**narrador:** No el tipo de rapidez de alguien que solo entrena por pasatiempo; corría en serio.
 
-**mc:** Cuatro con diecisiete.
+**narrador:** Cuando terminó la vuelta, frenó delante de mí con los brazos abiertos, esperando el tiempo.
+
+**mc:** Un minuto con diecisiete.
 
 **yotsuba:** ¡Sabía que hoy estaba bien! ¡Lo noté en el calentamiento!
 
 **mc:** ¿Lo notas en el calentamiento?
 
-**yotsuba:** ¡Siempre! Las piernas me avisan. ¡Es como un idioma secreto
-entre yo y mis piernas!
+**yotsuba:** ¡Siempre! Las piernas me avisan. ¡Es como un idioma secreto entre mis piernas y yo!
 
 **narrador:** Sonreí sin querer.
 
@@ -367,8 +392,9 @@ entre yo y mis piernas!
 
 **narrador:** Se rió de su propio chiste. Era una risa fácil, sin trampa.
 
-**mc_pensamiento:** No llegó al tema. O llegó y decidió que el cronómetro
-era más sencillo.
+**mc_pensamiento:** Esquivó el tema.
+
+**mc_pensamiento:** O tal vez prefirió quedarse con el cronómetro porque era más sencillo.
 
 **mc_pensamiento:** No lo sé. Y ella tampoco me lo va a decir hoy.
 
@@ -380,41 +406,44 @@ era más sencillo.
 
 ---
 
-### Movimiento 4C · Rama fría — «Entonces concéntrate en correr.»
+### Movimiento 4C · Rama fría — «Si vas a seguir corriendo, deja de perder el tiempo.»
 
 `[$ desaires_cap1 += 1]`
 
 **mc:** Entonces concéntrate en correr. Si es lo tuyo, hazlo bien.
 
-**narrador:** Asintió. Rápido, una sola vez, como quien recibe una
-instrucción.
+**narrador:** Asintió.
+
+**narrador:** Rápido, una sola vez, como quien recibe una instrucción.
 
 `[SPR yotsuba_sonrisa at pj(0.5)]`
 
-**yotsuba:** ¡Tienes razón! ¡Es lo que estaba haciendo! ¡Me alegra que lo
-veas!
+**yotsuba:**  ¡Tienes razón! ¡Eso estaba haciendo! ¡Qué bueno que lo entiendas!
 
 **narrador:** Volvió a la pista sin esperar respuesta. La sonrisa era idéntica
 a la de antes.
 
-**mc_pensamiento:** Dije exactamente lo que quería escuchar.
+**mc_pensamiento:** Le dije exactamente lo que quería escuchar.
 
-**mc_pensamiento:** O lo que lleva años entrenándose a escuchar.
+**mc_pensamiento:** O lo que lleva entrenándose para oir.
 
-**narrador:** Dio la vuelta veinticuatro en silencio. Sin contar. Sin
-animarse.
+**narrador:** Dio la vuelta veinticuatro en un silencio absoluto.
 
-**narrador:** No lo noté hasta la vuelta veinticinco.
+**narrador:** Sin contar. Sin animarse.
+
+**narrador:** Al principio no le di importancia, pero para la vuelta veinticinco lo entendí.
 
 **mc_pensamiento:** Antes contaba en voz alta porque así no perdía el ritmo.
 
-**mc_pensamiento:** Ahora no contaba.
+**mc_pensamiento:** Ahora ya no le hacía falta.
 
-**narrador:** Seguí ahí hasta que terminó la serie. No sé por qué.
+**narrador:** Seguí ahí parado hasta que terminó la serie.
 
-**mc_pensamiento:** Tal vez porque acabo de decirle a alguien que se
-concentre en la única cosa que cree que vale, y no estoy del todo seguro
-de si eso fue una instrucción o una sentencia.
+**narrador:** No sé muy bien por qué.
+
+**mc_pensamiento:** Acabo de decirle a alguien que se concentre en la única cosa que cree que la hace valer.
+
+**mc_pensamiento:** Y ahora mismo no sé si le di una instrucción o una sentencia.
 
 ---
 
@@ -427,37 +456,41 @@ de si eso fue una instrucción o una sentencia.
 
 **narrador:** Salí de la pista cuando ella terminó la vuelta treinta.
 
-**mc_pensamiento:** Una de cinco. Y esta llegó corriendo.
+**mc_pensamiento:** Una de cinco. Y esta acaba de llegar corriendo.
 
-**mc_pensamiento:** Quedan tres semanas.
+**mc_pensamiento:** Solo quedan tres semanas.
 
 *Cierre A (cálida):*
 
-**mc_pensamiento:** Me preguntó si era verdad o si era bueno animando a la
+**mc_pensamiento:** Me preguntó si era verdad o si solo era bueno animando a la
 gente.
 
 **mc_pensamiento:** La respuesta honesta es que no lo sé todavía.
 
-**mc_pensamiento:** Pero el punto de partida no era cero. Eso sí lo sé.
+**mc_pensamiento:** Pero su punto de partida no era cero. 
+
+**mc_pensamiento:** De eso sí estoy seguro.
 
 *Cierre B (tibia):*
 
-**mc_pensamiento:** Cuatro con diecisiete. Cuatro con catorce en la última.
+**mc_pensamiento:** Un minuto con diecisiete. Un minuto con catorce en la última.
 
 **mc_pensamiento:** No sé si mejoró por el cronómetro o a pesar de él.
 
-**mc_pensamiento:** Tampoco sé qué iba a decir antes de que le pasara el
-cronómetro. Pero lo cerró con tanta energía que ya no había forma de volver.
+**mc_pensamiento:** Tampoco sé qué iba a decir antes de que se lo diera.
+
+**mc_pensamiento:** Pero le puso tanta energía al asunto que ya no hubo forma de volver atrás.
 
 *Cierre C (fría):*
 
 **mc_pensamiento:** Dejó de contar en voz alta después de lo que dije.
 
-**mc_pensamiento:** Puede que no importe. Puede que el método fuera
-innecesario y lo correcto era lo que le dije.
+**mc_pensamiento:** Puede que no importe. 
 
-**mc_pensamiento:** Puede que le acabe de confirmar la única cosa que
-nadie debería confirmarle nunca.
+**mc_pensamiento:** Tal vez ese método suyo no servía para nada y mi consejo fue el correcto.
+
+**mc_pensamiento:** O tal vez le acabo de confirmar la única cosa de la que nadie 
+debería haberla convencido nunca.
 
 `→ Vuelve al hub.`
 
