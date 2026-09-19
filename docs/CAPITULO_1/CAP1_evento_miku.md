@@ -57,7 +57,9 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 `[BG NUEVO — bg_biblioteca]` `[MUS stop fadeout 1.0]`
 
-**narrador:** La biblioteca municipal quedaba dos calles antes del edificio. Pasaba por delante todos los días y nunca había entrado.
+**narrador:** La biblioteca municipal quedaba dos calles antes del edificio. 
+
+**narrador:** Pasaba por delante todos los días y nunca había entrado.
 
 **narrador:** Segunda planta, la sala de lectura. Cuatro mesas largas y nadie en tres de ellas.
 
@@ -79,9 +81,13 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **mc_pensamiento:** A esa distancia se oye algo, aunque sea un zumbido. No había nada.
 
-**mc_pensamiento:** El otro día, en el departamento, se los subió en cuanto saqué las hojas. Me borró del mapa sin decir una palabra.
+**mc_pensamiento:** El otro día, en el departamento, se los subió en cuanto saqué las hojas.
 
-**mc_pensamiento:** No los lleva para escuchar música. Los lleva ahí abajo, listos, para el momento en que alguien se acerque.
+**mc_pensamiento:** Me borró del mapa sin decir una palabra.
+
+**mc_pensamiento:** No los lleva para escuchar música.
+
+**mc_pensamiento:** Los lleva ahí abajo, listos, para el momento en que alguien se acerque.
 
 **narrador:** Me senté enfrente.
 
@@ -99,13 +105,15 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **mc:** No lo sabía. Llevo una hora dando vueltas.
 
-**mc:** Pasé por tu casa primero. Ninguna de tus hermanas supo decirme dónde estabas.
+**mc:** Pasé por tu casa primero.
+
+**mc:** Ninguna de tus hermanas supo decirme dónde estabas.
 
 **narrador:** Algo se le movió en la cara al oír eso, tan rápido que no me dio tiempo a leerlo.
 
 **miku:** …¿Y entonces?
 
-**mc:** El libro que llevabas el otro día tenía una etiqueta de biblioteca en el lomo. Esta es la que queda cerca del edificio.
+**mc:** El libro que llevabas el otro día tenía la etiqueta de una biblioteca. Esta es la que queda cerca del edificio.
 
 **narrador:** Bajó el libro dos dedos, lo justo para mirarme por encima del canto.
 
@@ -123,7 +131,9 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 `[CG NUEVO — cg_estudio_biblioteca: POV desde el sitio de Futaro. Primer término inferior, sus antebrazos y sus manos sosteniendo el temario abierto sobre la mesa, desenfocados y cortados por el borde. Enfrente, Miku de tres cuartos con su libro, sin devolver la mirada. Mismo lenguaje que cg_pupitre_manana y cg_manija_edificio: nada de cara, nada que el modelo pueda romper.]`
 
-**mc:** Tres semanas y media para el examen. Sociales es tu asignatura.
+**mc:** Quedan tres semanas y media para el examen. 
+
+**mc:** Historia es tu asignatura.
 
 **miku:** …No es mi asignatura.
 
@@ -149,17 +159,23 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **mc_pensamiento:** Llevo dos días haciendo lo mismo con las cinco y funcionando con ninguna.
 
-**mc_pensamiento:** Repasemos lo que sé de esta.
+**mc_pensamiento:** Repasemos lo que sé de Miku.
 
-**mc_pensamiento:** Uno: en su hoja de ayer había una marca de goma debajo de la respuesta equivocada. Escribió la correcta primero y la borró.
+**mc_pensamiento:** Uno: en su hoja de ayer había una marca de borrador debajo de la respuesta equivocada. 
 
-**mc_pensamiento:** Dos: el otro día habló de logística del período Sengoku sin que nadie le preguntara, y se escondió detrás del libro en cuanto se oyó a sí misma.
+**mc_pensamiento:** Escribió la correcta primero y la borró.
 
-**mc_pensamiento:** Tres: lleva unos audífonos apagados colgados del cuello, listos para subírselos en cuanto alguien le hable.
+**mc_pensamiento:** Dos: el primer día me habló de logística del período Sengoku sin que le preguntara,
+
+**mc_pensamiento:** y luego se escondió detrás del libro en cuanto se oyó a sí misma.
+
+**mc_pensamiento:** Tres: lleva unos audífonos apagados colgados del cuello,
+
+**mc_pensamiento:** listos para subírselos en cuanto alguien le hable.
 
 **mc_pensamiento:** No es que no sepa. Es que no piensa hablar de nada que le importe delante de alguien que va a calificarla.
 
-**mc_pensamiento:** Y no se me ocurrió ninguna forma elegante de resolver eso.
+**mc_pensamiento:** Y no se me ocurrió ninguna forma de resolver eso.
 
 **mc_pensamiento:** Solo se me ocurrió la de siempre.
 
@@ -197,7 +213,7 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **mc:** Las guerras las ganan las batallas. Lo demás es papeleo.
 
-**narrador:** Cerró el libro sobre el dedo índice, para no perder la página.
+**narrador:** Miku cerró el libro sobre el dedo índice, para no perder la página.
 
 **mc_pensamiento:** Era la primera vez en dos días que dejaba de mirar a otro lado.
 
@@ -221,11 +237,15 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **mc:** ¿Y eso es un problema?
 
-**miku:** Sin mar no hay sal. Y sin sal no se podía guardar la comida: no existían las neveras. O salabas el pescado y la carne, o en tres días no servían.
+**miku:** Sin mar no hay sal. Y sin sal no se podía guardar la comida: no existían las neveras.
+
+**miku:** O salabas el pescado y la carne, o en tres días no servían.
 
 **miku:** Toda la sal que comía su gente se la compraban a los vecinos.
 
-**narrador:** Hablaba más rápido. No había subido la voz —seguíamos en una biblioteca—, pero las frases le habían dejado de empezar con una pausa.
+**narrador:** Hablaba más rápido. 
+
+**narrador:** No había subido la voz —seguíamos en una biblioteca—, pero las frases le habían dejado de empezar con una pausa.
 
 **miku:** Y un día los vecinos se pusieron de acuerdo y dejaron de vendérsela.
 
@@ -237,21 +257,33 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **miku:** Nada. No había nada que hacer. Lo estaba perdiendo.
 
-**miku:** Y entonces le mandó sal Uesugi Kenshin. Su peor enemigo. Llevaban diez años peleándose y ninguno de los dos había conseguido ganar.
+**miku:** Y entonces le mandó sal Uesugi Kenshin. Su peor enemigo.
+
+**miku:** Llevaban diez años peleándose y ninguno de los dos había conseguido ganar.
 
 **mc:** ¿Por qué haría eso?
 
-**miku:** Dijo que él peleaba con armas, no con comida. Que quería ganarle en un campo de batalla, no verlo morirse de hambre en su casa.
+**miku:** Dijo que él peleaba con armas, no con comida. 
 
-**miku:** De ahí sale una frase que en Japón todavía se dice. «Mandarle sal al enemigo.» Se usa para cuando ayudas a alguien que no soportas, porque hay cosas que no se hacen.
+**miku:** Que quería ganarle en un campo de batalla, no verlo morirse de hambre en su casa.
+
+**miku:** De ahí sale una frase que en Japón todavía se dice. 
+
+**miku:** «Mandarle sal al enemigo.» 
+
+**miku:** Se usa para cuando ayudas a alguien que no soportas, porque hay cosas que no se hacen.
 
 **miku:** Aunque seguramente no pasó.
 
 **mc:** …¿Cómo que no pasó?
 
-**miku:** Esa parte no aparece en ningún papel de la época. Está escrita cien años después, cuando ya quedaba bonita.
+**miku:** Esa parte no aparece en ningún papel de la época.
 
-**miku:** Lo que sí es seguro es que le cortaron la sal y que ahí dentro siguió habiendo sal igual. Alguien se la vendió.
+**miku:** Está escrita cien años después, solo para que la historia sonara más atractiva.
+
+**miku:** Lo que sí es seguro es que les quitaron el acceso a la sal y que ahí dentro siguió habiendo sal igual. 
+
+**miku:** Alguien se la vendió.
 
 **miku:** Y a mí eso me parece mucho más—
 
@@ -259,7 +291,9 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **narrador:** Se paró en mitad de la palabra.
 
-**narrador:** Creo que se oyó. Fue eso: se oyó a sí misma hablando en voz alta durante un minuto entero.
+**narrador:** Creo que se oyó. 
+
+**narrador:** Fue eso: se oyó a sí misma hablando en voz alta durante un minuto entero.
 
 **miku:** …
 
@@ -281,7 +315,7 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 ---
 
-**Opción A · «Preguntarle otra cosa.»** *(cálida — `[$ sumar_punto("miku", 1)]`)*
+**Opción A · «Ponerla a prueba. Preguntarle por un detalle del libro.»** *(cálida — `[$ sumar_punto("miku", 1)]`)*
 
 **mc:** ¿Cuánto tardaba la sal en llegar desde el mar hasta allá?
 
@@ -289,7 +323,9 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **miku:** …¿Qué?
 
-**mc:** Es una pregunta. Montaña, carga a lomo de animal, hace quinientos años. Cuánto tardaba.
+**mc:** Es una pregunta.
+
+**mc:** Montaña, carga a lomo de animal, hace quinientos años. Cuánto tardaba.
 
 **miku:** …Diez días. Doce si llovía.
 
@@ -297,7 +333,11 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 `[SPR miku animada at pj_habla(0.5)]` `[MUS descubrimiento fadein 2.0]`
 
-**miku:** Depende de la época del año. En verano, con el pescado, casi nada. Por eso cortarles la sal no era una amenaza para más adelante, era de ese mismo mes. Eso es lo que a la gente se le esca—
+**miku:** Depende de la época del año. En verano, con el pescado, casi nada. 
+
+**miku:** Por eso quitarles el acceso a la sal no era una amenaza para más adelante, era de ese mismo mes.
+
+**miku:** Eso es lo que a la gente se le esca—
 
 **narrador:** Se detuvo otra vez. Pero esta vez se detuvo distinto: se detuvo mirándome a mí, no al libro.
 
@@ -323,15 +363,21 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **mc_pensamiento:** Ahí estaba lo que acababa de entender.
 
-**mc_pensamiento:** No que yo supiera de esto. Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche con ello.
+**mc_pensamiento:** No que yo supiera de esto. 
+
+**mc_pensamiento:** Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche en ello.
 
 **mc:** Voy a llegar a la ciento veinte.
 
 **miku:** …
 
-**mc:** Lo que acabas de contarme son tres preguntas del examen. Rutas de comercio, cómo se sostenía una provincia y por qué acabó unificándose el país.
+**mc:** Lo que acabas de contarme son tres preguntas del examen.
 
-**mc:** No te falta la materia. Te falta creer que lo que sabes cuenta como saber.
+**mc:** Rutas de comercio, cómo se sostenía una provincia y por qué acabó unificándose el país.
+
+**mc:** No te falta la materia. 
+
+**mc:** Te falta creer que lo que sabes cuenta como saber.
 
 **miku:** …No es lo mismo.
 
@@ -341,7 +387,7 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 ---
 
-**Opción B · «Decirle que se le da bien.»** *(tibia — sin puntos, sin desaire)*
+**Opción B · «Reconocer su nivel. Hacer una valoración de su esfuerzo.»** *(tibia — sin puntos, sin desaire)*
 
 **mc:** Se te da bien esto.
 
@@ -367,11 +413,15 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 **mc:** Nada de eso entra en el examen.
 
-**mc:** Unificación de Japón, tres temas, y ninguno pregunta por la sal. Si vas a dedicarle una hora a algo, que sea a lo que te van a preguntar.
+**mc:** Unificación de Japón, tres temas, y ninguno pregunta por la sal.
+
+**mc:** Si vas a dedicarle una hora a algo, que sea a lo que te van a preguntar.
 
 `[SPR miku neutral at pj(0.5)]`
 
-**narrador:** No protestó. No se defendió. Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba.
+**narrador:** No protestó. No se defendió. 
+
+**narrador:** Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba.
 
 **miku:** …Ya lo sé.
 
@@ -413,7 +463,9 @@ hoja hecha a su medida: eso es del evento 6 y de preparar material.
 
 *Cierre B (tibia):*
 
-**mc_pensamiento:** Dijo cuatro frases y volvió a esconderse. No sé si perdí algo, pero desde luego no gané nada.
+**mc_pensamiento:** Dijo cuatro frases y volvió a esconderse. 
+
+**mc_pensamiento:** No sé si perdí algo, pero desde luego no gané nada.
 
 *Cierre C (fría):*
 
