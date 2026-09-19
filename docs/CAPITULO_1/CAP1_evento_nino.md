@@ -60,6 +60,24 @@ idioma y los precios no perdonaban.
 
 **narrador:** Casi nadie a esa hora.
 
+**narrador:** El resto de la sección estaba vacío. Dos carritos abandonados a
+medio pasillo, sin dueño.
+
+**mc_pensamiento:** De las cinco, era la que menos pistas dejaba de dónde
+encontrarla.
+
+**mc_pensamiento:** Las otras cuatro, sin querer, siempre dejan algo. Un
+horario, una costumbre, un lugar que mencionan de pasada.
+
+**mc_pensamiento:** Ella no.
+
+**narrador:** Tuve que preguntar dos veces en información antes de que alguien
+recordara haberla visto entrar.
+
+**mc_pensamiento:** Y aun así no dijeron hacia dónde.
+
+**narrador:** La encontré por descarte, no porque alguien me lo dijera.
+
 `[CG NUEVO — cg_nino_centro_comercial: Nino de perfil en el pasillo de
 importados, sosteniendo dos cajas casi idénticas de harina, comparando las
 etiquetas. En la otra mano, una tarjeta de receta vieja y algo gastada. Cesta de
@@ -123,6 +141,19 @@ notara.
 **narrador:** Cerró la cesta contra su cuerpo, como si yo pudiera ver algo más
 adentro.
 
+**mc:** ¿Vienes seguido a este pasillo?
+
+**nino:** Eso no te importa.
+
+**narrador:** Dio un paso, poniéndose entre yo y la estantería de importados,
+como si hubiera pisado algo que no me tocaba.
+
+**mc:** En tu casa hay despensa. ¿Para qué venir hasta aquí?
+
+**nino:** Porque en la despensa no hay nada que valga la pena.
+
+**narrador:** Lo dijo cortante, cerrando el tema de un golpe.
+
 **mc:** ¿Vas a comprar toda la tienda o solo la mitad?
 
 **nino:** Busca a otra a quien fastidiar.
@@ -149,6 +180,15 @@ adentro.
 
 **nino:** Porque los que entraron antes también sonreían el primer día.
 
+<<<<<<< HEAD
+**nino:** Y no es que yo sea así porque sí, ¿sabes? No es un capricho.
+
+**nino:** Es que ya perdí la cuenta de cuántas veces mis hermanas...
+
+**narrador:** Se detuvo, pero solo un segundo. No fue el corte de siempre.
+
+=======
+>>>>>>> 64890daaebcfa554e7cb465be35bb9213d88e6be
 **narrador:** Lo dijo más rápido de lo que suele hablar.
 
 **narrador:** Sin cortar la frase a la mitad como acostumbra.
@@ -193,6 +233,15 @@ accidente.
 **narrador:** Guardó la tarjeta en el bolsillo del delantal.
 
 **narrador:** Rápido, como quien tapa algo que se le cayó.
+<<<<<<< HEAD
+
+**mc_pensamiento:** No pregunté más. Habría sido pedirle algo que no me tocaba
+todavía.
+
+**narrador:** Se acomodó el delantal, como si con eso pudiera acomodar
+también lo que acababa de decir.
+=======
+>>>>>>> 64890daaebcfa554e7cb465be35bb9213d88e6be
 
 ---
 
@@ -264,11 +313,28 @@ tampoco tiene.
 
 **nino:** Bien. Que quede claro.
 
+<<<<<<< HEAD
+**narrador:** Se quedó mirando la tarjeta de receta un segundo más, antes de
+guardarla del todo.
+
+**nino:** …No le digas a mis hermanas que hablé de más.
+
+**mc:** No dije nada de "de más".
+
+**nino:** Tú entendiste. Con eso alcanza.
+
 **narrador:** Terminó de subir la cesta al brazo y siguió caminando 
 hacia la caja, sin esperarme, pero sin decirme que me fuera tampoco.
 
 **mc_pensamiento:** No gané su confianza. Todavía no.
 
+=======
+**narrador:** Terminó de subir la cesta al brazo y siguió caminando 
+hacia la caja, sin esperarme, pero sin decirme que me fuera tampoco.
+
+**mc_pensamiento:** No gané su confianza. Todavía no.
+
+>>>>>>> 64890daaebcfa554e7cb465be35bb9213d88e6be
 **mc_pensamiento:** Pero por lo menos entendió que no iba a
 regalarle promesas vacías.
 
@@ -293,8 +359,14 @@ y empecé a caminar hacia la caja.
 
 **mc:** No la pediste. Te la estoy dando igual.
 
-**narrador:** Se quedó un segundo sin saber qué contestar a eso, y terminó
-caminando a mi lado sin discutirlo.
+**narrador:** Se quedó un segundo sin saber qué contestar a eso.
+
+**nino:** …Esa cesta pesa más de lo que parece.
+
+**mc:** Ya lo noté.
+
+**narrador:** Fue lo más parecido a un agradecimiento que iba a conseguir, y
+terminó caminando a mi lado sin discutirlo.
 
 **nino:** Esto no significa nada.
 
@@ -334,6 +406,10 @@ caminando a mi lado sin discutirlo.
 
 **nino:** Todos dicen eso también.
 
+**mc:** Entonces qué querías que dijera.
+
+**nino:** Nada. Ese es el punto.
+
 **narrador:** Terminó de acomodar la cesta en el brazo, ya sin mirarme.
 
 **nino:** Guárdate la promesa. No la voy a necesitar.
@@ -358,6 +434,10 @@ antes de que pudiera ver algo más.
 
 **mc_pensamiento:** Una de cinco. Y esta no bajó la guardia ni un minuto
 entero.
+
+**narrador:** En la caja, pagó ella misma, sin dejarme acercar la cartera.
+
+**mc_pensamiento:** Ni eso me lo iba a dejar hacer.
 
 **mc_pensamiento:** Quedan tres semanas.
 
