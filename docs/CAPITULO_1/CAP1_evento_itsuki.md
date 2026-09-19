@@ -61,7 +61,7 @@ reforzó.
 
 **narrador:** Volví al aula a buscar el cuaderno que había dejado en el pupitre.
 
-**narrador:** Ya no quedaba nadie a esa hora. Ni siquiera el club de limpieza.
+**narrador:** Ya no quedaba nadie a esa hora. Ni siquiera el personal de limpieza.
 
 **narrador:** La luz entraba baja, de lado.
 
@@ -88,7 +88,7 @@ rato.
 
 **narrador:** O me había oído y decidió que no era asunto suyo quién entraba.
 
-**mc_pensamiento:** A su lado había tres intentos tachados.
+**mc_pensamiento:** A su lado había tres respuestas tachadas.
 
 **mc_pensamiento:** Una sola raya horizontal cada vez, prolija. No un garabato de
 rabia.
@@ -223,7 +223,7 @@ después, no una escena nueva.]`
 
 **mc_pensamiento:** Preguntarme a mí sería peor.
 
-**mc_pensamiento:** Sería darme la razón sobre por qué estoy en esta casa.
+**mc_pensamiento:** Sería darme la razón sobre por qué estoy como su tutor.
 
 **mc_pensamiento:** Así que no le pregunta a nadie.
 
@@ -283,14 +283,14 @@ sin tocarlo.
 ```
 MENÚ — ¿Cómo respondes?
 
-A) "El error no está en el final. Está en el segundo paso."   [CÁLIDA]
-B) "¿Quieres que te lo explique desde el principio?"           [TIBIA]
-C) "Dame el cuaderno, esto se resuelve en un minuto."          [FRÍA]
+A) "Se nota el esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso."   [CÁLIDA]
+B) "¿Quieres que lo revisemos desde el principio?"           [TIBIA]
+C) "Estás perdiendo el tiempo. Déjame el cuaderno y lo resuelvo."          [FRÍA]
 ```
 
 ---
 
-### Movimiento 4A · Rama cálida — «El error no está en el final. Está en el segundo paso.»
+### Movimiento 4A · Rama cálida — «Se nota el esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso.»
 
 `[$ sumar_punto("itsuki", 1)]`
 `[MUS descubrimiento — fade in volumen 3.5]`
@@ -338,8 +338,7 @@ el resto del cuaderno.
 
 **mc_pensamiento:** Tampoco me pidió que me quedara.
 
-**mc_pensamiento:** Pero no me pidió que me fuera, y con ella eso ya es una
-frase entera.
+**mc_pensamiento:** Pero el simple hecho de tolerar mi presencia ya demuestra todo lo que necesito.
 
 **narrador:** Me quedé de pie, sin sentarme, mientras terminaba el paso.
 
@@ -369,7 +368,7 @@ frase entera.
 
 ---
 
-### Movimiento 4B · Rama tibia — «¿Quieres que te lo explique desde el principio?»
+### Movimiento 4B · Rama tibia — «¿Quieres que lo revisemos desde el principio?»
 
 *(sin puntos, sin desaire)*
 
@@ -408,7 +407,7 @@ voy a averiguar.
 
 ---
 
-### Movimiento 4C · Rama fría — «Dame el cuaderno, esto se resuelve en un minuto.»
+### Movimiento 4C · Rama fría — «Estás perdiendo el tiempo. Déjame el cuaderno y lo resuelvo.»
 
 `[$ desaires_cap1 += 1]`
 
