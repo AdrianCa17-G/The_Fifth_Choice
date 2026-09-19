@@ -180,15 +180,12 @@ como si hubiera pisado algo que no me tocaba.
 
 **nino:** Porque los que entraron antes también sonreían el primer día.
 
-<<<<<<< HEAD
 **nino:** Y no es que yo sea así porque sí, ¿sabes? No es un capricho.
 
 **nino:** Es que ya perdí la cuenta de cuántas veces mis hermanas...
 
 **narrador:** Se detuvo, pero solo un segundo. No fue el corte de siempre.
 
-=======
->>>>>>> 64890daaebcfa554e7cb465be35bb9213d88e6be
 **narrador:** Lo dijo más rápido de lo que suele hablar.
 
 **narrador:** Sin cortar la frase a la mitad como acostumbra.
@@ -233,15 +230,12 @@ accidente.
 **narrador:** Guardó la tarjeta en el bolsillo del delantal.
 
 **narrador:** Rápido, como quien tapa algo que se le cayó.
-<<<<<<< HEAD
 
 **mc_pensamiento:** No pregunté más. Habría sido pedirle algo que no me tocaba
 todavía.
 
 **narrador:** Se acomodó el delantal, como si con eso pudiera acomodar
 también lo que acababa de decir.
-=======
->>>>>>> 64890daaebcfa554e7cb465be35bb9213d88e6be
 
 ---
 
@@ -313,7 +307,6 @@ tampoco tiene.
 
 **nino:** Bien. Que quede claro.
 
-<<<<<<< HEAD
 **narrador:** Se quedó mirando la tarjeta de receta un segundo más, antes de
 guardarla del todo.
 
@@ -328,13 +321,6 @@ hacia la caja, sin esperarme, pero sin decirme que me fuera tampoco.
 
 **mc_pensamiento:** No gané su confianza. Todavía no.
 
-=======
-**narrador:** Terminó de subir la cesta al brazo y siguió caminando 
-hacia la caja, sin esperarme, pero sin decirme que me fuera tampoco.
-
-**mc_pensamiento:** No gané su confianza. Todavía no.
-
->>>>>>> 64890daaebcfa554e7cb465be35bb9213d88e6be
 **mc_pensamiento:** Pero por lo menos entendió que no iba a
 regalarle promesas vacías.
 
