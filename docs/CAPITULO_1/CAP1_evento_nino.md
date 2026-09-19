@@ -51,10 +51,12 @@ es de más adelante.
 
 `[BG NUEVO — bg_centro_comercial]` `[MUS stop fadeout 1.0]`
 
-**narrador:** La encontré en la sección de importados, dos pasillos después de
-la entrada.
+**narrador:** La encontré en la zona de repostería internacional.
 
-**narrador:** Era el tipo de tienda que vende harina en libras y no en gramos.
+**narrador:** Dos pasillos después de la entrada.
+
+**narrador:** Era de esos estantes donde las etiquetas venían en otro
+idioma y los precios no perdonaban.
 
 **narrador:** Casi nadie a esa hora.
 
@@ -83,8 +85,9 @@ nada.
 **narrador:** Sacó la tarjeta de receta del bolsillo del delantal y volvió a
 comparar.
 
-**mc_pensamiento:** Letra a mano. Vieja. De alguien que la escribió hace
-tiempo.
+**mc_pensamiento:** Letra a mano. Vieja. 
+
+**mc_pensamiento:** De alguien que la escribió hace tiempo.
 
 **narrador:** Me quedé un momento en la esquina del pasillo, sin que ella lo
 notara.
@@ -93,9 +96,11 @@ notara.
 
 `[SFX sfx_bolsa volume 1.5]`
 
-**narrador:** El plástico de la cesta hizo ruido al moverse.
+**narrador:** El ruido del plástico la hizo detenerse en seco. 
 
-**narrador:** Ahí me vio.
+**narrador:** Giró la cabeza...
+
+**narrador:** Y sus ojos se clavaron en los míos antes de que pudiera disimularlo.
 
 ---
 
@@ -103,20 +108,24 @@ notara.
 
 `[SPR nino neutral at pj(0.5)]`
 
+**nino:** ¿Tu?
+
 **nino:** ¿Qué haces aquí?
 
-**mc:** Buscarte. Es tu día en el mapa.
+**mc:** Buscarte. Me tocó adivinar dónde estabas.
 
 **nino:** No te pedí que me buscaras.
 
-**mc:** No hacía falta que me lo pidieras. Es el trabajo.
+**mc:** No hacía falta que me lo pidieras.
+
+**mc:** Es mi trabajo como tu tutor.
 
 **narrador:** Cerró la cesta contra su cuerpo, como si yo pudiera ver algo más
 adentro.
 
 **mc:** ¿Vas a comprar toda la tienda o solo la mitad?
 
-**nino:** Vete a molestar a otra.
+**nino:** Busca a otra a quien fastidiar.
 
 **mc:** Las otras cuatro no están aquí.
 
@@ -128,7 +137,9 @@ adentro.
 
 **nino:** No te trato distinto.
 
-**mc:** Sí lo haces. Y no solo a mí. A todos los que entraron antes que yo.
+**mc:** Sí lo haces. Y no solo a mí.
+
+**mc:** A todos los que han entrado antes que yo.
 
 **narrador:** Ahí sí levantó la vista.
 
@@ -138,8 +149,9 @@ adentro.
 
 **nino:** Porque los que entraron antes también sonreían el primer día.
 
-**narrador:** Lo dijo más rápido de lo que suele hablar. Sin cortar la frase a
-la mitad como acostumbra.
+**narrador:** Lo dijo más rápido de lo que suele hablar.
+
+**narrador:** Sin cortar la frase a la mitad como acostumbra.
 
 `[CG NUEVO — cg_nino_receta: plano más cerrado sobre Nino, de cintura para
 arriba, sosteniendo la tarjeta de receta con las dos manos frente al pecho, casi
@@ -166,7 +178,7 @@ ilusionan.
 
 **mc_pensamiento:** No está protegiéndose a ella.
 
-**mc_pensamiento:** Está protegiendo a las otras cuatro de algo que ya les pasó
+**mc_pensamiento:** Está protegiendo a sus hermanas de algo que ya les pasó
 demasiadas veces.
 
 `[SPR nino neutral at pj(0.5)]`
@@ -178,8 +190,9 @@ demasiadas veces.
 **narrador:** Se cortó a mitad de frase, algo que ella nunca hace por
 accidente.
 
-**narrador:** Guardó la tarjeta en el bolsillo del delantal, rápido, como quien
-tapa algo que se le cayó.
+**narrador:** Guardó la tarjeta en el bolsillo del delantal.
+
+**narrador:** Rápido, como quien tapa algo que se le cayó.
 
 ---
 
@@ -191,7 +204,9 @@ tapa algo que se le cayó.
 
 **nino:** ¿Y bien? ¿Vas a decir algo o te vas a quedar ahí parado?
 
-**mc_pensamiento:** Tiene razón en desconfiar. Eso no se lo puedo discutir.
+**mc_pensamiento:** Tiene razón en desconfiar. 
+
+**mc_pensamiento:** Eso no se lo puedo discutir.
 
 **mc_pensamiento:** Lo que diga ahora decide si me pone en la misma fila que
 los otros cuatro, o no.
@@ -217,11 +232,13 @@ C) "Yo sí voy a durar."                                              [FRÍA]
 
 **nino:** …¿Qué?
 
-**mc:** No te voy a decir que esta vez es distinto. Ya lo escuchaste demasiadas
-veces.
+**mc:** No te voy a decir que esta vez es distinto. 
 
-**mc:** Solo el tiempo lo va a demostrar. Nada que yo diga ahora vale más que
-eso.
+**mc:** Ya lo escuchaste demasiadas veces.
+
+**mc:** Solo el tiempo lo va a demostrar.
+
+**mc:** Hablar de más no va a convencerte.
 
 **narrador:** Se quedó quieta, con la cesta a medio subir, como si esperara el
 resto de la frase que no llegó.
@@ -232,7 +249,9 @@ resto de la frase que no llegó.
 
 **nino:** Esa es la primera vez que alguien no me promete nada.
 
-**mc:** No tengo nada que prometer todavía. No hice nada que lo merezca.
+**mc:** No tengo nada que prometer todavía.
+
+**mc:** No he hecho nada que lo merezca.
 
 **narrador:** Lo pensó un momento, sin la hostilidad de antes ni la calma que
 tampoco tiene.
@@ -245,13 +264,13 @@ tampoco tiene.
 
 **nino:** Bien. Que quede claro.
 
-**narrador:** Terminó de subir la cesta al brazo y siguió caminando hacia la
-caja, sin esperarme, pero sin decirme que me fuera tampoco.
+**narrador:** Terminó de subir la cesta al brazo y siguió caminando 
+hacia la caja, sin esperarme, pero sin decirme que me fuera tampoco.
 
-**mc_pensamiento:** No ganó confianza. Ganó algo más chico.
+**mc_pensamiento:** No gané su confianza. Todavía no.
 
-**mc_pensamiento:** Ganó que por una vez no le prometí nada que no pudiera
-cumplir todavía.
+**mc_pensamiento:** Pero por lo menos entendió que no iba a
+regalarle promesas vacías.
 
 ---
 
@@ -259,7 +278,9 @@ cumplir todavía.
 
 *(sin puntos, sin desaire)*
 
-**narrador:** No dije nada. Levanté la otra cesta que había dejado en el suelo
+**narrador:** No dije nada. 
+
+**narrador:** Levanté la otra cesta que había dejado en el suelo
 y empecé a caminar hacia la caja.
 
 `[SPR nino neutral at pj(0.5)]`
@@ -283,7 +304,9 @@ caminando a mi lado sin discutirlo.
 
 **mc_pensamiento:** No dijo nada más de lo que se le escapó.
 
-**mc_pensamiento:** Y yo tampoco le pregunté. Parecía que hoy no tocaba.
+**mc_pensamiento:** Y yo preferí dejarlo así.
+
+**mc_pensamiento:** A veces el silencio es lo único que se puede compartir.
 
 ---
 
@@ -293,7 +316,9 @@ caminando a mi lado sin discutirlo.
 
 **mc:** Yo sí voy a durar.
 
-**narrador:** Lo dije para tranquilizarla. No funcionó.
+**narrador:** Lo dije para tranquilizarla.
+
+**narrador:** No funcionó.
 
 `[SPR nino neutral at pj(0.5)]`
 
@@ -317,8 +342,8 @@ caminando a mi lado sin discutirlo.
 
 **mc_pensamiento:** Y lo peor es que lo dije pensando que la iba a ayudar.
 
-**narrador:** Caminó hacia la caja sin esperarme, la tarjeta de receta ya
-guardada donde no pudiera verla.
+**narrador:** Caminó hacia la caja sin esperarme, ocultando el papel 
+antes de que pudiera ver algo más.
 
 ---
 
@@ -338,26 +363,30 @@ entero.
 
 *Cierre A (cálida):*
 
-**mc_pensamiento:** No confía en mí. Lo dijo ella misma, y no tengo motivos
-para no creerle.
+**mc_pensamiento:** No confía en mí.
 
-**mc_pensamiento:** Pero por primera vez no me trató como al siguiente de la
-fila. Me trató como algo todavía sin decidir.
+**mc_pensamiento:** Lo dijo ella misma, y no tengo motivos para no creerle.
+
+**mc_pensamiento:** Pero por primera vez no me trató como al siguiente de la fila. 
+
+**mc_pensamiento:** Me trató como algo todavía sin decidir.
 
 *Cierre B (tibia):*
 
 **mc_pensamiento:** Cargué dos bolsas y no dijimos nada importante.
 
-**mc_pensamiento:** No sé si eso cuenta como algo. Con ella, ni siquiera sé
-cómo se mediría.
+**mc_pensamiento:** No sé si eso cuenta como algo. 
+
+**mc_pensamiento:** Con ella, nunca se sabe si avanzaste o retrocediste.
 
 *Cierre C (fría):*
 
-**mc_pensamiento:** Le prometí que iba a durar. Ella ya había escuchado esa
-frase antes.
+**mc_pensamiento:** Le prometí que iba a durar.
 
-**mc_pensamiento:** Se lo puse en la misma fila que a los otros cuatro. Yo
-mismo la puse ahí.
+**mc_pensamiento:** Ella ya había escuchado esa frase antes.
+
+**mc_pensamiento:** Yo mismo la puse en la misma fila que los anteriores.
+
 
 `→ Vuelve al hub.`
 
