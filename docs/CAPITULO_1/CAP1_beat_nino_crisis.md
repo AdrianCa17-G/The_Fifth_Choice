@@ -71,7 +71,7 @@ simplemente `nino_visitada_cap1`, sin importar en qué hub ocurrió.
 
 `[SFX sfx_manija volume 1.5]`
 
-**narrador:** Antes de terminar de abrirla, escuché voces desde el fondo.
+**narrador:** Antes de terminar de abrirla, escuché dos voces desde el fondo.
 
 **mc_pensamiento:** Una era de Maruo. Grave, pareja, sin subir nunca de tono.
 
@@ -79,7 +79,7 @@ simplemente `nino_visitada_cap1`, sin importar en qué hub ocurrió.
 
 **narrador:** Me quedé en el umbral un segundo de más.
 
-**mc_pensamiento:** Podía tocar el timbre y anunciarme.
+**mc_pensamiento:** Podría abrir la puerta completamente y anunciarme.
 
 **mc_pensamiento:** O podía escuchar primero y decidir después.
 
@@ -87,14 +87,15 @@ simplemente `nino_visitada_cap1`, sin importar en qué hub ocurrió.
 
 `[BG bg_departamento]`
 
-**nino:** …y no me importa lo que hayas firmado con él. Puedes deshacerlo.
+**nino:** …y no me importa lo que hayas firmado con él. Debes despedirlo.
 
 **maruo:** No.
 
-**nino:** ¡Es un tutor, no un contrato de matrimonio!
+**nino:** ¡Es un tutor, no una sentencia de por vida!
 
-**maruo:** Es exactamente un contrato. Y no lo voy a romper porque a ti no te
-guste su cara.
+**maruo:** Es exactamente un contrato. 
+
+**maruo:** Y no lo voy a romper porque a ti no te guste su cara.
 
 **narrador:** Me acerqué lo suficiente para ver sin que me vieran a mí.
 
@@ -111,14 +112,15 @@ observa desde fuera de cuadro. Sostiene todo el movimiento 1.]`
 conmigo.
 
 **nino:** No se trata de su cara. Se trata de que va a durar lo mismo que los
-otros cuatro, y ellas van a volver a creer que esta vez sí.
+anteriores, y ellas van a volver a creer que esta vez sí va a ser diferente.
 
 **maruo:** Eso ya lo decidiré yo, cuando corresponda.
 
 **nino:** ¡Tú nunca estás aquí para verlo!
 
-**narrador:** Ahí sí subió la voz de verdad. La única vez que la escuché
-gritarle a su padre.
+**narrador:** Ahí sí subió la voz de verdad.
+
+**narrador:** La única vez que la escuché gritarle a su padre.
 
 ---
 
@@ -131,18 +133,22 @@ if desaires_cap1 >= 2:
 >
 > `[SPR nino neutral at pj(0.35)]` `[MUS contrato fadein 2.0]`
 >
-> **maruo:** Ya que estás aquí, ahorrémonos la actuación.
+> **maruo:** Ya que estás aquí, ahorrémonos el drama.
 >
-> **mc:** No vine a interrumpir nada.
+> **mc:** Disculpenme, no venía con la intención de interrumpirlos.
 >
-> **maruo:** Ya la interrumpiste con solo entrar.
+> **maruo:** Ya nos interrumpiste con solo entrar.
 >
-> **narrador:** Dejó la taza sobre la isla de la cocina, despacio, sin
+> **narrador:** Dejó la taza sobre la mesa, despacio, sin
 > apurarse.
 >
 > **maruo:** Llevas más de una semana. No veo ningún cambio.
 >
-> **mc:** Los exámenes son en tres semanas, no mañana.
+> **mc:** He tenido inconvenientes con sus hijas, pero eso no me es excusa.
+>
+> **mc:** Porfavor, ¡Le suplico que me espere hasta el final de los examenes!
+>
+> **mc:** Los exámenes son en tres semanas, aun tenemos tiempo.
 >
 > **maruo:** No te pedí un cronograma. Te pedí resultados.
 >
@@ -211,12 +217,12 @@ padre, todavía con los brazos cruzados.
 
 `[SFX sfx_taza_mesa NUEVO volume 2.0]`
 
-**narrador:** Dejó su propia taza sobre la isla con más fuerza de la
+**narrador:** Dejó su propia taza sobre la mesa con más fuerza de la
 necesaria. El golpe sonó más alto que cualquier cosa que hubiera dicho.
 
-**nino:** Vas a preguntarme qué fue eso.
+**nino:** Vas a preguntarme qué fue toda esta discusión.
 
-**mc:** No hacía falta que me lo explicaras. Escuché la mitad desde la
+**mc:** No hace falta que me lo expliques. Escuché la mitad desde la
 puerta.
 
 **nino:** Entonces ya sabes lo que pienso de ti.
@@ -231,7 +237,7 @@ puerta.
 
 **nino:** Mi padre no tiene que vivir con esto todos los días. Yo sí.
 
-**narrador:** Se sentó en uno de los bancos de la isla, de golpe, como si las
+**narrador:** Se sentó en uno de los bancos de la cocina, de golpe, como si las
 piernas hubieran dejado de sostenerla el tiempo justo.
 
 `[MUS NUEVO — guardia fadein 2.5 volume 0.3]`
@@ -239,11 +245,11 @@ piernas hubieran dejado de sostenerla el tiempo justo.
 **nino:** No es porque seas malo en esto. Ni siquiera es porque me caigas
 mal, aunque me caes mal.
 
-**nino:** Es que ya vi esto pasar cuatro veces, y las cuatro veces fue igual.
+**nino:** Es que ya vi esto pasar varias veces, y siempre fue igual.
 
 **nino:** Ichika finge que no le importa hasta que le importa. Yotsuba se
-esfuerza el doble para compensar algo que no puede compensar. Miku se cierra
-todavía más, y ya estaba bastante cerrada.
+esfuerza el doble para compensar algo que no puede compensar. Miku se encierra
+en su propia burbuja todavía más, y ya estaba bastante cerrada.
 
 **nino:** E Itsuki… Itsuki se lo toma como si fuera personal, porque para
 ella todo lo es.
@@ -280,7 +286,7 @@ llegue.
 
 **mc_pensamiento:** No está exagerando. No conmigo, al menos.
 
-**mc_pensamiento:** Está describiendo un patrón que ya vio cumplirse cuatro
+**mc_pensamiento:** Está describiendo un patrón que ya vio cumplirse varias
 veces seguidas, y la única variable que cambia cada vez es el nombre de quien
 se va.
 
@@ -293,8 +299,8 @@ recomponer algo que ya se salió de su sitio.
 
 **nino:** ¿Y bien? ¿Vas a decir que esta vez es distinto?
 
-**mc_pensamiento:** Si digo que sí, soy el quinto tutor prometiendo lo mismo
-que los cuatro anteriores.
+**mc_pensamiento:** Si digo que sí, soy el siguiente tutor prometiendo lo mismo
+que los anteriores.
 
 **mc_pensamiento:** Si no digo nada, confirmo que tiene razón en no confiar.
 
@@ -337,7 +343,7 @@ mira una etiqueta que no termina de convencerla.
 
 **nino:** …No vas a convencerme de que confíe en ti con dos frases bonitas.
 
-**mc:** No lo intenté.
+**mc:** No es mi intención.
 
 **nino:** Bien. Que quede claro.
 
@@ -348,29 +354,32 @@ espalda.
 
 **mc:** No dije que lo hiciera.
 
-**narrador:** Pero no volvió a mencionar lo de deshacer el contrato en toda
+**narrador:** Pero no volvió a mencionar sobre lo de despedirme en toda
 la tarde.
 
 ---
 
 ### Movimiento 4B · Rama tibia
 
-**narrador:** No dije nada. Rodeé la isla y recogí la taza que había dejado a
+**narrador:** No dije nada. Rodeé la mesa y recogí la taza que había dejado a
 medio terminar.
 
 `[SPR nino neutral at pj(0.5)]`
 
 **nino:** ¿Qué haces?
 
-**mc:** Llevarla al fregadero. No hacía falta que la reventaras contra la
-mesa.
+**mc:** Llevarla al fregadero. 
+
+**mc:** No hacía falta que la reventaras contra la mesa.
 
 **nino:** No la reventé.
 
 **mc:** Sonó como si lo hubieras hecho.
 
-**narrador:** No contestó a eso. Se quedó apoyada contra la isla, con los
-brazos cruzados otra vez, pero menos tensos que antes.
+**narrador:** No contestó a eso. 
+
+**narrador:** Se quedó apoyada contra la mesa, con los brazos
+cruzados otra vez, pero menos tensos que antes.
 
 **nino:** No esperaba que te quedaras después de escuchar eso.
 
@@ -378,8 +387,9 @@ brazos cruzados otra vez, pero menos tensos que antes.
 
 **nino:** No dije eso tampoco.
 
-**narrador:** Terminé de lavar la taza en silencio. Ella no se movió de su
-sitio, pero tampoco volvió a sacar el tema con su padre.
+**narrador:** Terminé de lavar la taza en silencio. 
+
+**narrador:** Ella no se movió de su sitio, pero tampoco volvió a sacar el tema con su padre.
 
 **mc_pensamiento:** No dijo nada más de lo que se le escapó.
 
@@ -402,7 +412,9 @@ tuyos.
 
 **nino:** …
 
-**nino:** Genial. Ni un día entero de conocerme y ya sabes exactamente qué
+**nino:** Genial. 
+
+**nino:** Ni un día entero de conocerme y ya sabes exactamente qué
 decirme para que me calle.
 
 **mc:** No dije que te callaras.
@@ -435,9 +447,9 @@ todavía en la mano.
 **narrador:** Me quedé un rato más en la cocina, solo, con el ruido del
 edificio de fondo.
 
-**mc_pensamiento:** Vino a pedir que me fueran. Su padre dijo que no.
+**mc_pensamiento:** Vino a pedir que me fuera. Su padre dijo que no.
 
-**mc_pensamiento:** Y aun así, la que se quedó dando explicaciones fui yo.
+**mc_pensamiento:** Y aun así, el que se quedó dando explicaciones fui yo.
 
 if desaires_cap1 >= 2:
 
@@ -451,7 +463,7 @@ if desaires_cap1 >= 2:
 **mc_pensamiento:** No confía en mí. No esperaba que un par de frases
 cambiara eso.
 
-**mc_pensamiento:** Pero dejó de insistir con lo de mi padre. Con ella, eso
+**mc_pensamiento:** Pero dejó de insistir con lo del despido. Con ella, eso
 también cuenta como algo.
 
 *Cierre B (tibia):*
@@ -463,9 +475,9 @@ solo eso: silencio.
 
 *Cierre C (fría):*
 
-**mc_pensamiento:** Le dije justo lo que temía escuchar de un adulto más.
+**mc_pensamiento:** Le dije justo lo que mas temía escuchar.
 
-**mc_pensamiento:** Confirmé el patrón que llevaba cuatro veces viendo
+**mc_pensamiento:** Repetí el patrón que ella llevaba viendo
 cumplirse, en la primera oportunidad que tuve.
 
 `→ Vuelve al hub.`
