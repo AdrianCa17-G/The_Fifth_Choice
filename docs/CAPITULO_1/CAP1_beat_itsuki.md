@@ -47,7 +47,7 @@ prólogo.
 
 ### Movimiento 1 · Llegada
 
-`[BG bg_azotea]` `[SFX sfx_mochila_suelo NUEVO volume 1.5]`
+`[BG bg_azotea]`
 
 **narrador:** Subí a la azotea a la hora del almuerzo, más por costumbre que por
 otra cosa.
@@ -62,28 +62,28 @@ perfil, con un cuaderno abierto sobre las rodillas que no está mirando. Luz de
 mediodía, cielo despejado. Encuadre limpio, sin Futaro en cuadro — es él quien
 la descubre desde la puerta. Sostiene todo el movimiento 1.]`
 
-**mc_pensamiento:** Ahí estaba. Itsuki. Con el cuaderno.
+**mc_pensamiento:** Ahí estaba. Con el cuaderno.
 
-**mc_pensamiento:** El mismo cuaderno de ciencias que tenía ayer en el aula.
+**mc_pensamiento:** El mismo cuaderno de ciencias que siempre lleva encima.
 
-**narrador:** No lo estaba leyendo.
+**narrador:** No lo estaba leyendo. Lo tenía abierto en una página y la vista en
+otro lado.
 
-**narrador:** Lo tenía abierto en una página y la vista en otro lado.
+**mc_pensamiento:** La primera vez que subí aquí, ella dijo que venía a tomar
+aire. A alejarse de gente desagradable.
 
-**mc_pensamiento:** Desde que la conocí por primera vez,
+**mc_pensamiento:** Esa gente desagradable era yo.
 
-**mc_pensamiento:** ya habiamos estado en este lugar antes.
+**mc_pensamiento:** Y hoy trajo el cuaderno de todas formas, al mismo sitio
+del que dijo que venía a escapar.
 
-**mc_pensamiento:** Es la única de las cinco de la que puedo decir eso con
-seguridad, porque me lo dijo ella misma, discutiendo.
-
-**mc_pensamiento:** Y hoy trajo el cuaderno de todas formas.
+`[SFX sfx_mochila_suelo NUEVO volume 1.5]`
 
 **narrador:** Me senté a un par de metros, sin decir nada todavía.
 
 `[SPR itsuki neutral at pj(0.5)]`
 
-**itsuki:** No te until.
+**itsuki:** No te oí llegar.
 
 **mc:** No hice ruido a propósito.
 
@@ -128,8 +128,8 @@ valla, con las manos apoyadas sobre el cuaderno cerrado, sin abrirlo. Misma luz
 que `cg_itsuki_azotea_cuaderno`, encuadre mucho más cerrado. Sostiene el resto
 del movimiento 2.]`
 
-**narrador:** Tenía las manos apoyadas sobre la tapa, quietas. No los dedos
-manchados de tinta que suele traer del aula: hoy los tenía limpios.
+**narrador:** Tenía las manos apoyadas sobre la tapa, quietas. Sin una sola
+mancha de tinta.
 
 **mc_pensamiento:** No había escrito nada en toda la mañana.
 
@@ -151,27 +151,26 @@ debajo empezó a sonar algo más. Bajo, casi nada.
 
 **narrador:** No contestó. Pero no volvió a preguntar tampoco.
 
-if (persistent.primera_conexion == "itsuki" and persistent.itsuki_visitada_cap1):
+if primera_conexion == "itsuki" and itsuki_visitada_cap1:
 
-> **itsuki:** …Sigues viniendo aquí después de lo de la biblioteca —o lo que
-> sea que hicieras ayer. No cambió nada.
+> **itsuki:** Ya me ayudaste con el ejercicio el otro día. No hace falta que
+> sigas viniendo a comprobar cómo voy.
 >
-> **mc:** No dije que hubiera cambiado.
+> **mc:** No vine a comprobar nada.
 >
-> **narrador:** Fue lo más cerca que estuvo de reconocer que sabía dónde había
-> estado el día anterior.
+> **narrador:** No pareció creérselo del todo. Pero no insistió.
 
 else:
 
-> **itsuki:** No voy a preguntarte a ti a dónde fuiste ayer.
+> **itsuki:** No voy a preguntarte a ti dónde has estado estos días.
 >
 > **mc:** No te lo iba a contar de todas formas.
 >
 > **narrador:** Los dos volvieron a mirar al frente, cada uno con su propio
 > libro cerrado sobre las piernas.
 
-**mc_pensamiento:** Llevamos un día y medio de esto y ya la convivencia se
-volvió jornada completa para las dos partes.
+**mc_pensamiento:** Llevamos pocos días de esto y ya la convivencia se volvió
+jornada completa para las dos partes.
 
 **mc_pensamiento:** Ella tampoco tiene dónde bajar la guardia. Yo tampoco.
 
@@ -276,11 +275,11 @@ sordo, sin eco, para no competir con el ambiente de viento que ya está sonando.
 
   ```renpy
   if primera_conexion == "itsuki" and itsuki_visitada_cap1:
-      itsuki "…Sigues viniendo aquí después de lo de la biblioteca —o lo que sea que hicieras ayer. No cambió nada."
-      mc "No dije que hubiera cambiado."
-      narrador "Fue lo más cerca que estuvo de reconocer que sabía dónde había estado el día anterior."
+      itsuki "Ya me ayudaste con el ejercicio el otro día. No hace falta que sigas viniendo a comprobar cómo voy."
+      mc "No vine a comprobar nada."
+      narrador "No pareció creérselo del todo. Pero no insistió."
   else:
-      itsuki "No voy a preguntarte a ti a dónde fuiste ayer."
+      itsuki "No voy a preguntarte a ti dónde has estado estos días."
       mc "No te lo iba a contar de todas formas."
       narrador "Los dos volvieron a mirar al frente, cada uno con su propio libro cerrado sobre las piernas."
   ```
