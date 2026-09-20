@@ -62,15 +62,17 @@ perfil, con un cuaderno abierto sobre las rodillas que no está mirando. Luz de
 mediodía, cielo despejado. Encuadre limpio, sin Futaro en cuadro — es él quien
 la descubre desde la puerta. Sostiene todo el movimiento 1.]`
 
-**mc_pensamiento:** Ahí estaba. Con el cuaderno.
+**mc_pensamiento:** Ahí estaba. Itsuki. Con el cuaderno.
 
 **mc_pensamiento:** El mismo cuaderno de ciencias que tenía ayer en el aula.
 
-**narrador:** No lo estaba leyendo. Lo tenía abierto en una página y la vista en
-otro lado.
+**narrador:** No lo estaba leyendo.
 
-**mc_pensamiento:** El año pasado, cuando aún no la conocía, ya sabía que subía
-aquí a que no la vieran estudiando.
+**narrador:** Lo tenía abierto en una página y la vista en otro lado.
+
+**mc_pensamiento:** Desde que la conocí por primera vez,
+
+**mc_pensamiento:** ya habiamos estado en este lugar antes.
 
 **mc_pensamiento:** Es la única de las cinco de la que puedo decir eso con
 seguridad, porque me lo dijo ella misma, discutiendo.
