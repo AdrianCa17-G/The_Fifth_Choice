@@ -77,6 +77,9 @@ aire. A alejarse de gente desagradable.
 **mc_pensamiento:** Y hoy trajo el cuaderno de todas formas, al mismo sitio
 del que dijo que venía a escapar.
 
+**mc_pensamiento:** Sin nada de comer al lado. Ya van varias veces que la veo
+así, en apenas unos días.
+
 `[SFX sfx_mochila_suelo NUEVO volume 1.5]`
 
 **narrador:** Me senté a un par de metros, sin decir nada todavía.
@@ -120,6 +123,22 @@ encima, como si todavía no hubiera decidido qué hacer con él.
 **mc:** Yo desde antes de que existiera este trabajo.
 
 **narrador:** No dijo nada a eso. Pero tampoco volvió a abrir su cuaderno.
+
+**mc:** No hay mesa aquí arriba.
+
+**itsuki:** No hace falta mesa para tener un cuaderno abierto.
+
+**mc:** Pero no lo tienes abierto para leerlo.
+
+**itsuki:** …
+
+**narrador:** No contestó. Cambió el cuaderno de posición sobre las rodillas,
+como si reacomodarlo fuera, de algún modo, una respuesta.
+
+**mc_pensamiento:** Lo trajo por costumbre, no porque pensara usarlo.
+
+**mc_pensamiento:** Como quien ya no sabe estar en un sitio sin la excusa de
+tener algo que hacer ahí.
 
 `[CG NUEVO — cg_itsuki_azotea_manos: punto de vista de Futaro, sentado. En
 primer término inferior, desenfocada y cortada por el borde, la correa de su
@@ -177,6 +196,13 @@ jornada completa para las dos partes.
 **narrador:** Nos quedamos ahí un rato largo, sin abrir ninguno de los dos
 libros.
 
+**narrador:** El viento se llevó una hoja suelta de mi cuaderno hasta la
+valla, y ninguno de los dos se levantó a buscarla.
+
+**mc_pensamiento:** Antes de este trabajo me habría importado esa hoja.
+
+**mc_pensamiento:** Ahora me importa más no moverme.
+
 ---
 
 ### Movimiento 3 · Menú cosmético
@@ -226,6 +252,13 @@ esperarme, como cualquier otro día.
 **mc_pensamiento:** Pero hoy subió con el cuaderno.
 
 **mc_pensamiento:** Y hoy no lo abrió ni una vez.
+
+**mc_pensamiento:** Quedan casi tres semanas.
+
+**mc_pensamiento:** Ella las va a pasar igual que hoy: sola, con un cuaderno
+que no necesita, en el único sitio que le quedaba para no estarlo del todo.
+
+**mc_pensamiento:** No sé si vine a ayudarla o solo a quitarle eso también.
 
 `→ Vuelve al hub.`
 
