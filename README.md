@@ -15,7 +15,7 @@ cinco quintillizas termina.
 |---|---|---|
 | 0 · Núcleo | `00_definiciones.rpy` | ✅ Terminado |
 | 1 · Prólogo | `01_prologo.rpy` | ✅ Terminado — 7 escenas, arte y audio completos |
-| 2 · Capítulo 1 | `02_capitulo1.rpy` | 🟨 En escritura — guion en `docs/CAP1.md`; apertura y evento de Miku, Yotsuba, Itsuki cerrados |
+| 2 · Capítulo 1 | `02_capitulo1.rpy` | 🟨 En escritura — guion en `docs/CAP1.md`; apertura y eventos de hermanas cerrados |
 | 3 · Capítulo 2 | `03_capitulo2.rpy` | ⬜ Pendiente |
 | 4 · Capítulo 3 | `04_capitulo3.rpy` | ⬜ Pendiente |
 | 5 · Finales | `05_finales.rpy` | ⬜ Pendiente |
