@@ -18,7 +18,9 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc_pensamiento:** Dormí cuatro horas. No por estudiar, por primera vez en meses.
 
-**mc_pensamiento:** Me quedé mirando el techo repasando la escena entera. Cinco caras idénticas y cinco formas distintas de decirme que sobro.
+**mc_pensamiento:** Me quedé mirando el techo repasando la escena entera. 
+
+**mc_pensamiento:** Cinco caras idénticas y cinco formas distintas de decirme que sobro.
 
 **mc_pensamiento:** Y una palabra que no se me despegó en toda la noche.
 
@@ -54,13 +56,16 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc:** Solo lo estoy avisando.
 
-**itsuki:** Avisa lo que quieras. Yo no pienso participar.
+**itsuki:** Avisa lo que quieras. Yo no pienso estudiar contigo.
 
 **narrador:** Volvió a su cuaderno con un gesto seco y no dijo una palabra más en toda la mañana.
 
 **mc_pensamiento:** Ahí estaba lo verdaderamente incómodo del asunto.
 
-**mc_pensamiento:** No era que me odiara. Era que iba a odiarme desde las ocho hasta las tres, y después iba a seguir odiándome desde las cuatro hasta que yo me fuera de su casa.
+**mc_pensamiento:** No era que me odiara.
+
+**mc_pensamiento:** Era que iba a odiarme desde las ocho hasta las tres, y después iba a seguir odiándome 
+desde las cuatro hasta que yo me fuera de su casa.
 
 **mc_pensamiento:** Sin pausa. Sin cambio de escenario.
 
@@ -73,9 +78,13 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 `[MUS stop fadeout 1.5]`
 `[BG bg_edificio]` → `[BG bg_departamento]` `[SFX sfx_puerta_abre]`
 
-**narrador:** Toqué a las cuatro en punto. Me abrió Ichika, otra vez, con la misma sonrisa de la primera vez.
+**narrador:** Toqué a las cuatro en punto. 
 
-**mc_pensamiento:** Esta vez venía preparado. Cinco cuadernos, un temario dividido por materias y ninguna expectativa.
+**narrador:** Me abrió Ichika, otra vez, con la misma sonrisa de la primera vez.
+
+**mc_pensamiento:** Esta vez venía preparado. 
+
+**mc_pensamiento:** Cinco cuadernos, un temario dividido por materias y ninguna expectativa.
 
 **mc_pensamiento:** Lo que no esperaba era lo que encontré al entrar.
 
@@ -83,7 +92,9 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 `[MUS extraneza fadein 2.0]`
 
-**narrador:** Las cinco estaban sentadas alrededor de la mesa. Rectas. En silencio. Con los cuadernos abiertos.
+**narrador:** Las cinco estaban sentadas alrededor de la mesa. 
+
+**narrador:** Rectas. En silencio. Con los cuadernos abiertos.
 
 **mc_pensamiento:** …
 
@@ -113,7 +124,7 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc_pensamiento:** Ninguna de ellas está aquí porque quiera estar.
 
-**mc_pensamiento:** Están aquí porque ella les dijo que se sentaran.
+**mc_pensamiento:** Están aquí porque Nino les dijo que se sentaran.
 
 **mc_pensamiento:** Bien. Si quieren jugar a esto, juguemos.
 
@@ -123,15 +134,17 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc:** Diez minutos.
 
-**narrador:** No hizo falta esperar diez. En cuatro ya las tenía las cinco encima de la mesa.
+**narrador:** No hizo falta esperar los diez minutos. 
+
+**narrador:** En solo cuatro minutos ya me habían devuelto las cinco hojas resueltas sobre la mesa.
 
 **mc_pensamiento:** Eso también estaba mal.
 
 `[SFX sfx_hoja]`
 
-**narrador:** Corregí la primera. Seis de seis mal.
+**narrador:** Corregí la primera hoja. Seis de seis mal.
 
-**narrador:** Corregí la segunda. Seis de seis mal.
+**narrador:** Corregí la segunda hoja. Seis de seis mal.
 
 **mc_pensamiento:** …
 
@@ -179,21 +192,24 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc_pensamiento:** Iba a defenderme. Y se arrepintió a mitad de frase.
 
-**narrador:** Se encogió en el sitio y se puso a alinear los bordes de su hoja con las dos manos, muy despacio, como si eso fuera una tarea.
+**narrador:** Se encogió en el sitio y se puso a alinear los bordes de su hoja con las dos manos, muy despacio,
+como si eso fuera una tarea.
 
-**mc_pensamiento:** Esa no está de acuerdo.
+**mc_pensamiento:** Yotsuba no está de acuerdo con Nino.
 
-**mc_pensamiento:** Está obedeciendo, que no es lo mismo.
+**mc_pensamiento:** Pero está obedeciendola, que no es lo mismo.
 
 `[SPR ichika sonriendo at pj(0.30)]` `[SPR yotsuba at pj_calla(0.70)]`
 
-**ichika:** Bueno, tampoco hay que dramatizar. Contestamos las seis. Nadie dijo que hubiera que acertarlas.
+**ichika:** Bueno, tampoco hay que dramatizar. 
+
+**ichika:** Contestamos las seis. Nadie dijo que hubiera que acertarlas.
 
 **mc:** Contestaron las seis igual de mal.
 
 **ichika:** Coincidencia. Somos hermanas, pensamos parecido.
 
-**mc_pensamiento:** Esa mentía tan bien que casi daba gusto.
+**mc_pensamiento:** Mentía tan bien que casi daba gusto.
 
 `[CG cg_hermanas_estudiando]`
 
@@ -205,15 +221,15 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **narrador:** Itsuki estaba sentada aparte, con los brazos cruzados y la cara torcida hacia la ventana.
 
-**mc_pensamiento:** Y esa no participó del plan, pero tampoco pensaba salvarme.
+**mc_pensamiento:** No participó en el plan, pero tampoco pensaba ayudarme.
 
 **narrador:** Junté las cinco hojas y las dejé en una pila.
 
-**mc:** Última pregunta y me voy. La siete no estaba en la hoja.
+**mc:** Última pregunta y me voy. La pregunta siete no está en la hoja.
 
 **mc:** *«He didn't want to go, but he had to.»*
 
-**narrador:** Lo leí a propósito plano, con el peor acento que pude.
+**narrador:** Lo leí a propósito, con el peor acento que pude.
 
 `[BG bg_departamento with dissolve]` `[SPR nino neutral at pj_habla(0.5)]`
 
@@ -235,13 +251,16 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 `[SFX sfx_puerta_cierra volume 2.0]` `[MUS stop fadeout 2.0]`
 
-**narrador:** Se levantó y se encerró de un portazo, igual que el día anterior, solo que esta vez se llevó su cuaderno con ella.
+**narrador:** Se levantó y se encerró de un portazo, igual que el día anterior, solo que esta 
+vez se llevó su cuaderno con ella.
 
 **narrador:** Las otras tres tardaron menos de un minuto en desaparecer detrás de ella.
 
-**narrador:** Miku fue la última. Se detuvo a mitad del pasillo, de espaldas, con el libro apretado contra el pecho.
+**narrador:** Miku fue la última. 
 
-`[SPR miku aburrida at pj(0.5)]`
+**narrador:** Se detuvo a mitad del pasillo, de espaldas, con el libro apretado contra el pecho.
+
+`[SPR miku neutral at pj(0.5)]`
 
 **miku:** …No fue idea mía.
 
@@ -277,7 +296,7 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **maruo:** Seis errores idénticos por cinco. Supongo que no hace falta que te explique lo que significa.
 
-**mc:** No hace falta.
+**mc:** Si, no hace falta.
 
 **maruo:** ¿Y bien?
 
@@ -287,7 +306,7 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **narrador:** Maruo me miró un momento más largo de lo que me había mirado el día anterior.
 
-**maruo:** Los exámenes trimestrales son en un mes.
+**maruo:** Los exámenes son en un mes.
 
 **maruo:** Cinco asignaturas. Las cinco tienen que aprobarlas todas.
 
@@ -310,7 +329,7 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 `[MUS stop fadeout 2.0]`
 `[BG bg_negro with fade]`
 
-**narrador:** Salí del edificio pasadas las siete. Esta vez no fui directo a casa.
+**narrador:** Salí del edificio pasadas las siete. Fui directo a casa.
 
 `[BG bg_cuarto_mc]` `[MUS hogar fadein 1.5 volume 0.7]`
 
@@ -330,7 +349,7 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc:** No están en blanco.
 
-**raiha:** Están llenos de cosas mal, que es casi peor.
+**raiha:** Están llenos de cosas mal hechas, que es casi peor.
 
 **mc:** Gracias por el ánimo.
 
@@ -352,6 +371,10 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **raiha:** Entonces no entiendo el problema.
 
+**raiha:** Pero igualmente te deseo mucha suerte hermanito.
+
+**raiha:** ¡Se que podrás lidiar con cinco a la vez!
+
 `[SPR raiha hide with moveoutleft]`
 
 **narrador:** Se fue tan rápido como había entrado, muy contenta de haber resuelto algo.
@@ -360,7 +383,9 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc_pensamiento:** Repasemos.
 
-**mc_pensamiento:** Cinco respuestas idénticas en cuatro minutos. Eso requiere ponerse de acuerdo antes, repartirse el error y sostenerlo delante de mí sin fallar ninguna.
+**mc_pensamiento:** Cinco respuestas idénticas en cuatro minutos.
+
+**mc_pensamiento:** Eso requiere ponerse de acuerdo antes, repartirse el error y sostenerlo delante de mí sin fallar ninguna.
 
 **mc_pensamiento:** Es un trabajo en equipo mejor ejecutado que la mitad de los proyectos de mi clase.
 
@@ -368,7 +393,9 @@ Marcadores entre corchetes. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprit
 
 **mc_pensamiento:** Nadie corrige por reflejo algo que no domina.
 
-**narrador:** Volví a mirar las cinco hojas. En la de Miku, debajo de la respuesta equivocada, había una marca de goma mal borrada.
+**narrador:** Volví a mirar las cinco hojas. 
+
+**narrador:** En la de Miku, debajo de la respuesta equivocada, había una marca de goma mal borrada.
 
 **mc_pensamiento:** Escribió la correcta primero.
 
