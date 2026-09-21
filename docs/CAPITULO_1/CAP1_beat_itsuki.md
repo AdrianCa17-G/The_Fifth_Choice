@@ -66,19 +66,22 @@ la descubre desde la puerta. Sostiene todo el movimiento 1.]`
 
 **mc_pensamiento:** El mismo cuaderno de ciencias que siempre lleva encima.
 
-**narrador:** No lo estaba leyendo. Lo tenía abierto en una página y la vista en
-otro lado.
+**narrador:** No lo estaba leyendo.
 
-**mc_pensamiento:** La primera vez que subí aquí, ella dijo que venía a tomar
-aire. A alejarse de gente desagradable.
+**narrador:** Lo tenía abierto en una página y la vista en otro lado.
+
+**mc_pensamiento:** La primera vez que subí aquí, ella dijo que venía a tomar aire.
+
+**mc_pensamiento:** A alejarse de gente desagradable.
 
 **mc_pensamiento:** Esa gente desagradable era yo.
 
 **mc_pensamiento:** Y hoy trajo el cuaderno de todas formas, al mismo sitio
 del que dijo que venía a escapar.
 
-**mc_pensamiento:** Sin nada de comer al lado. Ya van varias veces que la veo
-así, en apenas unos días.
+**mc_pensamiento:** Sin nada de comer al lado.
+
+**mc_pensamiento:** Ya van varias veces que la veo así, en apenas unos días.
 
 `[SFX sfx_mochila_suelo NUEVO volume 1.5]`
 
@@ -105,8 +108,9 @@ una queja.
 
 **itsuki:** Y lo era.
 
-**narrador:** Cerró el cuaderno, pero no lo guardó. Se quedó con la mano
-encima, como si todavía no hubiera decidido qué hacer con él.
+**narrador:** Cerró el cuaderno, pero no lo guardó.
+
+**narrador:** Se quedó con la mano encima, como si todavía no hubiera decidido qué hacer con él.
 
 **itsuki:** Ya no me queda ningún sitio que no lo sea.
 
@@ -132,8 +136,10 @@ encima, como si todavía no hubiera decidido qué hacer con él.
 
 **itsuki:** …
 
-**narrador:** No contestó. Cambió el cuaderno de posición sobre las rodillas,
-como si reacomodarlo fuera, de algún modo, una respuesta.
+**narrador:** No contestó. 
+
+**narrador:** Cambió el cuaderno de posición sobre las rodillas, como si
+reacomodarlo fuera, de algún modo, una respuesta.
 
 **mc_pensamiento:** Lo trajo por costumbre, no porque pensara usarlo.
 
@@ -158,7 +164,9 @@ termine la primera línea.
 `[MUS NUEVO — tregua fadein 3.0 volume 0.3]`
 
 **narrador:** El viento seguía sonando igual que siempre aquí arriba, pero por
-debajo empezó a sonar algo más. Bajo, casi nada.
+debajo empezó a sonar algo más...
+
+**narrador:** Bajo, casi nada.
 
 **itsuki:** ¿Vas a preguntarme por qué lo traje?
 
@@ -246,7 +254,9 @@ un libro.
 
 **mc:** Se acabó.
 
-**narrador:** Se levantó primero. Se sacudió la falda y bajó las escaleras sin
+**narrador:** Se levantó primero. 
+
+**narrador:** Se sacudió la falda y bajó las escaleras sin
 esperarme, como cualquier otro día.
 
 **mc_pensamiento:** Pero hoy subió con el cuaderno.
