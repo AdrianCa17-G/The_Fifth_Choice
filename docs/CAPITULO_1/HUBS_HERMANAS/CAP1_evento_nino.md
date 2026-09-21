@@ -124,13 +124,15 @@ notara.
 
 ### Movimiento 2 · La grieta
 
-`[SPR nino neutral at pj(0.5)]`
+`[SPR nino sorprendida at pj(0.5)]`
 
 **nino:** ¿Tu?
 
 **nino:** ¿Qué haces aquí?
 
 **mc:** Buscarte. Me tocó adivinar dónde estabas.
+
+`[SPR nino neutral at pj(0.5)]`
 
 **nino:** No te pedí que me buscaras.
 
@@ -218,7 +220,7 @@ ilusionan.
 **mc_pensamiento:** Está protegiendo a sus hermanas de algo que ya les pasó
 demasiadas veces.
 
-`[SPR nino neutral at pj(0.5)]`
+`[SPR nino sorprendida at pj(0.5)]`
 
 **nino:** …
 
@@ -244,6 +246,8 @@ también lo que acababa de decir.
 `[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`
 
 **narrador:** Se agachó a recoger la cesta del suelo, sin mirarme.
+
+`[SPR nino neutral at pj(0.5)]`
 
 **nino:** ¿Y bien? ¿Vas a decir algo o te vas a quedar ahí parado?
 
@@ -271,7 +275,7 @@ C) "Yo sí voy a durar."                                              [FRÍA]
 
 **mc:** Tienes razón en desconfiar.
 
-`[SPR nino neutral at pj(0.5)]`
+`[SPR nino sorprendida at pj(0.5)]`
 
 **nino:** …¿Qué?
 
@@ -466,6 +470,7 @@ entero.
 | `cg_nino_centro_comercial` | CG | pendiente | Movimiento 1. Nino comparando dos cajas de harina, sin saber que la miran |
 | `cg_nino_receta` | CG | pendiente | Movimiento 2. Plano cerrado sobre ella sosteniendo la tarjeta de receta contra el pecho |
 | `nino_neutral` | sprite | ya existe | Base de la escena, su hostilidad de reposo |
+| `nino_sorprendida` | sprite | ya existe | Para apertura de evento y cuando se da cuenta de que Futaro no es un tutor mas del monton |
 | `nino_nerviosa` | sprite | pendiente | El instante en que habla de más y se frena |
 | `descubrimiento` | BGM | pendiente | Compartida con los otros eventos de hermana. Entra solo en rama cálida |
 
