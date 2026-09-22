@@ -42,8 +42,9 @@ objeto que sostiene, no en la postura de los dos.
 **Lo que este evento NO gasta.** No resuelve por qué desconfía tanto más que sus
 hermanas, ni menciona a los tutores anteriores por nombre o número exacto. Esa
 cuenta completa es del Capítulo 2. Tampoco conecta todavía que traduzca sin
-darse cuenta con que Inglés sea su materia — la punta se nombra, el desarrollo
-es de más adelante.
+darse cuenta con que Inglés sea su materia — la punta se nombra (Movimiento 2,
+el intercambio sobre las etiquetas: lee y pronuncia sin esfuerzo, pero se traba
+al intentar explicarlo), el desarrollo es de más adelante.
 
 ---
 
@@ -124,15 +125,13 @@ notara.
 
 ### Movimiento 2 · La grieta
 
-`[SPR nino sorprendida at pj(0.5)]`
+`[SPR nino neutral at pj(0.5)]`
 
 **nino:** ¿Tu?
 
 **nino:** ¿Qué haces aquí?
 
 **mc:** Buscarte. Me tocó adivinar dónde estabas.
-
-`[SPR nino neutral at pj(0.5)]`
 
 **nino:** No te pedí que me buscaras.
 
@@ -165,6 +164,36 @@ como si hubiera pisado algo que no me tocaba.
 **narrador:** No contestó a eso.
 
 **narrador:** Volvió a mirar las dos cajas de harina, aunque ya había decidido.
+
+**mc:** ¿Qué dice esta lata? No reconozco ni la mitad de las palabras.
+
+**narrador:** Señalé una al azar, en el estante de al lado, solo por decir
+algo que no sonara a interrogatorio.
+
+**nino:** Extracto de vainilla. Doble concentración.
+
+**narrador:** Lo leyó sin pausa, sin buscar la palabra, como si estuviera
+leyendo en japonés.
+
+**mc:** ¿Y esto?
+
+**narrador:** Señalé otra caja, una palabra más larga, de esas que se traban
+al leerlas.
+
+**nino:** "Confectioners' sugar."
+
+**narrador:** Lo dijo bien. Demasiado bien para alguien que en clase apenas
+levanta la mano.
+
+**mc:** Se te da mejor de lo que aparentas en el salón.
+
+**nino:** No es lo mismo leer que...
+
+**narrador:** Se detuvo, buscando cómo seguir la frase.
+
+**nino:** Da igual. Olvídalo.
+
+**narrador:** Le costó más terminar esa frase que leer la etiqueta entera.
 
 **mc:** ¿Por qué a mí me tratas distinto que a ellas?
 
@@ -220,7 +249,7 @@ ilusionan.
 **mc_pensamiento:** Está protegiendo a sus hermanas de algo que ya les pasó
 demasiadas veces.
 
-`[SPR nino sorprendida at pj(0.5)]`
+`[SPR nino neutral at pj(0.5)]`
 
 **nino:** …
 
@@ -246,8 +275,6 @@ también lo que acababa de decir.
 `[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`
 
 **narrador:** Se agachó a recoger la cesta del suelo, sin mirarme.
-
-`[SPR nino neutral at pj(0.5)]`
 
 **nino:** ¿Y bien? ¿Vas a decir algo o te vas a quedar ahí parado?
 
@@ -275,7 +302,7 @@ C) "Yo sí voy a durar."                                              [FRÍA]
 
 **mc:** Tienes razón en desconfiar.
 
-`[SPR nino sorprendida at pj(0.5)]`
+`[SPR nino neutral at pj(0.5)]`
 
 **nino:** …¿Qué?
 
@@ -431,6 +458,58 @@ entero.
 
 **mc_pensamiento:** Quedan tres semanas.
 
+---
+
+### Movimiento 6 · La llamada
+
+*(común a las tres ramas, sin marcadores nuevos — mismo `bg_centro_comercial`
+de la salida)*
+
+**narrador:** Casi en la puerta, el celular le sonó en el bolsillo del
+delantal.
+
+**nino:** ¿Qué?
+
+**narrador:** Contestó sin mirar la pantalla. Debía saber de memoria quién
+era.
+
+**nino:** Sí, papá. Ya voy para allá.
+
+**narrador:** Se adelantó un paso, dándome la espalda, como si eso bastara
+para que no la escuchara.
+
+**nino:** Sobre el tutor nuevo...
+
+**narrador:** Bajó la voz. No lo suficiente.
+
+**nino:** Cámbialo. Busca a otro.
+
+**mc_pensamiento:** No dijo mi nombre. No hacía falta.
+
+**nino:** No, no pasó nada. Solo busca a otro. Ya.
+
+**narrador:** Se quedó escuchando lo que fuera que le contestaran del otro
+lado, con la mandíbula apretada.
+
+**nino:** Porque no quiero explicarlo, por eso.
+
+**narrador:** Colgó antes de que la respuesta la obligara a decir algo más.
+
+**narrador:** Guardó el teléfono y siguió caminando hacia la salida, sin
+voltear a verme.
+
+**mc_pensamiento:** No dijo por qué.
+
+**mc_pensamiento:** Y por primera vez, no sonó a que me odiara.
+
+**mc_pensamiento:** Sonó a que no sabía cómo explicarlo sin decir de más.
+
+---
+
+### Movimiento 7 · Cierre
+
+*(la última línea de pensamiento cambia según la rama)*
+
 *Cierre A (cálida):*
 
 **mc_pensamiento:** No confía en mí.
@@ -470,7 +549,6 @@ entero.
 | `cg_nino_centro_comercial` | CG | pendiente | Movimiento 1. Nino comparando dos cajas de harina, sin saber que la miran |
 | `cg_nino_receta` | CG | pendiente | Movimiento 2. Plano cerrado sobre ella sosteniendo la tarjeta de receta contra el pecho |
 | `nino_neutral` | sprite | ya existe | Base de la escena, su hostilidad de reposo |
-| `nino_sorprendida` | sprite | ya existe | Para apertura de evento y cuando se da cuenta de que Futaro no es un tutor mas del monton |
 | `nino_nerviosa` | sprite | pendiente | El instante en que habla de más y se frena |
 | `descubrimiento` | BGM | pendiente | Compartida con los otros eventos de hermana. Entra solo en rama cálida |
 
@@ -521,6 +599,16 @@ tristeza.
 - `nino_nerviosa` solo aparece en el instante exacto de la grieta (Movimiento 2
   y, en la rama cálida, otra vez en el Movimiento 4A). Fuera de esos bloques,
   siempre `nino_neutral`.
+- El Movimiento 6 (la llamada) reutiliza `bg_centro_comercial` de la salida —
+  no genera un asset de "cocina" ni de casa. Es deliberado: la escena de "pedir
+  que lo cambien de tutor" ocurre ahí mismo, no en una localización nueva.
+  Si en el resumen de fin de capítulo aparece esta escena descrita como si
+  pasara en la cocina de las Nakano, es un error de continuidad — corregir la
+  referencia para que apunte a este movimiento, en el centro comercial.
+- El intercambio de las etiquetas (Movimiento 2) es la única pista de que Nino
+  lee y pronuncia inglés con soltura aunque le cuesta hablarlo fluido. No debe
+  convertirse en una afirmación directa dentro de este evento — eso rompe la
+  regla de "la punta se nombra, el desarrollo es de más adelante".
 - Ninguna línea de diálogo, narrador o pensamiento supera dos líneas de caja de
   texto, siguiendo la regla fijada en el evento de Itsuki.
 - Este evento cumple el mínimo de la regla de CGs (2 de 2-3). Con Ichika en 3 y
