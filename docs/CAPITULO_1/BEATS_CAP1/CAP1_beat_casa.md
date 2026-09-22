@@ -251,26 +251,36 @@ lo necesario.
 
 if ichika_visitada_cap1:
 
-> **mc_pensamiento:** La encontré dormida en el salón del club.
+> **mc_pensamiento:** La encontré dormida en el salón del club, con el guion resbalándole de la mano.
+> 
+> **mc_pensamiento:** A su lado, dos latas de energizante.
+> 
+> **mc_pensamiento:** Una de ellas, abollada.
+> 
+> **mc_pensamiento:** Cuando despertó a medias, dijo que no sabía cuánto más podía seguir así.
+> 
+> **mc_pensamiento:** No sé si me lo dijo a mí o si se le escapó sin querer.
+> 
+> **mc_pensamiento:** Después volvió la sonrisa, como si nada.
 >
-> **mc_pensamiento:** Junto con dos latas de energizante al lado.
->
-> **mc_pensamiento:** Dijo que no sabía cuánto más podía seguir así.
->
-> **mc_pensamiento:** No sé si me lo dijo a mí o si se le escapó.
->
-> **mc_pensamiento:** Entiendo como se siente.
->
-> **mc_pensamiento:** Yo tambien tengo personas a quien cuidar.
->
-> **mc_pensamiento:** Se que su actitud calculadora la hará sobresalir en su examen.
+> **mc_pensamiento:** Pero tardó un segundo de más en volver.
+> 
+> **mc_pensamiento:** Entiendo cómo se siente. Yo también tengo personas a quien cuidar.
+> 
+> **mc_pensamiento:** Hasta medio dormida, calculó minutos y trenes sin pensarlo dos veces.
+> 
+> **mc_pensamiento:** Sé que esa cabeza para los números la va a hacer sobresalir en su examen,
+> aunque ella no se dé cuenta.
+
 
 else:
-
 > **mc_pensamiento:** No he interactuado mucho con ella desde el primer día,
-> cuando fingía que nada de esto le importaba.
 >
-> **mc_pensamiento:** No sé si sigue fingiendo o si dejó de hacerlo.
+> **mc_pensamiento:** cuando fingía que nada de esto le importaba.
+> 
+> **mc_pensamiento:** Sigue actuando igual que siempre frente a mí, sin ninguna grieta de por medio.
+> 
+> **mc_pensamiento:** No sé si sigue fingiendo o si dejó de hacerlo..
 
 ---
 
@@ -306,7 +316,7 @@ if nino_visitada_cap1:
 >
 > **mc_pensamiento:** Pero entendí que no está enojada conmigo.
 >
-> **mc_pensamiento:** Ella es un tren de emociones que nunca frena
+> **mc_pensamiento:** Ella es un tren de emociones que nunca frena.
 
 else:
 
@@ -369,20 +379,47 @@ else:
 
 ---
 
-**"Itsuki"**
+"Itsuki"
 
 if itsuki_visitada_cap1:
 
-> **mc_pensamiento:** La encontré atascada en un ejercicio de ciencias, sola
-> en el aula. Le dije dónde estaba el error y me dejó ayudarla sin decir
-> gracias.
+> **mc_pensamiento:** La encontré atascada en un ejercicio de ciencias.
+>
+> **mc_pensamiento:** Sola en el aula.
+>
+> **mc_pensamiento:** Con tres intentos tachados y la misma respuesta
+> equivocada las tres veces.
+>
+> **mc_pensamiento:** No era que no supiera del tema.
+>
+> **mc_pensamiento:** El resto del cuaderno estaba lleno de ejercicios resueltos.
+>
+> **mc_pensamiento:** Uno detrás de otro, sin un solo error.
+>
+> **mc_pensamiento:** Le dije dónde estaba el error y lo entendió al segundo,
+> como si solo le hubiera faltado que alguien más lo dijera en voz alta.
+>
+> **mc_pensamiento:** Me dejó ayudarla sin decir gracias.
 >
 > **mc_pensamiento:** Con ella, eso ya es bastante.
+>
+> **mc_pensamiento:** Y mas adelante, la encontré en la azotea, con un cuaderno que
+>  no llegó a abrir.
+>
+> **mc_pensamiento:** Logramos dialogar y entender nuestras diferencias.
+>
+> **mc_pensamiento:** Ya no le queda ningún sitio donde no tenga que fingir
+> que está bien.
+>
+
 
 else:
 
-> **mc_pensamiento:** No fui a buscarla al aula. Pero igual la encontré en la
-> azotea, con un cuaderno que no llegó a abrir.
+> **mc_pensamiento:** No fui a buscarla al aula.
+>
+> **mc_pensamiento:** Pero igual la encontré en la azotea.
+>
+> **mc_pensamiento:** Con un cuaderno que no llegó a abrir.
 >
 > **mc_pensamiento:** Ya no le queda ningún sitio donde no tenga que fingir
 > que está bien.
@@ -395,11 +432,15 @@ if desaires_cap1 >= 3:
 
 > **mc_pensamiento:** No sé si mañana esto sigue siendo mi trabajo.
 >
-> **mc_pensamiento:** Ninguna aprobó todavía. Y las cinco llegan a este
-> último tramo por caminos que yo elegí, uno a uno, sin preguntarles si
-> querían que fuera así.
+> **mc_pensamiento:** Ninguna aprobó todavía.
+>
+> **mc_pensamiento:** Y las cinco llegan a este último tramo por caminos que yo elegí.
+>
+> **mc_pensamiento:** Uno a uno, sin preguntarles si querían que fuera así.
 >
 > **mc_pensamiento:** Si mañana me voy, me voy sabiendo exactamente por qué.
+>
+> **mc_pensamiento:** Todo el peso de mis decisiones caerán mañana.
 
 ---
 
@@ -416,7 +457,7 @@ cosas para el día siguiente, como si mañana fuera un día cualquiera.
 
 `[MUS stop fadeout 3.0]`
 
-**narrador:** Mañana era el examen.
+**narrador:** Mañana será el examen.
 
 `→ Sale al Evento 6.`
 
