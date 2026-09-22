@@ -49,9 +49,10 @@ generarse con la misma luz y la misma sesión para leerse como el mismo minuto.
 
 **Lo que este evento NO gasta.** No explica por qué actúa ni cuánto le preocupa
 el dinero de la familia: eso pertenece a capítulos siguientes. Tampoco conecta
-todavía su manejo de horarios imposibles con que Matemáticas sea su materia — es
-la misma lógica que con Yotsuba y Literatura: la punta se nombra, el desarrollo
-es de más adelante.
+todavía su manejo de horarios imposibles con que Matemáticas sea su materia —
+la punta se nombra (Movimiento 2, cuando calcula minutos y trenes de memoria
+sin darse cuenta de que lo hace), el desarrollo es de más adelante. Es la misma
+lógica que con Yotsuba y Literatura, y que con Nino e Inglés.
 
 ---
 
@@ -188,13 +189,39 @@ era la segunda.
 **narrador:** Más rápido de lo necesario, antes de que yo pudiera leer lo que
 estaba tachado.
 
+**mc:** ¿Cuándo puedo verte para la próxima lección?
+
+**narrador:** Se lo pregunté sin pensar mucho, solo para cambiar de tema yo
+también.
+
+**ichika:** Martes a las cinco y veinte. Nunca antes de eso.
+
+**mc:** ¿Por qué no a las cinco y media, si total es casi lo mismo?
+
+**ichika:** Porque el tren de las cinco cuarenta y cinco tarda seis minutos en
+llegar a la estación desde aquí, y necesito cuatro para cambiarme.
+
+**narrador:** Lo dijo sin pausar, sin contar con los dedos, como si ya tuviera
+la cuenta hecha de memoria.
+
+**mc_pensamiento:** Nadie improvisa ese número tan rápido.
+
+`[SPR ichika sonrisa at pj(0.5)]`
+
+**ichika:** ¡Es que soy muy organizada! ¡Parte del oficio!
+
+**narrador:** Se rió, tapando otra vez algo que se le había escapado sin
+querer.
+
 **mc_pensamiento:** Dos latas de energizante.
 
 **mc_pensamiento:** Un horario con algo tachado que no quiere que vea. 
 
+**mc_pensamiento:** Una cuenta de minutos que le salió demasiado rápido.
+
 **mc_pensamiento:** Y ahora esto.
 
-**mc_pensamiento:** Ninguna de las tres cosas es una casualidad sola.
+**mc_pensamiento:** Ninguna de las cuatro cosas es una casualidad sola.
 
 **mc_pensamiento:** Juntas, son un patrón.
 
@@ -520,6 +547,10 @@ tamaño se confunde con `neutral`, el sprite no cumplió su función.
   siempre `ichika_neutral` o `ichika_sonrisa` según corresponda.
 - Ninguna línea de diálogo, narrador o pensamiento supera dos líneas de caja de
   texto, siguiendo la regla fijada en el evento de Itsuki.
+- El intercambio sobre el horario del tren (Movimiento 2) no usa CG ni sprite
+  nuevo — reutiliza `ichika_neutral` y `ichika_sonrisa`. Es la única pista de
+  que calcula rápido y de memoria; no debe convertirse en una afirmación
+  directa dentro de este evento, misma regla que con la punta de Nino.
 - **Regla nueva del proyecto, aplicada desde este evento en adelante:** cada
   ruta de hermana lleva un mínimo de dos y un máximo de tres CG nuevos. Revisar
   que Nino, cuando se escriba, cumpla el mismo rango.
