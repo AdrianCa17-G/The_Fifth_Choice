@@ -482,11 +482,11 @@ para que no la escuchara.
 
 **narrador:** Bajó la voz. No lo suficiente.
 
-**nino:** Cámbialo. Busca a otro.
+**nino:** Aún no me convence.
 
 **mc_pensamiento:** No dijo mi nombre. No hacía falta.
 
-**nino:** No, no pasó nada. Solo busca a otro. Ya.
+**nino:** No, no pasó nada. 
 
 **narrador:** Se quedó escuchando lo que fuera que le contestaran del otro
 lado, con la mandíbula apretada.
