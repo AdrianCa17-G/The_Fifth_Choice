@@ -251,7 +251,9 @@ lo necesario.
 
 if ichika_visitada_cap1:
 
-> **mc_pensamiento:** La encontré dormida en el salón del club, con el guion resbalándole de la mano.
+> **mc_pensamiento:** La encontré dormida en el salón del club.
+>
+> **mc_pensamiento:** Con el guion resbalándole de la mano.
 > 
 > **mc_pensamiento:** A su lado, dos latas de energizante.
 > 
@@ -331,22 +333,44 @@ else:
 
 ---
 
-**"Miku"**
+"Miku"
 
 if miku_visitada_cap1:
 
 > **mc_pensamiento:** La encontré en la biblioteca.
 >
-> **mc_pensamiento:** Me habló de historia como si nadie fuera a interrumpirla.
+> **mc_pensamiento:** Con cuatro libros que no eran del temario.
+>
+> **mc_pensamiento:** Apilados por tamaño y con los lomos alineados.
+>
+> **mc_pensamiento:** Lleva los audífonos colgados del cuello, apagados.
+>
+> **mc_pensamiento:** No son para escuchar música —
+>
+> **mc_pensamiento:**  son para subírselos en cuanto alguien se acerca.
+>
+> **mc_pensamiento:** Le mostré que yo también había leído su mismo libro,
+> hasta la página noventa y dos.
+>
+> **mc_pensamiento:** Ahí me habló de historia como si nadie fuera a
+> interrumpirla.
 >
 > **mc_pensamiento:** Después se disculpó por hablar.
 >
 > **mc_pensamiento:** Como si eso también fuera un error suyo.
 >
-> **mc_pensamiento:** Es una chica muy reservada, pero cuando la conoces es
-> una persona totalmente interesante.
+> **mc_pensamiento:** En su hoja de ayer había una respuesta correcta borrada
+> a medias.
 >
-> **mc_pensamiento:** Confío en que hará brillar sus conocimientos de historia.
+> **mc_pensamiento:** Sabía la respuesta, pero no confió lo suficiente en
+> ella misma para dejarla ahí.
+>
+> **mc_pensamiento:** Es una chica muy reservada.
+>
+> **mc_pensamiento:** Pero cuando la conoces es una persona totalmente interesante.
+>
+> **mc_pensamiento:** Confío en que hará brillar sus conocimientos de
+> historia, en cuanto deje de disculparse por tenerlos.
 
 else:
 
@@ -364,11 +388,34 @@ else:
 
 if yotsuba_visitada_cap1:
 
-> **mc_pensamiento:** La encontré corriendo sola en la pista, mucho después
-> de que el club se fuera a casa.
+> **mc_pensamiento:** La encontré corriendo sola en la pista.
 >
-> **mc_pensamiento:** Lleva las vueltas anotadas en la muñeca. Si no, pierde
-> la cuenta.
+> **mc_pensamiento:** Mucho después de que el club se fuera a casa.
+>
+> **mc_pensamiento:** Lleva las vueltas anotadas en la muñeca.
+>
+> **mc_pensamiento:** Si no, pierde la cuenta.
+>
+> **mc_pensamiento:** Es una chica muy energetica y positiva.
+>
+> **mc_pensamiento:** Siempre intenta verle el lado bueno a las cosas.
+>
+> **mc_pensamiento:** Pero en el fondo, es alguien que tiene miedo a ser
+> olvidada o no ser de utilidad para los demás.
+>
+> **mc_pensamiento:** Dijo que sus hermanas tienen algo cada una, y que ella
+> solo corre y anima.
+>
+> **mc_pensamiento:** Pero animar a cinco personas distintas.
+>
+> **mc_pensamiento:** Cada una a su manera, no es tan simple como ella lo hace sonar.
+>
+> **mc_pensamiento:** Sospecho que se le da mejor leer a la gente de lo que
+> ella misma cree.
+>
+> **mc_pensamiento:** Si.
+>
+> **mc_pensamiento:** Eso es.
 
 else:
 
@@ -376,7 +423,6 @@ else:
 >
 > **mc_pensamiento:** Solo la sonrisa que le pone a todo, incluso a lo que no
 > debería sonreírse.
-
 ---
 
 "Itsuki"
