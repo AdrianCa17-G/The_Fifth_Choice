@@ -16,7 +16,7 @@ todavía · `[$]` línea de código.
 
 ### Decisiones de este beat
 
-**Qué avanza.** Itsuki mostró el costo en la biblioteca de sí misma; Nino, el
+**Qué avanza.** Itsuki mostró el costo en la azotea de sí misma; Nino, el
 costo en su propia casa. Este beat es el único que ocurre en el territorio de
 Futaro, así que el costo que muestra es el de **él**: la rutina de tutor ya no
 se queda en el departamento. Se le está filtrando a su propia familia sin que
@@ -61,12 +61,15 @@ existe (referencia a su beat), en vez de fingir que no pasó nada con ellas.
 
 `[BG bg_comedor]` `[MUS cena fadein 2.0]`
 
-**narrador:** El examen era al día siguiente. Faltaban horas, no días.
+**narrador:** El examen era al día siguiente. 
 
-**mc_pensamiento:** Treinta días. Contados desde la noche en que anoté los
-cinco nombres.
+**narrador:** Faltaban horas, no días.
 
-**mc_pensamiento:** Mañana se sabe si sirvieron de algo.
+**mc_pensamiento:** Han pasado treinta días. 
+
+**mc_pensamiento:** Contados desde la noche en que anoté los cinco nombres.
+
+**mc_pensamiento:** Mañana sabré si sirvieron de algo.
 
 **narrador:** Raiha estaba en la mesa, con su propio cuaderno abierto y la
 cena ya servida y fría.
@@ -75,9 +78,9 @@ cena ya servida y fría.
 
 **raiha:** ¡Hermanito! Te guardé la cena, pero se enfrió como tres veces.
 
-**mc:** Perdón. Se hizo tarde.
+**mc:** Perdoname Raiha. Se me hizo tarde.
 
-**raiha:** Siempre se hace tarde.
+**raiha:** Desde que comenzaste tu tranajo como tutor, siempre se te hace tarde.
 
 **narrador:** No lo dijo con reproche. Lo dijo como quien ya lleva la cuenta.
 
@@ -144,8 +147,9 @@ forma.
 
 **mc:** Entonces revisa el siguiente paso con la misma lógica.
 
-**narrador:** Lo dije otra vez con el mismo tono. Esta vez lo noté yo también,
-medio segundo tarde.
+**narrador:** Lo dije otra vez con el mismo tono. 
+
+**narrador:** Esta vez lo noté yo también, medio segundo tarde.
 
 ---
 
@@ -157,22 +161,27 @@ medio segundo tarde.
 
 `[SPR isanari neutral at pj(0.73)]`
 
-**isanari:** Sigues despierto a esta hora.
+**isanari:** Vaya mc, te ves demasiado cansado.
+
+**isanari:** ¿Como vas? ¿Todo marcha bien en tu trabajo?
 
 **mc:** El examen es mañana.
 
 **isanari:** ¿El tuyo o el de ellas?
 
-**mc:** El de ellas. El mío ya lo rendí hace un mes, cuando dijiste que sí por
-mí.
+**mc:** El de ellas. 
+
+**mc:** El mío ya lo rendí hace un mes, cuando dijiste que sí por mí.
 
 `[SPR isanari sonriendo at pj(0.73)]`
 
-**isanari:** No suenes tan dramático. Te va bien, ¿no? El dinero sigue
-entrando.
+**isanari:** No suenes tan dramático. 
 
-**narrador:** No preguntó cómo estaba. Preguntó si el dinero seguía llegando,
-en la misma frase.
+**isanari:** Te va bien, ¿no? El dinero sigue entrando.
+
+**narrador:** No preguntó cómo estaba.
+
+**narrador:** Preguntó si el dinero seguía llegando, en la misma frase.
 
 **mc_pensamiento:** No es que me sorprenda.
 
@@ -181,15 +190,18 @@ que no les importa, se siente distinto verlo a él sin fingir nada.
 
 `[SPR raiha regano at pj(0.20)]`
 
-**raiha:** ¡Papá! Pregúntale cómo está, no cuánto pagan.
+**raiha:** ¡Papá! 
+
+**raiha:** Pregúntale cómo está, no cuánto pagan.
 
 **isanari:** Es la misma pregunta, Raiha. Si le fuera mal, no seguirían
 pagando.
 
-**narrador:** Lo dijo sin maldad. Con la misma lógica fría con la que arregla
-todo lo demás.
+**narrador:** Lo dijo sin maldad.
 
-**mc:** Va a estar bien.
+**narrador:** Con la misma lógica fría con la que arregla todo lo demás.
+
+**mc:** Esas cinco van a salir bien.
 
 **isanari:** Eso espero. Cinco veces la tarifa no cae del cielo dos veces.
 
@@ -224,7 +236,8 @@ lo necesario.
 **mc_pensamiento:** Cinco nombres, en columna, con una línea debajo.
 
 **mc_pensamiento:** Treinta días después, la letra sigue siendo la misma.
-Solo que ahora sé lo que cuesta cada nombre.
+
+**mc_pensamiento:** Solo que ahora sé lo que cuesta cada nombre.
 
 **narrador:** Dejé la vista quieta un momento antes de cerrarla.
 
@@ -238,14 +251,23 @@ Solo que ahora sé lo que cuesta cada nombre.
 
 if ichika_visitada_cap1:
 
-> **mc_pensamiento:** La encontré dormida en el suelo del club, con dos latas
-> de energizante al lado. Dijo que no sabía cuánto más podía seguir así.
+> **mc_pensamiento:** La encontré dormida en el salón del club.
+>
+> **mc_pensamiento:** Junto con dos latas de energizante al lado.
+>
+> **mc_pensamiento:** Dijo que no sabía cuánto más podía seguir así.
 >
 > **mc_pensamiento:** No sé si me lo dijo a mí o si se le escapó.
+>
+> **mc_pensamiento:** Entiendo como se siente.
+>
+> **mc_pensamiento:** Yo tambien tengo personas a quien cuidar.
+>
+> **mc_pensamiento:** Se que su actitud calculadora la hará sobresalir en su examen.
 
 else:
 
-> **mc_pensamiento:** No he vuelto a hablar con ella desde el primer día,
+> **mc_pensamiento:** No he interactuado mucho con ella desde el primer día,
 > cuando fingía que nada de esto le importaba.
 >
 > **mc_pensamiento:** No sé si sigue fingiendo o si dejó de hacerlo.
@@ -256,19 +278,46 @@ else:
 
 if nino_visitada_cap1:
 
+> **mc_pensamiento:** Nino me corrigió una frase en inglés. No se lo pedí
+> pero lo hizo.
+>
+> **mc_pensamiento:** Luego, la encontré en una sección de repostería internacional,
+> tenia productos con nombres extranjeros, algunos que ni siquiera sabía su significado.
+>
 > **mc_pensamiento:** La encontré comparando dos cajas de harina, con una
 > receta que no es suya escrita a mano.
 >
-> **mc_pensamiento:** Dijo que ya perdió la cuenta de cuántos tutores vio
-> irse. No logré convencerla de lo contrario.
+> **mc_pensamiento:** Logré interactuar con ella acerca de los nombres de esos productos.
+>
+> **mc_pensamiento:** Con dificultad para entablar una conversacion pacifica...
+>
+> **mc_pensamiento:** Me di cuenta que tiene un talento innato para el ingles.
+>
+> **mc_pensamiento:** Aunque le cuesta hablarlo de manera fluida, sabe como leerlo y pronunciarlo.
+>
+> **mc_pensamiento:** Tambien me dijo que ya perdió la cuenta de cuántos tutores vio irse.
+>
+> **mc_pensamiento:** Yo no le prometí nada, no logré convencerla de lo contrario.
+>
+> **mc_pensamiento:** Y por último, ese dia, en su cocina, estuve escuchándola pedirle
+> a su padre que me echara.
+>
+> **mc_pensamiento:** Se frenó antes de decir por qué.
+>
+> **mc_pensamiento:** Pero entendí que no está enojada conmigo.
+>
+> **mc_pensamiento:** Ella es un tren de emociones que nunca frena
 
 else:
 
-> **mc_pensamiento:** No fui a buscarla al centro comercial. Pero igual
-> terminé en su cocina, escuchándola pedirle a su padre que me echara.
+> **mc_pensamiento:** No fui a buscarla al centro comercial.
 >
-> **mc_pensamiento:** Se frenó antes de decir por qué. Pero entendí que no
-> está enojada conmigo.
+> **mc_pensamiento:** Pero igual terminé en su cocina, escuchándola
+> pedirle a su padre que me echara.
+>
+> **mc_pensamiento:** Se frenó antes de decir por qué.
+>
+> **mc_pensamiento:** Pero entendí que no está enojada conmigo.
 
 ---
 
@@ -276,16 +325,28 @@ else:
 
 if miku_visitada_cap1:
 
-> **mc_pensamiento:** La encontré en la biblioteca, hablando de historia como
-> si nadie fuera a interrumpirla.
+> **mc_pensamiento:** La encontré en la biblioteca.
 >
-> **mc_pensamiento:** Después se disculpó por hablar. Como si eso también
-> fuera un error suyo.
+> **mc_pensamiento:** Me habló de historia como si nadie fuera a interrumpirla.
+>
+> **mc_pensamiento:** Después se disculpó por hablar.
+>
+> **mc_pensamiento:** Como si eso también fuera un error suyo.
+>
+> **mc_pensamiento:** Es una chica muy reservada, pero cuando la conoces es
+> una persona totalmente interesante.
+>
+> **mc_pensamiento:** Confío en que hará brillar sus conocimientos de historia.
 
 else:
 
-> **mc_pensamiento:** Sigo sin saber mucho de ella. Los audífonos que nunca
-> lleva puestos, y el libro que escondió la primera noche.
+> **mc_pensamiento:** Sigo sin saber mucho de ella.
+>
+> **mc_pensamiento:** Los audífonos que lleva puestos en su cuello.
+>
+> **mc_pensamiento:** Y el libro que escondió la primera noche.
+>
+> **mc_pensamiento:** Ella es todo un misterio.
 
 ---
 
