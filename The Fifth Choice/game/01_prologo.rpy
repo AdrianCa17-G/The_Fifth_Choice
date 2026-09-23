@@ -397,7 +397,7 @@ label prologo:
     scene bg_azotea
     with fade
 
-    play ambiente amb_viento fadein 3.0 volume 0.35
+    play ambiente amb_viento fadein 2.0 volume 1.5
 
     mc_pensamiento "Cuando por fin terminaron las clases, subí a la azotea a despejarme un poco."
 
@@ -713,7 +713,7 @@ label prologo:
 
     narrador "Se frenó a medio metro de mí."
     
-    narrador "Con una cinta naranja en el pelo y una sonrisa que ocupaba media habitación."
+    narrador "Con un listón verde en el pelo y una sonrisa que ocupaba media habitación."
 
     yotsuba "¡Hola! ¡Soy Yotsuba!"
     
@@ -760,11 +760,12 @@ label prologo:
     show nino at pj_calla(0.5)
     
     play sound sfx_portazo volume 2.5
-    play music caos fadeout 0.5 fadein 1.0
-
+  
     narrador "Antes de que pudiera terminar la palabra, la puerta al fondo del pasillo se abrió de golpe."
 
     itsuki_inicio "Ya volví. Compré el pan que faltaba y—"
+
+    play music caos fadeout 0.5 fadein 1.0
 
     scene cg_itsuki_discusion
     with dissolve
@@ -1195,4 +1196,4 @@ label prologo:
 
     stop music fadeout 3.0
 
-    jump cap1_inicio
+    jump cap1_apertura

@@ -161,10 +161,13 @@ image ichika neutral   = "sprites/ichika_sprites/ichika_neutral.png"
 image ichika sonriendo   = "sprites/ichika_sprites/ichika_sonrisa.png"
 
 image nino neutral   = "sprites/nino_sprites/nino_neutral.png"
+image nino pillada   = "sprites/nino_sprites/nino_pillada.png"
 
 image miku neutral   = "sprites/miku_sprites/miku_neutral.png"
 
 image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonrisa.png"
+image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
+
 
 ## --- Pendientes del Capitulo 1 -----------------------------------------------
 ## Declararlos SIEMPRE como atributo, con espacio, igual que los de arriba.
@@ -227,10 +230,10 @@ transform pj_calla(x=0.5):
 ## transform con la posición de partida, no una transición: pasarles
 ## `dissolve` revienta con AttributeError al renderizar. Quien entra en
 ## escena se muestra en una sentencia aparte con `with dissolve`.
-define mover = MoveTransition(0.5)
+define mover = MoveTransition(0.6)
 
 # Definir dissolve que dura 1.2 segundos
-define disolucion_lenta = Dissolve(1.2)
+define disolucion_lenta = Dissolve(0.8)
 
 
 ################################################################################
@@ -256,7 +259,7 @@ init python:
         renpy.music.set_volume(nivel, delay=bajada, channel="music")
         renpy.music.set_volume(1.0, delay=subida, channel="music")
 
-    renpy.music.set_volume(0.8, channel="music")
+    renpy.music.set_volume(1.0, channel="music")
 
 ## Musica --------------------------------------------------------------------
 ## `hogar` suena SOLO dos veces en todo el prologo: bajo el retrato
