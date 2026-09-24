@@ -452,13 +452,38 @@ a la de antes.
 *(común a las tres ramas; la última línea cambia)*
 
 `[BG bg_pista_atletismo — luz más baja, atardecer avanzado]`
+
 `[MUS stop fadeout 1.5]`
 
-**narrador:** Salí de la pista cuando ella terminó la vuelta treinta.
+**narrador:** Recogí mis cosas y caminé hacia la salida del graderío.
 
-**mc_pensamiento:** Una de cinco. Y esta acaba de llegar corriendo.
+**mc_pensamiento:** Pensé en decirle algo antes de irme.
 
-**mc_pensamiento:** Solo quedan tres semanas.
+**mc_pensamiento:** Un "hasta mañana", algo.
+
+**narrador:** Pero ella ya había vuelto a la pista antes de que llegara a la puerta, con la cabeza en otra vuelta.
+
+**mc_pensamiento:** No dijo "nos vemos mañana". Hoy ninguna de las dos lo dijo.
+
+[SFX sfx_pisadas_pista — loop, distante, entra bajo]
+
+**narrador:** Me detuve un segundo junto a la puerta, fuera de su vista, tal como había llegado.
+
+**mc_pensamiento:** No fue a propósito. O no del todo.
+
+**yotsuba:** Treinta y uno.
+
+**narrador:** Sin exclamación. Sin nadie más que ella para escucharlo.
+
+**mc_pensamiento:** Dijo que le faltaban treinta. Debería haber parado ahí.
+
+**yotsuba:** Treinta y dos.
+
+**mc_pensamiento:** Así sonaba cuando de verdad creía que no la oía nadie.
+
+**mc_pensamiento:** Ni una gracia. Ni un chiste sobre sus piernas. 
+
+**mc_pensamiento:** Solo el número, seco, como quien paga una cuenta que ya debería estar saldada.
 
 *Cierre A (cálida):*
 
