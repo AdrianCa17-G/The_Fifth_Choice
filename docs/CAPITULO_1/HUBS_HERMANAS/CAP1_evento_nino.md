@@ -440,7 +440,7 @@ antes de que pudiera ver algo más.
 
 ---
 
-### Movimiento 5 · Cierre
+### Movimiento 5 · La llamada
 
 *(común a las tres ramas; la última línea cambia)*
 
@@ -457,13 +457,6 @@ entero.
 **mc_pensamiento:** Ni eso me lo iba a dejar hacer.
 
 **mc_pensamiento:** Quedan tres semanas.
-
----
-
-### Movimiento 6 · La llamada
-
-*(común a las tres ramas, sin marcadores nuevos — mismo `bg_centro_comercial`
-de la salida)*
 
 **narrador:** Casi en la puerta, el celular le sonó en el bolsillo del
 delantal.
@@ -506,7 +499,7 @@ voltear a verme.
 
 ---
 
-### Movimiento 7 · Cierre
+### Movimiento 6 · Cierre
 
 *(la última línea de pensamiento cambia según la rama)*
 
