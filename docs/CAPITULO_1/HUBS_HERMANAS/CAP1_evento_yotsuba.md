@@ -54,7 +54,7 @@ detrás de la cancha de voleibol.
 **narrador:** El club había cerrado. Las gradas estaban vacías y las luces de
 competición apagadas. 
 
-**narrador:** Solo estaba encendido el sistema de emergencia, que daba
+**narrador:** Solo había iluminación gracias al sol ya escondiendose, que daba
 una luz naranja pareja y sin sombras.
 
 `[CG NUEVO — cg_yotsuba_pista: Yotsuba de espaldas en la recta final de la
@@ -234,22 +234,41 @@ estar aquí es no quedarse atrás.
 
 `[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`
 
-**narrador:** Se limpió el rotulador de la muñeca con el reverso de la
-camiseta y volvió a mirarme con esa sonrisa intacta.
+**narrador** Se limpió el rotulador de la muñeca con el reverso de la camiseta y volvió a mirarme con esa sonrisa intacta.
 
-**yotsuba:** ¡Bueno! 
+**yotsuba** ¡Bueno!
 
-**yotsuba:** ¡Si has venido a verme entrenar, puedes cronometrarme
-en la siguiente vuelta! ¡Soy más rápida cuando alguien mira!
+**yotsuba** ¡Si has venido a verme entrenar, puedes cronometrarme en la siguiente vuelta! 
 
-**mc_pensamiento:** Cambió de tema.
+**yotsuba** ¡Soy más rápida cuando alguien mira!
 
-**mc_pensamiento:** Lo hizo tan rápido y con tanta energía que casi no lo
-noté.
+**mc_pensamiento** Cambió de tema.
 
-**narrador:** Pensé en lo que había visto estas últimas ocho vueltas.
+**mc_pensamiento** Lo hizo tan rápido y con tanta energía que casi no lo noté.
 
-**narrador:** En lo que había dicho, y en lo que no.
+**narrador** Dio un par de saltos en el sitio, sacudiendo los brazos, como si con eso pudiera sacudirse también lo que acababa de decir.
+
+**yotsuba** ¡Venga, no hay tiempo que perder! ¡El sol no espera!
+
+**narrador** Miré hacia las gradas. El sol ya se había ido hacía rato; solo quedaba la luz naranja de emergencia.
+
+**mc_pensamiento** No había sol que esperar. Ella lo sabía tan bien como yo.
+
+**narrador** Pensé en lo que había visto estas últimas ocho vueltas.
+
+**narrador** En lo que había dicho, y en lo que no.
+
+**mc_pensamiento** "Yo corro y animo." Como si fuera un puesto que le tocó por descarte, no algo que eligió.
+
+**mc_pensamiento** Podía dejarlo pasar. Cronometrarla y ya.
+
+**mc_pensamiento** O podía decir algo que quizás le gustara haber oído.
+
+**narrador** Ella seguía ahí, con el brazo estirado esperando que le devolviera el cronómetro, la sonrisa firme en su sitio.
+
+**mc_pensamiento** Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacia por dentro,
+
+**mc_pensamiento**  o si por fin le hago caer en cuenta su valor como persona.
 
 ```
 MENÚ — ¿Cómo respondes?
@@ -461,11 +480,11 @@ a la de antes.
 
 **mc_pensamiento:** Un "hasta mañana", algo.
 
+[SFX sfx_pisadas_pista — loop, distante, entra bajo]
+
 **narrador:** Pero ella ya había vuelto a la pista antes de que llegara a la puerta, con la cabeza en otra vuelta.
 
 **mc_pensamiento:** No dijo "nos vemos mañana". Hoy ninguna de las dos lo dijo.
-
-[SFX sfx_pisadas_pista — loop, distante, entra bajo]
 
 **mc_pensamiento:** Una de cinco. Y esta acaba de llegar corriendo.
 
