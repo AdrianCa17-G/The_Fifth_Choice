@@ -160,7 +160,7 @@ init python:
 # ------------------------------------------------------------
 # Placeholders de fondo — borralos cuando tengas los reales
 # ------------------------------------------------------------
-image ph_bg_aula       = "bg/aula.webp"
+image ph_bg_aula       = "bg/hubs_hermanas/aula_tarde.webp"
 image ph_bg_pista      = Solid("#1d3a28")
 image ph_bg_ensayo     = Solid("#3a1d2c")
 image ph_bg_comercial  = Solid("#2c1d3a")

@@ -68,7 +68,7 @@ label prologo:
     play music hogar fadein 3.0
 
     scene cg_familia
-    with dissolve
+    with fade
 
     mc_pensamiento "Mi madre murió cuando yo era pequeño, dejándonos una deuda que todavía nos persigue." 
 
@@ -85,7 +85,7 @@ label prologo:
     mc_pensamiento "Estudio porque las notas son lo único que puedo controlar."
 
     scene cg_calificacion
-    with dissolve
+    with fade
 
     mc_pensamiento "Esta pila de libros es la única herramienta que tengo para cambiar nuestra realidad."
 
@@ -283,7 +283,7 @@ label prologo:
     mc_pensamiento "(Cierto... hoy entregan los resultados de los exámenes de práctica. Iré al salón)."
 
     scene cg_examen
-    with dissolve
+    with fade
 
     profe "[mc]. Enhorabuena por el examen de práctica. Otra vez el primer lugar."
 
@@ -294,7 +294,7 @@ label prologo:
     mc_pensamiento "(Palabras bonitas. Lástima que el futuro no pague las facturas de hoy)."
 
     scene bg_aula
-    with dissolve
+    with fade
 
     mc_pensamiento "Con mi examen perfecto en mano, fui a buscar mi asiento habitual."
 
@@ -307,7 +307,7 @@ label prologo:
     play music incomodo fadeout 1.0 fadein 1.5
 
     scene cg_itsuki_sentada
-    with dissolve
+    with fade
 
     mc_pensamiento "¡Estaba ocupado!"
 
@@ -324,7 +324,7 @@ label prologo:
     narrador "Sostuvo los palillos a mitad de camino y fijó su mirada en la hoja de examen que él llevaba en la mano."
 
     scene bg_aula
-    with dissolve
+    with fade
    
     show itsuki sonriendo at pj(0.5)
     with dissolve
@@ -501,7 +501,7 @@ label prologo:
     play music cotidiano fadeout 1.0 fadein 2.0
 
     scene bg_edificio
-    with dissolve
+    with fade
 
     narrador "La dirección que me dio correspondía a un edificio que solo había visto de lejos."
 
@@ -510,7 +510,7 @@ label prologo:
     mc_pensamiento "(Bien... pongamos orden a esto antes de tocar la puerta)."
 
     scene bg_entrada_edificio
-    with dissolve
+    with fade
 
     mc_pensamiento "Un alumno. Nivel probablemente bajo." 
     
@@ -534,7 +534,7 @@ label prologo:
     stop music fadeout 2.0
 
     scene cg_manija_edificio
-    with dissolve
+    with fade
 
     mc_pensamiento "(Muy bien... empecemos)."
 
@@ -552,7 +552,7 @@ label prologo:
     play sound sfx_puerta_abre volume 1.5
 
     scene cg_ichika_puerta
-    with dissolve
+    with fade
 
     play music extraneza fadein 2.0
 
@@ -583,7 +583,7 @@ label prologo:
     ## --- Nino ---------------------------------------------------------------
 
     scene cg_nino_pasillo
-    with dissolve
+    with fade
 
     nino "Ichika. ¿A quién diablos le abriste la puerta?"
 
@@ -606,7 +606,7 @@ label prologo:
     nino "Los suficientes como para saber cómo termina esto."
 
     scene bg_departamento
-    with dissolve
+    with fade
 
     mc_pensamiento "Gemelas, entonces. Bien... eso explica el sueldo ridículamente alto."
 
@@ -615,7 +615,7 @@ label prologo:
     ## --- Miku ---------------------------------------------------------------
 
     scene cg_miku_sofa
-    with dissolve
+    with fade
 
     narrador "En el sofá, una tercera chica —la misma cara, otra vez— leía con los audífonos colgando del cuello."
 
@@ -658,7 +658,7 @@ label prologo:
     mc_pensamiento "Esto es cada vez más extraño."
 
     scene bg_departamento
-    with dissolve
+    with fade
 
     show ichika neutral at pj(0.5)
     with dissolve
@@ -709,7 +709,7 @@ label prologo:
     yotsuba "¡¿Ya llegó?! ¡¿Ya llegó el tutor?!"
 
     scene cg_yotsuba_corriendo
-    with dissolve
+    with fade
 
     narrador "Se frenó a medio metro de mí."
     
@@ -742,7 +742,7 @@ label prologo:
     yotsuba "¡Alguien tiene que dárselas!"
 
     scene bg_departamento
-    with dissolve
+    with fade
 
     mc_pensamiento "Cuatro."
 
@@ -768,7 +768,7 @@ label prologo:
     play music caos fadeout 0.5 fadein 1.0
 
     scene cg_itsuki_discusion
-    with dissolve
+    with fade
 
     ## Compite con `caos`, que va a tope en esta escena.
     $ duck()
@@ -821,7 +821,7 @@ label prologo:
     mc_pensamiento "Sentí un golpe de culpa... aunque ni loco se lo admitiría en la cara."
 
     scene bg_departamento
-    with dissolve
+    with fade
 
     show ichika sonriendo at pj(0.5)
     with dissolve
@@ -932,7 +932,7 @@ label prologo:
     narrador "Cuando la figura de su padre apareció en el umbral."
 
     scene cg_maruo_reunion
-    with dissolve
+    with fade
 
     play music contrato fadein 2.0
 
@@ -977,7 +977,7 @@ label prologo:
     narrador "Las cinco gritaron al mismo tiempo desde la entrada de la sala."
 
     scene cg_maruo_reunion
-    with dissolve
+    with fade
 
     maruo "Ese es exactamente el problema que te estoy pagando por resolver."
 
@@ -994,7 +994,7 @@ label prologo:
     mc "…Entendido."
 
     scene bg_departamento
-    with dissolve
+    with fade
 
     play sound sfx_puerta_cierra volume 1.0
 
@@ -1025,7 +1025,7 @@ label prologo:
     play music derrota fadein 2.5
 
     scene cg_hermanas_estudiando
-    with dissolve
+    with fade
 
     mc "Bien. Vamos a empezar por lo básico."
     
@@ -1088,7 +1088,7 @@ label prologo:
     narrador "Su salida fue solo el detonante de un fracaso que ya se veía venir."
 
     scene bg_departamento
-    with dissolve
+    with fade
 
     narrador "Ichika se puso de pie bostezando, alegando que el estrés le arruinaría la piel para su audición de mañana."
 

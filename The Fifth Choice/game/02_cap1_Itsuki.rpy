@@ -1,4 +1,20 @@
 ################################################################################
+##  BGs Y CGs PROPIOS DEL HUB DE ITSUKI 
+##  Ilustraciones y fondos de momentos concretos de este hub. Los  que
+##  el hub reutiliza son todos los sprites de itsuki y el de timida que nunca
+##  se usó en la apertura
+################################################################################
+
+image bg_aula_tarde = "images/bg/hubs_hermanas/aula_tarde.webp"
+
+image cg_itsuki_atascada = "images/cg/hubs_hermanas/itsuki_atascada.webp"
+
+image cg_itsuki_contraida = "images/cg/hubs_hermanas/itsuki_contraida.webp"
+
+image cg_itsuki_reto = "images/cg/hubs_hermanas/itsuki_reto.webp"
+
+
+################################################################################
 ##  HUB DE ITSUKI 
 ##  Cuarto encuentro entre mc e Itsuki en el aula de tarde. 
 ##  Itsuki no sabe resolver un ejercicio y el jugador puede ayudarla, 
@@ -19,7 +35,8 @@ label hub_Itsuki:
     ##  Primer encuentro entre mc e Itsuki en el aula de tarde
     ############################################################################
 
-    # show bg_aula — luz de tarde, sin gente]` 
+    scene bg_aula_tarde
+    with fade
     
     stop music fadeout 1.0
 
@@ -31,12 +48,8 @@ label hub_Itsuki:
 
     narrador "Se cortaba en franjas sobre los pupitres vacíos."
 
-    #"`[CG NUEVO — cg_itsuki_atascada: Itsuki sola en su pupitre, de perfil o tres\ncuartos,
-    #inclinada sobre el cuaderno con el lápiz detenido a medio centímetro del\npapel,
-    #sin escribir. A su lado, una fila de intentos tachados. Luz de tarde\nentrando en
-    #franjas desde la ventana, motas de polvo suspendidas. Aula vacía\ndetrás, 
-    #silla del propio Futaro con la mochila todavía colgada. Un solo personaje\ncon LoRA en el frame.
-    #Sostiene todo el movimiento 1, así que tiene que aguantar\nen pantalla.]`"
+    scene cg_itsuki_atascada
+    with fade
 
     narrador "Menos un pupitre."
 
@@ -60,7 +73,11 @@ label hub_Itsuki:
 
     narrador "Fue entonces cuando levantó la vista."
 
+    scene bg_aula_tarde
+    with fade
+
     show itsuki neutral at pj(0.5)
+    with dissolve
 
     itsuki "¿Olvidaste algo?"
 
@@ -93,6 +110,7 @@ label hub_Itsuki:
     mc "Sí me incumbe."
 
     show itsuki molesta at pj(0.5)
+    with dissolve
 
     itsuki "Me incumbe a mí. Tú te vas a las cuatro."
 
@@ -115,6 +133,7 @@ label hub_Itsuki:
     mc "¿Y cuánto es?"
 
     show itsuki neutral at pj(0.5)
+    with dissolve
 
     itsuki "El que haga falta, he dicho."
 
@@ -135,6 +154,7 @@ label hub_Itsuki:
     narrador "Eso sí le tocó algo."
 
     show itsuki molesta at pj(0.5)
+    with dissolve
 
     itsuki "No es lo mismo."
 
@@ -149,6 +169,7 @@ label hub_Itsuki:
     narrador "Como quien suelta algo antes de poder impedírselo."
 
     show itsuki timida at pj(0.5)
+    with dissolve
 
     itsuki "…"
 
@@ -166,16 +187,14 @@ label hub_Itsuki:
 
     narrador "La postura no había cambiado, pero algo en los hombros sí."
 
-    #`[CG NUEVO — cg_itsuki_contraida: Itsuki encogida sobre su propio pupitre,
-    #sin\nFutaro en el cuadro. Hombros hacia dentro, un brazo cruzado por delante 
-    #del\ncuaderno como si quisiera tapar el papel con el cuerpo entero. Mirada baja,
-    #no\nhacia la cámara. Misma luz de tarde y mismo ángulo de ventana
-    #que\n`cg_itsuki_atascada`, pero encuadre más cerrado sobre ella: es el 
-    #instante justo\ndespués, no una escena nueva.]`"
+    scene cg_itsuki_contraida
+    with fade
 
-    narrador "Menos derecha. Más cerrada sobre el papel."
+    narrador "Se dejó caer sobre el pupitre. No dormida, hundida."
 
-    narrador "Como si quisiera taparlo con el cuerpo entero."
+    narrador "La cabeza entre los brazos, tapando el cuaderno sin proponérselo."
+
+    narrador "Los ojos seguían abiertos. Fijos en un punto del papel que ya no leía."
 
     mc_pensamiento "Preguntarle a sus hermanas sería admitir algo."
 
@@ -187,7 +206,7 @@ label hub_Itsuki:
 
     mc_pensamiento "Así que no le pregunta a nadie."
 
-    mc_pensamiento "Se queda tachando la misma cifra hasta que se va la luz."
+    mc_pensamiento "Se queda ahí, hundida sobre la misma página, hasta que se va la luz."
 
     ############################################################################
     ##  MOVIMIENTO 3 · La decisión
@@ -196,13 +215,9 @@ label hub_Itsuki:
     ############################################################################
 
     #"`[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`"
-    #"`[CG NUEVO — cg_itsuki_reto: punto de vista de Futaro, de pie, un paso dentro 
-    #del\nespacio de ella. En primer término inferior, desenfocado y cortado por
-    #el borde,\nel canto de su propio cuaderno bajo el brazo — el objeto en
-    #primer plano, sin\nmano marcada. Itsuki al fondo, ahora mirando hacia 
-    #cámara con los ojos entornados,\nla barbilla un poco alta: la misma postura 
-    #contraída de `cg_itsuki_contraida`\npero con la cabeza ya levantada para devolver la mirada. 
-    #Complementa\ndirectamente la línea «¿Vas a quedarte mirando o vas a buscar tu cuaderno?».]`"
+
+    scene cg_itsuki_reto
+    with fade
 
     narrador "Dejé la mochila en el suelo."
 
@@ -224,7 +239,11 @@ label hub_Itsuki:
 
     narrador "Está corrigiendo el final y arrastrando el error del medio sin tocarlo."
 
+    scene bg_aula_tarde
+    with fade
+
     show itsuki neutral at pj(0.5)
+    with dissolve
 
     itsuki "¿Vas a quedarte mirando o vas a buscar tu cuaderno?"
 
@@ -270,6 +289,7 @@ label itsuki_m4a:
     narrador "Sin acercarme más de lo que ya estaba."
 
     show itsuki molesta at pj(0.5)
+    with dissolve
 
     itsuki "¿Qué tiene el segundo paso?"
 
@@ -282,6 +302,7 @@ label itsuki_m4a:
     narrador "Debió decidir que no del todo, porque volvió a mirar el cuaderno."
 
     show itsuki neutral at pj(0.5)
+    with dissolve
 
     itsuki "…"
 
@@ -294,6 +315,7 @@ label itsuki_m4a:
     mc "¿Eso lo sabías o te lo estoy diciendo yo?"
 
     show itsuki molesta at pj(0.5)
+    with dissolve
 
     itsuki "Lo sabía. Se me pasó."
 
@@ -312,6 +334,7 @@ label itsuki_m4a:
     narrador "Me quedé de pie, sin sentarme, mientras terminaba el paso."
     
     show itsuki timida at pj(0.5)
+    with dissolve
 
     itsuki "…El resultado me da distinto ahora."
 
@@ -324,6 +347,7 @@ label itsuki_m4a:
     narrador "Lo dijo como quien reporta un dato, todavía sin mirarme."
 
     show itsuki neutral at pj(0.5)
+    with dissolve
     
     itsuki "Puedes buscar tu cuaderno ahora."
 
@@ -347,6 +371,7 @@ label itsuki_m4b:
     ## sin puntos, sin desaire      
 
     show itsuki molesta at pj(0.5)
+    with dissolve
 
     itsuki "No."
 
@@ -390,6 +415,7 @@ label itsuki_m4c:
     narrador "Estiré la mano hacia el cuaderno antes de que pudiera contestar."
 
     show itsuki sorpresa at pj(0.5)
+    with dissolve
 
     itsuki "¿Qué haces?"
 
@@ -402,6 +428,7 @@ label itsuki_m4c:
     narrador "Le devolví el cuaderno con el ejercicio terminado."
 
     show itsuki molesta at pj(0.5)
+    with dissolve
 
     itsuki "…"
 
@@ -420,12 +447,15 @@ label itsuki_m4c:
     mc_pensamiento "No era el ejercicio. Era hacerlo ella sola."
 
     show itsuki neutral at pj(0.5)
+    with dissolve
 
     itsuki "Puedes irte. Ya tengo lo que necesitaba."
 
     narrador "Cerró el cuaderno del todo esta vez, con las dos manos."
 
     narrador "No volvió a levantar la vista."
+
+    jump itsuki_m5
 
 ############################################################################
 ## MOVIMIENTO 5 · Cierre
@@ -434,7 +464,8 @@ label itsuki_m4c:
 
 label itsuki_m5:
 
-    #[BG bg_aula — luz más baja, casi de noche]
+    scene bg_aula_tarde
+    with fade
      
     stop music fadeout 1.5
 
