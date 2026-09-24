@@ -151,7 +151,7 @@ label hub_Miku:
 
     narrador "Cerré el temario y saqué de la mochila otro libro, con la misma etiqueta en el lomo que los suyos."
 
-    play sound sfx_papel_mesa volume 2.5
+    play sound sfx_papel_mesa volume 1.0
 
     narrador "Lo reconoció antes de que llegara a la mesa."
 

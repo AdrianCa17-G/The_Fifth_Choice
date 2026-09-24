@@ -545,4 +545,10 @@ label cap1_apertura:
 
     narrador "Treinta días."
 
-    #→ Sale al hub 1. La primera elección del jugador escribe primera_conexion.
+    narrador "Se que puedo lograrlo."
+
+    narrador "Lograr que aprueben sus examenes."
+
+    narrador "Si, asi será."
+
+    jump hub_1
