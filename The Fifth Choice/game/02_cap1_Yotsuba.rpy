@@ -6,6 +6,13 @@
 
 label hub_Yotsuba:
 
+    $ sumar_punto("yotsuba", 2)
+
+    # Si el jugador eligió la pista de atletismo en el hub 1, se marca la primera
+    # conexión. Ajustar el string si el hub usa otra clave para este destino.
+    #if hub_choice == "pista_atletismo":
+    #    $ primera_conexion = True
+
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc y Yotsuba. Se establece la dinámica de la relación.
@@ -213,21 +220,51 @@ label hub_Yotsuba:
 
     #`[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`
 
-    narrador "Se limpió el rotulador de la muñeca con el reverso de la camiseta y volvió a mirarme con esa sonrisa intacta."
-
-    yotsuba "¡Bueno!" 
-
-    yotsuba "¡Si has venido a verme entrenar, puedes cronometrarme en la siguiente vuelta!" 
+    narrador "Se limpió el rotulador de la muñeca con el reverso de la camiseta " 
     
+    narrador " y volvió a mirarme con esa sonrisa intacta."
+
+    yotsuba "¡Bueno!"
+
+    yotsuba "¡Si has venido a verme entrenar, puedes cronometrarme en la siguiente vuelta!"
+
     yotsuba "¡Soy más rápida cuando alguien mira!"
 
     mc_pensamiento "Cambió de tema."
 
     mc_pensamiento "Lo hizo tan rápido y con tanta energía que casi no lo noté."
 
+    narrador "Dio un par de saltos en el sitio, sacudiendo los brazos, "
+    
+    narrador " como si con eso pudiera sacudirse también lo que acababa de decir."
+
+    yotsuba "¡Venga, no hay tiempo que perder! ¡El sol no espera!"
+
+    narrador "Miré hacia las gradas." 
+    
+    narrador "El sol ya se había ido hacía rato; solo quedaba la luz naranja de emergencia."
+
+    mc_pensamiento "No había sol que esperar. Ella lo sabía tan bien como yo."
+
     narrador "Pensé en lo que había visto estas últimas ocho vueltas."
 
     narrador "En lo que había dicho, y en lo que no."
+
+    mc_pensamiento "'Yo corro y animo'"
+    
+    mc_pensamiento "Como si fuera un puesto que le tocó por descarte, no algo que eligió."
+
+    mc_pensamiento "Podía dejarlo pasar. Cronometrarla y ya."
+
+    mc_pensamiento "O podía decir algo que quizás le gustara haber oído."
+
+    narrador "Ella seguía ahí, con el brazo estirado esperando que le devolviera el cronómetro, "
+    
+    narrador " la sonrisa firme en su sitio."
+
+    mc_pensamiento "Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacia por dentro, "
+
+    mc_pensamiento " o si por fin le hago caer en cuenta su valor como persona."
 
     ############################################################################
     ##  MOVIMIENTO 4A · Rama cálida
@@ -237,241 +274,286 @@ label hub_Yotsuba:
 
     ## Menú de sabor.
 
-    menu:
+    # Menu del sabor
 
+    menu:
         narrador "¿Cómo le ayudarias a sentirse mejor?"
 
         "Tú vales tanto como cualquiera de tus hermanas":
-
-            #`[$ sumar_punto("yotsuba", 1)]`
-            #`[MUS descubrimiento — fade in volumen 3.5]`
-
-            mc "Antes de eso."
-
-            yotsuba "¿Antes de qué?"
-
-            mc "Dijiste que tus hermanas son mejores que tú en casi todo."
-
-            yotsuba "¡Sí! ¡Pero eso no es malo! ¡Cada una tiene lo suyo!" 
-            
-            yotsuba "¡Y yo tengo lo mío!"
-
-            mc "Lo sé. Pero te saltaste algo."
-
-            narrador "Su sonrisa no desapareció,"
-            
-            narrador " pero tardó un poco más en reaccionar."
-
-            yotsuba "…¿Qué me salté?"
-
-            mc "Esta mañana, en el desayuno. Supiste que Nino no había dormido bien antes
-            de que ella dijera nada."
-
-            yotsuba "Estaba un poco más callada que de costumbre."
-
-            mc "Y ayer le dijiste a Miku que el libro que buscaba estaba en la
-            segunda planta antes de que Miku si quiera preguntara."
-
-            yotsuba "Es que siempre lo deja ahí después de leerlo."
-
-            mc "Y la semana pasada, cuando Ichika llegó tarde al departamento,
-            fuiste la primera en saber si estaba cansada o si estaba preocupada." 
-
-            mc "Y eran cosas distintas."
-
-            narrador "Hubo un breve silencio."
-
-            narrador "No el silencio de quien no tiene respuesta: 
-            el de quien está revisando si los datos son correctos."
-
-            yotsuba "…¿Me estabas observando?"
-
-            mc "Soy tu tutor. Observar es parte del trabajo."
-
-            yotsuba "Eso que describes no es nada especial."
-
-            yotsuba "Cualquiera lo haría."
-
-            mc "Ninguna de tus hermanas lo hace. Yo tampoco. Y lo intento."
-
-            narrador "Eso no lo tenía preparado."
-
-            show yotsuba_sorprendida at pj(0.5)
-
-            yotsuba "…Pero eso no entra en ningún examen."
-
-            mc "En Literatura entra algo que se llama comprensión lectora."
-
-            mc "Solo que tú no lo haces con libros. Lo haces con personas."
-
-            mc "Sabes leer lo que dicen y lo que se callan, aunque no lo expliquen."
-
-            mc "Tú lo haces de forma natural con cinco personas a la vez."
-
-            narrador "No dijo nada. Miraba la pista, pero no la pista de verdad."
-
-            mc "No te digo que sea suficiente para el examen. "
-
-            mc "Te digo que tu punto de partida no es cero. Nunca lo fue."
-
-            yotsuba "…"
-
-            narrador "Pasó un momento largo."
-
-            show yotsuba_neutral at pj(0.5)
-
-            yotsuba "No sé si eso es verdad o si eres muy bueno animando a la gente."
-
-            mc "Soy pésimo animando a la gente. Pregúntale a cualquiera."
-
-            narrador "Lo pensó."
-
-            show yotsuba_sonrisa at pj(0.5)
-
-            yotsuba "…Eso también es verdad."
-
-            mc "Dame el cronómetro."
-
-            narrador "Me lo pasó sin decir nada más."
-
-            narrador "Cuando arrancó la vuelta veinticuatro, ya no le hizo falta gritar para darse ánimos."
-
-            narrador "Algo en ella luce distinto. No era que estuviera más rápida. Era que estaba más segura."
-
+            jump yotsuba_m4a
 
         "Claro, dame el cronómetro.":
-
-            #(sin puntos, sin desaire)
-
-            narrador "Cogí el cronómetro que me tendió."
-
-            yotsuba "¡Genial! ¡Preparado!"
-
-            mc "Preparado."
-
-            #[SFX sfx_pisadas_pista — arranca carrera]
-
-            narrador "Salió disparada. Era rápida de verdad."
-
-            narrador "No el tipo de rapidez de alguien que solo entrena por pasatiempo; corría en serio."
-
-            narrador "Cuando terminó la vuelta, frenó delante de mí con los brazos abiertos, esperando el tiempo."
-
-            mc "Un minuto con diecisiete."
-
-            yotsuba "¡Sabía que hoy estaba bien! ¡Lo noté en el calentamiento!"
-
-            mc "¿Lo notas en el calentamiento?"
-
-            yotsuba "¡Siempre! Las piernas me avisan. ¡Es como un idioma secreto entre mis piernas y yo!"
-
-            narrador "Sonreí sin querer."
-
-            mc "¿Y tu cabeza?"
-
-            yotsuba "¡Mi cabeza va a donde van las piernas! ¡Equipo completo!"
-
-            narrador "Se rió de su propio chiste. Era una risa fácil, sin trampa."
-
-            mc "Esquivó el tema."
-
-            mc "O tal vez prefirió quedarse con el cronómetro porque era más sencillo."
-
-            mc "No lo sé. Y ella tampoco me lo va a decir hoy."
-
-            mc "Otra vuelta."
-
-            yotsuba "¡Otra vuelta! ¡Esta va a ser mejor!"
-
-            narrador "Y lo fue."
-
-            narrador "No conseguí ayudarla a sentirse mejor, pero tampoco la hice sentir peor."
-
+            jump yotsuba_m4b
 
         "Si vas a seguir corriendo, deja de perder el tiempo.":
+            jump yotsuba_m4c
 
-            #`[$ desaires_cap1 += 1]`
+## ---------------------------------------------------------------
+## Movimiento 4A · Rama cálida
+## ---------------------------------------------------------------
 
-            mc "Entonces concéntrate en correr. Si es lo tuyo, hazlo bien."
+label yotsuba_m4a:
 
-            narrador "Asintió."
+    $ yotsuba_rama_cap1 = "calida"
+    $ sumar_punto("yotsuba", 1)
 
-            narrador "Rápido, una sola vez, como quien recibe una instrucción."
+    #`[MUS descubrimiento — fade in volumen 3.5]`
 
-            show yotsuba_sonrisa at pj(0.5)
+    mc "Antes de eso."
 
-            yotsuba "¡Tienes razón! ¡Eso estaba haciendo! ¡Qué bueno que lo entiendas!"
+    yotsuba "¿Antes de qué?"
 
-            narrador "Volvió a la pista sin esperar respuesta. La sonrisa era idéntica
-            a la de antes."
+    mc "Dijiste que tus hermanas son mejores que tú en casi todo."
 
-            mc_pensamiento "Le dije exactamente lo que quería escuchar."
+    yotsuba "¡Sí! ¡Pero eso no es malo! ¡Cada una tiene lo suyo!" 
+            
+    yotsuba "¡Y yo tengo lo mío!"
 
-            mc_pensamiento "O lo que lleva siempre diciendose a si misma."
+    mc "Lo sé. Pero te saltaste algo."
 
-            narrador "Dio la vuelta veinticuatro en un silencio absoluto."
+    narrador "Su sonrisa no desapareció,"
+            
+    narrador " pero tardó un poco más en reaccionar."
 
-            narrador "Sin contar. Sin animarse."
+    yotsuba "…¿Qué me salté?"
 
-            narrador "Al principio no le di importancia, pero para la vuelta veinticinco lo entendí."
+    mc "Esta mañana, en el desayuno. Supiste que Nino no había dormido bien antes
+    de que ella dijera nada."
 
-            mc_pensamiento "Antes contaba en voz alta porque así no perdía el ritmo."
+    yotsuba "Estaba un poco más callada que de costumbre."
 
-            mc_pensamiento "Ahora ya no le hacía falta."
+    mc "Y ayer le dijiste a Miku que el libro que buscaba estaba en la
+    segunda planta antes de que Miku si quiera preguntara."
 
-            narrador "Seguí ahí parado hasta que terminó la serie."
+    yotsuba "Es que siempre lo deja ahí después de leerlo."
 
-            narrador "No sé muy bien por qué."
+    mc "Y la semana pasada, cuando Ichika llegó tarde al departamento,
+    fuiste la primera en saber si estaba cansada o si estaba preocupada." 
+        
+    mc "Y eran cosas distintas."
 
-            mc_pensamiento "Acabo de decirle a alguien que se concentre en la única cosa que cree que la hace valer."
+    narrador "Hubo un breve silencio."
 
-            mc_pensamiento "Y ahora mismo no sé si le di una instrucción o una sentencia."
+    narrador "No el silencio de quien no tiene respuesta: 
+    el de quien está revisando si los datos son correctos."
+
+    yotsuba "…¿Me estabas observando?"
+
+    mc "Soy tu tutor. Observar es parte del trabajo."
+
+    yotsuba "Eso que describes no es nada especial."
+
+    yotsuba "Cualquiera lo haría."
+
+    mc "Ninguna de tus hermanas lo hace. Yo tampoco. Y lo intento."
+
+    narrador "Eso no lo tenía preparado."
+
+    show yotsuba_sorprendida at pj(0.5)
+
+    yotsuba "…Pero eso no entra en ningún examen."
+
+    mc "En Literatura entra algo que se llama comprensión lectora."
+
+    mc "Solo que tú no lo haces con libros. Lo haces con personas."
+
+    mc "Sabes leer lo que dicen y lo que se callan, aunque no lo expliquen."
+
+    mc "Tú lo haces de forma natural con cinco personas a la vez."
+
+    narrador "No dijo nada. Miraba la pista, pero no la pista de verdad."
+
+    mc "No te digo que sea suficiente para el examen. "
+
+    mc "Te digo que tu punto de partida no es cero. Nunca lo fue."
+
+    yotsuba "…"
+
+    narrador "Pasó un momento largo."
+
+    show yotsuba_neutral at pj(0.5)
+
+    yotsuba "No sé si eso es verdad o si eres muy bueno animando a la gente."
+
+    mc "Soy pésimo animando a la gente. Pregúntale a cualquiera."
+
+    narrador "Lo pensó."
+
+    show yotsuba_sonrisa at pj(0.5)
+
+    yotsuba "…Eso también es verdad."
+
+    mc "Dame el cronómetro."
+
+    narrador "Me lo pasó sin decir nada más."
+
+    narrador "Cuando arrancó la vuelta veinticuatro, ya no le hizo falta gritar para darse ánimos."
+
+    narrador "Algo en ella luce distinto. No era que estuviera más rápida. Era que estaba más segura."
+
+    jump yotsuba_m5
+    
+
+label yotsuba_m4b:        
+
+    $ yotsuba_rama_cap1 = "tibia"
+    ## sin puntos, sin desaire
+
+    narrador "Cogí el cronómetro que me tendió."
+
+    yotsuba "¡Genial! ¡Preparado!"
+
+    mc "Preparado."
+
+    #[SFX sfx_pisadas_pista — arranca carrera]
+
+    narrador "Salió disparada. Era rápida de verdad."
+
+    narrador "No el tipo de rapidez de alguien que solo entrena por pasatiempo; corría en serio."
+
+    narrador "Cuando terminó la vuelta, frenó delante de mí con los brazos abiertos, esperando el tiempo."
+
+    mc "Un minuto con diecisiete."
+
+    yotsuba "¡Sabía que hoy estaba bien! ¡Lo noté en el calentamiento!"
+
+    mc "¿Lo notas en el calentamiento?"
+
+    yotsuba "¡Siempre! Las piernas me avisan. ¡Es como un idioma secreto entre mis piernas y yo!"
+
+    narrador "Sonreí sin querer."
+
+    mc "¿Y tu cabeza?"
+
+    yotsuba "¡Mi cabeza va a donde van las piernas! ¡Equipo completo!"
+
+    narrador "Se rió de su propio chiste. Era una risa fácil, sin trampa."
+
+    mc "Esquivó el tema."
+
+    mc "O tal vez prefirió quedarse con el cronómetro porque era más sencillo."
+
+    mc "No lo sé. Y ella tampoco me lo va a decir hoy."
+
+    mc "Otra vuelta."
+
+    yotsuba "¡Otra vuelta! ¡Esta va a ser mejor!"
+
+    narrador "Y lo fue."
+
+    narrador "No conseguí ayudarla a sentirse mejor, pero tampoco la hice sentir peor."
+
+    jump yotsuba_m5
 
 
-    ############################################################################
-    ## MOVIMIENTO 5 · Cierre
-    ## Común a las tres ramas, con un cierre cálido, tibio o frío según la elección.
-    ############################################################################
+## ---------------------------------------------------------------
+## Movimiento 4C · Rama fría
+## ---------------------------------------------------------------
+
+label yotsuba_m4c:
+
+    $ yotsuba_rama_cap1 = "fria"
+    $ desaires_cap1 += 1
+
+    mc "Entonces concéntrate en correr. Si es lo tuyo, hazlo bien."
+
+    narrador "Asintió."
+
+    narrador "Rápido, una sola vez, como quien recibe una instrucción."
+
+    show yotsuba_sonrisa at pj(0.5)
+
+    yotsuba "¡Tienes razón! ¡Eso estaba haciendo! ¡Qué bueno que lo entiendas!"
+
+    narrador "Volvió a la pista sin esperar respuesta. La sonrisa era idéntica
+    a la de antes."
+
+    mc_pensamiento "Le dije exactamente lo que quería escuchar."
+
+    mc_pensamiento "O lo que lleva siempre diciendose a si misma."
+
+    narrador "Dio la vuelta veinticuatro en un silencio absoluto."
+
+    narrador "Sin contar. Sin animarse."
+
+    narrador "Al principio no le di importancia, pero para la vuelta veinticinco lo entendí."
+
+    mc_pensamiento "Antes contaba en voz alta porque así no perdía el ritmo."
+
+    mc_pensamiento "Ahora ya no le hacía falta."
+
+    narrador "Seguí ahí parado hasta que terminó la serie."
+
+    narrador "No sé muy bien por qué."
+
+    mc_pensamiento "Acabo de decirle a alguien que se concentre en la única cosa que cree que la hace valer."
+
+    mc_pensamiento "Y ahora mismo no sé si le di una instrucción o una sentencia."
+
+    jump yotsuba_m5  
+
+
+############################################################################
+## MOVIMIENTO 5 · Cierre
+## Común a las tres ramas, con un cierre cálido, tibio o frío según la elección.
+############################################################################
+
+label yotsuba_m5:
 
     #`[BG bg_pista_atletismo — luz más baja, atardecer avanzado]`
     #`[MUS stop fadeout 1.5]`
 
-    narrador "Salí de la pista cuando ella terminó la vuelta treinta."
+    narrador "Recogí mis cosas y caminé hacia la salida del graderío."
+
+    mc_pensamiento "Pensé en decirle algo antes de irme."
+
+    mc_pensamiento "Un 'hasta mañana', algo."
+
+    #`[SFX sfx_pisadas_pista — loop, distante, entra bajo]
+
+    narrador "Pero ella ya había vuelto a la pista antes de que llegara a la puerta, con la cabeza en otra vuelta."
+
+    mc_pensamiento "No dijo 'nos vemos mañana'. Hoy ninguna de las dos lo dijo."
 
     mc_pensamiento "Una de cinco. Y esta acaba de llegar corriendo."
 
     mc_pensamiento "Solo quedan tres semanas."
 
-    #*Cierre A (cálida):*
+    if yotsuba_rama_cap1 == "calida":
 
-    mc_pensamiento "Me preguntó si era verdad o si solo era bueno animando a la gente."
+        mc_pensamiento "Me preguntó si era verdad o si solo era bueno animando a la gente."
 
-    mc_pensamiento "La respuesta honesta es que no lo sé todavía."
+        mc_pensamiento "La respuesta honesta es que no lo sé todavía."
 
-    mc_pensamiento "Pero su punto de partida no era cero."
+        mc_pensamiento "Pero su punto de partida no era cero."
 
-    mc_pensamiento "De eso sí estoy seguro."
+        mc_pensamiento "De eso sí estoy seguro."
 
-    #*Cierre B (tibia):*
+    elif yotsuba_rama_cap1 == "tibia":
 
-    mc_pensamiento "Un minuto con diecisiete. Un minuto con catorce en la última."
+        mc_pensamiento "Un minuto con diecisiete. Un minuto con catorce en la última."
 
-    mc_pensamiento "No sé si mejoró por el cronómetro o a pesar de él."
+        mc_pensamiento "No sé si mejoró por el cronómetro o a pesar de él."
 
-    mc_pensamiento "Tampoco sé qué iba a decir antes de que se lo diera."
+        mc_pensamiento "Tampoco sé qué iba a decir antes de que se lo diera."
 
-    mc_pensamiento "Pero le puso tanta energía al asunto que ya no hubo forma de volver atrás."
+        mc_pensamiento "Pero le puso tanta energía al asunto que ya no hubo forma de volver atrás."
 
-    #*Cierre C (fría):*
+    else:
 
-    mc_pensamiento "Dejó de contar en voz alta después de lo que dije."
+        mc_pensamiento "Dejó de contar en voz alta después de lo que dije."
 
-    mc_pensamiento "Puede que no importe."
+        mc_pensamiento "Puede que no importe."
 
-    mc_pensamiento "Tal vez ese método suyo no servía para nada y mi consejo fue el correcto."
+        mc_pensamiento "Tal vez ese método suyo no servía para nada y mi consejo fue el correcto."
 
-    mc_pensamiento "O tal vez le acabo de confirmar la única cosa de la que nadie 
-    debería haberla convencido nunca."
+        mc_pensamiento "O tal vez le acabo de confirmar la única cosa de la que nadie 
+        debería haberla convencido nunca."
 
-    #`→ Vuelve al hub.`
+
+    ## Marcar el evento como consumido para el evento 6 y para que el hub
+    ## ofrezca la revisita corta en lugar del evento completo.
+    $ yotsuba_visitada_cap1 = True
+
+    jump hub
         

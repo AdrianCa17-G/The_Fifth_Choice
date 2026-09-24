@@ -1,13 +1,22 @@
-
-## ==========================================================================
-## EVENTO PRINCIPAL
-## ==========================================================================
+################################################################################
+##  HUB DE NINO
+##  Primer encuentro con Nino en el centro comercial.
+##  Se descubre sus conocimientos de inglés y su desconfianza hacia los tutores.
+################################################################################
 
 label hub_Nino:
 
+    $ sumar_punto("nino", 2)
+
+    # Si el jugador eligió el centro comercial en el hub 1, se marca la primera
+    # conexión. Ajustar el string si el hub usa otra clave para este destino.
+    #if hub_choice == "centro_comercial":
+    #    $ primera_conexion = True
+
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
-    ##  Primer encuentro con Nino en el centro comercial.
+    ##  MC llega al centro comercial y encuentra a Nino en la 
+    ##  sección de repostería internacional.
     ############################################################################
 
     #scene bg centro_comercial
@@ -212,9 +221,11 @@ label hub_Nino:
 
     narrador "Se acomodó el delantal, como si con eso pudiera acomodar también lo que acababa de decir."
 
-    ## ---------------------------------------------------------------
-    ## Movimiento 3 · La decisión
-    ## ---------------------------------------------------------------
+    ############################################################################
+    ##  MOVIMIENTO 3 · La decisión
+    ##  Nino decide si confiar o no en el MC, y cómo lo hace.
+    ##  Se decide la rama de la historia que seguirá en el resto del capítulo.
+    ############################################################################
 
     #play music audio.descubrimiento volume 0.0
 
@@ -234,20 +245,20 @@ label hub_Nino:
         "¿Cómo respondes?"
 
         "Tienes razón en desconfiar. Solo el tiempo lo va a demostrar.":
-            jump nino_centro_comercial_m4a
+            jump nino_m4a
 
         "Ayudarla con las bolsas, sin decir nada.":
-            jump nino_centro_comercial_m4b
+            jump nino_m4b
 
         "Yo sí voy a durar.":
-            jump nino_centro_comercial_m4c
+            jump nino_m4c
 
 
 ## ---------------------------------------------------------------
 ## Movimiento 4A · Rama cálida
 ## ---------------------------------------------------------------
 
-label nino_centro_comercial_m4a:
+label nino_m4a:
 
     $ nino_rama_cap1 = "calida"
     $ sumar_punto("nino", 1)
@@ -307,14 +318,14 @@ label nino_centro_comercial_m4a:
   
     mc_pensamiento "Pero por lo menos entendió que no iba a regalarle promesas vacías."
 
-    jump nino_centro_comercial_m5
+    jump nino_m5
 
 
 ## ---------------------------------------------------------------
 ## Movimiento 4B · Rama tibia
 ## ---------------------------------------------------------------
 
-label nino_centro_comercial_m4b:
+label nino_m4b:
 
     $ nino_rama_cap1 = "tibia"
     ## sin puntos, sin desaire
@@ -354,14 +365,14 @@ label nino_centro_comercial_m4b:
 
     mc_pensamiento "A veces el silencio es lo único que se puede compartir."
 
-    jump nino_centro_comercial_m5
+    jump nino_m5
 
 
 ## ---------------------------------------------------------------
 ## Movimiento 4C · Rama fría
 ## ---------------------------------------------------------------
 
-label nino_centro_comercial_m4c:
+label nino_m4c:
 
     $ nino_rama_cap1 = "fria"
     $ desaires_cap1 += 1
@@ -401,32 +412,17 @@ label nino_centro_comercial_m4c:
 
     narrador "Caminó hacia la caja sin esperarme, ocultando el papel antes de que pudiera ver algo más."
 
-    jump nino_centro_comercial_m5
+    jump nino_m5
 
 
 ## ==========================================================================
-## Movimiento 5 · Cierre (común a las tres ramas)
+## Movimiento 5 · La llamada (común a las tres ramas)
 ## ==========================================================================
 
-label nino_centro_comercial_m5:
+label nino_m5:
 
     #scene bg centro_comercial tarde
     stop music fadeout 1.5
-
-    narrador "La acompañé hasta la salida, cargando lo que me dejó cargar."
-
-    mc_pensamiento "Una de cinco. Y esta no bajó la guardia ni un minuto entero."
-
-    narrador "En la caja, pagó ella misma, sin dejarme acercar la cartera."
-
-
-    mc_pensamiento "Ni eso me lo iba a dejar hacer."
-    
-    mc_pensamiento "Quedan tres semanas."
-
-    ## ---------------------------------------------------------------
-    ## Movimiento 6 · La llamada (común a las tres ramas)
-    ## ---------------------------------------------------------------
 
     narrador "Casi en la puerta, el celular le sonó en el bolsillo del delantal."
 
@@ -466,8 +462,18 @@ label nino_centro_comercial_m5:
     mc_pensamiento "Sonó a que no sabía cómo explicarlo sin decir de más."
 
     ## ---------------------------------------------------------------
-    ## Movimiento 7 · Cierre final (varía según la rama elegida)
+    ## Movimiento 6 · Cierre final (varía según la rama elegida)
     ## ---------------------------------------------------------------
+
+    narrador "La acompañé hasta la salida, cargando lo que me dejó cargar."
+
+    mc_pensamiento "Una de cinco. Y esta no bajó la guardia ni un minuto entero."
+
+    narrador "En la caja, pagó ella misma, sin dejarme acercar la cartera."
+
+    mc_pensamiento "Ni eso me lo iba a dejar hacer."
+    
+    mc_pensamiento "Quedan tres semanas."
 
     if nino_rama_cap1 == "calida":
 
@@ -493,6 +499,7 @@ label nino_centro_comercial_m5:
         mc_pensamiento "Ella ya había escuchado esa frase antes."
 
         mc_pensamiento "Yo mismo la puse en la misma fila que los anteriores."
+
 
     ## Marcar el evento como consumido para el evento 6 y para que el hub
     ## ofrezca la revisita corta en lugar del evento completo.

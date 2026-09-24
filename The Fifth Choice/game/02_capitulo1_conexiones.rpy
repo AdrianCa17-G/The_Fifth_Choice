@@ -22,11 +22,11 @@
 # ------------------------------------------------------------
 default LABEL_EVENTO = {
     "itsuki": "hub_Itsuki",
+    "yotsuba": "hub_Yotsuba",
     "miku": "hub_Miku",
-    # agregar acá más excepciones a medida que aparezcan, ej:
-    # "nino": "nino_evento_real",
+    "nino": "hub_Nino",
+    "ichika": "hub_Ichika"
 }
-
 
 # ------------------------------------------------------------
 label hub_1:
@@ -68,3 +68,5 @@ label hub_3:
     call beat_casa
     call evento_6
     jump capitulo2   # todavía no existe (README: 03_capitulo2.rpy pendiente)
+
+

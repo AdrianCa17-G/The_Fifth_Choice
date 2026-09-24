@@ -1,8 +1,18 @@
 ################################################################################
 ##  HUB DE ITSUKI 
+##  Cuarto encuentro entre mc e Itsuki en el aula de tarde. 
+##  Itsuki no sabe resolver un ejercicio y el jugador puede ayudarla, 
+##  pero la forma de hacerlo afectará la relación.
 ################################################################################
 
 label hub_Itsuki:
+
+    $ sumar_punto("itsuki", 2)
+
+    # Si el jugador eligió el aula en la tarde en el hub 1, se marca la primera
+    # conexión. Ajustar el string si el hub usa otra clave para este destino.
+    #if hub_choice == "aula_tarde":
+    #    $ primera_conexion = True
 
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
@@ -228,174 +238,201 @@ label hub_Itsuki:
 
     mc_pensamiento "Y solo una no la deja peor de lo que ya está."
 
-    ############################################################################
-    ##  MOVIMIENTO 4A · Rama cálida
-    ##  MOVIMIENTO 4B · Rama tibia
-    ##  MOVIMIENTO 4C · Rama fría
-    ############################################################################
-
-    ## Menú de sabor.
+    # Menu del sabor
 
     menu:
 
-        narrador "¿Cómo respondes?"
+        "¿Cómo respondes?"
 
-        "Se nota el esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso.":
+        "Se nota tu esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso.":
+            jump itsuki_m4a
 
-            #"`[$ sumar_punto(\"itsuki\", 1)]`\n`[MUS descubrimiento — fade in volumen 3.5]`"
-
-            narrador "Señalé la línea con el dedo. Sin tocar el papel."
-
-            narrador "Sin acercarme más de lo que ya estaba."
-
-            show itsuki molesta at pj(0.5)
-
-            itsuki "¿Qué tiene el segundo paso?"
-
-            mc "Nada que yo vaya a decirte."
-
-            mc "Solo te digo dónde mirar."
-
-            narrador "Se quedó quieta un segundo, decidiendo si eso contaba como ayuda."
-
-            narrador "Debió decidir que no del todo, porque volvió a mirar el cuaderno."
-
-            show itsuki neutral at pj(0.5)
-
-            itsuki "…"
-
-            narrador "Repasó la línea. Una vez. Dos veces."
-
-            itsuki "La unidad no se cancela ahí."
-
-            itsuki "Arrastré el valor sin convertir."
-
-            mc "¿Eso lo sabías o te lo estoy diciendo yo?"
-
-            show itsuki molesta at pj(0.5)
-
-            itsuki "Lo sabía. Se me pasó."
-
-            mc "No dije que no."
-
-            narrador "Tachó la línea entera, no solo el número."
-
-            narrador "Volvió a empezar desde ahí con la letra un poco más apretada que\nel resto del cuaderno."
-
-            mc_pensamiento "No me pidió que me fuera."
-
-            mc_pensamiento "Tampoco me pidió que me quedara."
-
-            mc_pensamiento "Pero el simple hecho de tolerar mi presencia ya demuestra todo lo que necesito."
-
-            narrador "Me quedé de pie, sin sentarme, mientras terminaba el paso."
-            
-            show itsuki timida at pj(0.5)
-
-            itsuki "…El resultado me da distinto ahora."
-
-            mc "¿Y?"
-
-            itsuki "…Es el que tenía que dar."
-
-            narrador "No lo dijo como un triunfo."
-
-            narrador "Lo dijo como quien reporta un dato, todavía sin mirarme."
-
-            show itsuki neutral at pj(0.5)
-            
-            itsuki "Puedes buscar tu cuaderno ahora."
-
-            mc "Ya lo sé. No me voy a ir todavía."
-
-            narrador "Levantó la vista, un segundo, para comprobar si hablaba en serio."
-
-            narrador "Y volvió al cuaderno sin decir nada más."
-
-            narrador "Pero sin pedirme que me fuera tampoco."
-   
         "¿Quieres que lo revisemos desde el principio?":
+            jump itsuki_m4b
 
-            #"*(sin puntos, sin desaire)*"
-
-            show itsuki molesta at pj(0.5)
-
-            itsuki "No."
-
-            mc "Ni siquiera sabes qué te iba a explicar."
-
-            itsuki "No hace falta. La respuesta es no."
-
-            narrador "Cerró el cuaderno un centímetro. No del todo."
-
-            narrador "Lo suficiente para que entendiera que la oferta ya estaba rechazada."
-
-            mc "Está bien."
-
-            itsuki "Bien."
-
-            narrador "Me quedé un momento más de lo necesario, esperando algo que no llegó."
-
-            narrador "Fui a buscar mi cuaderno."
-
-            mc_pensamiento "No dijo que no supiera."
-
-            mc_pensamiento "Dijo que no quería que se lo explicara."
-
-            mc_pensamiento "Con ella eso puede ser lo mismo, o lo contrario. Hoy no lo voy a averiguar."
-
-            narrador "Cuando volví a pasar por su pupitre, seguía en el mismo ejercicio."
-
-            narrador "La misma línea. Sin tacharla todavía."
-   
         "Estás perdiendo el tiempo. Déjame el cuaderno y lo resuelvo.":
+            jump itsuki_m4c
 
-            #"`[$ desaires_cap1 += 1]`"
 
-            narrador "Estiré la mano hacia el cuaderno antes de que pudiera contestar."
+############################################################################
+##  MOVIMIENTO 4A · Rama cálida
+############################################################################
 
-            show itsuki sorpresa at pj(0.5)
+label itsuki_m4a:    
 
-            itsuki "¿Qué haces?"
+    $ itsuki_rama_cap1 = "calida"
+    $ sumar_punto("itsuki", 1)
+    
+    #[MUS descubrimiento — fade in volumen 3.5]`"
 
-            mc "Ahorrarte tiempo."
+    narrador "Señalé la línea con el dedo. Sin tocar el papel."
 
-            mc "El error está en el segundo paso, la conversión."
+    narrador "Sin acercarme más de lo que ya estaba."
 
-            narrador "Lo resolví ahí mismo, de pie, con su propio lápiz."
+    show itsuki molesta at pj(0.5)
 
-            narrador "Le devolví el cuaderno con el ejercicio terminado."
+    itsuki "¿Qué tiene el segundo paso?"
 
-            show itsuki molesta at pj(0.5)
+    mc "Nada que yo vaya a decirte."
 
-            itsuki "…"
+    mc "Solo te digo dónde mirar."
 
-            mc "Listo. El resultado es ese."
+    narrador "Se quedó quieta un segundo, decidiendo si eso contaba como ayuda."
 
-            itsuki "Ya lo veo."
+    narrador "Debió decidir que no del todo, porque volvió a mirar el cuaderno."
 
-            narrador "Lo dijo sin agradecerlo y sin discutirlo."
+    show itsuki neutral at pj(0.5)
 
-            narrador "En ella, esa es la forma más fría de aceptar algo."
+    itsuki "…"
 
-            mc_pensamiento "Se lo resolví bien. Rápido, correcto, sin margen de error."
+    narrador "Repasó la línea. Una vez. Dos veces."
 
-            mc_pensamiento "Y le quité la única cosa que estaba defendiendo."
+    itsuki "La unidad no se cancela ahí."
 
-            mc_pensamiento "No era el ejercicio. Era hacerlo ella sola."
+    itsuki "Arrastré el valor sin convertir."
 
-            show itsuki neutral at pj(0.5)
+    mc "¿Eso lo sabías o te lo estoy diciendo yo?"
 
-            itsuki "Puedes irte. Ya tengo lo que necesitaba."
+    show itsuki molesta at pj(0.5)
 
-            narrador "Cerró el cuaderno del todo esta vez, con las dos manos."
+    itsuki "Lo sabía. Se me pasó."
 
-            narrador "No volvió a levantar la vista."
+    mc "No dije que no."
 
-    ############################################################################
-    ## MOVIMIENTO 5 · Cierre
-    ## Común a las tres ramas, con un cierre cálido, tibio o frío según la elección.
-    ############################################################################
+    narrador "Tachó la línea entera, no solo el número."
+
+    narrador "Volvió a empezar desde ahí con la letra un poco más apretada que\nel resto del cuaderno."
+
+    mc_pensamiento "No me pidió que me fuera."
+
+    mc_pensamiento "Tampoco me pidió que me quedara."
+
+    mc_pensamiento "Pero el simple hecho de tolerar mi presencia ya demuestra todo lo que necesito."
+
+    narrador "Me quedé de pie, sin sentarme, mientras terminaba el paso."
+    
+    show itsuki timida at pj(0.5)
+
+    itsuki "…El resultado me da distinto ahora."
+
+    mc "¿Y?"
+
+    itsuki "…Es el que tenía que dar."
+
+    narrador "No lo dijo como un triunfo."
+
+    narrador "Lo dijo como quien reporta un dato, todavía sin mirarme."
+
+    show itsuki neutral at pj(0.5)
+    
+    itsuki "Puedes buscar tu cuaderno ahora."
+
+    mc "Ya lo sé. No me voy a ir todavía."
+
+    narrador "Levantó la vista, un segundo, para comprobar si hablaba en serio."
+
+    narrador "Y volvió al cuaderno sin decir nada más."
+
+    narrador "Pero sin pedirme que me fuera tampoco."
+
+    jump itsuki_m5
+
+############################################################################
+##  MOVIMIENTO 4B · Rama tibia
+############################################################################
+   
+label itsuki_m4b:  
+
+    $ itsuki_rama_cap1 = "tibia"
+    ## sin puntos, sin desaire      
+
+    show itsuki molesta at pj(0.5)
+
+    itsuki "No."
+
+    mc "Ni siquiera sabes qué te iba a explicar."
+
+    itsuki "No hace falta. La respuesta es no."
+
+    narrador "Cerró el cuaderno un centímetro. No del todo."
+
+    narrador "Lo suficiente para que entendiera que la oferta ya estaba rechazada."
+
+    mc "Está bien."
+
+    itsuki "Bien."
+
+    narrador "Me quedé un momento más de lo necesario, esperando algo que no llegó."
+
+    narrador "Fui a buscar mi cuaderno."
+
+    mc_pensamiento "No dijo que no supiera."
+
+    mc_pensamiento "Dijo que no quería que se lo explicara."
+
+    mc_pensamiento "Con ella eso puede ser lo mismo, o lo contrario. Hoy no lo voy a averiguar."
+
+    narrador "Cuando volví a pasar por su pupitre, seguía en el mismo ejercicio."
+
+    narrador "La misma línea. Sin tacharla todavía."
+
+    jump itsuki_m5
+
+############################################################################
+##  MOVIMIENTO 4C · Rama fría
+############################################################################
+   
+label itsuki_m4c:   
+        
+    $ itsuki_rama_cap1 = "fria"
+    $ desaires_cap1 += 1
+    
+    narrador "Estiré la mano hacia el cuaderno antes de que pudiera contestar."
+
+    show itsuki sorpresa at pj(0.5)
+
+    itsuki "¿Qué haces?"
+
+    mc "Ahorrarte tiempo."
+
+    mc "El error está en el segundo paso, la conversión."
+
+    narrador "Lo resolví ahí mismo, de pie, con su propio lápiz."
+
+    narrador "Le devolví el cuaderno con el ejercicio terminado."
+
+    show itsuki molesta at pj(0.5)
+
+    itsuki "…"
+
+    mc "Listo. El resultado es ese."
+
+    itsuki "Ya lo veo."
+
+    narrador "Lo dijo sin agradecerlo y sin discutirlo."
+
+    narrador "En ella, esa es la forma más fría de aceptar algo."
+
+    mc_pensamiento "Se lo resolví bien. Rápido, correcto, sin margen de error."
+
+    mc_pensamiento "Y le quité la única cosa que estaba defendiendo."
+
+    mc_pensamiento "No era el ejercicio. Era hacerlo ella sola."
+
+    show itsuki neutral at pj(0.5)
+
+    itsuki "Puedes irte. Ya tengo lo que necesitaba."
+
+    narrador "Cerró el cuaderno del todo esta vez, con las dos manos."
+
+    narrador "No volvió a levantar la vista."
+
+############################################################################
+## MOVIMIENTO 5 · Cierre
+## Común a las tres ramas, con un cierre cálido, tibio o frío según la elección.
+############################################################################
+
+label itsuki_m5:
 
     #[BG bg_aula — luz más baja, casi de noche]
      
@@ -409,29 +446,35 @@ label hub_Itsuki:
 
     mc_pensamiento "Quedan tres semanas."
 
-    #"*Cierre A (cálida):*"
+    if itsuki_rama_cap1 == "calida":
 
-    mc_pensamiento "No me dio las gracias. No esperaba que lo hiciera."
+        mc_pensamiento "No me dio las gracias. No esperaba que lo hiciera."
 
-    mc_pensamiento "Pero tampoco me dijo que me fuera."
+        mc_pensamiento "Pero tampoco me dijo que me fuera."
 
-    mc_pensamiento "Llevo dos días aprendiendo que con ella eso cuenta más que un gracias."
+        mc_pensamiento "Llevo dos días aprendiendo que con ella eso cuenta más que un gracias."
 
-    #"*Cierre B (tibia):*"
+    elif itsuki_rama_cap1 == "tibia":
 
-    mc_pensamiento "Rechazó la ayuda antes de saber qué era."
+        mc_pensamiento "Rechazó la ayuda antes de saber qué era."
 
-    mc_pensamiento "Puede que no confíe en mí."
+        mc_pensamiento "Puede que no confíe en mí."
 
-    mc_pensamiento "O puede que no confíe en que nadie la ayude sin cobrárselo después."
+        mc_pensamiento "O puede que no confíe en que nadie la ayude sin cobrárselo después."
 
-    #"*Cierre C (fría):*"
+    else:
 
-    mc_pensamiento "Se lo resolví bien y rápido. Ni siquiera protestó."
+        mc_pensamiento "Se lo resolví bien y rápido. Ni siquiera protestó."
 
-    mc_pensamiento "Eso debería sentirse como ganar."
+        mc_pensamiento "Eso debería sentirse como ganar."
 
-    mc_pensamiento "No se siente así."
+        mc_pensamiento "No se siente así."
 
-    #"`→ Vuelve al hub.`"
+
+    ## Marcar el evento como consumido para el evento 6 y para que el hub
+    ## ofrezca la revisita corta en lugar del evento completo.
+    $ itsuki_visitada_cap1 = True
+
+        
+    jump hub
     

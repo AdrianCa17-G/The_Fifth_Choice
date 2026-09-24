@@ -1,15 +1,25 @@
 ################################################################################
 ##  HUB DE MIKU
+##  Se descubre el interés de Miku por los libros del periodo Sengoku
+##  Descubrimos que Miku se abre solo si el tema es algo que le apasiona
 ################################################################################
 
 label hub_Miku:
+
+    $ sumar_punto("miku", 2)
+
+    # Si el jugador eligió la biblioteca en el hub 1, se marca la primera
+    # conexión. Ajustar el string si el hub usa otra clave para este destino.
+    #if hub_choice == "biblioteca":
+    #    $ primera_conexion = True
 
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc y Miku en la biblioteca
     ############################################################################
 
-    #BG NUEVO — bg_biblioteca]` `[MUS stop fadeout 1.0]`
+    #BG NUEVO — bg_biblioteca]` 
+    stop music fadeout 1.0
 
     narrador "La biblioteca municipal quedaba dos calles antes del edificio." 
 
@@ -289,180 +299,234 @@ label hub_Miku:
     mc_pensamiento "Nadie se disculpa por decir algo cierto, a menos que le hayan enseñado que decirlo cuesta."
 
     ## Menú de sabor.
+
     menu:
 
-        narrador "¿Que le dirás a Miku?"
+        "¿Que le dirás a Miku?"
 
         "Ponerla a prueba. Preguntarle por un detalle del libro.": 
-        
-            #(cálida — `[$ sumar_punto("miku", 1)]`)
+            jump miku_m4a
 
-            mc "¿Cuánto tardaba la sal en llegar desde el mar hasta allá?"
+        "Reconocer su nivel. Hacer una valoración de su esfuerzo.":
+            jump miku_m4bs
 
-            #`[SPR miku encogida at pj_habla(0.5)]`
+        "El Sengoku no entra en el examen":
+            jump miku_m4c
 
-            miku "…¿Qué?"
 
-            mc "Es una pregunta."
+## ---------------------------------------------------------------
+## Movimiento 4A · Rama cálida
+## ---------------------------------------------------------------
 
-            mc "Montaña, carga a lomo de animal, hace quinientos años. Cuánto tardaba."
+label miku_m4a:
+  
+    $ miku_rama_cap1 = "calida"
+    $ sumar_punto("miku", 1)
 
-            miku "…Diez días. Doce si llovía."
+    mc "¿Cuánto tardaba la sal en llegar desde el mar hasta allá?"
 
-            mc "¿Y cuánto aguantaban ellos sin sal?"
+    #`[SPR miku encogida at pj_habla(0.5)]`
 
-            #`[SPR miku animada at pj_habla(0.5)]` `[MUS descubrimiento fadein 2.0]`
+    miku "…¿Qué?"
 
-            miku "Depende de la época del año. En verano, con el pescado, casi nada." 
+    mc "Es una pregunta."
 
-            miku "Por eso quitarles el acceso a la sal no era una amenaza para más adelante, era de ese mismo mes."
+    mc "Montaña, carga a lomo de animal, hace quinientos años. Cuánto tardaba."
 
-            miku "Eso es lo que a la gente se le esca—"
+    miku "…Diez días. Doce si llovía."
 
-            narrador "Se detuvo otra vez. Pero esta vez se detuvo distinto."
-            
-            narrador "Se detuvo mirándome a mí, no al libro."
+    mc "¿Y cuánto aguantaban ellos sin sal?"
 
-            miku "…Per—"
+    #`[SPR miku animada at pj_habla(0.5)]` `[MUS descubrimiento fadein 2.0]`
 
-            mc "No."
+    miku "Depende de la época del año. En verano, con el pescado, casi nada." 
 
-            miku "…"
+    miku "Por eso quitarles el acceso a la sal no era una amenaza para más adelante, era de ese mismo mes."
 
-            mc "Estabas contestando una pregunta que te hice yo. Eso no se disculpa."
+    miku "Eso es lo que a la gente se le esca—"
 
-            narrador "No dijo nada. Se le puso el libro a media altura, sin llegar a subirlo del todo."
+    narrador "Se detuvo otra vez. Pero esta vez se detuvo distinto."
 
-            narrador "Y entonces miró el ejemplar que yo había dejado sobre la mesa."
+    narrador "Se detuvo mirándome a mí, no al libro."
 
-            miku "…Dijiste que llegaste a la página noventa."
+    miku "…Per—"
 
-            mc "Noventa y dos."
+    mc "No."
 
-            miku "…Lo de la sal está en la ciento veinte."
+    miku "…"
 
-            narrador "Lo dijo despacio, como quien termina una cuenta."
+    mc "Estabas contestando una pregunta que te hice yo. Eso no se disculpa."
 
-            mc_pensamiento "Ahí estaba lo que acababa de entender."
+    narrador "No dijo nada. Se le puso el libro a media altura, sin llegar a subirlo del todo."
 
-            mc_pensamiento "No que yo supiera de esto."
+    narrador "Y entonces miró el ejemplar que yo había dejado sobre la mesa."
 
-            mc_pensamiento "Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche en ello."
+    miku "…Dijiste que llegaste a la página noventa."
 
-            mc "Voy a llegar a la ciento veinte."
+    mc "Noventa y dos."
 
-            miku "…"
+    miku "…Lo de la sal está en la ciento veinte."
 
-            mc "Lo que acabas de contarme son tres preguntas del examen."
+    narrador "Lo dijo despacio, como quien termina una cuenta."
 
-            mc "Rutas de comercio, cómo se sostenía una provincia y por qué acabó unificándose el país."
+    mc_pensamiento "Ahí estaba lo que acababa de entender."
 
-            mc "No te falta la materia. "
+    mc_pensamiento "No que yo supiera de esto."
 
-            mc "Te falta creer que lo que sabes cuenta como saber."
+    mc_pensamiento "Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche en ello."
 
-            miku "…No es lo mismo."
+    mc "Voy a llegar a la ciento veinte."
 
-            mc "Es exactamente lo mismo, y lo vas a comprobar en tres semanas."
+    miku "…"
 
-            narrador "No me contestó."
-            
-            narrador "Pero cuando me levanté, el libro seguía a media altura y no había vuelto a subir."
+    mc "Lo que acabas de contarme son tres preguntas del examen."
 
+    mc "Rutas de comercio, cómo se sostenía una provincia y por qué acabó unificándose el país."
 
-        "Reconocer su nivel. Hacer una valoración de su esfuerzo.": 
-        
-            #(tibia — sin puntos, sin desaire)
+    mc "No te falta la materia. "
 
-            mc "Se te da bien esto."
+    mc "Te falta creer que lo que sabes cuenta como saber."
 
-            #`[SPR miku encogida at pj_habla(0.5)]`
+    miku "…No es lo mismo."
 
-            miku "…No se me da bien. Solo lo he leído."
+    mc "Es exactamente lo mismo, y lo vas a comprobar en tres semanas."
 
-            mc "Que es más de lo que ha hecho nadie en tu casa."
+    narrador "No me contestó."
 
-            miku "…Eso no es difícil."
+    narrador "Pero cuando me levanté, el libro seguía a media altura y no había vuelto a subir."
 
-            narrador "Lo dijo sin ninguna gracia, como quien cierra una puerta con educación."
+    jump miku_m5
 
-            mc_pensamiento "Le acabo de poner una etiqueta."
 
-            mc_pensamiento "Y ella lleva toda la vida escuchando etiquetas comparadas con otras cuatro."
+## ---------------------------------------------------------------
+## Movimiento 4B · Rama tibia
+## ---------------------------------------------------------------
 
-            narrador" El libro le subió hasta media cara, y ahí se quedó."
+label miku_m4b:
 
-            
+    $ miku_rama_cap1 = "tibia"
+    ## sin puntos, sin desaire
 
-        "El Sengoku no entra en el examen.": 
-        
-            #(fría — `[$ desaires_cap1 += 1]`)
+    mc "Se te da bien esto."
 
-            mc "Nada de eso entra en el examen."
+    #`[SPR miku encogida at pj_habla(0.5)]`
 
-            mc "Unificación de Japón, tres temas, y ninguno pregunta por la sal."
+    miku "…No se me da bien. Solo lo he leído."
 
-            mc "Si vas a dedicarle una hora a algo, que sea a lo que te van a preguntar."
+    mc "Que es más de lo que ha hecho nadie en tu casa."
 
-            show miku neutral at pj(0.5)
+    miku "…Eso no es difícil."
 
-            narrador "No protestó. No se defendió."
+    narrador "Lo dijo sin ninguna gracia, como quien cierra una puerta con educación."
 
-            narrador "Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba."
+    mc_pensamiento "Le acabo de poner una etiqueta."
 
-            miku "…Ya lo sé."
+    mc_pensamiento "Y ella lleva toda la vida escuchando etiquetas comparadas con otras cuatro."
 
-            narrador "Miró un segundo el ejemplar que yo había dejado sobre la mesa, y después apartó la vista."
+    narrador" El libro le subió hasta media cara, y ahí se quedó."
 
-            mc "Entonces empecemos por el tema uno."
+    jump miku_m5
 
-            miku "…Hoy no."
 
-            play sound sfx_silla volume 2.5
+## ---------------------------------------------------------------
+## Movimiento 4C · Rama fría
+## ---------------------------------------------------------------
 
-            narrador "Recogió los cuatro libros, los apiló y se subió los audífonos."
+label miku_m4c:
 
-            narrador "Y esta vez, desde donde yo estaba, se oía la música."
+    $ miku_rama_cap1 = "fria"
+    $ desaires_cap1 += 1
 
-            mc_pensamiento "…"
+    #(fría — `[$ desaires_cap1 += 1]`)
 
-            mc_pensamiento "Antes no sonaban."
+    mc "Nada de eso entra en el examen."
 
-    ############################################################################
-    ##  MOVIMIENTO 5 · Cierre
-    ##  Fin de la interacción entre Miku y Mc.
-    ##  Común a las tres ramas; la última línea cambia
-    ############################################################################
+    mc "Unificación de Japón, tres temas, y ninguno pregunta por la sal."
 
-   
+    mc "Si vas a dedicarle una hora a algo, que sea a lo que te van a preguntar."
+
+    show miku neutral at pj(0.5)
+
+    narrador "No protestó. No se defendió."
+
+    narrador "Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba."
+
+    miku "…Ya lo sé."
+
+    narrador "Miró un segundo el ejemplar que yo había dejado sobre la mesa, y después apartó la vista."
+
+    mc "Entonces empecemos por el tema uno."
+
+    miku "…Hoy no."
+
+    play sound sfx_silla volume 2.5
+
+    narrador "Recogió los cuatro libros, los apiló y se subió los audífonos."
+
+    narrador "Y esta vez, desde donde yo estaba, se oía la música."
+
+    mc_pensamiento "…"
+
+    mc_pensamiento "Antes no sonaban."
+
+    jump miku_m5
+
+############################################################################
+##  MOVIMIENTO 5 · Cierre
+##  Fin de la interacción entre Miku y Mc.
+##  Común a las tres ramas; la última línea cambia
+############################################################################
+
+label miku_m5:
+
     scene bg_negro 
     with fade
 
-    narrador "Salí de la biblioteca cuando estaban apagando las luces de la segunda planta."
+    narrador "Salí de la biblioteca con Miku cuando estaban apagando las luces de la segunda planta."
 
-    mc_pensamiento "Una de cinco. Y ni siquiera entera."
+    narrador "De ahí nos despedimos"
+
+    mc_pensamiento "Una de cinco. Y esta sabía mucho de lo que yo no."
 
     mc_pensamiento "Quedan tres semanas."
 
-    #Cierre A (cálida)
+    if miku_rama_cap1 == "calida":
 
-    mc_pensamiento" Pero hoy alguien me habló durante un minuto seguido sin que yo se lo pidiera dos veces."
+        mc_pensamiento  "Miku no es timida"
 
-    mc_pensamiento" Eso, en esa casa, es un récord."
+        mc_pensamiento "Al contrario, es una persona muy abierta"
 
-    #Cierre B (tibia)
+        mc_pensamiento "Hoy me habló durante un minuto seguido sin que yo se lo pidiera dos veces."
 
-    mc_pensamiento "Dijo cuatro frases y volvió a esconderse." 
+        mc_pensamiento "Sin juzgarme del por qué estaba yo ahí"
 
-    mc_pensamiento "No sé si perdí algo, pero desde luego no gané nada."
+        mc_pensamiento "Eso, en esa casa, es un récord."
 
-    #Cierre C (fría)
+    if miku_rama_cap1 == "tibia":
 
-    mc_pensamiento "Tenía razón en lo del examen."
+        mc_pensamiento "Le dije lo que odia escuchar"
 
-    mc_pensamiento "Lo raro es que llevo toda la tarde con la sensación de haber hecho algo mal teniendo razón."
+        mc_pensamiento "No se defendió."
 
-    #`→ Vuelve al hub.`
+        mc_pensamiento "Dijo cuatro frases y volvió a esconderse." 
+
+        mc_pensamiento "No sé si perdí algo, pero desde luego no gané nada."
+
+    if miku_rama_cap1 == "fría":
+
+        mc_pensamiento "Tenía razón en lo del examen."
+
+        mc_pensamiento "El Sengoku ni si quiera es un tema de relevancia"
+
+        mc_pensamiento "Hize bien al decirle que estudiara lo que realmente le iban a preguntar."
+
+        mc_pensamiento "Lo raro es que llevo toda la tarde con la sensación de haber hecho algo mal teniendo razón."
+
+    ## Marcar el evento como consumido para el evento 6 y para que el hub
+    ## ofrezca la revisita corta en lugar del evento completo.
+    $ miku_visitada_cap1 = True
+
+    jump hub
 
 
 

@@ -1,437 +1,456 @@
 ################################################################################
-##  HUB DE ITSUKI 
+##  HUB DE ICHIKA
+##  Primer encuentro entre mc e Ichika en la sala de ensayo del club de teatro.
+##  Ichika no tiene energía, y el jugador puede notar que algo no está bien.
 ################################################################################
 
-label hub_Itsuki:
+label hub_Ichika:
+
+    $ sumar_punto("ichika", 2)
+
+    # Si el jugador eligió la sala de ensayo en el hub 1, se marca la primera
+    # conexión. Ajustar el string si el hub usa otra clave para este destino.
+    #if hub_choice == "sala_ensayo":
+    #    $ primera_conexion = True
 
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
-    ##  Primer encuentro entre mc e Itsuki en el aula de tarde
+    ##  Futaro encuentra a Ichika dormida en la sala de ensayo del club de teatro.
     ############################################################################
 
-    # show bg_aula — luz de tarde, sin gente]` 
-    
+    # [BG NUEVO — bg_sala_ensayo]
+
     stop music fadeout 1.0
 
-    narrador "Volví al aula a buscar el cuaderno que había dejado en el pupitre."
+    narrador "El club de teatro tenía un cuarto propio detrás del auditorio."
 
-    narrador "Ya no quedaba nadie a esa hora. Ni siquiera el personal de limpieza."
+    narrador "Nadie me dijo que llamara antes de entrar."
 
-    narrador "La luz entraba baja, de lado."
+    narrador "La puerta estaba entreabierta."
 
-    narrador "Se cortaba en franjas sobre los pupitres vacíos."
+    # [CG NUEVO — cg_ichika_ensayo: Ichika sentada en el suelo, apoyada contra
+    # la pared bajo un perchero con vestuario de utilería, dormida. El guion
+    # se le resbala de la mano, algunas hojas ya en el piso. Espejo de cuerpo
+    # entero al fondo reflejando parte de la sala. Luz de tarde entrando por
+    # una ventana alta. Un solo personaje en el frame. Sostiene todo el
+    # movimiento 1, así que tiene que aguantar en pantalla.]
 
-    #"`[CG NUEVO — cg_itsuki_atascada: Itsuki sola en su pupitre, de perfil o tres\ncuartos,
-    #inclinada sobre el cuaderno con el lápiz detenido a medio centímetro del\npapel,
-    #sin escribir. A su lado, una fila de intentos tachados. Luz de tarde\nentrando en
-    #franjas desde la ventana, motas de polvo suspendidas. Aula vacía\ndetrás, 
-    #silla del propio Futaro con la mochila todavía colgada. Un solo personaje\ncon LoRA en el frame.
-    #Sostiene todo el movimiento 1, así que tiene que aguantar\nen pantalla.]`"
+    narrador "La reconocí por el pelo antes que por la cara."
 
-    narrador "Menos un pupitre."
+    mc_pensamiento "Está dormida."
 
-    mc_pensamiento "Itsuki."
+    mc_pensamiento "Sentada en el suelo. Con el guion en la mano."
 
-    mc_pensamiento "No estaba escribiendo."
+    narrador "A su lado había dos latas de energizante."
 
-    mc_pensamiento "Tenía el lápiz levantado, quieto, como si llevara así un rato."
+    narrador "Una de ellas abollada, como si la hubiera apretado sin darse cuenta."
 
-    narrador "No me había oído entrar."
+    mc_pensamiento "Y un horario escrito a mano, con tres columnas superpuestas."
 
-    narrador "O me había oído y decidió que no era asunto suyo quién entraba."
+    mc_pensamiento "Clases. Ensayos. Algo tachado que no llegué a leer."
 
-    mc_pensamiento "A su lado había tres respuestas tachadas."
+    narrador "Me quedé en la puerta un momento, sin saber si entrar o retroceder."
 
-    mc_pensamiento "Una sola raya horizontal cada vez, prolija. No un garabato de rabia."
+    narrador "Decidí entrar."
 
-    mc_pensamiento "Y la misma cifra al final de los tres."
+    narrador "Me acerqué despacio, tratando de no hacer ruido con los pasos."
 
-    narrador "Me acerqué a buscar la mochila."
+    mc_pensamiento "No sabía si despertarla o dejarla dormir un poco más."
 
-    narrador "Fue entonces cuando levantó la vista."
-
-    show itsuki neutral at pj(0.5)
-
-    itsuki "¿Olvidaste algo?"
-
-    mc "El cuaderno."
-
-    itsuki "Está en tu pupitre. Donde lo dejaste."
-
-    mc "Gracias."
-
-    narrador "No aparté la vista tan rápido como debería."
-
-    ############################################################################
-    ##  MOVIMIENTO 2 · La grieta
-    ##  Itsuki se repliega sobre sí misma y deja ver que no sabe
-    ##  resolver el ejercicio.
-    ############################################################################
+    mc_pensamiento "No llegué a decidirlo."
 
     play sound sfx_hoja volume 1.0
 
-    narrador "Pasó a una hoja nueva del cuaderno, tapando la anterior con la mano."
+    narrador "El guion terminó de resbalarle de la mano y cayó al piso."
 
-    narrador "Y siguió sin escribir nada."
+    narrador "Eso la despertó."
 
-    mc "¿Ciencias?"
+    ############################################################################
+    ##  MOVIMIENTO 2 · La grieta
+    ##  Se despierta sin la actuación encendida todavía. Dura medio segundo.
+    ############################################################################
 
-    itsuki "No te incumbe."
+    show ichika neutral at pj(0.5)
 
-    mc "Es tu asignatura."
+    narrador "Abrió los ojos de golpe, sin saber todavía dónde estaba."
 
-    mc "Sí me incumbe."
+    # [CG NUEVO — cg_ichika_desarmada: primer plano cerrado sobre Ichika,
+    # todavía sentada en el suelo, recién despierta. Ojos entreabiertos y sin
+    # foco, pelo suelto de un lado, boca ligeramente abierta, sin ningún
+    # rastro de la sonrisa que usa en el resto del elenco. Misma luz y mismo
+    # ángulo de ventana que cg_ichika_ensayo, pero encuadre mucho más cerrado
+    # sobre su cara: es el fotograma exacto antes de que la actuación vuelva
+    # a encenderse, no una escena nueva.]
 
-    show itsuki molesta at pj(0.5)
+    ichika "…¿Qué hora es?"
 
-    itsuki "Me incumbe a mí. Tú te vas a las cuatro."
+    narrador "Lo preguntó sin actuación, sin la voz que usa para todo."
 
-    mc "Son las cuatro y media."
+    mc "Las cuatro y media."
 
-    narrador "No contestó a eso."
+    ichika "…"
 
-    narrador "Volvió a mirar el cuaderno como si la frase no se hubiera dicho."
+    ichika "Perdí la tarde entera."
 
-    mc_pensamiento "Tres tachones. Misma cifra las tres veces."
+    narrador "Lo dijo plano. Sin exclamación."
 
-    mc_pensamiento "Eso no es no saber."
+    narrador "Sin la pausa que pone antes de un chiste."
 
-    mc_pensamiento "Eso es equivocarse siempre en el mismo sitio sin encontrarlo."
+    mc_pensamiento "Esa no es su voz normal."
 
-    mc "¿Cuánto llevas con ese ejercicio?"
+    mc_pensamiento "Su voz normal tiene dirección de escena."
 
-    itsuki "El tiempo que hace falta."
+    mc_pensamiento "Esta no tenía ninguna."
 
-    mc "¿Y cuánto es?"
+    narrador "Duró medio segundo."
 
-    show itsuki neutral at pj(0.5)
+    narrador "Después pareció darse cuenta de que yo estaba ahí, y de que la había visto así."
 
-    itsuki "El que haga falta, he dicho."
+    show ichika sonrisa at pj(0.5)
 
-    narrador "Lo repitió exactamente igual, palabra por palabra."
+    ichika "¡Ah, no! ¡Estaba practicando!"
 
-    narrador "Y eso fue lo que la delató."
+    mc "¿Practicando dormir?"
 
-    mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la pregunta con la misma frase."
+    ichika "¡Es un método actoral! ¡Se llama sueño escénico!"
 
-    mc_pensamiento "La cambia. La corrige. La mejora."
+    mc "No existe eso."
 
-    mc_pensamiento "Esta vez solo la devolvió intacta."
+    ichika "¡Claro que existe! ¡Lo inventé yo hace cinco minutos!"
 
-    mc_pensamiento "Está ganando, o perdiendo tiempo."
+    narrador "Se rió de su propio chiste, un poco más fuerte de lo que el chiste merecía."
 
-    mc "Las demás no estudian nada y les va igual de mal que a ti."
+    mc_pensamiento "Cambió de tema tan rápido que casi no lo noto."
 
-    narrador "Eso sí le tocó algo."
+    mc_pensamiento "Casi."
 
-    show itsuki molesta at pj(0.5)
+    narrador "Se puso de pie y se sacudió la falda."
 
-    itsuki "No es lo mismo."
+    narrador "Recogió el guion del suelo con un solo movimiento, como si llevara ensayado también eso."
 
-    mc "¿Por qué no?"
+    mc "¿Cuánto tiempo dormiste anoche?"
 
-    itsuki "Porque ellas pueden decir que no lo intentaron."
+    ichika "¡Lo suficiente!"
 
-    itsuki "Yo no tengo esa excusa."
+    mc "Eso no es un número."
 
-    narrador "Lo dijo rápido. Más rápido que el resto de la conversación."
+    show ichika neutral at pj(0.5)
 
-    narrador "Como quien suelta algo antes de poder impedírselo."
+    ichika "¿Y desde cuándo un tutor de matemáticas pide cifras exactas de otras cosas?"
 
-    show itsuki timida at pj(0.5)
+    narrador "Lo dijo con una sonrisa, pero cambió de tema otra vez, y esta ya era la segunda."
 
-    itsuki "…"
+    narrador "Guardó el horario doblándolo rápido."
 
-    itsuki "Olvida lo que dije."
+    narrador "Más rápido de lo necesario, antes de que yo pudiera leer lo que estaba tachado."
 
-    mc_pensamiento "Ahí estaba."
+    mc "¿Cuándo puedo verte para la próxima lección?"
 
-    mc_pensamiento "No es que le vaya mal."
+    narrador "Se lo pregunté sin pensar mucho, solo para cambiar de tema yo también."
 
-    mc_pensamiento "Es que le va mal *estudiando*."
+    ichika "Martes a las cinco y veinte. Nunca antes de eso."
 
-    mc_pensamiento "Y esa es la única excusa que no tiene guardada."
+    mc "¿Por qué no a las cinco y media, si total es casi lo mismo?"
 
-    narrador "Bajó la vista al cuaderno."
+    ichika "Porque el tren de las cinco cuarenta y cinco tarda seis minutos en llegar a la estación desde aquí, y necesito cuatro para cambiarme."
 
-    narrador "La postura no había cambiado, pero algo en los hombros sí."
+    narrador "Lo dijo sin pausar, sin contar con los dedos, como si ya tuviera la cuenta hecha de memoria."
 
-    #`[CG NUEVO — cg_itsuki_contraida: Itsuki encogida sobre su propio pupitre,
-    #sin\nFutaro en el cuadro. Hombros hacia dentro, un brazo cruzado por delante 
-    #del\ncuaderno como si quisiera tapar el papel con el cuerpo entero. Mirada baja,
-    #no\nhacia la cámara. Misma luz de tarde y mismo ángulo de ventana
-    #que\n`cg_itsuki_atascada`, pero encuadre más cerrado sobre ella: es el 
-    #instante justo\ndespués, no una escena nueva.]`"
+    mc_pensamiento "Nadie improvisa ese número tan rápido."
 
-    narrador "Menos derecha. Más cerrada sobre el papel."
+    show ichika sonrisa at pj(0.5)
 
-    narrador "Como si quisiera taparlo con el cuerpo entero."
+    ichika "¡Es que soy muy organizada! ¡Parte del oficio!"
 
-    mc_pensamiento "Preguntarle a sus hermanas sería admitir algo."
+    narrador "Se rió, tapando otra vez algo que se le había escapado sin querer."
 
-    mc_pensamiento "Que ella, la que sí estudia, no entiende esto."
+    mc_pensamiento "Dos latas de energizante."
 
-    mc_pensamiento "Preguntarme a mí sería peor."
+    mc_pensamiento "Un horario con algo tachado que no quiere que vea."
 
-    mc_pensamiento "Sería darme la razón sobre por qué estoy como su tutor."
+    mc_pensamiento "Una cuenta de minutos que le salió demasiado rápido."
 
-    mc_pensamiento "Así que no le pregunta a nadie."
+    mc_pensamiento "Y ahora esto."
 
-    mc_pensamiento "Se queda tachando la misma cifra hasta que se va la luz."
+    mc_pensamiento "Ninguna de las cuatro cosas es una casualidad sola."
+
+    mc_pensamiento "Juntas, son un patrón."
 
     ############################################################################
     ##  MOVIMIENTO 3 · La decisión
-    ##  El jugador decide si ayuda de manera involuntaria, si la ayuda anque
-    ##  signifique romper su orgullo, o si la ayuda de manera fría y directa.
+    ##  El jugador decide si le da tiempo en silencio, si sigue la broma, o si
+    ##  la confronta directamente.
     ############################################################################
 
-    #"`[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`"
-    #"`[CG NUEVO — cg_itsuki_reto: punto de vista de Futaro, de pie, un paso dentro 
-    #del\nespacio de ella. En primer término inferior, desenfocado y cortado por
-    #el borde,\nel canto de su propio cuaderno bajo el brazo — el objeto en
-    #primer plano, sin\nmano marcada. Itsuki al fondo, ahora mirando hacia 
-    #cámara con los ojos entornados,\nla barbilla un poco alta: la misma postura 
-    #contraída de `cg_itsuki_contraida`\npero con la cabeza ya levantada para devolver la mirada. 
-    #Complementa\ndirectamente la línea «¿Vas a quedarte mirando o vas a buscar tu cuaderno?».]`"
+    # [MUS NUEVO — descubrimiento, volumen 0 listo para subir]
 
-    narrador "Dejé la mochila en el suelo."
+    # [CG NUEVO — cg_ichika_mascara: punto de vista de Futaro, de pie, un paso
+    # atrás del lugar donde ella se sienta. En primer término inferior,
+    # desenfocado y cortado por el borde, el canto de su propia mochila
+    # colgada del hombro — el objeto en primer plano, sin mano marcada.
+    # Ichika al fondo, ya sentada en una silla plegable, con la sonrisa de
+    # vuelta en su sitio y el guion otra vez abierto, mirando hacia cámara
+    # con la ceja levantada, como retando a que alguien diga algo. Mismo
+    # minuto que cg_ichika_desarmada, un paso después, con la máscara ya
+    # reconstruida.]
 
-    narrador "Me acerqué un paso. No dos."
+    narrador "Se sentó en una de las sillas plegables."
 
-    narrador "Lo suficiente para ver el cuaderno sin que hiciera falta que me lo mostrara."
+    narrador "Con el guion otra vez en la mano, y pasó una página sin leerla."
 
-    narrador "Tres líneas de planteamiento correctas."
+    ichika "Bueno, ¿viniste a verme actuar o viniste a regañarme?"
 
-    narrador "La conversión de unidades del segundo paso, mal."
+    mc "Vine a buscarte para las clases de mañana."
 
-    narrador "El mismo error, repetido igual las tres veces."
+    ichika "¡Qué aburrido!"
 
-    narrador "Porque volvía a copiar el número equivocado del primer intento cada vez que empezaba de nuevo."
+    ichika "Yo esperaba algo con más drama."
 
-    mc_pensamiento "No es que no sepa resolverlo."
+    narrador "Sonrió, esperando la broma de vuelta."
 
-    narrador "Es que no está revisando desde el principio."
+    narrador "La que suele devolverle cualquiera que hable con ella."
 
-    narrador "Está corrigiendo el final y arrastrando el error del medio sin tocarlo."
+    mc_pensamiento "Tres cosas que acabo de ver y que ella escondió detrás de un chiste."
 
-    show itsuki neutral at pj(0.5)
+    mc_pensamiento "Si le sigo la broma, la cuarta también va a quedar oculta."
 
-    itsuki "¿Vas a quedarte mirando o vas a buscar tu cuaderno?"
-
-    mc "Las dos cosas, si me dejas."
-
-    itsuki "No te dejo."
-
-    narrador "Pero no se movió del pupitre. Ni cerró el cuaderno."
-
-    mc_pensamiento "Tres formas de hacer esto."
-
-    mc_pensamiento "Y solo una no la deja peor de lo que ya está."
-
-    ############################################################################
-    ##  MOVIMIENTO 4A · Rama cálida
-    ##  MOVIMIENTO 4B · Rama tibia
-    ##  MOVIMIENTO 4C · Rama fría
-    ############################################################################
-
-    ## Menú de sabor.
+    mc_pensamiento "Y no va a haber una quinta oportunidad hoy."
 
     menu:
 
-        narrador "¿Cómo respondes?"
+        "¿Cómo respondes?"
 
-        "Se nota el esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso.":
+        "No decir nada. Sostenerle la mirada en silencio, dándole tiempo.":
+            jump ichika_m4a
 
-            #"`[$ sumar_punto(\"itsuki\", 1)]`\n`[MUS descubrimiento — fade in volumen 3.5]`"
+        "Ceder. Reírte de la broma y dejar que oculte el tema.":
+            jump ichika_m4b
 
-            narrador "Señalé la línea con el dedo. Sin tocar el papel."
+        "\"Si tienes energía para hacer chistes, tienes energía para estudiar.\"":
+            jump ichika_m4c
 
-            narrador "Sin acercarme más de lo que ya estaba."
 
-            show itsuki molesta at pj(0.5)
+############################################################################
+##  MOVIMIENTO 4A · Rama cálida — Silencio
+############################################################################
 
-            itsuki "¿Qué tiene el segundo paso?"
+label ichika_m4a:
 
-            mc "Nada que yo vaya a decirte."
+    $ ichika_rama_cap1 = "calida"
+    $ sumar_punto("ichika", 1)
 
-            mc "Solo te digo dónde mirar."
+    # [MUS descubrimiento — fade in volumen 3.5]
 
-            narrador "Se quedó quieta un segundo, decidiendo si eso contaba como ayuda."
+    narrador "No dije nada."
 
-            narrador "Debió decidir que no del todo, porque volvió a mirar el cuaderno."
+    narrador "Me quedé de pie, mirándola, sin devolverle el chiste."
 
-            show itsuki neutral at pj(0.5)
+    show ichika neutral at pj(0.5)
 
-            itsuki "…"
+    ichika "…¿Qué?"
 
-            narrador "Repasó la línea. Una vez. Dos veces."
+    mc "Nada."
 
-            itsuki "La unidad no se cancela ahí."
+    ichika "No pusiste cara de nada."
 
-            itsuki "Arrastré el valor sin convertir."
+    ichika "Pusiste cara de estar esperando algo."
 
-            mc "¿Eso lo sabías o te lo estoy diciendo yo?"
+    mc "Puede ser."
 
-            show itsuki molesta at pj(0.5)
+    narrador "El silencio se estiró más de lo que suele durar entre los dos."
 
-            itsuki "Lo sabía. Se me pasó."
+    narrador "Ella fue la que lo rompió, y lo hizo sin la sonrisa de antes."
 
-            mc "No dije que no."
+    show ichika agotada at pj(0.5)
 
-            narrador "Tachó la línea entera, no solo el número."
+    ichika "…No sé cuánto más puedo seguir haciendo esto."
 
-            narrador "Volvió a empezar desde ahí con la letra un poco más apretada que\nel resto del cuaderno."
+    mc "¿Esto qué?"
 
-            mc_pensamiento "No me pidió que me fuera."
+    ichika "Todo."
 
-            mc_pensamiento "Tampoco me pidió que me quedara."
+    ichika "Las audiciones. Las clases."
 
-            mc_pensamiento "Pero el simple hecho de tolerar mi presencia ya demuestra todo lo que necesito."
+    ichika "Fingir que puedo con las dos."
 
-            narrador "Me quedé de pie, sin sentarme, mientras terminaba el paso."
-            
-            show itsuki timida at pj(0.5)
+    narrador "Lo dijo sin exclamación."
 
-            itsuki "…El resultado me da distinto ahora."
+    narrador "La primera frase larga de toda la tarde sin una sola."
 
-            mc "¿Y?"
+    mc "No dije que no pudieras."
 
-            itsuki "…Es el que tenía que dar."
+    ichika "No hacía falta."
 
-            narrador "No lo dijo como un triunfo."
+    ichika "Yo también me lo digo, y no me lo creo ni cuando lo digo yo."
 
-            narrador "Lo dijo como quien reporta un dato, todavía sin mirarme."
+    narrador "Se quedó mirando el guion, sin pasar la página."
 
-            show itsuki neutral at pj(0.5)
-            
-            itsuki "Puedes buscar tu cuaderno ahora."
+    mc_pensamiento "La semana pasada faltó a algo. No sé a qué."
 
-            mc "Ya lo sé. No me voy a ir todavía."
+    mc_pensamiento "Y por como dobló ese horario, tampoco creo que se lo haya contado a nadie."
 
-            narrador "Levantó la vista, un segundo, para comprobar si hablaba en serio."
+    show ichika neutral at pj(0.5)
 
-            narrador "Y volvió al cuaderno sin decir nada más."
+    ichika "…"
 
-            narrador "Pero sin pedirme que me fuera tampoco."
-   
-        "¿Quieres que lo revisemos desde el principio?":
+    ichika "¿No vas a decir nada aprovechado sobre esto?"
 
-            #"*(sin puntos, sin desaire)*"
+    mc "¿Cómo qué?"
 
-            show itsuki molesta at pj(0.5)
+    ichika "No sé. Algo de tutor."
 
-            itsuki "No."
+    ichika "\"Si estás cansada, deberías dormir más.\""
 
-            mc "Ni siquiera sabes qué te iba a explicar."
+    mc "Eso ya lo sabes tú sola."
 
-            itsuki "No hace falta. La respuesta es no."
+    narrador "Sonrió, esta vez más despacio, sin la energía de antes."
 
-            narrador "Cerró el cuaderno un centímetro. No del todo."
+    show ichika sonrisa at pj(0.5)
 
-            narrador "Lo suficiente para que entendiera que la oferta ya estaba rechazada."
+    ichika "…Gracias por no decir la frase obvia."
 
-            mc "Está bien."
+    narrador "Guardó el guion en la mochila, todavía sin la actuación completa de vuelta."
 
-            itsuki "Bien."
+    mc_pensamiento "Volvió la sonrisa. Pero tardó, y no vino con exclamación."
 
-            narrador "Me quedé un momento más de lo necesario, esperando algo que no llegó."
+    mc_pensamiento "Es la primera vez que la veo actuar despacio."
 
-            narrador "Fui a buscar mi cuaderno."
+    jump ichika_m5
 
-            mc_pensamiento "No dijo que no supiera."
 
-            mc_pensamiento "Dijo que no quería que se lo explicara."
+############################################################################
+##  MOVIMIENTO 4B · Rama tibia — Seguirle la broma
+############################################################################
 
-            mc_pensamiento "Con ella eso puede ser lo mismo, o lo contrario. Hoy no lo voy a averiguar."
+label ichika_m4b:
 
-            narrador "Cuando volví a pasar por su pupitre, seguía en el mismo ejercicio."
+    $ ichika_rama_cap1 = "tibia"
+    ## sin puntos, sin desaire
 
-            narrador "La misma línea. Sin tacharla todavía."
-   
-        "Estás perdiendo el tiempo. Déjame el cuaderno y lo resuelvo.":
+    show ichika sonrisa at pj(0.5)
 
-            #"`[$ desaires_cap1 += 1]`"
+    mc "Con más drama, entonces."
 
-            narrador "Estiré la mano hacia el cuaderno antes de que pudiera contestar."
+    mc "Entras corriendo, gritando mi nombre."
 
-            show itsuki sorpresa at pj(0.5)
+    ichika "¡Eso ya lo hice el primer día! Hay que innovar."
 
-            itsuki "¿Qué haces?"
+    mc "¿Qué tal un dragón?"
 
-            mc "Ahorrarte tiempo."
+    ichika "¡Un dragón que además sabe matemáticas!"
 
-            mc "El error está en el segundo paso, la conversión."
+    ichika "¡Perfecto para ti!"
 
-            narrador "Lo resolví ahí mismo, de pie, con su propio lápiz."
+    narrador "Se rió, esta vez de verdad, y la conversación se fue por ahí un rato."
 
-            narrador "Le devolví el cuaderno con el ejercicio terminado."
+    mc_pensamiento "Es una buena broma. Las suyas siempre lo son."
 
-            show itsuki molesta at pj(0.5)
+    mc_pensamiento "Pero seguimos hablando de dragones y no de las dos latas de energizante."
 
-            itsuki "…"
+    ichika "¡Y el dragón tendría que usar lentes! ¡Para verse serio con los números!"
 
-            mc "Listo. El resultado es ese."
+    mc "Los dragones no necesitan lentes."
 
-            itsuki "Ya lo veo."
+    ichika "¡Este sí! ¡Es miope de tanto leer contratos de audición!"
 
-            narrador "Lo dijo sin agradecerlo y sin discutirlo."
+    narrador "Siguió inventando detalles del dragón durante un rato más, cada uno más absurdo que el anterior."
 
-            narrador "En ella, esa es la forma más fría de aceptar algo."
+    mc_pensamiento "Cuanto más se ríe, menos espacio queda para preguntar nada en serio."
 
-            mc_pensamiento "Se lo resolví bien. Rápido, correcto, sin margen de error."
+    narrador "Guardó el guion en la mochila sin volver a mirarlo."
 
-            mc_pensamiento "Y le quité la única cosa que estaba defendiendo."
+    ichika "Bueno, vamos, antes de que se haga de noche."
 
-            mc_pensamiento "No era el ejercicio. Era hacerlo ella sola."
+    mc_pensamiento "No dijo nada más de lo que vi al entrar."
 
-            show itsuki neutral at pj(0.5)
+    mc_pensamiento "Y yo tampoco insistí."
 
-            itsuki "Puedes irte. Ya tengo lo que necesitaba."
+    jump ichika_m5
 
-            narrador "Cerró el cuaderno del todo esta vez, con las dos manos."
 
-            narrador "No volvió a levantar la vista."
+############################################################################
+##  MOVIMIENTO 4C · Rama fría
+############################################################################
 
-    ############################################################################
-    ## MOVIMIENTO 5 · Cierre
-    ## Común a las tres ramas, con un cierre cálido, tibio o frío según la elección.
-    ############################################################################
+label ichika_m4c:
 
-    #[BG bg_aula — luz más baja, casi de noche]
-     
+    $ ichika_rama_cap1 = "fria"
+    $ desaires_cap1 += 1
+
+    mc "Si tienes tiempo para esto, tienes tiempo para estudiar."
+
+    narrador "La sonrisa no desapareció del todo, pero algo detrás de ella sí."
+
+    show ichika neutral at pj(0.5)
+
+    ichika "…"
+
+    ichika "Ya veo."
+
+    narrador "Lo dijo con la voz más parecida a la de un adulto que le hubiera oído usar."
+
+    show ichika sonrisa at pj(0.5)
+
+    ichika "¡Tienes razón! ¡Debería aprovechar mejor el tiempo!"
+
+    narrador "Guardó el guion de un solo movimiento, rápido."
+
+    narrador "Sin doblar las páginas con cuidado como antes."
+
+    mc_pensamiento "Dije exactamente lo que un padre le diría."
+
+    mc_pensamiento "Y ella me contestó exactamente lo que le contesta a un padre."
+
+    narrador "Salió primero, sosteniendo la puerta apenas el tiempo justo para no dejarla cerrarse en mi cara."
+
+    mc_pensamiento "No fue grosera. Fue correcta."
+
+    mc_pensamiento "Y eso, viniendo de ella, es peor que un portazo."
+
+    jump ichika_m5
+
+
+############################################################################
+##  MOVIMIENTO 5 · Cierre
+##  Común a las tres ramas; el cierre final cambia según ichika_rama_cap1.
+############################################################################
+
+label ichika_m5:
+
+    # [BG bg_sala_ensayo — luz de atardecer, entrando el conserje a apagar luces]
+
     stop music fadeout 1.5
 
-    narrador "Salí del aula cuando ya casi no quedaba luz de ventana."
+    narrador "Salimos cuando el conserje empezaba a apagar las luces del pasillo."
 
-    narrador "Ella seguía en su pupitre."
-
-    mc_pensamiento "Una de cinco. Y esta no pidió nada."
+    mc_pensamiento "Una de cinco. Y esta se durmió antes de que yo dijera nada."
 
     mc_pensamiento "Quedan tres semanas."
 
-    "*Cierre A (cálida):*"
+    if ichika_rama_cap1 == "calida":
 
-    mc_pensamiento "No me dio las gracias. No esperaba que lo hiciera."
+        mc_pensamiento "Dijo que no sabía cuánto más podía seguir así."
 
-    mc_pensamiento "Pero tampoco me dijo que me fuera."
+        mc_pensamiento "No sé si me lo dijo a mí o si se le escapó."
 
-    mc_pensamiento "Llevo dos días aprendiendo que con ella eso cuenta más que un gracias."
+        mc_pensamiento "Tampoco sé si hay diferencia."
 
-    "*Cierre B (tibia):*"
+    elif ichika_rama_cap1 == "tibia":
 
-    mc_pensamiento "Rechazó la ayuda antes de saber qué era."
+        mc_pensamiento "Hablamos de dragones durante diez minutos."
 
-    mc_pensamiento "Puede que no confíe en mí."
+        mc_pensamiento "Fue divertido."
 
-    mc_pensamiento "O puede que no confíe en que nadie la ayude sin cobrárselo después."
+        mc_pensamiento "No estoy seguro de que haya sido nada más que eso."
 
-    "*Cierre C (fría):*"
+    else:
 
-    mc_pensamiento "Se lo resolví bien y rápido. Ni siquiera protestó."
+        mc_pensamiento "Tenía razón en lo que dije. Eso no me hace sentir mejor."
 
-    mc_pensamiento "Eso debería sentirse como ganar."
+        mc_pensamiento "Sostuvo la puerta el tiempo justo. Ni un segundo más."
 
-    mc_pensamiento "No se siente así."
+    # Marca el evento como consumido para el evento 6 y para que el hub
+    # ofrezca la revisita corta en lugar del evento completo.
+    $ ichika_visitada_cap1 = True
 
-    "`→ Vuelve al hub.`"
-    
+    jump hub
