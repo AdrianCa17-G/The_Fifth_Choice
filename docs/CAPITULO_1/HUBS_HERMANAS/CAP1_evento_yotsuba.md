@@ -467,23 +467,9 @@ a la de antes.
 
 [SFX sfx_pisadas_pista — loop, distante, entra bajo]
 
-**narrador:** Me detuve un segundo junto a la puerta, fuera de su vista, tal como había llegado.
+**mc_pensamiento:** Una de cinco. Y esta acaba de llegar corriendo.
 
-**mc_pensamiento:** No fue a propósito. O no del todo.
-
-**yotsuba:** Treinta y uno.
-
-**narrador:** Sin exclamación. Sin nadie más que ella para escucharlo.
-
-**mc_pensamiento:** Dijo que le faltaban treinta. Debería haber parado ahí.
-
-**yotsuba:** Treinta y dos.
-
-**mc_pensamiento:** Así sonaba cuando de verdad creía que no la oía nadie.
-
-**mc_pensamiento:** Ni una gracia. Ni un chiste sobre sus piernas. 
-
-**mc_pensamiento:** Solo el número, seco, como quien paga una cuenta que ya debería estar saldada.
+**mc_pensamiento:** Solo quedan tres semanas.
 
 *Cierre A (cálida):*
 
