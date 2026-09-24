@@ -447,17 +447,6 @@ antes de que pudiera ver algo más.
 `[BG bg_centro_comercial — más gente, ya de tarde avanzada]`
 `[MUS stop fadeout 1.5]`
 
-**narrador:** La acompañé hasta la salida, cargando lo que me dejó cargar.
-
-**mc_pensamiento:** Una de cinco. Y esta no bajó la guardia ni un minuto
-entero.
-
-**narrador:** En la caja, pagó ella misma, sin dejarme acercar la cartera.
-
-**mc_pensamiento:** Ni eso me lo iba a dejar hacer.
-
-**mc_pensamiento:** Quedan tres semanas.
-
 **narrador:** Casi en la puerta, el celular le sonó en el bolsillo del
 delantal.
 
@@ -500,6 +489,17 @@ voltear a verme.
 ---
 
 ### Movimiento 6 · Cierre
+
+**narrador:** Decidí acompañarla hasta la salida, cargando lo que me dejó cargar.
+
+**mc_pensamiento:** Una de cinco. Y esta no bajó la guardia ni un minuto
+entero.
+
+**narrador:** En la caja, pagó ella misma, sin dejarme acercar la cartera.
+
+**mc_pensamiento:** Ni eso me lo iba a dejar hacer.
+
+**mc_pensamiento:** Quedan tres semanas.
 
 *(la última línea de pensamiento cambia según la rama)*
 
