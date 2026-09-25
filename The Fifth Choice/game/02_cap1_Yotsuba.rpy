@@ -1,4 +1,26 @@
 ################################################################################
+##  BGs Y CGs PROPIOS DEL HUB DE YOTSUBA 
+##  2 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
+##  el hub reutiliza son todos dos sprites de Yotsuba, de ahí se crean dos 
+##  nuevos sprites que se definen en 00_definiciones
+################################################################################
+
+image bg_pista_atletismo = Transform(
+    "images/bg/hubs_hermanas/pista_atletismo.webp",
+    matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
+)
+
+image cg_yotsuba_pista = Transform(
+    "images/cg/hubs_hermanas/yotsuba_pista.webp",
+    matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
+)
+
+image cg_yotsuba_rotulador = Transform(
+    "images/cg/hubs_hermanas/yotsuba_rotulador.webp",
+    matrixcolor = BrightnessMatrix(-0.05) * SaturationMatrix(0.90) * TintMatrix("#e4e0f2")
+)
+
+################################################################################
 ##  HUB DE YOTSUBA
 ##  La primera visita a Yotsuba, que se encuentra en la pista de atletismo.
 ##  Se puede visitar en cualquier momento.
@@ -18,8 +40,9 @@ label hub_Yotsuba:
     ##  Primer encuentro entre mc y Yotsuba. Se establece la dinámica de la relación.
     ############################################################################
 
-    #`[BG NUEVO — bg_pista_atletismo]`
-    
+    scene bg_pista_atletismo
+    with dissolve
+
     stop music fadeout 1.0
 
     narrador "La pista de atletismo estaba al fondo del edificio de deportes."
@@ -30,21 +53,20 @@ label hub_Yotsuba:
 
     narrador "Solo estaba encendido el sistema de emergencia, que daba una luz naranja pareja y sin sombras."
 
-    #`[CG NUEVO — cg_yotsuba_pista: Yotsuba de espaldas en la recta final de la
-    #pista, en plena carrera. Pista de tartán roja, líneas blancas. Luz naranja de
-    #emergencia. Gradas vacías al fondo. Un solo personaje, sin nadie más. La
-    #cámara está en las gradas, a media altura, con el fondo de la pista abierto
-    #delante de ella. Sostiene los primeros tres bloques de narración.]`
+    scene cg_yotsuba_pista
+    with dissolve
 
     mc_pensamiento "El club se había ido hace por lo menos media hora."
 
-    mc_pensamiento "Estaban marchandose a casa cuando salí de clase."
+    mc_pensamiento "Estaban marchándose a casa cuando salí de clase."
 
     mc_pensamiento "Ella sigue ahí."
 
     mc_pensamiento "Sola."
 
-    narrador "Seguía dando vueltas, sin si quiera notar mi presencia."
+    mc_pensamiento "Se cambió para irse a casa y solo se dejó las zapatillas puestas."
+
+    narrador "Seguía dando vueltas, sin siquiera notar mi presencia."
 
     narrador "Fue la tercera vuelta cuando escuché lo que decía."
 
@@ -56,7 +78,7 @@ label hub_Yotsuba:
 
     mc_pensamiento "Y animándose a sí misma."
 
-    narrador "Me quedé observandola y memorizando el número de vueltas que llevaba."
+    narrador "Me quedé observandóla y memorizando el número de vueltas que llevaba."
 
     #`[SFX sfx_pisadas_pista — pasos rítmicos de carrera, en loop suave]`
 
@@ -66,7 +88,9 @@ label hub_Yotsuba:
 
     mc_pensamiento "No es un número perfecto."
 
-    narrador "Lo estaba anotando. En la muñeca. Con rotulador."
+    narrador "Cuando pasó por delante de las gradas lo vi: lo estaba anotando."  
+
+    narrador "En la muñeca. Con rotulador."
 
     mc_pensamiento "Lleva las vueltas escritas en el brazo."
 
@@ -79,7 +103,11 @@ label hub_Yotsuba:
     ##  Yotsuba se siente insuficiente y se compara con sus hermanas. 
     ############################################################################
 
-    show yotsuba_sorprendida at pj(0.5)
+    scene bg_pista_atletismo
+    with fade
+
+    show yotsuba sorprendida at pj(0.5)
+    with dissolve
 
     narrador "Se paró en seco a mitad de la pista, "
     
@@ -87,7 +115,7 @@ label hub_Yotsuba:
 
     yotsuba "…"
 
-    mc "Llevas veintitrés vueltas Yotsuba."
+    mc "Llevas veintitrés vueltas, Yotsuba."
 
     mc "Te va a dar algo si sigues hablando contigo misma."
 
@@ -103,7 +131,8 @@ label hub_Yotsuba:
 
     narrador "Pausa."
 
-    show yotsuba_neutral at pj(0.5)
+    show yotsuba neutral at pj(0.5)
+    with dissolve
 
     yotsuba "…¿Cuánto llevas tú?"
 
@@ -117,18 +146,14 @@ label hub_Yotsuba:
     
     mc "Y parece que no es la primera vez que te quedas después de que el club se va."
 
-    #`[CG NUEVO — cg_yotsuba_rotulador: Yotsuba apoyada en la valla metálica
-    #de la pista, plano medio-corto. Brazo izquierdo levantado, mirando el
-    #rotulador en la muñeca con expresión entre avergonzada y descolocada.
-    #Pelo naranja suelto por el esfuerzo, mejillas ligeramente sonrojadas por
-    #la carrera. Chaleco amarillo, camisa manga corta, falda verde, medias
-    #oscuras hasta la rodilla, loafers marrones. Fondo: pista de tartán roja,
-    #gradas vacías, luz naranja de emergencia. Sin más personajes en el encuadre.
-    #Cámara a altura de ojo. Sostiene desde «Se pasó el dorso de la mano»
-    #hasta «Miró la pista, el rotulador, las gradas vacías».]`
+    scene cg_yotsuba_rotulador
+    with fade
 
-    narrador "Se pasó el dorso de la mano por la frente y miró el rotulador de la muñeca con
-    una mezcla de vergüenza y desconcierto"
+    narrador "Bajó la mirada, con las manos recogidas contra el pecho."
+    
+    narrador "Como si acabara de darse cuenta de que alguien la estaba viendo."
+
+    narrador "En el antebrazo, las marcas de rotulador corridas por el sudor."
 
     #`[SFX sfx_silencio_exterior — viento suave, pajaros lejanos]`
 
@@ -162,6 +187,10 @@ label hub_Yotsuba:
 
     narrador "Treinta vueltas después de que el club cerró."
 
+    mc_pensamiento "Antes dijo veinticinco."
+
+    mc_pensamiento "Ahora dice treinta."
+
     mc_pensamiento "Eso es entre nueve y doce kilómetros, dependiendo del tamaño de la pista."
 
     mc_pensamiento "Sola."
@@ -176,7 +205,7 @@ label hub_Yotsuba:
 
     mc "¿Entrenas así todos los días?"
 
-    yotsuba "¡Solo cuando quiero mejorar!... Que si... ¡Es todos los días!"
+    yotsuba "¡Solo cuando quiero mejorar!... Que sí... ¡Es todos los días!"
 
     mc "¿Y el club no se queda?"
 
@@ -190,7 +219,11 @@ label hub_Yotsuba:
 
     narrador "Miró la pista, el rotulador, las gradas vacías."
 
-    show yotsuba_neutral at pj(0.5)
+    scene bg_pista_atletismo
+    with fade
+
+    show yotsuba neutral at pj(0.5)
+    with dissolve
 
     yotsuba "Mis hermanas son mejores que yo en casi todo."
 
@@ -220,9 +253,12 @@ label hub_Yotsuba:
 
     #`[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`
 
-    narrador "Se limpió el rotulador de la muñeca con el reverso de la camiseta " 
+    narrador "Se limpió el rotulador de la muñeca con el borde de la manga"         
     
     narrador " y volvió a mirarme con esa sonrisa intacta."
+
+    show yotsuba incomoda at pj(0.5)
+    with dissolve
 
     yotsuba "¡Bueno!"
 
@@ -237,6 +273,9 @@ label hub_Yotsuba:
     narrador "Dio un par de saltos en el sitio, sacudiendo los brazos, "
     
     narrador " como si con eso pudiera sacudirse también lo que acababa de decir."
+
+    show yotsuba sonriendo 
+    with dissolve
 
     yotsuba "¡Venga, no hay tiempo que perder! ¡El sol no espera!"
 
@@ -262,9 +301,9 @@ label hub_Yotsuba:
     
     narrador " la sonrisa firme en su sitio."
 
-    mc_pensamiento "Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacia por dentro, "
+    mc_pensamiento "Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacía por dentro, "
 
-    mc_pensamiento " o si por fin le hago caer en cuenta su valor como persona."
+    mc_pensamiento " o si le hago caer en cuenta su valor como persona."
 
     ############################################################################
     ##  MOVIMIENTO 4A · Rama cálida
@@ -311,19 +350,22 @@ label yotsuba_m4a:
 
     mc "Lo sé. Pero te saltaste algo."
 
+    show yotsuba neutral at pj(0.5)
+    with dissolve
+
     narrador "Su sonrisa no desapareció,"
             
     narrador " pero tardó un poco más en reaccionar."
 
     yotsuba "…¿Qué me salté?"
 
-    mc "Esta mañana, en el desayuno. Supiste que Nino no había dormido bien antes
+    mc "Esta mañana, en el desayuno. Supiste que Nino no había dormido bien antes 
     de que ella dijera nada."
 
     yotsuba "Estaba un poco más callada que de costumbre."
 
     mc "Y ayer le dijiste a Miku que el libro que buscaba estaba en la
-    segunda planta antes de que Miku si quiera preguntara."
+    segunda planta antes de que Miku siquiera preguntara."
 
     yotsuba "Es que siempre lo deja ahí después de leerlo."
 
@@ -337,6 +379,9 @@ label yotsuba_m4a:
     narrador "No el silencio de quien no tiene respuesta: 
     el de quien está revisando si los datos son correctos."
 
+    show yotsuba incomoda at pj(0.5)
+    with dissolve
+
     yotsuba "…¿Me estabas observando?"
 
     mc "Soy tu tutor. Observar es parte del trabajo."
@@ -349,7 +394,8 @@ label yotsuba_m4a:
 
     narrador "Eso no lo tenía preparado."
 
-    show yotsuba_sorprendida at pj(0.5)
+    show yotsuba sorprendida at pj(0.5)
+    with dissolve
 
     yotsuba "…Pero eso no entra en ningún examen."
 
@@ -371,7 +417,8 @@ label yotsuba_m4a:
 
     narrador "Pasó un momento largo."
 
-    show yotsuba_neutral at pj(0.5)
+    show yotsuba neutral at pj(0.5)
+    with dissolve
 
     yotsuba "No sé si eso es verdad o si eres muy bueno animando a la gente."
 
@@ -379,7 +426,8 @@ label yotsuba_m4a:
 
     narrador "Lo pensó."
 
-    show yotsuba_sonrisa at pj(0.5)
+    show yotsuba sonriendo at pj(0.5)
+    with dissolve
 
     yotsuba "…Eso también es verdad."
 
@@ -389,7 +437,7 @@ label yotsuba_m4a:
 
     narrador "Cuando arrancó la vuelta veinticuatro, ya no le hizo falta gritar para darse ánimos."
 
-    narrador "Algo en ella luce distinto. No era que estuviera más rápida. Era que estaba más segura."
+    narrador "Algo en ella lucía distinto. No era que estuviera más rápida. Era que estaba más segura."
 
     jump yotsuba_m5
     
@@ -429,11 +477,11 @@ label yotsuba_m4b:
 
     narrador "Se rió de su propio chiste. Era una risa fácil, sin trampa."
 
-    mc "Esquivó el tema."
+    mc_pensamiento "Esquivó el tema." 
+                                 
+    mc_pensamiento "O tal vez prefirió quedarse con el cronómetro porque era más sencillo."
 
-    mc "O tal vez prefirió quedarse con el cronómetro porque era más sencillo."
-
-    mc "No lo sé. Y ella tampoco me lo va a decir hoy."
+    mc_pensamiento "No lo sé. Y ella tampoco me lo va a decir hoy."
 
     mc "Otra vuelta."
 
@@ -457,11 +505,15 @@ label yotsuba_m4c:
 
     mc "Entonces concéntrate en correr. Si es lo tuyo, hazlo bien."
 
+    show yotsuba incomoda at pj(0.5)
+    with dissolve
+
     narrador "Asintió."
 
     narrador "Rápido, una sola vez, como quien recibe una instrucción."
 
-    show yotsuba_sonrisa at pj(0.5)
+    show yotsuba sonriendo at pj(0.5)
+    with dissolve
 
     yotsuba "¡Tienes razón! ¡Eso estaba haciendo! ¡Qué bueno que lo entiendas!"
 
@@ -470,7 +522,7 @@ label yotsuba_m4c:
 
     mc_pensamiento "Le dije exactamente lo que quería escuchar."
 
-    mc_pensamiento "O lo que lleva siempre diciendose a si misma."
+    mc_pensamiento "O lo que lleva siempre diciéndose a sí misma."
 
     narrador "Dio la vuelta veinticuatro en un silencio absoluto."
 
@@ -499,6 +551,9 @@ label yotsuba_m4c:
 ############################################################################
 
 label yotsuba_m5:
+
+    hide yotsuba 
+    with dissolve
 
     #`[BG bg_pista_atletismo — luz más baja, atardecer avanzado]`
     #`[MUS stop fadeout 1.5]`

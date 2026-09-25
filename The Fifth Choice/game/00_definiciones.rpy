@@ -167,8 +167,11 @@ image nino pillada   = "sprites/nino_sprites/nino_pillada.png"
 
 image miku neutral   = "sprites/miku_sprites/miku_neutral.png"
 
+image yotsuba neutral  = "sprites/yotsuba_sprites/yotsuba_neutral.png"
 image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonrisa.png"
 image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
+image yotsuba sorprendida = "sprites/yotsuba_sprites/yotsuba_sorprendida.png"
+
 
 
 ## --- Pendientes del Capitulo 1 -----------------------------------------------

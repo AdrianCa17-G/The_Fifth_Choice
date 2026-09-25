@@ -1,6 +1,6 @@
 ################################################################################
 ##  BGs Y CGs PROPIOS DEL HUB DE ITSUKI 
-##  Ilustraciones y fondos de momentos concretos de este hub. Los  que
+##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
 ##  el hub reutiliza son todos los sprites de itsuki y el de timida que nunca
 ##  se usó en la apertura
 ################################################################################
@@ -414,7 +414,7 @@ label itsuki_m4c:
     
     narrador "Estiré la mano hacia el cuaderno antes de que pudiera contestar."
 
-    show itsuki sorpresa at pj(0.5)
+    show itsuki sorprendida at pj(0.5)
     with dissolve
 
     itsuki "¿Qué haces?"
@@ -464,8 +464,8 @@ label itsuki_m4c:
 
 label itsuki_m5:
 
-    scene bg_aula_tarde
-    with fade
+    hide itsuki 
+    with dissolve
      
     stop music fadeout 1.5
 
