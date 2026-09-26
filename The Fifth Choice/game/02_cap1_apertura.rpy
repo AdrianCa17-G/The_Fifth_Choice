@@ -48,7 +48,7 @@ label cap1_apertura:
 
     narrador "Mi asiento estaba libre."
 
-    show cg_itsuki_apertura
+    scene cg_itsuki_apertura
     with fade
 
     mc_pensamiento "Libre, y con el pupitre de al lado ocupado."
@@ -85,6 +85,41 @@ label cap1_apertura:
     mc "Solo lo estoy avisando."
 
     itsuki "Avisa lo que quieras. Yo no pienso estudiar contigo."
+
+    mc_pensamiento "(...)"
+
+    ## Menú de sabor.
+    menu:
+
+        "¿Cómo te tomas su respuesta?"
+
+        "Con la misma frialdad.":
+
+            mc_pensamiento "¡Bien!"
+            
+            mc_pensamiento "Si quiere jugar a las distancias, a mí me sobra paciencia para eso."
+
+            mc_pensamiento "No es que necesite su compañía para nada."
+
+        "Con algo de curiosidad.":
+
+            mc_pensamiento "Es raro." 
+            
+            mc_pensamiento "Ayer gritaba que me odiaba y hoy ni siquiera se molesta en mirarme."
+
+            mc_pensamiento "Como si ya hubiera decidido que no valgo ni para enojarse."
+
+        "Con cierto alivio.":
+
+            mc_pensamiento "Mejor así, la verdad." 
+            
+            mc_pensamiento "Menos ruido, menos discusiones."
+
+            mc_pensamiento "(Aunque el silencio, viniendo de ella, se siente casi más pesado que los gritos.)"
+
+
+    scene cg_itsuki_apertura
+    with fade
 
     narrador "Volvió a su cuaderno con un gesto seco y no dijo una palabra más en toda la mañana."
 
@@ -384,7 +419,7 @@ label cap1_apertura:
     
     play sound sfx_puerta_abre volume 1.0
 
-    narrador "Estaba recogiendo cuando la puerta del fondo se abrió."
+    narrador "Estaba recogiendo mis cosas cuando la puerta del fondo se abrió."
 
     show cg_maruo_reunion
     with fade
@@ -427,18 +462,129 @@ label cap1_apertura:
     mc_pensamiento "Treinta días para cinco alumnas que hoy se organizaron para reprobar."
 
     ############################################################################
-    ##  ESCENA 4 · La conclusión
+    ##  ESCENA 4 · La cena
+    ##  Raiha, Isanari y mc en el comedor hablando del segundo
+    ##  día de trabajo. Incluye menú de sabor.
     ############################################################################
 
     stop music fadeout 2.0
-    
-    scene bg_negro 
+
+    scene bg_negro
     with fade
 
     narrador "Salí del edificio pasadas las siete. Fui directo a casa."
 
+    play music cena fadeout 1.5 fadein 2.0
+
+    scene bg_comedor
+    with fade
+
+    narrador "La cena transcurrió casi en silencio, roto solo por el sonido de los cubiertos."
+
+    show raiha hablando at pj(0.20)
+    with dissolve
+
+    raiha "Hermanito, te noto más callado que de costumbre."
+
+    mc "Solo estoy cansado."
+
+    show isanari neutral at pj(0.73)
+    with dissolve
+
+    isanari "¿Cansado, o el trabajo ya te está pasando factura?"
+
+    mc "Un poco de las dos cosas."
+
+    show isanari at pj_habla(0.73)
+    show raiha regano at pj_calla(0.20)
+
+    isanari "¿Qué tal el segundo día con esas alumnas?"
+
+    ## Menú de sabor.
+    menu:
+
+        "¿Qué le cuentas de tu segundo día?"
+
+        "La verdad completa: se coordinaron para hacerlo mal.":
+
+            mc "Sinceramente... hoy fue peor que ayer."
+            
+            mc "Se pusieron de acuerdo para responder mal a propósito."
+
+            show isanari at pj_calla(0.73)
+            show raiha hablando at pj_habla(0.20)
+            with dissolve
+
+            raiha "¡Eso es horrible! ¿Por qué harían algo así?"
+
+            mc "Todavía no lo sé. Pero pienso averiguarlo."
+
+            show raiha at pj_calla(0.20)
+            show isanari neutral at pj_habla(0.73)
+            with dissolve
+
+            isanari "Cinco cabezas puestas de acuerdo contra una... suena a un problema serio."
+
+        "Suavizar la situación: 'Va bien, dentro de lo normal.'":
+
+            mc "Va bien. Dentro de lo que cabe esperar de un segundo día."
+
+            show isanari at pj_habla(0.73)
+            with dissolve
+
+            isanari "Ya veo. No sonaste muy convencido al decirlo."
+
+            mc "Es solo cansancio, ya te dije."
+
+            show raiha regano at pj_habla(0.20)
+            with dissolve
+
+            raiha "¡A mí no me engañas! ¡Se te nota en la cara que algo pasó!"
+
+        "Cambiar de tema.":
+
+            mc "¿Podemos hablar de otra cosa?" 
+            
+            mc "No quiero pensar en eso ahora mismo."
+
+            show isanari neutral at pj_habla(0.73)
+            with dissolve
+
+            isanari "Como quieras. No voy a insistir."
+
+            show raiha hablando at pj_habla(0.20)
+            with dissolve
+
+            raiha "¡Yo sí insisto un poquito! Pero está bien, lo dejo por hoy."
+
+
+    show isanari sonriendo at pj_habla(0.73)
+    show raiha at pj_calla(0.20)
+    with dissolve
+
+    isanari "Solo recuerda que un mes no es mucho tiempo, y el trato con esa familia depende de que cumplas."
+
+    mc "Lo sé. No hace falta que me lo recuerdes."
+
+    isanari "Tómalo como otro examen sorpresa."
+
+    mc_pensamiento "Otra vez con esa frase..."
+
+    mc_pensamiento "Aunque esta vez tiene más razón de la que me gustaría admitir."
+
+    narrador "Terminada la cena, subí a mi habitación con las cinco hojas bajo el brazo."
+
+    ############################################################################
+    ##  ESCENA 5 · El cuarto de mc
+    ##  Derivada de la Escena 4 original: el análisis de las hojas y la
+    ##  interacción con Raiha.
+    ############################################################################
+
+    stop music fadeout 1.5
+
     scene bg_cuarto_mc
-    
+    with fade
+
     play music hogar fadein 1.5 volume 0.7
 
     narrador "Puse las cinco hojas sobre el escritorio y las dejé ahí un buen rato sin tocarlas."
@@ -488,7 +634,201 @@ label cap1_apertura:
 
     raiha "¡Se que podrás lidiar con cinco a la vez!"
 
-    hide raiha 
+    ############################################################################
+    ##  ESCENA 6 · El mapa de las cinco
+    ##  Nueva escena, también derivada de la Escena 4 original: Raiha ayuda a
+    ##  mc a adivinar dónde podría estar cada quintilliza según lo que él ya
+    ##  sabe de ellas. Menú de sabor con las 5 hermanas: no continúa hasta
+    ##  que las cinco han sido escuchadas (control por conjunto/condicional).
+    ############################################################################
+
+    mc_pensamiento "Cinco a la vez... ese es justo el problema."
+
+    mc "Raiha, espera un segundo."
+
+    show raiha at pj_habla(0.50)
+
+    raiha "¿Mm? ¿Qué pasa?"
+
+    mc "Tengo una duda algo rara."
+    
+    mc "Si tuvieras que adivinar dónde suele estar cada una de esas chicas despues de estudiar, "
+    
+    mc " ¿por dónde empezarías?"
+
+    show raiha hablando at pj_habla(0.50)
+    with dissolve
+
+    raiha "¡Eso es fácil hermanito!" 
+    
+    raiha "Tú solo cuentame cómo es cada una y yo te digo dónde la buscaría."
+
+    raiha "¡Como un juego de adivinanzas!"
+
+    mc_pensamiento "No pierdo nada con intentarlo."
+
+    $ hermanas_ubicadas = set()
+
+    label cap1_adivinanza_hermanas:
+
+        menu:
+
+            "¿De cuál hermana le hablas primero?"
+
+            "Ichika" if "ichika" not in hermanas_ubicadas:
+
+                $ hermanas_ubicadas.add("ichika")
+
+                mc "Hay una que se llama {color=#FFB7C5}{b}Ichika{/b}{/color}."
+
+                mc "Es la primera hermana o hermana mayor de las cinco."
+                
+                mc "Duerme en cualquier parte y dice que tiene audiciones."
+
+                raiha "¡Ah, esa es fácil!" 
+                
+                raiha "Si anda con audiciones, seguro se pasa las horas ensayando en la 
+                {color=#F2879B}{b}sala de ensayo{/b}{/color} del colegio."
+
+                raiha "O simplemente durmiendo la siesta en el sofá más cercano."
+
+                mc_pensamiento "Actuación... o pereza disfrazada de actuación." 
+
+                mc "¡Si! Probablemente ahí hace sus audiciones."
+                
+                mc "Bien. Anotado."
+
+            "Nino" if "nino" not in hermanas_ubicadas:
+
+                $ hermanas_ubicadas.add("nino")
+
+                mc "Hay una que se llama {color=#C39BD3}{b}Nino{/b}{/color}." 
+
+                mc "Es la segunda hermana de las cinco."
+                
+                mc "Manda sobre las demás." 
+                
+                mc "Y es muy rigurosa con las cosas." 
+                
+                mc "Hasta me corrigió mi pronunciación en inglés."
+
+                raiha "¡Uy, esa suena a hermana mayor de verdad!" 
+                
+                raiha "Es como yo, pero enojona."
+
+                raiha "Con esa actitud de jefa, seguro anda revisando que no falte nada en casa...." 
+                
+                raiha "Capaz la encuentras en el 
+                {color=#9B6FB8}{b}centro comercial{/b}{/color} ,comprando lo que las demás olvidaron."
+
+                mc_pensamiento "Centro comercial... Tiene sentido, viniendo de ella."
+
+                mc "Bien. Anotado."
+
+            "Miku" if "miku" not in hermanas_ubicadas:
+
+                $ hermanas_ubicadas.add("miku")
+
+                mc "Hay una que se llama {color=#5DADE2}{b}Miku{/b}{/color}."
+
+                mc "Es la tercera hermana de las cinco."
+
+                mc "La hermana del medio."
+                
+                mc "Casi no habla y usa sus audífonos todo el tiempo."
+                
+                mc "Aunque algo que destaco de ella es que sabe demasiado de historia."
+
+                raiha "Con lo calladita que es, seguro se esconde entre libros en la
+                {color=#3D8FC7}{b}biblioteca{/b}{/color}, sin que nadie la moleste."
+
+                raiha "Las calladas siempre tienen su rincón secreto."
+
+                mc_pensamiento "Un rincón secreto que sería la biblioteca."
+                
+                mc_pensamiento "Si la encuentro ahí, al menos no tendré que gritar para que me escuche."
+
+                mc "Bien. Anotado."
+
+            "Yotsuba" if "yotsuba" not in hermanas_ubicadas:
+
+                $ hermanas_ubicadas.add("yotsuba")
+
+                mc "Hay una que se llama {color=#58D68D}{b}Yotsuba{/b}{/color}." 
+                
+                mc "Es la cuarta hermana de las cinco."
+
+                mc "Rebosa de energía, es muy alegre." 
+                
+                mc "Corrió por el pasillo para conocerme."
+
+                raiha "¡Esa me cae bien solo de escucharla!" 
+
+                raiha "Con esa energía, seguro es una atleta."
+                
+                raiha "Puede que se la pase entrenando en alguna 
+                {color=#3FAF71}{b}pista de atletismo{/b}{/color}."
+
+                mc_pensamiento "Entrenando al aire libre, entonces." 
+                
+                mc_pensamiento "Si empiezo por ella, tendré que correr detrás hasta atraparla."
+                
+                mc_pensamiento "Es broma... o no."
+
+                mc "Bien. Anotado."
+
+
+            "Itsuki" if "itsuki" not in hermanas_ubicadas:
+
+                $ hermanas_ubicadas.add("itsuki")
+
+                mc "Hay una que se llama {color=#EC7063}{b}Itsuki{/b}{/color}."
+
+                mc "Es la última hermana de las cinco. La menor."
+
+                mc "La que se sentó en mi puesto el primer día."
+
+                mc "Y la que más problemas me ha causado."
+
+                show raiha regano at pj_habla(0.50)
+                with dissolve
+
+                raiha "¡Espera, espera!"
+
+                raiha "¿Es la misma con la que discutías ese día?"
+
+                mc "...Sí, esa misma."
+
+                raiha "¡Con razón te veías tan raro cuando volviste ese día!"
+
+                show raiha hablando at pj_habla(0.50)
+                with dissolve
+
+                mc "Es bastante aplicada, eso sí. Se queda repasando después de que terminan
+                las clases, aunque nadie se lo pida."
+
+                raiha "Entonces no hay mucho misterio ahí." 
+                
+                raiha "Seguro sigue en el {color=#D35443}{b}aula vacía{/b}{/color}, después de clases, sola con sus apuntes."
+
+                mc_pensamiento "Sola y sin que la molesten. Como ahora mismo, seguramente."
+
+                mc "Listo. Anotado."
+
+        if len(hermanas_ubicadas) < 5:
+            jump cap1_adivinanza_hermanas
+
+    show raiha at pj_habla(0.50)
+
+    raiha "¡Ya está! Cinco hermanas, cinco escondites." 
+    
+    raiha "¡De nada, hermanito!"
+
+    mc "...Gracias, Raiha. Puede que esto sirva más de lo que crees."
+
+    raiha "¡Siempre sirvo, solo que casi nunca me lo agradecen!"
+
+    hide raiha
     with moveoutleft
 
     narrador "Se fue tan rápido como había entrado, muy contenta de haber resuelto algo."

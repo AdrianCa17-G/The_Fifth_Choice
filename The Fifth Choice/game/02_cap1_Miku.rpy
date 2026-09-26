@@ -1,4 +1,20 @@
 ################################################################################
+##  BGs Y CGs PROPIOS DEL HUB DE MIKU 
+##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
+##  el hub reutiliza es el único sprite de Miku, de ahí se crean dos 
+##  nuevos sprites que se definen en 00_definiciones
+################################################################################
+
+image bg_biblioteca = "images/bg/hubs_hermanas/biblioteca.webp"
+
+image cg_miku_biblioteca = "images/cg/hubs_hermanas/miku_biblioteca.webp"
+
+image cg_miku_estudio = "images/cg/hubs_hermanas/miku_estudio.webp"
+
+image cg_miku_sorpresa = "images/cg/hubs_hermanas/miku_sorpresa.webp"
+
+
+################################################################################
 ##  HUB DE MIKU
 ##  Se descubre el interés de Miku por los libros del periodo Sengoku
 ##  Descubrimos que Miku se abre solo si el tema es algo que le apasiona
@@ -18,7 +34,9 @@ label hub_Miku:
     ##  Primer encuentro entre mc y Miku en la biblioteca
     ############################################################################
 
-    #BG NUEVO — bg_biblioteca]` 
+    scene bg_biblioteca
+    with fade
+
     stop music fadeout 1.0
 
     narrador "La biblioteca municipal quedaba dos calles antes del edificio." 
@@ -27,12 +45,13 @@ label hub_Miku:
 
     narrador "Segunda planta, la sala de lectura. Cuatro mesas largas y nadie en tres de ellas."
 
-    #CG NUEVO — cg_miku_biblioteca: Miku de tres cuartos en la mesa del fondo, leyendo, con la pila de libros a un lado y los audífonos COLGADOS DEL CUELLO, nunca puestos. Ventanal detrás, luz de tarde. Cámara desde un costado, no desde la puerta. Un solo personaje en el frame. Sostiene todo el movimiento 1, así que tiene que aguantar en pantalla.]`
+    scene cg_miku_biblioteca
+    with fade
 
     narrador "Estaba al fondo, de espaldas a la puerta, con una pila de libros a la izquierda y los 
     audífonos colgados del cuello."
 
-    mc_pensamiento "Cuatro libros. Ninguno del temario."
+    mc_pensamiento "Varios libros. Ninguno del temario."
 
     mc_pensamiento "Y no estaban amontonados. Estaban apilados por tamaño, con los lomos alineados."
 
@@ -58,9 +77,11 @@ label hub_Miku:
 
     narrador "Tardó tres segundos largos en levantar la vista."
 
-    #`[BG bg_biblioteca with dissolve]` 
+    scene bg_biblioteca
+    with fade 
     
     show miku neutral at pj(0.5)
+    with dissolve
 
     miku "…"
 
@@ -99,9 +120,8 @@ label hub_Miku:
 
     narrador "Saqué el temario de sociales y lo puse sobre la mesa, girado hacia ella."
 
-    #`[CG NUEVO — cg_estudio_biblioteca: POV desde el sitio de Futaro. Primer término inferior, sus antebrazos y sus manos sosteniendo el temario abierto sobre la mesa, desenfocados y cortados por el borde. Enfrente, Miku de tres cuartos con su libro, sin devolver la mirada. Mismo lenguaje que cg_pupitre_manana y cg_manija_edificio: nada de cara, nada que el modelo pueda romper.]`
-
-    mc "Quedan tres semanas y media para el examen." 
+    scene cg_miku_estudio
+    with fade
 
     mc "Historia es tu asignatura."
 
@@ -165,7 +185,8 @@ label hub_Miku:
 
     narrador "Lo reconoció antes de que llegara a la mesa."
 
-    #`[CG NUEVO — cg_miku_sorpresa: mismo encuadre y misma luz que cg_miku_biblioteca —esa semilla sirve de punto de partida— pero con el libro bajado del todo, los ojos abiertos y la mirada fuera del libro por primera vez. El ejemplar de Futaro entra en el cuadro por el borde inferior, sin mano. Es el otro lado de la moneda del primero: en aquel no miraba, en este mira.]`
+    scene cg_miku_sorpresa
+    with fade
 
     miku "…Ese es el que estaba leyendo yo."
 
@@ -183,10 +204,6 @@ label hub_Miku:
 
     mc "Y creo que el tipo que lo escribió se equivoca."
 
-    #`[BG bg_biblioteca with dissolve]` 
-    
-    show miku neutral at pj_habla(0.5)
-
     miku" …¿En qué?"
 
     mc "Le dedica cuarenta páginas a cómo se movía la comida y seis a la batalla más famosa del siglo."
@@ -194,6 +211,12 @@ label hub_Miku:
     mc "Está al revés."
 
     mc "Las guerras se ganan en el campo de batalla. Lo demás es puro papeleo."
+
+    scene bg_biblioteca
+    with fade
+    
+    show miku neutral at pj_habla(0.5)
+    with dissolve
 
     narrador "Miku cerró el libro sobre el dedo índice, para no perder la página."
 
@@ -207,7 +230,9 @@ label hub_Miku:
 
     mc "…"
 
-    miku "…Tres veces al día. Todos los días. Durante las seis semanas que tardaron en llegar hasta ahí caminando."
+    miku "…Tres veces al día. Todos los días." 
+    
+    miku "Durante las seis semanas que tardaron en llegar hasta ahí caminando."
 
     mc "Eso lo resolverían entre ellos. No es importante."
 
@@ -215,7 +240,9 @@ label hub_Miku:
 
     miku "Había un señor de la guerra que se llamaba Takeda Shingen."
 
-    miku "Su provincia estaba metida entre montañas. No tenía nada de costa."
+    miku "Su provincia estaba metida entre montañas." 
+    
+    miku "No tenía nada de costa."
 
     mc "¿Y eso es un problema?"
 

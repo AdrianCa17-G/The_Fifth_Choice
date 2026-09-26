@@ -113,6 +113,30 @@
                 }
             },
             {
+                "scope": "renpy.meta.color.#9b6fb8",
+                "settings": {
+                    "foreground": "#9b6fb8"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#c39bd3",
+                "settings": {
+                    "foreground": "#c39bd3"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#f2879b",
+                "settings": {
+                    "foreground": "#f2879b"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ffb7c5",
+                "settings": {
+                    "foreground": "#ffb7c5"
+                }
+            },
+            {
                 "scope": "renpy.meta.color.#cfc",
                 "settings": {
                     "foreground": "#cfc"
@@ -122,6 +146,42 @@
                 "scope": "renpy.meta.color.#fff",
                 "settings": {
                     "foreground": "#fff"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#5dade2",
+                "settings": {
+                    "foreground": "#5dade2"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#3d8fc7",
+                "settings": {
+                    "foreground": "#3d8fc7"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#3faf71",
+                "settings": {
+                    "foreground": "#3faf71"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#58d68d",
+                "settings": {
+                    "foreground": "#58d68d"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ec7063",
+                "settings": {
+                    "foreground": "#ec7063"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#d35443",
+                "settings": {
+                    "foreground": "#d35443"
                 }
             }
         ]
