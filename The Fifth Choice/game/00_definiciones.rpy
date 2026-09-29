@@ -154,21 +154,25 @@ image isanari neutral      = "sprites/isanari_sprites/isanari_neutral.png"
 image isanari sonriendo    = "sprites/isanari_sprites/isanari_sonrisa.png"
 
 image itsuki neutral   = "sprites/itsuki_sprites/itsuki_neutral.png"
-image itsuki sonriendo   = "sprites/itsuki_sprites/itsuki_sonrisa.png"
+image itsuki sonriendo   = "sprites/itsuki_sprites/itsuki_sonriendo.png"
 image itsuki molesta   = "sprites/itsuki_sprites/itsuki_molesta.png"
-image itsuki sorprendida   = "sprites/itsuki_sprites/itsuki_sorpresa.png"
+image itsuki sorprendida   = "sprites/itsuki_sprites/itsuki_sorprendida.png"
 image itsuki timida   = "sprites/itsuki_sprites/itsuki_timida.png"
 
 image ichika neutral   = "sprites/ichika_sprites/ichika_neutral.png"
-image ichika sonriendo   = "sprites/ichika_sprites/ichika_sonrisa.png"
+image ichika sonriendo   = "sprites/ichika_sprites/ichika_sonriendo.png"
+image ichika agotada   = "sprites/ichika_sprites/ichika_agotada.png"
 
 image nino neutral   = "sprites/nino_sprites/nino_neutral.png"
 image nino pillada   = "sprites/nino_sprites/nino_pillada.png"
 
 image miku neutral   = "sprites/miku_sprites/miku_neutral.png"
+image miku animada   = "sprites/miku_sprites/miku_animada.png"
+image miku relajada = "sprites/miku_sprites/miku_relajada.png"
+image miku encogida   = "sprites/miku_sprites/miku_encogida.png"
 
 image yotsuba neutral  = "sprites/yotsuba_sprites/yotsuba_neutral.png"
-image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonrisa.png"
+image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonriendo.png"
 image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
 image yotsuba sorprendida = "sprites/yotsuba_sprites/yotsuba_sorprendida.png"
 
@@ -190,11 +194,11 @@ image yotsuba sorprendida = "sprites/yotsuba_sprites/yotsuba_sorprendida.png"
 
 ## Posiciones de la formación de las cinco hermanas.
 ## Se usan solo en la escena 5; el resto de escenas van con literales.
-define X_ICHIKA  = 0.13
-define X_NINO    = 0.31
+define X_ICHIKA  = 0.10
+define X_NINO    = 0.30
 define X_MIKU    = 0.50
-define X_YOTSUBA = 0.69
-define X_ITSUKI  = 0.87
+define X_YOTSUBA = 0.70
+define X_ITSUKI  = 0.90
 
 ## REGLA DEL PROYECTO
 ## Todo `show` lleva SIEMPRE su posición, aunque solo cambie el tinte.
@@ -238,7 +242,7 @@ transform pj_calla(x=0.5):
 define mover = MoveTransition(0.6)
 
 # Definir dissolve que dura 1.2 segundos
-define disolucion_lenta = Dissolve(0.8)
+define disolucion_lenta = Dissolve(0.4)
 
 
 ################################################################################

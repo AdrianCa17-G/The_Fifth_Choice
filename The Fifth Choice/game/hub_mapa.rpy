@@ -195,12 +195,12 @@ init 2 python:
 
         dict(hermana="yotsuba", nombre="Yotsuba", lugar="Pista de atletismo",
              fondo="ph_bg_pista",
-             sprite="sprites/yotsuba_sprites/yotsuba_sonrisa.png",
+             sprite="sprites/yotsuba_sprites/yotsuba_sonriendo.png",
              color="#58D68D", escala=1.00, xoff=0, yoff=0),
 
         dict(hermana="itsuki",  nombre="Itsuki",  lugar="Aula vacía",
              fondo="ph_bg_aula",
-             sprite="sprites/itsuki_sprites/itsuki_sonrisa.png",
+             sprite="sprites/itsuki_sprites/itsuki_sonriendo.png",
              color=C_ITSUKI,  escala=1.00, xoff=0, yoff=0),
     ]
 

@@ -214,13 +214,13 @@ label hub_Miku:
 
     scene bg_biblioteca
     with fade
-    
-    show miku neutral at pj_habla(0.5)
-    with dissolve
 
     narrador "Miku cerró el libro sobre el dedo índice, para no perder la página."
 
     mc_pensamiento "Era la primera vez en dos días que dejaba de mirar a otro lado."
+
+    show miku neutral at pj_habla(0.5)
+    with disolucion_lenta
 
     miku "…¿Y qué comían?"
 
@@ -236,7 +236,10 @@ label hub_Miku:
 
     mc "Eso lo resolverían entre ellos. No es importante."
 
-    #`[SPR NUEVO — miku animada at pj_habla(0.5)]` `[MUS NUEVO — descubrimiento fadein 2.0]`
+    show miku relajada at pj_habla(0.5)
+    with disolucion_lenta
+    
+    #[MUS NUEVO — descubrimiento fadein 2.0]`
 
     miku "Había un señor de la guerra que se llamaba Takeda Shingen."
 
@@ -258,6 +261,9 @@ label hub_Miku:
     
     narrador " pero las frases le habían dejado de empezar con una pausa."
 
+    show miku animada at pj_habla(0.5)
+    with disolucion_lenta
+
     miku "Y un día los vecinos se pusieron de acuerdo y dejaron de vendérsela."
 
     mc "…Sin atacarlo."
@@ -272,7 +278,7 @@ label hub_Miku:
 
     miku "Llevaban diez años peleándose y ninguno de los dos había conseguido ganar."
 
-    mc "¿Si era su enemigo?¿Por qué haría eso?"
+    mc "¿Si era su enemigo? ¿Por qué haría eso?"
 
     miku "Dijo que él peleaba con armas, no con comida." 
 
@@ -283,6 +289,9 @@ label hub_Miku:
     miku "«Mandarle sal al enemigo.» "
 
     miku "Se usa para cuando ayudas a alguien que no soportas, porque hay cosas que no se hacen."
+
+    show miku neutral at pj(0.5)
+    with disolucion_lenta
 
     miku "Aunque seguramente no pasó."
 
@@ -296,9 +305,13 @@ label hub_Miku:
 
     miku "Alguien se la vendió."
 
+    show miku animada at pj(0.5)
+    with disolucion_lenta
+
     miku "Y a mí eso me parece mucho más—"
 
-    #`[SPR NUEVO — miku encogida at pj(0.5)]` 
+    show miku encogida at pj(0.5)
+    with disolucion_lenta
     
     stop music fadeout 1.5
 
@@ -331,11 +344,11 @@ label hub_Miku:
 
         "¿Que le dirás a Miku?"
 
-        "Ponerla a prueba. Preguntarle por un detalle del libro.": 
+        "Mostrar interés. Preguntarle por un detalle del libro.": 
             jump miku_m4a
 
         "Reconocer su nivel. Hacer una valoración de su esfuerzo.":
-            jump miku_m4bs
+            jump miku_m4b
 
         "El Sengoku no entra en el examen":
             jump miku_m4c
@@ -352,7 +365,8 @@ label miku_m4a:
 
     mc "¿Cuánto tardaba la sal en llegar desde el mar hasta allá?"
 
-    #`[SPR miku encogida at pj_habla(0.5)]`
+    show miku neutral at pj_habla(0.5)
+    with disolucion_lenta
 
     miku "…¿Qué?"
 
@@ -364,13 +378,19 @@ label miku_m4a:
 
     mc "¿Y cuánto aguantaban ellos sin sal?"
 
-    #`[SPR miku animada at pj_habla(0.5)]` `[MUS descubrimiento fadein 2.0]`
+    show miku animada at pj_habla(0.5)
+    with disolucion_lenta
+    
+    #`[MUS descubrimiento fadein 2.0]`
 
     miku "Depende de la época del año. En verano, con el pescado, casi nada." 
 
     miku "Por eso quitarles el acceso a la sal no era una amenaza para más adelante, era de ese mismo mes."
 
     miku "Eso es lo que a la gente se le esca—"
+
+    show miku encogida at pj_habla(0.5)
+    with disolucion_lenta
 
     narrador "Se detuvo otra vez. Pero esta vez se detuvo distinto."
 
@@ -387,6 +407,9 @@ label miku_m4a:
     narrador "No dijo nada. Se le puso el libro a media altura, sin llegar a subirlo del todo."
 
     narrador "Y entonces miró el ejemplar que yo había dejado sobre la mesa."
+
+    show miku relajada at pj_habla(0.5)
+    with disolucion_lenta
 
     miku "…Dijiste que llegaste a la página noventa."
 
@@ -414,6 +437,9 @@ label miku_m4a:
 
     mc "Te falta creer que lo que sabes cuenta como saber."
 
+    show miku encogida at pj_habla(0.5)
+    with disolucion_lenta
+
     miku "…No es lo mismo."
 
     mc "Es exactamente lo mismo, y lo vas a comprobar en tres semanas."
@@ -436,11 +462,15 @@ label miku_m4b:
 
     mc "Se te da bien esto."
 
-    #`[SPR miku encogida at pj_habla(0.5)]`
+    show miku at pj_habla(0.5)
+    with dissolve
 
     miku "…No se me da bien. Solo lo he leído."
 
     mc "Que es más de lo que ha hecho nadie en tu casa."
+
+    show miku neutral at pj_habla(0.5)
+    with disolucion_lenta
 
     miku "…Eso no es difícil."
 
@@ -472,11 +502,12 @@ label miku_m4c:
 
     mc "Si vas a dedicarle una hora a algo, que sea a lo que te van a preguntar."
 
-    show miku neutral at pj(0.5)
-
     narrador "No protestó. No se defendió."
 
     narrador "Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba."
+
+    show miku neutral at pj(0.5)
+    with disolucion_lenta
 
     miku "…Ya lo sé."
 
@@ -505,9 +536,11 @@ label miku_m4c:
 ############################################################################
 
 label miku_m5:
+    
+    hide miku 
+    with disolucion_lenta
 
-    scene bg_negro 
-    with fade
+    stop music fadeout 1.5
 
     narrador "Salí de la biblioteca con Miku cuando estaban apagando las luces de la segunda planta."
 
@@ -516,6 +549,9 @@ label miku_m5:
     mc_pensamiento "Una de cinco. Y esta sabía mucho de lo que yo no."
 
     mc_pensamiento "Quedan tres semanas."
+
+    scene bg_negro
+    with fade
 
     if miku_rama_cap1 == "calida":
 
@@ -529,7 +565,7 @@ label miku_m5:
 
         mc_pensamiento "Eso, en esa casa, es un récord."
 
-    if miku_rama_cap1 == "tibia":
+    elif miku_rama_cap1 == "tibia":
 
         mc_pensamiento "Le dije lo que odia escuchar"
 
@@ -539,7 +575,7 @@ label miku_m5:
 
         mc_pensamiento "No sé si perdí algo, pero desde luego no gané nada."
 
-    if miku_rama_cap1 == "fría":
+    else:
 
         mc_pensamiento "Tenía razón en lo del examen."
 

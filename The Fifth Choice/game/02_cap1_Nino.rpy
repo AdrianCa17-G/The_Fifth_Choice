@@ -1,4 +1,19 @@
 ################################################################################
+##  BGs Y CGs PROPIOS DEL HUB DE MIKU 
+##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
+##  el hub reutiliza es el único sprite de Miku, de ahí se crean dos 
+##  nuevos sprites que se definen en 00_definiciones
+################################################################################
+
+image bg_centro_comercial = "images/bg/hubs_hermanas/centro_comercial.webp"
+
+image cg_miku_biblioteca = "images/cg/hubs_hermanas/miku_biblioteca.webp"
+
+image cg_miku_estudio = "images/cg/hubs_hermanas/miku_estudio.webp"
+
+image cg_miku_sorpresa = "images/cg/hubs_hermanas/miku_sorpresa.webp"
+
+################################################################################
 ##  HUB DE NINO
 ##  Primer encuentro con Nino en el centro comercial.
 ##  Se descubre sus conocimientos de inglés y su desconfianza hacia los tutores.
@@ -19,7 +34,9 @@ label hub_Nino:
     ##  sección de repostería internacional.
     ############################################################################
 
-    #scene bg centro_comercial
+    scene bg_centro_comercial
+    with fade
+
     stop music fadeout 1.0
 
     narrador "La encontré en la zona de repostería internacional."
@@ -164,7 +181,7 @@ label hub_Nino:
     narrador "Ahí sí levantó la vista."
 
     show nino nerviosa at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     nino "…"
 
@@ -254,9 +271,9 @@ label hub_Nino:
             jump nino_m4c
 
 
-## ---------------------------------------------------------------
-## Movimiento 4A · Rama cálida
-## ---------------------------------------------------------------
+############################################################################
+## Movimiento 4A · Rama cálida 
+############################################################################
 
 label nino_m4a:
 
@@ -321,9 +338,9 @@ label nino_m4a:
     jump nino_m5
 
 
-## ---------------------------------------------------------------
+############################################################################
 ## Movimiento 4B · Rama tibia
-## ---------------------------------------------------------------
+############################################################################
 
 label nino_m4b:
 
@@ -368,9 +385,9 @@ label nino_m4b:
     jump nino_m5
 
 
-## ---------------------------------------------------------------
-## Movimiento 4C · Rama fría
-## ---------------------------------------------------------------
+############################################################################
+## Movimiento 4C · Rama fría 
+############################################################################
 
 label nino_m4c:
 
@@ -415,9 +432,9 @@ label nino_m4c:
     jump nino_m5
 
 
-## ==========================================================================
+############################################################################
 ## Movimiento 5 · La llamada (común a las tres ramas)
-## ==========================================================================
+############################################################################
 
 label nino_m5:
 
@@ -461,9 +478,9 @@ label nino_m5:
 
     mc_pensamiento "Sonó a que no sabía cómo explicarlo sin decir de más."
 
-    ## ---------------------------------------------------------------
+    ############################################################################
     ## Movimiento 6 · Cierre final (varía según la rama elegida)
-    ## ---------------------------------------------------------------
+    ############################################################################
 
     narrador "La acompañé hasta la salida, cargando lo que me dejó cargar."
 
@@ -494,6 +511,7 @@ label nino_m5:
         mc_pensamiento "Con ella, nunca se sabe si avanzaste o retrocediste."
 
     else:
+        
         mc_pensamiento "Le prometí que iba a durar."
 
         mc_pensamiento "Ella ya había escuchado esa frase antes."

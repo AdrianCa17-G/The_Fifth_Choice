@@ -72,7 +72,7 @@ label cap1_apertura:
     mc "Buenos días."
 
     show itsuki molesta at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     itsuki "…"
 
@@ -161,7 +161,7 @@ label cap1_apertura:
 
     mc_pensamiento "Lo que no esperaba era lo que encontré al entrar."
 
-    show cg_cinco_sentadas 
+    scene cg_cinco_sentadas 
     with fade
 
     play music extraneza fadein 2.0
@@ -286,22 +286,22 @@ label cap1_apertura:
 
     show nino neutral at pj_habla(0.20)
     show yotsuba at pj_calla(0.80)
-    with dissolve
+    with disolucion_lenta
 
     nino "Yotsuba."
 
     show nino neutral at pj_calla(0.20)
     show yotsuba at pj_habla(0.80)
-    with dissolve
+    with disolucion_lenta
    
     yotsuba "…No dije nada."
 
     show yotsuba at pj_calla(0.80)
-    with dissolve
+    with disolucion_lenta
 
     mc_pensamiento "Iba a defenderme. Y se arrepintió a mitad de frase."
 
-    narrador" Se encogió en el sitio y se puso a alinear los bordes de su hoja con las dos manos, 
+    narrador "Se encogió en el sitio y se puso a alinear los bordes de su hoja con las dos manos, 
     muy despacio, como si eso fuera una tarea."
 
     mc_pensamiento "Yotsuba no está de acuerdo con Nino."
@@ -310,7 +310,7 @@ label cap1_apertura:
 
     show ichika sonriendo at pj_habla(0.50)
     show nino at pj_calla(0.20)
-    with dissolve 
+    with disolucion_lenta 
 
     ichika "Bueno, tampoco hay que dramatizar."
 
@@ -325,7 +325,7 @@ label cap1_apertura:
     mc_pensamiento "Mentía tan bien que casi daba gusto."
 
     scene cg_hermanas_estudiando
-    with dissolve
+    with fade
 
     narrador "Para cuando volví a levantar la vista, Ichika ya tenía los ojos cerrados y la cabeza apoyada en el respaldo."
 
@@ -362,7 +362,7 @@ label cap1_apertura:
     narrador "Se quedó en silencio."
 
     show nino pillada at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     nino "…"
 
@@ -421,7 +421,7 @@ label cap1_apertura:
 
     narrador "Estaba recogiendo mis cosas cuando la puerta del fondo se abrió."
 
-    show cg_maruo_reunion
+    scene cg_maruo_reunion
     with fade
     
     play music contrato fadein 2.0
@@ -479,7 +479,7 @@ label cap1_apertura:
     scene bg_comedor
     with fade
 
-    narrador "La cena transcurrió casi en silencio, roto solo por el sonido de los cubiertos."
+    narrador "La cena transcurrió casi en silencio, solo se escuchaba el sonido de los cubiertos."
 
     show raiha hablando at pj(0.20)
     with dissolve
@@ -513,7 +513,7 @@ label cap1_apertura:
 
             show isanari at pj_calla(0.73)
             show raiha hablando at pj_habla(0.20)
-            with dissolve
+            with disolucion_lenta
 
             raiha "¡Eso es horrible! ¿Por qué harían algo así?"
 
@@ -521,7 +521,7 @@ label cap1_apertura:
 
             show raiha at pj_calla(0.20)
             show isanari neutral at pj_habla(0.73)
-            with dissolve
+            with disolucion_lenta
 
             isanari "Cinco cabezas puestas de acuerdo contra una... suena a un problema serio."
 
@@ -530,14 +530,14 @@ label cap1_apertura:
             mc "Va bien. Dentro de lo que cabe esperar de un segundo día."
 
             show isanari at pj_habla(0.73)
-            with dissolve
+            with disolucion_lenta
 
             isanari "Ya veo. No sonaste muy convencido al decirlo."
 
             mc "Es solo cansancio, ya te dije."
 
             show raiha regano at pj_habla(0.20)
-            with dissolve
+            with disolucion_lenta
 
             raiha "¡A mí no me engañas! ¡Se te nota en la cara que algo pasó!"
 
@@ -548,19 +548,19 @@ label cap1_apertura:
             mc "No quiero pensar en eso ahora mismo."
 
             show isanari neutral at pj_habla(0.73)
-            with dissolve
+            with disolucion_lenta
 
             isanari "Como quieras. No voy a insistir."
 
             show raiha hablando at pj_habla(0.20)
-            with dissolve
+            with disolucion_lenta
 
             raiha "¡Yo sí insisto un poquito! Pero está bien, lo dejo por hoy."
 
 
     show isanari sonriendo at pj_habla(0.73)
     show raiha at pj_calla(0.20)
-    with dissolve
+    with disolucion_lenta
 
     isanari "Solo recuerda que un mes no es mucho tiempo, y el trato con esa familia depende de que cumplas."
 
@@ -612,7 +612,7 @@ label cap1_apertura:
     mc "Gracias por el ánimo."
 
     show raiha regano at pj(0.50)
-    with dissolve
+    with disolucion_lenta
 
     raiha "¡Yo solo digo lo que veo!"
 
@@ -657,7 +657,7 @@ label cap1_apertura:
     mc " ¿por dónde empezarías?"
 
     show raiha hablando at pj_habla(0.50)
-    with dissolve
+    with disolucion_lenta
 
     raiha "¡Eso es fácil hermanito!" 
     
@@ -719,7 +719,7 @@ label cap1_apertura:
                 raiha "Con esa actitud de jefa, seguro anda revisando que no falte nada en casa...." 
                 
                 raiha "Capaz la encuentras en el 
-                {color=#9B6FB8}{b}centro comercial{/b}{/color} ,comprando lo que las demás olvidaron."
+                {color=#9B6FB8}{b}centro comercial{/b}{/color}, comprando lo que las demás olvidaron."
 
                 mc_pensamiento "Centro comercial... Tiene sentido, viniendo de ella."
 
@@ -791,7 +791,7 @@ label cap1_apertura:
                 mc "Y la que más problemas me ha causado."
 
                 show raiha regano at pj_habla(0.50)
-                with dissolve
+                with disolucion_lenta
 
                 raiha "¡Espera, espera!"
 
@@ -802,7 +802,7 @@ label cap1_apertura:
                 raiha "¡Con razón te veías tan raro cuando volviste ese día!"
 
                 show raiha hablando at pj_habla(0.50)
-                with dissolve
+                with disolucion_lenta
 
                 mc "Es bastante aplicada, eso sí. Se queda repasando después de que terminan
                 las clases, aunque nadie se lo pida."
@@ -820,7 +820,9 @@ label cap1_apertura:
 
     show raiha at pj_habla(0.50)
 
-    raiha "¡Ya está! Cinco hermanas, cinco escondites." 
+    raiha "¡Ya está!" 
+    
+    raiha "Cinco hermanas, cinco escondites." 
     
     raiha "¡De nada, hermanito!"
 
@@ -861,7 +863,7 @@ label cap1_apertura:
 
     mc_pensamiento "Son cinco personas que saben una cosa cada una y que han decidido no enseñármela."
 
-    show cg_libreta
+    scene cg_libreta
     with fade
 
     narrador "Abrí la libreta por la página donde había anotado los cinco nombres la noche anterior."

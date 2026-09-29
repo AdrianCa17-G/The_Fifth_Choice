@@ -136,7 +136,7 @@ label prologo:
     mc "¿En serio? Supongo que yo soy un ejemplo perfecto para ti... ¿no?"
 
     show raiha regano at pj(0.20)
-    with dissolve
+    with disolucion_lenta
 
     raiha "¡Por supuesto! Tú das el ejemplo de alguien obsesionado con los estudios y que no duerme bien."
 

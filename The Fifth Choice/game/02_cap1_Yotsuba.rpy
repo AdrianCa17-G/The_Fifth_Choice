@@ -41,7 +41,7 @@ label hub_Yotsuba:
     ############################################################################
 
     scene bg_pista_atletismo
-    with dissolve
+    with fade
 
     stop music fadeout 1.0
 
@@ -54,7 +54,7 @@ label hub_Yotsuba:
     narrador "Solo estaba encendido el sistema de emergencia, que daba una luz naranja pareja y sin sombras."
 
     scene cg_yotsuba_pista
-    with dissolve
+    with fade
 
     mc_pensamiento "El club se había ido hace por lo menos media hora."
 
@@ -132,7 +132,7 @@ label hub_Yotsuba:
     narrador "Pausa."
 
     show yotsuba neutral at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "…¿Cuánto llevas tú?"
 
@@ -258,7 +258,7 @@ label hub_Yotsuba:
     narrador " y volvió a mirarme con esa sonrisa intacta."
 
     show yotsuba incomoda at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "¡Bueno!"
 
@@ -275,7 +275,7 @@ label hub_Yotsuba:
     narrador " como si con eso pudiera sacudirse también lo que acababa de decir."
 
     show yotsuba sonriendo 
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "¡Venga, no hay tiempo que perder! ¡El sol no espera!"
 
@@ -351,7 +351,7 @@ label yotsuba_m4a:
     mc "Lo sé. Pero te saltaste algo."
 
     show yotsuba neutral at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     narrador "Su sonrisa no desapareció,"
             
@@ -380,7 +380,7 @@ label yotsuba_m4a:
     el de quien está revisando si los datos son correctos."
 
     show yotsuba incomoda at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "…¿Me estabas observando?"
 
@@ -395,7 +395,7 @@ label yotsuba_m4a:
     narrador "Eso no lo tenía preparado."
 
     show yotsuba sorprendida at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "…Pero eso no entra en ningún examen."
 
@@ -418,7 +418,7 @@ label yotsuba_m4a:
     narrador "Pasó un momento largo."
 
     show yotsuba neutral at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "No sé si eso es verdad o si eres muy bueno animando a la gente."
 
@@ -427,7 +427,7 @@ label yotsuba_m4a:
     narrador "Lo pensó."
 
     show yotsuba sonriendo at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "…Eso también es verdad."
 
@@ -506,14 +506,14 @@ label yotsuba_m4c:
     mc "Entonces concéntrate en correr. Si es lo tuyo, hazlo bien."
 
     show yotsuba incomoda at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     narrador "Asintió."
 
     narrador "Rápido, una sola vez, como quien recibe una instrucción."
 
     show yotsuba sonriendo at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     yotsuba "¡Tienes razón! ¡Eso estaba haciendo! ¡Qué bueno que lo entiendas!"
 
@@ -553,7 +553,7 @@ label yotsuba_m4c:
 label yotsuba_m5:
 
     hide yotsuba 
-    with dissolve
+    with disolucion_lenta
 
     #`[BG bg_pista_atletismo — luz más baja, atardecer avanzado]`
     #`[MUS stop fadeout 1.5]`

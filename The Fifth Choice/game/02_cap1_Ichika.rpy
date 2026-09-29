@@ -1,4 +1,20 @@
 ################################################################################
+##  BGs Y CGs PROPIOS DEL HUB DE ICHIKA 
+##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
+##  el hub reutiliza son todos los sprites de Ichika, de ahí se crea un 
+##  nuevos sprite que se definen en 00_definiciones
+################################################################################
+
+image bg_sala_ensayo = "images/bg/hubs_hermanas/sala_ensayo.webp"
+
+image cg_ichika_ensayo = "images/cg/hubs_hermanas/ichika_ensayo.webp"
+
+image cg_ichika_desarmada = "images/cg/hubs_hermanas/ichika_desarmada.webp"
+
+image cg_ichika_mascara = "images/cg/hubs_hermanas/ichika_mascara.webp"
+
+
+################################################################################
 ##  HUB DE ICHIKA
 ##  Primer encuentro entre mc e Ichika en la sala de ensayo del club de teatro.
 ##  Ichika no tiene energía, y el jugador puede notar que algo no está bien.
@@ -18,7 +34,8 @@ label hub_Ichika:
     ##  Futaro encuentra a Ichika dormida en la sala de ensayo del club de teatro.
     ############################################################################
 
-    # [BG NUEVO — bg_sala_ensayo]
+    scene sala_ensayo 
+    with fade
 
     stop music fadeout 1.0
 
@@ -28,12 +45,8 @@ label hub_Ichika:
 
     narrador "La puerta estaba entreabierta."
 
-    # [CG NUEVO — cg_ichika_ensayo: Ichika sentada en el suelo, apoyada contra
-    # la pared bajo un perchero con vestuario de utilería, dormida. El guion
-    # se le resbala de la mano, algunas hojas ya en el piso. Espejo de cuerpo
-    # entero al fondo reflejando parte de la sala. Luz de tarde entrando por
-    # una ventana alta. Un solo personaje en el frame. Sostiene todo el
-    # movimiento 1, así que tiene que aguantar en pantalla.]
+    scene ichika_ensayo
+    with fade
 
     narrador "La reconocí por el pelo antes que por la cara."
 
@@ -70,17 +83,13 @@ label hub_Ichika:
     ##  Se despierta sin la actuación encendida todavía. Dura medio segundo.
     ############################################################################
 
-    show ichika neutral at pj(0.5)
+    scene bg_sala_ensayo
+    with fade
 
     narrador "Abrió los ojos de golpe, sin saber todavía dónde estaba."
 
-    # [CG NUEVO — cg_ichika_desarmada: primer plano cerrado sobre Ichika,
-    # todavía sentada en el suelo, recién despierta. Ojos entreabiertos y sin
-    # foco, pelo suelto de un lado, boca ligeramente abierta, sin ningún
-    # rastro de la sonrisa que usa en el resto del elenco. Misma luz y mismo
-    # ángulo de ventana que cg_ichika_ensayo, pero encuadre mucho más cerrado
-    # sobre su cara: es el fotograma exacto antes de que la actuación vuelva
-    # a encenderse, no una escena nueva.]
+    scene cg_ichika_desarmada
+    with fade
 
     ichika "…¿Qué hora es?"
 
@@ -106,7 +115,11 @@ label hub_Ichika:
 
     narrador "Después pareció darse cuenta de que yo estaba ahí, y de que la había visto así."
 
-    show ichika sonrisa at pj(0.5)
+    scene bg_sala_ensayo
+    with fade
+
+    show ichika agotada at pj(0.5)
+    with disolucion_lenta
 
     ichika "¡Ah, no! ¡Estaba practicando!"
 
@@ -115,6 +128,9 @@ label hub_Ichika:
     ichika "¡Es un método actoral! ¡Se llama sueño escénico!"
 
     mc "No existe eso."
+
+    show ichika sonriendo at pj(0.5)
+    with disolucion_lenta
 
     ichika "¡Claro que existe! ¡Lo inventé yo hace cinco minutos!"
 
@@ -130,12 +146,13 @@ label hub_Ichika:
 
     mc "¿Cuánto tiempo dormiste anoche?"
 
+    show ichika neutral at pj(0.5)
+    with disolucion_lenta
+
     ichika "¡Lo suficiente!"
 
     mc "Eso no es un número."
-
-    show ichika neutral at pj(0.5)
-
+   
     ichika "¿Y desde cuándo un tutor de matemáticas pide cifras exactas de otras cosas?"
 
     narrador "Lo dijo con una sonrisa, pero cambió de tema otra vez, y esta ya era la segunda."
@@ -154,11 +171,12 @@ label hub_Ichika:
 
     ichika "Porque el tren de las cinco cuarenta y cinco tarda seis minutos en llegar a la estación desde aquí, y necesito cuatro para cambiarme."
 
-    narrador "Lo dijo sin pausar, sin contar con los dedos, como si ya tuviera la cuenta hecha de memoria."
+    mc "Lo dijiste sin pausar, sin contar con los dedos, como si ya tuvieras la cuenta hecha de memoria."
 
-    mc_pensamiento "Nadie improvisa ese número tan rápido."
+    mc "Nadie improvisa ese número tan rápido."
 
-    show ichika sonrisa at pj(0.5)
+    show ichika sonriendo at pj(0.5)
+    with disolucion_lenta
 
     ichika "¡Es que soy muy organizada! ¡Parte del oficio!"
 
@@ -184,15 +202,8 @@ label hub_Ichika:
 
     # [MUS NUEVO — descubrimiento, volumen 0 listo para subir]
 
-    # [CG NUEVO — cg_ichika_mascara: punto de vista de Futaro, de pie, un paso
-    # atrás del lugar donde ella se sienta. En primer término inferior,
-    # desenfocado y cortado por el borde, el canto de su propia mochila
-    # colgada del hombro — el objeto en primer plano, sin mano marcada.
-    # Ichika al fondo, ya sentada en una silla plegable, con la sonrisa de
-    # vuelta en su sitio y el guion otra vez abierto, mirando hacia cámara
-    # con la ceja levantada, como retando a que alguien diga algo. Mismo
-    # minuto que cg_ichika_desarmada, un paso después, con la máscara ya
-    # reconstruida.]
+    scene cg_ichika_mascara
+    with fade
 
     narrador "Se sentó en una de las sillas plegables."
 
@@ -209,6 +220,13 @@ label hub_Ichika:
     narrador "Sonrió, esperando la broma de vuelta."
 
     narrador "La que suele devolverle cualquiera que hable con ella."
+
+    scene bg_sala_ensayo
+    with fade
+
+    show ichika agotada at pj(0.5)
+    with disolucion_lenta
+
 
     mc_pensamiento "Tres cosas que acabo de ver y que ella escondió detrás de un chiste."
 
@@ -246,6 +264,7 @@ label ichika_m4a:
     narrador "Me quedé de pie, mirándola, sin devolverle el chiste."
 
     show ichika neutral at pj(0.5)
+    with disolucion_lenta
 
     ichika "…¿Qué?"
 
@@ -262,6 +281,7 @@ label ichika_m4a:
     narrador "Ella fue la que lo rompió, y lo hizo sin la sonrisa de antes."
 
     show ichika agotada at pj(0.5)
+    with disolucion_lenta
 
     ichika "…No sé cuánto más puedo seguir haciendo esto."
 
@@ -290,6 +310,7 @@ label ichika_m4a:
     mc_pensamiento "Y por como dobló ese horario, tampoco creo que se lo haya contado a nadie."
 
     show ichika neutral at pj(0.5)
+    with disolucion_lenta
 
     ichika "…"
 
@@ -305,7 +326,8 @@ label ichika_m4a:
 
     narrador "Sonrió, esta vez más despacio, sin la energía de antes."
 
-    show ichika sonrisa at pj(0.5)
+    show ichika sonriendo at pj(0.5)
+    with disolucion_lenta
 
     ichika "…Gracias por no decir la frase obvia."
 
@@ -327,7 +349,8 @@ label ichika_m4b:
     $ ichika_rama_cap1 = "tibia"
     ## sin puntos, sin desaire
 
-    show ichika sonrisa at pj(0.5)
+    show ichika sonriendo at pj(0.5)
+    with disolucion_lenta
 
     mc "Con más drama, entonces."
 
@@ -379,9 +402,10 @@ label ichika_m4c:
 
     mc "Si tienes tiempo para esto, tienes tiempo para estudiar."
 
-    narrador "La sonrisa no desapareció del todo, pero algo detrás de ella sí."
-
     show ichika neutral at pj(0.5)
+    with disolucion_lenta
+
+    narrador "La sonrisa no desapareció del todo, pero algo detrás de ella sí."
 
     ichika "…"
 
@@ -389,7 +413,8 @@ label ichika_m4c:
 
     narrador "Lo dijo con la voz más parecida a la de un adulto que le hubiera oído usar."
 
-    show ichika sonrisa at pj(0.5)
+    show ichika sonriendo at pj(0.5)
+    with disolucion_lenta
 
     ichika "¡Tienes razón! ¡Debería aprovechar mejor el tiempo!"
 
@@ -417,15 +442,21 @@ label ichika_m4c:
 
 label ichika_m5:
 
-    # [BG bg_sala_ensayo — luz de atardecer, entrando el conserje a apagar luces]
+    hide ichika 
+    with dissolve
 
     stop music fadeout 1.5
 
     narrador "Salimos cuando el conserje empezaba a apagar las luces del pasillo."
 
-    mc_pensamiento "Una de cinco. Y esta se durmió antes de que yo dijera nada."
+    mc_pensamiento "Una de cinco." 
+    
+    mc_pensamiento "Y esta se durmió antes de que yo dijera nada."
 
     mc_pensamiento "Quedan tres semanas."
+
+    scene bg_negro
+    with fade
 
     if ichika_rama_cap1 == "calida":
 
@@ -443,9 +474,15 @@ label ichika_m5:
 
         mc_pensamiento "No estoy seguro de que haya sido nada más que eso."
 
+        mc_pensamiento "No hubo ningún cambio en ella."
+
+        mc_pensamiento "Siento como si no hubiera hecho nada para ayudarla"
+
     else:
 
-        mc_pensamiento "Tenía razón en lo que dije. Eso no me hace sentir mejor."
+        mc_pensamiento "Tenía razón en lo que dije." 
+        
+        mc_pensamiento "Pero no me hace sentir mejor."
 
         mc_pensamiento "Sostuvo la puerta el tiempo justo. Ni un segundo más."
 
