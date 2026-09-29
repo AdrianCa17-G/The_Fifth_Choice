@@ -1,17 +1,17 @@
 ################################################################################
-##  BGs Y CGs PROPIOS DEL HUB DE MIKU 
-##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
-##  el hub reutiliza es el único sprite de Miku, de ahí se crean dos 
-##  nuevos sprites que se definen en 00_definiciones
+##  BGs Y CGs PROPIOS DEL HUB DE NINO 
+##  2 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
+##  el hub reutiliza es el único sprite de Nino, de ahí se crean otro 
+##  nuevo sprites que se define en 00_definiciones
 ################################################################################
 
 image bg_centro_comercial = "images/bg/hubs_hermanas/centro_comercial.webp"
 
-image cg_miku_biblioteca = "images/cg/hubs_hermanas/miku_biblioteca.webp"
+image cg_nino_centro_comercial = "images/cg/hubs_hermanas/nino_centro_comercial.webp"
 
-image cg_miku_estudio = "images/cg/hubs_hermanas/miku_estudio.webp"
+image cg_nino_receta = "images/cg/hubs_hermanas/nino_receta.webp"
 
-image cg_miku_sorpresa = "images/cg/hubs_hermanas/miku_sorpresa.webp"
+image cg_nino_llamada = "images/cg/hubs_hermanas/nino_llamada.webp"
 
 ################################################################################
 ##  HUB DE NINO
@@ -47,7 +47,7 @@ label hub_Nino:
 
     narrador "Casi nadie a esa hora."
 
-    narrador "El resto de la sección estaba vacío. Dos carritos abandonados a medio pasillo, sin dueño."
+    narrador "El resto de la sección estaba vacío. Un carrito abandonado a medio pasillo, sin dueño."
 
     mc_pensamiento "De las cinco, era la que menos pistas dejaba de dónde encontrarla."
 
@@ -63,8 +63,8 @@ label hub_Nino:
 
     narrador "La encontré por descarte, no porque alguien me lo dijera."
 
-    ## CG 1 — el hallazgo: Nino comparando etiquetas sin saber que la miran.
-    #scene cg nino_centro_comercial with dissolve
+    scene cg_nino_centro_comercial
+    with fade
 
     narrador "Tenía una caja en cada mano, leyendo la etiqueta de una y después la otra."
 
@@ -78,7 +78,7 @@ label hub_Nino:
 
     mc_pensamiento "Estaba leyendo, directo, como quien no necesita traducir nada."
 
-    narrador "Sacó la tarjeta de receta del bolsillo del delantal y volvió a comparar."
+    narrador "Sacó una tarjeta de receta del bolsillo y volvió a comparar."
 
     mc_pensamiento "Letra a mano. Vieja."
 
@@ -96,14 +96,14 @@ label hub_Nino:
 
     narrador "Y sus ojos se clavaron en los míos antes de que pudiera disimularlo."
 
-
     ############################################################################
     ##  MOVIMIENTO 2 · La grieta
     ##  Nino se abre un poco, pero no lo suficiente. 
     ##  La conversación se vuelve más personal, pero no hay promesas.
     ############################################################################
 
-    #scene bg centro_comercial
+    scene bg_centro_comercial
+    with fade
 
     show nino neutral at pj(0.5)
     with dissolve
@@ -197,9 +197,8 @@ label hub_Nino:
 
     narrador "Sin cortar la frase a la mitad como acostumbra."
 
-    ## CG 2 — la grieta: plano cerrado sobre la tarjeta de receta.
-
-    # scene cg nino_receta with dissolve
+    scene cg_nino_receta 
+    with fade
 
     nino "También decían que iban a quedarse. Que esta vez iba a ser distinto."
 
@@ -219,7 +218,8 @@ label hub_Nino:
     
     mc_pensamiento "Está protegiendo a sus hermanas de algo que ya les pasó demasiadas veces."
 
-    #scene bg centro_comercial
+    scene bg_centro_comercial
+    with fade
 
     show nino neutral at pj(0.5) 
     with dissolve
@@ -230,13 +230,13 @@ label hub_Nino:
 
     narrador "Se cortó a mitad de frase, algo que ella nunca hace por accidente."
 
-    narrador "Guardó la tarjeta en el bolsillo del delantal."
+    narrador "Guardó la tarjeta en su bolsillo."
 
     narrador "Rápido, como quien tapa algo que se le cayó."
 
     mc_pensamiento "No pregunté más. Habría sido pedirle algo que no me tocaba todavía."
 
-    narrador "Se acomodó el delantal, como si con eso pudiera acomodar también lo que acababa de decir."
+    narrador "Se acomodó el uniforme, como si con eso pudiera acomodar también lo que acababa de decir."
 
     ############################################################################
     ##  MOVIMIENTO 3 · La decisión
@@ -284,9 +284,6 @@ label nino_m4a:
 
     mc "Tienes razón en desconfiar."
 
-    show nino neutral at pj(0.5)
-    with dissolve
-
     nino "…¿Qué?"
 
     mc "No te voy a decir que esta vez es distinto."
@@ -300,7 +297,7 @@ label nino_m4a:
     narrador "Se quedó quieta, con la cesta a medio subir, como si esperara el resto de la frase que no llegó."
 
     show nino nerviosa at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     nino "…"
 
@@ -313,7 +310,7 @@ label nino_m4a:
     narrador "Lo pensó un momento, sin la hostilidad de antes ni la calma que tampoco tiene."
 
     show nino neutral at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     nino "Eso no significa que confíe en ti."
 
@@ -350,9 +347,6 @@ label nino_m4b:
     narrador "No dije nada."
 
     narrador "Levanté la otra cesta que había dejado en el suelo y empecé a caminar hacia la caja."
-
-    show nino neutral at pj(0.5)
-    with dissolve
 
     nino "¿Qué haces?"
 
@@ -400,9 +394,6 @@ label nino_m4c:
 
     narrador "No funcionó."
 
-    show nino neutral at pj(0.5)
-    with dissolve
-
     nino "…"
 
     narrador "Se rió, pero no de gracia."
@@ -438,10 +429,12 @@ label nino_m4c:
 
 label nino_m5:
 
-    #scene bg centro_comercial tarde
+    scene cg_nino_llamada
+    with fade
+    
     stop music fadeout 1.5
 
-    narrador "Casi en la puerta, el celular le sonó en el bolsillo del delantal."
+    narrador "Casi en la puerta, el celular de Nino sonó."
 
     nino "¿Qué?"
 
@@ -469,9 +462,6 @@ label nino_m5:
 
     narrador "Guardó el teléfono y siguió caminando hacia la salida, sin voltear a verme."
 
-    hide nino 
-    with dissolve
-
     mc_pensamiento "No dijo por qué."
 
     mc_pensamiento "Y por primera vez, no sonó a que me odiara."
@@ -481,6 +471,9 @@ label nino_m5:
     ############################################################################
     ## Movimiento 6 · Cierre final (varía según la rama elegida)
     ############################################################################
+
+    scene bg_centro_comercial
+    with fade
 
     narrador "La acompañé hasta la salida, cargando lo que me dejó cargar."
 
