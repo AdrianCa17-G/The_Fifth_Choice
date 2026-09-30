@@ -1,24 +1,23 @@
 ################################################################################
 ##  BGs Y CGs PROPIOS DEL HUB DE YOTSUBA 
-##  2 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
+##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
 ##  el hub reutiliza son todos dos sprites de Yotsuba, de ahí se crean dos 
 ##  nuevos sprites que se definen en 00_definiciones
 ################################################################################
 
-image bg_pista_atletismo = Transform(
+image bg_pista_atletismo = "images/bg/hubs_hermanas/pista_atletismo.webp"
+
+image bg_pista_atletismo_anochecer = Transform(
     "images/bg/hubs_hermanas/pista_atletismo.webp",
     matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
 )
 
-image cg_yotsuba_pista = Transform(
-    "images/cg/hubs_hermanas/yotsuba_pista.webp",
-    matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
-)
-
-image cg_yotsuba_rotulador = Transform(
-    "images/cg/hubs_hermanas/yotsuba_rotulador.webp",
-    matrixcolor = BrightnessMatrix(-0.05) * SaturationMatrix(0.90) * TintMatrix("#e4e0f2")
-)
+image cg_yotsuba_pista = "images/cg/hubs_hermanas/yotsuba_pista.webp"
+    
+image cg_yotsuba_rotulador = "images/cg/hubs_hermanas/yotsuba_rotulador.webp"
+    
+image cg_yotsuba_despedida = "images/cg/hubs_hermanas/yotsuba_despedida.webp"
+    
 
 ################################################################################
 ##  HUB DE YOTSUBA
@@ -57,8 +56,6 @@ label hub_Yotsuba:
     with fade
 
     mc_pensamiento "El club se había ido hace por lo menos media hora."
-
-    mc_pensamiento "Estaban marchándose a casa cuando salí de clase."
 
     mc_pensamiento "Ella sigue ahí."
 
@@ -118,6 +115,9 @@ label hub_Yotsuba:
     mc "Llevas veintitrés vueltas, Yotsuba."
 
     mc "Te va a dar algo si sigues hablando contigo misma."
+
+    show yotsuba incomoda
+    with disolucion_lenta
 
     yotsuba "¡No estaba hablando sola! ¡Estaba haciendo técnica de concentración mental!" 
     
@@ -193,16 +193,6 @@ label hub_Yotsuba:
 
     mc_pensamiento "Eso es entre nueve y doce kilómetros, dependiendo del tamaño de la pista."
 
-    mc_pensamiento "Sola."
-    
-    mc_pensamiento "Sin nadie que la anime."
-    
-    mc_pensamiento "Sin nadie que la cuide." 
-     
-    mc_pensamiento "Sin nadie que le diga que ya es suficiente."
-
-    mc_pensamiento "Con el rotulador en la muñeca porque si no pierde la cuenta."
-
     mc "¿Entrenas así todos los días?"
 
     yotsuba "¡Solo cuando quiero mejorar!... Que sí... ¡Es todos los días!"
@@ -226,8 +216,6 @@ label hub_Yotsuba:
     with dissolve
 
     yotsuba "Mis hermanas son mejores que yo en casi todo."
-
-    narrador "Lo dijo sin drama. Como quien dice que va a llover."
 
     yotsuba "Ichika actúa. Nino cocina. Miku sabe de historia. Itsuki estudia."
 
@@ -253,11 +241,11 @@ label hub_Yotsuba:
 
     #`[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`
 
-    narrador "Se limpió el rotulador de la muñeca con el borde de la manga"         
+    narrador "Se limpió el rotulador de la muñeca con el borde de la manga."         
     
-    narrador " y volvió a mirarme con esa sonrisa intacta."
+    narrador "Y volvió a mirarme con esa sonrisa intacta."
 
-    show yotsuba incomoda at pj(0.5)
+    show yotsuba sonriendo 
     with disolucion_lenta
 
     yotsuba "¡Bueno!"
@@ -274,12 +262,7 @@ label hub_Yotsuba:
     
     narrador " como si con eso pudiera sacudirse también lo que acababa de decir."
 
-    show yotsuba sonriendo 
-    with disolucion_lenta
-
-    yotsuba "¡Venga, no hay tiempo que perder! ¡El sol no espera!"
-
-    narrador "Miré hacia las gradas." 
+    yotsuba "¡Vamos, no hay tiempo que perder! ¡El sol no espera!"
     
     narrador "El sol ya se había ido hacía rato; solo quedaba la luz naranja de emergencia."
 
@@ -340,6 +323,9 @@ label yotsuba_m4a:
 
     mc "Antes de eso."
 
+    show yotsuba sorprendida 
+    with disolucion_lenta
+
     yotsuba "¿Antes de qué?"
 
     mc "Dijiste que tus hermanas son mejores que tú en casi todo."
@@ -350,7 +336,7 @@ label yotsuba_m4a:
 
     mc "Lo sé. Pero te saltaste algo."
 
-    show yotsuba neutral at pj(0.5)
+    show yotsuba neutral 
     with disolucion_lenta
 
     narrador "Su sonrisa no desapareció,"
@@ -359,25 +345,19 @@ label yotsuba_m4a:
 
     yotsuba "…¿Qué me salté?"
 
-    mc "Esta mañana, en el desayuno. Supiste que Nino no había dormido bien antes 
-    de que ella dijera nada."
+    mc "Esta mañana. Supiste que Nino no había dormido bien antes de que ella dijera nada."
 
     yotsuba "Estaba un poco más callada que de costumbre."
 
-    mc "Y ayer le dijiste a Miku que el libro que buscaba estaba en la
-    segunda planta antes de que Miku siquiera preguntara."
+    mc "Y ayer le dijiste a Miku que el libro que buscaba estaba en la segunda planta antes de que Miku siquiera preguntara."
 
     yotsuba "Es que siempre lo deja ahí después de leerlo."
 
-    mc "Y la semana pasada, cuando Ichika llegó tarde al departamento,
-    fuiste la primera en saber si estaba cansada o si estaba preocupada." 
-        
-    mc "Y eran cosas distintas."
+    mc "Y la semana pasada, cuando Ichika llegó tarde al departamento, fuiste la primera en saber que estaba agotada." 
 
     narrador "Hubo un breve silencio."
 
-    narrador "No el silencio de quien no tiene respuesta: 
-    el de quien está revisando si los datos son correctos."
+    narrador "Un silencio de una Yotsuba que está comprobando si todo eso fue verdad."
 
     show yotsuba incomoda at pj(0.5)
     with disolucion_lenta
@@ -391,8 +371,6 @@ label yotsuba_m4a:
     yotsuba "Cualquiera lo haría."
 
     mc "Ninguna de tus hermanas lo hace. Yo tampoco. Y lo intento."
-
-    narrador "Eso no lo tenía preparado."
 
     show yotsuba sorprendida at pj(0.5)
     with disolucion_lenta
@@ -546,29 +524,46 @@ label yotsuba_m4c:
 
 
 ############################################################################
-## MOVIMIENTO 5 · Cierre
-## Común a las tres ramas, con un cierre cálido, tibio o frío según la elección.
+## MOVIMIENTO 5 · La vuelta que no vio
+## Común a las tres ramas. Futaro se va; ella no se despide, vuelve a correr.
 ############################################################################
 
 label yotsuba_m5:
-
-    hide yotsuba 
-    with disolucion_lenta
-
-    #`[BG bg_pista_atletismo — luz más baja, atardecer avanzado]`
-    #`[MUS stop fadeout 1.5]`
 
     narrador "Recogí mis cosas y caminé hacia la salida del graderío."
 
     mc_pensamiento "Pensé en decirle algo antes de irme."
 
-    mc_pensamiento "Un 'hasta mañana', algo."
+    scene cg_yotsuba_despedida
+    with fade
 
-    #`[SFX sfx_pisadas_pista — loop, distante, entra bajo]
+    narrador "Pero cuando llegué a la reja, ella ya había vuelto a la pista."
 
-    narrador "Pero ella ya había vuelto a la pista antes de que llegara a la puerta, con la cabeza en otra vuelta."
+    narrador "Sin esperar a que yo terminara de irme."
 
-    mc_pensamiento "No dijo 'nos vemos mañana'. Hoy ninguna de las dos lo dijo."
+    mc_pensamiento "No se despidió."
+
+    mc_pensamiento "Solo volvió a correr, como si la conversación nunca hubiera interrumpido nada."
+
+    hide yotsuba 
+    with disolucion_lenta
+
+    scene bg_pista_atletismo_anochecer
+    with fade
+
+    stop music fadeout 1.5
+
+    mc_pensamiento "Un 'nos vemos mañana'. Hoy ninguna de las dos lo dijo."
+
+    jump yotsuba_m6
+
+
+############################################################################
+## MOVIMIENTO 6 · Cierre
+## Común a las tres ramas, con un cierre cálido, tibio o frío según la elección.
+############################################################################
+
+label yotsuba_m6:
 
     mc_pensamiento "Una de cinco. Y esta acaba de llegar corriendo."
 

@@ -7,12 +7,16 @@
 
 image bg_sala_ensayo = "images/bg/hubs_hermanas/sala_ensayo.webp"
 
+image bg_sala_ensayo_anochecer = Transform(
+    "images/bg/hubs_hermanas/sala_ensayo.webp",
+    matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
+)
+
 image cg_ichika_ensayo = "images/cg/hubs_hermanas/ichika_ensayo.webp"
 
 image cg_ichika_desarmada = "images/cg/hubs_hermanas/ichika_desarmada.webp"
 
 image cg_ichika_mascara = "images/cg/hubs_hermanas/ichika_mascara.webp"
-
 
 ################################################################################
 ##  HUB DE ICHIKA
@@ -31,7 +35,8 @@ label hub_Ichika:
 
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
-    ##  Futaro encuentra a Ichika dormida en la sala de ensayo del club de teatro.
+    ##  Futaro encuentra a Ichika dormida en la sala de ensayo del club de teatro,
+    ##  con latas de energizante y un guión colgado a mano
     ############################################################################
 
     scene sala_ensayo 
@@ -44,6 +49,8 @@ label hub_Ichika:
     narrador "Nadie me dijo que llamara antes de entrar."
 
     narrador "La puerta estaba entreabierta."
+
+    narrador "Y fue ahí cuando la ví."
 
     scene ichika_ensayo
     with fade
@@ -81,6 +88,7 @@ label hub_Ichika:
     ############################################################################
     ##  MOVIMIENTO 2 · La grieta
     ##  Se despierta sin la actuación encendida todavía. Dura medio segundo.
+    ##  Se da cuenta de que perdió toda la tarde durmiendo.
     ############################################################################
 
     scene bg_sala_ensayo
@@ -91,9 +99,13 @@ label hub_Ichika:
     scene cg_ichika_desarmada
     with fade
 
+    ichika "…¿[mc]?"
+
+    ichika "¿Qué haces aquí?"
+
     ichika "…¿Qué hora es?"
 
-    narrador "Lo preguntó sin actuación, sin la voz que usa para todo."
+    narrador "Me preguntó sin actuación, sin la voz que usa para todo."
 
     mc "Las cuatro y media."
 
@@ -119,9 +131,17 @@ label hub_Ichika:
     with fade
 
     show ichika agotada at pj(0.5)
-    with disolucion_lenta
+    with dissolve
 
-    ichika "¡Ah, no! ¡Estaba practicando!"
+    mc "Luces demasiado cansada"
+
+    ichika "¿Yo?"
+
+    ichika "Jaja, te preocupas demasiado por mi [mc]"
+
+    mc "¿Entonces que estabas haciendo?"
+
+    ichika "¡Estaba practicando!"
 
     mc "¿Practicando dormir?"
 
@@ -134,7 +154,7 @@ label hub_Ichika:
 
     ichika "¡Claro que existe! ¡Lo inventé yo hace cinco minutos!"
 
-    narrador "Se rió de su propio chiste, un poco más fuerte de lo que el chiste merecía."
+    narrador "Se rió de su propio chiste, un poco más fuerte."
 
     mc_pensamiento "Cambió de tema tan rápido que casi no lo noto."
 
@@ -169,7 +189,11 @@ label hub_Ichika:
 
     mc "¿Por qué no a las cinco y media, si total es casi lo mismo?"
 
-    ichika "Porque el tren de las cinco cuarenta y cinco tarda seis minutos en llegar a la estación desde aquí, y necesito cuatro para cambiarme."
+    ichika "Porque el tren de las cuatro cuarenta y cinco tarda seis minutos en llegar a la estación desde aquí, y necesito cuatro para cambiarme."
+
+    mc_pensamiento "Vaya, tiene un horario muy bien cronometrado."
+
+    mc_pensamiento "Lo cual me preocupa bastante"
 
     mc "Lo dijiste sin pausar, sin contar con los dedos, como si ya tuvieras la cuenta hecha de memoria."
 
@@ -225,8 +249,7 @@ label hub_Ichika:
     with fade
 
     show ichika agotada at pj(0.5)
-    with disolucion_lenta
-
+    with dissolve
 
     mc_pensamiento "Tres cosas que acabo de ver y que ella escondió detrás de un chiste."
 
@@ -445,6 +468,9 @@ label ichika_m5:
     hide ichika 
     with dissolve
 
+    scene bg_sala_ensayo_anochecer
+    with fade
+
     stop music fadeout 1.5
 
     narrador "Salimos cuando el conserje empezaba a apagar las luces del pasillo."
@@ -455,9 +481,7 @@ label ichika_m5:
 
     mc_pensamiento "Quedan tres semanas."
 
-    scene bg_negro
-    with fade
-
+    
     if ichika_rama_cap1 == "calida":
 
         mc_pensamiento "Dijo que no sabía cuánto más podía seguir así."

@@ -7,6 +7,11 @@
 
 image bg_biblioteca = "images/bg/hubs_hermanas/biblioteca.webp"
 
+image bg_biblioteca_anochecer = Transform(
+    "images/bg/hubs_hermanas/biblioteca.webp",
+    matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
+)
+
 image cg_miku_biblioteca = "images/cg/hubs_hermanas/miku_biblioteca.webp"
 
 image cg_miku_estudio = "images/cg/hubs_hermanas/miku_estudio.webp"
@@ -39,14 +44,18 @@ label hub_Miku:
 
     stop music fadeout 1.0
 
-    narrador "La biblioteca municipal quedaba dos calles antes del edificio." 
+    narrador "La biblioteca quedaba a dos cuadras de la escuela." 
 
     narrador "Pasaba por delante todos los días y nunca había entrado."
 
-    narrador "Segunda planta, la sala de lectura. Cuatro mesas largas y nadie en tres de ellas."
+    narrador "Segunda planta, la sala de lectura." 
+    
+    narrador "Cuatro mesas largas y nadie en tres de ellas."
 
     scene cg_miku_biblioteca
     with fade
+
+    narrador "Logré encontrar a Miku"
 
     narrador "Estaba al fondo, de espaldas a la puerta, con una pila de libros a la izquierda y los 
     audífonos colgados del cuello."
@@ -85,7 +94,7 @@ label hub_Miku:
 
     miku "…"
 
-    mc "Buenas tardes."
+    mc "Ah, Miku. Qué coincidencia encontrarte aquí.."
 
     miku "…"
 
@@ -93,9 +102,7 @@ label hub_Miku:
 
     mc "No lo sabía. Llevo una hora dando vueltas."
 
-    mc "Pasé por tu casa primero."
-
-    mc "Ninguna de tus hermanas supo decirme dónde estabas."
+    mc "Aunque alguien me dijo que la biblioteca podría ser tu rincón secreto de estudio"
 
     narrador "Algo se le movió en la cara al oír eso, tan rápido que no me dio tiempo a leerlo."
 
@@ -149,7 +156,7 @@ label hub_Miku:
 
     mc_pensamiento "Perfecto. Un muro de ladrillo, pero educado."
 
-    mc_pensamiento "Llevo dos días haciendo lo mismo con las cinco y progresando con ninguna."
+    mc_pensamiento "Llevo días haciendo lo mismo con las cinco y progresando con ninguna."
 
     mc_pensamiento "Repasemos lo que sé de Miku."
 
@@ -220,7 +227,7 @@ label hub_Miku:
     mc_pensamiento "Era la primera vez en dos días que dejaba de mirar a otro lado."
 
     show miku neutral at pj_habla(0.5)
-    with disolucion_lenta
+    with dissolve
 
     miku "…¿Y qué comían?"
 
@@ -540,34 +547,35 @@ label miku_m5:
     hide miku 
     with disolucion_lenta
 
+    scene bg_biblioteca_anochecer
+    with fade
+
     stop music fadeout 1.5
 
     narrador "Salí de la biblioteca con Miku cuando estaban apagando las luces de la segunda planta."
 
-    narrador "De ahí nos despedimos"
+    narrador "De ahí nos despedimos."
 
     mc_pensamiento "Una de cinco. Y esta sabía mucho de lo que yo no."
 
     mc_pensamiento "Quedan tres semanas."
 
-    scene bg_negro
-    with fade
-
+    
     if miku_rama_cap1 == "calida":
 
-        mc_pensamiento  "Miku no es timida"
+        mc_pensamiento  "Miku no es timida."
 
-        mc_pensamiento "Al contrario, es una persona muy abierta"
+        mc_pensamiento "Al contrario, es una persona muy abierta."
 
         mc_pensamiento "Hoy me habló durante un minuto seguido sin que yo se lo pidiera dos veces."
 
-        mc_pensamiento "Sin juzgarme del por qué estaba yo ahí"
+        mc_pensamiento "Sin juzgarme del por qué estaba yo ahí."
 
         mc_pensamiento "Eso, en esa casa, es un récord."
 
     elif miku_rama_cap1 == "tibia":
 
-        mc_pensamiento "Le dije lo que odia escuchar"
+        mc_pensamiento "Le dije lo que odia escuchar."
 
         mc_pensamiento "No se defendió."
 
@@ -579,7 +587,7 @@ label miku_m5:
 
         mc_pensamiento "Tenía razón en lo del examen."
 
-        mc_pensamiento "El Sengoku ni si quiera es un tema de relevancia"
+        mc_pensamiento "El Sengoku ni si quiera es un tema de relevancia."
 
         mc_pensamiento "Hize bien al decirle que estudiara lo que realmente le iban a preguntar."
 

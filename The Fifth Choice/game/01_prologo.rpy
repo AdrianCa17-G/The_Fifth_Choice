@@ -205,7 +205,7 @@ label prologo:
     mc "Porque nadie paga cinco veces más por algo que se consigue por una."
 
     show isanari sonriendo at pj_habla(0.73)
-    with dissolve
+    with disolucion_lenta
 
     narrador "Mi padre sonrió. Aquello significaba que el truco existía y que habría que descubrirlo por las buenas o por las malas."
 
@@ -342,7 +342,7 @@ label prologo:
     mc "No."
 
     show itsuki sorprendida at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     itsuki_inicio "¡¿Eh?! ¡Ni siquiera te lo pensaste!"
 
@@ -359,7 +359,7 @@ label prologo:
     itsuki_inicio "..."
 
     show itsuki molesta at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     ## Compite con `incomodo`. El arrastre no tiene ataque y se disuelve.
     $ duck()
@@ -419,7 +419,7 @@ label prologo:
     itsuki_inicio "¿Otra vez tú?"
 
     show itsuki molesta at pj(0.5)
-    with dissolve
+    with disolucion_lenta
 
     itsuki_inicio "Ni se te ocurra pensar que te vine a buscar."
 
@@ -447,7 +447,7 @@ label prologo:
             mc_pensamiento "Saqué mis apuntes de la mochila y dejé que el silencio hiciera su trabajo."
 
             show itsuki molesta at pj(0.5)
-            with dissolve
+            with disolucion_lenta
 
             itsuki_inicio "…¿En serio vas a seguir estudiando incluso al terminar las clases?"
             mc "El temario del próximo examen no se va a repasar solo."
@@ -849,7 +849,7 @@ label prologo:
 
     show ichika neutral at pj_habla(0.30)
     show itsuki at pj_calla(0.70)
-    with dissolve
+    with disolucion_lenta
 
     ichika "¿Así que [mc] fue el que te rechazó la propuesta de estudiar juntos?"
 
@@ -1132,7 +1132,7 @@ label prologo:
         "Porque me pagan.":
             mc "Porque me pagan."
             show itsuki molesta at pj(0.5)
-            with dissolve
+            with disolucion_lenta
             itsuki "Qué actitud tan desagradable."
             mc "Es la verdad."
             itsuki "…Al menos eres honesto, por horrible que suene."
@@ -1140,7 +1140,7 @@ label prologo:
         "Porque no sé perder.":
             mc "Porque nunca he dejado un problema sin resolver."
             show itsuki molesta at pj(0.5)
-            with dissolve
+            with disolucion_lenta
             itsuki "Mis hermanas y yo no somos un problema de matemáticas."
             mc "Todavía no sé lo que son."
 

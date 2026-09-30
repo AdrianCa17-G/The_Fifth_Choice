@@ -7,6 +7,11 @@
 
 image bg_centro_comercial = "images/bg/hubs_hermanas/centro_comercial.webp"
 
+image bg_centro_comercial_anochecer = Transform(
+    "images/bg/hubs_hermanas/centro_comercial.webp",
+    matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
+)
+
 image cg_nino_centro_comercial = "images/cg/hubs_hermanas/nino_centro_comercial.webp"
 
 image cg_nino_receta = "images/cg/hubs_hermanas/nino_receta.webp"
@@ -47,7 +52,9 @@ label hub_Nino:
 
     narrador "Casi nadie a esa hora."
 
-    narrador "El resto de la sección estaba vacío. Un carrito abandonado a medio pasillo, sin dueño."
+    narrador "El resto de la sección estaba vacío." 
+    
+    narrador "Un carrito abandonado a medio pasillo, sin dueño."
 
     mc_pensamiento "De las cinco, era la que menos pistas dejaba de dónde encontrarla."
 
@@ -128,7 +135,9 @@ label hub_Nino:
 
     narrador "Dio un paso, poniéndose entre yo y la estantería de importados, como si hubiera pisado algo que no me tocaba."
 
-    mc "En tu casa hay despensa. ¿Para qué venir hasta aquí?"
+    mc "En tu casa hay despensa." 
+    
+    mc "¿Para qué venir hasta aquí?"
 
     nino "Porque en la despensa no hay nada que valga la pena."
 
@@ -144,7 +153,9 @@ label hub_Nino:
     
     narrador "Volvió a mirar las dos cajas de harina, aunque ya había decidido."
 
-    mc "¿Qué dice esta lata? No reconozco ni la mitad de las palabras."
+    mc "¿Qué dice esta lata?" 
+    
+    mc "No reconozco ni la mitad de las palabras."
 
     narrador "Señalé una al azar, en el estante de al lado, solo por decir algo que no sonara a interrogatorio."
 
@@ -158,7 +169,9 @@ label hub_Nino:
 
     nino "'Confectioners' sugar."
 
-    narrador "Lo dijo bien. Demasiado bien para alguien que en clase apenas levanta la mano."
+    narrador "Lo dijo bien." 
+    
+    narrador "Demasiado bien para alguien que en clase apenas levanta la mano."
 
     mc "Se te da mejor de lo que aparentas en el salón."
 
@@ -187,11 +200,15 @@ label hub_Nino:
 
     nino "Porque los que entraron antes también sonreían el primer día."
 
-    nino "Y no es que yo sea así porque sí, ¿sabes? No es un capricho."
+    nino "Y no es que yo sea así porque sí, ¿sabes?"
+    
+    nino "No es un capricho."
 
     nino "Es que ya perdí la cuenta de cuántas veces mis hermanas..."
 
-    narrador "Se detuvo, pero solo un segundo. No fue el corte de siempre."
+    narrador "Se detuvo, pero solo un segundo." 
+    
+    narrador "No fue el corte de siempre."
 
     narrador "Lo dijo más rápido de lo que suele hablar."
 
@@ -429,12 +446,10 @@ label nino_m4c:
 
 label nino_m5:
 
+    narrador "Casi en la puerta, el celular de Nino sonó."
+
     scene cg_nino_llamada
     with fade
-    
-    stop music fadeout 1.5
-
-    narrador "Casi en la puerta, el celular de Nino sonó."
 
     nino "¿Qué?"
 
@@ -472,16 +487,18 @@ label nino_m5:
     ## Movimiento 6 · Cierre final (varía según la rama elegida)
     ############################################################################
 
-    scene bg_centro_comercial
+    scene bg_centro_comercial_anochecer
     with fade
 
-    narrador "La acompañé hasta la salida, cargando lo que me dejó cargar."
+    stop music fadeout 1.5
 
-    mc_pensamiento "Una de cinco. Y esta no bajó la guardia ni un minuto entero."
+    narrador "La acompañé hasta la salida, cargando lo que me dejó cargar."
 
     narrador "En la caja, pagó ella misma, sin dejarme acercar la cartera."
 
     mc_pensamiento "Ni eso me lo iba a dejar hacer."
+
+    mc_pensamiento "Una de cinco. Y esta no bajó la guardia ni un minuto entero."
     
     mc_pensamiento "Quedan tres semanas."
 
@@ -509,7 +526,7 @@ label nino_m5:
 
         mc_pensamiento "Ella ya había escuchado esa frase antes."
 
-        mc_pensamiento "Yo mismo la puse en la misma fila que los anteriores."
+        mc_pensamiento "Yo mismo me puse en la misma fila que los anteriores."
 
 
     ## Marcar el evento como consumido para el evento 6 y para que el hub

@@ -7,6 +7,11 @@
 
 image bg_aula_tarde = "images/bg/hubs_hermanas/aula_tarde.webp"
 
+image bg_aula_anochecer = Transform(
+    "images/bg/hubs_hermanas/aula_tarde.webp",
+    matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
+)
+
 image cg_itsuki_atascada = "images/cg/hubs_hermanas/itsuki_atascada.webp"
 
 image cg_itsuki_contraida = "images/cg/hubs_hermanas/itsuki_contraida.webp"
@@ -33,6 +38,7 @@ label hub_Itsuki:
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc e Itsuki en el aula de tarde
+    ##  Itsuki encuentra dificultades al resolver un ejercicio
     ############################################################################
 
     scene bg_aula_tarde
@@ -65,7 +71,7 @@ label hub_Itsuki:
 
     mc_pensamiento "A su lado había tres respuestas tachadas."
 
-    mc_pensamiento "Una sola raya horizontal cada vez, prolija. No un garabato de rabia."
+    mc_pensamiento "Parecían garabatos llenos de rabia"
 
     mc_pensamiento "Y la misma cifra al final de los tres."
 
@@ -120,7 +126,9 @@ label hub_Itsuki:
 
     narrador "Volvió a mirar el cuaderno como si la frase no se hubiera dicho."
 
-    mc_pensamiento "Tres tachones. Misma cifra las tres veces."
+    mc_pensamiento "Tres tachones." 
+    
+    mc_pensamiento "Misma cifra las tres veces."
 
     mc_pensamiento "Eso no es no saber."
 
@@ -143,15 +151,17 @@ label hub_Itsuki:
 
     mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la pregunta con la misma frase."
 
-    mc_pensamiento "La cambia. La corrige. La mejora."
+    mc_pensamiento "La cambia." 
+    
+    mc_pensamiento "La corrige." 
+    
+    mc_pensamiento "La mejora."
 
-    mc_pensamiento "Esta vez solo la devolvió intacta."
+    mc_pensamiento "Esta vez solo la dejó ahí."
 
     mc_pensamiento "Está ganando, o perdiendo tiempo."
 
     mc "Las demás no estudian nada y les va igual de mal que a ti."
-
-    narrador "Eso sí le tocó algo."
 
     show itsuki molesta at pj(0.5)
     with disolucion_lenta
@@ -163,6 +173,8 @@ label hub_Itsuki:
     itsuki "Porque ellas pueden decir que no lo intentaron."
 
     itsuki "Yo no tengo esa excusa."
+    
+    narrador "Eso sí le tocó algo."
 
     narrador "Lo dijo rápido. Más rápido que el resto de la conversación."
 
@@ -379,7 +391,9 @@ label itsuki_m4b:
 
     itsuki "No hace falta. La respuesta es no."
 
-    narrador "Cerró el cuaderno un centímetro. No del todo."
+    narrador "Cerró el cuaderno un centímetro." 
+    
+    narrador "No del todo."
 
     narrador "Lo suficiente para que entendiera que la oferta ya estaba rechazada."
 
@@ -395,7 +409,9 @@ label itsuki_m4b:
 
     mc_pensamiento "Dijo que no quería que se lo explicara."
 
-    mc_pensamiento "Con ella eso puede ser lo mismo, o lo contrario. Hoy no lo voy a averiguar."
+    mc_pensamiento "Con ella eso puede ser lo mismo, o lo contrario." 
+    
+    mc_pensamiento "Hoy no lo voy a averiguar."
 
     narrador "Cuando volví a pasar por su pupitre, seguía en el mismo ejercicio."
 
@@ -440,11 +456,15 @@ label itsuki_m4c:
 
     narrador "En ella, esa es la forma más fría de aceptar algo."
 
-    mc_pensamiento "Se lo resolví bien. Rápido, correcto, sin margen de error."
+    mc_pensamiento "Se lo resolví bien." 
+    
+    mc_pensamiento "Rápido, correcto, sin margen de error."
 
     mc_pensamiento "Y le quité la única cosa que estaba defendiendo."
 
-    mc_pensamiento "No era el ejercicio. Era hacerlo ella sola."
+    mc_pensamiento "No era el ejercicio." 
+    
+    mc_pensamiento "Era hacerlo ella sola."
 
     show itsuki neutral at pj(0.5)
     with disolucion_lenta
@@ -466,6 +486,9 @@ label itsuki_m5:
 
     hide itsuki 
     with dissolve
+
+    scene bg_aula_anochecer
+    with fade
      
     stop music fadeout 1.5
 
@@ -505,7 +528,6 @@ label itsuki_m5:
     ## Marcar el evento como consumido para el evento 6 y para que el hub
     ## ofrezca la revisita corta en lugar del evento completo.
     $ itsuki_visitada_cap1 = True
-
-        
+ 
     jump hub
     
