@@ -532,5 +532,4 @@ label nino_m5:
     ## Marcar el evento como consumido para el evento 6 y para que el hub
     ## ofrezca la revisita corta en lugar del evento completo.
     $ nino_visitada_cap1 = True
-
-    jump hub
+    return

@@ -30,11 +30,6 @@ label hub_Itsuki:
 
     $ sumar_punto("itsuki", 2)
 
-    # Si el jugador eligió el aula en la tarde en el hub 1, se marca la primera
-    # conexión. Ajustar el string si el hub usa otra clave para este destino.
-    #if hub_choice == "aula_tarde":
-    #    $ primera_conexion = True
-
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc e Itsuki en el aula de tarde
@@ -528,6 +523,5 @@ label itsuki_m5:
     ## Marcar el evento como consumido para el evento 6 y para que el hub
     ## ofrezca la revisita corta en lugar del evento completo.
     $ itsuki_visitada_cap1 = True
- 
-    jump hub
+    return
     

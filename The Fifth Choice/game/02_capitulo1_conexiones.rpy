@@ -37,7 +37,7 @@ label hub_1:
     if desaires_cap1 >= 3:
         jump final_malo_temprano
 
-    call beat_itsuki
+    call beat_Itsuki
     jump hub_2
 
 # ------------------------------------------------------------
@@ -53,7 +53,7 @@ label hub_2:
     if desaires_cap1 >= 2:
         call aviso_maruo
 
-    call beat_nino_crisis
+    call beat_Nino
     jump hub_3
 
 # ------------------------------------------------------------

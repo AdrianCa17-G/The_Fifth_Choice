@@ -130,8 +130,6 @@ image bg_departamento  = "bg/departamento.webp"
  
 image bg_negro         = Solid("#000000")
 
-
-
 ################################################################################
 ##  4. FONDOS CG COMPARTIDOS
 ##  Solo los que usa mas de un capitulo. Los trece CG del prologo siguen
@@ -176,16 +174,6 @@ image yotsuba neutral  = "sprites/yotsuba_sprites/yotsuba_neutral.png"
 image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonriendo.png"
 image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
 image yotsuba sorprendida = "sprites/yotsuba_sprites/yotsuba_sorprendida.png"
-
-
-
-## --- Pendientes del Capitulo 1 -----------------------------------------------
-## Declararlos SIEMPRE como atributo, con espacio, igual que los de arriba.
-## `image nino_pillada` crearia un tag distinto de `nino`: `hide nino` no lo
-## quitaria y podrian convivir dos Ninos en pantalla. El .png si lleva guion
-## bajo; la declaracion no.
-# image nino pillada       = "sprites/nino_sprites/nino_pillada.png"
-# image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
 
 
 ################################################################################

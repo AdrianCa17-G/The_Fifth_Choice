@@ -513,5 +513,4 @@ label ichika_m5:
     # Marca el evento como consumido para el evento 6 y para que el hub
     # ofrezca la revisita corta en lugar del evento completo.
     $ ichika_visitada_cap1 = True
-
-    jump hub
+    return

@@ -596,8 +596,7 @@ label miku_m5:
     ## Marcar el evento como consumido para el evento 6 y para que el hub
     ## ofrezca la revisita corta en lugar del evento completo.
     $ miku_visitada_cap1 = True
-
-    jump hub
+    return
 
 
 

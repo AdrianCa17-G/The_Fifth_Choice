@@ -435,8 +435,6 @@ label yotsuba_m4b:
 
     narrador "Salió disparada. Era rápida de verdad."
 
-    narrador "No el tipo de rapidez de alguien que solo entrena por pasatiempo; corría en serio."
-
     narrador "Cuando terminó la vuelta, frenó delante de mí con los brazos abiertos, esperando el tiempo."
 
     mc "Un minuto con diecisiete."
@@ -470,7 +468,6 @@ label yotsuba_m4b:
     narrador "No conseguí ayudarla a sentirse mejor, pero tampoco la hice sentir peor."
 
     jump yotsuba_m5
-
 
 ## ---------------------------------------------------------------
 ## Movimiento 4C · Rama fría
@@ -530,28 +527,20 @@ label yotsuba_m4c:
 
 label yotsuba_m5:
 
+    scene cg_yotsuba_despedida
+    with fade
+
     narrador "Recogí mis cosas y caminé hacia la salida del graderío."
 
     mc_pensamiento "Pensé en decirle algo antes de irme."
 
-    scene cg_yotsuba_despedida
-    with fade
-
-    narrador "Pero cuando llegué a la reja, ella ya había vuelto a la pista."
+    narrador "Pero cuando llegué, ella ya había vuelto a la pista."
 
     narrador "Sin esperar a que yo terminara de irme."
 
     mc_pensamiento "No se despidió."
 
     mc_pensamiento "Solo volvió a correr, como si la conversación nunca hubiera interrumpido nada."
-
-    hide yotsuba 
-    with disolucion_lenta
-
-    scene bg_pista_atletismo_anochecer
-    with fade
-
-    stop music fadeout 1.5
 
     mc_pensamiento "Un 'nos vemos mañana'. Hoy ninguna de las dos lo dijo."
 
@@ -564,6 +553,11 @@ label yotsuba_m5:
 ############################################################################
 
 label yotsuba_m6:
+
+    scene bg_pista_atletismo_anochecer
+    with fade
+
+    stop music fadeout 1.5
 
     mc_pensamiento "Una de cinco. Y esta acaba de llegar corriendo."
 
@@ -604,6 +598,5 @@ label yotsuba_m6:
     ## Marcar el evento como consumido para el evento 6 y para que el hub
     ## ofrezca la revisita corta en lugar del evento completo.
     $ yotsuba_visitada_cap1 = True
-
-    jump hub
+    return
         
