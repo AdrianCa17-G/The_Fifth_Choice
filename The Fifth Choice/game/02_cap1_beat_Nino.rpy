@@ -1,15 +1,15 @@
 ################################################################################
 ##  BGs Y CGs PROPIOS DEL BEAT DE NINO 
-##  2 ilustraciones, 1 BGM y 1 SFX nuevos de momentos concretos de este beat. 
-##  Los que el beat reutiliza son todos los sprites de itsuki, el fondo de la
-##  azotea y algunos BGM existentes.
+##  1 sprite, 2 ilustraciones, 1 fondo, 1 BGM y 1 SFX nuevos de momentos 
+##  concretos de este beat. Los que el beat reutiliza son todos los sprites 
+##  de Nino, el departamento y algun BGM existente.
 ################################################################################
 
-image bg_azotea = "images/bg/azotea.webp"
+image bg_cocina = "images/bg/beats_hermanas/cocina.webp"
 
-image cg_itsuki_azotea_cuaderno = "images/cg/cap1_beats/itsuki_azotea_cuaderno.webp"
+image cg_nino_confrontacion_cocina = "images/cg/cap1_beats/nino_confrontacion_cocina.webp"
 
-image cg_itsuki_azotea_manos = "images/cg/cap1_beats/itsuki_azotea_manos.webp"
+image cg_nino_grieta_cocina = "images/cg/cap1_beats/nino_grieta_cocina.webp"
 
 
 ################################################################################
@@ -44,7 +44,9 @@ label beat_Nino:
 
     narrador "Antes de terminar de abrirla, escuché dos voces desde el fondo."
 
-    mc_pensamiento "Una era de Maruo. Grave, pareja, sin subir nunca de tono."
+    mc_pensamiento "Una era de Maruo." 
+    
+    mc_pensamiento "Grave, pareja, sin subir nunca de tono."
 
     mc_pensamiento "La otra era de Nino." 
     
@@ -58,7 +60,7 @@ label beat_Nino:
 
     narrador "Elegí lo segundo."
 
-    scene bg_departamento
+    scene cg_nino_confrontacion_cocina
     with fade
 
     nino "…y no me importa lo que hayas firmado con él. Debes despedirlo."
@@ -72,8 +74,6 @@ label beat_Nino:
     maruo "Y no lo voy a romper porque a ti no te guste su cara."
 
     narrador "Me acerqué lo suficiente para ver sin que me vieran a mí."
-
-    #[CG NUEVO — cg_nino_confrontacion_cocina: Nino de pie frente a Maruo, en la cocina de la sala principal, con la isla de la cocina entre los dos. Ella con los brazos cruzados con fuerza, mandíbula tensa. Maruo de perfil, sereno, traje sin corbata, con una taza de café a medio terminar en la mano. Luz de tarde entrando por el ventanal del fondo. Dos personajes en el frame, cada uno con su propia receta ya validada del proyecto — Nino con su LoRA de personaje, Maruo con su ficha de prompt establecida. Futaro no aparece: observa desde fuera de cuadro. Sostiene todo el movimiento 1.]
 
     mc_pensamiento "No es por mi cara. Es por algo que no tiene nada que ver conmigo."
 
@@ -95,10 +95,10 @@ label beat_Nino:
     ##  Maruo amenaza o aún confia en mc, aunque Nino no esté de acuerdo.
     ############################################################################
 
-    scene bg_departamento
-    with fade
-
     if desaires_cap1 >= 2:
+
+        scene bg_departamento
+        with fade
 
         narrador "Fue entonces cuando Maruo levantó la vista y me encontró en la puerta."
 
@@ -148,9 +148,6 @@ label beat_Nino:
 
     else:
 
-        scene cg_nino_confrontacion_cocina
-        with fade
-
         narrador "Maruo no llegó a notar que yo estaba en la puerta, o decidió no darse por enterado."
 
         maruo "No he visto ningún motivo todavía para cambiar nada."
@@ -161,11 +158,11 @@ label beat_Nino:
         
         maruo "Hasta entonces, esta conversación está cerrada."
 
-        play sound sfx_puerta_cierra volume 1.0
-
         narrador "Se sirvió el resto del café en el fregadero y salió de la cocina sin mirar a ninguno de los dos."
 
-        scene bg_departamento
+        play sound sfx_puerta_cierra volume 1.0
+
+        scene bg_cocina
         with fade
 
         mc_pensamiento "No dijo mi nombre en toda la conversación."
@@ -174,6 +171,12 @@ label beat_Nino:
 
     narrador "Nino se quedó mirando el pasillo por donde se había ido su padre, todavía con los brazos cruzados."
 
+    scene bg_cocina
+    with fade
+
+    show nino neutral at pj(0.5)
+    with dissolve
+
     mc_pensamiento "Tengo que romper el hielo."
 
     mc "Hola..." 
@@ -181,9 +184,6 @@ label beat_Nino:
     mc "No me mires así, solo iba de paso." 
     
     mc "No tengo intenciones de molestarte hoy, así que puedes ahorrarte tus quejas."
-
-    show nino neutral at pj(0.5)
-    with dissolve
 
     nino "No es un buen momento."
 
@@ -226,7 +226,8 @@ label beat_Nino:
 
     nino "Mi padre no tiene que vivir con esto todos los días. Yo sí."
 
-    #[CG NUEVO — cg_nino_grieta_cocina: Nino sentada sola en el banco de la cocina, de perfil, con las manos alrededor de la taza sin bebérsela. Mirada baja, hombros menos rectos que su postura habitual. Misma luz de tarde que cg_nino_confrontacion_cocina, pero encuadre cerrado solo sobre ella — Maruo ya no está, y Futaro tampoco entra en cuadro. Sostiene el resto del movimiento 3.]
+    scene cg_nino_grieta_cocina
+    with fade
 
     narrador "Se sentó en uno de los bancos de la cocina, de golpe, como si las piernas hubieran dejado de sostenerla el tiempo justo."
 
@@ -256,7 +257,7 @@ label beat_Nino:
 
     narrador "Se detuvo de golpe, con la taza a medio camino de la boca."
 
-    scene bg_departamento
+    scene bg_cocina
     with fade
 
     show nino neutral at pj(0.5)
@@ -394,8 +395,6 @@ label beat_Nino:
 
         mc_pensamiento "Con ella, eso es casi lo mismo."
 
-        mc_pensamiento "Y nadie contestó mi pregunta."
-
         jump nino_beat_m5   
 
 
@@ -504,6 +503,9 @@ label beat_Nino:
 
         stop music fadeout 2.0
 
+        scene bg_departamento
+        with fade
+
         narrador "Me quedé un rato más en la cocina, solo, con el ruido del edificio de fondo."
 
         mc_pensamiento "Vino a pedir que me fuera."
@@ -522,21 +524,27 @@ label beat_Nino:
 
         if nino_rama_beat == "calida":
 
-            mc_pensamiento "No confía en mí. No esperaba que un par de frases cambiara eso."
+            mc_pensamiento "Hoy fue a pelear sola y no le dijo a nadie."
 
-            mc_pensamiento "Pero dejó de insistir con lo del despido. Con ella, eso también cuenta como algo."
+            mc_pensamiento "Me puse a cortar cebollas y no volvió a hablar de despedirme."
+
+            mc_pensamiento "Mi pregunta se quedó sin respuesta, y ella sabe que sigue ahí."
 
         elif nino_rama_beat == "tibia":
 
-            mc_pensamiento "Lavé una taza y no dijimos nada importante."
+            mc_pensamiento "La taza quedó en el escurridor y ella no volvió a mirarla."
 
-            mc_pensamiento "Con ella, nunca se sabe si el silencio es una tregua o solo eso: silencio."
+            mc_pensamiento "No me echó. Tampoco me dejó quedarme de verdad."
+
+            mc_pensamiento "Hoy el silencio fue el único acuerdo que cabía entre los dos."
 
         else:
 
-            mc_pensamiento "Le dije justo lo que más temía escuchar."
+            mc_pensamiento "Maruo cerró la conversación sin alzar la voz."
 
-            mc_pensamiento "Repetí el patrón que ella llevaba viendo cumplirse, en la primera oportunidad que tuve."                          
+            mc_pensamiento "Yo cerré la mía igual, una hora después y en la misma cocina."
+
+            mc_pensamiento "Ella tuvo que ver la misma puerta cerrarse dos veces en una tarde."                        
  
     return 
     

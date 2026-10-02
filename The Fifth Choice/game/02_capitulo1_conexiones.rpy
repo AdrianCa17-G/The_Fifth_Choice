@@ -34,8 +34,6 @@ label hub_1:
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
-    if desaires_cap1 >= 3:
-        jump final_malo_temprano
 
     call beat_Itsuki
     jump hub_2
@@ -48,10 +46,6 @@ label hub_2:
     $ hub_visitadas.append(destino)
     if desaires_cap1 >= 3:
         jump final_malo_temprano
-
-    # Aviso diegético (README "El contador de desaires")
-    if desaires_cap1 >= 2:
-        call aviso_maruo
 
     call beat_Nino
     jump hub_3
