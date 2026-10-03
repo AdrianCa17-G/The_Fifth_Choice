@@ -239,7 +239,7 @@ label hub_Yotsuba:
     ##  La respuesta afecta la relación. 
     ############################################################################
 
-    #`[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`
+    play music descubrimiento fadein 2.0
 
     narrador "Se limpió el rotulador de la muñeca con el borde de la manga."         
     
@@ -294,9 +294,7 @@ label hub_Yotsuba:
     ##  MOVIMIENTO 4C · Rama fría
     ############################################################################
 
-    ## Menú de sabor.
-
-    # Menu del sabor
+    # Menú de sabor.
 
     menu:
         narrador "¿Cómo le ayudarias a sentirse mejor?"
@@ -318,8 +316,6 @@ label yotsuba_m4a:
 
     $ yotsuba_rama_cap1 = "calida"
     $ sumar_punto("yotsuba", 1)
-
-    #`[MUS descubrimiento — fade in volumen 3.5]`
 
     mc "Antes de eso."
 

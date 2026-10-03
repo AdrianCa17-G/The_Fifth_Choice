@@ -293,6 +293,7 @@ define audio.extraneza = "audio/bgm/extraneza.ogg"
 define audio.caos      = "audio/bgm/caos.ogg"
 define audio.contrato  = "audio/bgm/contrato.ogg"
 define audio.derrota   = "audio/bgm/derrota.ogg"
+define audio.descubrimiento   = "audio/bgm/descubrimiento.ogg"
 
 ## Ambiente (en bucle) -------------------------------------------------------
 define audio.amb_viento = "audio/amb_viento.ogg"
