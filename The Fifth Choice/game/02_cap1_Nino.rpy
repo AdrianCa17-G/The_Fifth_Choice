@@ -56,6 +56,8 @@ label hub_Nino:
     
     narrador "Un carrito abandonado a medio pasillo, sin dueño."
 
+    play music nino fadein 2.0
+
     mc_pensamiento "De las cinco, era la que menos pistas dejaba de dónde encontrarla."
 
     mc_pensamiento "Las otras cuatro, sin querer, siempre dejan algo."
@@ -175,6 +177,9 @@ label hub_Nino:
 
     mc "Se te da mejor de lo que aparentas en el salón."
 
+    show nino molesta at pj(0.5)
+    with disolucion_lenta
+
     nino "No es lo mismo leer que..."
 
     narrador "Se detuvo, buscando cómo seguir la frase."
@@ -238,6 +243,8 @@ label hub_Nino:
     scene bg_centro_comercial
     with fade
 
+    stop music fadeout 1.5
+
     show nino neutral at pj(0.5) 
     with dissolve
 
@@ -261,7 +268,7 @@ label hub_Nino:
     ##  Se decide la rama de la historia que seguirá en el resto del capítulo.
     ############################################################################
 
-    #play music audio.descubrimiento volume 0.0
+    play music descubrimiento fadein 2.0
 
     narrador "Se agachó a recoger la cesta del suelo, sin mirarme."
 
@@ -326,7 +333,7 @@ label nino_m4a:
 
     narrador "Lo pensó un momento, sin la hostilidad de antes ni la calma que tampoco tiene."
 
-    show nino neutral at pj(0.5)
+    show nino molesta at pj(0.5)
     with disolucion_lenta
 
     nino "Eso no significa que confíe en ti."
@@ -337,9 +344,15 @@ label nino_m4a:
 
     narrador "Se quedó mirando la tarjeta de receta un segundo más, antes de guardarla del todo."
 
+    show nino pillada at pj(0.5)
+    with disolucion_lenta
+
     nino "…No le digas a mis hermanas que hablé de más."
 
     mc "No dije nada de más."
+
+    show nino neutral at pj(0.5)
+    with disolucion_lenta
 
     nino "Tú entendiste. Con eso alcanza."
 
@@ -365,6 +378,9 @@ label nino_m4b:
 
     narrador "Levanté la otra cesta que había dejado en el suelo y empecé a caminar hacia la caja."
 
+    show nino molesta at pj(0.5)
+    with disolucion_lenta
+
     nino "¿Qué haces?"
 
     mc "Ayudarte con esto. Pesa."
@@ -374,6 +390,9 @@ label nino_m4b:
     mc "No la pediste. Te la estoy dando igual."
 
     narrador "Se quedó un segundo sin saber qué contestar a eso."
+
+    show nino neutral at pj(0.5)
+    with disolucion_lenta
 
     nino "…Esa cesta pesa más de lo que parece."
 

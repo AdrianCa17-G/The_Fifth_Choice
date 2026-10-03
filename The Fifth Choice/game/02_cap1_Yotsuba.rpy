@@ -18,7 +18,6 @@ image cg_yotsuba_rotulador = "images/cg/hubs_hermanas/yotsuba_rotulador.webp"
     
 image cg_yotsuba_despedida = "images/cg/hubs_hermanas/yotsuba_despedida.webp"
     
-
 ################################################################################
 ##  HUB DE YOTSUBA
 ##  La primera visita a Yotsuba, que se encuentra en la pista de atletismo.
@@ -28,11 +27,6 @@ image cg_yotsuba_despedida = "images/cg/hubs_hermanas/yotsuba_despedida.webp"
 label hub_Yotsuba:
 
     $ sumar_punto("yotsuba", 2)
-
-    # Si el jugador eligió la pista de atletismo en el hub 1, se marca la primera
-    # conexión. Ajustar el string si el hub usa otra clave para este destino.
-    #if hub_choice == "pista_atletismo":
-    #    $ primera_conexion = True
 
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
@@ -51,6 +45,8 @@ label hub_Yotsuba:
     narrador "El club había cerrado. Las gradas estaban vacías y las luces de competición apagadas."
 
     narrador "Solo estaba encendido el sistema de emergencia, que daba una luz naranja pareja y sin sombras."
+
+    play music yotsuba fadein 2.0
 
     scene cg_yotsuba_pista
     with fade
@@ -146,6 +142,8 @@ label hub_Yotsuba:
     
     mc "Y parece que no es la primera vez que te quedas después de que el club se va."
 
+    stop music fadeout 1.5
+
     scene cg_yotsuba_rotulador
     with fade
 
@@ -212,6 +210,8 @@ label hub_Yotsuba:
     scene bg_pista_atletismo
     with fade
 
+    play music yotsuba fadein 2.0
+
     show yotsuba neutral at pj(0.5)
     with dissolve
 
@@ -239,8 +239,6 @@ label hub_Yotsuba:
     ##  La respuesta afecta la relación. 
     ############################################################################
 
-    play music descubrimiento fadein 2.0
-
     narrador "Se limpió el rotulador de la muñeca con el borde de la manga."         
     
     narrador "Y volvió a mirarme con esa sonrisa intacta."
@@ -266,6 +264,8 @@ label hub_Yotsuba:
     
     narrador "El sol ya se había ido hacía rato; solo quedaba la luz naranja de emergencia."
 
+    stop music fadeout 1.5
+
     mc_pensamiento "No había sol que esperar. Ella lo sabía tan bien como yo."
 
     narrador "Pensé en lo que había visto estas últimas ocho vueltas."
@@ -279,6 +279,8 @@ label hub_Yotsuba:
     mc_pensamiento "Podía dejarlo pasar. Cronometrarla y ya."
 
     mc_pensamiento "O podía decir algo que quizás le gustara haber oído."
+
+    play music descubrimiento fadein 2.0
 
     narrador "Ella seguía ahí, con el brazo estirado esperando que le devolviera el cronómetro, "
     

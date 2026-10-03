@@ -285,6 +285,7 @@ init python:
 ## `hogar` suena SOLO dos veces en todo el prologo: bajo el retrato
 ## familiar y en "Bien. Que sea difícil." Es el tema de Futaro. Si sonara
 ## tambien durante la cena dejaria de ser un tema y seria fondo.
+
 define audio.hogar     = "audio/bgm/hogar.ogg"
 define audio.cena      = "audio/bgm/cena.ogg"
 define audio.cotidiano = "audio/bgm/cotidiano.ogg"
@@ -294,6 +295,18 @@ define audio.caos      = "audio/bgm/caos.ogg"
 define audio.contrato  = "audio/bgm/contrato.ogg"
 define audio.derrota   = "audio/bgm/derrota.ogg"
 define audio.descubrimiento   = "audio/bgm/descubrimiento.ogg"
+
+## Tema principal de cada hermana--------------------------------------------
+## Son los temas principales que representa a cada hermana y su 
+## personalidad. Debutan en los hubs para despues dar al tema principal
+## que es descubrimiento.
+
+define audio.itsuki     = "audio/bgm/bgm_hermanas/itsuki_tema.ogg"
+define audio.yotsuba    = "audio/bgm/bgm_hermanas/yotsuba_tema.ogg"
+define audio.miku       = "audio/bgm/bgm_hermanas/miku_tema.ogg"
+define audio.nino       = "audio/bgm/bgm_hermanas/nino_tema.ogg"
+define audio.ichika     = "audio/bgm/bgm_hermanas/ichika_tema.ogg"
+
 
 ## Ambiente (en bucle) -------------------------------------------------------
 define audio.amb_viento = "audio/amb_viento.ogg"

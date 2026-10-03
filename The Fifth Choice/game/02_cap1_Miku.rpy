@@ -29,11 +29,6 @@ label hub_Miku:
 
     $ sumar_punto("miku", 2)
 
-    # Si el jugador eligió la biblioteca en el hub 1, se marca la primera
-    # conexión. Ajustar el string si el hub usa otra clave para este destino.
-    #if hub_choice == "biblioteca":
-    #    $ primera_conexion = True
-
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc y Miku en la biblioteca
@@ -51,6 +46,8 @@ label hub_Miku:
     narrador "Segunda planta, la sala de lectura." 
     
     narrador "Cuatro mesas largas y nadie en tres de ellas."
+
+    play music miku fadein 2.0
 
     scene cg_miku_biblioteca
     with fade
@@ -245,8 +242,6 @@ label hub_Miku:
 
     show miku relajada at pj_habla(0.5)
     with disolucion_lenta
-    
-    #[MUS NUEVO — descubrimiento fadein 2.0]`
 
     miku "Había un señor de la guerra que se llamaba Takeda Shingen."
 
@@ -319,7 +314,7 @@ label hub_Miku:
 
     show miku encogida at pj(0.5)
     with disolucion_lenta
-    
+
     stop music fadeout 1.5
 
     narrador "Se paró en mitad de la palabra."
@@ -338,6 +333,8 @@ label hub_Miku:
     ##  MOVIMIENTO 4 · La decisión
     ##  Aqui mc decide si ayudar a aumentar la confianza de Miku o no
     ############################################################################
+
+    play music descubrimiento fadein 2.0
 
     mc_pensamiento "Tercera vez."
 
@@ -387,8 +384,6 @@ label miku_m4a:
 
     show miku animada at pj_habla(0.5)
     with disolucion_lenta
-    
-    #`[MUS descubrimiento fadein 2.0]`
 
     miku "Depende de la época del año. En verano, con el pescado, casi nada." 
 
@@ -500,8 +495,6 @@ label miku_m4c:
 
     $ miku_rama_cap1 = "fria"
     $ desaires_cap1 += 1
-
-    #(fría — `[$ desaires_cap1 += 1]`)
 
     mc "Nada de eso entra en el examen."
 

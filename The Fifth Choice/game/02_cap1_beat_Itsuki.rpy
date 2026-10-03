@@ -5,7 +5,7 @@
 ##  azotea y algunos BGM existentes.
 ################################################################################
 
-image bg_azotea = "images/bg/azotea.webp"
+image bg_azotea = "images/bg/cap1_beats/azotea.webp"
 
 image cg_itsuki_azotea_cuaderno = "images/cg/cap1_beats/itsuki_azotea_cuaderno.webp"
 

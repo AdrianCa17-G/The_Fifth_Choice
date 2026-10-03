@@ -49,6 +49,8 @@ label hub_Itsuki:
 
     narrador "Se cortaba en franjas sobre los pupitres vacíos."
 
+    play music itsuki fadein 2.0
+
     scene cg_itsuki_atascada
     with fade
 
@@ -221,7 +223,7 @@ label hub_Itsuki:
     ##  signifique romper su orgullo, o si la ayuda de manera fría y directa.
     ############################################################################
 
-    #"`[MUS NUEVO — descubrimiento, volumen 0 listo para subir]`"
+    stop music fadeout 1.5
 
     scene cg_itsuki_reto
     with fade
@@ -248,6 +250,8 @@ label hub_Itsuki:
 
     scene bg_aula_tarde
     with fade
+
+    play music descubrimiento fadein 2.0
 
     show itsuki neutral at pj(0.5)
     with dissolve
@@ -288,8 +292,6 @@ label itsuki_m4a:
 
     $ itsuki_rama_cap1 = "calida"
     $ sumar_punto("itsuki", 1)
-    
-    #[MUS descubrimiento — fade in volumen 3.5]`"
 
     narrador "Señalé la línea con el dedo. Sin tocar el papel."
 

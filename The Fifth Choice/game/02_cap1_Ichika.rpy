@@ -47,6 +47,8 @@ label hub_Ichika:
 
     narrador "Y fue ahí cuando la ví."
 
+    play music ichika fadein 2.0
+
     scene ichika_ensayo
     with fade
 
@@ -216,13 +218,13 @@ label hub_Ichika:
 
     mc_pensamiento "Juntas, son un patrón."
 
+    stop music fadeout 1.5
+
     ############################################################################
     ##  MOVIMIENTO 3 · La decisión
     ##  El jugador decide si le da tiempo en silencio, si sigue la broma, o si
     ##  la confronta directamente.
     ############################################################################
-
-    # [MUS NUEVO — descubrimiento, volumen 0 listo para subir]
 
     scene cg_ichika_mascara
     with fade
@@ -245,6 +247,8 @@ label hub_Ichika:
 
     scene bg_sala_ensayo
     with fade
+
+    play music descubrimiento fadein 3.5
 
     show ichika agotada at pj(0.5)
     with dissolve
@@ -277,8 +281,6 @@ label ichika_m4a:
 
     $ ichika_rama_cap1 = "calida"
     $ sumar_punto("ichika", 1)
-
-    # [MUS descubrimiento — fade in volumen 3.5]
 
     narrador "No dije nada."
 
@@ -466,9 +468,6 @@ label ichika_m4c:
 label ichika_m5:
 
     narrador "Terminó de guardar el guion en la mochila cuando el teléfono le vibró en el bolsillo."
-
-    scene bg_sala_ensayo
-    with fade
 
     show ichika neutral at pj(0.5)
     with dissolve
