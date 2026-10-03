@@ -98,6 +98,7 @@ label hub_Itsuki:
     ##  resolver el ejercicio.
     ############################################################################
 
+    $ duck()
     play sound sfx_hoja volume 1.0
 
     narrador "Pasó a una hoja nueva del cuaderno, tapando la anterior con la mano."

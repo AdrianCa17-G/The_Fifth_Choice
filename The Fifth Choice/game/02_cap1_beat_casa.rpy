@@ -7,6 +7,8 @@
 
 image cg_raiha_correccion = "images/cg/cap1_beats/raiha_correccion.webp"
 
+define audio.sfx.lapiz_mesa = "audio/sfx/lapiz_mesa.mp3"
+
 ################################################################################
 ##  HUB DE LA CASA 
 ##  Encuentro entre mc, Raiha e Isanari un dia antes del examen final, este es
@@ -34,6 +36,8 @@ label beat_casa:
     narrador "El examen era al día siguiente."
 
     narrador "Faltaban horas, no días."
+
+    play music cena fadeout 1.5 fadein 2.0
 
     mc_pensamiento "Han pasado treinta días."
 
@@ -94,7 +98,8 @@ label beat_casa:
 
     narrador "Levantó la vista de la hoja antes de corregir."
 
-    #[SFX sfx_lapiz_mesa NUEVO volume 1.5]
+    $ duck()
+    play sound sfx.lapiz_mesa volume 2.5
 
     narrador "Dejó el lápiz sobre la mesa, despacio."
 
@@ -251,6 +256,8 @@ label beat_casa:
 
     narrador "Dejé la vista quieta un momento antes de cerrarla."
 
+    stop music fadeout 2.0
+
     if desaires_cap1 >= 3:
 
         mc_pensamiento "No sé si mañana esto sigue siendo mi trabajo."
@@ -280,6 +287,8 @@ label beat_casa:
                 "Ichika" if "ichika" not in hermanas_pensamiento:
 
                     $ hermanas_pensamiento.add("ichika")
+
+                    play music ichika fadeout 1.0 fadein 1.5
 
                     if ichika_visitada_cap1:
 
@@ -339,10 +348,14 @@ label beat_casa:
 
                         mc_pensamiento "No sé si sigue fingiendo o si dejó de hacerlo..."
 
+                    stop music fadeout 2.0
+
 
                 "Nino" if "nino" not in hermanas_pensamiento:
 
                     $ hermanas_pensamiento.add("nino")
+
+                    play music nino fadeout 1.0 fadein 1.5
 
                     if nino_visitada_cap1:
 
@@ -412,11 +425,15 @@ label beat_casa:
                         mc_pensamiento "Se frenó antes de decir por qué."
 
                         mc_pensamiento "Pero entendí que no está enojada conmigo."
+
+                    stop music fadeout 2.0
                         
 
                 "Miku" if "miku" not in hermanas_pensamiento:
 
                     $ hermanas_pensamiento.add("miku")
+
+                    play music miku fadeout 1.0 fadein 1.5
 
                     if miku_visitada_cap1:
 
@@ -481,8 +498,12 @@ label beat_casa:
 
                         mc_pensamiento "Ella es todo un misterio."
 
+                    stop music fadeout 2.0
+
 
                 "Yotsuba" if "yotsuba" not in hermanas_pensamiento:
+
+                    play music yotsuba fadeout 1.0 fadein 1.5
 
                     $ hermanas_pensamiento.add("yotsuba")
 
@@ -555,7 +576,12 @@ label beat_casa:
                         mc_pensamiento "No lo sé." 
 
 
+                    stop music fadeout 2.0
+
+
                 "Itsuki" if "itsuki" not in hermanas_pensamiento:
+
+                    play music itsuki fadeout 1.0 fadein 1.5
 
                     $ hermanas_pensamiento.add("itsuki")
 
@@ -612,6 +638,8 @@ label beat_casa:
                         mc_pensamiento "Ya no le queda ningún sitio donde no tenga que fingir que está bien."
 
                         mc_pensamiento "Y tampoco se como hacer que se sienta bien"
+
+                    stop music fadeout 2.0
 
 
             if len(hermanas_pensamiento) < 5:

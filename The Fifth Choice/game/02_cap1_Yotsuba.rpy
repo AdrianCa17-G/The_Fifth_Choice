@@ -73,7 +73,8 @@ label hub_Yotsuba:
 
     narrador "Me quedé observandóla y memorizando el número de vueltas que llevaba."
 
-    #`[SFX sfx_pisadas_pista — pasos rítmicos de carrera, en loop suave]`
+    $ duck()
+    play sound audio.sfx.pisadas_pista volume 1.5
 
     yotsuba "¡Veintidós! ¡Esto es fácil! ¡Podría hacer cien! ¡Bueno, quizás no cien, pero sí veinticinco!" 
     
@@ -89,7 +90,7 @@ label hub_Yotsuba:
 
     narrador "Tomó la curva y me vio."
 
-    #`[SFX sfx_pisadas_pista — STOP abrupto]`
+    stop sound fadeout 0
 
     ############################################################################
     ##  MOVIMIENTO 2 · La grieta
@@ -153,7 +154,7 @@ label hub_Yotsuba:
 
     narrador "En el antebrazo, las marcas de rotulador corridas por el sudor."
 
-    #`[SFX sfx_silencio_exterior — viento suave, pajaros lejanos]`
+    play ambiente amb_viento fadein 2.0 volume 1.5
 
     yotsuba "¿Por qué estás aquí?"
 
@@ -204,6 +205,8 @@ label hub_Yotsuba:
     mc "¿Cuáles son los tuyos?"
 
     narrador "No contestó de inmediato."
+
+    stop ambiente fadeout 2.0
 
     narrador "Miró la pista, el rotulador, las gradas vacías."
 
@@ -429,11 +432,14 @@ label yotsuba_m4b:
 
     mc "Preparado."
 
-    #[SFX sfx_pisadas_pista — arranca carrera]
+    $ duck()
+    play sound sfx.pisadas_pista volume 1.0
 
     narrador "Salió disparada. Era rápida de verdad."
 
     narrador "Cuando terminó la vuelta, frenó delante de mí con los brazos abiertos, esperando el tiempo."
+
+    stop sound fadeout 1.0
 
     mc "Un minuto con diecisiete."
 
@@ -532,6 +538,8 @@ label yotsuba_m5:
 
     mc_pensamiento "Pensé en decirle algo antes de irme."
 
+    play sound sfx.pisadas_pista fadein 1.0 volume 0.5
+
     narrador "Pero cuando llegué, ella ya había vuelto a la pista."
 
     narrador "Sin esperar a que yo terminara de irme."
@@ -541,6 +549,8 @@ label yotsuba_m5:
     mc_pensamiento "Solo volvió a correr, como si la conversación nunca hubiera interrumpido nada."
 
     mc_pensamiento "Un 'nos vemos mañana'. Hoy ninguna de las dos lo dijo."
+
+    stop sound fadeout 1.0
 
     jump yotsuba_m6
 

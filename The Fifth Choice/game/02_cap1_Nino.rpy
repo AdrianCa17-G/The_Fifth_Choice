@@ -97,6 +97,7 @@ label hub_Nino:
 
     narrador "Terminó eligiendo una de las dos cajas y la metió en la cesta."
 
+    $ duck()
     play sound audio.sfx_bolsa volume 1.5
 
     narrador "El ruido del plástico la hizo detenerse en seco."

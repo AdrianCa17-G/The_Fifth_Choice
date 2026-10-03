@@ -5,11 +5,15 @@
 ##  de Nino, el departamento y algun BGM existente.
 ################################################################################
 
-image bg_cocina = "images/bg/beats_hermanas/cocina.webp"
+image bg_cocina = "images/bg/cap1_beats/cocina.webp"
 
 image cg_nino_confrontacion_cocina = "images/cg/cap1_beats/nino_confrontacion_cocina.webp"
 
 image cg_nino_grieta_cocina = "images/cg/cap1_beats/nino_grieta_cocina.webp"
+
+define audio.sfx.taza_mesa     = "audio/sfx/taza_mesa.mp3"
+
+define audio.tregua    = "audio/bgm/tregua.ogg"
 
 ################################################################################
 ##  HUB DE NINO 
@@ -26,12 +30,14 @@ label beat_Nino:
     ##  pero Maruo aún no encuentra una razón lógica del todo para despedirlo.
     ############################################################################
 
-    scene bg_edificio
-    scene bg_departamento
-    with fade
-    
     stop music fadeout 1.0
 
+    scene bg_edificio
+    with fade
+
+    scene bg_entrada_edificio
+    with fade
+    
     narrador "Llegué al departamento a la hora de siempre."
 
     narrador "La puerta estaba entreabierta. Nadie la había cerrado del todo."
@@ -58,6 +64,14 @@ label beat_Nino:
     mc_pensamiento "O podía escuchar primero y decidir después."
 
     narrador "Elegí lo segundo."
+
+    scene bg_departamento
+    with fade
+
+    scene bg_cocina
+    with fade
+
+    play music guardia fadein 2.5 volume 1.0
 
     scene cg_nino_confrontacion_cocina
     with fade
@@ -95,6 +109,8 @@ label beat_Nino:
     ############################################################################
 
     if desaires_cap1 >= 2:
+
+        stop music fadeout 1.0
 
         scene bg_departamento
         with fade
@@ -134,11 +150,14 @@ label beat_Nino:
 
         mc_pensamiento "No subió la voz ni una vez. No hacía falta."
 
+        $ duck()
         play sound sfx_puerta_cierra volume 1.0
 
         narrador "Recogió la taza y salió de la cocina sin esperar respuesta, dándonos la espalda a los dos por igual."
 
-        scene bg_departamento
+        stop music fadeout 2.0
+
+        scene bg_cocina
         with fade
 
         mc_pensamiento "Esa era la última vez que lo iba a decir."
@@ -159,7 +178,8 @@ label beat_Nino:
 
         narrador "Se sirvió el resto del café en el fregadero y salió de la cocina sin mirar a ninguno de los dos."
 
-        play sound sfx_puerta_cierra volume 1.0
+        $ duck()
+        play sound sfx_puerta_cierra volume 1.5
 
         scene bg_cocina
         with fade
@@ -169,9 +189,6 @@ label beat_Nino:
         mc_pensamiento "Como si yo no fuera parte del problema que estaban discutiendo."
 
     narrador "Nino se quedó mirando el pasillo por donde se había ido su padre, todavía con los brazos cruzados."
-
-    scene bg_cocina
-    with fade
 
     show nino neutral at pj(0.5)
     with dissolve
@@ -196,7 +213,8 @@ label beat_Nino:
 
     narrador "Entré del todo a la cocina. Ella no se movió de donde estaba."
 
-    #[SFX sfx_taza_mesa NUEVO volume 2.0]
+    $ duck()
+    play sound sfx.taza_mesa volume 2.0
 
     narrador "Dejó su propia taza sobre la mesa con más fuerza de la necesaria." 
     
@@ -230,9 +248,9 @@ label beat_Nino:
 
     narrador "Se sentó en uno de los bancos de la cocina, de golpe, como si las piernas hubieran dejado de sostenerla el tiempo justo."
 
-    #[MUS NUEVO — guardia fadein 2.5 volume 0.3]
-
-    nino "No es porque seas malo en esto. Ni siquiera es porque me caigas mal, aunque me caes mal."
+    nino "No es porque seas malo en esto." 
+    
+    nino "Ni siquiera es porque me caigas mal, aunque me caes mal."
 
     nino "Es que ya vi esto pasar varias veces, y siempre fue igual."
 
@@ -296,10 +314,6 @@ label beat_Nino:
 
     nino "¿Y bien? ¿Vas a decir que esta vez es distinto?"
 
-    mc_pensamiento "Si digo que sí, soy el siguiente tutor prometiendo lo mismo que los anteriores."
-
-    mc_pensamiento "Si no digo nada, confirmo que tiene razón en no confiar."
-
     mc_pensamiento "No hay una respuesta que la deje tranquila." 
     
     mc_pensamiento "Solo hay una que no la deje peor."
@@ -329,8 +343,6 @@ label beat_Nino:
     label nino_beat_m4a:
 
         $ nino_rama_beat = "calida"
-
-        #play music guardia fadein 2.0 volume 0.3    # descomentar cuando exista `guardia`
 
         mc "¿Y quién junta los tuyos?"
 
@@ -366,14 +378,16 @@ label beat_Nino:
         show nino pillada at pj(0.5)
         with disolucion_lenta
 
-        nino "Hay que hacer la cena. Son cinco."
+        nino "Hay que hacer la cena. Son las cinco."
 
         mc "¿Y?"
 
         show nino molesta at pj(0.5)
         with disolucion_lenta
 
-        nino "Y no pienso cocinar con alguien mirándome. Corta las cebollas. Finas."
+        nino "Y no pienso cocinar con alguien mirándome." 
+        
+        nino "Corta las cebollas. Finas."
 
         mc "Está bien."
 

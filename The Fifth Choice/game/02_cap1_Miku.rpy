@@ -516,7 +516,8 @@ label miku_m4c:
     mc "Entonces empecemos por el tema uno."
 
     miku "…Hoy no."
-
+    
+    $ duck()
     play sound sfx_silla volume 2.5
 
     narrador "Recogió los cuatro libros, los apiló y se subió los audífonos."

@@ -394,7 +394,7 @@ label prologo:
     ## silencio hace mejor ese trabajo que cualquier pista.
     stop music fadeout 2.0
 
-    scene bg_azotea
+    scene bg_azotea_tarde
     with fade
 
     play ambiente amb_viento fadein 2.0 volume 1.5
@@ -470,7 +470,7 @@ label prologo:
             mc "Fingir cortesía sería un gasto innecesario de energía."
             
 
-    scene bg_azotea
+    scene bg_azotea_tarde
     with fade
 
     mc_pensamiento "Permanecimos en silencio con la luz del atardecer, cada uno en un extremo del banco." 

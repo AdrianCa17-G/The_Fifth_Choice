@@ -11,11 +11,13 @@ image cg_itsuki_azotea_cuaderno = "images/cg/cap1_beats/itsuki_azotea_cuaderno.w
 
 image cg_itsuki_azotea_manos = "images/cg/cap1_beats/itsuki_azotea_manos.webp"
 
+define audio.sfx.mochila_suelo = "audio/sfx/mochila_suelo.mp3"
+
 ################################################################################
 ##  HUB DE ITSUKI 
-##  Cuarto encuentro entre mc e Itsuki en el aula de tarde. 
-##  Itsuki no sabe resolver un ejercicio y el jugador puede ayudarla, 
-##  pero la forma de hacerlo afectará la relación.
+##  Cuarto o tercer encuentro entre mc e Itsuki en la azotea en el dia. 
+##  Itsuki sabe que este nuevo estilo de vida no solo ha afectado a mc sino
+##  que tambien a ella mismo pero no lo quiere admitir.
 ################################################################################
 
 label beat_Itsuki:
@@ -25,6 +27,8 @@ label beat_Itsuki:
     ##  MC encuentra a Itsuki sola con su cuaderno de ciencias en la azotea
     ##  No está haciendo nada, solo esta mirando perdidamente
     ############################################################################
+
+    stop music fadeout 1.0
 
     scene bg_azotea
     with fade
@@ -37,6 +41,8 @@ label beat_Itsuki:
 
     scene cg_itsuki_azotea_cuaderno
     with fade
+
+    play ambiente amb_viento fadein 2.0 volume 0.35
 
     mc_pensamiento "Ahí estaba. Con el cuaderno."
 
@@ -58,7 +64,8 @@ label beat_Itsuki:
 
     mc_pensamiento "Ya van varias veces que la veo así, en apenas unos días."
 
-    #[SFX sfx_mochila_suelo NUEVO volume 1.5]
+    $ duck()
+    play sound sfx.mochila_suelo volume 1.5
 
     narrador "Me senté a un par de metros, sin decir nada todavía."
 
@@ -139,7 +146,7 @@ label beat_Itsuki:
 
     mc_pensamiento "Ella, que llena una hoja de tachones antes que nadie termine la primera línea."
 
-    #[MUS NUEVO — tregua fadein 3.0 volume 0.3]
+    play music tregua fadein 3.0 volume 1.0
 
     narrador "El viento seguía sonando igual que siempre aquí arriba, pero por debajo empezó a sonar algo más..."
 
@@ -182,26 +189,24 @@ label beat_Itsuki:
 
         mc "No te lo iba a contar de todas formas."
 
-        show itsuki neutral at pj(0.5)
-        with disolucion_lenta
 
-        narrador "Los dos volvieron a mirar al frente, cada uno con su propio libro cerrado sobre las piernas."
+    narrador "Los dos volvieron a mirar al frente, cada uno con su propio libro cerrado sobre las piernas."
 
-        mc_pensamiento "Llevamos pocos días de esto y ya la convivencia se volvió jornada completa para las dos partes."
+    mc_pensamiento "Llevamos pocos días de esto y ya la convivencia se volvió jornada completa para las dos partes."
 
-        mc_pensamiento "Ella tampoco tiene dónde bajar la guardia."
-        
-        mc_pensamiento "Yo tampoco."
+    mc_pensamiento "Ella tampoco tiene dónde bajar la guardia."
+    
+    mc_pensamiento "Yo tampoco."
 
-        narrador "Nos quedamos ahí un rato largo, sin abrir ninguno de los dos libros."
+    narrador "Nos quedamos ahí un rato largo, sin abrir ninguno de los dos libros."
 
-        narrador "El viento se llevó una hoja suelta de mi cuaderno hasta la valla, "
-        
-        narrador " y ninguno de los dos se levantó a buscarla."
+    narrador "El viento se llevó una hoja suelta de mi cuaderno hasta la valla, "
+    
+    narrador " y ninguno de los dos se levantó a buscarla."
 
-        mc_pensamiento "Antes de este trabajo me habría importado esa hoja."
+    mc_pensamiento "Antes de este trabajo me habría importado esa hoja."
 
-        mc_pensamiento "Ahora me importa más no moverme."
+    mc_pensamiento "Ahora me importa más no moverme."
 
     ############################################################################
     ##  MOVIMIENTO 3 · Menú comsetico
@@ -219,9 +224,6 @@ label beat_Itsuki:
 
             mc_pensamiento "Al menos ahí nadie me interrumpe."
 
-            show itsuki molesta at pj(0.5)
-            with disolucion_lenta
-
             itsuki "Qué imagen tan poco digna de un tutor."
 
             mc "No dije que fuera a hacerlo. Dije que a este paso."
@@ -234,9 +236,6 @@ label beat_Itsuki:
 
             mc_pensamiento "Y si lo hiciéramos, tampoco cambiaría nada."
 
-            show itsuki neutral at pj(0.5)
-            with disolucion_lenta
-
             itsuki "Habla por ti." 
 
             itsuki "Yo si me estoy esforzando en resolver estos ejercicios"
@@ -245,14 +244,16 @@ label beat_Itsuki:
 
             mc "Tienes el cuaderno cerrado hace diez minutos."
 
-            itsuki "Estoy descansando la vista. Es distinto."
+            show itsuki timida at pj(0.5)
+            with disolucion_lenta
+
+            itsuki "Estoy descansando la vista." 
+            
+            itsuki "Es distinto."
 
         "En nada. Solo quiero que termine esta hora.":
 
             mc_pensamiento "No todo necesita un análisis."
-
-            show itsuki neutral at pj(0.5)
-            with disolucion_lenta
 
             itsuki "Al menos en eso estamos de acuerdo."
 
@@ -268,10 +269,14 @@ label beat_Itsuki:
     ############################################################################
 
     stop music fadeout 2.0
+    stop ambiente fadeout 2.0
 
-    play audio sfx_timbre
+    play audio sfx_timbre volume 1.5
 
     narrador "El timbre sonó antes de que ninguno de los dos volviera a abrir un libro."
+
+    show itsuki neutral at pj(0.5)
+    with disolucion_lenta
 
     itsuki "Se acabó el descanso."
 

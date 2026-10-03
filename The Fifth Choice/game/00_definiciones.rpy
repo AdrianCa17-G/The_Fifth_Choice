@@ -143,7 +143,7 @@ image bg_cuarto_mc     = "bg/cuarto_mc.webp"
 image bg_comedor       = "bg/comedor.webp"
 image bg_escuela     = "bg/escuela.webp"
 image bg_aula          = "bg/aula_mañana.webp"
-image bg_azotea        = "bg/azotea.webp"
+image bg_azotea_tarde  = "bg/azotea_tarde.webp"
 image bg_edificio      = "bg/edificio.webp" 
 image bg_entrada_edificio      = "bg/entrada_edificio.webp" 
 image bg_departamento  = "bg/departamento.webp"
@@ -295,6 +295,8 @@ define audio.caos      = "audio/bgm/caos.ogg"
 define audio.contrato  = "audio/bgm/contrato.ogg"
 define audio.derrota   = "audio/bgm/derrota.ogg"
 define audio.descubrimiento   = "audio/bgm/descubrimiento.ogg"
+define audio.tregua    = "audio/bgm/tregua.ogg"
+define audio.guardia   = "audio/bgm/guardia.ogg"
 
 ## Tema principal de cada hermana--------------------------------------------
 ## Son los temas principales que representa a cada hermana y su 
@@ -310,33 +312,14 @@ define audio.ichika     = "audio/bgm/bgm_hermanas/ichika_tema.ogg"
 
 ## Ambiente (en bucle) -------------------------------------------------------
 define audio.amb_viento = "audio/amb_viento.ogg"
+define audio.amb_silencio_exterior = "audio/silencio_exterior.ogg"
 
 ## Efectos -------------------------------------------------------------------
 ##
 ## ESCALA DE VOLUMEN — la referencia es 2.5, no 1.0. Ren'Py multiplica de
 ## verdad por encima de 1.0, y los efectos se calibraron contra la musica ya
 ## sonando, no en abstracto.
-##
-##   2.5  portazo de Itsuki (el mas alto del prologo, a proposito) y los tres
-##        sonidos suaves de origen: papel, silla, bolsa. Estos ultimos estan
-##        arriba porque el archivo es flojo, no porque la escena lo pida.
-##   2.0  hoja, y la puerta de Nino en la escena 7.
-##   1.75 pasos de Yotsuba.
-##   1.5  campana, toque, pomo, puerta que abre Ichika.
-##   1.2  las tres puertas que se cierran despues de la de Nino.
-##   1.0  la puerta de Maruo: cierra "con la calma de quien ya dio una orden".
-##        Es el sonido mas bajo del prologo y esta bien que lo sea.
-##
-## Lo que no puede pasar es que un pomo suene como un portazo. Si hay que
-## subir algo, subir el archivo (comprimir + normalizar a -1 dB), no el numero.
-## Los archivos viven en `game/audio/sfx/` y por eso el nombre del archivo NO
-## repite el prefijo. La variable si lo conserva: en el guion, `play sound
-## sfx_timbre` se distingue de un vistazo de `play music cotidiano`, que es lo
-## que se pierde si se acortan los dos lados a la vez.
-##
-## El portazo de Itsuki se derivo de `puerta_cierra`: mismo impacto de hoja
-## contra marco, amplificado y con la entrada recortada. Son la misma puerta a
-## proposito. Si algun dia se sustituye uno, revisar el otro.
+
 define audio.sfx_papel_mesa    = "audio/sfx/papel_mesa.mp3"
 define audio.sfx_timbre        = "audio/sfx/timbre.mp3"
 define audio.sfx_silla         = "audio/sfx/silla.mp3"
@@ -348,7 +331,7 @@ define audio.sfx_portazo       = "audio/sfx/portazo.mp3"
 define audio.sfx_bolsa         = "audio/sfx/bolsa.mp3"
 define audio.sfx_hoja          = "audio/sfx/hoja.mp3"
 define audio.sfx_puerta_cierra = "audio/sfx/puerta_cierra.mp3"
-
+define audio.sfx.pisadas_pista = "audio/sfx/pisadas_pista.mp3"
 
 ################################################################################
 ##  8. LÓGICA DEL CÁLCULO SECRETO  (documentación — se implementa en FASE 5)

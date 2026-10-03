@@ -76,6 +76,7 @@ label hub_Ichika:
 
     mc_pensamiento "No llegué a decidirlo."
 
+    $ duck()
     play sound sfx_hoja volume 1.0
 
     narrador "El guion terminó de resbalarle de la mano y cayó al piso."
