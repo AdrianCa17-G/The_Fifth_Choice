@@ -134,7 +134,7 @@ label hub_Yotsuba:
     show yotsuba neutral at pj(0.5)
     with disolucion_lenta
 
-    yotsuba "…¿Cuánto llevas tú?"
+    yotsuba "…¿Cuánto llevas tú [mc]?"
 
     mc "Tus últimas ocho vueltas."
 
@@ -362,7 +362,7 @@ label yotsuba_m4a:
     show yotsuba incomoda at pj(0.5)
     with disolucion_lenta
 
-    yotsuba "…¿Me estabas observando?"
+    yotsuba "Oye [mc]… ¿Me estabas observando?"
 
     mc "Soy tu tutor. Observar es parte del trabajo."
 

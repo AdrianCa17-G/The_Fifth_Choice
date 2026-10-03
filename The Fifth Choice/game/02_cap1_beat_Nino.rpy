@@ -11,7 +11,6 @@ image cg_nino_confrontacion_cocina = "images/cg/cap1_beats/nino_confrontacion_co
 
 image cg_nino_grieta_cocina = "images/cg/cap1_beats/nino_grieta_cocina.webp"
 
-
 ################################################################################
 ##  HUB DE NINO 
 ##  Encuentro entre mc, Maruo y Nino en la cocina de la casa. El tema principal
@@ -503,8 +502,8 @@ label beat_Nino:
 
         stop music fadeout 2.0
 
-        scene bg_departamento
-        with fade
+        hide nino
+        with disolucion_lenta
 
         narrador "Me quedé un rato más en la cocina, solo, con el ruido del edificio de fondo."
 

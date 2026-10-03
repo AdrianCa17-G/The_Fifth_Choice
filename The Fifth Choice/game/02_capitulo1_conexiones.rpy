@@ -56,11 +56,13 @@ label hub_3:
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
+    
+    call beat_casa
+
     if desaires_cap1 >= 3:
         jump final_malo_temprano
 
-    call beat_casa
     call evento_6
-    jump capitulo2   # todavía no existe (README: 03_capitulo2.rpy pendiente)
+    jump capitulo2   
 
 

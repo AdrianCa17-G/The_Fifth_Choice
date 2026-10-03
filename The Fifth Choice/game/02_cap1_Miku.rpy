@@ -98,7 +98,7 @@ label hub_Miku:
 
     miku "…"
 
-    miku "…¿Cómo sabías que estaba aquí?"
+    miku "[mc]… ¿Cómo sabías que estaba aquí?"
 
     mc "No lo sabía. Llevo una hora dando vueltas."
 

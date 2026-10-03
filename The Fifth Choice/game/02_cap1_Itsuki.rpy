@@ -358,6 +358,8 @@ label itsuki_m4a:
     
     itsuki "Puedes buscar tu cuaderno ahora."
 
+    itsuki "[mc]..."
+
     mc "Ya lo sé. No me voy a ir todavía."
 
     narrador "Levantó la vista, un segundo, para comprobar si hablaba en serio."

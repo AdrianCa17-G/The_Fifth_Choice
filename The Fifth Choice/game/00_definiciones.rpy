@@ -93,6 +93,26 @@ default puntos_itsuki  = 0
 default primera_conexion = ""
 default primera_decision_hecha = False
 
+
+## --- Visita completada -------------------------------------------------------
+## Guarda el nombre de la chica con la que el jugador tuvo una interacción
+## en su hub. Como son 3 en el cap1 solo 3 marcarán True.
+default ichika_visitada_cap1  = False
+default nino_visitada_cap1    = False
+default miku_visitada_cap1    = False
+default yotsuba_visitada_cap1 = False
+default itsuki_visitada_cap1  = False
+
+
+## --- Rama completada -------------------------------------------------------
+## Guarda la rama de cada chica que se usa dentro de cada hub, ahora no sirve
+## pero es mejor mantenerlo de manera global.
+default ichika_rama_cap1  = None
+default nino_rama_cap1    = None
+default miku_rama_cap1    = None
+default yotsuba_rama_cap1 = None
+default itsuki_rama_cap1  = None
+
 ## --- Progreso persistente (sobrevive entre partidas) -------------------------
 ## Se marcan True al alcanzar el final romántico correspondiente.
 default persistent.ruta_ichika_completa  = False
@@ -160,6 +180,7 @@ image itsuki timida   = "sprites/itsuki_sprites/itsuki_timida.png"
 image ichika neutral   = "sprites/ichika_sprites/ichika_neutral.png"
 image ichika sonriendo   = "sprites/ichika_sprites/ichika_sonriendo.png"
 image ichika agotada   = "sprites/ichika_sprites/ichika_agotada.png"
+image ichika determinada   = "sprites/ichika_sprites/ichika_determinada.png"
 
 image nino neutral   = "sprites/nino_sprites/nino_neutral.png"
 image nino pillada   = "sprites/nino_sprites/nino_pillada.png"

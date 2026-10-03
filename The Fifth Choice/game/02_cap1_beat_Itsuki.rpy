@@ -11,7 +11,6 @@ image cg_itsuki_azotea_cuaderno = "images/cg/cap1_beats/itsuki_azotea_cuaderno.w
 
 image cg_itsuki_azotea_manos = "images/cg/cap1_beats/itsuki_azotea_manos.webp"
 
-
 ################################################################################
 ##  HUB DE ITSUKI 
 ##  Cuarto encuentro entre mc e Itsuki en el aula de tarde. 

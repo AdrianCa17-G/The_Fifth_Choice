@@ -1,8 +1,8 @@
 ################################################################################
 ##  BGs Y CGs PROPIOS DEL HUB DE ICHIKA 
 ##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
-##  el hub reutiliza son todos los sprites de Ichika, de ahí se crea un 
-##  nuevos sprite que se definen en 00_definiciones
+##  el hub reutiliza son los sprites existentes de Ichika, más uno nuevo
+##  ("determinada", Movimiento 5) que falta definir en 00_definiciones
 ################################################################################
 
 image bg_sala_ensayo = "images/bg/hubs_hermanas/sala_ensayo.webp"
@@ -27,11 +27,6 @@ image cg_ichika_mascara = "images/cg/hubs_hermanas/ichika_mascara.webp"
 label hub_Ichika:
 
     $ sumar_punto("ichika", 2)
-
-    # Si el jugador eligió la sala de ensayo en el hub 1, se marca la primera
-    # conexión. Ajustar el string si el hub usa otra clave para este destino.
-    #if hub_choice == "sala_ensayo":
-    #    $ primera_conexion = True
 
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
@@ -184,6 +179,9 @@ label hub_Ichika:
     mc "¿Cuándo puedo verte para la próxima lección?"
 
     narrador "Se lo pregunté sin pensar mucho, solo para cambiar de tema yo también."
+
+    show ichika determinada at pj(0.5)
+    with disolucion_lenta
 
     ichika "Martes a las cinco y veinte. Nunca antes de eso."
 
@@ -459,11 +457,90 @@ label ichika_m4c:
 
 
 ############################################################################
-##  MOVIMIENTO 5 · Cierre
-##  Común a las tres ramas; el cierre final cambia según ichika_rama_cap1.
+##  MOVIMIENTO 5 · El mensaje
+##  Común a las tres ramas. Antes de salir, el teléfono de Ichika suena con
+##  una noticia que normalmente escondería detrás de un chiste.
+##  Introduce el cuarto sprite: "determinada".
 ############################################################################
 
 label ichika_m5:
+
+    narrador "Terminó de guardar el guion en la mochila cuando el teléfono le vibró en el bolsillo."
+
+    scene bg_sala_ensayo
+    with fade
+
+    show ichika neutral at pj(0.5)
+    with dissolve
+
+    narrador "Lo sacó sin mirar quién era, por costumbre."
+
+    narrador "Pero en cuanto vio la pantalla, algo en su postura cambió."
+
+    show ichika determinada at pj(0.5)
+    with disolucion_lenta
+
+    ichika "…"
+
+    mc "¿Pasa algo?"
+
+    ichika "Es del club. Dicen que hay un papel libre para la obra de primavera."
+
+    mc "¿Eso es bueno o malo?"
+
+    ichika "¡Es buenísimo! Es el papel que quería desde el año pasado."
+
+    narrador "Lo dijo con la voz de siempre, alta y rápida."
+
+    narrador "Pero no sonrió al decirlo. No todavía."
+
+    mc "¿Y vas a aceptarlo?"
+
+    ichika "Obvio que sí."
+
+    narrador "Contestó demasiado rápido, antes de terminar de pensarlo."
+
+    mc_pensamiento "Un papel más. Sobre las audiciones que ya tiene. Sobre las clases que le faltan."
+
+    mc_pensamiento "La cuenta no cierra, y ella lo sabe mejor que nadie."
+
+    mc "¿Tienes tiempo para eso?"
+
+    show ichika neutral at pj(0.5)
+    with disolucion_lenta
+
+    ichika "No pongas esa cara."
+
+    mc "¿Qué cara?"
+
+    ichika "Esa que dice que vas a sumar otra cosa a la lista de preguntas que no me vas a hacer."
+
+    mc "No iba a preguntar nada."
+
+    ichika "Mentiroso."
+
+    narrador "Lo dijo casi riendo, y por un segundo volvió a ser la de siempre."
+
+    show ichika sonriendo at pj(0.5)
+    with disolucion_lenta
+
+    ichika "Contestaré luego. Ahora tengo que acompañarte a la salida antes de que cierren el edificio."
+
+    mc_pensamiento "No contestó la llamada. Ni siquiera el mensaje."
+
+    mc_pensamiento "Solo lo guardó, como guarda todo lo demás."
+
+    narrador "Guardó el teléfono en el bolsillo de la falda, en el mismo movimiento con el que había guardado el guion."
+
+    jump ichika_m6
+
+
+############################################################################
+##  MOVIMIENTO 6 · Cierre
+##  Común a las tres ramas; el cierre final cambia según ichika_rama_cap1.
+############################################################################
+
+label ichika_m6:
 
     hide ichika 
     with dissolve
@@ -490,6 +567,10 @@ label ichika_m5:
 
         mc_pensamiento "Tampoco sé si hay diferencia."
 
+        mc_pensamiento "Y aun así, en cuanto llegó el mensaje del papel nuevo, dijo que sí sin pensarlo dos veces."
+
+        mc_pensamiento "Como si admitir que no puede con todo no cambiara en nada lo que va a seguir haciendo mañana."
+
     elif ichika_rama_cap1 == "tibia":
 
         mc_pensamiento "Hablamos de dragones durante diez minutos."
@@ -502,6 +583,8 @@ label ichika_m5:
 
         mc_pensamiento "Siento como si no hubiera hecho nada para ayudarla"
 
+        mc_pensamiento "Y cuando le ofrecieron el papel que quería, aceptó antes de que yo pudiera decir una sola palabra sobre todo lo demás que ya tiene encima."
+
     else:
 
         mc_pensamiento "Tenía razón en lo que dije." 
@@ -509,6 +592,10 @@ label ichika_m5:
         mc_pensamiento "Pero no me hace sentir mejor."
 
         mc_pensamiento "Sostuvo la puerta el tiempo justo. Ni un segundo más."
+
+        mc_pensamiento "Y aun con todo lo que le dije, aceptó un papel más antes de que llegáramos a la salida."
+
+        mc_pensamiento "Como si lo único que le hubiera enseñado hoy fuera a esconder mejor la cuenta, no a hacerla más corta."
 
     # Marca el evento como consumido para el evento 6 y para que el hub
     # ofrezca la revisita corta en lugar del evento completo.
