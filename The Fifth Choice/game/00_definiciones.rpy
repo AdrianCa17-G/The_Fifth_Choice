@@ -147,7 +147,8 @@ image bg_azotea_tarde  = "bg/azotea_tarde.webp"
 image bg_edificio      = "bg/edificio.webp" 
 image bg_entrada_edificio      = "bg/entrada_edificio.webp" 
 image bg_departamento  = "bg/departamento.webp"
- 
+image bg_departamento_anochecer = "images/bg/departamento_anochecer.webp"
+    
 image bg_negro         = Solid("#000000")
 
 ################################################################################
@@ -295,8 +296,6 @@ define audio.caos      = "audio/bgm/caos.ogg"
 define audio.contrato  = "audio/bgm/contrato.ogg"
 define audio.derrota   = "audio/bgm/derrota.ogg"
 define audio.descubrimiento   = "audio/bgm/descubrimiento.ogg"
-define audio.tregua    = "audio/bgm/tregua.ogg"
-define audio.guardia   = "audio/bgm/guardia.ogg"
 
 ## Tema principal de cada hermana--------------------------------------------
 ## Son los temas principales que representa a cada hermana y su 

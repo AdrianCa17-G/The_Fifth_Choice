@@ -1087,7 +1087,7 @@ label prologo:
 
     narrador "Su salida fue solo el detonante de un fracaso que ya se veía venir."
 
-    scene bg_departamento
+    scene bg_departamento_anochecer
     with fade
 
     narrador "Ichika se puso de pie bostezando, alegando que el estrés le arruinaría la piel para su audición de mañana."

@@ -351,7 +351,7 @@ label cap1_apertura:
 
     narrador" Lo leí a propósito, con el peor acento que pude."
 
-    scene bg_departamento
+    scene bg_departamento_anochecer
     with fade
     
     show nino neutral at pj_habla(0.5)
@@ -529,9 +529,6 @@ label cap1_apertura:
 
             mc "Va bien. Dentro de lo que cabe esperar de un segundo día."
 
-            show isanari at pj_habla(0.73)
-            with disolucion_lenta
-
             isanari "Ya veo. No sonaste muy convencido al decirlo."
 
             mc "Es solo cansancio, ya te dije."
@@ -546,9 +543,6 @@ label cap1_apertura:
             mc "¿Podemos hablar de otra cosa?" 
             
             mc "No quiero pensar en eso ahora mismo."
-
-            show isanari neutral at pj_habla(0.73)
-            with disolucion_lenta
 
             isanari "Como quieras. No voy a insistir."
 

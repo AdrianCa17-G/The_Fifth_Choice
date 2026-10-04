@@ -213,7 +213,7 @@ label hub_Yotsuba:
     scene bg_pista_atletismo
     with fade
 
-    play music yotsuba fadein 2.0
+    play music yotsuba fadein 2.0 fadeout 1.5
 
     show yotsuba neutral at pj(0.5)
     with dissolve

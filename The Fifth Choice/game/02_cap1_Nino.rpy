@@ -56,7 +56,7 @@ label hub_Nino:
     
     narrador "Un carrito abandonado a medio pasillo, sin dueño."
 
-    play music nino fadein 2.0
+    play music nino fadein 2.0 fadeout 1.5
 
     mc_pensamiento "De las cinco, era la que menos pistas dejaba de dónde encontrarla."
 
