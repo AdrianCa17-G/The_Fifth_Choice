@@ -71,7 +71,7 @@ label beat_Nino:
     scene bg_cocina
     with fade
 
-    play music guardia fadein 2.5 volume 1.0
+    play music guardia fadein 1.5 fadeout 2.0
 
     scene cg_nino_confrontacion_cocina
     with fade

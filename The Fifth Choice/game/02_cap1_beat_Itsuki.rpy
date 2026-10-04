@@ -13,6 +13,8 @@ image cg_itsuki_azotea_manos = "images/cg/cap1_beats/itsuki_azotea_manos.webp"
 
 define audio.sfx.mochila_suelo = "audio/sfx/mochila_suelo.mp3"
 
+define audio.guardia   = "audio/bgm/guardia.ogg"
+
 ################################################################################
 ##  HUB DE ITSUKI 
 ##  Cuarto o tercer encuentro entre mc e Itsuki en la azotea en el dia. 
@@ -146,7 +148,7 @@ label beat_Itsuki:
 
     mc_pensamiento "Ella, que llena una hoja de tachones antes que nadie termine la primera línea."
 
-    play music tregua fadein 3.0 volume 1.0
+    play music tregua fadein 1.5 fadeout 2.0
 
     narrador "El viento seguía sonando igual que siempre aquí arriba, pero por debajo empezó a sonar algo más..."
 

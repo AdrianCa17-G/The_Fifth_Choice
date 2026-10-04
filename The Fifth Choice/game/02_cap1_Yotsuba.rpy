@@ -46,7 +46,7 @@ label hub_Yotsuba:
 
     narrador "Solo estaba encendido el sistema de emergencia, que daba una luz naranja pareja y sin sombras."
 
-    play music yotsuba fadein 2.0
+    play music yotsuba fadein 1.5 fadeout 2.0
 
     scene cg_yotsuba_pista
     with fade
