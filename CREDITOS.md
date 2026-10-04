@@ -39,6 +39,14 @@ Pistas de [DOVA-SYNDROME](https://dova-s.jp/) — actualmente **OpenTracks**:
 - 日曜の午後 — KK
 - *Busy As A Bee* — ハモおた
 - *Night Shade Story* — shimtone
+- *Dreaming world* (夢見る世界) — 蒲鉾さちこ
+- *Rippling heartbeat* (波打つ鼓動) — 蒲鉾さちこ
+- *The calm seaside* (優しい海辺) — 蒲鉾さちこ
+- *Fancy Pop* — 蒲鉾さちこ
+- *Lonely Town* (寂しい町) — 蒲鉾さちこ
+- *New Departure* — FLASH BEAT
+- *Mad Trick (Prod. Khaim)* — KHAIM
+- *Blue Moon* — Hayato Sadohara
 
 ---
 
@@ -48,6 +56,8 @@ Efectos de [効果音ラボ](https://soundeffect-lab.info/).
 No requieren crédito; se incluye por cortesía.
 
 Ambiente (風 孤独感) de [Springin' Sound Stock](https://www.springin.org/sound-stock/).
+
+Efectos de [効果音ラボ](https://soundeffect-lab.info/) y de [Freesound](https://freesound.org/).
 
 ---
 
