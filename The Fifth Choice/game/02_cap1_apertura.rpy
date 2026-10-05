@@ -481,22 +481,20 @@ label cap1_apertura:
 
     narrador "La cena transcurrió casi en silencio, solo se escuchaba el sonido de los cubiertos."
 
-    show raiha hablando at pj(0.20)
+    show raiha preocupada at pj(0.20)
     with dissolve
 
     raiha "Hermanito, te noto más callado que de costumbre."
 
     mc "Solo estoy cansado."
 
-    show isanari neutral at pj(0.73)
+    show isanari neutral at pj_habla(0.73)
+    show raiha at pj_calla(0.20)
     with dissolve
 
     isanari "¿Cansado, o el trabajo ya te está pasando factura?"
 
     mc "Un poco de las dos cosas."
-
-    show isanari at pj_habla(0.73)
-    show raiha regano at pj_calla(0.20)
 
     isanari "¿Qué tal el segundo día con esas alumnas?"
 
@@ -512,7 +510,7 @@ label cap1_apertura:
             mc "Se pusieron de acuerdo para responder mal a propósito."
 
             show isanari at pj_calla(0.73)
-            show raiha hablando at pj_habla(0.20)
+            show raiha at pj_habla(0.20)
             with disolucion_lenta
 
             raiha "¡Eso es horrible! ¿Por qué harían algo así?"
@@ -534,6 +532,7 @@ label cap1_apertura:
             mc "Es solo cansancio, ya te dije."
 
             show raiha regano at pj_habla(0.20)
+            show isanari neutral at pj_calla(0.73)
             with disolucion_lenta
 
             raiha "¡A mí no me engañas! ¡Se te nota en la cara que algo pasó!"
@@ -544,9 +543,10 @@ label cap1_apertura:
             
             mc "No quiero pensar en eso ahora mismo."
 
-            isanari "Como quieras. No voy a insistir."
+            isanari "Como quieras [mc]. No voy a insistir."
 
             show raiha hablando at pj_habla(0.20)
+            show isanari neutral at pj_calla(0.73)
             with disolucion_lenta
 
             raiha "¡Yo sí insisto un poquito! Pero está bien, lo dejo por hoy."
@@ -594,7 +594,7 @@ label cap1_apertura:
     $ duck()
     play sound sfx_toque_puerta volume 1.5
     
-    show raiha hablando at pj(0.50)
+    show raiha preocupada at pj(0.50)
     with dissolve
 
     raiha "Hermanito, llevas media hora mirando unos papeles en blanco."
@@ -730,8 +730,6 @@ label cap1_apertura:
                 mc "La hermana del medio."
                 
                 mc "Casi no habla y usa sus audífonos todo el tiempo."
-                
-                mc "Aunque algo que destaco de ella es que sabe demasiado de historia."
 
                 raiha "Con lo calladita que es, seguro se esconde entre libros en la
                 {color=#3D8FC7}{b}biblioteca{/b}{/color}, sin que nadie la moleste."
@@ -795,11 +793,11 @@ label cap1_apertura:
 
                 raiha "¡Con razón te veías tan raro cuando volviste ese día!"
 
-                show raiha hablando at pj_habla(0.50)
-                with disolucion_lenta
-
                 mc "Es bastante aplicada, eso sí. Se queda repasando después de que terminan
                 las clases, aunque nadie se lo pida."
+
+                show raiha hablando at pj_habla(0.50)
+                with disolucion_lenta
 
                 raiha "Entonces no hay mucho misterio ahí." 
                 

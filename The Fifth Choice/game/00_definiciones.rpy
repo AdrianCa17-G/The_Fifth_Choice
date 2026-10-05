@@ -168,6 +168,7 @@ image cg_hermanas_estudiando = "cg/estudio_hermanas.webp"
 
 image raiha hablando    = "sprites/raiha_sprites/raiha_hablando.png"
 image raiha regano      = "sprites/raiha_sprites/raiha_regano.png"
+image raiha preocupada      = "sprites/raiha_sprites/raiha_preocupada.png"
 
 image isanari neutral      = "sprites/isanari_sprites/isanari_neutral.png"
 image isanari sonriendo    = "sprites/isanari_sprites/isanari_sonrisa.png"
