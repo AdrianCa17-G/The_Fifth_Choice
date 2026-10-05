@@ -51,9 +51,9 @@ label interconexion 1:
 
   [SPR nino neutral at pj_habla(0.10)]
 
-  nino "¿Otra vez tu con tus tontas creencias de que vamos a estudiar?"
+  nino "¿Otra vez tu con tus tonterías de que vamos a estudiar?"
   nino "Ni creas que hoy va a ser diferente."
-  nino "Hoy tercer dia y tercer fracaso que vas a conseguir."
+  nino "Hoy será el tercer dia y el tercer fracaso que vas a conseguir."
 
   mc_pensamiento "Nino, la misma de siempre, siempre es la que habla por las demas."
   mc_pensamiento "Las otras cuatro solo estaban calladas escuchandola."
@@ -90,7 +90,7 @@ label interconexion 1:
   mc "Se que no pasan juntas siempre."
   mc "Aunque sean iguales, sus rutinas y pasatiempos son diferentes."
 
-  mc_pensamiento "Me miraron con una cara de sorpresa mas risa"
+  mc_pensamiento "Me miraron con una cara de sorpresa o de risa."
 
   ichika "Hay mc"
   ichika "¿Porque quieres saber en donde pasamos?"
@@ -100,8 +100,8 @@ label interconexion 1:
   mc "No es eso"
   mc "Pero..."
 
-  nino "Y a ti que diablos te importa donde pasemos"
-  nino "Ninguna de nosotras te lo va a decir"
+  nino "Y a ti que diablos te importa donde pasemos."
+  nino "Ninguna de nosotras te lo va a decir."
 
   mc "Ya lo suponia."
 
@@ -125,8 +125,22 @@ label interconexion 1:
 
   mc "¿QUEEEE?"
 
-  mc "Esto debe ser una broma."
-  mc "Pero en parte es mi culpa."
+  mc_pensamiento "Esto debe ser una broma."
+  mc_pensamiento "Y una de muy mal gusto."
+  mc_pensamiento "Pero en parte es mi culpa."
+  mc_pensamiento "Fui yo quien les preguntó en donde estaban despues de clases."
+  mc_pensamiento "Pero el lado bueno es que es verdad que cada una tiene su lugar de preferencia."
+
+ mc "Me parece bien Itsuki. Acepto tu juego."
+ mc "Aunque no lo creas me acabas de ayudar con mi plan."
+ mc "Bien hecho."
+
+ itsuki "No me felicites, solo estoy complicandote mas las cosas."
+ itsuki "Bueno y que vas a hacer."
+ itsuki "No creo que podrás estar toda la tarde con cada una de nosotras, el tiempo es corto."
+ itsuki "Y lo sabes."
+
+
   
 
   
