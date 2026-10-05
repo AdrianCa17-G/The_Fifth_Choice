@@ -131,26 +131,39 @@ label interconexion 1:
   mc_pensamiento "Fui yo quien les preguntó en donde estaban despues de clases."
   mc_pensamiento "Pero el lado bueno es que es verdad que cada una tiene su lugar de preferencia."
 
- mc "Me parece bien Itsuki. Acepto tu juego."
- mc "Aunque no lo creas me acabas de ayudar con mi plan."
- mc "Bien hecho."
-
- itsuki "No me felicites, solo estoy complicandote mas las cosas."
- itsuki "Bueno y que vas a hacer."
- itsuki "No creo que podrás estar toda la tarde con cada una de nosotras, el tiempo es corto."
- itsuki "Y lo sabes."
-
-
+   mc "Me parece bien Itsuki. Acepto tu juego."
+   mc "Aunque no lo creas me acabas de ayudar con mi plan."
+   mc "Bien hecho."
   
+   itsuki "No me felicites, solo estoy complicandote mas las cosas."
+   itsuki "Bueno y que vas a hacer."
+   itsuki "No creo que podrás estar toda la tarde con cada una de nosotras, el tiempo es corto."
+   itsuki "Y lo sabes."
 
-  
+  mc "Iré una por una, ya lo dije."
 
-  
-    
+  ichika "Entonces vas a pasar esta tarde con tu quintilliza favorita?"
+  ichika "Bueno, se que me vas a escojer porque soy la mas bonita de todos"
+  ichika "Nadie se resistiría a mi."
 
-  
-  
-  
+  nino "Oye ichika no te rebajes a estar con ese nerd"
+
+ yotsuba "Bueno yo se que estarás con la que mejor quieras formar un vinculo?"
+ yotsuba "O no?"
+
+ miku "...Ojala no me escoja"
+ miku "Oye mc no te preocupes por mi, yo estoy bien sola"
+
+-----NOSE QUE MAS PONER PARA CERRAR------
+
+narrador "Se hizo de tarde y debia cumplir lo promedtido"
+mc "Bien pasaré la tarde con una de ellas."
+mc "Solo es para reforzar sus conocimientos y conocerlas mejor."
+mc "No es para otro tipo de intenciones."
+
+mc_pensamiento "Bien, empezemos."
+
+
   
 label hub_1:
     call screen mapa_hub(1)
