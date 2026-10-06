@@ -1,8 +1,7 @@
 ################################################################################
 ##  BGs Y CGs PROPIOS DEL HUB DE ICHIKA 
 ##  3 ilustraciones y 1 fondo nuevos de momentos concretos de este hub. Los que
-##  el hub reutiliza son los sprites existentes de Ichika, más uno nuevo
-##  ("determinada", Movimiento 5) que falta definir en 00_definiciones
+##  el hub reutiliza son los sprites existentes de Ichika, más dos nuevos.
 ################################################################################
 
 image bg_sala_ensayo = "images/bg/hubs_hermanas/sala_ensayo.webp"
@@ -25,8 +24,6 @@ image cg_ichika_mascara = "images/cg/hubs_hermanas/ichika_mascara.webp"
 ################################################################################
 
 label hub_Ichika:
-
-    $ sumar_punto("ichika", 2)
 
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
@@ -281,7 +278,7 @@ label hub_Ichika:
 label ichika_m4a:
 
     $ ichika_rama_cap1 = "calida"
-    $ sumar_punto("ichika", 1)
+    $ sumar_punto("ichika", 3)
 
     narrador "No dije nada."
 
@@ -371,7 +368,7 @@ label ichika_m4a:
 label ichika_m4b:
 
     $ ichika_rama_cap1 = "tibia"
-    ## sin puntos, sin desaire
+    $ sumar_punto("ichika", 1)
 
     show ichika sonriendo at pj(0.5)
     with disolucion_lenta
@@ -556,7 +553,7 @@ label ichika_m6:
     
     mc_pensamiento "Y esta se durmió antes de que yo dijera nada."
 
-    mc_pensamiento "Quedan tres semanas."
+    mc_pensamiento "Quedan [tiempo_restante]."
 
     
     if ichika_rama_cap1 == "calida":

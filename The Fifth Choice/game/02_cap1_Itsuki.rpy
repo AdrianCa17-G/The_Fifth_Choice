@@ -28,8 +28,6 @@ image cg_itsuki_reto = "images/cg/hubs_hermanas/itsuki_reto.webp"
 
 label hub_Itsuki:
 
-    $ sumar_punto("itsuki", 2)
-
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc e Itsuki en el aula de tarde
@@ -292,7 +290,7 @@ label hub_Itsuki:
 label itsuki_m4a:    
 
     $ itsuki_rama_cap1 = "calida"
-    $ sumar_punto("itsuki", 1)
+    $ sumar_punto("itsuki", 3)
 
     narrador "Señalé la línea con el dedo. Sin tocar el papel."
 
@@ -380,7 +378,7 @@ label itsuki_m4a:
 label itsuki_m4b:  
 
     $ itsuki_rama_cap1 = "tibia"
-    ## sin puntos, sin desaire      
+    $ sumar_punto("itsuki", 1) 
 
     show itsuki molesta at pj(0.5)
     with disolucion_lenta
@@ -498,7 +496,7 @@ label itsuki_m5:
 
     mc_pensamiento "Una de cinco. Y esta no pidió nada."
 
-    mc_pensamiento "Quedan tres semanas."
+    mc_pensamiento "Quedan [tiempo_restante]."
 
     if itsuki_rama_cap1 == "calida":
 

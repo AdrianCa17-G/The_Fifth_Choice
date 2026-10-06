@@ -885,4 +885,4 @@ label cap1_apertura:
 
     narrador "Si, asi será."
 
-    jump hub_1
+    jump cap1_interconexion_1

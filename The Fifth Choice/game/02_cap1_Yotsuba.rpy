@@ -26,8 +26,6 @@ image cg_yotsuba_despedida = "images/cg/hubs_hermanas/yotsuba_despedida.webp"
 
 label hub_Yotsuba:
 
-    $ sumar_punto("yotsuba", 2)
-
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc y Yotsuba. Se establece la dinámica de la relación.
@@ -320,7 +318,7 @@ label hub_Yotsuba:
 label yotsuba_m4a:
 
     $ yotsuba_rama_cap1 = "calida"
-    $ sumar_punto("yotsuba", 1)
+    $ sumar_punto("yotsuba", 3)
 
     mc "Antes de eso."
 
@@ -424,7 +422,7 @@ label yotsuba_m4a:
 label yotsuba_m4b:        
 
     $ yotsuba_rama_cap1 = "tibia"
-    ## sin puntos, sin desaire
+    $ sumar_punto("yotsuba", 1)
 
     narrador "Cogí el cronómetro que me tendió."
 
@@ -569,7 +567,7 @@ label yotsuba_m6:
 
     mc_pensamiento "Una de cinco. Y esta acaba de llegar corriendo."
 
-    mc_pensamiento "Solo quedan tres semanas."
+    mc_pensamiento "Solo quedan [tiempo_restante]."
 
     if yotsuba_rama_cap1 == "calida":
 

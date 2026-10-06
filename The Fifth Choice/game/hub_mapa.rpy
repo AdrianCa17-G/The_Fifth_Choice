@@ -259,6 +259,8 @@ screen destino_hub(indice, d):
     $ borde = "izq" if indice == 0 else ("der" if indice == HUB_N - 1 else None)
 
     button:
+    
+        sensitive not visitada
         xpos indice * HUB_SLOT - (HUB_CARD_W - HUB_SLOT) // 2
         ypos 0
         xysize (HUB_CARD_W, HUB_H)

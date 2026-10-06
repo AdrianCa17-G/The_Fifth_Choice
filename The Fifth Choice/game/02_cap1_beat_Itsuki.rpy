@@ -167,7 +167,7 @@ label beat_Itsuki:
     scene bg_azotea 
     with fade
 
-    if primera_conexion == "itsuki" and itsuki_visitada_cap1:
+    if itsuki_visitada_cap1 and itsuki_rama_cap1 != "tibia":
 
         show itsuki molesta at pj(0.5)
         with disolucion_lenta

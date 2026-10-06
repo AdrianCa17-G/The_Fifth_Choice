@@ -258,7 +258,7 @@ label beat_casa:
 
     stop music fadeout 2.0
 
-    if desaires_cap1 >= 3:
+    if despido_cap1:
 
         mc_pensamiento "No sé si mañana esto sigue siendo mi trabajo."
 
@@ -661,8 +661,6 @@ label beat_casa:
     mc_pensamiento "Para ella lo es."
 
     mc_pensamiento "Ojalá pudiera decir lo mismo."
-
-    stop music fadeout 3.0
 
     narrador "Mañana será el examen."                     
         

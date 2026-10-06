@@ -104,6 +104,12 @@ default yotsuba_visitada_cap1 = False
 default itsuki_visitada_cap1  = False
 
 
+default tiempo_restante = "casi cuatro semanas"
+default maruo_ultimatum = False
+default despido_cap1 = False
+default nino_rama_beat = None
+
+
 ## --- Rama completada -------------------------------------------------------
 ## Guarda la rama de cada chica que se usa dentro de cada hub, ahora no sirve
 ## pero es mejor mantenerlo de manera global.
@@ -439,6 +445,9 @@ init python:
             persistent.ruta_yotsuba_completa,
             persistent.ruta_itsuki_completa,
         ])
+
+    def rama_de(hermana):
+        return getattr(store, hermana + "_rama_cap1")
 
 
 ################################################################################

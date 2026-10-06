@@ -27,8 +27,6 @@ image cg_miku_sorpresa = "images/cg/hubs_hermanas/miku_sorpresa.webp"
 
 label hub_Miku:
 
-    $ sumar_punto("miku", 2)
-
     ############################################################################
     ##  MOVIMIENTO 1 · Llegada
     ##  Primer encuentro entre mc y Miku en la biblioteca
@@ -365,7 +363,7 @@ label hub_Miku:
 label miku_m4a:
   
     $ miku_rama_cap1 = "calida"
-    $ sumar_punto("miku", 1)
+    $ sumar_punto("miku", 3)
 
     mc "¿Cuánto tardaba la sal en llegar desde el mar hasta allá?"
 
@@ -460,7 +458,7 @@ label miku_m4a:
 label miku_m4b:
 
     $ miku_rama_cap1 = "tibia"
-    ## sin puntos, sin desaire
+    $ sumar_punto("miku", 1)
 
     mc "Se te da bien esto."
 
@@ -552,7 +550,7 @@ label miku_m5:
 
     mc_pensamiento "Una de cinco. Y esta sabía mucho de lo que yo no."
 
-    mc_pensamiento "Quedan tres semanas."
+    mc_pensamiento "Quedan [tiempo_restante]."
 
     
     if miku_rama_cap1 == "calida":

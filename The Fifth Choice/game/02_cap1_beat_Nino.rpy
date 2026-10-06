@@ -110,6 +110,8 @@ label beat_Nino:
 
     if desaires_cap1 >= 2:
 
+        $ maruo_ultimatum = True
+
         stop music fadeout 1.0
 
         scene bg_departamento
@@ -341,6 +343,8 @@ label beat_Nino:
     ############################################################################
 
     label nino_beat_m4a:
+
+        $ sumar_punto("nino", 1)
 
         $ nino_rama_beat = "calida"
 

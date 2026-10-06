@@ -26,8 +26,6 @@ image cg_nino_llamada = "images/cg/hubs_hermanas/nino_llamada.webp"
 
 label hub_Nino:
 
-    $ sumar_punto("nino", 2)
-
     # Si el jugador eligió el centro comercial en el hub 1, se marca la primera
     # conexión. Ajustar el string si el hub usa otra clave para este destino.
     #if hub_choice == "centro_comercial":
@@ -303,7 +301,7 @@ label hub_Nino:
 label nino_m4a:
 
     $ nino_rama_cap1 = "calida"
-    $ sumar_punto("nino", 1)
+    $ sumar_punto("nino", 3)
 
     #play music audio.descubrimiento fadein 1.0 volume 3.5
 
@@ -373,7 +371,7 @@ label nino_m4a:
 label nino_m4b:
 
     $ nino_rama_cap1 = "tibia"
-    ## sin puntos, sin desaire
+    $ sumar_punto("nino", 1)
 
     narrador "No dije nada."
 
@@ -520,7 +518,7 @@ label nino_m5:
 
     mc_pensamiento "Una de cinco. Y esta no bajó la guardia ni un minuto entero."
     
-    mc_pensamiento "Quedan tres semanas."
+    mc_pensamiento "Quedan [tiempo_restante]."
 
     if nino_rama_cap1 == "calida":
 
