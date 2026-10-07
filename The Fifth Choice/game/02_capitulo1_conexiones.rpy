@@ -503,12 +503,10 @@ label interconexion_2:
 
     if destino == "ichika":
 
-        show ichika sonriendo at pj(0.28)
-        with dissolve
-
         if rama_hub1 == "calida":
 
             show ichika sonriendo at pj_habla(0.28)
+            with dissolve
 
             ichika "¡Buenos días, [mc]!"
 
@@ -520,24 +518,40 @@ label interconexion_2:
 
             ichika "Siete y cuarto. Pero redondeo hacia arriba."
 
+            show ichika neutral at pj_habla(0.28)
+            with disolucion_lenta
+
+            ichika "…Tú deberías hacer lo mismo. Dormir, digo."
+
+            ichika "Siempre estás cuidando de las demás."
+
+            show ichika determinada at pj_habla(0.28)
+            with disolucion_lenta
+
+            ichika "¿Y quién cuida de ti?"  
+
+            ichika "Yo puedo hacerlo. Si me dejas."
+
             show ichika sonriendo at pj_habla(0.28)
             with disolucion_lenta
 
-            ichika "…Tú deberías hacer lo mismo." 
+            ichika "Con mucho gusto. Jeje…"
 
-            ichika "Dormir, digo."
+            ichika "¡Consejo gratis! Exclusivo para ti [mc]"
 
-            ichika "Sabes, no solo tu tienes que ver por nosotras."
+            ichiika "¡No se lo cuentes a nadie!"
 
-            ichika "Yo tambien puedo ver por ti, puedo cuidarte."
+            show ichika at pj_calla(0.28)
+            with disolucion_lenta
 
-            ichika "Con mucho gusto. Jeje..."
+            mc_pensamiento "No supe qué contestar. Nadie me lo había preguntado en años."
 
-            ichika "¡Consejo gratis! ¡No se lo cuentes a nadie!"
+      
 
         elif rama_hub1 == "tibia":
 
             show ichika sonriendo at pj_habla(0.28)
+            with dissolve
 
             ichika "¡Buenos días, señor de los dragones!"
 
@@ -551,35 +565,50 @@ label interconexion_2:
 
             ichika "¡Es mi mejor material!"
 
-            show ichika sonriendo at pj_calla(0.28)
+            show ichika at pj_calla(0.28)
+            with disolucion_lenta
 
         else:
 
             show ichika agotada at pj_habla(0.28)
+            with dissolve
 
             ichika "Buenos días, [mc]." 
 
-            ichika "Llegué puntual, como pediste."
+            mc "Buenos días Ichika."
 
-            mc "No pedí nada."
+            mc_pensamiento "Ichika... Lo que te dije ayer."
 
-            sshow ichika neutral at pj_habla(0.28)
+            mc_pensamiento "No sé que decirle."
 
-            ichika "Claro. Que conste."
+            mc "¿Qué tienes planeado hacer hoy?"
 
-            show ichika sonriendo at pj_calla(0.28)
+            show ichika neutral at pj_habla(0.28)
+            with disolucion_lenta
 
-            narrador "La sonrisa era perfecta. Demasiado perfecta."
+            ichika "Ya sé qué hacer con mi tiempo. Gracias por preguntar."
+
+            show ichika sonriendo at pj_habla(0.28)
+            with disolucion_lenta
+
+            ichika "¡Y hoy me portaré muy bien! Que conste."
+
+            show ichika at pj_calla(0.28)
+            with disolucion_lenta
+
+            narrador "La sonrisa llegó medio segundo tarde."
+
+            narrador "Antes me recibía con una broma. Hoy, con mi nombre y nada más."
 
         hide ichika
         with moveoutleft
 
     elif destino == "nino":
 
-        show nino neutral at pj(0.28)
-        with dissolve
-
         if rama_hub1 == "calida":
+
+            show nino neutral at pj_habla(0.28)
+            with dissolve
 
             nino "Oye tu."
 
@@ -587,23 +616,42 @@ label interconexion_2:
 
             mc "Claro, no iba a decir nada."
 
-            show nino molesta at pj(0.28)
+            show nino molesta at pj_habla(0.28)
             with disolucion_lenta
 
-            nino "Bien. …Y come algo antes de clases." 
+            nino "Bien. …Y come algo antes de clases."
 
             nino "Tienes cara de no haber desayunado."
 
             mc "¿Eso es preocupación?"
 
-            show nino incomoda at pj(0.28)
+            show nino pillada at pj_habla(0.28)
             with disolucion_lenta
 
-            nino "Es que si te desmayas, nos echan la culpa a nosotras."
+            nino "¡No! Es que si te desmayas, nos echan la culpa."
 
-            show nino neutral at pj_calla(0.28)
+            nino "…Anoche pensé en lo que dijiste." 
+
+            nino "Que no ibas a prometer nada."
+
+            nino "Nadie me había hablado así. Sin intentar caerme bien."
+
+            show nino molesta at pj_habla(0.28)
+            with disolucion_lenta
+
+            nino "Eso no significa que confíe en ti." 
+
+            nino "No te hagas ideas."
+
+            show nino at pj_calla(0.28)
+            with disolucion_lenta
+
+            narrador "Se fue rápido. Pero esta vez se le olvidó cruzar los brazos."
 
         elif rama_hub1 == "tibia":
+
+            show nino neutral at pj_habla(0.28)
+            with dissolve
 
             nino "Lo que pasó sigue sin significar nada."
 
@@ -611,13 +659,15 @@ label interconexion_2:
 
             nino "Y que quede así."
 
-            show nino neutral at pj_calla(0.28)
+            show nino at pj_calla(0.28)
+            with disolucion_lenta
 
             narrador "Pero se tomó la molestia de buscarme solo para decirlo."
 
         else:
 
             show nino molesta at pj_habla(0.28)
+            with dissolve
 
             nino "Guárdate el «buenos días». No lo voy a necesitar."
 
@@ -625,39 +675,76 @@ label interconexion_2:
 
             nino "Ya, pero ibas a decirlo."
 
-            show nino molesta at pj_calla(0.28)
+            nino "«Yo sí voy a durar.»" 
 
-            narrador "No tenía sentido discutirle a alguien que ya había ganado la discusión."
+            nino "Qué gracioso."
+
+            nino "Anota la fecha." 
+
+            nino "Cuando te vayas, te la voy a recordar."
+
+            show nino at pj_calla(0.28)
+            with disolucion_lenta
+
+            narrador "Pasó a mi lado sin rozarme. Ni siquiera con el hombro."
 
         hide nino
         with moveoutleft
 
     elif destino == "miku":
 
-        show miku neutral at pj(0.28)
-        with dissolve
-
         if rama_hub1 == "calida":
 
             show miku neutral at pj_habla(0.28)
+            with dissolve
 
             miku "…¿Ya llegaste a la página ciento veinte?"
 
             mc "Voy por la noventa y cinco."
 
+            show miku relajada at pj_habla(0.28)
+            with disolucion_lenta
+
             miku "La primera mitad es lenta. Aguanta."
 
-            show miku neutral at pj_calla(0.28)
+            miku "Cuando llegues a la página de la sal, avísame." 
 
-            narrador "Se fue antes de que pudiera contestar. Sin los audífonos puestos."
+            miku "Quiero ver tu cara."
+
+            mc "¿Mi cara?"
+
+            show miku animada at pj_habla(0.28)
+            with disolucion_lenta
+
+            miku "Anoche me quedé pensando en que alguien se pasó la noche en mi tema."
+
+            miku "Nadie lo había hecho. Nunca."
+
+            miku "Siento como si alguien al fin comprendiera mis gustos."
+
+            show miku encogida at pj_habla(0.28)
+            with disolucion_lenta
+
+            miku "…Digo. Para ver si te sorprendes."
+
+            miku "…Gracias por leerlo."
+
+            miku "...Significa mucho para mi [mc]."
+
+            show miku at pj_calla(0.28)
+            with disolucion_lenta
+
+            narrador "Se fue con los audífonos al cuello. Sin tocarlos."
 
         elif rama_hub1 == "tibia":
 
             show miku neutral at pj_habla(0.28)
+            with dissolve
 
             miku "…Buenos días."
 
-            show miku neutral at pj_calla(0.28)
+            show miku at pj_calla(0.28)
+            with disolucion_lenta
 
             narrador "Lo dijo con el libro a media cara."
 
@@ -667,29 +754,40 @@ label interconexion_2:
 
         else:
 
-            show miku neutral at pj_calla(0.28)
+            show miku neutral at pj(0.28)
+            with dissolve
 
-            narrador "Miku entró con los audífonos puestos y, esta vez, sonando."
+            narrador "Entró con los audífonos puestos y sonando."
 
-            mc "Buenos días."
+            mc "Buenos días Miku."
 
-            miku "…"
+            show miku neutral at pj_habla(0.28)
+            with disolucion_lenta
 
-            narrador "Pasó por mi lado sin girar la cabeza."
+            miku "…Voy a estudiar solo lo que entra en el examen."
+
+            miku "Como dijiste."
+
+            show miku at pj_calla(0.28)    
+            with disolucion_lenta
+
+            narrador "No hubo reproche." 
+
+            narrador "Eso fue lo peor: lo dijo como quien acepta un reglamento."
 
         hide miku
         with moveoutleft
 
     elif destino == "yotsuba":
 
-        show yotsuba sonriendo at pj(0.28)
-        with dissolve
-
         if rama_hub1 == "calida":
 
             show yotsuba sonriendo at pj_habla(0.28)
+            with dissolve
 
-            yotsuba "¡Buenos días, [mc]! ¡Hoy corrí menos de treinta!"
+            yotsuba "¡Buenos días, [mc]!" 
+
+            yotsuba "¡Hoy correré menos de treinta vueltas!"
 
             mc "¿Cuántas?"
 
@@ -697,17 +795,46 @@ label interconexion_2:
 
             mc "No lo es."
 
-            yotsuba "¡Para mí sí! ¡Y deberías correr conmigo! ¡Una vuelta! ¡Solo una!"
+            yotsuba "¡Para mí sí!"
 
-            mc "Paso."
+            show yotsuba neutral at pj_habla(0.28)
+            with disolucion_lenta
 
-            yotsuba "¡Eso dicen todos antes de la vuelta número dos!"
+            yotsuba "…Ayer dijiste que mi punto de partida no era cero."
 
-            show yotsuba sonriendo at pj_calla(0.28)
+            yotsuba "Anoche no pude dejar de pensarlo."
+
+            yotsuba "Nadie me había dicho algo así sin pedirme que sonriera."
+
+            yotsuba "Tu entendiste lo que en verdad siento por dentro."
+
+            yotsuba "No solo lo que reflejo a los demas."
+
+            show yotsuba sonriendo at pj_habla(0.28)
+            with disolucion_lenta
+
+            yotsuba "Bueno."
+
+            yotsuba "¡Dame la mano!"
+
+            narrador "Sacó el rotulador y escribió en mi muñeca antes de que pudiera decir que no."
+
+            yotsuba "¡Listo! ¡Ahora tú también llevas la cuenta!"
+
+            mc_pensamiento "Decía «1». Con un corazón torcido al lado."
+
+            show yotsuba incomoda at pj_habla(0.28)
+            with disolucion_lenta
+
+            yotsuba "¡No es un corazón! ¡Es… una vuelta!"
+
+            show yotsuba at pj_calla(0.28)
+            with disolucion_lenta
 
         elif rama_hub1 == "tibia":
 
             show yotsuba sonriendo at pj_habla(0.28)
+            with dissolve
 
             yotsuba "¡Mira! ¡Un minuto con catorce!"
 
@@ -717,23 +844,32 @@ label interconexion_2:
 
             yotsuba "¡Es mi cuaderno oficial!"
 
-            show yotsuba sonriendo at pj_calla(0.28)
+            show yotsuba at pj_calla(0.28)
+            with disolucion_lenta
 
         else:
 
             show yotsuba sonriendo at pj_habla(0.28)
+            with dissolve
 
-            yotsuba "¡Buenos días! ¡Hoy voy a concentrarme en correr!"
+            yotsuba "¡Buenos días, tutor!" 
 
-            narrador "La sonrisa era idéntica a la de la pista. Ese era el problema."
+            yotsuba "¡Hoy voy a concentrarme en correr!"
 
-            mc "Me alegra."
+            narrador "Me llamó «tutor» con el tono que se usa con un desconocido."
 
-            show yotsuba incomoda at pj_habla(0.28)
+            mc "Yotsuba, ayer yo…"
 
-            yotsuba "…¡Claro que sí! ¡A mí también me alegra!"
+            show yotsuba neutral at pj_habla(0.28)
+            with disolucion_lenta
 
-            show yotsuba incomoda at pj_calla(0.28)
+            yotsuba "¡Tenías razón! ¡Correr es lo mío!"
+
+            yotsuba "…Hoy serán cuarenta vueltas. ¡Cuarenta!"
+
+            show yotsuba at pj_calla(0.28)
+
+            narrador "Lo anotó en la muñeca. No me miró mientras lo hacía."
 
         hide yotsuba
         with moveoutleft
@@ -745,22 +881,36 @@ label interconexion_2:
         if rama_hub1 == "calida":
 
             show itsuki neutral at pj_habla(0.5)
+            with dissolve
 
             itsuki "…Buenos días."
 
             mc "Buenos días."
 
-            itsuki "No pienses que cambió algo."
+            itsuki "Hoy no me senté en tu sitio."
 
-            mc "No pienso nada."
+            itsuki "Aprendo rápido." 
 
-            narrador "No agregó más. Tampoco giró la silla hacia la ventana."
+            itsuki "Es lo único que se me da bien."
 
-            show itsuki neutral at pj_calla(0.5)
+            mc "No es lo único."
+
+            show itsuki timida at pj_habla(0.5)
+            with disolucion_lenta
+
+            itsuki "…No digas cosas así. Sin avisar."
+
+            show itsuki at pj_calla(0.5)
+            with disolucion_lenta
+
+            narrador "No me miró." 
+
+            narrador "Pero tampoco giró la silla hacia la ventana."
 
         elif rama_hub1 == "tibia":
 
             show itsuki molesta at pj_habla(0.5)
+            with dissolve
 
             itsuki "Sigo sin necesitar tu ayuda."
 
@@ -769,20 +919,25 @@ label interconexion_2:
             itsuki "Lo estabas pensando."
 
             show itsuki molesta at pj_calla(0.5)
+            with disolucion_lenta
 
         else:
 
             show itsuki molesta at pj_habla(0.5)
+            with dissolve
 
-            narrador "No levantó la vista del cuaderno."
+            narrador "Su mochila estaba sobre mi pupitre."
 
-            itsuki "Si vas a saludar, que sea rápido."
+            mc "Itsuki, ese es mi…"
 
-            mc "Buenos días."
+            itsuki "Lo sé."
 
-            itsuki "…Ya lo dijiste."
+            itsuki "Ya tengo lo que necesitaba de ti. Eso fue todo."
 
-            show itsuki molesta at pj_calla(0.5)
+            show itsuki at pj_calla(0.5)
+            with disolucion_lenta
+
+            narrador "Tuve que sentarme en el último pupitre."
 
     ############################################################################
     ##  Chisme de Nino (solo si la visitada no fue ella ni Itsuki)
