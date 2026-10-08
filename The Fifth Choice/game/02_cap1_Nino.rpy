@@ -382,9 +382,6 @@ label nino_m4b:
 
     nino "¿Qué haces?"
 
-    show nino molesta1 at pj(0.5)
-    with disolucion_lenta
-
     mc "Ayudarte con esto. Pesa."
 
     nino "No te pedí ayuda."
