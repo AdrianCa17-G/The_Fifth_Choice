@@ -1,13 +1,33 @@
 #!/usr/bin/env python3
 """
-normalizar_sprite.py v3 — Normaliza un sprite de hermana al estándar del set.
-760x930 | ojos en y=199 | IPD=77.2 | eje = centro de la falda
-Opción --corte Y: borra todo lo que esté debajo de la fila Y (imagen ORIGINAL).
+normalizar_sprite.py — Normaliza un sprite de hermana al estándar del set.
+
+Reconstruido a partir de GUIA_ARTE.md (secciones 3, 4 y 5), que documenta el
+comportamiento exacto que tenía el script original.
+
+Estándar del set:
+  - Lienzo 760 x 930 px, PNG RGBA con transparencia real.
+  - Línea de ojos en la fila y = 199.
+  - Distancia interpupilar (IPD) escalada a 77,2 px.
+  - Eje horizontal: el centro de la falda (eje del cuerpo), no el centro del
+    bounding box.
+
+Uso:
+  python normalizar_sprite.py entrada.png salida.png
+  python normalizar_sprite.py entrada.png salida.png --ojos x1,y1,x2,y2
+  python normalizar_sprite.py entrada.png salida.png --eje 384
+  python normalizar_sprite.py entrada.png salida.png --sin-huecos
+
+Notas:
+  - Este script NO hace el desmatteado de halo blanco (eso es limpiar_halo.py,
+    que se aplica sobre un sprite ya normalizado).
+  - La detección de ojos busca iris AZUL. Con ojos marrones/negros (Isanari,
+    Raiha, Maruo) o con los ojos cerrados, hay que pasar --ojos a mano.
+  - Requiere Pillow, numpy y scipy.
 """
 
 import sys
 import argparse
-import itertools
 import numpy as np
 from PIL import Image
 from scipy import ndimage
@@ -15,197 +35,209 @@ from scipy import ndimage
 CANVAS_W, CANVAS_H = 760, 930
 EYE_ROW = 199
 TARGET_IPD = 77.2
-BOTTOM_EXTEND_MAX = 30
-
-WHITE_HI = 250   # blanco casi puro -> fondo seguro
-WHITE_LO = 225   # por debajo de esto ya es dibujo
+BOTTOM_EXTEND_MAX = 30  # px — extensión automática si el render vino corto por el encuadre
 
 
 # ---------------------------------------------------------------------------
-# 1. Fondo (con alpha suave + de-matte del borde)
+# 1. Recorte de fondo y huecos encerrados (GUIA_ARTE.md, sección 4)
 # ---------------------------------------------------------------------------
 
-def remove_background(img_rgba, suave=True):
+def remove_background(img_rgba):
+    """
+    Vuelve transparente el fondo blanco liso. Usa flood-fill (componentes
+    conexas) desde los bordes del lienzo para distinguir el fondo real de los
+    huecos blancos ENCERRADOS dentro de la figura (esos se deciden aparte).
+    """
     arr = np.array(img_rgba)
-    rgb = arr[:, :, :3].astype(np.float32)
-    whiteness = rgb.min(axis=2)
+    rgb = arr[:, :, :3].copy()
+    h, w = rgb.shape[:2]
 
-    core = whiteness > WHITE_HI
-    labeled, _ = ndimage.label(core)
-    border = set(labeled[0, :]) | set(labeled[-1, :]) | \
-             set(labeled[:, 0]) | set(labeled[:, -1])
-    border.discard(0)
-    bg_core = np.isin(labeled, list(border))
+    whiteness = rgb.min(axis=2)  # "pureza": qué tan cerca de blanco puro
+    is_white_ish = whiteness > 240
 
-    if not suave:
-        return arr[:, :, :3].copy(), np.where(bg_core, 0, 255).astype(np.uint8), labeled, border
+    labeled, _ = ndimage.label(is_white_ish)
+    border_labels = set(labeled[0, :]) | set(labeled[-1, :]) | \
+        set(labeled[:, 0]) | set(labeled[:, -1])
+    border_labels.discard(0)
 
-    # el halo de antialias es "casi blanco" y CONECTADO al fondo puro
-    halo = whiteness > WHITE_LO
-    bg = ndimage.binary_propagation(bg_core, mask=halo)
+    bg_mask = np.isin(labeled, list(border_labels))
+    alpha = np.where(bg_mask, 0, 255).astype(np.uint8)
 
-    t = np.clip((whiteness - WHITE_LO) / float(WHITE_HI - WHITE_LO), 0.0, 1.0)
-    alpha = np.where(bg, (1.0 - t) * 255.0, 255.0)
-    alpha[bg_core] = 0.0
-
-    # de-matte: quitar el blanco que el antialias mezcló en el borde
-    a = alpha[..., None] / 255.0
-    parcial = bg & (alpha > 0.5)
-    dem = (rgb - 255.0 * (1.0 - a)) / np.maximum(a, 1e-3)
-    rgb_out = rgb.copy()
-    rgb_out[parcial] = np.clip(dem[parcial], 0, 255)
-
-    return rgb_out.astype(np.uint8), alpha.astype(np.uint8), labeled, border
+    return rgb, alpha, labeled, border_labels
 
 
 def remove_enclosed_holes(rgb, alpha, labeled, border_labels):
-    """Huecos blancos encerrados: se borran solo si son fondo (contorno cálido)."""
-    all_labels = set(np.unique(labeled)) - {0} - set(border_labels)
+    """
+    Un hueco blanco encerrado se borra (se hace transparente) SOLO si:
+      - pureza media (min(r,g,b) promedio) >= 253.5, y
+      - calidez del contorno (r - b promedio, excluyendo lineart oscura por
+        luminancia media > 70) >= 20.
+    Área mínima considerada: 40 px. Este es el discriminante fondo-vs-ropa
+    de GUIA_ARTE.md sección 4: un hueco de fondo está rodeado de piel/pelo
+    (cálido), la ropa blanca y su sombra son frías.
+    """
+    all_labels = set(np.unique(labeled)) - {0} - border_labels
+
     for lbl in all_labels:
         mask = labeled == lbl
-        if mask.sum() < 40:
+        area = mask.sum()
+        if area < 40:
             continue
-        if rgb[mask].min(axis=1).mean() < 253.5:
+
+        region = rgb[mask]
+        purity = region.min(axis=1).mean()
+        if purity < 253.5:
             continue
+
         ring = ndimage.binary_dilation(mask, iterations=2) & ~mask
         if ring.sum() == 0:
             continue
-        px = rgb[ring].astype(np.int16)
-        colored = px[px.mean(axis=1) > 70]
+
+        ring_pixels = rgb[ring].astype(np.int16)
+        luminance = ring_pixels.mean(axis=1)
+        colored = ring_pixels[luminance > 70]  # descarta la lineart negra
         if len(colored) == 0:
             continue
-        if colored[:, 0].mean() - colored[:, 2].mean() >= 20:
+
+        warmth = colored[:, 0].mean() - colored[:, 2].mean()  # r - b
+        if warmth >= 20:
             alpha[mask] = 0
+
     return alpha
 
 
 # ---------------------------------------------------------------------------
-# 2. Ojos: candidatos + elección del PAR más plausible
+# 2. Detección de ojos e IPD (GUIA_ARTE.md, secciones 3 y 5)
 # ---------------------------------------------------------------------------
 
-def _eye_candidates(rgba, top_frac=0.42):
-    arr = np.asarray(rgba)
+def detect_eyes(rgba):
+    """
+    Busca iris azul restringido al 42% superior de la imagen.
+    Umbral: b - r > 60 y b - g > 50 (subido para no confundir con brillos
+    azules en la ropa, como pasó con el blazer de Ichika).
+    """
+    arr = np.array(rgba)
     h, w = arr.shape[:2]
     rgb = arr[:, :, :3].astype(np.int16)
-    top = int(h * top_frac)
-    r, g, b = rgb[:top, :, 0], rgb[:top, :, 1], rgb[:top, :, 2]
-    a = arr[:top, :, 3]
+    alpha = arr[:, :, 3]
 
-    mask = (b - r > 45) & (b - g > 30) & (b > 70) & (a > 128)
-    labeled, n = ndimage.label(mask)
+    top_limit = int(h * 0.42)
+    r = rgb[:top_limit, :, 0]
+    g = rgb[:top_limit, :, 1]
+    b = rgb[:top_limit, :, 2]
+    a = alpha[:top_limit, :]
 
-    cands = []
-    for i in range(1, n + 1):
-        ys, xs = np.nonzero(labeled == i)
-        area = len(xs)
-        if area < 12:
-            continue
-        cands.append(dict(x=float(xs.mean()), y=float(ys.mean()), area=area,
-                          bw=int(xs.max() - xs.min() + 1),
-                          bh=int(ys.max() - ys.min() + 1)))
-    return cands
+    blue_mask = (b - r > 60) & (b - g > 50) & (a > 128)
 
+    labeled, n = ndimage.label(blue_mask)
+    if n < 2:
+        raise ValueError(
+            f"solo se detectaron {n} región(es) de iris azul en el 42% "
+            "superior. Si el personaje no tiene ojos azules (Isanari, Raiha, "
+            "Maruo) o los tiene cerrados, usa --ojos x1,y1,x2,y2 copiando las "
+            "coordenadas de las pupilas de otra versión del mismo render."
+        )
 
-def _pick_pair(cands, w):
-    """Par de blobs que se comporta como un par de ojos, no los 2 más grandes."""
-    best, best_score = None, -1.0
-    for A, B in itertools.combinations(cands, 2):
-        if A['x'] > B['x']:
-            A, B = B, A
-        dx = B['x'] - A['x']
-        dy = abs(B['y'] - A['y'])
-        if dx < 10:                      # son el mismo ojo partido
-            continue
-        if dy > 0.30 * dx:               # no están a la misma altura
-            continue
-        if not (0.04 * w <= dx <= 0.60 * w):
-            continue
-        sym = min(A['area'], B['area']) / max(A['area'], B['area'])
-        if sym < 0.30:                   # un iris y una mancha del blazer
-            continue
-        score = (A['area'] + B['area']) * sym * (1.0 - dy / dx)
-        if score > best_score:
-            best_score, best = score, (A, B)
-    return best
+    sizes = ndimage.sum(blue_mask, labeled, index=range(1, n + 1))
+    top_two = np.argsort(sizes)[-2:] + 1
+    centroids = ndimage.center_of_mass(blue_mask, labeled, top_two)
 
-
-def detect_eyes(rgba):
-    arr = np.asarray(rgba)
-    cands = _eye_candidates(rgba)
-    pair = _pick_pair(cands, arr.shape[1])
-    if pair is None:
-        msg = [f"no encontré un par de iris válido ({len(cands)} candidato(s) azul(es))."]
-        for c in sorted(cands, key=lambda c: -c['area'])[:6]:
-            msg.append(f"    x={c['x']:.0f} y={c['y']:.0f} area={c['area']} "
-                       f"caja={c['bw']}x{c['bh']}")
-        msg.append("  Usa --ojos x1,y1,x2,y2 (coordenadas en la imagen ORIGINAL).")
-        raise ValueError("\n".join(msg))
-    A, B = pair
-    return (A['x'], A['y']), (B['x'], B['y']), cands
+    pts = sorted([(c[1], c[0]) for c in centroids])  # (x, y), ordenados por x
+    return pts[0], pts[1]
 
 
 def detect_skirt_center(rgba):
-    arr = np.asarray(rgba)
+    """
+    Centro de masa horizontal de la falda verde, en la mitad inferior de la
+    imagen. Es el eje del cuerpo que pide GUIA_ARTE.md, no el bounding box:
+    el pelo suelto o los brazos abiertos no lo desplazan.
+    Sirve igual con el verde estándar (90,118,63) que con el olivaceo de
+    itsuki_neutral (92,102,74): el criterio es "verde domina", no un color fijo.
+    """
+    arr = np.array(rgba)
     h, w = arr.shape[:2]
     rgb = arr[:, :, :3].astype(np.int16)
-    bs = int(h * 0.5)
-    r, g, b = rgb[bs:, :, 0], rgb[bs:, :, 1], rgb[bs:, :, 2]
-    a = arr[bs:, :, 3]
-    green = (g > r) & (g > b) & (g > 60) & (a > 128)
-    if green.sum() < 100:
-        raise ValueError("no se detectó la falda verde. Usa --eje X (coord. original).")
-    # nos quedamos solo con la componente verde mayor: ignora hojas/reflejos sueltos
-    lab, n = ndimage.label(green)
-    if n > 1:
-        sizes = ndimage.sum(green, lab, index=range(1, n + 1))
-        green = lab == (int(np.argmax(sizes)) + 1)
-    cols = green.sum(axis=0)
-    return float(np.average(np.arange(w), weights=cols))
+    alpha = arr[:, :, 3]
+
+    bottom_start = int(h * 0.5)
+    r = rgb[bottom_start:, :, 0]
+    g = rgb[bottom_start:, :, 1]
+    b = rgb[bottom_start:, :, 2]
+    a = alpha[bottom_start:, :]
+
+    green_mask = (g > r) & (g > b) & (g > 60) & (a > 128)
+
+    if green_mask.sum() < 100:
+        raise ValueError(
+            "no se pudo detectar la falda verde automáticamente. "
+            "Usa --eje X para indicar el eje horizontal a mano (coordenada X "
+            "en la imagen ORIGINAL, sin escalar)."
+        )
+
+    col_weights = green_mask.sum(axis=0)
+    x_center = float(np.average(np.arange(w), weights=col_weights))
+    return x_center
 
 
 # ---------------------------------------------------------------------------
-# 3. Escalado con alpha premultiplicado
+# 3. Escalado con alpha premultiplicado (GUIA_ARTE.md, sección 4)
 # ---------------------------------------------------------------------------
 
 def resize_premultiplied(rgba_arr, new_size):
+    """
+    Si se reescala el RGBA sin premultiplicar, Lanczos mezcla el RGB de los
+    píxeles transparentes (que sigue siendo el blanco del fondo ya borrado)
+    dentro del borde, generando halo. Se premultiplica, se escala cada canal
+    en precisión float, y se despremultiplica al final.
+    """
     arr = rgba_arr.astype(np.float32)
     rgb = arr[..., :3]
     alpha = arr[..., 3]
     premult = rgb * (alpha[..., None] / 255.0)
 
-    chans = []
+    channels = []
     for c in range(3):
-        plane = np.ascontiguousarray(premult[..., c])
-        im = Image.fromarray(plane, mode="F").resize(new_size, Image.LANCZOS)
-        chans.append(np.array(im))
+        im = Image.fromarray(premult[..., c], mode="F")
+        im = im.resize(new_size, Image.LANCZOS)
+        channels.append(np.array(im))
 
-    a_im = Image.fromarray(np.ascontiguousarray(alpha), mode="F")
-    new_alpha = np.clip(np.array(a_im.resize(new_size, Image.LANCZOS)), 0, 255)
+    alpha_im = Image.fromarray(alpha, mode="F").resize(new_size, Image.LANCZOS)
+    new_alpha = np.array(alpha_im)
 
-    new_pre = np.clip(np.stack(chans, axis=-1), 0, None)
+    new_premult = np.stack(channels, axis=-1)
     with np.errstate(divide="ignore", invalid="ignore"):
-        new_rgb = np.where(new_alpha[..., None] > 1.0,
-                           new_pre / np.maximum(new_alpha[..., None] / 255.0, 1e-3),
-                           0)
-    return np.dstack([np.clip(new_rgb, 0, 255), new_alpha]).astype(np.uint8)
+        new_rgb = np.where(
+            new_alpha[..., None] > 1.0,
+            new_premult / (new_alpha[..., None] / 255.0),
+            0,
+        )
+
+    new_rgb = np.clip(new_rgb, 0, 255)
+    new_alpha = np.clip(new_alpha, 0, 255)
+    return np.dstack([new_rgb, new_alpha]).astype(np.uint8)
 
 
 # ---------------------------------------------------------------------------
-# 4. Extensión inferior (usando una fila OPACA, no la del antialias)
+# 4. Extensión inferior automática (GUIA_ARTE.md, sección 5)
 # ---------------------------------------------------------------------------
 
-def extend_bottom_if_cropped(canvas, max_gap=BOTTOM_EXTEND_MAX, offset=2):
+def extend_bottom_if_cropped(canvas, max_gap=BOTTOM_EXTEND_MAX):
+    """
+    Si el render venía cortado por el borde del frame y el contenido se queda
+    hasta max_gap px corto del final del lienzo, prolonga la última fila
+    (ahí solo hay pierna, el corte es del encuadre, no del personaje).
+    """
     alpha = canvas[:, :, 3]
-    rows = np.where(alpha.max(axis=1) > 8)[0]
-    if len(rows) == 0:
+    rows_with_content = np.where(alpha.max(axis=1) > 0)[0]
+    if len(rows_with_content) == 0:
         return canvas
-    last = int(rows[-1])
-    gap = (CANVAS_H - 1) - last
-    if not (0 < gap <= max_gap):
-        return canvas
-    src = max(0, last - offset)   # evita copiar la fila semitransparente del borde
-    canvas = canvas.copy()
-    canvas[src + 1:CANVAS_H, :, :] = canvas[src, :, :]
+
+    last_row = rows_with_content[-1]
+    gap = (CANVAS_H - 1) - last_row
+    if 0 < gap <= max_gap:
+        canvas = canvas.copy()
+        fill_row = canvas[last_row, :, :]
+        canvas[last_row + 1:CANVAS_H, :, :] = fill_row
     return canvas
 
 
@@ -214,155 +246,110 @@ def extend_bottom_if_cropped(canvas, max_gap=BOTTOM_EXTEND_MAX, offset=2):
 # ---------------------------------------------------------------------------
 
 def main():
-    p = argparse.ArgumentParser(description="Normaliza un sprite al estándar del set.")
-    p.add_argument("entrada")
-    p.add_argument("salida")
-    p.add_argument("--ojos", metavar="x1,y1,x2,y2")
-    p.add_argument("--eje", type=float, metavar="X")
-    p.add_argument("--ipd", type=float, help="Fuerza la IPD original en px (salta la detección de escala).")
-    p.add_argument("--corte", type=int, metavar="Y",
-                   help="Corta en esta fila Y (imagen ORIGINAL) y escala para que el corte llene el fondo del lienzo.")
-    p.add_argument("--duro", action="store_true", help="Alpha binario como en la v1.")
-    g = p.add_mutually_exclusive_group()
-    g.add_argument("--huecos", action="store_true")
-    g.add_argument("--sin-huecos", action="store_true")
-    args = p.parse_args()
+    parser = argparse.ArgumentParser(
+        description="Normaliza un sprite de hermana al estándar del set "
+                     "(760x930, ojos en y=199, IPD=77.2px, eje = centro de falda)."
+    )
+    parser.add_argument("entrada")
+    parser.add_argument("salida")
+    parser.add_argument(
+        "--ojos", metavar="x1,y1,x2,y2",
+        help="Coordenadas manuales de las dos pupilas en la imagen ORIGINAL "
+             "(usar si el ojo no es azul, o está cerrado)."
+    )
+    parser.add_argument(
+        "--eje", type=float, metavar="X",
+        help="Coordenada X manual del eje del cuerpo (centro de la falda), "
+             "en la imagen ORIGINAL."
+    )
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "--huecos", action="store_true",
+        help="Fuerza el borrado de huecos blancos encerrados (comportamiento por defecto)."
+    )
+    group.add_argument(
+        "--sin-huecos", action="store_true",
+        help="Desactiva el borrado de huecos blancos encerrados "
+             "(caso Yotsuba: usar --solo-halo en limpiar_halo.py en su lugar)."
+    )
+    args = parser.parse_args()
 
     img = Image.open(args.entrada).convert("RGBA")
-    rgb, alpha, labeled, border = remove_background(img, suave=not args.duro)
-    if not args.sin_huecos:
-        alpha = remove_enclosed_holes(rgb, alpha, labeled, border)
-    rgba = np.dstack([rgb, alpha])
-    H, W = rgba.shape[:2]
+    arr0 = np.array(img)
 
+    # Si el PNG ya trae transparencia real (p. ej. salida de quitar_fondo_ia.py o
+    # quitar_fondo_negro.py), se respeta y NO se toca el fondo ni los huecos.
+    ya_transparente = (arr0[..., 3] < 250).mean() > 0.05
+    if ya_transparente:
+        print("Entrada con transparencia real: se conserva su alpha.")
+        rgba = arr0
+    else:
+        rgb, alpha, labeled, border_labels = remove_background(img)
+        if not args.sin_huecos:
+            alpha = remove_enclosed_holes(rgb, alpha, labeled, border_labels)
+        rgba = np.dstack([rgb, alpha])
+
+    # --- Ojos / IPD ---
     if args.ojos:
-        v = [float(x) for x in args.ojos.split(",")]
-        if len(v) != 4:
+        parts = [float(v) for v in args.ojos.split(",")]
+        if len(parts) != 4:
             sys.exit("--ojos requiere 4 valores: x1,y1,x2,y2")
-        p1, p2 = (v[0], v[1]), (v[2], v[3])
+        p1, p2 = (parts[0], parts[1]), (parts[2], parts[3])
     else:
         try:
-            p1, p2, _ = detect_eyes(rgba)
+            p1, p2 = detect_eyes(rgba)
         except ValueError as e:
-            sys.exit(f"Error detectando ojos:\n  {e}")
+            sys.exit(f"Error detectando ojos: {e}")
 
     (x1, y1), (x2, y2) = p1, p2
-    ipd_raw = args.ipd if args.ipd else float(np.hypot(x2 - x1, y2 - y1))
+    ipd_raw = float(np.hypot(x2 - x1, y2 - y1))
     eye_y_raw = (y1 + y2) / 2.0
+    scale = TARGET_IPD / ipd_raw
 
+    # --- Eje horizontal (centro de la falda) ---
     if args.eje is not None:
         axis_x_raw = args.eje
-    elif args.ojos:
-        axis_x_raw = (x1 + x2) / 2.0
     else:
         try:
             axis_x_raw = detect_skirt_center(rgba)
         except ValueError as e:
             sys.exit(f"Error detectando eje: {e}")
 
+    print(f"IPD detectada: {ipd_raw:.1f} px -> escala {scale:.3f}")
+    print(f"Ojos en y={eye_y_raw:.1f} (original) -> se mueve a y={EYE_ROW}")
+    print(f"Eje del cuerpo en x={axis_x_raw:.1f} (original)")
 
-    # techo real de la cabeza y fin real del dibujo
-    filas_dibujo = np.where(rgba[:, :, 3].max(axis=1) > 8)[0]
-    y_top_raw = int(filas_dibujo[0])
-    y_bottom_dibujo = int(filas_dibujo[-1])
-    max_scale_cabeza = EYE_ROW / (eye_y_raw - y_top_raw)
-
-    if args.corte is not None:
-        if not (eye_y_raw < args.corte < H):
-            sys.exit(f"--corte debe estar entre {eye_y_raw:.0f} (ojos) y {H - 1}.")
-
-        scale = (CANVAS_H - EYE_ROW + 3) / (args.corte - eye_y_raw)
-        if scale > max_scale_cabeza:
-            print(f"AVISO: se reduce la escala de {scale:.4f} a {max_scale_cabeza:.4f} "
-                  f"para no cortar la cabeza/mechón.", file=sys.stderr)
-            scale = max_scale_cabeza
-
-        # con la escala YA definitiva, recalculamos dónde cortar en la imagen
-        # ORIGINAL para llenar el lienzo con piel/tela real, no estirada
-        corte_real = eye_y_raw + (CANVAS_H - EYE_ROW) / scale
-        if corte_real <= y_bottom_dibujo:
-            corte_final = int(round(corte_real))
-            print(f"Corte ajustado a Y={corte_final} (usa pierna real, no estirada).")
-        else:
-            corte_final = y_bottom_dibujo
-            print(f"AVISO: no hay pierna suficiente ({y_bottom_dibujo}px) para llenar "
-                  f"el lienzo a esta escala -> se estirará un poco el resto.",
-                  file=sys.stderr)
-
-        rgba[corte_final:, :, 3] = 0
-
-    else:
-        scale = TARGET_IPD / ipd_raw
-        if scale > max_scale_cabeza:
-            print(f"AVISO: se reduce la escala de {scale:.4f} a {max_scale_cabeza:.4f} "
-                  f"para no cortar la cabeza/mechón.", file=sys.stderr)
-            scale = max_scale_cabeza
-        frac = ipd_raw / W
-        if not (0.03 <= frac <= 0.30):
-            print(f"AVISO: IPD={ipd_raw:.1f}px = {frac*100:.1f}% del ancho. Sospechoso.\n"
-                  f"       Casi seguro la detección de ojos falló -> usa --ojos o --ipd.",
-                  file=sys.stderr)
-            
-
-    print(f"Ojos: ({x1:.0f},{y1:.0f}) y ({x2:.0f},{y2:.0f})")
-    print(f"IPD {ipd_raw:.1f}px -> escala {scale:.4f}   (eje x={axis_x_raw:.1f})")
-
-    # techo real de la cabeza (incluye mechón, lazo, diadema, etc.)
-    filas_cabeza = np.where(rgba[:, :, 3].max(axis=1) > 8)[0]
-    y_top_raw = int(filas_cabeza[0])
-    max_scale_cabeza = EYE_ROW / (eye_y_raw - y_top_raw)
-    if scale > max_scale_cabeza:
-        print(f"AVISO: se reduce la escala de {scale:.4f} a {max_scale_cabeza:.4f} "
-              f"para no cortar la cabeza/mechón.", file=sys.stderr)
-        scale = max_scale_cabeza
-
-    ipd_final = ipd_raw * scale
-    corte_ideal = eye_y_raw + (CANVAS_H - EYE_ROW) * ipd_raw / TARGET_IPD
-    print(f"IPD final: {ipd_final:.1f}px (estándar {TARGET_IPD})")
-    if args.corte is not None:
-        print(f"Para tamaño estándar usa --corte {corte_ideal:.0f}")
-
-    new_w, new_h = max(1, round(W * scale)), max(1, round(H * scale))
+    # --- Escalado ---
+    h, w = rgba.shape[:2]
+    new_w = max(1, round(w * scale))
+    new_h = max(1, round(h * scale))
     resized = resize_premultiplied(rgba, (new_w, new_h))
 
-    eye_y_s = eye_y_raw * scale
-    axis_x_s = axis_x_raw * scale
+    eye_y_scaled = eye_y_raw * scale
+    axis_x_scaled = axis_x_raw * scale
 
+    # --- Composición sobre el lienzo 760x930 ---
     canvas = np.zeros((CANVAS_H, CANVAS_W, 4), dtype=np.uint8)
-    off_x = round(CANVAS_W / 2 - axis_x_s)
-    off_y = round(EYE_ROW - eye_y_s)
 
-    sx0, sy0 = max(0, -off_x), max(0, -off_y)
-    dx0, dy0 = max(0, off_x), max(0, off_y)
-    cw = min(new_w - sx0, CANVAS_W - dx0)
-    ch = min(new_h - sy0, CANVAS_H - dy0)
+    offset_x = round(CANVAS_W / 2 - axis_x_scaled)
+    offset_y = round(EYE_ROW - eye_y_scaled)
 
-    if cw <= 0 or ch <= 0:
-        sys.exit("ERROR: el sprite escalado cae entero fuera del lienzo. Revisa --ojos/--eje.")
+    src_x0 = max(0, -offset_x)
+    src_y0 = max(0, -offset_y)
+    dst_x0 = max(0, offset_x)
+    dst_y0 = max(0, offset_y)
 
-    canvas[dy0:dy0 + ch, dx0:dx0 + cw] = resized[sy0:sy0 + ch, sx0:sx0 + cw]
+    copy_w = min(new_w - src_x0, CANVAS_W - dst_x0)
+    copy_h = min(new_h - src_y0, CANVAS_H - dst_y0)
 
-    # informe de recorte real
-    ys, xs = np.nonzero(resized[:, :, 3] > 8)
-    if len(xs):
-        bx0, bx1, by0, by1 = xs.min(), xs.max(), ys.min(), ys.max()
-        perdido = []
-        if by0 < sy0:                                perdido.append(f"arriba {sy0 - by0}px (CABEZA)")
-        if by1 >= sy0 + ch and args.corte is None:   perdido.append(f"abajo {by1 - (sy0 + ch) + 1}px")
-        if bx0 < sx0:                                perdido.append(f"izquierda {sx0 - bx0}px")
-        if bx1 >= sx0 + cw:                          perdido.append(f"derecha {bx1 - (sx0 + cw) + 1}px")
-        if perdido:
-            print("AVISO: se recortó contenido -> " + ", ".join(perdido), file=sys.stderr)
-        else:
-            print(f"Sin recorte. Aire sobre la cabeza: {by0 + off_y}px")
-
-    if args.corte is None:
-        canvas = extend_bottom_if_cropped(canvas)
+    if copy_w > 0 and copy_h > 0:
+        canvas[dst_y0:dst_y0 + copy_h, dst_x0:dst_x0 + copy_w] = \
+            resized[src_y0:src_y0 + copy_h, src_x0:src_x0 + copy_w]
     else:
-        canvas = extend_bottom_if_cropped(canvas, max_gap=CANVAS_H, offset=5)
+        print("AVISO: el sprite escalado no cae dentro del lienzo. "
+              "Revisa --ojos / --eje.", file=sys.stderr)
 
-    filas_out = np.where((canvas[:, :, 3] > 200).sum(axis=1) > 3)[0]
-    print(f"Último renglón dibujado en el lienzo: Y={filas_out[-1]} (debería ser ~929)")
+    canvas = extend_bottom_if_cropped(canvas)
 
     Image.fromarray(canvas, mode="RGBA").save(args.salida)
     print(f"Guardado: {args.salida} ({CANVAS_W}x{CANVAS_H})")

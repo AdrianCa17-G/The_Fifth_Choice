@@ -194,6 +194,7 @@ image nino neutral   = "sprites/nino_sprites/nino_neutral.png"
 image nino pillada   = "sprites/nino_sprites/nino_pillada.png"
 image nino nerviosa   = "sprites/nino_sprites/nino_nerviosa.png"
 image nino molesta   = "sprites/nino_sprites/nino_molesta.png"
+image nino molesta1   = "sprites/nino_sprites/nino_molesta1.png"
 
 image miku neutral   = "sprites/miku_sprites/miku_neutral.png"
 image miku animada   = "sprites/miku_sprites/miku_animada.png"

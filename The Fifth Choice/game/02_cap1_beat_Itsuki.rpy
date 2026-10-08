@@ -54,6 +54,18 @@ label beat_Itsuki:
 
     narrador "Lo tenía abierto en una página y la vista en otro lado."
 
+    if not itsuki_visitada_cap1:
+
+        narrador "Desde la puerta alcancé a ver la página."
+
+        narrador "Un solo ejercicio, con un círculo a lápiz alrededor, repasado tantas veces que había hundido el papel."
+
+        mc_pensamiento "Lo reconocí."
+
+        mc_pensamiento "Era el de la hoja de diagnóstico del primer día."
+
+        mc_pensamiento "El que la tuvo tres minutos atascada mientras yo le decía que no pensaba ayudarla."
+
     mc_pensamiento "La primera vez que subí aquí, ella dijo que venía a tomar aire."
 
     mc_pensamiento "A alejarse de gente desagradable."
@@ -300,6 +312,12 @@ label beat_Itsuki:
     mc_pensamiento "Ella la va a pasar igual que hoy:" 
     
     mc_pensamiento "Sola, con un cuaderno que no necesita, en el único sitio que le quedaba para no estarlo del todo."
+
+    if not itsuki_visitada_cap1:
+
+        mc_pensamiento "Sigue en el mismo ejercicio." 
+        
+        mc_pensamiento "No lo ha resuelto y no se lo va a preguntar a nadie."
 
     mc_pensamiento "No sé si vine a ayudarla o solo a quitarle su tiempo."
  
