@@ -39,9 +39,7 @@ label hub_2:
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
 
-    ## El ultimátum se activa dentro de beat_Nino si hay 2 desaires.
-    call beat_Nino
-    jump interconexion_3
+    jump interconexion_4
 
 
 

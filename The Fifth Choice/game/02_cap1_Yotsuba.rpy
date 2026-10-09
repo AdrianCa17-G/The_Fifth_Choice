@@ -111,7 +111,7 @@ label hub_Yotsuba:
 
     mc "Te va a dar algo si sigues hablando contigo misma."
 
-    show yotsuba incomoda
+    show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "¡No estaba hablando sola! ¡Estaba haciendo técnica de concentración mental!" 
@@ -126,7 +126,7 @@ label hub_Yotsuba:
 
     narrador "Pausa."
 
-    show yotsuba neutral at pj(0.5)
+    show yotsuba neutral at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "…¿Cuánto llevas tú [mc]?"
@@ -244,7 +244,7 @@ label hub_Yotsuba:
     
     narrador "Y volvió a mirarme con esa sonrisa intacta."
 
-    show yotsuba sonriendo 
+    show yotsuba sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "¡Bueno!"
@@ -262,6 +262,9 @@ label hub_Yotsuba:
     narrador " como si con eso pudiera sacudirse también lo que acababa de decir."
 
     yotsuba "¡Vamos, no hay tiempo que perder! ¡El sol no espera!"
+
+    show yotsuba  at pj_calla(0.5)
+    with disolucion_lenta
     
     narrador "El sol ya se había ido hacía rato; solo quedaba la luz naranja de emergencia."
 
@@ -322,7 +325,7 @@ label yotsuba_m4a:
 
     mc "Antes de eso."
 
-    show yotsuba sorprendida 
+    show yotsuba sorprendida at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "¿Antes de qué?"
@@ -335,7 +338,7 @@ label yotsuba_m4a:
 
     mc "Lo sé. Pero te saltaste algo."
 
-    show yotsuba neutral 
+    show yotsuba neutral at pj_habla(0.5)
     with disolucion_lenta
 
     narrador "Su sonrisa no desapareció,"
@@ -358,7 +361,7 @@ label yotsuba_m4a:
 
     narrador "Un silencio de una Yotsuba que está comprobando si todo eso fue verdad."
 
-    show yotsuba incomoda at pj(0.5)
+    show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "Oye [mc]… ¿Me estabas observando?"
@@ -371,7 +374,7 @@ label yotsuba_m4a:
 
     mc "Ninguna de tus hermanas lo hace. Yo tampoco. Y lo intento."
 
-    show yotsuba sorprendida at pj(0.5)
+    show yotsuba sorprendida at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "…Pero eso no entra en ningún examen."
@@ -394,7 +397,7 @@ label yotsuba_m4a:
 
     narrador "Pasó un momento largo."
 
-    show yotsuba neutral at pj(0.5)
+    show yotsuba neutral at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "No sé si eso es verdad o si eres muy bueno animando a la gente."
@@ -403,12 +406,15 @@ label yotsuba_m4a:
 
     narrador "Lo pensó."
 
-    show yotsuba sonriendo at pj(0.5)
+    show yotsuba sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "…Eso también es verdad."
 
     mc "Dame el cronómetro."
+
+    show yotsuba at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Me lo pasó sin decir nada más."
 
@@ -425,6 +431,9 @@ label yotsuba_m4b:
     $ sumar_punto("yotsuba", 1)
 
     narrador "Cogí el cronómetro que me tendió."
+
+    show yotsuba sonriendo at pj_habla(0.5)
+    with disolucion_lenta
 
     yotsuba "¡Genial! ¡Preparado!"
 
@@ -465,6 +474,9 @@ label yotsuba_m4b:
 
     yotsuba "¡Otra vuelta! ¡Esta va a ser mejor!"
 
+    show yotsuba sonriendo at pj_calla(0.5)
+    with disolucion_lenta
+
     narrador "Y lo fue."
 
     narrador "No conseguí ayudarla a sentirse mejor, pero tampoco la hice sentir peor."
@@ -482,17 +494,20 @@ label yotsuba_m4c:
 
     mc "Entonces concéntrate en correr. Si es lo tuyo, hazlo bien."
 
-    show yotsuba incomoda at pj(0.5)
+    show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
 
     narrador "Asintió."
 
     narrador "Rápido, una sola vez, como quien recibe una instrucción."
 
-    show yotsuba sonriendo at pj(0.5)
+    show yotsuba sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "¡Tienes razón! ¡Eso estaba haciendo! ¡Qué bueno que lo entiendas!"
+
+    show yotsuba sonriendo at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Volvió a la pista sin esperar respuesta. La sonrisa era idéntica
     a la de antes."

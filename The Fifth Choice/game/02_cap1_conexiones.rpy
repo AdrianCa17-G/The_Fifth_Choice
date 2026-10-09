@@ -44,7 +44,7 @@ label reaccion_ichika:
 
     play music ichika fadein 2.0
 
-    if rama_hub1 == "calida":
+    if rama_hub == "calida":
 
         show ichika sonriendo at pj_habla(0.5)
         with dissolve
@@ -88,7 +88,7 @@ label reaccion_ichika:
         mc_pensamiento "No supe qué contestar. Nadie me lo había preguntado en años."
 
 
-    elif rama_hub1 == "tibia":
+    elif rama_hub == "tibia":
 
         show ichika sonriendo at pj_habla(0.5)
         with dissolve
@@ -151,7 +151,7 @@ label reaccion_nino:
 
     play music nino fadein 1.5 fadeout 2.0
 
-    if rama_hub1 == "calida":
+    if rama_hub == "calida":
 
         show nino neutral at pj_habla(0.5)
         with dissolve
@@ -194,7 +194,7 @@ label reaccion_nino:
 
         narrador "Se fue rápido. Pero esta vez se le olvidó cruzar los brazos."
 
-    elif rama_hub1 == "tibia":
+    elif rama_hub == "tibia":
 
         show nino neutral at pj_habla(0.5)
         with dissolve
@@ -245,10 +245,7 @@ label reaccion_miku:
 
     play music miku fadein 2.0
 
-    show miku neutral at pj(0.5)
-    with dissolve
-
-    if rama_hub1 == "calida":
+    if rama_hub == "calida":
 
         show miku relajada at pj_habla(0.5)
         with disolucion_lenta
@@ -292,7 +289,7 @@ label reaccion_miku:
 
         narrador "Se fue con los audífonos al cuello. Sin tocarlos."
 
-    elif rama_hub1 == "tibia":
+    elif rama_hub == "tibia":
 
         show miku neutral at pj_habla(0.5)
         with dissolve
@@ -342,7 +339,7 @@ label reaccion_yotsuba:
 
     play music yotsuba fadein 1.5 fadeout 2.0
 
-    if rama_hub1 == "calida":
+    if rama_hub == "calida":
 
         show yotsuba sonriendo at pj_habla(0.5)
         with dissolve
@@ -393,7 +390,7 @@ label reaccion_yotsuba:
         show yotsuba at pj_calla(0.5)
         with disolucion_lenta
 
-    elif rama_hub1 == "tibia":
+    elif rama_hub == "tibia":
 
         show yotsuba sonriendo at pj_habla(0.5)
         with dissolve
@@ -445,7 +442,7 @@ label reaccion_itsuki:
 
     play music itsuki fadein 2.0
 
-    if rama_hub1 == "calida":
+    if rama_hub == "calida":
 
         show itsuki neutral at pj_habla(0.5)
         with dissolve
@@ -474,7 +471,7 @@ label reaccion_itsuki:
 
         narrador "Pero tampoco giró la silla hacia la ventana."
 
-    elif rama_hub1 == "tibia":
+    elif rama_hub == "tibia":
 
         show itsuki molesta at pj_habla(0.5)
         with dissolve
@@ -847,7 +844,9 @@ label interconexion_2:
     scene bg_cuarto_mc
     with fade
 
-    narrador "Esa noche no abrí la libreta. Ya sabía lo que decía."
+    narrador "Llegué a mi habitación" 
+    
+    narrador "No abrí la libreta. Ya sabía lo que decía."
 
     if rama_hub1 == "calida":
 
@@ -1183,7 +1182,7 @@ label interconexion_3:
 
     if not itsuki_visitada_cap1:
 
-        narrador "Esa noche saqué mi copia de la hoja de diagnóstico del primer día."
+        narrador "Entré a mi habitación y saqué mi copia de la hoja de diagnóstico del primer día."
 
         mc_pensamiento "Busqué el ejercicio que Itsuki tenía rodeado en el cuaderno."
 
@@ -1197,7 +1196,7 @@ label interconexion_3:
 
     else:
 
-        narrador "Esa noche volví a pensar en la azotea."
+        narrador "Entré a mi habitación y volví a pensar en lo de la azotea."
 
         mc_pensamiento "En el aula se atascó y se encerró sobre el cuaderno."
 
@@ -1238,7 +1237,12 @@ label interconexion_3:
 
     narrador "Las cinco ya estaban en el aula cuando entré."
 
+    show ichika at pj_calla(X_ICHIKA)
+    show nino at pj_calla(X_NINO)
+    show miku at pj_calla(X_MIKU)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    show itsuki at pj_calla(X_ITSUKI)
+    with disolucion_lenta
 
     yotsuba "¡[mc]! ¿Cómo estás? ¡Tienes cara de haber peleado con un oso!"
 
@@ -1365,7 +1369,7 @@ label interconexion_4:
     scene bg_cuarto_mc
     with fade
 
-    narrador "Esa noche me quedé un rato con la luz apagada."
+    narrador "Entré a mi habitación y me quedé un rato con la luz apagada."
 
     if rama_hub1 == "calida":
 
@@ -1435,7 +1439,7 @@ label interconexion_4:
 
             mc_pensamiento "Seguro me andan humillando de la peor manera posible."
 
-            mc_pensaiento "O inventandome apodos tontos."
+            mc_pensamiento "O inventandome apodos tontos."
 
             mc_pensamiento "Solo espero no lo publiquen en algún lado."
 
@@ -1678,6 +1682,9 @@ label interconexion_4:
 
     mc "¿Alguien sabe dónde está Nino?"
 
+    show miku neutral at pj_calla(X_MIKU)
+    show yotsuba sonriendo at pj_calla(X_YOTSUBA)
+    show itsuki neutral at pj_calla(X_ITSUKI)
     show ichika sonriendo at pj_habla(X_ICHIKA)
     with disolucion_lenta
 

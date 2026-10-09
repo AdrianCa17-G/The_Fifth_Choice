@@ -176,7 +176,7 @@ label hub_Nino:
 
     mc "Se te da mejor de lo que aparentas en el salón."
 
-    show nino molesta at pj(0.5)
+    show nino molesta at pj_habla(0.5)
     with disolucion_lenta
 
     nino "No es lo mismo leer que..."
@@ -197,7 +197,7 @@ label hub_Nino:
 
     narrador "Ahí sí levantó la vista."
 
-    show nino nerviosa at pj(0.5)
+    show nino nerviosa at pj_habla(0.5)
     with disolucion_lenta
 
     nino "…"
@@ -250,6 +250,9 @@ label hub_Nino:
     nino "…"
 
     nino "Olvida lo que dije."
+
+    show nino neutral at pj_calla(0.5) 
+    with dissolve
 
     narrador "Se cortó a mitad de frase, algo que ella nunca hace por accidente."
 
@@ -307,6 +310,9 @@ label nino_m4a:
 
     mc "Tienes razón en desconfiar."
 
+    show nino neutral at pj_habla(0.5) 
+    with dissolve
+
     nino "…¿Qué?"
 
     mc "No te voy a decir que esta vez es distinto."
@@ -319,7 +325,7 @@ label nino_m4a:
 
     narrador "Se quedó quieta, con la cesta a medio subir, como si esperara el resto de la frase que no llegó."
 
-    show nino nerviosa at pj(0.5)
+    show nino nerviosa at pj_habla(0.5)
     with disolucion_lenta
 
     nino "…"
@@ -332,7 +338,7 @@ label nino_m4a:
 
     narrador "Lo pensó un momento, sin la hostilidad de antes ni la calma que tampoco tiene."
 
-    show nino molesta at pj(0.5)
+    show nino molesta at pj_habla(0.5)
     with disolucion_lenta
 
     nino "Eso no significa que confíe en ti."
@@ -343,17 +349,20 @@ label nino_m4a:
 
     narrador "Se quedó mirando la tarjeta de receta un segundo más, antes de guardarla del todo."
 
-    show nino pillada at pj(0.5)
+    show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
     nino "…No le digas a mis hermanas que hablé de más."
 
     mc "No dije nada de más."
 
-    show nino neutral at pj(0.5)
+    show nino neutral at pj_habla(0.5)
     with disolucion_lenta
 
     nino "Tú entendiste. Con eso alcanza."
+
+    show nino at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Terminó de subir la cesta al brazo y siguió caminando hacia la caja, sin esperarme, pero sin decirme que me fuera tampoco."
 
@@ -377,7 +386,7 @@ label nino_m4b:
 
     narrador "Levanté la otra cesta que había dejado en el suelo y empecé a caminar hacia la caja."
 
-    show nino molesta at pj(0.5)
+    show nino molesta at pj_habla(0.5)
     with disolucion_lenta
 
     nino "¿Qué haces?"
@@ -390,7 +399,7 @@ label nino_m4b:
 
     narrador "Se quedó un segundo sin saber qué contestar a eso."
 
-    show nino neutral at pj(0.5)
+    show nino neutral at pj_habla(0.5)
     with disolucion_lenta
 
     nino "…Esa cesta pesa más de lo que parece."
@@ -400,6 +409,9 @@ label nino_m4b:
     narrador "Fue lo más parecido a un agradecimiento que iba a conseguir, y terminó caminando a mi lado sin discutirlo."
 
     nino "Esto no significa nada."
+
+    show nino neutral at pj_calla(0.5)
+    with disolucion_lenta
 
     mc "No dije que significara algo."
 
@@ -429,6 +441,9 @@ label nino_m4c:
 
     narrador "No funcionó."
 
+    show nino neutral at pj_habla(0.5)
+    with disolucion_lenta
+
     nino "…"
 
     narrador "Se rió, pero no de gracia."
@@ -448,6 +463,9 @@ label nino_m4c:
     narrador "Terminó de acomodar la cesta en el brazo, ya sin mirarme."
 
     nino "Guárdate la promesa. No la voy a necesitar."
+
+    show nino neutral at pj_calla(0.5)
+    with disolucion_lenta
 
     mc_pensamiento "Le dije exactamente lo que no quería oír."
 

@@ -290,7 +290,7 @@ label hub_Miku:
 
     miku "Se usa para cuando ayudas a alguien que no soportas, porque hay cosas que no se hacen."
 
-    show miku neutral at pj(0.5)
+    show miku neutral at pj_habla(0.5)
     with disolucion_lenta
 
     miku "Aunque seguramente no pasó."
@@ -305,7 +305,7 @@ label hub_Miku:
 
     miku "Alguien se la vendió."
 
-    show miku animada at pj(0.5)
+    show miku animada at pj_habla(0.5)
     with disolucion_lenta
 
     miku "Y a mí eso me parece mucho más—"
@@ -324,6 +324,9 @@ label hub_Miku:
     miku "…"
 
     miku "…Perdón. Hablé mucho."
+
+    show miku at pj_calla(0.5)
+    with dissolve
 
     narrador "Y volvió a abrir el libro por donde tenía el dedo."
 
@@ -417,6 +420,9 @@ label miku_m4a:
 
     miku "…Lo de la sal está en la ciento veinte."
 
+    show miku at pj_calla(0.5)
+    with disolucion_lenta
+
     narrador "Lo dijo despacio, como quien termina una cuenta."
 
     mc_pensamiento "Ahí estaba lo que acababa de entender."
@@ -426,8 +432,6 @@ label miku_m4a:
     mc_pensamiento "Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche en ello."
 
     mc "Voy a llegar a la ciento veinte."
-
-    miku "…"
 
     mc "Lo que acabas de contarme son tres preguntas del examen."
 
@@ -443,6 +447,9 @@ label miku_m4a:
     miku "…No es lo mismo."
 
     mc "Es exactamente lo mismo, y lo vas a comprobar en tres semanas."
+
+    show miku at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "No me contestó."
 
@@ -474,13 +481,16 @@ label miku_m4b:
 
     miku "…Eso no es difícil."
 
+    show miku neutral at pj_calla(0.5)
+    with disolucion_lenta
+
     narrador "Lo dijo sin ninguna gracia, como quien cierra una puerta con educación."
 
     mc_pensamiento "Le acabo de poner una etiqueta."
 
     mc_pensamiento "Y ella lleva toda la vida escuchando etiquetas comparadas con otras cuatro."
 
-    narrador" El libro le subió hasta media cara, y ahí se quedó."
+    narrador "El libro le subió hasta media cara, y ahí se quedó."
 
     jump miku_m5
 
@@ -504,7 +514,7 @@ label miku_m4c:
 
     narrador "Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba."
 
-    show miku neutral at pj(0.5)
+    show miku neutral at pj_habla(0.5)
     with disolucion_lenta
 
     miku "…Ya lo sé."
@@ -517,6 +527,9 @@ label miku_m4c:
     
     $ duck()
     play sound sfx_silla volume 2.5
+
+    show miku at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Recogió los cuatro libros, los apiló y se subió los audífonos."
 

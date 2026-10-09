@@ -130,6 +130,9 @@ label hub_Ichika:
 
     mc "Luces demasiado cansada"
 
+    show ichika agotada at pj_habla(0.5)
+    with disolucion_lenta
+
     ichika "¿Yo?"
 
     ichika "Jaja, te preocupas demasiado por mi [mc]"
@@ -144,7 +147,7 @@ label hub_Ichika:
 
     mc "No existe eso."
 
-    show ichika sonriendo at pj(0.5)
+    show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "¡Claro que existe! ¡Lo inventé yo hace cinco minutos!"
@@ -161,7 +164,7 @@ label hub_Ichika:
 
     mc "¿Cuánto tiempo dormiste anoche?"
 
-    show ichika neutral at pj(0.5)
+    show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "¡Lo suficiente!"
@@ -180,7 +183,7 @@ label hub_Ichika:
 
     narrador "Se lo pregunté sin pensar mucho, solo para cambiar de tema yo también."
 
-    show ichika determinada at pj(0.5)
+    show ichika determinada at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "Martes a las cinco y veinte. Nunca antes de eso."
@@ -197,7 +200,7 @@ label hub_Ichika:
 
     mc "Nadie improvisa ese número tan rápido."
 
-    show ichika sonriendo at pj(0.5)
+    show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "¡Es que soy muy organizada! ¡Parte del oficio!"
@@ -248,7 +251,7 @@ label hub_Ichika:
 
     play music descubrimiento fadein 3.5
 
-    show ichika agotada at pj(0.5)
+    show ichika agotada at pj_calla(0.5)
     with dissolve
 
     mc_pensamiento "Tres cosas que acabo de ver y que ella escondió detrás de un chiste."
@@ -267,7 +270,7 @@ label hub_Ichika:
         "Ceder. Reírte de la broma y dejar que oculte el tema.":
             jump ichika_m4b
 
-        "\"Si tienes energía para hacer chistes, tienes energía para estudiar.\"":
+        "Si tienes energía para hacer chistes, tienes energía para estudiar.":
             jump ichika_m4c
 
 
@@ -284,7 +287,7 @@ label ichika_m4a:
 
     narrador "Me quedé de pie, mirándola, sin devolverle el chiste."
 
-    show ichika neutral at pj(0.5)
+    show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "…¿Qué?"
@@ -301,7 +304,7 @@ label ichika_m4a:
 
     narrador "Ella fue la que lo rompió, y lo hizo sin la sonrisa de antes."
 
-    show ichika agotada at pj(0.5)
+    show ichika agotada at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "…No sé cuánto más puedo seguir haciendo esto."
@@ -320,6 +323,9 @@ label ichika_m4a:
 
     mc "No dije que no pudieras."
 
+    show ichika agotada at pj_habla(0.5)
+    with disolucion_lenta
+
     ichika "No hacía falta."
 
     ichika "Yo también me lo digo, y no me lo creo ni cuando lo digo yo."
@@ -330,7 +336,7 @@ label ichika_m4a:
 
     mc_pensamiento "Y por como dobló ese horario, tampoco creo que se lo haya contado a nadie."
 
-    show ichika neutral at pj(0.5)
+    show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "…"
@@ -347,10 +353,13 @@ label ichika_m4a:
 
     narrador "Sonrió, esta vez más despacio, sin la energía de antes."
 
-    show ichika sonriendo at pj(0.5)
+    show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "…Gracias por no decir la frase obvia."
+
+    show ichika sonriendo at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Guardó el guion en la mochila, todavía sin la actuación completa de vuelta."
 
@@ -370,12 +379,12 @@ label ichika_m4b:
     $ ichika_rama_cap1 = "tibia"
     $ sumar_punto("ichika", 1)
 
-    show ichika sonriendo at pj(0.5)
-    with disolucion_lenta
-
     mc "Con más drama, entonces."
 
     mc "Entras corriendo, gritando mi nombre."
+
+    show ichika sonriendo at pj_habla(0.5)
+    with disolucion_lenta
 
     ichika "¡Eso ya lo hice el primer día! Hay que innovar."
 
@@ -391,6 +400,9 @@ label ichika_m4b:
 
     mc_pensamiento "Pero seguimos hablando de dragones y no de las dos latas de energizante."
 
+    show ichika sonriendo at pj_habla(0.5)
+    with disolucion_lenta
+
     ichika "¡Y el dragón tendría que usar lentes! ¡Para verse serio con los números!"
 
     mc "Los dragones no necesitan lentes."
@@ -404,6 +416,9 @@ label ichika_m4b:
     narrador "Guardó el guion en la mochila sin volver a mirarlo."
 
     ichika "Bueno, vamos, antes de que se haga de noche."
+
+    show ichika sonriendo at pj_calla(0.5)
+    with disolucion_lenta
 
     mc_pensamiento "No dijo nada más de lo que vi al entrar."
 
@@ -423,7 +438,7 @@ label ichika_m4c:
 
     mc "Si tienes tiempo para esto, tienes tiempo para estudiar."
 
-    show ichika neutral at pj(0.5)
+    show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     narrador "La sonrisa no desapareció del todo, pero algo detrás de ella sí."
@@ -434,10 +449,13 @@ label ichika_m4c:
 
     narrador "Lo dijo con la voz más parecida a la de un adulto que le hubiera oído usar."
 
-    show ichika sonriendo at pj(0.5)
+    show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "¡Tienes razón! ¡Debería aprovechar mejor el tiempo!"
+
+    show ichika sonriendo at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Guardó el guion de un solo movimiento, rápido."
 
@@ -474,7 +492,7 @@ label ichika_m5:
 
     narrador "Pero en cuanto vio la pantalla, algo en su postura cambió."
 
-    show ichika determinada at pj(0.5)
+    show ichika determinada at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "…"
@@ -493,6 +511,9 @@ label ichika_m5:
 
     mc "¿Y vas a aceptarlo?"
 
+    show ichika sonriendo at pj_habla(0.5)
+    with disolucion_lenta
+
     ichika "Obvio que sí."
 
     narrador "Contestó demasiado rápido, antes de terminar de pensarlo."
@@ -503,7 +524,7 @@ label ichika_m5:
 
     mc "¿Tienes tiempo para eso?"
 
-    show ichika neutral at pj(0.5)
+    show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "No pongas esa cara."
@@ -518,10 +539,13 @@ label ichika_m5:
 
     narrador "Lo dijo casi riendo, y por un segundo volvió a ser la de siempre."
 
-    show ichika sonriendo at pj(0.5)
+    show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "Contestaré luego. Ahora tengo que acompañarte a la salida antes de que cierren el edificio."
+
+    show ichika at pj_calla(0.5)
+    with disolucion_lenta
 
     mc_pensamiento "No contestó la llamada. Ni siquiera el mensaje."
 

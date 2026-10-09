@@ -111,7 +111,7 @@ label hub_Itsuki:
 
     mc "Sí me incumbe."
 
-    show itsuki molesta at pj(0.5)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "Me incumbe a mí. Tú te vas a las cuatro."
@@ -136,7 +136,7 @@ label hub_Itsuki:
 
     mc "¿Y cuánto es?"
 
-    show itsuki neutral at pj(0.5)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "El que haga falta, he dicho."
@@ -159,7 +159,7 @@ label hub_Itsuki:
 
     mc "Las demás no estudian nada y les va igual de mal que a ti."
 
-    show itsuki molesta at pj(0.5)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "No es lo mismo."
@@ -176,7 +176,7 @@ label hub_Itsuki:
 
     narrador "Como quien suelta algo antes de poder impedírselo."
 
-    show itsuki timida at pj(0.5)
+    show itsuki timida at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "…"
@@ -261,6 +261,9 @@ label hub_Itsuki:
 
     itsuki "No te dejo."
 
+    show itsuki neutral at pj_calla(0.5)
+    with dissolve
+
     narrador "Pero no se movió del pupitre. Ni cerró el cuaderno."
 
     mc_pensamiento "Tres formas de hacer esto."
@@ -296,7 +299,7 @@ label itsuki_m4a:
 
     narrador "Sin acercarme más de lo que ya estaba."
 
-    show itsuki molesta at pj(0.5)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "¿Qué tiene el segundo paso?"
@@ -309,7 +312,7 @@ label itsuki_m4a:
 
     narrador "Debió decidir que no del todo, porque volvió a mirar el cuaderno."
 
-    show itsuki neutral at pj(0.5)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "…"
@@ -322,7 +325,7 @@ label itsuki_m4a:
 
     mc "¿Eso lo sabías o te lo estoy diciendo yo?"
 
-    show itsuki molesta at pj(0.5)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "Lo sabía. Se me pasó."
@@ -331,7 +334,7 @@ label itsuki_m4a:
 
     narrador "Tachó la línea entera, no solo el número."
 
-    narrador "Volvió a empezar desde ahí con la letra un poco más apretada que\nel resto del cuaderno."
+    narrador "Volvió a empezar desde ahí con la letra un poco más apretada que el resto del cuaderno."
 
     mc_pensamiento "No me pidió que me fuera."
 
@@ -341,7 +344,7 @@ label itsuki_m4a:
 
     narrador "Me quedé de pie, sin sentarme, mientras terminaba el paso."
     
-    show itsuki timida at pj(0.5)
+    show itsuki timida at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "…El resultado me da distinto ahora."
@@ -354,7 +357,7 @@ label itsuki_m4a:
 
     narrador "Lo dijo como quien reporta un dato, todavía sin mirarme."
 
-    show itsuki neutral at pj(0.5)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
     
     itsuki "Puedes buscar tu cuaderno ahora."
@@ -362,6 +365,9 @@ label itsuki_m4a:
     itsuki "[mc]..."
 
     mc "Ya lo sé. No me voy a ir todavía."
+
+    show itsuki neutral at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Levantó la vista, un segundo, para comprobar si hablaba en serio."
 
@@ -380,7 +386,7 @@ label itsuki_m4b:
     $ itsuki_rama_cap1 = "tibia"
     $ sumar_punto("itsuki", 1) 
 
-    show itsuki molesta at pj(0.5)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "No."
@@ -398,6 +404,9 @@ label itsuki_m4b:
     mc "Está bien."
 
     itsuki "Bien."
+
+    show itsuki at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Me quedé un momento más de lo necesario, esperando algo que no llegó."
 
@@ -428,7 +437,7 @@ label itsuki_m4c:
     
     narrador "Estiré la mano hacia el cuaderno antes de que pudiera contestar."
 
-    show itsuki sorprendida at pj(0.5)
+    show itsuki sorprendida at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "¿Qué haces?"
@@ -441,7 +450,7 @@ label itsuki_m4c:
 
     narrador "Le devolví el cuaderno con el ejercicio terminado."
 
-    show itsuki molesta at pj(0.5)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "…"
@@ -449,6 +458,9 @@ label itsuki_m4c:
     mc "Listo. El resultado es ese."
 
     itsuki "Ya lo veo."
+
+    show itsuki molesta at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Lo dijo sin agradecerlo y sin discutirlo."
 
@@ -464,10 +476,13 @@ label itsuki_m4c:
     
     mc_pensamiento "Era hacerlo ella sola."
 
-    show itsuki neutral at pj(0.5)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "Puedes irte. Ya tengo lo que necesitaba."
+
+    show itsuki neutral at pj_calla(0.5)
+    with disolucion_lenta
 
     narrador "Cerró el cuaderno del todo esta vez, con las dos manos."
 
