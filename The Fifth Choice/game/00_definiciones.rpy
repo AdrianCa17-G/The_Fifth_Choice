@@ -108,6 +108,7 @@ default tiempo_restante = "casi cuatro semanas"
 default maruo_ultimatum = False
 default despido_cap1 = False
 default nino_rama_beat = None
+default clima_cap1 = "mixta"
 
 
 ## --- Rama completada -------------------------------------------------------
@@ -167,6 +168,8 @@ image bg_negro         = Solid("#000000")
 image cg_calificacion        = "cg/calificacion.webp"
 image cg_maruo_reunion       = "cg/maruo_umbral.webp"
 image cg_hermanas_estudiando = "cg/estudio_hermanas.webp"
+image cg_cinco_estudiando    = "cg/cinco_estudiando.webp"
+image cg_cinco_repasando     = "cg/cinco_repasando.webp"
 
 ################################################################################
 ##  5. SPRITES
@@ -448,6 +451,14 @@ init python:
 
     def rama_de(hermana):
         return getattr(store, hermana + "_rama_cap1")
+
+
+    def contar_ramas(tipo):
+    total = 0
+    for hermana in ["ichika", "nino", "miku", "yotsuba", "itsuki"]:
+        if getattr(store, hermana + "_rama_cap1") == tipo:
+            total += 1
+    return total
 
 
 ################################################################################

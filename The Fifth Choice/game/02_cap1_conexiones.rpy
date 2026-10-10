@@ -8,6 +8,8 @@
 # APERTURA → INTERCONEXIÓN 1 → HUB 1 → INTERCONEXIÓN 2 → BEAT Itsuki
 # → INTERCONEXIÓN 3 → HUB 2 → INTERCONEXIÓN 4 → BEAT crisis de Nino  
 # → INTERCONEXIÓN 5 → HUB 3 → BEAT casa → EVENTO 6
+# ============================================================
+
 
 ################################################################################
 ##  REACCIONES DE LA HERMANA VISITADA (reutilizables)
@@ -503,9 +505,213 @@ label reaccion_itsuki:
 
         narrador "Tuve que sentarme en el último pupitre."
 
+    return
+
+################################################################################
+##  QUEJAS DE LAS HERMANAS NO VISITADAS (una por hermana)
+##  Cada una se llama solo si esa hermana no está en hub_visitadas.
+################################################################################
+
+label queja_ichika:
+
+    show ichika sonriendo at pj(0.28)
+    with dissolve
+
+    ichika "Oye, [mc]. Tengo una queja formal."
+
+    mc "Hola Ichika. Te escucho."
+
+    show ichika sonriendo at pj_habla(0.28)
+    with disolucion_lenta
+
+    ichika "Tres tardes. Tres. Y ninguna fue mía."
+
+    mc "No me alcanzó el tiempo."
+
+    ichika "Qué cruel. Me siento como la actriz que se quedó sin papel."
+
+    mc "Esto no es un casting, Ichika."
+
+    ichika "Todo es un casting, [mc]."
+
+    show ichika neutral at pj_habla(0.28)
+    with disolucion_lenta
+
+    ichika "…Aunque, bueno. Menos mal."
+
+    ichika "Últimamente no estoy como para que me vean de cerca."
+
+    mc "¿Cómo?"
+
+    show ichika sonriendo at pj_habla(0.28)
+    with disolucion_lenta
+
+    ichika "¡Es un chiste! ¡Soy una artista, siempre estoy espléndida!"
+
+    show ichika sonriendo at pj_calla(0.28)
+    with disolucion_lenta
+
+    hide ichika
+    with moveoutleft
 
     return
 
+
+# ------------------------------------------------------------
+label queja_nino:
+
+    show nino neutral at pj(0.28)
+    with dissolve
+
+    show nino neutral at pj_habla(0.28)
+
+    nino "Ni creas que me molesta."
+
+    mc "No dije nada."
+
+    nino "Ya, pero tenías cara de «a ella no la busqué»."
+
+    mc "Solo tenía tres tardes."
+
+    nino "Me da exactamente igual."
+
+    show nino molesta at pj_habla(0.28)
+    with disolucion_lenta
+
+    nino "Además, ya te vi en mi casa más de lo que quería."
+
+    nino "Eso cuenta como visita. Por desgracia."
+
+    mc "¿Eso fue un «me hubiera gustado»?"
+
+    nino "¡NO! ¡Fue un «qué alivio»!"
+
+    show nino neutral at pj_habla(0.28)
+    with disolucion_lenta
+
+    nino "…Bueno. Es en serio lo de que no me hacía falta."
+
+    nino "Con una de nosotras ilusionada por día ya es suficiente."
+
+    show nino neutral at pj_calla(0.28)
+
+    hide nino
+    with moveoutleft
+
+    return
+
+
+# ------------------------------------------------------------
+label queja_miku:
+
+    show miku neutral at pj(0.28)
+    with dissolve
+
+    show miku neutral at pj_habla(0.28)
+
+    miku "…No me buscaste."
+
+    mc "Tenía tres tardes."
+
+    miku "…Ya sé."
+
+    miku "…Así estuvo bien. Tranquila."
+
+    miku "…Pero habrías acertado, por cierto."
+
+    mc "¿Con el sitio?"
+
+    miku "…Con el sitio."
+
+    miku "…Hay una silla enfrente de la mía. Siempre está vacía."
+
+    narrador "Lo dijo mirando el libro. Pero esta vez no lo subió hasta media cara."
+
+    miku "…Olvídalo. No importa."
+
+    show miku neutral at pj_calla(0.28)
+
+    hide miku
+    with moveoutleft
+
+    return
+
+
+# ------------------------------------------------------------
+label queja_yotsuba:
+
+    show yotsuba sonriendo at pj(0.28)
+    with dissolve
+
+    show yotsuba sonriendo at pj_habla(0.28)
+
+    yotsuba "¡No pasa nada! ¡De verdad!"
+
+    yotsuba "¡Tres tardes no alcanzan para cinco! ¡Eso lo entiende cualquiera!"
+
+    mc "Yotsuba…"
+
+    yotsuba "¡Te lo digo en serio!"
+
+    show yotsuba incomoda at pj_habla(0.28)
+    with disolucion_lenta
+
+    yotsuba "…Aunque estuve entrenando por si venías."
+
+    yotsuba "Cronometré dos vueltas de más. Por si acaso."
+
+    mc "Lo siento."
+
+    show yotsuba sonriendo at pj_habla(0.28)
+    with disolucion_lenta
+
+    yotsuba "¡No lo sientes! ¡Eso déjalo para las próximas veces!"
+
+    show yotsuba sonriendo at pj_calla(0.28)
+
+    hide yotsuba
+    with moveoutleft
+
+    return
+
+
+# ------------------------------------------------------------
+label queja_itsuki:
+
+    show itsuki neutral at pj(0.28)
+    with dissolve
+
+    show itsuki neutral at pj_habla(0.28)
+
+    itsuki "Dije que no me iba a esconder. Y no lo hice."
+
+    mc "Lo sé. Te encontré en la azotea."
+
+    itsuki "Eso no cuenta. Subiste por costumbre, no por buscarme."
+
+    mc "…Es verdad."
+
+    itsuki "Entonces gané el juego."
+
+    mc "¿Y qué ganas?"
+
+    itsuki "Tener razón. Es lo único que siempre me sale bien."
+
+    show itsuki molesta at pj_habla(0.28)
+    with disolucion_lenta
+
+    itsuki "No te rías."
+
+    mc "No me estoy riendo."
+
+    itsuki "Se te nota en la voz."
+
+    show itsuki molesta at pj_calla(0.28)
+
+    hide itsuki
+    with moveoutleft
+
+    return
 
 
 ################################################################################
@@ -1459,6 +1665,8 @@ label interconexion_4:
 
     narrador "En el aula, algunas ya estaban en sus pupitres y otras entraban de a una."
 
+    narrador "De repente, [nombre_h] se me cruzó en el camino."
+
     call reaccion_hermana_visitada
 
     ############################################################################
@@ -2281,3 +2489,822 @@ label interconexion_5:
     with fade
 
     jump hub_3
+
+
+
+################################################################################
+##  INTERCONEXIÓN 6 · EVENTO DEL HUB 3 -> BEAT CASA
+##  Jueves noche -> viernes en el instituto -> última sesión en el
+##  departamento -> sábado (mensaje de aliento) -> domingo noche.
+##  Lee clima_cap1 ("buena" / "mixta" / "mala"), maruo_ultimatum y despido_cap1.
+################################################################################
+
+label interconexion_6:
+
+    $ rama_hub = rama_de(destino)
+    $ nombre_h = destino.capitalize()
+
+    ## --- Clima del capítulo (se decide una sola vez) ---------------------------
+    ## buena: ninguna fría y al menos 2 cálidas  (para exigir las 3: n_calidas == 3)
+    ## mala:  2 o más frías, o despido
+    ## mixta: todo lo demás, incluido haber sobrevivido al ultimátum
+
+    python:
+        n_calidas = contar_ramas("calida")
+        n_frias = contar_ramas("fria")
+
+        if despido_cap1:
+            clima_cap1 = "mala"
+        elif maruo_ultimatum:
+            clima_cap1 = "mixta"
+        elif n_frias >= 2:
+            clima_cap1 = "mala"
+        elif n_frias == 0 and n_calidas >= 2:
+            clima_cap1 = "buena"
+        else:
+            clima_cap1 = "mixta"
+
+    ############################################################################
+    ##  Noche
+    ############################################################################
+
+    play music hogar fadein 3.0
+
+    scene bg_cuarto_mc
+    with fade
+
+    scene cg_libreta
+    with fade
+
+    narrador "Llegue a mi habitación y fuí directamente a mi escritorio."
+
+    narrador "Agarré la libreta y la abrí por primera vez en semanas."
+
+    mc_pensamiento "Cinco nombres con tres tardes ya gastadas." 
+    
+    mc_pensamiento "Y el lunes empiezan los exámenes."
+
+    if rama_hub == "calida":
+
+        mc_pensamiento "Dormiré mejor de lo que esperaba."
+
+        mc_pensamiento "Logré mejorar mi relación con [nombre_h]."
+
+        mc_pensamiento "Eso para mi es un gran avance."
+
+        mc_pensamiento "La última tarde salió mejor de lo que esperaba."
+
+        mc_pensamiento "Con ellas, eso siempre me asusta un poco."
+
+    elif rama_hub == "tibia":
+        
+        mc_pensamiento "No se si dormiré."
+
+        mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en que pensar"
+
+        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retrocedimos."
+
+        mc_pensamiento "Es como si nada hubiera pasado."
+
+        mc_pensamiento "Así que, la última tarde no sumó ni restó."
+
+        mc_pensamiento "Y con el tiempo contado, eso ya es una forma de perder."
+
+    else:
+
+        mc_pensamiento "Me va costar dormir." 
+
+        mc_pensamiento "Repasé lo que dije más veces de las que voy a admitir."
+
+        mc_pensamiento "Se suponía que iba a ver a [nombre_h] para mejorar nuestra relación."
+
+        mc_pensamiento "Pero parece que solo empeoré las cosas."
+
+        mc_pensamiento "Más de lo que ya estaban."
+
+        mc_pensamiento "Esta última tarde me pesaba."
+
+        mc_pensamiento "Seguía oyendo mi propia voz diciendo lo que dije."
+
+    if despido_cap1:
+
+        mc_pensamiento "Sabía que algo se había roto con Maruo. Lo que no sabía era cuánto."
+
+        mc_pensamiento "Pero de manera sencilla será despues de los examenes."
+
+        mc_pensamiento "Cuándo vea a todas sus hijas reprobar."
+
+        mc_pensamiento "Y el gran culpable no sea otro que yo."
+
+        mc_pensamiento "No quiero ni imaginar la cara que pondrán Raiha y mi padre."
+
+        mc_pensamiento "Todo por mis pesimas decisiones."
+
+    elif maruo_ultimatum:
+
+        mc_pensamiento "La advertencia de Maruo seguía en pie." 
+        
+        mc_pensamiento "Pero esta vez, por los pelos, le había ganado."
+
+        mc_pensamiento "Parece que si habrá trabajo para el siguiente mes."
+
+
+    mc_pensamiento "Mañana es viernes." 
+    
+    mc_pensamiento "El último día antes de la semana de exámenes."
+
+    mc_pensamiento "Hablaré con las chicas y les daré un mensaje de aliento."
+
+    mc_pensamiento "No soy muy bueno animando a gente."
+
+    mc_pensamiento "Pero mañana daré mi mejor esfuerzo."
+
+    ############################################################################
+    ##  Viernes · instituto
+    ############################################################################
+
+    scene bg_escuela
+    with fade
+
+    play sound sfx_timbre volume 2.5
+
+    narrador "Viernes. El instituto olía distinto: a papel subrayado y a café de máquina."
+
+    narrador "Hasta los alumnos que nunca estudian tenían un cuaderno abierto."
+
+    narrador "La tensión se siente hasta en los rincones del instituto."
+
+    mc_pensamiento "Bien no hay nada de que preocuparse."
+
+    mc_pensamiento "Los examenes son muy pronto, pero eso no es nada complicado."
+
+    mc_pensamiento "Para mi obviamente, ahora hablando de esas chicas..."
+
+    mc_pensamiento "Cierto, tengo que ir al aula."
+
+    scene bg_aula
+    with fade
+
+    play music cotidiano fadein 2.0
+
+    narrador "En el aula nadie hablaba de otra cosa más que los examenes." 
+    
+    narrador "Y las Nakano, menos."
+
+    narrador "De repente, [nombre_h] se me cruzó en el camino."
+
+    ## Reacción de la hermana del hub 3 (labels reutilizables).
+    call reaccion_hermana_visitada
+
+    ## Las dos que se quedaron fuera.
+    narrador "A media mañana me alcanzaron, las dos únicas quintillizas."
+    
+    narrador "A las que no había ido a buscar."
+
+    if "ichika" not in hub_visitadas:
+        call queja_ichika
+
+    if "nino" not in hub_visitadas:
+        call queja_nino
+
+    if "miku" not in hub_visitadas:
+        call queja_miku
+
+    if "yotsuba" not in hub_visitadas:
+        call queja_yotsuba
+
+    if "itsuki" not in hub_visitadas:
+        call queja_itsuki
+
+    ## Las cinco se reúnen. Itsuki cierra el juego que ella misma empezó.
+
+    hide itsuki
+    with disolucion_lenta
+
+    show ichika neutral at pj(X_ICHIKA)
+    show nino neutral at pj(X_NINO)
+    show miku neutral at pj(X_MIKU)
+    show yotsuba sonriendo at pj(X_YOTSUBA)
+    show itsuki neutral at pj(X_ITSUKI)
+    with dissolve
+
+    narrador "Faltaba la cereza del pastel."
+
+    narrador "Y la puso la que había empezado el juego. Con su frialdad de siempre."
+
+    show itsuki neutral at pj_habla(X_ITSUKI)
+    with disolucion_lenta
+
+    itsuki "El juego se acabó hoy."
+
+    mc "¿Ya?"
+
+    mc "Obviamente que lo sabía, señora obvia."
+
+    itsuki "Te dije que no alcanzarías para todas. Tres de cinco."
+
+    itsuki "El trabajo es pesado, ¿no?"
+
+    mc "Lo sé."
+
+    show itsuki neutral at pj_calla(X_ITSUKI)
+    show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
+
+    yotsuba "¡Pero tres de cinco es más de la mitad! ¡Es un sesenta por ciento!"
+
+    yotsuba "¡Un sesenta es un buen número!"
+
+    show yotsuba sonriendo at pj_calla(X_YOTSUBA)
+    show itsuki molesta at pj_habla(X_ITSUKI)
+    with disolucion_lenta
+
+    itsuki "Es un aprobado a medias, Yotsuba."
+
+    itsuki "Hay algo de esfuerzo, pero no lo suficiente."
+
+    show itsuki molesta at pj_calla(X_ITSUKI)
+    show ichika sonriendo at pj_habla(X_ICHIKA)
+    with disolucion_lenta
+
+    ichika "Y el pobre tutor corriendo detrás de nosotras todo el mes."
+
+    ichika "Qué romántico. Casi me dan ganas de haberme dejado encontrar."
+
+    mc "Fue mi trabajo."
+
+    mc "No tenía otras intenciones."
+
+    ichika "Ya, ya. Trabajo."
+
+    ichika "Como tú digas."
+
+    show ichika sonriendo at pj_calla(X_ICHIKA)
+    show nino neutral at pj_habla(X_NINO)
+    with disolucion_lenta
+
+    nino "Dejen de hacerlo parecer una hazaña." 
+    
+    nino "Solo fue un tipo yendo de aquí para allá."
+
+    nino "Nada relevante."
+
+    if clima_cap1 == "buena":
+
+        nino "...Pero pensandolo bien."
+
+        nino "…Hasta ahora no fue el peor tutor que hemos tenido."
+
+        mc "Gracias Nino, por el cumplido."
+
+        mc "Viniendo de tí, es porque en verdad hize un buen trabajo."
+
+        narrador "Se voltéo con la cara sonrojada."
+
+        show nino pillada at pj_habla(X_NINO)
+        with disolucion_lenta
+
+        nino "Idiota."
+
+        nino "Que quede claro que eso no es un cumplido."
+
+        nino "Era tu trabajo, tu obligación, nada más."
+
+    elif clima_cap1 == "mixta":
+
+        nino "Y todavía falta ver si sirvió de algo."
+
+        mc "Si sirvió, no lo dudes."
+
+        nino "Ya lo veremos en la semana de examenes."
+
+    else:
+
+        nino "Y, siendo sincera, tampoco es que haya servido de mucho."
+
+        nino "Solo haz empeorado las cosas."
+
+        nino "Todas lo sabemos."
+
+        mc_pensamiento "No le discutí, tiene razón."
+
+        mc_pensamiento "Parece que solo fuí a perder el tiempo."
+
+    show nino at pj_calla(X_NINO)
+    show miku neutral at pj_habla(X_MIKU)
+    with disolucion_lenta
+
+    miku "…Entonces ya no hay dónde esconderse."
+
+    mc "No era esa la idea."
+
+    miku "…Ya lo sé."
+
+    miku "…Pero suena a eso."
+
+    show miku neutral at pj_calla(X_MIKU)
+    show itsuki neutral at pj_habla(X_ITSUKI)
+    with disolucion_lenta
+
+    itsuki "Pues hoy no queda nada que adivinar."
+
+    itsuki "Esta tarde se estudia en casa." 
+    
+    itsuki "Las cinco. Sin rincones secretos."
+
+    itsuki "La última sesión de estudio. Sin rodeos."
+
+    show itsuki neutral at pj_calla(X_ITSUKI)
+    show nino neutral at pj_habla(X_NINO)
+    with disolucion_lenta
+
+    nino "¿Y quién te nombró jefa?"
+
+    show nino neutral at pj_calla(X_NINO)
+    show itsuki neutral at pj_habla(X_ITSUKI)
+    with disolucion_lenta
+
+    itsuki "Nadie. Pero alguien tiene que decirlo."
+
+    itsuki "Y todas pensabamos lo mismo, ¿no?"
+
+    itsuki "Somos quintillizas despues de todo."
+
+    show itsuki neutral at pj_calla(X_ITSUKI)
+    with disolucion_lenta
+
+    narrador "Nino abrió la boca para discutir. Y la cerró."
+
+    narrador "Eso, con ella, ya era una señal."
+
+    if clima_cap1 == "buena":
+
+        show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+        with disolucion_lenta
+
+        yotsuba "¡Va a salir bien! ¡Lo presiento!"
+
+        yotsuba "¡[mc] ha hecho un buen trabajo con sus tutorías!"
+
+        show yotsuba incomoda at pj_habla(X_YOTSUBA)
+        with disolucion_lenta
+
+        yotsuba "En verdad te lo agradezemos mucho."
+
+        show yotsuba at pj_calla(X_YOTSUBA)
+        show itsuki neutral at pj_habla(X_ITSUKI)
+        with disolucion_lenta
+
+        itsuki "No te emociones tanto. Todavía no aprobamos nada."
+
+        itsuki "En la semana de examenes se lo agradeceremos, si se lo merece."
+
+        show itsuki neutral at pj_calla(X_ITSUKI)
+        with disolucion_lenta
+
+        mc_pensamiento "Era la primera vez que un «va a salir bien» no sonaba a deseo, sino a plan."
+
+    elif clima_cap1 == "mixta":
+
+        show itsuki neutral at pj_habla(X_ITSUKI)
+
+        itsuki "Aprovecha la tarde. No va a haber otra."
+
+        show itsuki neutral at pj_calla(X_ITSUKI)
+        show miku neutral at pj_habla(X_MIKU)
+
+        miku "…Yo me quedo hasta tarde."
+
+        mc "¿En serio?"
+
+        miku "…Si no tengo que hablar mucho."
+
+        show miku neutral at pj_calla(X_MIKU)
+
+    else:
+
+        show itsuki molesta at pj_habla(X_ITSUKI)
+
+        itsuki "Y procura no empeorarlo."
+
+        show itsuki molesta at pj_calla(X_ITSUKI)
+
+        narrador "Nadie se rió. Ni siquiera Ichika."
+
+        mc_pensamiento "Cuando Ichika no rellena un silencio con un chiste, es que ese silencio es molestía."
+
+        mc_pensamiento "Saben que lo arruiné."
+
+        mc_pensamiento "Pero no me lo quieren decir de manera directa."
+
+    hide ichika
+    hide nino
+    hide miku
+    hide yotsuba
+    hide itsuki
+    with moveoutleft
+
+    ############################################################################
+    ##  Viernes · última sesión en el departamento
+    ############################################################################
+
+    stop music fadeout 1.5
+
+    scene bg_edificio
+    with fade
+
+    scene bg_entrada_edificio
+    with fade
+
+    scene bg_departamento
+    with fade
+
+    narrador "Esa tarde estudiamos en el departamento. Las cinco, juntas, como había pedido Itsuki."
+
+    if clima_cap1 == "buena":
+
+        play music cotidiano fadein 2.0
+
+        scene cg_cinco_estudiando
+        with fade
+
+        narrador "Hacía un mes, esta mesa era un campo de batalla."
+
+        narrador "Hoy no tuve que decir «saquen los cuadernos»." 
+        
+        narrador "Ya estaban abiertos."
+
+        narrador "Yotsuba subrayaba con tres colores a la vez." 
+        
+        narrador "No sé si sabía qué estaba subrayando, pero lo hacía con muchísimo entusiasmo."
+
+        narrador "Ichika repasaba en voz baja, con los ojos abiertos." 
+        
+        narrador "Sin siquiera dormirse en medio de la sesión. Un récord."
+
+        narrador "Nino e Itsuki comparaban respuestas en voz baja, codo con codo, sin mirarse." 
+        
+        narrador "Como quien negocia una tregua."
+
+        narrador "Miku tenía los audífonos colgados del cuello. Sin tocarlos."
+
+        narrador "Ya no estaba en su burbuja, esta vez era diferente."
+
+        narrador "Itsuki tenía el cuaderno abierto de verdad." 
+        
+        narrador "Esta vez sí lo estaba leyendo."
+
+        mc_pensamiento "Cinco cuadernos, cinco lápices y cero fracasos."
+
+        mc_pensamiento "Un mes atrás, esto era imposible."
+
+        mc_pensamiento "Y ni siquiera supe en qué momento dejó de serlo."
+
+        mc_pensamiento "Lo único que se es que en el examen les irá excelente."
+
+        mc_pensamiento "De eso estoy seguro."
+
+    elif clima_cap1 == "mixta":
+
+        play music cotidiano fadein 2.0 
+
+        scene cg_cinco_repasando
+        with fade
+
+        narrador "Desde la puerta parecía la misma escena del primer día."
+
+        narrador "Hasta que me fijé en los detalles: nadie se había ido a su cuarto."
+
+        narrador "Ichika cabeceaba entre fórmula y fórmula. Pero se despertaba sola y volvía a empezar."
+
+        narrador "Miku tenía los audífonos colgados del cuello." 
+        
+        narrador "Y la mano lejos de ellos. Para ella, eso era un avance enorme."
+
+        narrador "Nino hacía como que no estaba, pero se enteraba de todo y corregía a media voz."
+
+        narrador "Yotsuba intentaba concentrarse. Se le notaba en lo fuerte que apretaba el lápiz."
+
+        narrador "Itsuki estudiaba a su ritmo, sin pedirle nada a nadie."
+
+        mc_pensamiento "No era la mesa de hace un mes. Pero tampoco la que necesitaba."
+
+        mc_pensamiento "Me hacía falta una tarde más para arreglarlo. Y ya no tenía tardes."
+
+        mc_pensamiento "Ahora lo único que pido es suerte."
+
+        mc_pensamiento "Realmente desconozco si conservaré mi trabajo o no."
+
+    else:
+
+        play music derrota fadein 2.5
+
+        scene cg_hermanas_estudiando
+        with fade
+
+        narrador "Era casi la misma imagen del primer día." 
+        
+        narrador "Con una diferencia: ahora sabía lo que estaba viendo."
+
+        narrador "Ichika, con la cabeza en el respaldo y los ojos cerrados." 
+        
+        narrador "Esta vez no parecía fingir."
+
+        narrador "Miku, con los audífonos puestos y sonando."
+
+        narrador "Nino, con los brazos cruzados y la hoja en blanco, mirándome como si yo fuera el problema."
+
+        narrador "Yotsuba sonreía enorme sobre una hoja casi vacía."
+
+        narrador "Itsuki, encorvada sobre su hoja, atascada en el mismo problema."
+
+        mc_pensamiento "Un mes de trabajo y la mesa seguía igual de vacía."
+
+        mc_pensamiento "Y esta vez no podía culpar a nadie más que a mí."
+
+        mc_pensamiento "Si despues de la semana de examenes me despiden, será justo."
+
+        mc_pensamiento "Todo lo que me ha llevado hasta aquí ha sido solo mi culpa."
+
+    ## --- Maruo ---------------------------------------------------------------
+
+    if maruo_ultimatum:
+
+        stop music fadeout 1.0
+
+        scene cg_maruo_reunion
+        with fade
+
+        play sound sfx_puerta_abre volume 1.5
+
+        play music contrato fadein 2.0
+
+        narrador "Maruo apareció en la puerta del salón." 
+        
+        narrador "No levantó la voz. Nunca la levanta."
+
+        maruo "Vine a ver cómo iba el estudio."
+
+        narrador "Miró la mesa. Miró a sus hijas. Después me miró a mí."
+
+        if despido_cap1:
+
+            maruo "Ya vi suficiente."
+
+            mc "Señor, todavía quedan…"
+
+            maruo "Te dije que no repetiría la advertencia."
+
+            maruo "El lunes lo confirmo."
+
+            narrador "Se fue sin esperar respuesta." 
+            
+            narrador "Cerró con la calma de siempre."
+
+            mc_pensamiento "Lo peor no era la amenaza. Era que sonaba a algo ya decidido."
+
+            mc_pensamiento "Mi destino ya estaba sellado."
+
+        else:
+
+            maruo "En la cocina te dije que esta era tu última oportunidad."
+
+            mc "Lo recuerdo."
+
+            maruo "Veo que no la desperdiciaste."
+
+            narrador "No sonrió. Maruo no sonríe." 
+            
+            narrador "Pero tardó un segundo de más en irse."
+
+            maruo "No te confíes. El examen es el lunes."
+
+            mc_pensamiento "Viniendo de él, eso casi era un aplauso."
+
+            mc_pensamiento "Aún me queda mi última oportunidad."
+
+        stop music fadeout 2.0
+
+        scene bg_departamento
+        with fade
+
+    else:
+
+        scene bg_departamento_anochecer
+        with fade
+
+        if clima_cap1 == "buena":
+
+            mc_pensamiento "Maruo no apareció esa tarde." 
+            
+            mc_pensamiento "Con la mesa así, ni falta hacía."
+
+            mc_pensamiento "Confía totalmente en mí."
+
+            mc_pensamiento "Aunque nunca me lo haya dicho."
+
+            mc_pensamiento "El que no aparezca significa que no necesita darme ningún llamado de atención."
+
+            mc_pensamiento "Sabe que sus hijas aprobarán."
+
+            mc_pensamiento "Bajo mi tutoría, he hecho un buen trabajo."
+
+        else:
+
+            mc_pensamiento "Maruo no apareció esa tarde." 
+            
+            mc_pensamiento "Con él, no saber si eso es buena o mala señal ya es costumbre."
+
+            mc_pensamiento "Talvez aparezca finalizado los examenes."
+
+            mc_pensamiento "Con su último mensaje hacia mí."
+
+            mc_pensamiento "Ojalá no llegue ese día."
+
+    if clima_cap1 == "buena":
+
+        narrador "Terminamos pasadas las seis. Nadie quería ser la primera en irse."
+
+        narrador "Parece que todas disfrutaron de esta sesión de estudio."
+
+        narrador "O más bien parece que me han aceptado como su tutor."
+
+    else:
+
+        narrador "Terminamos pasadas las seis. Se fueron saliendo de a una, sin despedirse del todo."
+
+        narrador "Nada ha cambiado desde el primer día."
+
+        narrador "O más bien yo no las he hecho cambiar."
+
+    ############################################################################
+    ##  Sábado · mensaje de aliento (menú de sabor, reconverge)
+    ############################################################################
+
+    stop music fadeout 2.0
+
+    scene bg_negro
+    with fade
+
+    narrador "Sábado."
+
+    narrador "Sin clases, sin tutorías. Solo tiempo para pensar."
+
+    scene bg_cuarto_mc
+    with fade
+
+    play music hogar fadein 1.5
+
+    narrador "Pasé el día mirando el chat del grupo."
+
+    narrador "Se llamaba «¡Equipo Quintillizas + Tutor!»." 
+    
+    narrador "Obra de Yotsuba. Con tres signos de exclamación de más."
+
+    narrador "Nino lo había silenciado. Y se había salido tres veces." 
+    
+    narrador "Y Yotsuba la había vuelto a meter tres veces."
+
+    mc_pensamiento "Les mandaré un mensaje de motivación."
+
+    mc_pensamiento "No se que decirles. Me haré un ritual de autohumillación."
+
+    menu:
+
+        "Bien, les pondré..."
+
+        "«Duerman bien. Recuerden que no es el fin del mundo.»":
+
+            mc_pensamiento "Lo escribí, lo borré y lo volví a escribir." 
+            
+            mc_pensamiento "Sigo sintiendo que escribí un mensaje humillante."
+
+            narrador "Yotsuba respondió en cuatro segundos con una foto de su almohada. Con cara dibujada."
+
+        "«Confío en las cinco. Pase lo que pase el lunes.»":
+
+            mc_pensamiento "Lo mandé antes de arrepentirme."
+
+            mc_pensamiento "Acabo de firmar mi sentencia de humillación."
+
+            narrador "Yotsuba respondió con once signos de exclamación. Los conté."
+
+        "«Si algo sale mal, la culpa es mía. Para eso me pagan.»":
+
+            mc_pensamiento "Mitad broma, mitad cierto."
+
+            narrador "Yotsuba respondió: «¡La culpa no se paga, se comparte!»"
+
+            narrador "Me sorprende que ese mensaje venga de Yotsuba."
+
+            narrador "Sabe más de lo que aparenta."
+
+    if clima_cap1 == "buena":
+
+        narrador "Ichika mandó un corazón, lo borró y escribió «jajaja»."
+
+        narrador "Nino escribió «Qué dramático.» Un minuto después: «Descansen.»"
+
+        narrador "Miku mandó tres puntos. Y después, sorprendentemente, una palabra completa: «Gracias.»"
+
+        narrador "Itsuki respondió «Recibido.» Con punto."
+
+        mc_pensamiento "Cuatro respuestas en un minuto. Hace un mes ni abrían el chat."
+
+        mc_pensamiento "Pensé que me iban a humillar, pero resultó lo contrario."
+
+        mc_pensamiento "Me agradecieron y todo."
+
+    elif clima_cap1 == "mixta":
+
+        narrador "Ichika mandó un corazón, lo borró y escribió «jajaja»."
+
+        narrador "Nino escribió «Qué dramático.» Y nada más."
+
+        narrador "Miku e Itsuki lo dejaron en visto."
+
+        mc_pensamiento "Visto no es lo mismo que ignorado. Eso me dije."
+
+    else:
+
+        narrador "Las otras cuatro lo dejaron en visto."
+
+        mc_pensamiento "Un «visto» también es una respuesta."
+
+        mc_pensamiento "Solo que no es la que uno quiere."
+
+        mc_pensamiento "Ni siquiera se tomaron la molestía en contestarme"
+
+        mc_pensamiento "Bueno, no es que me sorprenda, están completamente decepcionadas de mí."
+
+    ############################################################################
+    ##  Domingo · cierre
+    ############################################################################
+
+    stop music fadeout 1.5
+
+    scene bg_negro
+    with fade
+
+    narrador "Domingo."
+
+    narrador "Pasé el día repasando papeles que ya sabía de memoria."
+
+    scene bg_departamento_anochecer
+    with fade
+
+    play music cotidiano fadein 2.5
+
+    narrador "Pasadas las ocho salí del departamento, después de dejarles las últimas hojas de repaso."
+
+    narrador "El pasillo tenía cinco puertas. Debajo de cada una, una raya de luz."
+
+    if clima_cap1 == "buena":
+
+        narrador "Cinco puertas. Cinco rayas de luz. Ninguna dormía."
+
+        mc_pensamiento "Hacía un mes, cada puerta cerrada era un portazo."
+
+        mc_pensamiento "Esa noche estaban cerradas por la misma razón."
+
+    elif clima_cap1 == "mixta":
+
+        narrador "Cinco puertas. Tres rayas de luz."
+
+        narrador "Las otras dos, a oscuras. No sé si dormían o fingían."
+
+    else:
+
+        narrador "Cinco puertas. Una sola raya de luz, al fondo."
+
+        mc_pensamiento "No supe si me preocupaba más la luz encendida o las que no lo estaban."
+
+    if despido_cap1:
+
+        mc_pensamiento "Y si Maruo cumplía lo que dijo, quizá ni siquiera estaría ahí para ver cómo les iba."
+
+    mc_pensamiento "Toda la vida estudié porque las notas eran lo único que podía controlar."
+
+    mc_pensamiento "Esa noche, por primera vez, la nota que más me importaba no era la mía."
+
+    mc_pensamiento "Y no había nada que pudiera hacer para controlarla."
+
+    narrador "Bajé las escaleras sin mirar atrás. Si miraba, no iba a poder irme."
+
+    scene bg_negro
+    with fade
+
+    ## beat_casa lee despido_cap1 para mostrar la duda de Futaro.
+    call beat_casa
+
+    if despido_cap1:
+        jump final_malo_temprano
+
+    jump interconexion_7
+
+
+## PROVISIONAL: reemplázalo al escribir la interconexión 7.
+label interconexion_7:
+
+    call evento_6
+    jump capitulo2
