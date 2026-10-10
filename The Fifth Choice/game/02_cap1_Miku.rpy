@@ -159,7 +159,7 @@ label hub_Miku:
 
     mc_pensamiento "y luego se escondió detrás del libro en cuanto se oyó a sí misma."
 
-    mc_pensamiento "Dos: en su hoja de ayer había una marca de borrador debajo de la respuesta equivocada." 
+    mc_pensamiento "Dos: en su hoja del segundo día había una marca de borrador debajo de la respuesta equivocada." 
 
     mc_pensamiento "Escribió la correcta primero y la borró."
 

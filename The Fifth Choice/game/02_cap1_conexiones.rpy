@@ -7,7 +7,7 @@
 # Esqueleto:
 # APERTURA → INTERCONEXIÓN 1 → HUB 1 → INTERCONEXIÓN 2 → BEAT Itsuki
 # → INTERCONEXIÓN 3 → HUB 2 → INTERCONEXIÓN 4 → BEAT crisis de Nino  
-# → INTERCONEXIÓN 5 → HUB 3 → INTERCONEXIÓN 5 → BEAT casa → EVENTO 6
+# → INTERCONEXIÓN 5 → HUB 3 → BEAT casa → EVENTO 6
 
 ################################################################################
 ##  REACCIONES DE LA HERMANA VISITADA (reutilizables)
@@ -189,7 +189,7 @@ label reaccion_nino:
 
         nino "No te hagas ideas."
 
-        show nino at pj_calla(0.28)
+        show nino at pj_calla(0.5)
         with disolucion_lenta
 
         narrador "Se fue rápido. Pero esta vez se le olvidó cruzar los brazos."
@@ -832,7 +832,7 @@ label cap1_interconexion_1:
 
 label interconexion_2:
 
-    $ rama_hub1 = rama_de(destino)
+    $ rama_hub = rama_de(destino)
     $ nombre_h = destino.capitalize()
 
     ############################################################################
@@ -848,7 +848,7 @@ label interconexion_2:
     
     narrador "No abrí la libreta. Ya sabía lo que decía."
 
-    if rama_hub1 == "calida":
+    if rama_hub == "calida":
 
         mc_pensamiento "Dormí mejor de lo que esperaba."
 
@@ -856,7 +856,7 @@ label interconexion_2:
 
         mc_pensamiento "Eso para mi es un gran avance."
 
-    elif rama_hub1 == "tibia":
+    elif rama_hub == "tibia":
 
         mc_pensamiento "Dormí. No sé si eso es buena o mala señal."
 
@@ -975,6 +975,8 @@ label interconexion_2:
 
     narrador "Itsuki ya estaba en su pupitre, con el cuaderno de ciencias abierto."
 
+    narrador "De repente, [nombre_h] se me cruzó en el camino."
+
     ############################################################################
     ##  Aula · reacción de la hermana visitada
     ############################################################################
@@ -989,7 +991,7 @@ label interconexion_2:
 
         play music incomodo fadeout 1.0 fadein 1.5
 
-        if rama_hub1 == "calida":
+        if rama_hub == "calida":
 
             show nino neutral at pj_habla(0.5)
             with dissolve
@@ -1050,7 +1052,7 @@ label interconexion_2:
             
             mc_pensamiento "Pero parece que esa pregunta sí la dijo desde sus sentimientos."
 
-        elif rama_hub1 == "tibia":
+        elif rama_hub == "tibia":
 
             show nino neutral at pj_habla(0.5)
             with dissolve
@@ -1151,9 +1153,6 @@ label interconexion_2:
     narrador "Tomó el cuaderno de ciencias. No tomó nada más."
 
     narrador "Ninguna bolsa de almuerzo. Ninguna caja."
-
-    hide itsuki
-    with dissolve
 
     mc_pensamiento "No hacía falta preguntar adónde iba."
 
@@ -1290,7 +1289,7 @@ label interconexion_3:
 
     if destino != "itsuki":
 
-        if rama_hub1 == "calida":
+        if rama_hub == "calida":
 
             if destino == "nino":
 
@@ -1300,7 +1299,7 @@ label interconexion_3:
 
                 narrador "[nombre_h] me buscó con la mirada desde su sitio y sonrió, apenas."
 
-        elif rama_hub1 == "tibia":
+        elif rama_hub == "tibia":
 
             narrador "[nombre_h] me saludó con un gesto corto. Nada más, nada menos."
 
@@ -1371,7 +1370,7 @@ label interconexion_4:
 
     narrador "Entré a mi habitación y me quedé un rato con la luz apagada."
 
-    if rama_hub1 == "calida":
+    if rama_hub == "calida":
 
         mc_pensamiento "Dormí mejor de lo que esperaba."
 
@@ -1379,7 +1378,7 @@ label interconexion_4:
 
         mc_pensamiento "Eso para mi es un gran avance."
 
-    elif rama_hub1 == "tibia":
+    elif rama_hub == "tibia":
 
         mc_pensamiento "Dormí. No sé si eso es buena o mala señal."
 
@@ -1493,10 +1492,10 @@ label interconexion_4:
 
             yotsuba "Que lo que le dijiste, o lo que hiciste, le dejó algo bueno por dentro."
 
+            yotsuba "Gracias por no rendirte con ella. ¡Es todo!"
+
             show yotsuba sonriendo at pj_calla(0.5)
             with disolucion_lenta
-
-            yotsuba "Gracias por no rendirte con ella. ¡Es todo!"
 
         elif rama_hub == "tibia":
 
@@ -1594,7 +1593,7 @@ label interconexion_4:
 
             miku "…Bueno. Un poco."
 
-            show miku neutral at pj_calla(0.5)
+            show miku at pj_calla(0.5)
             with disolucion_lenta
 
         elif rama_hub == "tibia":
@@ -1764,3 +1763,521 @@ label interconexion_4:
 
     call beat_Nino
     jump interconexion_5
+
+
+################################################################################
+##  INTERCONEXIÓN 5 · BEAT NINO -> HUB 3
+##  Cuarto de Futaro (el sobre del banco) -> cartel de exámenes -> aula.
+##  Más tensa que las anteriores: es la última decisión del capítulo.
+################################################################################
+
+label interconexion_5:
+
+    ############################################################################
+    ##  Noche · eco del beat de Nino + la deuda
+    ############################################################################
+
+    stop music fadeout 1.5
+
+    scene bg_cuarto_mc
+    with fade
+
+    narrador "Llegué a casa y fui directamente a mi cuarto."
+
+    mc_pensamiento "Me quedé pensando en la discusión que hubo entre Nino y su padre."
+
+    mc_pensamiento "También cuando pude interactuar con ella."
+
+    if nino_rama_beat == "calida":
+
+        mc_pensamiento "Creo que terminamos en buenas condiciones."
+
+        mc_pensamiento "Aun así, no dejaba de darle vueltas a lo que le solté a Nino en la cocina."
+
+        mc_pensamiento "Se quedó en silencio... pero tampoco me devolvió la pregunta." 
+
+    elif nino_rama_beat == "tibia":
+
+        mc_pensamiento "Al final solo Lavé una taza y ya." 
+        
+        mc_pensamiento "Ninguno dijo nada que valiera la pena."
+
+        mc_pensamiento "Supongo que a veces el silencio es lo único que cabe entre dos personas."
+
+    else:
+
+        mc_pensamiento "Y lo que no debí haberle dicho."
+
+        mc_pensamiento "La frase que le tiré a Nino sonaba increíble en mi cabeza." 
+        
+        mc_pensamiento "En su cocina fue un desastre."
+
+        mc_pensamiento "Y ya no había forma de echarse atrás."
+
+    if maruo_ultimatum:
+
+        mc_pensamiento "Pero lo peor de todo es lo que me dijo Maruo."
+
+        mc_pensamiento "«Se acabó. Ese día no hay discusión ni segundas oportunidades». "
+
+        mc_pensamiento "Maruo no es de los que repiten las cosas. Su voz me seguía zumbando en la cabeza."
+
+    else:
+
+        mc_pensamiento "El lado positivo es que Maruo parece seguir confiando en mi."
+
+        mc_pensamiento "No había soltado nada nuevo. Pero el reloj no para."
+
+    mc_pensamiento "Solo me quedaba una última tarde libre."
+
+    ############################################################################
+    ##  Transición
+    ############################################################################
+
+    scene bg_negro
+    with fade
+
+    narrador "Los días siguientes se me pasaron volando."
+
+    narrador "Cuando quise acordarme, los exámenes estaban respirándome en la nuca."
+
+    ############################################################################
+    ##  Cartel de exámenes · menú de sabor (cosmético, reconverge)
+    ############################################################################
+
+    scene bg_escuela
+    with fade
+
+    play sound sfx_timbre volume 2.5
+
+    narrador "Llegué al instituto temprano, como siempre."
+
+    narrador "En la entrada del instituto acababan de clavar el cartel con los horarios de los exámenes."
+
+    narrador "Cinco asignaturas. Cinco fechas. Y cero margen de error."
+
+    play music cotidiano fadein 2.5
+
+    menu:
+
+        "¿Qué haces frente al cartel?"
+
+        "Leerlo dos veces, por si por arte de magia cambió algo.":
+
+            mc_pensamiento "Obviamente no cambió nada."
+
+            mc_pensamiento "Las fechas de los exámenes nunca se retrasan cuando de verdad te hace falta."
+
+            mc_pensamiento "Lo que mas me preocupa es como saldrán esas cinco."
+
+        "Pelarme los dedos contando los días que quedan.":
+
+            mc_pensamiento "Contando con los dedos da la sensación de que queda menos."
+
+            mc_pensamiento "Mirando el calendario da igual: la cuenta asusta igual."
+
+            mc_pensamiento "No por mi, sino por ellas."
+
+        "Fingir que no me importa.":
+
+            mc_pensamiento "Intenté poner cara de poca preocupación frente al reflejo de la ventana."
+
+            mc_pensamiento "No me lo creía ni yo."
+
+            mc_pensamiento "Esa semana si es importante, no puedo andar con juegos."
+
+    ############################################################################
+    ##  Aula · chequeo corto y tenso
+    ############################################################################
+
+    scene bg_aula
+    with fade
+
+    narrador "Las cinco ya estaban en sus sitios."
+
+    narrador "Raro en ellas, parece que el peso de los examenes las está haciendose preocupar."
+
+    stop music fadeout 1.0
+
+    mc_pensamiento "Iré a saludarlas y decirles que saquen sus libros para los examenes."
+
+    narrador "Cuando iba a verlas una de ellas se interceptó en mi camino."
+
+    mc_pensamiento "Ya sabía quien era con solo ver esa mirada de odio hacia mi."
+
+    play music incomodo fadein 1.5 volume 1.0
+
+    show nino neutral at pj(0.5)
+    with dissolve
+
+    if nino_rama_beat == "calida":
+
+        mc "Nino. Saca tus libros, que ya mismo son los exámenes."
+
+        show nino neutral at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "No me mires así."
+
+        mc "No estoy mirando nada."
+
+        nino "Sí lo haces. Con esa cara de «sé algo de ti»."
+
+        nino "Y no sabes nada."
+
+        mc "Sé que las cebollas las corté finas."
+
+        show nino pillada at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "…Gruesas. Las cortaste gruesas."
+
+        nino "Pero no te quejaste."
+
+        show nino molesta at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "Lo de aquel día no fue una invitación. Que quede claro."
+
+        mc "Lo sé. Fue una orden."
+
+        nino "Exacto."
+
+        show nino neutral at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "Solo… hoy no me preguntes nada."
+
+        nino "Si me preguntas, no voy a saber qué contestar."
+
+        show nino neutral at pj_calla(0.5)
+        with disolucion_lenta
+
+        narrador "No sonó a reproche. Más bien sonó a un ruego disfrazado de orden."
+
+    elif nino_rama_beat == "tibia":
+
+        show nino neutral at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "Te aviso que sigo sin tener ganas de hablar de aquello."
+
+        mc "Tampoco iba a preguntar."
+
+        nino "Más te vale."
+
+        narrador "Se quedó mirando su cuaderno cerrado. Tardó en volver a hablar."
+
+        show nino molesta at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "…Lavaste mi taza."
+
+        mc "Era una taza."
+
+        nino "Era mi taza. Nadie toca mi taza."
+
+        nino "No lo vuelvas a hacer."
+
+        show nino neutral at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "…O sea. Haz lo que quieras."
+
+        show nino neutral at pj_calla(0.5)
+        with disolucion_lenta
+
+        narrador "Fue lo más parecido a un «gracias» que iba a sacarle."
+
+    else:
+
+        mc "Nino…"
+
+        narrador "No contestó. No giró la cabeza ni para ignorarme."
+
+        mc "Lo que te dije en la cocina…"
+
+        show nino molesta at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "No lo repitas."
+
+        nino "Tenías razón en una cosa: tengo que ocuparme de lo mío."
+
+        nino "Y eso voy a hacer. Empezando por no hablarte."
+
+        show nino molesta at pj_calla(0.5)
+        with disolucion_lenta
+
+        narrador "Lo dijo sin elevar la voz." 
+        
+        narrador "Con la misma calma que su padre."
+
+        mc_pensamiento "Esa calma no era suya. La había heredado."
+
+        mc_pensamiento "Y yo se la había hecho usar."
+
+    stop music fadeout 1.5
+
+    ## Las demás van llegando. Nino vuelve a su sitio de la formación.
+
+    show nino at pj(X_NINO)
+    with mover
+
+    show ichika neutral at pj(X_ICHIKA)
+    show miku neutral at pj(X_MIKU)
+    show yotsuba sonriendo at pj(X_YOTSUBA)
+    show itsuki neutral at pj(X_ITSUKI)
+    with dissolve
+
+    narrador "Las otras cuatro fueron llegando de a una. Esta vez nadie hizo ruido."
+
+    narrador "Las saludé y fuí directo al grano en lo que debía decirles."
+
+    play music cotidiano fadein 1.5
+
+    mc "Muy bien, escuchen: el examen está a punto de empezar." 
+    
+    mc "Hemos estudiado mucho en estas semanas, así que no se atrevan a reprobar." 
+    
+    mc "Arruinarían mi reputación como tutor. Y mi trabajo." 
+    
+    mc "Confío en que aprobarán..."
+
+    mc_pensamiento "Me quedaron viendo con cara de preocupación."
+
+    mc_pensamiento "Parece que estan nerviosas por el inicio de los examenes."
+
+    mc "¿Se encuentran bien todas? ¿No están nerviosas?"
+
+    ## --- Yotsuba ---
+
+    show itsuki neutral at pj_calla(X_ITSUKI)
+    show ichika neutral at pj_calla(X_ICHIKA)
+    show miku neutral at pj_calla(X_MIKU)
+    show nino neutral at pj_calla(X_NINO)
+    show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
+
+    yotsuba "¡Eh, nosotras estamos súper tranquilas! ¡Para nada nerviosas!"
+
+    mc "Yotsuba, estás sosteniendo tu lápiz al revés."
+
+    yotsuba "¡Es una técnica! ¡Para aliviar los nervios!"
+
+    show yotsuba incomoda at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
+
+    yotsuba "…Bueno. Si te soy sincera..." 
+    
+    yotsuba "Creo que estoy un poco mas nerviosa que las demás."
+
+    yotsuba "Es que si alguna de nosotras reprueba, se acaba todo."
+
+    yotsuba "¡Pero no va a pasar! ¡Digo… creo que no va a pasar!"
+
+    yotsuba "Porque todas confían en ti."
+
+    mc "Voy a estar ahí. Eso sí lo puedo decir."
+
+    show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
+
+    yotsuba "…¡Eso sí lo acepto!"
+
+    show yotsuba sonriendo at pj_calla(X_YOTSUBA)
+    with disolucion_lenta
+
+    ## --- Miku ---
+
+    show miku neutral at pj_habla(X_MIKU)
+    with disolucion_lenta
+
+    miku "…Son cinco materias de examen."
+
+    mc "Ya lo sé."
+
+    miku "…Y nosotras somos cinco."
+
+    mc_pensamiento "No sé si lo soltó por soltar, pero la frase se me quedó dando vueltas."
+
+    show miku encogida at pj_habla(X_MIKU)
+    with disolucion_lenta
+
+    miku "…Perdón. Pienso cosas raras cuando hay examen."
+
+    mc "No tienes que disculparte."
+
+    miku "…Está bien."
+
+    show miku at pj_calla(X_MIKU)
+    with disolucion_lenta
+
+    narrador "Lo dijo como quien oye una frase en otro idioma y asiente por educación."
+
+    ## --- Itsuki ---
+
+    narrador "Itsuki ni se molestó en levantar los ojos del cuaderno." 
+    
+    narrador "Y eso que esta vez ni siquiera lo iba leyendo."
+
+    show itsuki neutral at pj_habla(X_ITSUKI)
+    with disolucion_lenta
+
+    mc "Itsuki."
+
+    itsuki "Estoy repasando."
+
+    mc "Llevabas diez minutos en la misma página."
+
+    itsuki "Estoy repasando con profundidad."
+
+    if itsuki_visitada_cap1:
+
+        show itsuki molesta at pj_habla(X_ITSUKI)
+        with disolucion_lenta
+
+        itsuki "Los temas ya me los sé. Eso no es lo que me preocupa."
+
+        itsuki "Me preocupa llegar el día del examen y que no salgan."
+
+        mc "Saldrán. Confía en tí."
+
+        itsuki "No te pedí que lo dijeras."
+
+        show itsuki at pj_calla(X_ITSUKI)
+        with disolucion_lenta
+
+        narrador "No dio las gracias. Pero tampoco me pidió que me callara."
+
+    else:
+
+        show itsuki molesta at pj_habla(X_ITSUKI)
+        with disolucion_lenta
+
+        itsuki "Y no hace falta que te preocupes por mí." 
+        
+        itsuki "Yo siempre llego preparada."
+
+        mc "Lo sé."
+
+        itsuki "Entonces deja de mirarme el cuaderno."
+
+        itsuki "Y con esa cara de que quieres intrometerte."
+
+        show itsuki at pj_calla(X_ITSUKI)
+        with disolucion_lenta
+
+        narrador "Lo cerró con las dos manos. Y siguió sin mirarme."
+
+    ## --- Ichika ---
+
+    show ichika sonriendo at pj_habla(X_ICHIKA)
+    with disolucion_lenta
+
+    ichika "Hoy es tu última tarde libre, ¿no?"
+
+    mc "Sí."
+
+    ichika "Pues piénsatelo bien."
+
+    show ichika neutral at pj_habla(X_ICHIKA)
+    with disolucion_lenta
+
+    ichika "…Y no te lo digo por mí." 
+    
+    ichika "Te lo digo porque después ya no hay vuelta atrás."
+
+    if ichika_visitada_cap1:
+
+        show ichika agotada at pj_habla(X_ICHIKA)
+        with disolucion_lenta
+
+        ichika "Yo estoy bien. Que conste."
+
+        mc_pensamiento "Era la segunda persona esa semana que me decía «estoy bien» sin sonar convencida."
+
+        ichika "Solo… elige a quien de verdad lo necesite."
+
+        ichika "No a la que mejor lo disimule."
+
+        ichika "Todas te necesitan. A su manera."
+
+        ichika "Aunque no lo creas."
+
+    else:
+
+        show ichika sonriendo at pj_habla(X_ICHIKA)
+        with disolucion_lenta
+
+        ichika "Yo ya sé que no me vas a elegir a mí." 
+        
+        ichika "¡Me da igual! ¡Soy la favorita de todos modos!"
+
+        show ichika neutral at pj_habla(X_ICHIKA)
+        with disolucion_lenta
+
+        ichika "…Es broma. Más o menos."
+
+    show ichika at pj_calla(X_ICHIKA)
+
+    ############################################################################
+    ##  Cierre · última decisión
+    ############################################################################
+
+    mc "Muy bien entonces las espero el día de los examenes."
+
+    mc "Todo irá bien, les aseguro."
+
+    show itsuki at pj_habla(X_ITSUKI)
+    show ichika at pj_habla(X_ICHIKA)
+    show miku at pj_habla(X_MIKU)
+    show nino at pj_habla(X_NINO)
+    show yotsuba at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
+
+    quintillizas "Adios."
+
+    narrador "Todas se fueron."
+
+    stop music fadeout 1.5
+
+    hide ichika
+    hide nino
+    hide miku
+    hide yotsuba
+    hide itsuki
+    with dissolve
+
+    narrador "El aula se quedó vacía de golpe."
+
+    narrador "Solo quedó el tic-tac del reloj, que hasta ahora nunca había oído."
+
+    mc_pensamiento "Tres."
+
+    mc_pensamiento "Tres chicas y una última decisión."
+    
+    mc_pensamiento "Una sola tarde."
+
+    mc_pensamiento "Ichika tenía razón: después de hoy no hay vuelta atrás."
+
+    mc_pensamiento "Lo que elija ahora podrá tener un peso gigante en el examen."
+
+    if maruo_ultimatum:
+
+        mc_pensamiento "Además, Maruo no va a darme otra oportunidad."
+
+        mc_pensamiento "Si me equivoco, no habrá segunda vez."
+
+    else:
+
+        mc_pensamiento "Maruo sigue confiando en mí." 
+        
+        mc_pensamiento "Pero la confianza también se acaba."
+
+    mc_pensamiento "Pero ya no puedo seguir dudando."
+
+    scene bg_negro
+    with fade
+
+    jump hub_3

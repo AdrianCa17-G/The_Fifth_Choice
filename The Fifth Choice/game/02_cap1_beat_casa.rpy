@@ -256,8 +256,6 @@ label beat_casa:
 
     narrador "Dejé la vista quieta un momento antes de cerrarla."
 
-    stop music fadeout 2.0
-
     if despido_cap1:
 
         mc_pensamiento "No sé si mañana esto sigue siendo mi trabajo."
@@ -288,9 +286,9 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("ichika")
 
-                    play music ichika fadeout 1.0 fadein 1.5
-
                     if ichika_visitada_cap1:
+
+                        play music ichika fadeout 1.0 fadein 1.5
 
                         mc_pensamiento "La encontré dormida en el salón del club."
 
@@ -355,9 +353,9 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("nino")
 
-                    play music nino fadeout 1.0 fadein 1.5
-
                     if nino_visitada_cap1:
+
+                        play music nino fadeout 1.0 fadein 1.5
 
                         mc_pensamiento "Nino me corrigió una frase en inglés. No se lo pedí pero lo hizo."
 
@@ -433,9 +431,9 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("miku")
 
-                    play music miku fadeout 1.0 fadein 1.5
-
                     if miku_visitada_cap1:
+
+                        play music miku fadeout 1.0 fadein 1.5
 
                         mc_pensamiento "La encontré en la biblioteca."
 
@@ -503,11 +501,11 @@ label beat_casa:
 
                 "Yotsuba" if "yotsuba" not in hermanas_pensamiento:
 
-                    play music yotsuba fadeout 1.0 fadein 1.5
-
                     $ hermanas_pensamiento.add("yotsuba")
 
                     if yotsuba_visitada_cap1:
+
+                        play music yotsuba fadeout 1.0 fadein 1.5
 
                         mc_pensamiento "La encontré corriendo sola en la pista."
 
@@ -581,11 +579,11 @@ label beat_casa:
 
                 "Itsuki" if "itsuki" not in hermanas_pensamiento:
 
-                    play music itsuki fadeout 1.0 fadein 1.5
-
                     $ hermanas_pensamiento.add("itsuki")
 
                     if itsuki_visitada_cap1:
+
+                        play music itsuki fadeout 1.0 fadein 1.5
 
                         mc_pensamiento "La encontré atascada en un ejercicio de ciencias."
 
@@ -651,6 +649,9 @@ label beat_casa:
     ##  Final del beat, lineas rápidas y cortas para dar inicio al evento
     ##  final del capitulo 1
     ############################################################################
+
+    scene bg_cuarto_mc
+    with fade
 
     mc_pensamiento "Cerré la libreta y apagué la lámpara."
 

@@ -152,7 +152,7 @@ label hub_Yotsuba:
 
     narrador "En el antebrazo, las marcas de rotulador corridas por el sudor."
 
-    play ambiente amb_viento fadein 2.0 volume 1.5
+    play ambiente amb_silencio_exterior fadein 2.0 volume 1.5
 
     yotsuba "¿Por qué estás aquí?"
 

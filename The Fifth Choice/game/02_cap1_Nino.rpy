@@ -116,6 +116,13 @@ label hub_Nino:
     show nino neutral at pj(0.5)
     with dissolve
 
+    mc "Hola... Nino." 
+    
+    mc "Qué coincidencia encontrarte aquí."
+
+    show nino neutral at pj_habla(0.5)
+    with dissolve
+
     nino "¿Tu?"
 
     nino "¿Qué haces aquí?"
