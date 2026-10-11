@@ -5,11 +5,11 @@
 ##  cg_hermanas_estudiando— estan en 00_definiciones.rpy.
 ################################################################################
 
-image cg_itsuki_apertura     = "cg/cap1/itsuki_apertura.webp"
+image cg_itsuki_apertura     = "cg/cap1_apertura/itsuki_apertura.webp"
 
-image cg_cinco_sentadas      = "cg/cap1/cinco_sentadas.webp"
+image cg_cinco_sentadas      = "cg/cap1_apertura/cinco_sentadas.webp"
 
-image cg_libreta             = "cg/cap1/libreta.webp"
+image cg_libreta             = "cg/cap1_apertura/libreta.webp"
 
 ################################################################################
 ##  APERTURA DEL CAPITULO 1

@@ -7,7 +7,7 @@
 # Esqueleto:
 # APERTURA → INTERCONEXIÓN 1 → HUB 1 → INTERCONEXIÓN 2 → BEAT Itsuki
 # → INTERCONEXIÓN 3 → HUB 2 → INTERCONEXIÓN 4 → BEAT crisis de Nino  
-# → INTERCONEXIÓN 5 → HUB 3 → BEAT casa → EVENTO 6
+# → INTERCONEXIÓN 5 → HUB 3 → INTERCONEXIÓN 5 → BEAT casa → EVENTO 6
 # ============================================================
 
 
@@ -455,9 +455,7 @@ label reaccion_itsuki:
 
         itsuki "Hoy no me senté en tu sitio."
 
-        itsuki "Aprendo rápido." 
-
-        itsuki "Es lo único que se me da bien."
+        itsuki "Aprendo rápido. Es lo único que se me da bien."
 
         mc "No es lo único."
 
@@ -466,12 +464,37 @@ label reaccion_itsuki:
 
         itsuki "…No digas cosas así. Sin avisar."
 
-        show itsuki at pj_calla(0.5)
+        narrador "Se quedó callada un momento, con la mano sobre el cuaderno."
+
+        itsuki "Anoche rehíce el ejercicio."
+
+        itsuki "Desde el principio. Sin mirar la corrección."
+
+        mc "¿Y?"
+
+        itsuki "…Salió bien."
+
+        itsuki "Lo logré sola. Del todo."
+
+        show itsuki neutral at pj_habla(0.5)
         with disolucion_lenta
 
-        narrador "No me miró." 
+        itsuki "No te lo cuento para que me felicites."
 
-        narrador "Pero tampoco giró la silla hacia la ventana."
+        mc "No iba a felicitarte."
+
+        itsuki "Bien. Porque solo era una conversión."
+
+        mc "Era un error que llevabas tres intentos arrastrando."
+
+        itsuki "…Lo sé."
+
+        show itsuki neutral at pj_calla(0.5)
+        with disolucion_lenta
+
+        narrador "No me miró. Pero tampoco giró la silla hacia la ventana."
+
+        mc_pensamiento "Para ella, decirme que lo había hecho sola ya era una forma de darme las gracias."
 
     elif rama_hub == "tibia":
 
@@ -484,8 +507,36 @@ label reaccion_itsuki:
 
         itsuki "Lo estabas pensando."
 
+        mc "¿Cómo lo sabes?"
+
+        itsuki "Porque te quedaste mirando mi cuaderno más tiempo del necesario."
+
+        itsuki "Tienes la costumbre de mirar como si fueras a corregir."
+
+        mc "Es mi trabajo."
+
+        itsuki "Sí. Y es un fastidio."
+
+        show itsuki neutral at pj_habla(0.5)
+        with disolucion_lenta
+
+        itsuki "…Todavía."
+
+        mc "¿Todavía qué?"
+
+        itsuki "Todavía no necesito tu ayuda."
+
+        itsuki "Es una expresión. No es una promesa."
+
+        show itsuki molesta at pj_habla(0.5)
+        with disolucion_lenta
+
+        itsuki "Y no me mires así."
+
         show itsuki molesta at pj_calla(0.5)
         with disolucion_lenta
+
+        narrador "Cerró el cuaderno antes de que pudiera ver en qué línea se había quedado."
 
     else:
 
@@ -494,16 +545,42 @@ label reaccion_itsuki:
 
         narrador "Su mochila estaba sobre mi pupitre."
 
+        narrador "Encima, el cuaderno de ciencias, abierto en la misma página de ayer."
+
         mc "Itsuki, ese es mi…"
 
         itsuki "Lo sé."
 
+        narrador "Mi solución seguía ahí, con una raya diagonal encima."
+
+        narrador "Debajo, ella había rehecho el ejercicio entero, con su letra apretada."
+
+        mc "Lo rehíciste."
+
+        itsuki "Anoche. Sola."
+
+        itsuki "Lo que hiciste ayer no cuenta. Quería que fuera mío."
+
+        mc "Itsuki…"
+
+        itsuki "No me lo agradezcas ni me lo reproches." 
+        
+        itsuki "No quiero ninguna de las dos cosas."
+
         itsuki "Ya tengo lo que necesitaba de ti. Eso fue todo."
 
-        show itsuki at pj_calla(0.5)
+        show itsuki molesta at pj_calla(0.5)
         with disolucion_lenta
 
         narrador "Tuve que sentarme en el último pupitre."
+
+        mc_pensamiento "Le había quitado la respuesta." 
+        
+        mc_pensamiento "Ella me la devolvía a su manera: tachada."
+
+    
+    hide itsuki
+    with moveoutleft
 
     return
 
@@ -517,12 +594,12 @@ label queja_ichika:
     show ichika sonriendo at pj(0.28)
     with dissolve
 
-    ichika "Oye, [mc]. Tengo una queja formal."
-
-    mc "Hola Ichika. Te escucho."
-
     show ichika sonriendo at pj_habla(0.28)
     with disolucion_lenta
+
+    ichika "Oye, [mc]. Tengo una queja formal."
+
+    mc "Hola, Ichika. Te escucho."
 
     ichika "Tres tardes. Tres. Y ninguna fue mía."
 
@@ -537,19 +614,40 @@ label queja_ichika:
     show ichika neutral at pj_habla(0.28)
     with disolucion_lenta
 
-    ichika "…Aunque, bueno. Menos mal."
+    ichika "…Estaba tan segura de que me ibas a elegir que ni preparé plan B."
 
-    ichika "Últimamente no estoy como para que me vean de cerca."
+    ichika "Ensayé tres formas de reaccionar cuando me encontraras."
 
-    mc "¿Cómo?"
+    ichika "Una graciosa, una dramática y una de «qué sorpresa, no te esperaba»."
+
+    mc "¿Y cuál habrías usado?"
+
+    ichika "…No lo sé."
+
+    ichika "Son todas actuación. Y no sé si habría podido con otra cosa."
+
+    mc "Lo siento, Ichika."
 
     show ichika sonriendo at pj_habla(0.28)
     with disolucion_lenta
 
-    ichika "¡Es un chiste! ¡Soy una artista, siempre estoy espléndida!"
+    ichika "¡Ay, no! ¡No me pidas perdón, que me da vergüenza ajena!"
+
+    ichika "¡Era un chiste! ¡Soy una artista, siempre estoy espléndida!"
+
+    show ichika neutral at pj_habla(0.28)
+    with disolucion_lenta
+
+    ichika "…Pero la próxima vez, no tardes tanto."
+
+    ichika "Estas cosas se agradecen. Aunque no lo parezca."
 
     show ichika sonriendo at pj_calla(0.28)
     with disolucion_lenta
+
+    narrador "Se fue con la sonrisa puesta." 
+    
+    narrador "Se la vi acomodar por el pasillo, como quien se ajusta un disfraz."
 
     hide ichika
     with moveoutleft
@@ -564,6 +662,7 @@ label queja_nino:
     with dissolve
 
     show nino neutral at pj_habla(0.28)
+    with disolucion_lenta
 
     nino "Ni creas que me molesta."
 
@@ -589,11 +688,33 @@ label queja_nino:
     show nino neutral at pj_habla(0.28)
     with disolucion_lenta
 
-    nino "…Bueno. Es en serio lo de que no me hacía falta."
+    nino "…Mira. No esperaba nada."
 
-    nino "Con una de nosotras ilusionada por día ya es suficiente."
+    nino "Esa es la ventaja de no esperar: nadie te decepciona."
 
-    show nino neutral at pj_calla(0.28)
+    nino "Pero las que sí fuiste a ver llegaron distintas a casa."
+
+    mc "¿Distintas cómo?"
+
+    nino "Distintas. No te digo si mejor o peor."
+
+    nino "Y alguien tiene que ser la que no cambia."
+
+    nino "Para que las demás tengan a dónde volver."
+
+    show nino pillada at pj_habla(0.28)
+    with disolucion_lenta
+
+    nino "…Eso no significa que quisiera que vinieras. Que quede claro."
+
+    mc "Queda clarísimo."
+
+    nino "¡Y deja de poner esa cara de culpa! ¡No era una queja!"
+
+    show nino molesta at pj_calla(0.28)
+    with disolucion_lenta
+
+    narrador "Se fue antes de que pudiera contestarle, con el paso apretado de quien dijo más de la cuenta."
 
     hide nino
     with moveoutleft
@@ -608,6 +729,7 @@ label queja_miku:
     with dissolve
 
     show miku neutral at pj_habla(0.28)
+    with disolucion_lenta
 
     miku "…No me buscaste."
 
@@ -615,7 +737,7 @@ label queja_miku:
 
     miku "…Ya sé."
 
-    miku "…Así estuvo bien. Tranquila."
+    miku "…Así estuvo bien. Estuve tranquila."
 
     miku "…Pero habrías acertado, por cierto."
 
@@ -627,9 +749,29 @@ label queja_miku:
 
     narrador "Lo dijo mirando el libro. Pero esta vez no lo subió hasta media cara."
 
-    miku "…Olvídalo. No importa."
+    show miku encogida at pj_habla(0.28)
+    with disolucion_lenta
 
-    show miku neutral at pj_calla(0.28)
+    miku "Dejé el libro abierto en la misma página dos días."
+
+    miku "Por si hacía falta una excusa."
+
+    mc "¿Una excusa para qué?"
+
+    miku "Para hablar. Si alguien se sentaba."
+
+    miku "Nadie lo hizo. No pasa nada."
+
+    mc "Lo siento, Miku."
+
+    miku "…No lo sientas. Soy buena esperando."
+
+    miku "…Perdón. Eso sonó triste. No era la idea."
+
+    show miku at pj_calla(0.28)
+    with disolucion_lenta
+
+    narrador "Se subió el libro hasta media cara. Esta vez sí."
 
     hide miku
     with moveoutleft
@@ -644,6 +786,7 @@ label queja_yotsuba:
     with dissolve
 
     show yotsuba sonriendo at pj_habla(0.28)
+    with disolucion_lenta
 
     yotsuba "¡No pasa nada! ¡De verdad!"
 
@@ -658,16 +801,29 @@ label queja_yotsuba:
 
     yotsuba "…Aunque estuve entrenando por si venías."
 
+    yotsuba "Me quedé quince minutos más cada tarde. Los conté."
+
     yotsuba "Cronometré dos vueltas de más. Por si acaso."
 
     mc "Lo siento."
 
+    yotsuba "No lo sientas. Es que pensé que a lo mejor hoy te hacía falta alguien que te animara."
+
+    yotsuba "Y si nadie me necesita, ¿para qué me sobra tanta energía?"
+
     show yotsuba sonriendo at pj_habla(0.28)
     with disolucion_lenta
 
-    yotsuba "¡No lo sientes! ¡Eso déjalo para las próximas veces!"
+    yotsuba "¡Pero no importa! ¡Me sobra, así que la reparto!"
+
+    yotsuba "¡Y para la próxima vez ya tengo tres vueltas de ventaja!"
 
     show yotsuba sonriendo at pj_calla(0.28)
+    with disolucion_lenta
+
+    narrador "Se fue corriendo, con la sonrisa puesta." 
+    
+    narrador "Pero al doblar la esquina bajó el ritmo y siguió caminando."
 
     hide yotsuba
     with moveoutleft
@@ -682,6 +838,7 @@ label queja_itsuki:
     with dissolve
 
     show itsuki neutral at pj_habla(0.28)
+    with disolucion_lenta
 
     itsuki "Dije que no me iba a esconder. Y no lo hice."
 
@@ -706,7 +863,32 @@ label queja_itsuki:
 
     itsuki "Se te nota en la voz."
 
+    show itsuki neutral at pj_habla(0.28)
+    with disolucion_lenta
+
+    itsuki "…Tampoco esperaba que me buscaras."
+
+    itsuki "Yo no iba a pedírtelo. Pedirlo habría sido…"
+
+    narrador "Se detuvo. Una oración de Itsuki sin cerrar era como ver a alguien tropezar en terreno plano."
+
+    mc "¿Habría sido qué?"
+
+    itsuki "Nada. Una tontería."
+
+    show itsuki molesta at pj_habla(0.28)
+    with disolucion_lenta
+
+    itsuki "Solo digo que, si hubieras venido, no te habría echado."
+
+    mc "¿No?"
+
+    itsuki "No inmediatamente."
+
+    itsuki "Y no lo apuntes en ningún sitio."
+
     show itsuki molesta at pj_calla(0.28)
+    with disolucion_lenta
 
     hide itsuki
     with moveoutleft
@@ -1017,6 +1199,9 @@ label cap1_interconexion_1:
 
     narrador "El aula quedó en silencio."
 
+    scene bg_negro
+    with fade
+
     mc "Bien." 
     
     mc "Pasaré la tarde con una de ellas."
@@ -1025,7 +1210,7 @@ label cap1_interconexion_1:
 
     mc "No es para otro tipo de intenciones."
 
-    mc_pensamiento "Bien, empecemos."
+    mc_pensamiento "Bueno, empecemos."
 
     jump hub_1
 
@@ -2405,6 +2590,9 @@ label interconexion_5:
 
         mc_pensamiento "Era la segunda persona esa semana que me decía «estoy bien» sin sonar convencida."
 
+        show ichika sonriendo at pj_habla(X_ICHIKA)
+        with disolucion_lenta
+
         ichika "Solo… elige a quien de verdad lo necesite."
 
         ichika "No a la que mejor lo disimule."
@@ -2515,10 +2703,6 @@ label interconexion_6:
 
         if despido_cap1:
             clima_cap1 = "mala"
-        elif maruo_ultimatum:
-            clima_cap1 = "mixta"
-        elif n_frias >= 2:
-            clima_cap1 = "mala"
         elif n_frias == 0 and n_calidas >= 2:
             clima_cap1 = "buena"
         else:
@@ -2608,6 +2792,10 @@ label interconexion_6:
 
         mc_pensamiento "Parece que si habrá trabajo para el siguiente mes."
 
+    stop music fadeout 1.5
+
+    scene bg_negro
+    with fade
 
     mc_pensamiento "Mañana es viernes." 
     
@@ -2634,6 +2822,8 @@ label interconexion_6:
 
     narrador "La tensión se siente hasta en los rincones del instituto."
 
+    play music cotidiano fadein 2.0
+
     mc_pensamiento "Bien no hay nada de que preocuparse."
 
     mc_pensamiento "Los examenes son muy pronto, pero eso no es nada complicado."
@@ -2644,8 +2834,6 @@ label interconexion_6:
 
     scene bg_aula
     with fade
-
-    play music cotidiano fadein 2.0
 
     narrador "En el aula nadie hablaba de otra cosa más que los examenes." 
     
@@ -2688,12 +2876,20 @@ label interconexion_6:
     show itsuki neutral at pj(X_ITSUKI)
     with dissolve
 
+    stop music fadeout 1.5
+
     narrador "Faltaba la cereza del pastel."
 
     narrador "Y la puso la que había empezado el juego. Con su frialdad de siempre."
 
+    show ichika neutral at pj_calla(X_ICHIKA)
+    show nino neutral at pj_calla(X_NINO)
+    show miku neutral at pj_calla(X_MIKU)
+    show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
+
+    play music incomodo fadein 2.0
 
     itsuki "El juego se acabó hoy."
 
@@ -3300,11 +3496,4 @@ label interconexion_6:
     if despido_cap1:
         jump final_malo_temprano
 
-    jump interconexion_7
-
-
-## PROVISIONAL: reemplázalo al escribir la interconexión 7.
-label interconexion_7:
-
-    call evento_6
-    jump capitulo2
+    jump evento_6

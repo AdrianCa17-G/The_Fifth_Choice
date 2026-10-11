@@ -454,11 +454,11 @@ init python:
 
 
     def contar_ramas(tipo):
-    total = 0
-    for hermana in ["ichika", "nino", "miku", "yotsuba", "itsuki"]:
-        if getattr(store, hermana + "_rama_cap1") == tipo:
-            total += 1
-    return total
+        total = 0
+        for hermana in ["ichika", "nino", "miku", "yotsuba", "itsuki"]:
+            if getattr(store, hermana + "_rama_cap1") == tipo:
+                total += 1
+        return total
 
 
 ################################################################################

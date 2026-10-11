@@ -262,6 +262,11 @@ def main():
         help="Coordenada X manual del eje del cuerpo (centro de la falda), "
              "en la imagen ORIGINAL."
     )
+    parser.add_argument(
+        "--ipd", type=float, default=TARGET_IPD, metavar="PX",
+        help=f"IPD objetivo en el lienzo (default {TARGET_IPD}). Subirlo agranda el sprite "
+             "(p. ej. --ipd 81); la línea de ojos sigue en y=199."
+    )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
         "--huecos", action="store_true",
@@ -304,7 +309,7 @@ def main():
     (x1, y1), (x2, y2) = p1, p2
     ipd_raw = float(np.hypot(x2 - x1, y2 - y1))
     eye_y_raw = (y1 + y2) / 2.0
-    scale = TARGET_IPD / ipd_raw
+    scale = args.ipd / ipd_raw
 
     # --- Eje horizontal (centro de la falda) ---
     if args.eje is not None:

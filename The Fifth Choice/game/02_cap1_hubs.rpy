@@ -46,24 +46,17 @@ label hub_2:
 # ------------------------------------------------------------
 label hub_3:
 
-    $ tiempo_restante = "una semana"
+    $ tiempo_restante = "pocos días"
 
     call screen mapa_hub(3)
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
 
-    ## Con ultimátum activo, el tercer evento tiene que haber sido cálido.
-    if maruo_ultimatum and rama_de(destino) != "calida":
+    ## Con aviso activo, un segundo desaire en el hub 3 es el despido.
+    if maruo_ultimatum and rama_de(destino) == "fria":
         $ despido_cap1 = True
     else:
         $ despido_cap1 = False
 
-    ## beat_casa lee despido_cap1 para mostrar la duda de Futaro.
-    call beat_casa
-
-    if despido_cap1:
-        jump final_malo_temprano
-
-    call evento_6
-    jump capitulo2
+    jump interconexion_6
