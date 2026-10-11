@@ -3063,11 +3063,13 @@ label interconexion_6:
     elif clima_cap1 == "mixta":
 
         show itsuki neutral at pj_habla(X_ITSUKI)
+        with disolucion_lenta
 
         itsuki "Aprovecha la tarde. No va a haber otra."
 
         show itsuki neutral at pj_calla(X_ITSUKI)
         show miku neutral at pj_habla(X_MIKU)
+        with disolucion_lenta
 
         miku "…Yo me quedo hasta tarde."
 
@@ -3076,14 +3078,17 @@ label interconexion_6:
         miku "…Si no tengo que hablar mucho."
 
         show miku neutral at pj_calla(X_MIKU)
+        with disolucion_lenta
 
     else:
 
         show itsuki molesta at pj_habla(X_ITSUKI)
+        with disolucion_lenta
 
         itsuki "Y procura no empeorarlo."
 
         show itsuki molesta at pj_calla(X_ITSUKI)
+        with disolucion_lenta
 
         narrador "Nadie se rió. Ni siquiera Ichika."
 
@@ -3332,6 +3337,8 @@ label interconexion_6:
         narrador "Nada ha cambiado desde el primer día."
 
         narrador "O más bien yo no las he hecho cambiar."
+
+        narrador "Era un fracaso que ya se venía venir."
 
     ############################################################################
     ##  Sábado · mensaje de aliento (menú de sabor, reconverge)
