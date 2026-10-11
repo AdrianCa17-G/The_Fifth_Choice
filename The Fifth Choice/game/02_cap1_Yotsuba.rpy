@@ -551,7 +551,7 @@ label yotsuba_m5:
 
     mc_pensamiento "Pensé en decirle algo antes de irme."
 
-    play sound sfx.pisadas_pista fadein 1.0 volume 0.5
+    play sound sfx.pisadas_pista fadein 1.0 volume 0.7
 
     narrador "Pero cuando llegué, ella ya había vuelto a la pista."
 

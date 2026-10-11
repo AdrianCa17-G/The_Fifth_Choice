@@ -115,7 +115,7 @@ init python:
         elif n == 2:
             return "Te quedan dos tardes. Dos de ellas van a quedar afuera."
         else:
-            return "Última tarde. Elegí con quién la terminás."
+            return "Última tarde. Elige con quién finalizas esta aventura."
 
     def hub_mask(borde=None):
         ancho = int((HUB_SLOT - HUB_GAP) * math.cos(math.radians(HUB_ANG)))

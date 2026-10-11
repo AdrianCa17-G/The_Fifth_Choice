@@ -1171,7 +1171,7 @@ label prologo:
     narrador "Debería haberme sentido derrotado. Lo raro es que no lo estaba."
 
     ## Vuelve el tema de casa: la musica regresa cuando el decide no rendirse.
-    play music hogar fadein 1.0 volume 0.7
+    play music hogar fadein 1.0
 
     mc_pensamiento "Bien. Que sea difícil."
 

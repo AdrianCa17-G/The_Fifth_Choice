@@ -246,7 +246,7 @@ label beat_casa:
     scene cg_libreta
     with fade
     
-    play music hogar fadein 3.0 volume 0.7
+    play music hogar fadein 1.5 
 
     mc_pensamiento "Cinco nombres, en columna, con una línea debajo."
 

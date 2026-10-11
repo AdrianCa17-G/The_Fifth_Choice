@@ -313,8 +313,6 @@ label nino_m4a:
     $ nino_rama_cap1 = "calida"
     $ sumar_punto("nino", 3)
 
-    #play music audio.descubrimiento fadein 1.0 volume 3.5
-
     mc "Tienes razón en desconfiar."
 
     show nino neutral at pj_habla(0.5) 

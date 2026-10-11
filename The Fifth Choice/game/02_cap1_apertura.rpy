@@ -579,7 +579,7 @@ label cap1_apertura:
     scene bg_cuarto_mc
     with fade
 
-    play music hogar fadein 1.5 volume 0.7
+    play music hogar fadein 1.5 
 
     narrador "Puse las cinco hojas sobre el escritorio y las dejé ahí un buen rato sin tocarlas."
 

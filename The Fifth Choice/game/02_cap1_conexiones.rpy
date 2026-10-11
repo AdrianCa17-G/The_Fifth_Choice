@@ -2298,7 +2298,7 @@ label interconexion_5:
 
     mc_pensamiento "Ya sabía quien era con solo ver esa mirada de odio hacia mi."
 
-    play music incomodo fadein 1.5 volume 1.0
+    play music incomodo fadein 1.5 
 
     show nino neutral at pj(0.5)
     with dissolve
