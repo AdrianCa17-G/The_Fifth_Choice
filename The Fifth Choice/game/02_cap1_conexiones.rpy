@@ -1735,9 +1735,6 @@ label interconexion_3:
 
     stop music fadeout 1.5
 
-    scene bg_negro
-    with fade
-
     jump hub_2
 
 
@@ -2675,9 +2672,6 @@ label interconexion_5:
         mc_pensamiento "Pero la confianza también se acaba."
 
     mc_pensamiento "Pero ya no puedo seguir dudando."
-
-    scene bg_negro
-    with fade
 
     jump hub_3
 

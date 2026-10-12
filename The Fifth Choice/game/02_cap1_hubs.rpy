@@ -20,6 +20,8 @@ label hub_1:
 
     $ tiempo_restante = "casi cuatro semanas"
 
+    play music hub fadein 1.5
+
     scene bg_negro
     with fade
 
@@ -30,6 +32,8 @@ label hub_1:
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
 
+    stop music fadeout 1.0
+
     jump interconexion_2
 
 
@@ -38,6 +42,8 @@ label hub_1:
 label hub_2:
 
     $ tiempo_restante = "tres semanas"
+
+    play music hub fadein 1.5
 
     scene bg_negro
     with fade
@@ -49,6 +55,8 @@ label hub_2:
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
 
+    stop music fadeout 1.0
+
     jump interconexion_4
 
 
@@ -57,6 +65,8 @@ label hub_2:
 label hub_3:
 
     $ tiempo_restante = "pocos días"
+
+    play music hub fadein 1.5
 
     scene bg_negro
     with fade
@@ -67,6 +77,8 @@ label hub_3:
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
+
+    stop music fadeout 1.0
 
     ## Con aviso activo, un segundo desaire en el hub 3 es el despido.
     if maruo_ultimatum and rama_de(destino) == "fria":

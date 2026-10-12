@@ -342,6 +342,14 @@ define audio.sfx_hoja          = "audio/sfx/hoja.mp3"
 define audio.sfx_puerta_cierra = "audio/sfx/puerta_cierra.mp3"
 define audio.sfx.pisadas_pista = "audio/sfx/pisadas_pista.mp3"
 
+
+## Musica del hub
+define audio.hub = "audio/bgm/hub.ogg"
+
+## Efectos de interfaz (compartidos: hub, menu principal y elecciones)
+define audio.sfx_hover = "audio/sfx/hover.mp3"
+define audio.sfx_click = "audio/sfx/click.mp3"
+
 ################################################################################
 ##  8. LÓGICA DEL CÁLCULO SECRETO  (documentación — se implementa en FASE 5)
 ################################################################################
