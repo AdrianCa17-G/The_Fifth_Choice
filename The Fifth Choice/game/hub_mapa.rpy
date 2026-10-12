@@ -23,6 +23,8 @@ init python:
     HUB_CARD_W = HUB_SLOT + 2 * HUB_DESPL + 40
 
     # --- look ---
+    HUB_FUENTE      = "fonts/MPLUSRounded1c-Bold.ttf"
+    HUB_FUENTE_FINA = "fonts/MPLUSRounded1c-Medium.ttf"
     HUB_VELO   = 0.24
     HUB_UNIFY  = 0.10
     HUB_SOMBRA = 0.78
@@ -48,7 +50,7 @@ init python:
             surf = renpy.display.im.load_surface(renpy.display.im.Image(ruta))
             try:
                 # camino rápido
-                r = surf.get_bounding_rect(1)
+                r = surf.get_bounding_rect(20)
                 res = (r.top, r.top + r.height)
             except Exception:
                 # fallback: escaneo por filas, con paso
@@ -76,10 +78,15 @@ init python:
         _hub_bbox[ruta] = res
         return res
 
-    def hub_sprite(ruta, escala=1.0, xoff=0, yoff=0):
+    def hub_sprite(ruta, escala=1.0, xoff=0, yoff=0, coronilla=None):
         """Sprite escalado por altura REAL de la chica y con la
-        coronilla clavada en HUB_CABEZA."""
+        coronilla clavada en HUB_CABEZA. Si se pasa `coronilla` (fila
+        del PNG donde esta la parte alta del pelo), se usa en vez del
+        primer pixel opaco: sirve cuando un lazo, una mano o un objeto
+        sobresale por encima de la cabeza."""
         top, bot = hub_bbox(ruta)
+        if coronilla is not None:
+            top = coronilla
         alto = max(1, bot - top)
         z = (HUB_CONT_ALTO / float(alto)) * escala
         # yoffset compensa el relleno transparente de arriba
@@ -113,9 +120,9 @@ init python:
         if n == 1:
             return "Tres tardes. Cinco hermanas. Solo vas a alcanzar a tres."
         elif n == 2:
-            return "Te quedan dos tardes. Dos de ellas van a quedar afuera."
+            return "Dos tardes. Cuatro hermanas. Dos van a quedar fuera."
         else:
-            return "Última tarde. Elige con quién finalizas esta aventura."
+            return "Última tarde. Tres hermanas. Dos se quedan fuera."
 
     def hub_mask(borde=None):
         ancho = int((HUB_SLOT - HUB_GAP) * math.cos(math.radians(HUB_ANG)))
@@ -145,11 +152,26 @@ init python:
                                    alpha=a, yalign=1.0))
         return Fixed(*capas, xysize=(HUB_CARD_W, HUB_H))
 
-    def hub_panel(fondo, ruta, color, escala=1.0, xoff=0, yoff=0, borde=None):
+
+    def hub_sombra_superior(alto=200, alpha_max=0.55, pasos=24):
+        """Degradado negro que baja desde el borde superior: asegura que
+        el titulo se lea sobre cualquier fondo. Misma tecnica que
+        hub_degradado, pero pegado arriba."""
+        a = 1.0 - (1.0 - alpha_max) ** (1.0 / pasos)
+        capas = []
+        for i in range(pasos):
+            h = int(alto * (i + 1) / float(pasos))
+            capas.append(Transform(Solid("#000000"),
+                                   xysize=(HUB_W, h),
+                                   alpha=a, yalign=0.0))
+        return Fixed(*capas, xysize=(HUB_W, HUB_H))
+
+
+    def hub_panel(fondo, ruta, color, escala=1.0, xoff=0, yoff=0, borde=None, coronilla=None):
         capas = [
             Transform(fondo, xysize=(HUB_CARD_W, HUB_H), fit="cover"),
             Transform(Solid(color), xysize=(HUB_CARD_W, HUB_H), alpha=HUB_VELO),
-            hub_sprite(ruta, escala, xoff, yoff),
+            hub_sprite(ruta, escala, xoff, yoff, coronilla),
             Transform(Solid(color), xysize=(HUB_CARD_W, HUB_H), alpha=HUB_UNIFY),
             hub_degradado(520),
             Transform(Solid(color), xysize=(HUB_CARD_W, 12), yalign=1.0),
@@ -181,28 +203,28 @@ init 2 python:
     HUB_DESTINOS = [
         dict(hermana="ichika",  nombre="Ichika",  lugar="Sala de ensayo",
              fondo="ph_bg_ensayo",
-             sprite="sprites/ichika_sprites/ichika_neutral.png",
+             sprite="hubs/ichika_hub.png",
              color="#FFB7C5", escala=1.00, xoff=0, yoff=0),
 
         dict(hermana="nino",    nombre="Nino",    lugar="Centro comercial",
              fondo="ph_bg_comercial",
-             sprite="sprites/nino_sprites/nino_neutral.png",
+             sprite="hubs/nino_hub.png",
              color="#C39BD3", escala=1.00, xoff=0, yoff=0),
 
         dict(hermana="miku",    nombre="Miku",    lugar="Biblioteca",
              fondo="ph_bg_biblioteca",
-             sprite="sprites/miku_sprites/miku_neutral.png",
+             sprite="hubs/miku_hub.png",
              color="#5DADE2", escala=1.00, xoff=0, yoff=0),
 
         dict(hermana="yotsuba", nombre="Yotsuba", lugar="Pista de atletismo",
              fondo="ph_bg_pista",
-             sprite="sprites/yotsuba_sprites/yotsuba_sonriendo.png",
-             color="#58D68D", escala=1.00, xoff=0, yoff=0),
+             sprite="hubs/yotsuba_hub.png",
+             color="#58D68D", escala=1.00, xoff=0, yoff=0, coronilla=84),
 
         dict(hermana="itsuki",  nombre="Itsuki",  lugar="Aula vacía",
              fondo="ph_bg_aula",
-             sprite="sprites/itsuki_sprites/itsuki_sonriendo.png",
-             color=C_ITSUKI,  escala=1.00, xoff=0, yoff=0),
+             sprite="hubs/itsuki_hub.png",
+             color=C_ITSUKI, escala=1.00, xoff=0, yoff=0, coronilla=65),
     ]
 
 
@@ -219,22 +241,31 @@ screen mapa_hub(hub_actual=1):
         xysize (HUB_W, HUB_H)
 
         for i, d in enumerate(HUB_DESTINOS):
-            use destino_hub(i, d)
+            fixed:
+                xysize (HUB_W, HUB_H)
+                at hub_entrada(i)
+                use destino_hub(i, d)
+
+    # sombra bajo el titulo
+    add hub_sombra_superior()
 
     vbox:
         xalign 0.5
         ypos 30
         spacing 6
+        at hub_titulo_entrada
 
         text "¿Con cuál quintilliza pasarás esta tarde?":
+            font HUB_FUENTE
             size 54 color "#ffffff" xalign 0.5
             outlines [(6, "#000000", 0, 0), (2, "#000000", 0, 3)]
 
         text hub_subtitulo(hub_actual):
+            font HUB_FUENTE_FINA
             size 23 color "#e2e2e2" xalign 0.5
             outlines [(5, "#000000", 0, 0), (2, "#000000", 0, 2)]
 
-    # reglas de calibración: poné HUB_GUIA = True para alinear cabezas
+    # reglas de calibracion: pon HUB_GUIA = True para alinear cabezas
     if HUB_GUIA:
         add Solid("#00ff00"):
             xysize (HUB_W, 2)
@@ -271,7 +302,7 @@ screen destino_hub(indice, d):
 
         add hub_panel(d["fondo"], d["sprite"], d["color"],
                       d.get("escala", 1.0), d.get("xoff", 0), d.get("yoff", 0),
-                      borde)
+                      borde, d.get("coronilla"))
 
         vbox:
             xalign 0.5
@@ -280,16 +311,19 @@ screen destino_hub(indice, d):
             spacing 0
 
             text d["nombre"]:
+                font HUB_FUENTE
                 size 44 color hub_claro(d["color"]) xalign 0.5 text_align 0.5
                 outlines [(5, "#000000", 0, 0), (2, "#000000", 0, 2)]
 
             text d["lugar"]:
+                font HUB_FUENTE_FINA
                 size 23 color "#e0e0e0" xalign 0.5 text_align 0.5
                 outlines [(4, "#000000", 0, 0)]
 
             if visitada:
                 text "ya visitada":
-                    size 17 color "#a8a8a8" xalign 0.5
+                    font HUB_FUENTE_FINA
+                    size 20 color "#ffffff" xalign 0.5
                     outlines [(3, "#000000", 0, 0)]
 
 
@@ -301,8 +335,19 @@ transform hub_normal:
     on idle:
         linear 0.12 matrixcolor BrightnessMatrix(-0.06) * SaturationMatrix(0.92) yoffset 0
 
+transform hub_entrada(indice):
+    alpha 0.0
+    yoffset 40
+    pause (0.10 * indice)
+    linear 0.45 alpha 1.0 yoffset 0
+
+transform hub_titulo_entrada:
+    alpha 0.0
+    pause 0.35
+    linear 0.5 alpha 1.0
+
 transform hub_visitado:
-    matrixcolor SaturationMatrix(0.22) * BrightnessMatrix(-0.18)
+    matrixcolor SaturationMatrix(0.32) * BrightnessMatrix(-0.12)
     yoffset 0
     on hover:
         linear 0.12 matrixcolor SaturationMatrix(0.65) * BrightnessMatrix(-0.04) yoffset -6

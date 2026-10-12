@@ -20,7 +20,12 @@ label hub_1:
 
     $ tiempo_restante = "casi cuatro semanas"
 
+    scene bg_negro
+    with fade
+
+    $ quick_menu = False
     call screen mapa_hub(1)
+    $ quick_menu = True
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
@@ -34,7 +39,12 @@ label hub_2:
 
     $ tiempo_restante = "tres semanas"
 
-    call screen mapa_hub(2)
+    scene bg_negro
+    with fade
+
+    $ quick_menu = False
+    call screen mapa_hub(1)
+    $ quick_menu = True
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)
@@ -48,7 +58,12 @@ label hub_3:
 
     $ tiempo_restante = "pocos días"
 
-    call screen mapa_hub(3)
+    scene bg_negro
+    with fade
+
+    $ quick_menu = False
+    call screen mapa_hub(1)
+    $ quick_menu = True
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ hub_visitadas.append(destino)

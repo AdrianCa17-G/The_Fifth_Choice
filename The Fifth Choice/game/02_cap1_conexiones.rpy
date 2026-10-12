@@ -591,10 +591,10 @@ label reaccion_itsuki:
 
 label queja_ichika:
 
-    show ichika sonriendo at pj(0.28)
+    show ichika sonriendo at pj(0.5)
     with dissolve
 
-    show ichika sonriendo at pj_habla(0.28)
+    show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "Oye, [mc]. Tengo una queja formal."
@@ -611,7 +611,7 @@ label queja_ichika:
 
     ichika "Todo es un casting, [mc]."
 
-    show ichika neutral at pj_habla(0.28)
+    show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "…Estaba tan segura de que me ibas a elegir que ni preparé plan B."
@@ -628,21 +628,21 @@ label queja_ichika:
 
     mc "Lo siento, Ichika."
 
-    show ichika sonriendo at pj_habla(0.28)
+    show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "¡Ay, no! ¡No me pidas perdón, que me da vergüenza ajena!"
 
     ichika "¡Era un chiste! ¡Soy una artista, siempre estoy espléndida!"
 
-    show ichika neutral at pj_habla(0.28)
+    show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "…Pero la próxima vez, no tardes tanto."
 
     ichika "Estas cosas se agradecen. Aunque no lo parezca."
 
-    show ichika sonriendo at pj_calla(0.28)
+    show ichika at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Se fue con la sonrisa puesta." 
@@ -658,10 +658,10 @@ label queja_ichika:
 # ------------------------------------------------------------
 label queja_nino:
 
-    show nino neutral at pj(0.28)
+    show nino neutral at pj(0.5)
     with dissolve
 
-    show nino neutral at pj_habla(0.28)
+    show nino neutral at pj_habla(0.5)
     with disolucion_lenta
 
     nino "Ni creas que me molesta."
@@ -674,7 +674,7 @@ label queja_nino:
 
     nino "Me da exactamente igual."
 
-    show nino molesta at pj_habla(0.28)
+    show nino molesta at pj_habla(0.5)
     with disolucion_lenta
 
     nino "Además, ya te vi en mi casa más de lo que quería."
@@ -685,7 +685,7 @@ label queja_nino:
 
     nino "¡NO! ¡Fue un «qué alivio»!"
 
-    show nino neutral at pj_habla(0.28)
+    show nino neutral at pj_habla(0.5)
     with disolucion_lenta
 
     nino "…Mira. No esperaba nada."
@@ -702,7 +702,7 @@ label queja_nino:
 
     nino "Para que las demás tengan a dónde volver."
 
-    show nino pillada at pj_habla(0.28)
+    show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
     nino "…Eso no significa que quisiera que vinieras. Que quede claro."
@@ -711,7 +711,7 @@ label queja_nino:
 
     nino "¡Y deja de poner esa cara de culpa! ¡No era una queja!"
 
-    show nino molesta at pj_calla(0.28)
+    show nino at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Se fue antes de que pudiera contestarle, con el paso apretado de quien dijo más de la cuenta."
@@ -725,10 +725,10 @@ label queja_nino:
 # ------------------------------------------------------------
 label queja_miku:
 
-    show miku neutral at pj(0.28)
+    show miku neutral at pj(0.5)
     with dissolve
 
-    show miku neutral at pj_habla(0.28)
+    show miku neutral at pj_habla(0.5)
     with disolucion_lenta
 
     miku "…No me buscaste."
@@ -749,7 +749,7 @@ label queja_miku:
 
     narrador "Lo dijo mirando el libro. Pero esta vez no lo subió hasta media cara."
 
-    show miku encogida at pj_habla(0.28)
+    show miku encogida at pj_habla(0.5)
     with disolucion_lenta
 
     miku "Dejé el libro abierto en la misma página dos días."
@@ -768,7 +768,7 @@ label queja_miku:
 
     miku "…Perdón. Eso sonó triste. No era la idea."
 
-    show miku at pj_calla(0.28)
+    show miku at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Se subió el libro hasta media cara. Esta vez sí."
@@ -782,10 +782,10 @@ label queja_miku:
 # ------------------------------------------------------------
 label queja_yotsuba:
 
-    show yotsuba sonriendo at pj(0.28)
+    show yotsuba sonriendo at pj(0.5)
     with dissolve
 
-    show yotsuba sonriendo at pj_habla(0.28)
+    show yotsuba sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "¡No pasa nada! ¡De verdad!"
@@ -796,7 +796,7 @@ label queja_yotsuba:
 
     yotsuba "¡Te lo digo en serio!"
 
-    show yotsuba incomoda at pj_habla(0.28)
+    show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "…Aunque estuve entrenando por si venías."
@@ -811,14 +811,14 @@ label queja_yotsuba:
 
     yotsuba "Y si nadie me necesita, ¿para qué me sobra tanta energía?"
 
-    show yotsuba sonriendo at pj_habla(0.28)
+    show yotsuba sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "¡Pero no importa! ¡Me sobra, así que la reparto!"
 
     yotsuba "¡Y para la próxima vez ya tengo tres vueltas de ventaja!"
 
-    show yotsuba sonriendo at pj_calla(0.28)
+    show yotsuba at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Se fue corriendo, con la sonrisa puesta." 
@@ -834,10 +834,10 @@ label queja_yotsuba:
 # ------------------------------------------------------------
 label queja_itsuki:
 
-    show itsuki neutral at pj(0.28)
+    show itsuki neutral at pj(0.5)
     with dissolve
 
-    show itsuki neutral at pj_habla(0.28)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "Dije que no me iba a esconder. Y no lo hice."
@@ -854,7 +854,7 @@ label queja_itsuki:
 
     itsuki "Tener razón. Es lo único que siempre me sale bien."
 
-    show itsuki molesta at pj_habla(0.28)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "No te rías."
@@ -863,7 +863,7 @@ label queja_itsuki:
 
     itsuki "Se te nota en la voz."
 
-    show itsuki neutral at pj_habla(0.28)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "…Tampoco esperaba que me buscaras."
@@ -876,7 +876,7 @@ label queja_itsuki:
 
     itsuki "Nada. Una tontería."
 
-    show itsuki molesta at pj_habla(0.28)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "Solo digo que, si hubieras venido, no te habría echado."
@@ -887,7 +887,7 @@ label queja_itsuki:
 
     itsuki "Y no lo apuntes en ningún sitio."
 
-    show itsuki molesta at pj_calla(0.28)
+    show itsuki at pj_calla(0.5)
     with disolucion_lenta
 
     hide itsuki
@@ -1612,6 +1612,9 @@ label interconexion_3:
     ############################################################################
     ##  Aula · chequeo corto
     ############################################################################
+
+    scene bg_escuela
+    with fade
 
     scene bg_aula
     with fade
@@ -2845,9 +2848,14 @@ label interconexion_6:
     call reaccion_hermana_visitada
 
     ## Las dos que se quedaron fuera.
+
+    stop music fadeout 1.5
+
     narrador "A media mañana me alcanzaron, las dos únicas quintillizas."
     
     narrador "A las que no había ido a buscar."
+
+    play music derrota fadein 1.5
 
     if "ichika" not in hub_visitadas:
         call queja_ichika
