@@ -251,7 +251,7 @@ screen mapa_hub(hub_actual=1):
 
     vbox:
         xalign 0.5
-        ypos 30
+        ypos 20
         spacing 6
         at hub_titulo_entrada
 
