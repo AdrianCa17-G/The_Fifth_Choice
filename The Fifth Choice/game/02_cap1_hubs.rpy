@@ -43,7 +43,7 @@ label hub_2:
     with fade
 
     $ quick_menu = False
-    call screen mapa_hub(1)
+    call screen mapa_hub(2)
     $ quick_menu = True
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
@@ -62,7 +62,7 @@ label hub_3:
     with fade
 
     $ quick_menu = False
-    call screen mapa_hub(1)
+    call screen mapa_hub(3)
     $ quick_menu = True
     $ destino = _return
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
