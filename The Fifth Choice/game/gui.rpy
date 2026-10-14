@@ -56,20 +56,16 @@ define gui.interface_text_color = '#ffffff'
 
 ## Tipos y tamaños de letra ####################################################
 
-## El tipo de letra del texto del juego
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "fonts/MPLUSRounded1c-Medium.ttf"
+define gui.name_text_font = "fonts/MPLUSRounded1c-Bold.ttf"
+define gui.interface_text_font = "fonts/MPLUSRounded1c-Medium.ttf"
 
-## El tipo de letra de los nombres de personajes
-define gui.name_text_font = "DejaVuSans.ttf"
+## Fuente de los pensamientos (la "letra" de la libreta). Provisional hasta
+## elegirla en la sección de tipografía.
+define gui.libreta_font = "fonts/MPLUSRounded1c-Medium.ttf"
 
-## El tipo de letra del texto externo al juego.
-define gui.interface_text_font = "DejaVuSans.ttf"
-
-## El tamaño normal del texto del diálogo.
-define gui.text_size = 33
-
-## El tamaño de los nombres de los personajes
-define gui.name_text_size = 45
+define gui.text_size = 34
+define gui.name_text_size = 36
 
 ## El tamaño del texto en la interfaz.
 define gui.interface_text_size = 33

@@ -95,25 +95,23 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-screen say(who, what):
+screen say(who, what, tipo="hablante", placa="#FFFFFF", tinta="#2B1B3F", petalo=None):
 
     window:
         id "window"
 
         if who is not None:
-
             window:
                 id "namebox"
-                style "namebox"
-                text who id "who"
+                style "placa"
+                background Transform(Frame("ui/placa.png", 40, 0, 40, 0),
+                                     matrixcolor=TintMatrix(placa))
+                text who id "who" color tinta
 
         text what id "what"
 
-
-    ## Si hay una imagen lateral, la muestra encima del texto. No la muestra en
-    ## la variante de teléfono - no hay lugar.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+    if tipo != "pensamiento":
+        use flor_sakura(petalo, tipo)
 
 
 ## Permite que el 'namebox' pueda ser estilizado en el objeto 'Character'.
@@ -121,8 +119,42 @@ init python:
     config.character_id_prefixes.append('namebox')
 
 style window is default
-style say_label is default
-style say_dialogue is default
+
+style say_label:
+    properties gui.text_properties("name", accent=True)
+    color "#2B1B3F"
+    xalign 0.5
+    yalign 0.5
+
+style say_dialogue:
+    properties gui.text_properties("dialogue")
+    xpos 80
+    ypos 64
+    xsize 1440
+    adjust_spacing False
+
+
+style caja is default:
+    xalign 0.5
+    yalign 1.0
+    yoffset -36
+    xysize (1340, 240)
+
+style say_dialogue:
+    properties gui.text_properties("dialogue")
+    xpos 80
+    ypos 64
+    xsize 1060
+    adjust_spacing False
+
+style placa is default:
+    xpos 60
+    ypos -38
+    ysize 72
+    xminimum 240
+    padding (44, 0, 44, 0)
+
+
 style say_thought is say_dialogue
 
 style namebox is default
@@ -147,19 +179,6 @@ style namebox:
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
-style say_label:
-    properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
-    yalign 0.5
-
-style say_dialogue:
-    properties gui.text_properties("dialogue")
-
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
-
-    adjust_spacing False
 
 ## Pantalla de introducción de texto ###########################################
 ##
@@ -205,11 +224,48 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    style_prefix "choice"
 
     vbox:
+        style "opcion_vbox"
+
         for i in items:
-            textbutton i.caption action i.action
+            button:
+                style "opcion_boton"
+                action i.action
+                hover_sound audio.sfx_hover
+                activate_sound audio.sfx_click
+                at opcion_slide
+
+                hbox:
+                    spacing 26
+                    add Transform("ui/flor.png", matrixcolor=TintMatrix("#FFB7C5")) yalign 0.5
+                    text i.caption style "opcion_texto"
+
+
+transform opcion_slide:
+    on idle:
+        linear 0.15 xoffset 0
+    on hover:
+        linear 0.15 xoffset 16
+
+
+style opcion_vbox is vbox:
+    xalign 0.5
+    ypos 405
+    yanchor 0.5
+    spacing 30
+
+style opcion_boton is button:
+    xsize 1180
+    padding (50, 22, 60, 22)
+    background Frame("ui/opcion.png", 40, 40, 40, 40)
+    hover_background Frame("ui/opcion_hover.png", 40, 40, 40, 40)
+
+style opcion_texto is default:
+    size 33
+    color "#D9D2E6"
+    hover_color "#FFFFFF"
+    xsize 960
 
 
 style choice_vbox is vbox
@@ -263,9 +319,21 @@ init python:
 
 default quick_menu = True
 
-style quick_menu is hbox
 style quick_button is default
-style quick_button_text is button_text
+
+style quick_menu:
+    xalign 1.0
+    yalign 0.0
+    xoffset -36
+    yoffset 20
+    spacing 10
+
+style quick_button_text:
+    properties gui.text_properties("quick_button")
+    size 22
+    idle_color "#FFFFFFCC"
+    hover_color "#FFB7C5"
+    outlines [(3, "#1B102699", 0, 0)]
 
 style quick_menu:
     xalign 0.5

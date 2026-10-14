@@ -15,55 +15,84 @@
 ##  1. PERSONAJES
 ################################################################################
 
-## Protagonista. Sin sprite: nunca se muestra su rostro.
-## El corchete [nombre_jugador] se interpola en tiempo real, así que el nombre
-## cambia automáticamente en cuanto el jugador lo personaliza.
-define mc = Character(
-    "[nombre_jugador]",
-    color="#F2F3F4",
-    what_color="#EAECEE"
-)
+define C_ICHIKA  = "#FFB7C5"
+define C_NINO    = "#C39BD3"
+define C_MIKU    = "#5DADE2"
+define C_YOTSUBA = "#58D68D"
+define C_ITSUKI  = "#EC7063"
 
-## Voz interna del protagonista (monólogo). Útil para el estilo DDLC.
+## --- Protagonista ---------------------------------------------------------
+define mc = ui_personaje("[nombre_jugador]", "#F2F3F4")
+
+## Pensamientos: hoja de libreta crema con tinta oscura.
 define mc_pensamiento = Character(
     None,
-    what_color="#AEB6BF",
-    what_italic=True
+    what_color="#2F2A44",
+    what_font=gui.libreta_font,
+    what_size=36,
+    what_xpos=150,
+    what_xsize=1100,
+    window_style="caja",
+    window_background="ui/libreta.png",
+    show_tipo="pensamiento",
+    ctc="ctc_libreta",
+    ctc_position="nestled"
 )
 
-## Narrador: sin nombre en la caja, solo texto.
+## Narrador: caja oscura translúcida, texto claro.
 define narrador = Character(
     None,
-    what_color="#D5D8DC"
+    what_color="#E6E0F0",
+    window_style="caja",
+    window_background="ui/caja_narrador.png",
+    show_tipo="narrador",
+    ctc="ctc_claro",
+    ctc_position="nestled"
 )
 
-## Las quintillizas.
-## `color` tiñe el nombre en la caja de diálogo.
-## Si además quieres teñir el texto hablado, añade what_color a cada una.
+## El narrador INTERNO de Ren'Py (sin la "d"). Lo usan las cajas vacías de las
+## transiciones y las preguntas de los menu:. Tiene que verse igual que el tuyo.
+define narrator = Character(
+    None,
+    what_color="#E6E0F0",
+    window_style="caja",
+    window_background="ui/caja_narrador.png",
+    show_tipo="narrador",
+    ctc="ctc_claro",
+    ctc_position="nestled"
+)
 
-define ichika  = Character("Ichika",  color="#FFB7C5")
-define nino    = Character("Nino",    color="#C39BD3")
-define miku    = Character("Miku",    color="#5DADE2")
-define yotsuba = Character("Yotsuba", color="#58D68D")
+## El profesor reutiliza la caja del narrador, pero con placa de nombre.
+define profe = Character(
+    "Profesor",
+    what_color="#E6E0F0",
+    window_style="caja",
+    window_background="ui/caja_narrador.png",
+    show_tipo="narrador",
+    show_placa="#C9C3D6",
+    show_tinta="#2B2B35",
+    ctc="ctc_claro",
+    ctc_position="nestled"
+)
 
-define C_ITSUKI = "#EC7063"
+## --- Las quintillizas -----------------------------------------------------
+define ichika  = ui_personaje("Ichika",  C_ICHIKA,  "ichika")
+define nino    = ui_personaje("Nino",    C_NINO,    "nino")
+define miku    = ui_personaje("Miku",    C_MIKU,    "miku")
+define yotsuba = ui_personaje("Yotsuba", C_YOTSUBA, "yotsuba")
+define itsuki  = ui_personaje("Itsuki",  C_ITSUKI,  "itsuki")
 
-define itsuki_inicio = Character("Estudiante Nueva", color=C_ITSUKI)
-define itsuki        = Character("Itsuki",           color=C_ITSUKI)
+## Sin pétalo a propósito: el jugador todavía no sabe que son cinco.
+define itsuki_inicio = ui_personaje("Estudiante Nueva", C_ITSUKI)
 
-## Habla colectiva (las cinco a la vez) y voces sin identificar.
-define quintillizas = Character("Las quintillizas", color="#F4D03F")
-define voz          = Character("???",              color="#95A5A6")
+## Las cinco a la vez: se encienden los cinco pétalos, cada uno con su color.
+define quintillizas = ui_personaje("Las quintillizas", "#F4D03F", "todas")
+define voz          = ui_personaje("???", "#95A5A6")
 
-
-## --- Secundarios --------------------------------------------------------------
-## Viven aqui, no en el prologo: Raiha y Maruo vuelven en el Capitulo 1 y el
-## profesor y el padre reaparecen mas adelante.
-
-define isanari = Character("Isanari", color="#A9925C")
-define raiha   = Character("Raiha",   color="#F5B7B1")
-define maruo   = Character("Maruo",   color="#7F8C8D")
-define profe   = Character("Profesor", color="#909497")
+## --- Secundarios ----------------------------------------------------------
+define isanari = ui_personaje("Isanari", "#A9925C")
+define raiha   = ui_personaje("Raiha",   "#F5B7B1")
+define maruo   = ui_personaje("Maruo",   "#9AA7A8")
 
 ## NOTA DE ASSETS:
 ## En escenas grupales el protagonista aparece como silueta oscura.
