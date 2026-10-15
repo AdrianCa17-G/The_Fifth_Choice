@@ -272,6 +272,8 @@ label hub_Itsuki:
 
     # Menu del sabor
 
+    $ decision_peso("itsuki")
+
     menu:
 
         "¿Cómo respondes?"

@@ -22,6 +22,10 @@ define C_YOTSUBA = "#58D68D"
 define C_ITSUKI  = "#EC7063"
 
 ## --- Protagonista ---------------------------------------------------------
+
+default decision_hermana = None
+default decision_pistas = ["calida", "tibia", "fria"]
+
 define mc = ui_personaje("[nombre_jugador]", "#F2F3F4")
 
 ## Pensamientos: hoja de libreta crema con tinta oscura.
@@ -76,11 +80,11 @@ define profe = Character(
 )
 
 ## --- Las quintillizas -----------------------------------------------------
-define ichika  = ui_personaje("Ichika",  C_ICHIKA,  "ichika")
-define nino    = ui_personaje("Nino",    C_NINO,    "nino")
-define miku    = ui_personaje("Miku",    C_MIKU,    "miku")
-define yotsuba = ui_personaje("Yotsuba", C_YOTSUBA, "yotsuba")
-define itsuki  = ui_personaje("Itsuki",  C_ITSUKI,  "itsuki")
+define ichika  = ui_personaje("Ichika",  C_ICHIKA,  "ichika",  "ui/deco_ichika.png")
+define nino    = ui_personaje("Nino",    C_NINO,    "nino",    "ui/deco_nino.png")
+define miku    = ui_personaje("Miku",    C_MIKU,    "miku",    "ui/deco_miku.png")
+define yotsuba = ui_personaje("Yotsuba", C_YOTSUBA, "yotsuba", "ui/deco_yotsuba.png")
+define itsuki  = ui_personaje("Itsuki",  C_ITSUKI,  "itsuki",  "ui/deco_itsuki.png")
 
 ## Sin pétalo a propósito: el jugador todavía no sabe que son cinco.
 define itsuki_inicio = ui_personaje("Estudiante Nueva", C_ITSUKI)

@@ -7,6 +7,33 @@
 ## altura de las letras). Se cambia por tres puntos normales al mostrarlo.
 init -5 python:
 
+    def ui_ventana_vacia():
+        """Ventana vacía que Ren'Py muestra durante show/hide/with.
+        Usa la caja de quien habló por última vez para que no cambie."""
+        personaje = store.narrator
+        quien = getattr(store, "_last_say_who", None)
+        if quien is not None:
+            try:
+                personaje = renpy.eval_who(quien)
+            except Exception:
+                personaje = store.narrator
+        if personaje is None:
+            personaje = store.narrator
+        personaje("", interact=False)
+
+
+    def decision_peso(hermana, pistas=None):
+        """Marca la siguiente decisión como 'con peso'.
+        pistas: temperatura de cada opción, en el orden en que aparecen."""
+        store.decision_hermana = hermana
+        if pistas is None:
+            store.decision_pistas = ["calida", "tibia", "fria"]
+        else:
+            store.decision_pistas = pistas
+
+
+    config.empty_window = ui_ventana_vacia
+
     def ui_arreglar_texto(texto):
         return texto.replace("\u2026", "...")
 
@@ -24,19 +51,19 @@ init -5 python:
             resultado = resultado + "{:02x}".format(v)
         return resultado
 
-    def ui_personaje(nombre, color, petalo=None):
-        """Personaje con caja rellena de su color.
-        - la caja usa `color`
-        - la placa del nombre es el mismo color, más claro
-        - el texto del nombre es el mismo color, mucho más oscuro
-        """
+    def ui_personaje(nombre, color, petalo=None, deco=None):
+        """Personaje con caja rellena de su color (y motivo opcional)."""
         placa = ui_mezclar(color, "#FFFFFF", 0.45)
         tinta = ui_mezclar(color, "#000000", 0.72)
+        caja = Transform("ui/caja.png", matrixcolor=TintMatrix(color))
+        fondo = caja
+        if deco is not None:
+            fondo = Composite((1340, 240), (0, 0), caja, (0, 0), deco)
         return Character(
             nombre,
             what_color="#241B33",
             window_style="caja",
-            window_background=Transform("ui/caja.png", matrixcolor=TintMatrix(color)),
+            window_background=fondo,
             show_tipo="hablante",
             show_placa=placa,
             show_tinta=tinta,
@@ -44,7 +71,6 @@ init -5 python:
             ctc="ctc_oscuro",
             ctc_position="nestled",
         )
-
 
 define PETALO_ORDEN = ["ichika", "nino", "miku", "yotsuba", "itsuki"]
 
@@ -67,10 +93,10 @@ transform petalo_giro(i, color, brillo):
 ## - hermana activa: su pétalo en blanco
 ## - "todas": cada pétalo con su color
 ## - el resto: apagados (oscuros sobre caja clara, claros sobre la del narrador)
-screen flor_sakura(activa=None, tipo="hablante"):
+screen flor_sakura(activa=None, tipo="hablante", x=1450, y=844):
     fixed:
-        xpos 1450
-        ypos 844
+        xpos x
+        ypos y
         xysize (160, 160)
 
         for i in range(5):
@@ -118,3 +144,75 @@ image ctc_libreta:
     linear 0.6 alpha 0.25
     linear 0.6 alpha 0.9
     repeat
+
+
+## --- Decisiones con peso ----------------------------------------------------
+
+## Qué tan visible es la pista de temperatura (0.0 = apagada, 0.5 = muy clara).
+define PISTA_FUERZA = 0.30
+
+transform decision_velo:
+    alpha 0.0
+    linear 0.4 alpha 0.5
+
+transform tarjeta_entrada(n):
+    alpha 0.0
+    yoffset 70
+    pause (0.12 * n)
+    linear 0.35 alpha 1.0 yoffset 0
+
+transform tarjeta_hover:
+    on idle:
+        linear 0.15 yoffset 0
+    on hover:
+        linear 0.15 yoffset -14
+
+style tarjeta_texto is default:
+    size 31
+    color "#F3EEFA"
+    xpos 44
+    ypos 60
+    xsize 432
+    line_spacing 4
+
+screen choice_peso(items):
+
+    $ color = PETALO_COLOR[decision_hermana]
+
+    add Solid("#000000") at decision_velo
+
+    hbox:
+        xalign 0.5
+        yalign 0.40
+        spacing 40
+
+        for n, i in enumerate(items):
+
+            $ pista = decision_pistas[n]
+            $ tono = "#FFFFFF"
+            $ fuerza = 0.0
+            if pista == "calida":
+                $ tono = "#FFC46B"
+                $ fuerza = PISTA_FUERZA
+            elif pista == "fria":
+                $ tono = "#7FA6E8"
+                $ fuerza = PISTA_FUERZA
+
+            fixed:
+                xysize (520, 440)
+                at tarjeta_entrada(n)
+
+                button:
+                    xysize (520, 440)
+                    background None
+                    action i.action
+                    hover_sound audio.sfx_hover
+                    activate_sound audio.sfx_click
+                    at tarjeta_hover
+
+                    add "ui/tarjeta.png"
+                    add "ui/halo.png" matrixcolor TintMatrix(tono) alpha fuerza
+                    add ("ui/deco_tarjeta_" + decision_hermana + ".png")
+                    add "ui/tarjeta_marco.png" matrixcolor TintMatrix(color)
+                    use flor_sakura(decision_hermana, "hablante", 380, 290)
+                    text i.caption style "tarjeta_texto"

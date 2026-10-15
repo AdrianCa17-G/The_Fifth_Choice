@@ -260,6 +260,8 @@ label hub_Ichika:
 
     mc_pensamiento "Y no va a haber una quinta oportunidad hoy."
 
+    $ decision_peso("ichika")
+
     menu:
 
         "¿Cómo respondes?"
@@ -322,9 +324,6 @@ label ichika_m4a:
     narrador "La primera frase larga de toda la tarde sin una sola."
 
     mc "No dije que no pudieras."
-
-    show ichika agotada at pj_habla(0.5)
-    with disolucion_lenta
 
     ichika "No hacía falta."
 

@@ -225,6 +225,16 @@ style input:
 
 screen choice(items):
 
+    on "hide" action SetVariable("decision_hermana", None)
+
+    if decision_hermana is None:
+        use choice_ligera(items)
+    else:
+        use choice_peso(items)
+        
+
+screen choice_ligera(items):
+
     vbox:
         style "opcion_vbox"
 

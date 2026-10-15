@@ -6,6 +6,8 @@ Uso (desde la carpeta herramientas/):  python generar_ui.py
 Requiere: pip install pillow
 """
 import os
+import math
+import random
 from PIL import Image, ImageDraw, ImageChops
 
 SALIDA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "game", "ui")
@@ -117,6 +119,131 @@ def libreta():
     return img
 
 
+BLANCO_SUAVE = (255, 255, 255, 95)
+
+
+def girar(puntos, ang):
+    c = math.cos(ang)
+    s = math.sin(ang)
+    resultado = []
+    for (x, y) in puntos:
+        resultado.append((x * c - y * s, x * s + y * c))
+    return resultado
+
+
+def mover(puntos, cx, cy):
+    resultado = []
+    for (x, y) in puntos:
+        resultado.append((cx + x, cy + y))
+    return resultado
+
+
+def motivo_estrella(d, cx, cy, r, color, puntas, interior):
+    pts = []
+    for k in range(puntas * 2):
+        radio = r
+        if k % 2 == 1:
+            radio = r * interior
+        ang = -math.pi / 2 + k * math.pi / puntas
+        pts.append((cx + radio * math.cos(ang), cy + radio * math.sin(ang)))
+    d.polygon(pts, fill=color)
+
+
+def motivo_estrella5(d, cx, cy, r, color):
+    motivo_estrella(d, cx, cy, r, color, 5, 0.45)
+
+
+def motivo_destello(d, cx, cy, r, color):
+    motivo_estrella(d, cx, cy, r, color, 4, 0.22)
+
+
+def motivo_mariposa(d, cx, cy, r, color):
+    for lado in (-1, 1):
+        x0 = cx + lado * 0.55 * r
+        y0 = cy - 0.25 * r
+        d.ellipse((x0 - 0.55 * r, y0 - 0.5 * r, x0 + 0.55 * r, y0 + 0.5 * r), fill=color)
+        x1 = cx + lado * 0.4 * r
+        y1 = cy + 0.4 * r
+        d.ellipse((x1 - 0.35 * r, y1 - 0.32 * r, x1 + 0.35 * r, y1 + 0.32 * r), fill=color)
+    # el cuerpo: un hueco fino que separa las dos alas
+    d.line((cx, cy - 0.6 * r, cx, cy + 0.7 * r), fill=(255, 255, 255, 0),
+           width=max(2, int(r * 0.12)))
+
+
+def motivo_trebol(d, cx, cy, r, color):
+    hoja = []
+    for k in range(40):
+        t = 2 * math.pi * k / 40
+        x = 16 * math.sin(t) ** 3
+        y = -(13 * math.cos(t) - 5 * math.cos(2 * t) - 2 * math.cos(3 * t) - math.cos(4 * t))
+        hoja.append((x * r / 30.0, (y - 17) * r / 30.0))
+    for k in range(4):
+        d.polygon(mover(girar(hoja, k * math.pi / 2), cx, cy), fill=color)
+    d.line((cx, cy, cx + 0.35 * r, cy + 1.2 * r), fill=color, width=max(2, int(r * 0.12)))
+
+
+def motivo_ecualizador(d, cx, cy, r, color):
+    alturas = [0.5, 0.9, 0.65, 1.0, 0.55]
+    ancho = 0.24 * r
+    hueco = 0.12 * r
+    total = 5 * ancho + 4 * hueco
+    x = cx - total / 2
+    for h in alturas:
+        alto = 1.6 * r * h
+        d.rounded_rectangle((x, cy - alto / 2, x + ancho, cy + alto / 2),
+                            radius=int(ancho / 2), fill=color)
+        x = x + ancho + hueco
+
+
+def decoracion(motivo, semilla, ancho, alto, radio, paso):
+    """Dos franjas de motivos (arriba y abajo), recortadas a la forma redondeada."""
+    azar = random.Random(semilla)
+    g = Image.new("RGBA", (ancho * SS, alto * SS), (255, 255, 255, 0))
+    d = ImageDraw.Draw(g)
+    for fila in (0, 1):
+        if fila == 0:
+            y_base = 24
+            x = 60
+        else:
+            y_base = alto - 24
+            x = 60 + paso // 2
+        while x < ancho - 30:
+            cx = x + azar.randint(-14, 14)
+            cy = y_base + azar.randint(-5, 5)
+            r = azar.randint(13, 20)
+            motivo(d, cx * SS, cy * SS, r * SS, BLANCO_SUAVE)
+            x = x + paso
+    img = g.resize((ancho, alto), Image.LANCZOS)
+    alfa = ImageChops.multiply(img.getchannel("A"),
+                               mascara_redondeada(ancho, alto, radio))
+    img.putalpha(alfa)
+    return img
+
+
+def tarjeta():
+    return panel(520, 440, 36, (46, 30, 70, 232), (22, 13, 32, 232),
+                 (255, 255, 255, 40), 2)
+
+
+def tarjeta_marco():
+    """Solo el borde, blanco: Ren'Py lo tiñe con el color de la hermana."""
+    return borde_redondeado(520, 440, 36, (255, 255, 255, 255), 4)
+
+
+def halo():
+    """Resplandor que sube desde abajo. Ren'Py lo tiñe: cálido o frío."""
+    img = Image.new("RGBA", (520, 440), (255, 255, 255, 0))
+    px = img.load()
+    for y in range(440):
+        t = y / 439.0
+        a = int(255 * max(0.0, (t - 0.45) / 0.55) ** 2)
+        for x in range(520):
+            px[x, y] = (255, 255, 255, a)
+    alfa = ImageChops.multiply(img.getchannel("A"), mascara_redondeada(520, 440, 36))
+    img.putalpha(alfa)
+    return img
+
+
 if __name__ == "__main__":
     # Caja de diálogo: BLANCA con borde gris. Ren'Py la tiñe por personaje.
     guardar(panel(CAJA_W, CAJA_H, 40, (255, 255, 255, 228), (238, 238, 244, 228),
@@ -142,3 +269,22 @@ if __name__ == "__main__":
                   (255, 255, 255, 60), 2), "opcion.png")
     guardar(panel(400, 100, 28, (70, 44, 104, 240), (40, 24, 60, 240),
                   (255, 183, 197, 255), 3), "opcion_hover.png")
+
+    HERMANAS = [
+        ("ichika", motivo_destello, 1),
+        ("nino", motivo_mariposa, 2),
+        ("miku", motivo_ecualizador, 3),
+        ("yotsuba", motivo_trebol, 4),
+        ("itsuki", motivo_estrella5, 5),
+    ]
+    for nombre, motivo, semilla in HERMANAS:
+        # para las cajas de diálogo
+        guardar(decoracion(motivo, semilla, CAJA_W, CAJA_H, 40, 150),
+                "deco_" + nombre + ".png")
+        # para las tarjetas de decisión (punto 3)
+        guardar(decoracion(motivo, semilla, 520, 440, 36, 110),
+                "deco_tarjeta_" + nombre + ".png")
+
+    guardar(tarjeta(), "tarjeta.png")
+    guardar(tarjeta_marco(), "tarjeta_marco.png")
+    guardar(halo(), "halo.png")

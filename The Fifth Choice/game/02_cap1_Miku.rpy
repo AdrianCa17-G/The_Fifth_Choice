@@ -345,6 +345,8 @@ label hub_Miku:
 
     ## Menú de sabor.
 
+    $ decision_peso("miku")
+
     menu:
 
         "¿Que le dirás a Miku?"

@@ -259,7 +259,7 @@ label hub_Nino:
     nino "Olvida lo que dije."
 
     show nino neutral at pj_calla(0.5) 
-    with dissolve
+    with disolucion_lenta
 
     narrador "Se cortó a mitad de frase, algo que ella nunca hace por accidente."
 
@@ -281,6 +281,9 @@ label hub_Nino:
 
     narrador "Se agachó a recoger la cesta del suelo, sin mirarme."
 
+    show nino at pj_habla(0.5) 
+    with disolucion_lenta
+
     nino "¿Y bien? ¿Vas a decir algo o te vas a quedar ahí parado?"
 
     mc_pensamiento "Tiene razón en desconfiar."
@@ -290,6 +293,8 @@ label hub_Nino:
     mc_pensamiento "Lo que diga ahora decide si me pone en la misma fila que los otros cuatro, o no."
 
     # Menu del sabor
+
+    $ decision_peso("nino")
 
     menu:
         "¿Cómo respondes?"
@@ -314,9 +319,6 @@ label nino_m4a:
     $ sumar_punto("nino", 3)
 
     mc "Tienes razón en desconfiar."
-
-    show nino neutral at pj_habla(0.5) 
-    with dissolve
 
     nino "…¿Qué?"
 
@@ -445,9 +447,6 @@ label nino_m4c:
     narrador "Lo dije para tranquilizarla."
 
     narrador "No funcionó."
-
-    show nino neutral at pj_habla(0.5)
-    with disolucion_lenta
 
     nino "…"
 

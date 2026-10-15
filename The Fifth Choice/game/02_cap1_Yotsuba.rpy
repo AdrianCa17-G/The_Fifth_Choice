@@ -302,7 +302,10 @@ label hub_Yotsuba:
 
     # Menú de sabor.
 
+    $ decision_peso("yotsuba")
+
     menu:
+
         narrador "¿Cómo le ayudarias a sentirse mejor?"
 
         "Tú vales tanto como cualquiera de tus hermanas":
