@@ -293,8 +293,8 @@ screen destino_hub(indice, d):
 
         sensitive not visitada
 
-        hover_sound audio.sfx_hover
-        activate_sound audio.sfx_click
+        hover_sound audio.sfx_hhover
+        activate_sound audio.sfx_hclick
         
         xpos indice * HUB_SLOT - (HUB_CARD_W - HUB_SLOT) // 2
         ypos 0

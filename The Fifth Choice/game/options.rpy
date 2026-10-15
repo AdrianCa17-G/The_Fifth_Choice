@@ -75,6 +75,10 @@ Springin' Sound Stock
 
 Generadas con PixAI (Tsubaki.2) y Gemini. LoRA de personaje por creadores de la comunidad de PixAI.
 
+{b}Tipografías{/b}
+
+M PLUS Rounded 1c, Shippori Mincho B1 y Klee One — SIL Open Font License 1.1
+
 {b}Motor{/b}
 
 Ren'Py 8.5.3

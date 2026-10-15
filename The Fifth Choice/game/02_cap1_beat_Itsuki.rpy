@@ -44,7 +44,7 @@ label beat_Itsuki:
     scene cg_itsuki_azotea_cuaderno
     with fade
 
-    play ambiente amb_viento fadein 2.0 volume 0.35
+    play ambiente amb_viento fadein 2.0 volume 0.5
 
     mc_pensamiento "Ahí estaba. Con el cuaderno."
 
@@ -236,7 +236,7 @@ label beat_Itsuki:
 
         "En que a este paso me va a tocar traer los libros hasta al baño.":
 
-            mc_pensamiento "Al menos ahí nadie me interrumpe."
+            mc "Al menos ahí nadie me interrumpe."
 
             itsuki "Qué imagen tan poco digna de un tutor."
 
@@ -248,7 +248,7 @@ label beat_Itsuki:
 
         "En que ninguno de los dos va a admitir que está cansado.":
 
-            mc_pensamiento "Y si lo hiciéramos, tampoco cambiaría nada."
+            mc "Y si lo hiciéramos, tampoco cambiaría nada."
 
             itsuki "Habla por ti." 
 
@@ -267,7 +267,7 @@ label beat_Itsuki:
 
         "En nada. Solo quiero que termine esta hora.":
 
-            mc_pensamiento "No todo necesita un análisis."
+            mc "No todo necesita un análisis."
 
             itsuki "Al menos en eso estamos de acuerdo."
 

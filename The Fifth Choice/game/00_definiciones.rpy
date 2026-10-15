@@ -375,7 +375,12 @@ define audio.sfx.pisadas_pista = "audio/sfx/pisadas_pista.mp3"
 ## Musica del hub
 define audio.hub = "audio/bgm/hub.ogg"
 
-## Efectos de interfaz (compartidos: hub, menu principal y elecciones)
+## Efectos de interfaz (hub)
+define audio.sfx_hhover = "audio/sfx/hub_hover.mp3"
+define audio.sfx_hclick = "audio/sfx/hub_click.mp3"
+
+
+## Efectos de interfaz (compartidos: menu principal y elecciones)
 define audio.sfx_hover = "audio/sfx/hover.mp3"
 define audio.sfx_click = "audio/sfx/click.mp3"
 

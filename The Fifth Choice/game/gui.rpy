@@ -57,12 +57,12 @@ define gui.interface_text_color = '#ffffff'
 ## Tipos y tamaños de letra ####################################################
 
 define gui.text_font = "fonts/MPLUSRounded1c-Medium.ttf"
-define gui.name_text_font = "fonts/MPLUSRounded1c-Bold.ttf"
+define gui.name_text_font = "fonts/ShipporiMinchoB1-SemiBold.ttf"
 define gui.interface_text_font = "fonts/MPLUSRounded1c-Medium.ttf"
 
 ## Fuente de los pensamientos (la "letra" de la libreta). Provisional hasta
 ## elegirla en la sección de tipografía.
-define gui.libreta_font = "fonts/MPLUSRounded1c-Medium.ttf"
+define gui.libreta_font = "fonts/KleeOne-SemiBold.ttf"
 
 define gui.text_size = 34
 define gui.name_text_size = 36

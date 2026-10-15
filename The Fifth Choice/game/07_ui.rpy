@@ -1,10 +1,16 @@
 ﻿################################################################################
 ##  07_ui.rpy — Interfaz propia (cajas de texto y flor de sakura)
 ################################################################################
-
 ## init -5: se ejecuta ANTES que los `define` de 00_definiciones.rpy,
 ## que necesitan estas funciones para crear los personajes.
+## Las fuentes japonesas centran el carácter … en vertical (flota a media
+## altura de las letras). Se cambia por tres puntos normales al mostrarlo.
 init -5 python:
+
+    def ui_arreglar_texto(texto):
+        return texto.replace("\u2026", "...")
+
+    config.say_menu_text_filter = ui_arreglar_texto
 
     def ui_mezclar(color_a, color_b, t):
         """Mezcla dos colores hex. t=0 devuelve color_a, t=1 devuelve color_b."""

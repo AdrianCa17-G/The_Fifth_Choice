@@ -673,17 +673,20 @@ label prologo:
 
     show nino at pj_habla(0.75)
     show ichika at pj_calla(0.25)
+    with disolucion_lenta
 
     nino "Tarda en soltarse con gente que vale la pena." 
     
     nino "Contigo probablemente tarde años."
 
     show nino at pj_calla(0.75)
+    with disolucion_lenta
 
     mc "Mi trabajo es ser su tutor, no formar amistades bonitas con ustedes."
 
     show nino at pj_habla(0.75)
     show ichika at pj_calla(0.25)
+    with disolucion_lenta
 
     nino "El último duró cuatro días. También entró diciendo que venía a trabajar."
 
@@ -691,12 +694,14 @@ label prologo:
 
     show ichika at pj_habla(0.25)
     show nino at pj_calla(0.75)
+    with disolucion_lenta
 
     ichika "Vaya, qué frío."
     
     ichika "Y yo que pensaba que los chicos como tu apreciaban estar con chicas bonitas como nosotras."
 
     show nino at pj_habla(0.75)
+    with disolucion_lenta
 
     nino "Déjalo. Lo único que le interesa ha de ser los libros para nerds."
 
@@ -758,6 +763,7 @@ label prologo:
     ## --- Itsuki ---------------------------------------------------------------
 
     show nino at pj_calla(0.5)
+    with disolucion_lenta
     
     play sound sfx_portazo volume 2.5
   
@@ -836,14 +842,17 @@ label prologo:
 
     show ichika at pj_calla(0.30)
     show itsuki at pj_habla(0.70)
+    with disolucion_lenta
     
     itsuki "¡Ichika, no te le acerques! Es el idiota del asiento de la escuela."
 
     show itsuki at pj_calla(0.70)
+    with disolucion_lenta
 
     mc "Si es por lo del almuerzo, dije lo que pensaba. No voy a fingir que no."
 
     show itsuki at pj_habla(0.70)
+    with disolucion_lenta
 
     itsuki "¡Te pedí un favor amablemente y me trataste como al ser más despreciable del mundo!"
 
@@ -861,6 +870,7 @@ label prologo:
     with dissolve
 
     show yotsuba at pj_habla(0.50)
+    with disolucion_lenta
 
     yotsuba "¡O sea que ya se conocían! ¡Qué coincidencia tan increíble!"
 
@@ -875,6 +885,7 @@ label prologo:
     with dissolve
 
     show nino at pj_habla(X_NINO)
+    with disolucion_lenta
 
     nino "Por favor, Yotsuba. ¿No ves que se están matando con la mirada?"
 
@@ -887,6 +898,7 @@ label prologo:
 
     show nino at pj_calla(X_NINO)
     show miku at pj_habla(X_MIKU)
+    with disolucion_lenta
 
     miku "…Demasiado ruido."
 
@@ -897,6 +909,7 @@ label prologo:
     show miku at pj_habla(X_MIKU)
     show yotsuba at pj_habla(X_YOTSUBA)
     show itsuki at pj_habla(X_ITSUKI)
+    with disolucion_lenta
 
     narrador "Cinco."
 
@@ -908,6 +921,7 @@ label prologo:
     show miku at pj_calla(X_MIKU)
     show yotsuba at pj_calla(X_YOTSUBA)
     show itsuki at pj_calla(X_ITSUKI)
+    with disolucion_lenta
 
     nino "Quintillizas. Búscalo en un diccionario."
 
