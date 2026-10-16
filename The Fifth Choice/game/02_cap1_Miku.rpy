@@ -343,9 +343,9 @@ label hub_Miku:
 
     mc_pensamiento "Nadie se disculpa por decir algo cierto, a menos que le hayan enseñado que decirlo cuesta."
 
-    ## Menú de sabor.
+    ## Menú de Miku.
 
-    $ decision_peso("miku")
+    $ decision_peso("miku", "¿Qué le dirás a Miku?", "Se disculpó por hablar de lo que más ama. Lo que respondas le dirá si su voz tiene lugar contigo.")
 
     menu:
 

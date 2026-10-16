@@ -72,7 +72,7 @@ label hub_Yotsuba:
     narrador "Me quedé observandóla y memorizando el número de vueltas que llevaba."
 
     $ duck()
-    play sound audio.sfx.pisadas_pista volume 1.5
+    play sound audio.sfx.pisadas_pista volume 2.5
 
     yotsuba "¡Veintidós! ¡Esto es fácil! ¡Podría hacer cien! ¡Bueno, quizás no cien, pero sí veinticinco!" 
     
@@ -300,10 +300,10 @@ label hub_Yotsuba:
     ##  MOVIMIENTO 4C · Rama fría
     ############################################################################
 
-    # Menú de sabor.
+    # Menú de Yotsuba.
 
-    $ decision_peso("yotsuba")
-
+    $ decision_peso("yotsuba", "¿Qué le dirás a Yotsuba?", "Sonríe tanto que casi nadie nota lo que carga. Tus palabras pueden ser un descanso o un peso más.")
+    
     menu:
 
         narrador "¿Cómo le ayudarias a sentirse mejor?"

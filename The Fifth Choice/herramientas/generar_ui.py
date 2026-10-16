@@ -16,6 +16,12 @@ SS = 4  # supersampling: se dibuja 4 veces más grande y se reduce (bordes suave
 # Estos dos números tienen que coincidir con screens.rpy
 CAJA_W, CAJA_H = 1340, 240
 
+# --- Ajustes de la decoración ---
+ALFA_BORDE = 100                       # franjas de los bordes (0-255)
+ALFA_RELLENO = 34                      # patrón tenue de fondo (0 lo apaga)
+X_ARRIBA_INI = 380                     # la fila de arriba empieza después de la placa
+TARJETA_ALTOS = [220, 270, 320, 370]   # tiene que coincidir con 07_ui.rpy
+
 os.makedirs(SALIDA, exist_ok=True)
 
 
@@ -194,25 +200,45 @@ def motivo_ecualizador(d, cx, cy, r, color):
                             radius=int(ancho / 2), fill=color)
         x = x + ancho + hueco
 
+def dibujar_fila(d, motivo, azar, x_ini, x_fin, y, paso, rmin, rmax, alfa):
+    x = x_ini
+    while x < x_fin:
+        cx = x + azar.randint(-10, 10)
+        cy = y + azar.randint(-4, 4)
+        r = azar.randint(rmin, rmax)
+        motivo(d, cx * SS, cy * SS, r * SS, (255, 255, 255, alfa))
+        x = x + paso
 
-def decoracion(motivo, semilla, ancho, alto, radio, paso):
-    """Dos franjas de motivos (arriba y abajo), recortadas a la forma redondeada."""
-    azar = random.Random(semilla)
-    g = Image.new("RGBA", (ancho * SS, alto * SS), (255, 255, 255, 0))
-    d = ImageDraw.Draw(g)
-    for fila in (0, 1):
-        if fila == 0:
-            y_base = 24
-            x = 60
-        else:
-            y_base = alto - 24
-            x = 60 + paso // 2
-        while x < ancho - 30:
-            cx = x + azar.randint(-14, 14)
-            cy = y_base + azar.randint(-5, 5)
-            r = azar.randint(13, 20)
-            motivo(d, cx * SS, cy * SS, r * SS, BLANCO_SUAVE)
-            x = x + paso
+
+def dibujar_columna(d, motivo, azar, x, y_ini, y_fin, paso, rmin, rmax, alfa):
+    y = y_ini
+    while y < y_fin:
+        cx = x + azar.randint(-3, 3)
+        cy = y + azar.randint(-6, 6)
+        r = azar.randint(rmin, rmax)
+        motivo(d, cx * SS, cy * SS, r * SS, (255, 255, 255, alfa))
+        y = y + paso
+
+
+def dibujar_relleno(d, motivo, azar, x0, y0, x1, y1, paso_x, paso_y, alfa):
+    """Cuadrícula escalonada de motivos pequeños y muy tenues."""
+    fila = 0
+    y = y0
+    while y <= y1:
+        x = x0
+        if fila % 2 == 1:
+            x = x0 + paso_x // 2
+        while x <= x1:
+            r = azar.randint(8, 12)
+            cx = x + azar.randint(-6, 6)
+            cy = y + azar.randint(-5, 5)
+            motivo(d, cx * SS, cy * SS, r * SS, (255, 255, 255, alfa))
+            x = x + paso_x
+        y = y + paso_y
+        fila = fila + 1
+
+
+def recortar_redondeado(g, ancho, alto, radio):
     img = g.resize((ancho, alto), Image.LANCZOS)
     alfa = ImageChops.multiply(img.getchannel("A"),
                                mascara_redondeada(ancho, alto, radio))
@@ -220,28 +246,131 @@ def decoracion(motivo, semilla, ancho, alto, radio, paso):
     return img
 
 
-def tarjeta():
-    return panel(520, 440, 36, (46, 30, 70, 232), (22, 13, 32, 232),
-                 (255, 255, 255, 40), 2)
+def decoracion_caja(motivo, semilla):
+    """Decoración de la caja de diálogo: relleno tenue + franjas en los bordes."""
+    azar = random.Random(semilla)
+    g = Image.new("RGBA", (CAJA_W * SS, CAJA_H * SS), (255, 255, 255, 0))
+    d = ImageDraw.Draw(g)
+
+    if ALFA_RELLENO > 0:
+        dibujar_relleno(d, motivo, azar, 100, 58, 1120, 200, 96, 52, ALFA_RELLENO)
+
+    dibujar_fila(d, motivo, azar, X_ARRIBA_INI, CAJA_W - 30, 24, 150, 13, 20, ALFA_BORDE)
+    dibujar_fila(d, motivo, azar, 90, CAJA_W - 30, CAJA_H - 24, 150, 13, 20, ALFA_BORDE)
+    dibujar_columna(d, motivo, azar, 34, 74, CAJA_H - 40, 38, 11, 15, ALFA_BORDE)
+    return recortar_redondeado(g, CAJA_W, CAJA_H, 40)
 
 
-def tarjeta_marco():
+def decoracion_tarjeta(motivo, semilla, alto):
+    azar = random.Random(semilla)
+    g = Image.new("RGBA", (520 * SS, alto * SS), (255, 255, 255, 0))
+    d = ImageDraw.Draw(g)
+
+    if ALFA_RELLENO > 0:
+        dibujar_relleno(d, motivo, azar, 50, 62, 470, alto - 62, 80, 50, ALFA_RELLENO)
+
+    dibujar_fila(d, motivo, azar, 56, 500, 24, 110, 11, 16, ALFA_BORDE)
+    dibujar_fila(d, motivo, azar, 56, 500, alto - 24, 110, 11, 16, ALFA_BORDE)
+    return recortar_redondeado(g, 520, alto, 36)
+
+
+def tarjeta_base(alto):
+    """Panel NEUTRO (gris). Ren'Py lo tiñe con el tono oscuro de cada hermana."""
+    return panel(520, alto, 36, (255, 255, 255, 238), (150, 150, 150, 238),
+                 (255, 255, 255, 50), 2)
+
+
+def marco(alto):
     """Solo el borde, blanco: Ren'Py lo tiñe con el color de la hermana."""
-    return borde_redondeado(520, 440, 36, (255, 255, 255, 255), 4)
+    return borde_redondeado(520, alto, 36, (255, 255, 255, 255), 4)
 
 
-def halo():
-    """Resplandor que sube desde abajo. Ren'Py lo tiñe: cálido o frío."""
-    img = Image.new("RGBA", (520, 440), (255, 255, 255, 0))
+def halo(alto):
+    """Resplandor que sube desde abajo (cálido o frío según la opción)."""
+    img = Image.new("RGBA", (520, alto), (255, 255, 255, 0))
     px = img.load()
-    for y in range(440):
-        t = y / 439.0
-        a = int(255 * max(0.0, (t - 0.45) / 0.55) ** 2)
+    for y in range(alto):
+        t = y / float(alto - 1)
+        a = int(255 * (max(0.0, (t - 0.45) / 0.55) ** 2))
         for x in range(520):
             px[x, y] = (255, 255, 255, a)
-    alfa = ImageChops.multiply(img.getchannel("A"), mascara_redondeada(520, 440, 36))
+    alfa = ImageChops.multiply(img.getchannel("A"), mascara_redondeada(520, alto, 36))
     img.putalpha(alfa)
     return img
+
+
+# --- Iconos del menú rápido ---------------------------------------------------
+ICONO = 68
+BLANCO = (255, 255, 255, 255)
+
+
+def E(x, y):
+    return (x * SS, y * SS)
+
+
+def ER(x0, y0, x1, y1):
+    return (x0 * SS, y0 * SS, x1 * SS, y1 * SS)
+
+
+def nuevo_glifo():
+    g = Image.new("RGBA", (ICONO * SS, ICONO * SS), (0, 0, 0, 0))
+    return g, ImageDraw.Draw(g)
+
+
+def fin_glifo(g):
+    return g.resize((ICONO, ICONO), Image.LANCZOS)
+
+
+def icono_base():
+    return panel(ICONO, ICONO, 20, (255, 255, 255, 255), (228, 228, 238, 255))
+
+
+def icono_borde():
+    return borde_redondeado(ICONO, ICONO, 20, (255, 255, 255, 255), 3)
+
+
+def glifo_atras():
+    g, d = nuevo_glifo()
+    d.polygon([E(14, 34), E(36, 15), E(36, 53)], fill=BLANCO)
+    d.rounded_rectangle(ER(31, 28, 54, 40), radius=4 * SS, fill=BLANCO)
+    return fin_glifo(g)
+
+
+def glifo_historial():
+    g, d = nuevo_glifo()
+    for y in (21, 34, 47):
+        d.ellipse(ER(13, y - 3, 19, y + 3), fill=BLANCO)
+        d.rounded_rectangle(ER(24, y - 3, 55, y + 3), radius=3 * SS, fill=BLANCO)
+    return fin_glifo(g)
+
+
+def glifo_auto():
+    g, d = nuevo_glifo()
+    d.polygon([E(22, 16), E(54, 34), E(22, 52)], fill=BLANCO)
+    return fin_glifo(g)
+
+
+def glifo_saltar():
+    g, d = nuevo_glifo()
+    d.polygon([E(12, 18), E(31, 34), E(12, 50)], fill=BLANCO)
+    d.polygon([E(31, 18), E(50, 34), E(31, 50)], fill=BLANCO)
+    d.rounded_rectangle(ER(52, 18, 57, 50), radius=2 * SS, fill=BLANCO)
+    return fin_glifo(g)
+
+
+def glifo_guardar():
+    g, d = nuevo_glifo()
+    d.rounded_rectangle(ER(30, 13, 38, 33), radius=2 * SS, fill=BLANCO)
+    d.polygon([E(19, 31), E(49, 31), E(34, 46)], fill=BLANCO)
+    d.rounded_rectangle(ER(15, 50, 53, 56), radius=3 * SS, fill=BLANCO)
+    return fin_glifo(g)
+
+
+def glifo_menu():
+    base = Image.new("RGBA", (ICONO, ICONO), (0, 0, 0, 0))
+    f = flor(petalo(), 46)
+    base.paste(f, ((ICONO - 46) // 2, (ICONO - 46) // 2), f)
+    return base
 
 
 if __name__ == "__main__":
@@ -259,17 +388,17 @@ if __name__ == "__main__":
     guardar(panel(300, 72, 36, (255, 255, 255, 255), (232, 226, 240, 255)),
             "placa.png")
 
-    # Flor
     p = petalo()
     guardar(p, "petalo.png")
     guardar(flor(p, 56), "flor.png")
 
-    # Botones de decisión
+    # Botones de decisión ligeras
     guardar(panel(400, 100, 28, (52, 34, 78, 220), (27, 16, 38, 220),
                   (255, 255, 255, 60), 2), "opcion.png")
     guardar(panel(400, 100, 28, (70, 44, 104, 240), (40, 24, 60, 240),
                   (255, 183, 197, 255), 3), "opcion_hover.png")
 
+    # Decoración por hermana: caja de diálogo y tarjetas (una por altura)
     HERMANAS = [
         ("ichika", motivo_destello, 1),
         ("nino", motivo_mariposa, 2),
@@ -278,13 +407,23 @@ if __name__ == "__main__":
         ("itsuki", motivo_estrella5, 5),
     ]
     for nombre, motivo, semilla in HERMANAS:
-        # para las cajas de diálogo
-        guardar(decoracion(motivo, semilla, CAJA_W, CAJA_H, 40, 150),
-                "deco_" + nombre + ".png")
-        # para las tarjetas de decisión (punto 3)
-        guardar(decoracion(motivo, semilla, 520, 440, 36, 110),
-                "deco_tarjeta_" + nombre + ".png")
+        guardar(decoracion_caja(motivo, semilla), "deco_" + nombre + ".png")
+        for alto in TARJETA_ALTOS:
+            guardar(decoracion_tarjeta(motivo, semilla, alto),
+                    "deco_tarjeta_" + nombre + "_" + str(alto) + ".png")
 
-    guardar(tarjeta(), "tarjeta.png")
-    guardar(tarjeta_marco(), "tarjeta_marco.png")
-    guardar(halo(), "halo.png")
+    # Tarjetas de decisión con peso: una versión por altura
+    for alto in TARJETA_ALTOS:
+        guardar(tarjeta_base(alto), "tarjeta_" + str(alto) + ".png")
+        guardar(marco(alto), "tarjeta_marco_" + str(alto) + ".png")
+        guardar(halo(alto), "halo_" + str(alto) + ".png")
+
+    # Iconos del menú rápido
+    guardar(icono_base(), "ico_base.png")
+    guardar(icono_borde(), "ico_borde.png")
+    guardar(glifo_atras(), "ico_atras.png")
+    guardar(glifo_historial(), "ico_historial.png")
+    guardar(glifo_auto(), "ico_auto.png")
+    guardar(glifo_saltar(), "ico_saltar.png")
+    guardar(glifo_guardar(), "ico_guardar.png")
+    guardar(glifo_menu(), "ico_menu.png")

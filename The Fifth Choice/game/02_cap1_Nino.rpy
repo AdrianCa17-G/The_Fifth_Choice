@@ -292,9 +292,9 @@ label hub_Nino:
 
     mc_pensamiento "Lo que diga ahora decide si me pone en la misma fila que los otros cuatro, o no."
 
-    # Menu del sabor
+    # Menu de Nino
 
-    $ decision_peso("nino")
+    $ decision_peso("nino", "¿Qué le dirás a Nino?", "Ya perdió la cuenta de quienes prometieron quedarse. Lo que digas ahora puede ser uno más de ellos, o algo distinto.")
 
     menu:
         "¿Cómo respondes?"

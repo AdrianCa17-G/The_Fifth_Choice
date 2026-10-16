@@ -260,19 +260,21 @@ label hub_Ichika:
 
     mc_pensamiento "Y no va a haber una quinta oportunidad hoy."
 
-    $ decision_peso("ichika")
+    ## Mensaje de decisión
+
+    $ decision_peso("ichika", "¿Qué le dirás a Ichika?", "Detrás de cada broma suya hay alguien muy cansada. Piensa en cómo quieres que se sienta cuando te vea irte.")
 
     menu:
 
         "¿Cómo respondes?"
 
-        "No decir nada. Sostenerle la mirada en silencio, dándole tiempo.":
+        "No decir nada. Sostenerle la mirada en silencio,\ndándole tiempo.":
             jump ichika_m4a
 
         "Ceder. Reírte de la broma y dejar que oculte el tema.":
             jump ichika_m4b
 
-        "Si tienes energía para hacer chistes, tienes energía para estudiar.":
+        "Si tienes energía para hacer chistes, tienes energía\npara estudiar.":
             jump ichika_m4c
 
 

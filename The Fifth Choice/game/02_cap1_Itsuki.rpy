@@ -270,15 +270,15 @@ label hub_Itsuki:
 
     mc_pensamiento "Y solo una no la deja peor de lo que ya está."
 
-    # Menu del sabor
+    ## Menu de Itsuki
 
-    $ decision_peso("itsuki")
+    $ decision_peso("itsuki", "¿Qué le dirás a Itsuki?", "Prefiere perderse sola antes que pedir ayuda. Cómo le tiendas la mano decide si se atreve a tomarla.")
 
     menu:
 
         "¿Cómo respondes?"
 
-        "Se nota tu esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso.":
+        "Reconocer su esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso.":
             jump itsuki_m4a
 
         "¿Quieres que lo revisemos desde el principio?":

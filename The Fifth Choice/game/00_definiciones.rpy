@@ -25,6 +25,8 @@ define C_ITSUKI  = "#EC7063"
 
 default decision_hermana = None
 default decision_pistas = ["calida", "tibia", "fria"]
+default decision_titulo = ""
+default decision_motivo = ""
 
 define mc = ui_personaje("[nombre_jugador]", "#F2F3F4")
 

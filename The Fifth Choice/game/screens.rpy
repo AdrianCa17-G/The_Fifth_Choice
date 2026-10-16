@@ -97,21 +97,32 @@ style frame:
 
 screen say(who, what, tipo="hablante", placa="#FFFFFF", tinta="#2B1B3F", petalo=None):
 
-    window:
-        id "window"
+    if decision_hermana is not None:
 
-        if who is not None:
-            window:
-                id "namebox"
-                style "placa"
-                background Transform(Frame("ui/placa.png", 40, 0, 40, 0),
-                                     matrixcolor=TintMatrix(placa))
-                text who id "who" color tinta
+        ## Decisión con peso: la pregunta la dibuja choice_peso con su propia
+        ## caja. Aquí queda la ventana invisible, que Ren'Py exige.
+        window:
+            id "window"
+            at ventana_oculta
+            text what id "what"
 
-        text what id "what"
+    else:
 
-    if tipo != "pensamiento":
-        use flor_sakura(petalo, tipo)
+        window:
+            id "window"
+
+            if who is not None:
+                window:
+                    id "namebox"
+                    style "placa"
+                    background Transform(Frame("ui/placa.png", 40, 0, 40, 0),
+                                         matrixcolor=TintMatrix(placa))
+                    text who id "who" color tinta
+
+            text what id "what"
+
+        if tipo != "pensamiento":
+            use flor_sakura(petalo, tipo, 1450, 844, tinta)
 
 
 ## Permite que el 'namebox' pueda ser estilizado en el objeto 'Character'.
@@ -309,17 +320,65 @@ screen quick_menu():
     if quick_menu:
 
         hbox:
-            style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Atrás") action Rollback()
-            textbutton _("Historial") action ShowMenu('history')
-            textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Guardar") action ShowMenu('save')
-            textbutton _("Guardar R.") action QuickSave()
-            textbutton _("Cargar R.") action QuickLoad()
-            textbutton _("Prefs.") action ShowMenu('preferences')
+            button:
+                xysize (68, 68)
+                background ui_icono("atras", False)
+                hover_background ui_icono("atras", True)
+                action Rollback()
+                tooltip "Atrás"
+                at icono_hover
+
+            button:
+                xysize (68, 68)
+                background ui_icono("historial", False)
+                hover_background ui_icono("historial", True)
+                action ShowMenu("history")
+                tooltip "Historial"
+                at icono_hover
+
+            button:
+                xysize (68, 68)
+                background ui_icono("auto", False)
+                hover_background ui_icono("auto", True)
+                action Preference("auto-forward", "toggle")
+                tooltip "Auto"
+                at icono_hover
+
+            button:
+                xysize (68, 68)
+                background ui_icono("saltar", False)
+                hover_background ui_icono("saltar", True)
+                action Skip() alternate Skip(fast=True, confirm=True)
+                tooltip "Saltar"
+                at icono_hover
+
+            button:
+                xysize (68, 68)
+                background ui_icono("guardar", False)
+                hover_background ui_icono("guardar", True)
+                action ShowMenu("save")
+                tooltip "Guardar"
+                at icono_hover
+
+            button:
+                xysize (68, 68)
+                background ui_icono("menu", False)
+                hover_background ui_icono("menu", True)
+                action ShowMenu()
+                tooltip "Menú"
+                at icono_hover
+
+        $ nombre_icono = GetTooltip()
+        if nombre_icono:
+            text nombre_icono:
+                xalign 1.0
+                xoffset -40
+                ypos 100
+                size 22
+                color "#FFFFFF"
+                outlines [(3, "#1B102699", 0, 0)]
 
 
 ## Este código asegura que la pantalla 'quick_menu' se muestra en el juego,
