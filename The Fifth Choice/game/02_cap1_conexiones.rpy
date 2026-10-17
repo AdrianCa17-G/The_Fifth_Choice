@@ -1549,7 +1549,12 @@ label interconexion_2:
 
     mc_pensamiento "Solo hay un sitio al que se sube por esas escaleras."
 
+    $ ui_escena("beat", "itsuki", "Azotea")
+
     call beat_Itsuki
+
+    $ ui_escena("normal")
+
     jump interconexion_3
 
 
@@ -2154,7 +2159,12 @@ label interconexion_4:
     scene bg_negro
     with fade
 
+    $ ui_escena("beat", "nino", "Departamento")
+
     call beat_Nino
+
+    $ ui_escena("normal")
+
     jump interconexion_5
 
 
@@ -2325,7 +2335,7 @@ label interconexion_5:
 
         nino "…Gruesas. Las cortaste gruesas."
 
-        nino "Pero no te quejaste."
+        mc "Pero no te quejaste."
 
         show nino molesta at pj_habla(0.5)
         with disolucion_lenta
@@ -3500,7 +3510,12 @@ label interconexion_6:
     with fade
 
     ## beat_casa lee despido_cap1 para mostrar la duda de Futaro.
+       
+    $ ui_escena("beat", None, "Casa de Futaro")
+
     call beat_casa
+
+    $ ui_escena("normal")
 
     if despido_cap1:
         jump final_malo_temprano

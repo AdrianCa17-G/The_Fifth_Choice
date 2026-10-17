@@ -7,6 +7,81 @@
 ## altura de las letras). Se cambia por tres puntos normales al mostrarlo.
 init -5 python:
 
+    def ui_escena(modo="normal", hermana=None, lugar=""):
+        """Cambia la decoración de pantalla.
+        modo: "normal", "hub" o "beat". hermana: "ichika"... o None (5 colores)."""
+        store.ui_modo = modo
+        store.ui_hermana = hermana
+        store.ui_lugar = lugar
+        if modo != "normal":
+            renpy.hide_screen("lugar_aviso")
+
+    ## Fondo -> nombre de lugar. "" = ignorar ese fondo.
+    BG_LUGAR = {
+
+        "bg_cuarto_mc": "Habitación de",
+        "bg_comedor": "Casa de los Uesugi",
+        "bg_escuela": "Instituto Asaba",
+        "bg_aula": "Aula · Día",
+        "bg_aula_tarde": "Aula Vacía",
+        "bg_aula_anochecer": "Aula Vacía · Anochecer",
+        "bg_azotea": "Azotea · Día",
+        "bg_azotea_tarde": "Azotea · Atardecer",
+        "bg_edificio": "Edificio de las Nakano",
+        "bg_entrada_edificio": "Entrada · Edificio de las Nakano",
+        "bg_departamento": "Departamento Nakano",
+        "bg_departamento_anochecer": "Departamento Nakano · Anochecer",
+        "bg_cocina": "Cocina de las Nakano",
+        "bg_sala_ensayo": "Sala de ensayo",
+        "bg_sala_ensayo_anochecer": "Sala de ensayo · Anochecer",
+        "bg_centro_comercial": "Centro comercial",
+        "bg_centro_comercial_anochecer": "Centro comercial · Anochecer",
+        "bg_biblioteca": "Biblioteca",
+        "bg_biblioteca_anochecer": "Biblioteca · Anochecer",
+        "bg_pista_atletismo": "Pista de atletismo",
+        "bg_pista_atletismo_anochecer": "Pista de atletismo · Anochecer",
+        "bg_negro": "",
+    }
+
+    def ui_revisar_lugar(event, interact=True, **kwargs):
+        """Se ejecuta en cada línea de diálogo. Si el fondo cambió de lugar y
+        estamos en modo normal, enseña el aviso del lugar unos segundos."""
+        if event != "begin":
+            return
+        actual = None
+        for tag in BG_LUGAR:
+            if renpy.showing(tag):
+                actual = tag
+        if actual is None:
+            return
+        lugar = BG_LUGAR[actual]
+        if lugar == "":
+            return
+        if lugar == store.ui_ultimo_lugar:
+            return
+        store.ui_ultimo_lugar = lugar
+        if store.ui_modo == "normal":
+            renpy.show_screen("lugar_aviso", lugar)
+
+    config.all_character_callbacks.append(ui_revisar_lugar)
+
+    def ui_raya(i, modo, hermana):
+        """Color y opacidad de la raya i (0 a 4) de las esquinas."""
+        orden = ["ichika", "nino", "miku", "yotsuba", "itsuki"]
+        if hermana is None:
+            color = PETALO_COLOR[orden[i]]
+        else:
+            color = PETALO_COLOR[hermana]
+        if modo == "normal":
+            alfa = 0.55
+        elif hermana is None:
+            alfa = 0.85
+        else:
+            alfa = 0.95 - 0.12 * i
+        return (color, alfa)
+
+    config.overlay_screens.append("marco_juego")
+
     def ui_icono(nombre, activo):
         """Icono del menú rápido. activo=True es el estado con el ratón encima."""
         color = store.ICONO_COLOR[nombre]
@@ -190,11 +265,7 @@ define PISTA_FUERZA = 0.30
 
 ## Altura del conjunto (pregunta + tarjetas): 0.0 arriba, 1.0 abajo.
 ## Si lo quieres más abajo, sube el número (máx. ~0.75, o chocará con el borde).
-define DECISION_ALINEACION = 0.64
-
-## Altura del conjunto (pregunta + tarjetas): 0.0 arriba, 1.0 abajo.
-## Si lo quieres más abajo, sube el número (máx. ~0.75, o chocará con el borde).
-define DECISION_ALINEACION = 0.64
+define DECISION_ALINEACION = 0.45
 
 ## Tono oscuro de cada hermana para su tarjeta (distinto del violeta de las ligeras).
 define TARJETA_TONO = {
@@ -329,6 +400,9 @@ define ICONO_COLOR = {
     "saltar":    C_YOTSUBA,
     "guardar":   C_ITSUKI,
     "menu":      "#FFFFFF",
+    "info":      "#FFFFFF",
+    "ayuda":     "#FFFFFF",
+    "salir":     "#FFFFFF",
 }
 
 transform icono_hover:
@@ -336,3 +410,121 @@ transform icono_hover:
         linear 0.12 yoffset 0
     on hover:
         linear 0.12 yoffset 5
+
+
+## --- Decoración de pantalla -------------------------------------------------
+
+## Tipografía de la cinta. Cámbiala aquí si quieres probar otra.
+define HUD_FUENTE = gui.name_text_font
+
+define HUB_LUGAR = {
+    "ichika":  "Sala de ensayo",
+    "nino":    "Centro comercial",
+    "miku":    "Biblioteca",
+    "yotsuba": "Pista de atletismo",
+    "itsuki":  "Aula vacía",
+}
+
+default ui_modo = "normal"
+default ui_hermana = None
+default ui_lugar = ""
+default ui_ultimo_lugar = ""
+
+transform hud_cinta_entrada:
+    xoffset -540
+    ease 0.45 xoffset 0
+
+## Aviso pasajero: entra, se queda ~3.5 s y sale.
+transform hud_aviso_anim:
+    xoffset -540
+    ease 0.45 xoffset 0
+    pause 3.5
+    ease 0.45 xoffset -540
+
+## La cinta en sí. La usan el HUD fijo (hubs/beats) y el aviso pasajero.
+screen hud_cinta_vista(lugar, etiqueta, clave, cinta, tinta, deco=True):
+
+    $ lugar_mayus = lugar.upper()
+    $ tinta_suave = tinta + "BB"
+
+    fixed:
+        xysize (520, 64)
+
+        add "ui/hud_cinta.png" matrixcolor TintMatrix(cinta)
+
+        if deco:
+            add ("ui/hud_cinta_deco_" + clave + ".png")
+
+        add ("ui/hud_icono_" + clave + ".png") matrixcolor TintMatrix(tinta) xpos 50 yalign 0.5
+
+        vbox:
+            xpos 104
+            yalign 0.5
+            spacing 0
+
+            if etiqueta != "":
+                text etiqueta font HUD_FUENTE size 14 kerning 4 color tinta_suave
+
+            text lugar_mayus font HUD_FUENTE size 27 kerning 2 color tinta
+
+
+screen lugar_aviso(lugar):
+
+    zorder 91
+
+    if quick_menu:
+        fixed:
+            at hud_aviso_anim
+            xpos 0
+            ypos 22
+            xysize (520, 64)
+            use hud_cinta_vista(lugar, "", "flor", "#E8E0F2", "#2B1B3F", False)
+
+    timer 4.6 action Hide("lugar_aviso")
+
+
+screen marco_juego():
+
+    zorder 90
+
+    ## Se oculta junto con el menú rápido (en el mapa del hub, por ejemplo).
+    if quick_menu:
+
+        $ base = "#E8E0F2"
+        if ui_hermana is not None:
+            $ base = PETALO_COLOR[ui_hermana]
+        $ cinta = ui_mezclar(base, "#FFFFFF", 0.35)
+        $ tinta_hud = ui_mezclar(base, "#000000", 0.75)
+
+        add "ui/hud_sombra.png"
+
+        for i in range(5):
+            $ c, a = ui_raya(i, ui_modo, ui_hermana)
+            add ("ui/hud_raya_" + str(i) + ".png") matrixcolor TintMatrix(c) alpha a xalign 0.0 yalign 1.0
+            add ("ui/hud_rayad_" + str(i) + ".png") matrixcolor TintMatrix(c) alpha a xalign 1.0 yalign 1.0
+
+        if ui_modo == "beat":
+            add Solid(base, xsize=1920, ysize=5) alpha 0.9 ypos 0
+            add Solid(base, xsize=1920, ysize=5) alpha 0.9 yalign 1.0
+
+        if ui_lugar != "":
+
+            $ clave = "flor"
+            if ui_hermana is not None:
+                $ clave = ui_hermana
+
+            $ etiqueta = ""
+            if ui_modo == "hub":
+                $ etiqueta = "ENCUENTRO"
+            elif ui_modo == "beat":
+                $ etiqueta = "ESCENA CLAVE"
+
+            fixed:
+                at hud_cinta_entrada
+                xpos 0
+                ypos 22
+                xysize (520, 64)
+                use hud_cinta_vista(ui_lugar, etiqueta, clave, cinta, tinta_hud)
+
+            if ui_modo != "normal":
+                text ("Quedan " + tiempo_restante) xpos 44 ypos 94 size 22 color "#FFFFFF" outlines [(3, "#1B102699", 0, 0)]

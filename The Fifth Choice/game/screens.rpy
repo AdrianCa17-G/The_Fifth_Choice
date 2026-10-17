@@ -320,7 +320,12 @@ screen quick_menu():
     if quick_menu:
 
         hbox:
-            style "quick_menu"
+
+            xalign 1.0
+            yalign 0.0
+            xoffset -36
+            yoffset 20
+            spacing 10
 
             button:
                 xysize (68, 68)
@@ -342,6 +347,7 @@ screen quick_menu():
                 xysize (68, 68)
                 background ui_icono("auto", False)
                 hover_background ui_icono("auto", True)
+                selected_background ui_icono("auto", True)
                 action Preference("auto-forward", "toggle")
                 tooltip "Auto"
                 at icono_hover
@@ -350,9 +356,11 @@ screen quick_menu():
                 xysize (68, 68)
                 background ui_icono("saltar", False)
                 hover_background ui_icono("saltar", True)
+                selected_background ui_icono("saltar", True)
                 action Skip() alternate Skip(fast=True, confirm=True)
                 tooltip "Saltar"
                 at icono_hover
+
 
             button:
                 xysize (68, 68)
@@ -373,9 +381,9 @@ screen quick_menu():
         $ nombre_icono = GetTooltip()
         if nombre_icono:
             text nombre_icono:
-                xalign 1.0
-                xoffset -40
-                ypos 100
+                xalign 0.73
+                xoffset -30
+                ypos 40
                 size 22
                 color "#FFFFFF"
                 outlines [(3, "#1B102699", 0, 0)]
@@ -1379,12 +1387,12 @@ transform delayed_blink(delay, cycle):
         pause (cycle - .4)
         repeat
 
-
 style skip_frame is empty
 style skip_text is gui_text
 style skip_triangle is skip_text
 
 style skip_frame:
+    xalign 0.5
     ypos gui.skip_ypos
     background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
     padding gui.skip_frame_borders.padding

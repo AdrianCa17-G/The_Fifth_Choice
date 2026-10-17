@@ -397,7 +397,7 @@ label prologo:
     scene bg_azotea_tarde
     with fade
 
-    play ambiente amb_viento fadein 2.0 volume 1.5
+    play ambiente amb_viento fadein 2.0 volume 1.0
 
     mc_pensamiento "Cuando por fin terminaron las clases, subí a la azotea a despejarme un poco."
 

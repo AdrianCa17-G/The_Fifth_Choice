@@ -8,7 +8,13 @@ Requiere: pip install pillow
 import os
 import math
 import random
-from PIL import Image, ImageDraw, ImageChops
+from PIL import Image, ImageDraw, ImageChops, ImageOps
+
+from PIL import ImageFont
+
+RUTA_FUENTE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "game", "fonts", "MPLUSRounded1c-Bold.ttf")
+HUD_W, HUD_H = 520, 64
+MENU_W, MENU_H = 440, 68
 
 SALIDA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "game", "ui")
 SS = 4  # supersampling: se dibuja 4 veces más grande y se reduce (bordes suaves)
@@ -373,6 +379,101 @@ def glifo_menu():
     return base
 
 
+# --- Decoración de pantalla (HUD) --------------------------------------------
+def raya_esquina(i, derecha):
+    """Una raya diagonal que corta la esquina inferior (lienzo de 260x260)."""
+    lado = 260
+    inicios = [34, 76, 114, 148, 178]
+    grosores = [18, 15, 12, 9, 7]
+    d = inicios[i]
+    t = grosores[i]
+    g = Image.new("RGBA", (lado * SS, lado * SS), (0, 0, 0, 0))
+    dr = ImageDraw.Draw(g)
+    dr.polygon([E(0, lado - d), E(d, lado), E(d + t, lado), E(0, lado - d - t)],
+               fill=BLANCO)
+    img = g.resize((lado, lado), Image.LANCZOS)
+    if derecha:
+        img = ImageOps.mirror(img)
+    return img
+
+
+def hud_sombra():
+    """Sombra suave arriba: da fondo a los iconos y a la cinta."""
+    img = Image.new("RGBA", (1920, 170), (0, 0, 0, 0))
+    px = img.load()
+    for y in range(170):
+        a = int(150 * (1 - y / 169.0) ** 2)
+        for x in range(1920):
+            px[x, y] = (0, 0, 0, a)
+    return img
+
+
+def hud_cinta():
+    """Cinta en paralelogramo para el nombre del lugar (Ren'Py la tiñe)."""
+    g = Image.new("RGBA", (HUD_W * SS, HUD_H * SS), (0, 0, 0, 0))
+    d = ImageDraw.Draw(g)
+    d.polygon([E(0, HUD_H), E(26, 0), E(HUD_W, 0), E(HUD_W - 26, HUD_H)], fill=BLANCO)
+    return g.resize((HUD_W, HUD_H), Image.LANCZOS)
+
+
+def motivo_sakura(d, cx, cy, r, color):
+    for k in range(5):
+        ang = k * 2 * math.pi / 5 - math.pi / 2
+        px = cx + 0.55 * r * math.cos(ang)
+        py = cy + 0.55 * r * math.sin(ang)
+        d.ellipse((px - 0.5 * r, py - 0.5 * r, px + 0.5 * r, py + 0.5 * r), fill=color)
+
+
+def hud_cinta_deco(motivo, semilla):
+    """Motivos muy tenues dentro de la cinta."""
+    azar = random.Random(semilla)
+    g = Image.new("RGBA", (HUD_W * SS, HUD_H * SS), (255, 255, 255, 0))
+    d = ImageDraw.Draw(g)
+    dibujar_relleno(d, motivo, azar, 170, 16, 490, 50, 44, 34, 60)
+    img = g.resize((HUD_W, HUD_H), Image.LANCZOS)
+    alfa = ImageChops.multiply(img.getchannel("A"), hud_cinta().getchannel("A"))
+    img.putalpha(alfa)
+    return img
+
+
+def hud_icono(motivo):
+    """El motivo de la hermana, como icono para la cinta."""
+    g = Image.new("RGBA", (40 * SS, 40 * SS), (0, 0, 0, 0))
+    d = ImageDraw.Draw(g)
+    motivo(d, 20 * SS, 20 * SS, 15 * SS, BLANCO)
+    return g.resize((40, 40), Image.LANCZOS)
+
+
+# --- Menú principal ---------------------------------------------------------
+def menu_cinta():
+    g = Image.new("RGBA", (MENU_W * SS, MENU_H * SS), (0, 0, 0, 0))
+    d = ImageDraw.Draw(g)
+    d.polygon([E(0, MENU_H), E(22, 0), E(MENU_W, 0), E(MENU_W - 22, MENU_H)], fill=BLANCO)
+    return g.resize((MENU_W, MENU_H), Image.LANCZOS)
+
+
+def menu_cinta_borde():
+    g = Image.new("RGBA", (MENU_W * SS, MENU_H * SS), (0, 0, 0, 0))
+    d = ImageDraw.Draw(g)
+    pts = [E(0, MENU_H - 1), E(22, 1), E(MENU_W - 1, 1), E(MENU_W - 23, MENU_H - 1), E(0, MENU_H - 1)]
+    d.line(pts, fill=BLANCO, width=3 * SS, joint="curve")
+    return g.resize((MENU_W, MENU_H), Image.LANCZOS)
+
+
+def glifo_texto(caracter):
+    g, d = nuevo_glifo()
+    fuente = ImageFont.truetype(RUTA_FUENTE, 46 * SS)
+    d.text((ICONO * SS / 2, ICONO * SS / 2), caracter, font=fuente, fill=BLANCO, anchor="mm")
+    return fin_glifo(g)
+
+
+def glifo_salir():
+    g, d = nuevo_glifo()
+    d.arc(ER(16, 18, 52, 54), start=-50, end=230, fill=BLANCO, width=6 * SS)
+    d.rounded_rectangle(ER(31, 12, 37, 34), radius=3 * SS, fill=BLANCO)
+    return fin_glifo(g)
+
+
 if __name__ == "__main__":
     # Caja de diálogo: BLANCA con borde gris. Ren'Py la tiñe por personaje.
     guardar(panel(CAJA_W, CAJA_H, 40, (255, 255, 255, 228), (238, 238, 244, 228),
@@ -427,3 +528,23 @@ if __name__ == "__main__":
     guardar(glifo_saltar(), "ico_saltar.png")
     guardar(glifo_guardar(), "ico_guardar.png")
     guardar(glifo_menu(), "ico_menu.png")
+    
+    # Decoración de pantalla
+    for i in range(5):
+        guardar(raya_esquina(i, False), "hud_raya_" + str(i) + ".png")
+        guardar(raya_esquina(i, True), "hud_rayad_" + str(i) + ".png")
+    guardar(hud_sombra(), "hud_sombra.png")
+    guardar(hud_cinta(), "hud_cinta.png")
+
+    # Cinta del lugar: icono y decoración por hermana (y "flor" para el resto)
+    MOTIVOS_HUD = HERMANAS + [("flor", motivo_sakura, 6)]
+    for nombre, motivo, semilla in MOTIVOS_HUD:
+        guardar(hud_cinta_deco(motivo, semilla), "hud_cinta_deco_" + nombre + ".png")
+        guardar(hud_icono(motivo), "hud_icono_" + nombre + ".png")
+
+    # Menú principal
+    guardar(menu_cinta(), "menu_cinta.png")
+    guardar(menu_cinta_borde(), "menu_cinta_borde.png")
+    guardar(glifo_texto("i"), "ico_info.png")
+    guardar(glifo_texto("?"), "ico_ayuda.png")
+    guardar(glifo_salir(), "ico_salir.png")

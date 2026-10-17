@@ -29,7 +29,10 @@ label hub_1:
     call screen mapa_hub(1)
     $ quick_menu = True
     $ destino = _return
+
+    $ ui_escena("hub", destino, HUB_LUGAR[destino])
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
+    $ ui_escena("normal")
     $ hub_visitadas.append(destino)
 
     stop music fadeout 1.0
@@ -52,7 +55,10 @@ label hub_2:
     call screen mapa_hub(2)
     $ quick_menu = True
     $ destino = _return
+
+    $ ui_escena("hub", destino, HUB_LUGAR[destino])
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
+    $ ui_escena("normal")
     $ hub_visitadas.append(destino)
 
     stop music fadeout 1.0
@@ -75,7 +81,10 @@ label hub_3:
     call screen mapa_hub(3)
     $ quick_menu = True
     $ destino = _return
+
+    $ ui_escena("hub", destino, HUB_LUGAR[destino])
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
+    $ ui_escena("normal")
     $ hub_visitadas.append(destino)
 
     stop music fadeout 1.0
