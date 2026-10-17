@@ -13,11 +13,11 @@
 image main_menu_bg = "images/Fondo_Menu.png"
 image main_menu_logo = "images/Logo_Menu.png"
 
-image spr_ichika  = "images/sprites/ichika_nakano.png"
-image spr_nino    = "images/sprites/nino_nakano.png"
-image spr_miku    = "images/sprites/miku_nakano.png"
-image spr_yotsuba = "images/sprites/yotsuba_nakano.png"
-image spr_itsuki  = "images/sprites/itsuki_nakano.png"
+image spr_ichika  = "hubs/ichika_hub.png"
+image spr_nino    = "hubs/nino_hub.png"
+image spr_miku    = "hubs/miku_hub.png"
+image spr_yotsuba = "hubs/yotsuba_hub.png"
+image spr_itsuki  = "hubs/itsuki_hub.png"
 
 image sakura_petals = SnowBlossom("images/petal.png", count=25, border=50)
 
@@ -127,25 +127,20 @@ screen main_menu():
     add "main_menu_bg" fit "cover"
     add "sakura_petals"
 
-    add panel_lateral() at panel_fadein
-
-    add Solid(PANEL_ACENTO, xsize=2, ysize=config.screen_height):
-        xpos PANEL_ANCHO
-        alpha 0.30
-        at panel_fadein
+    add "ui/menu_panel.png" at panel_fadein
 
     ## --- SPRITES: la hermana de la cinta con el ratón encima se enciende ---
     fixed:
         at sprite_tono(menu_brillo("ichika"), menu_subida("ichika"))
-        add "spr_ichika" at sprite_anim(0.0, 0.0) xalign 0.29 yalign 1.0
+        add "spr_ichika" at sprite_anim(0.0, 0.0) xalign 0.33 yalign 1.0
 
     fixed:
         at sprite_tono(menu_brillo("nino"), menu_subida("nino"))
-        add "spr_nino" at sprite_anim(0.2, 0.4) xalign 0.50 yalign 1.0
+        add "spr_nino" at sprite_anim(0.2, 0.4) xalign 0.52 yalign 1.0
 
     fixed:
         at sprite_tono(menu_brillo("miku"), menu_subida("miku"))
-        add "spr_miku" at sprite_anim(0.4, 0.8) xalign 0.70 yalign 1.0
+        add "spr_miku" at sprite_anim(0.4, 0.8) xalign 0.71 yalign 1.0
 
     fixed:
         at sprite_tono(menu_brillo("yotsuba"), menu_subida("yotsuba"))
@@ -163,25 +158,29 @@ screen main_menu():
 
     ## --- TAGLINE ---
     text "¿A quién elegirás?":
-        xalign 0.65
-        yalign 0.045
+        xpos 1350
+        xanchor 0.5
+        ypos 36
         font gui.name_text_font
         color "#FFF8FC"
-        size 32
-        kerning 2
+        size 44
+        kerning 3
         outlines [
-            (5, "#1B1026CC", 0, 0),
+            (6, "#1B1026CC", 0, 0),
             (2, "#FF9FBE", 0, 0)
         ]
         at tagline_fadein
 
-    text "Cinco sonrisas únicas, pero solo una será tu respuesta definitiva":
-        xalign 0.69
-        yalign 0.10
-        color "#FFD9E6CC"
-        size 20
-        italic True
-        outlines [(2, "#1B102688", 0, 0)]
+    text "Todas saben algo que no te quieren enseñar. Tú decides a quién escuchas.":
+        xpos 1350
+        xanchor 0.5
+        ypos 104
+        xsize 900
+        text_align 0.5
+        font gui.name_text_font
+        color "#FFE3EE"
+        size 27
+        outlines [(3, "#1B1026CC", 0, 0)]
         at tagline_fadein
 
     ## --- LAS CINCO CINTAS ---

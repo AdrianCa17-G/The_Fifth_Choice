@@ -19,7 +19,7 @@ init -5 python:
     ## Fondo -> nombre de lugar. "" = ignorar ese fondo.
     BG_LUGAR = {
 
-        "bg_cuarto_mc": "Habitación de",
+        "bg_cuarto_mc": "Habitación de [nombre_jugador]",
         "bg_comedor": "Casa de los Uesugi",
         "bg_escuela": "Instituto Asaba",
         "bg_aula": "Aula · Día",
@@ -43,9 +43,18 @@ init -5 python:
         "bg_negro": "",
     }
 
+        ## Fondos cuyo nombre NO se enseña en el prólogo: el protagonista aún no
+    ## sabe que ahí viven las Nakano.
+    BG_OCULTOS_PROLOGO = [
+        "bg_edificio",
+        "bg_entrada_edificio",
+        "bg_departamento",
+        "bg_departamento_anochecer",
+    ]
+
     def ui_revisar_lugar(event, interact=True, **kwargs):
-        """Se ejecuta en cada línea de diálogo. Si el fondo cambió de lugar y
-        estamos en modo normal, enseña el aviso del lugar unos segundos."""
+        """Se ejecuta en cada línea de diálogo. Si el FONDO cambió y estamos en
+        modo normal, enseña el aviso del lugar unos segundos."""
         if event != "begin":
             return
         actual = None
@@ -54,14 +63,15 @@ init -5 python:
                 actual = tag
         if actual is None:
             return
-        lugar = BG_LUGAR[actual]
-        if lugar == "":
+        if BG_LUGAR[actual] == "":
             return
-        if lugar == store.ui_ultimo_lugar:
+        if store.ui_prologo and actual in BG_OCULTOS_PROLOGO:
             return
-        store.ui_ultimo_lugar = lugar
+        if actual == store.ui_ultimo_lugar:
+            return
+        store.ui_ultimo_lugar = actual
         if store.ui_modo == "normal":
-            renpy.show_screen("lugar_aviso", lugar)
+            renpy.show_screen("lugar_aviso", BG_LUGAR[actual])
 
     config.all_character_callbacks.append(ui_revisar_lugar)
 
@@ -429,43 +439,56 @@ default ui_modo = "normal"
 default ui_hermana = None
 default ui_lugar = ""
 default ui_ultimo_lugar = ""
+default ui_prologo = True
 
 transform hud_cinta_entrada:
-    xoffset -540
+    xoffset -800
     ease 0.45 xoffset 0
 
-## Aviso pasajero: entra, se queda ~3.5 s y sale.
 transform hud_aviso_anim:
-    xoffset -540
+    xoffset -800
     ease 0.45 xoffset 0
     pause 3.5
-    ease 0.45 xoffset -540
+    ease 0.45 xoffset -800
 
-## La cinta en sí. La usan el HUD fijo (hubs/beats) y el aviso pasajero.
-screen hud_cinta_vista(lugar, etiqueta, clave, cinta, tinta, deco=True):
+style hud_cinta_win is default:
+    xpos 0
+    ypos 22
+    ysize 64
+    xminimum 380
+    xmaximum 1100
+    padding (54, 0, 76, 0)
 
-    $ lugar_mayus = lugar.upper()
+## La cinta en sí. Se ajusta sola al ancho del texto.
+screen hud_cinta_vista(lugar, etiqueta, clave, cinta, tinta, anim, deco=True):
+
+    $ lugar_mayus = renpy.substitute(lugar).upper()
     $ tinta_suave = tinta + "BB"
+    $ deco_alfa = 0.0
+    if deco:
+        $ deco_alfa = 1.0
 
-    fixed:
-        xysize (520, 64)
+    window:
+        style "hud_cinta_win"
+        at anim
+        background Fixed(
+            Transform(Frame("ui/hud_cinta.png", 40, 0, 40, 0), matrixcolor=TintMatrix(cinta)),
+            Transform("ui/hud_cinta_deco_" + clave + ".png", xalign=1.0, alpha=deco_alfa))
 
-        add "ui/hud_cinta.png" matrixcolor TintMatrix(cinta)
-
-        if deco:
-            add ("ui/hud_cinta_deco_" + clave + ".png")
-
-        add ("ui/hud_icono_" + clave + ".png") matrixcolor TintMatrix(tinta) xpos 50 yalign 0.5
-
-        vbox:
-            xpos 104
+        hbox:
+            spacing 16
             yalign 0.5
-            spacing 0
 
-            if etiqueta != "":
-                text etiqueta font HUD_FUENTE size 14 kerning 4 color tinta_suave
+            add ("ui/hud_icono_" + clave + ".png") matrixcolor TintMatrix(tinta) yalign 0.5
 
-            text lugar_mayus font HUD_FUENTE size 27 kerning 2 color tinta
+            vbox:
+                yalign 0.5
+                spacing 0
+
+                if etiqueta != "":
+                    text etiqueta font HUD_FUENTE size 14 kerning 4 color tinta_suave substitute False
+
+                text lugar_mayus font HUD_FUENTE size 27 kerning 2 color tinta substitute False
 
 
 screen lugar_aviso(lugar):
@@ -473,15 +496,9 @@ screen lugar_aviso(lugar):
     zorder 91
 
     if quick_menu:
-        fixed:
-            at hud_aviso_anim
-            xpos 0
-            ypos 22
-            xysize (520, 64)
-            use hud_cinta_vista(lugar, "", "flor", "#E8E0F2", "#2B1B3F", False)
+        use hud_cinta_vista(lugar, "", "flor", "#E8E0F2", "#2B1B3F", hud_aviso_anim, False)
 
     timer 4.6 action Hide("lugar_aviso")
-
 
 screen marco_juego():
 
@@ -519,12 +536,7 @@ screen marco_juego():
             elif ui_modo == "beat":
                 $ etiqueta = "ESCENA CLAVE"
 
-            fixed:
-                at hud_cinta_entrada
-                xpos 0
-                ypos 22
-                xysize (520, 64)
-                use hud_cinta_vista(ui_lugar, etiqueta, clave, cinta, tinta_hud)
+            use hud_cinta_vista(ui_lugar, etiqueta, clave, cinta, tinta_hud, hud_cinta_entrada)
 
             if ui_modo != "normal":
                 text ("Quedan " + tiempo_restante) xpos 44 ypos 94 size 22 color "#FFFFFF" outlines [(3, "#1B102699", 0, 0)]

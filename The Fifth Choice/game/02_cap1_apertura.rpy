@@ -17,6 +17,8 @@ image cg_libreta             = "cg/cap1_apertura/libreta.webp"
 
 label cap1_apertura:
 
+    $ ui_prologo = False
+
     ############################################################################
     ##  ESCENA 1 · Instituto, mañana.
     ##  Reencuentro de Itsuki y mc, esta vez el mc decidio cambiar

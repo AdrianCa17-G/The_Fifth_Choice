@@ -274,6 +274,18 @@ label beat_casa:
 
         $ hermanas_pensamiento = set()
 
+        $ ligera_hermanas = {}
+        if ichika_visitada_cap1:
+            $ ligera_hermanas["Ichika"] = "ichika"
+        if nino_visitada_cap1:
+            $ ligera_hermanas["Nino"] = "nino"
+        if miku_visitada_cap1:
+            $ ligera_hermanas["Miku"] = "miku"
+        if yotsuba_visitada_cap1:
+            $ ligera_hermanas["Yotsuba"] = "yotsuba"
+        if itsuki_visitada_cap1:
+            $ ligera_hermanas["Itsuki"] = "itsuki"
+
         label cap1_hermanas_pensamiento:
 
             ## Menú del sabor
@@ -643,6 +655,7 @@ label beat_casa:
             if len(hermanas_pensamiento) < 5:
                 jump cap1_hermanas_pensamiento
 
+        $ ligera_hermanas = {}
     
     ############################################################################
     ##  MOVIMIENTO 5 · CIERRE

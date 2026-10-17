@@ -244,41 +244,71 @@ screen choice(items):
         use choice_peso(items)
         
 
+## Si una opción es una hermana, aquí se dice cuál. Se rellena justo antes
+## del menu:   $ ligera_hermanas = {"Ichika": "ichika"}
+default ligera_hermanas = {}
+
 screen choice_ligera(items):
 
     vbox:
         style "opcion_vbox"
 
         for i in items:
-            button:
-                style "opcion_boton"
-                action i.action
-                hover_sound audio.sfx_hover
-                activate_sound audio.sfx_click
-                at opcion_slide
 
-                hbox:
-                    spacing 26
-                    add Transform("ui/flor.png", matrixcolor=TintMatrix("#FFB7C5")) yalign 0.5
-                    text i.caption style "opcion_texto"
+            $ h = ligera_hermanas.get(i.caption)
 
+            if h is None:
 
-transform opcion_slide:
-    on idle:
-        linear 0.15 xoffset 0
-    on hover:
-        linear 0.15 xoffset 16
+                button:
+                    style "opcion_boton"
+                    action i.action
+                    hover_sound audio.sfx_hover
+                    activate_sound audio.sfx_click
+                    at opcion_slide
+
+                    hbox:
+                        spacing 26
+                        add Transform("ui/flor.png", matrixcolor=TintMatrix("#FFB7C5")) yalign 0.5
+                        text i.caption style "opcion_texto"
+
+            else:
+
+                $ color_h = PETALO_COLOR[h]
+                $ claro_h = ui_mezclar(color_h, "#FFFFFF", 0.25)
+                $ tinta_h = ui_mezclar(color_h, "#000000", 0.75)
+
+                button:
+                    style "opcion_boton"
+                    action i.action
+                    hover_sound audio.sfx_hover
+                    activate_sound audio.sfx_click
+                    at opcion_slide
+
+                    background Fixed(
+                        Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(TARJETA_TONO[h])),
+                        Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color_h)))
+                    hover_background Fixed(
+                        Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color_h)),
+                        Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#FFFFFF")))
+
+                    hbox:
+                        spacing 26
+                        add ("ui/hud_icono_" + h + ".png") matrixcolor TintMatrix(claro_h) yalign 0.5
+                        text i.caption style "opcion_texto" hover_color tinta_h
 
 
 style opcion_vbox is vbox:
     xalign 0.5
-    ypos 405
+    ypos 480
     yanchor 0.5
-    spacing 30
+    spacing 24
 
 style opcion_boton is button:
-    xsize 1180
-    padding (50, 22, 60, 22)
+    xminimum 420
+    xmaximum 1180
+    xalign 0.5
+    size_group "opciones"
+    padding (50, 20, 60, 20)
     background Frame("ui/opcion.png", 40, 40, 40, 40)
     hover_background Frame("ui/opcion_hover.png", 40, 40, 40, 40)
 
@@ -286,7 +316,14 @@ style opcion_texto is default:
     size 33
     color "#D9D2E6"
     hover_color "#FFFFFF"
-    xsize 960
+    xmaximum 960
+
+
+transform opcion_slide:
+    on idle:
+        linear 0.15 xoffset 0
+    on hover:
+        linear 0.15 xoffset 16
 
 
 style choice_vbox is vbox

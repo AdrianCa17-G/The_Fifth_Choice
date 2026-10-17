@@ -425,14 +425,19 @@ def motivo_sakura(d, cx, cy, r, color):
 
 
 def hud_cinta_deco(motivo, semilla):
-    """Motivos muy tenues dentro de la cinta."""
+    """Motivos tenues para la parte derecha de la cinta (se alinea a la derecha)."""
+    ancho = 360
     azar = random.Random(semilla)
-    g = Image.new("RGBA", (HUD_W * SS, HUD_H * SS), (255, 255, 255, 0))
+    g = Image.new("RGBA", (ancho * SS, HUD_H * SS), (255, 255, 255, 0))
     d = ImageDraw.Draw(g)
-    dibujar_relleno(d, motivo, azar, 170, 16, 490, 50, 44, 34, 60)
-    img = g.resize((HUD_W, HUD_H), Image.LANCZOS)
-    alfa = ImageChops.multiply(img.getchannel("A"), hud_cinta().getchannel("A"))
-    img.putalpha(alfa)
+    dibujar_relleno(d, motivo, azar, 50, 16, ancho - 40, 50, 44, 34, 60)
+    img = g.resize((ancho, HUD_H), Image.LANCZOS)
+
+    m = Image.new("L", (ancho * SS, HUD_H * SS), 0)
+    ImageDraw.Draw(m).polygon([E(0, 0), E(ancho, 0), E(ancho - 26, HUD_H), E(0, HUD_H)], fill=255)
+    m = m.resize((ancho, HUD_H), Image.LANCZOS)
+
+    img.putalpha(ImageChops.multiply(img.getchannel("A"), m))
     return img
 
 
@@ -472,6 +477,59 @@ def glifo_salir():
     d.arc(ER(16, 18, 52, 54), start=-50, end=230, fill=BLANCO, width=6 * SS)
     d.rounded_rectangle(ER(31, 12, 37, 34), radius=3 * SS, fill=BLANCO)
     return fin_glifo(g)
+
+
+COLORES_HERMANAS = [(255, 183, 197), (195, 155, 211), (93, 173, 226), (88, 214, 141), (236, 112, 99)]
+
+
+def opcion_neutra():
+    """Píldora NEUTRA: Ren'Py la tiñe con el tono oscuro de la hermana."""
+    return panel(400, 100, 28, (255, 255, 255, 238), (150, 150, 150, 238),
+                 (255, 255, 255, 50), 2)
+
+
+def opcion_marco():
+    return borde_redondeado(400, 100, 28, (255, 255, 255, 255), 3)
+
+
+def menu_panel():
+    """Panel izquierdo del menú principal: borde inclinado y 5 bandas de color."""
+    ancho, alto = 860, 1080
+    sup, inf = 780, 650          # x del borde derecho arriba y abajo
+    capa = degradado(ancho, alto, (52, 34, 78, 238), (24, 14, 36, 246))
+
+    # sakuras tenues (los "lunares" del panel)
+    g = Image.new("RGBA", (ancho * SS, alto * SS), (255, 255, 255, 0))
+    d = ImageDraw.Draw(g)
+    fila = 0
+    y = 60
+    while y < alto:
+        x = 60
+        if fila % 2 == 1:
+            x = 130
+        while x < sup:
+            motivo_sakura(d, x * SS, y * SS, 20 * SS, (255, 255, 255, 14))
+            x = x + 140
+        y = y + 100
+        fila = fila + 1
+    patron = g.resize((ancho, alto), Image.LANCZOS)
+    capa = Image.alpha_composite(capa, patron)
+
+    # recorte con el borde derecho inclinado
+    m = Image.new("L", (ancho * SS, alto * SS), 0)
+    ImageDraw.Draw(m).polygon([E(0, 0), E(sup, 0), E(inf, alto), E(0, alto)], fill=255)
+    m = m.resize((ancho, alto), Image.LANCZOS)
+    capa.putalpha(ImageChops.multiply(capa.getchannel("A"), m))
+
+    # cinco bandas finas siguiendo el borde, una por hermana
+    b = Image.new("RGBA", (ancho * SS, alto * SS), (0, 0, 0, 0))
+    db = ImageDraw.Draw(b)
+    for k in range(5):
+        o = 6 + k * 12
+        c = COLORES_HERMANAS[k] + (235,)
+        db.polygon([E(sup + o, 0), E(sup + o + 7, 0), E(inf + o + 7, alto), E(inf + o, alto)], fill=c)
+    b = b.resize((ancho, alto), Image.LANCZOS)
+    return Image.alpha_composite(capa, b)
 
 
 if __name__ == "__main__":
@@ -548,3 +606,8 @@ if __name__ == "__main__":
     guardar(glifo_texto("i"), "ico_info.png")
     guardar(glifo_texto("?"), "ico_ayuda.png")
     guardar(glifo_salir(), "ico_salir.png")
+
+    guardar(opcion_neutra(), "opcion_neutra.png")
+    guardar(opcion_marco(), "opcion_marco.png")
+
+    guardar(menu_panel(), "menu_panel.png")
