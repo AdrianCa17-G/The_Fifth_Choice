@@ -531,6 +531,34 @@ def menu_panel():
     b = b.resize((ancho, alto), Image.LANCZOS)
     return Image.alpha_composite(capa, b)
 
+def colorear(img, rgb, alfa=230):
+    """Pinta de un color sólido una imagen blanca, conservando su forma."""
+    solido = Image.new("RGBA", img.size, rgb + (255,))
+    res = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    res.paste(solido, (0, 0), img.getchannel("A"))
+    res.putalpha(res.getchannel("A").point(lambda v: int(v * alfa / 255)))
+    return res
+
+
+def petalo_caida(rgb, giro):
+    p = petalo()
+    p = p.crop(p.getbbox())
+    p = p.rotate(giro, expand=True, resample=Image.BICUBIC)
+    p = p.resize((max(1, int(p.width * 38.0 / p.height)), 38), Image.LANCZOS)
+    return colorear(p, rgb)
+
+
+def flor_caida(rgb):
+    return colorear(flor(petalo(), 44), rgb)
+
+
+def gal_marco():
+    return borde_redondeado(322, 181, 6, (255, 255, 255, 255), 4)
+
+
+def gal_bloqueo():
+    return panel(322, 181, 6, (46, 30, 70, 235), (24, 14, 36, 235), (255, 255, 255, 40), 2)
+
 
 if __name__ == "__main__":
     # Caja de diálogo: BLANCA con borde gris. Ren'Py la tiñe por personaje.
@@ -611,3 +639,10 @@ if __name__ == "__main__":
     guardar(opcion_marco(), "opcion_marco.png")
 
     guardar(menu_panel(), "menu_panel.png")
+
+    NOMBRES_H = ["ichika", "nino", "miku", "yotsuba", "itsuki"]
+    for k in range(5):
+        guardar(petalo_caida(COLORES_HERMANAS[k], 30 + k * 25), "caida_" + NOMBRES_H[k] + "_petalo.png")
+        guardar(flor_caida(COLORES_HERMANAS[k]), "caida_" + NOMBRES_H[k] + "_flor.png")
+    guardar(gal_marco(), "gal_marco.png")
+    guardar(gal_bloqueo(), "gal_bloqueo.png")

@@ -11,15 +11,20 @@
 # REGISTRO DE IMÁGENES
 # ==============================================================
 image main_menu_bg = "images/Fondo_Menu.png"
-image main_menu_logo = "images/Logo_Menu.png"
+image main_menu_logo = "images/Logo_Menu_v2.png"
 
-image spr_ichika  = "hubs/ichika_hub.png"
-image spr_nino    = "hubs/nino_hub.png"
-image spr_miku    = "hubs/miku_hub.png"
-image spr_yotsuba = "hubs/yotsuba_hub.png"
-image spr_itsuki  = "hubs/itsuki_hub.png"
-
-image sakura_petals = SnowBlossom("images/petal.png", count=25, border=50)
+image sakura_petals = Fixed(
+    SnowBlossom("ui/caida_ichika_petalo.png",  count=3, border=50, yspeed=(60, 130), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_ichika_flor.png",    count=2, border=50, yspeed=(50, 110), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_nino_petalo.png",    count=3, border=50, yspeed=(70, 140), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_nino_flor.png",      count=2, border=50, yspeed=(50, 120), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_miku_petalo.png",    count=3, border=50, yspeed=(60, 120), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_miku_flor.png",      count=2, border=50, yspeed=(55, 115), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_yotsuba_petalo.png", count=3, border=50, yspeed=(65, 135), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_yotsuba_flor.png",   count=2, border=50, yspeed=(50, 110), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_itsuki_petalo.png",  count=3, border=50, yspeed=(60, 130), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_itsuki_flor.png",    count=2, border=50, yspeed=(55, 120), xspeed=(20, 50)),
+)
 
 ## Hermana cuyo botón tiene el ratón encima (None = ninguna).
 default menu_activa = None
@@ -29,6 +34,27 @@ default menu_activa = None
 # CONFIGURACIÓN Y FUNCIONES
 # ==============================================================
 init python:
+
+    ## Altura (px) a la que se escala el CONTENIDO de cada sprite del menú.
+    MENU_SPR_ALTO = 820
+
+    ## Centro horizontal (px) de cada hermana.
+    MENU_SPR_X = {"ichika": 950, "nino": 1150, "miku": 1350, "yotsuba": 1550, "itsuki": 1750}
+
+    ## Archivo de cada sprite. Cámbialo por "menu/ichika_menu.png", etc.
+    MENU_SPR = {
+        "ichika":  "images/menu/ichika_menu.png",
+        "nino":    "images/menu/nino_menu.png",
+        "miku":    "images/menu/miku_menu.png",
+        "yotsuba": "images/menu/yotsuba_menu.png",
+        "itsuki":  "images/menu/itsuki_menu.png",
+    }
+
+    def menu_sprite(hermana):
+        """Sprite escalado para que su alto sea MENU_SPR_ALTO."""
+        ruta = MENU_SPR[hermana]
+        ancho, alto = renpy.image_size(ruta)
+        return Transform(ruta, zoom=MENU_SPR_ALTO / float(alto))
 
     PANEL_ANCHO  = 600
     PANEL_COLOR  = "#2B1B3F"
@@ -119,10 +145,8 @@ screen boton_menu(texto, accion, hermana):
 # PANTALLA PRINCIPAL
 # ==============================================================
 screen main_menu():
-    tag menu
 
-    on "show"    action Play("music", "audio/bgm/main_theme.ogg", loop=True, fadeout=1.0)
-    on "replace" action Play("music", "audio/bgm/main_theme.ogg", loop=True, fadeout=1.0)
+    tag menu
 
     add "main_menu_bg" fit "cover"
     add "sakura_petals"
@@ -130,25 +154,10 @@ screen main_menu():
     add "ui/menu_panel.png" at panel_fadein
 
     ## --- SPRITES: la hermana de la cinta con el ratón encima se enciende ---
-    fixed:
-        at sprite_tono(menu_brillo("ichika"), menu_subida("ichika"))
-        add "spr_ichika" at sprite_anim(0.0, 0.0) xalign 0.33 yalign 1.0
-
-    fixed:
-        at sprite_tono(menu_brillo("nino"), menu_subida("nino"))
-        add "spr_nino" at sprite_anim(0.2, 0.4) xalign 0.52 yalign 1.0
-
-    fixed:
-        at sprite_tono(menu_brillo("miku"), menu_subida("miku"))
-        add "spr_miku" at sprite_anim(0.4, 0.8) xalign 0.71 yalign 1.0
-
-    fixed:
-        at sprite_tono(menu_brillo("yotsuba"), menu_subida("yotsuba"))
-        add "spr_yotsuba" at sprite_anim(0.6, 1.2) xalign 0.90 yalign 1.0
-
-    fixed:
-        at sprite_tono(menu_brillo("itsuki"), menu_subida("itsuki"))
-        add "spr_itsuki" at sprite_anim(0.8, 1.6) xalign 1.08 yalign 1.0
+    for n, h in enumerate(["ichika", "itsuki", "nino", "yotsuba", "miku"]):
+        fixed:
+            at sprite_tono(menu_brillo(h), menu_subida(h))
+            add menu_sprite(h) at sprite_anim(0.2 * n, 0.4 * n) xpos MENU_SPR_X[h] xanchor 0.5 ypos 1092 yanchor 1.0
 
     ## --- LOGO ---
     add "main_menu_logo":
