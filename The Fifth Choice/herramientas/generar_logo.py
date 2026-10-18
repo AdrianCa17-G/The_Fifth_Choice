@@ -65,7 +65,7 @@ def componer():
 
     # aro rosa detrás de las siluetas
     aro = capa_vacia()
-    ImageDraw.Draw(aro).ellipse((300, 40, 1100, 840), outline=ROSA + (200,), width=8)
+    ImageDraw.Draw(aro).arc((300, 40, 1100, 840), start=180, end=360, fill=ROSA + (200,), width=8)
     lienzo = Image.alpha_composite(lienzo, aro.filter(ImageFilter.GaussianBlur(0.8)))
 
     # las cinco siluetas (la del centro se dibuja al final, por delante)
@@ -105,10 +105,10 @@ def componer():
     # subtítulos
     sub = capa_vacia()
     ds = ImageDraw.Draw(sub)
-    ds.text((ANCHO // 2, 925), "五等分の花嫁", font=ImageFont.truetype(FUENTE_JP, 40),
-            fill=AZUL + (255,), anchor="mm")
-    ds.text((ANCHO // 2, 972), "QUINTESSENTIAL QUINTUPLETS FAN GAME",
-            font=ImageFont.truetype(FUENTE_SUB, 26), fill=AZUL + (255,), anchor="mm")
+    ds.text((ANCHO // 2, 944), "五等分の花嫁", font=ImageFont.truetype(FUENTE_JP, 40),
+            fill=BLANCO + (255,), anchor="mm")
+    ds.text((ANCHO // 2, 991), "QUINTESSENTIAL QUINTUPLETS FAN GAME",
+            font=ImageFont.truetype(FUENTE_SUB, 26), fill=BLANCO + (255,), anchor="mm")
     lienzo = Image.alpha_composite(lienzo, sub)
 
     # pétalos sueltos
@@ -126,6 +126,6 @@ def componer():
 if __name__ == "__main__":
     logo = componer()
     logo = logo.crop(logo.getbbox())
-    logo.thumbnail((640, 640), Image.LANCZOS)
+    logo.thumbnail((1280, 1280), Image.LANCZOS)
     logo.save(SALIDA)
     print("Guardado:", SALIDA, logo.size)

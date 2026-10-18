@@ -590,6 +590,8 @@ label configurar_nombre:
 
 label start:
 
+    stop music fadeout 1.5
+
     call configurar_nombre
 
     jump prologo

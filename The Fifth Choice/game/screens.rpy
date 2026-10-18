@@ -537,6 +537,10 @@ screen main_menu():
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
     tag menu
 
+    on "show"    action SetVariable("menu_activa", None)
+    on "replace" action SetVariable("menu_activa", None)
+    on "hide"    action SetVariable("menu_activa", None)
+
     add gui.main_menu_background
 
     ## Este marco vacío oscurece el menu principal.

@@ -11,7 +11,7 @@
 # REGISTRO DE IMÁGENES
 # ==============================================================
 image main_menu_bg = "images/Fondo_Menu.png"
-image main_menu_logo = "images/Logo_Menu_v2.png"
+image main_menu_logo = Transform("images/Logo_Menu_v2.png", zoom=0.48)
 
 image sakura_petals = Fixed(
     SnowBlossom("ui/caida_ichika_petalo.png",  count=3, border=50, yspeed=(60, 130), xspeed=(20, 60)),
@@ -35,12 +35,7 @@ default menu_activa = None
 # ==============================================================
 init python:
 
-    ## Altura (px) a la que se escala el CONTENIDO de cada sprite del menú.
-    MENU_SPR_ALTO = 820
-
-    ## Centro horizontal (px) de cada hermana.
-    MENU_SPR_X = {"ichika": 950, "nino": 1150, "miku": 1350, "yotsuba": 1550, "itsuki": 1750}
-
+    
     ## Archivo de cada sprite. Cámbialo por "menu/ichika_menu.png", etc.
     MENU_SPR = {
         "ichika":  "images/menu/ichika_menu.png",
@@ -50,11 +45,25 @@ init python:
         "itsuki":  "images/menu/itsuki_menu.png",
     }
 
+    ## True = dibuja una línea verde: el pelo de las cinco debe tocarla.
+    MENU_GUIA = False
+
+    ## Alto (px) que mide cada hermana DESDE LA CORONILLA hasta los pies.
+    MENU_SPR_ALTO = 820
+
+    ## Centro horizontal (px) de cada hermana.
+    MENU_SPR_X = {"ichika": 935, "nino": 1160, "miku": 1365, "yotsuba": 1575, "itsuki": 1755}
+
+    ## Fila del PNG (contando desde arriba) donde empieza el PELO, sin contar el
+    ## lazo de Yotsuba ni el ahoge de Itsuki. Es lo que iguala el tamaño de las cinco.
+    MENU_CORONILLA = {"ichika": 0, "nino": 0, "miku": 0, "yotsuba": 75, "itsuki": 65}
+
     def menu_sprite(hermana):
-        """Sprite escalado para que su alto sea MENU_SPR_ALTO."""
+        """Sprite escalado para que, desde la coronilla hasta los pies, mida MENU_SPR_ALTO."""
         ruta = MENU_SPR[hermana]
         ancho, alto = renpy.image_size(ruta)
-        return Transform(ruta, zoom=MENU_SPR_ALTO / float(alto))
+        contenido = alto - MENU_CORONILLA[hermana]
+        return Transform(ruta, zoom=MENU_SPR_ALTO / float(contenido))
 
     PANEL_ANCHO  = 600
     PANEL_COLOR  = "#2B1B3F"
@@ -161,8 +170,8 @@ screen main_menu():
 
     ## --- LOGO ---
     add "main_menu_logo":
-        xalign 0.03
-        yalign 0.03
+        xalign 0.07
+        yalign 0.05
         at logo_fadein
 
     ## --- TAGLINE ---
@@ -194,9 +203,9 @@ screen main_menu():
 
     ## --- LAS CINCO CINTAS ---
     vbox:
-        xpos 90
-        yalign 0.68
-        spacing 10
+        xpos 95
+        yalign 0.89
+        spacing 30
 
         use boton_menu("Comenzar", Start(), "ichika")
         use boton_menu("Cargar", ShowMenu("load"), "nino")

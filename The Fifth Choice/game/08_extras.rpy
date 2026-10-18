@@ -62,11 +62,11 @@ define GALERIA = [
 ]
 
 define FINALES_PISTAS = {
-    "ichika":  "Quien se esconde tras una sonrisa merece que alguien se quede.",
-    "nino":    "La que más desconfía es la que más necesita que no te vayas.",
-    "miku":    "Escucha lo que dice cuando cree que nadie la oye.",
-    "yotsuba": "Ayúdala a ver lo que ya vale.",
-    "itsuki":  "Ofrece la ayuda sin quitarle el orgullo.",
+    "ichika":  "A veces, quien más sonríe es quien más necesita que te quedes a su lado.",
+    "nino":    "Quien más distancia pone, en el fondo solo espera a alguien que no se rinda con ella.",
+    "miku":    "Aprende a escuchar sus silencios... es ahí donde guarda lo que de verdad siente.",
+    "yotsuba": "Hazle recordar la luz tan hermosa que tiene, incluso cuando ella no pueda verla.",
+    "itsuki":  "Sostén su mano cuando lo necesite, pero déjala sentir que camina por sí misma.",
 }
 
 ## (clave, título, pista, color)
@@ -75,6 +75,9 @@ define FINALES_ESPECIALES = [
     ("malo", "Despedida", "Estar cerca de todas, y no llegar a ninguna.", "#C0504D"),
     ("secreto", "Final secreto", "Cinco caminos, un solo estudiante completo.", "#F4D03F"),
 ]
+
+## Pon True cuando existan los extras "Después de la boda".
+define EXTRAS_DISPONIBLES = False
 
 
 init python:
@@ -158,6 +161,33 @@ screen barra_progreso(vistos, total, color, ancho):
             add Solid(color, xsize=lleno, ysize=12)
 
 
+screen barra_arcoiris(vistos, total, ancho):
+
+    $ porcentaje = 0.0
+    if total > 0:
+        $ porcentaje = 100.0 * vistos / total
+    $ segmento = (ancho - 4 * 6) // 5
+
+    hbox:
+        spacing 6
+
+        for k in range(5):
+
+            $ color_k = PETALO_COLOR[PETALO_ORDEN[k]]
+            $ parte = (porcentaje - 20.0 * k) / 20.0
+            if parte < 0.0:
+                $ parte = 0.0
+            if parte > 1.0:
+                $ parte = 1.0
+            $ lleno = int(segmento * parte)
+
+            fixed:
+                xysize (segmento, 12)
+                add Solid("#FFFFFF2A")
+                if lleno > 0:
+                    add Solid(color_k, xsize=lleno, ysize=12)
+
+
 screen cinta_volver():
 
     button:
@@ -217,8 +247,8 @@ screen galeria():
     ## --- Pestañas ---
     vbox:
         xpos 70
-        ypos 190
-        spacing 10
+        ypos 175
+        spacing 35
 
         for s in GALERIA:
 
@@ -260,29 +290,29 @@ screen galeria():
 
     ## --- Progreso total ---
     vbox:
-        xpos 880
+        xpos 862
         ypos 56
         spacing 10
         text ("CG DESBLOQUEADOS   " + str(total[0]) + " / " + str(total[1]) + "   ·   " + str(pct_total) + " %") font gui.name_text_font size 26 kerning 3 color "#FFF8FC"
-        use barra_progreso(total[0], total[1], "#FFB7C5", 998)
+        use barra_arcoiris(total[0], total[1], 1006)
 
     ## --- Sección actual ---
     vbox:
-        xpos 880
+        xpos 862
         ypos 150
         spacing 10
         text (titulo_sec + "   " + str(conteo[0]) + " / " + str(conteo[1]) + "   ·   " + str(pct_sec) + " %") font gui.name_text_font size 30 kerning 3 color color_sec
-        use barra_progreso(conteo[0], conteo[1], color_sec, 998)
+        use barra_progreso(conteo[0], conteo[1], color_sec, 1006)
 
     ## --- Cuadrícula 3x3 ---
     vbox:
-        xpos 880
-        ypos 255
-        spacing 16
+        xpos 862
+        ypos 262
+        spacing 52
 
         for fila in range(3):
             hbox:
-                spacing 16
+                spacing 20
 
                 for col_n in range(3):
 
@@ -322,8 +352,8 @@ screen galeria():
     ## --- Paginación ---
     if paginas > 1:
         hbox:
-            xpos 880
-            ypos 880
+            xpos 862
+            ypos 952
             spacing 18
 
             textbutton "<":
@@ -383,30 +413,31 @@ screen finales():
     add Solid("#120A1CD8")
     add "sakura_petals"
 
-    text "FINALES" xpos 80 ypos 48 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)]
+    text "FINALES" xpos 88 ypos 20 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)]
 
     vbox:
         xpos 980
         ypos 56
         spacing 10
         text ("FINALES DESCUBIERTOS   " + str(hechos) + " / 8   ·   " + str(pct) + " %") font gui.name_text_font size 26 kerning 3 color "#FFF8FC"
-        use barra_progreso(hechos, 8, "#FFB7C5", 860)
+        use barra_arcoiris(hechos, 8, 860)
 
-    ## --- Los cinco finales románticos ---
+
+## --- Los cinco finales románticos ---
     hbox:
         xalign 0.5
-        ypos 160
+        ypos 150
         spacing 28
 
         for h in ["ichika", "nino", "miku", "yotsuba", "itsuki"]:
 
             $ nombre = h.capitalize()
             $ color_h = PETALO_COLOR[h]
+            $ claro_h = ui_mezclar(color_h, "#FFFFFF", 0.25)
             $ tono_h = TARJETA_TONO[h]
             $ logrado = final_logrado(h)
             $ extra_ok = galeria_completa(h)
             $ cg = galeria_conteo(h)
-            $ etiqueta_extra = "extra_" + h
 
             $ borde_h = "#6E6680"
             $ titulo_f = "???"
@@ -422,20 +453,23 @@ screen finales():
             if extra_ok:
                 $ chip_fondo = tono_h
                 $ chip_borde = color_h
-                $ chip_texto = "EXTRA  ·  Después de la boda"
+                $ chip_texto = "EXTRA  ·  Próximamente"
+
+            $ chip_activo = extra_ok and EXTRAS_DISPONIBLES
 
             vbox:
                 spacing 12
 
                 fixed:
-                    xysize (320, 400)
+                    xysize (320, 450)
                     add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(tono_h))
+                    add ("ui/deco_final_" + h + ".png") matrixcolor TintMatrix(claro_h)
                     add final_sprite(h, logrado) xalign 0.5 ypos 16
                     add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde_h))
 
                     vbox:
                         xalign 0.5
-                        ypos 300
+                        ypos 316
                         xsize 280
                         spacing 4
                         text titulo_f xalign 0.5 text_align 0.5 font gui.name_text_font size 30 color "#FFF8FC"
@@ -443,8 +477,8 @@ screen finales():
 
                 button:
                     xysize (320, 56)
-                    sensitive extra_ok
-                    action Replay(etiqueta_extra)
+                    sensitive chip_activo
+                    action Replay("extra_" + h)
                     hover_sound audio.sfx_hover
                     activate_sound audio.sfx_click
                     background Fixed(
@@ -454,12 +488,13 @@ screen finales():
                         Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(chip_borde)),
                         Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#FFFFFF")))
 
-                    text chip_texto xalign 0.5 yalign 0.5 size 19 color "#F2EDF5" hover_color "#2B1B3F" insensitive_color "#FFFFFF66"
+                    text chip_texto xalign 0.5 yalign 0.5 size 19 color "#F2EDF5" hover_color "#2B1B3F" insensitive_color "#CFC6E0"
+
 
     ## --- Malos y secreto ---
     hbox:
         xalign 0.5
-        ypos 690
+        ypos 706
         spacing 28
 
         for f in FINALES_ESPECIALES:

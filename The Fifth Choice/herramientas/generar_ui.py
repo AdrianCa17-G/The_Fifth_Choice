@@ -560,6 +560,19 @@ def gal_bloqueo():
     return panel(322, 181, 6, (46, 30, 70, 235), (24, 14, 36, 235), (255, 255, 255, 40), 2)
 
 
+def decoracion_final(motivo, semilla):
+    """Decoración de las cartas de Finales (320x450)."""
+    azar = random.Random(semilla)
+    ancho, alto = 320, 450
+    g = Image.new("RGBA", (ancho * SS, alto * SS), (255, 255, 255, 0))
+    d = ImageDraw.Draw(g)
+    if ALFA_RELLENO > 0:
+        dibujar_relleno(d, motivo, azar, 40, 70, ancho - 40, alto - 70, 70, 56, ALFA_RELLENO + 10)
+    dibujar_fila(d, motivo, azar, 40, ancho - 20, 24, 90, 11, 16, ALFA_BORDE)
+    dibujar_fila(d, motivo, azar, 40, ancho - 20, alto - 24, 90, 11, 16, ALFA_BORDE)
+    return recortar_redondeado(g, ancho, alto, 36)
+
+
 if __name__ == "__main__":
     # Caja de diálogo: BLANCA con borde gris. Ren'Py la tiñe por personaje.
     guardar(panel(CAJA_W, CAJA_H, 40, (255, 255, 255, 228), (238, 238, 244, 228),
@@ -594,6 +607,7 @@ if __name__ == "__main__":
         ("itsuki", motivo_estrella5, 5),
     ]
     for nombre, motivo, semilla in HERMANAS:
+        guardar(decoracion_final(motivo, semilla), "deco_final_" + nombre + ".png")
         guardar(decoracion_caja(motivo, semilla), "deco_" + nombre + ".png")
         for alto in TARJETA_ALTOS:
             guardar(decoracion_tarjeta(motivo, semilla, alto),
