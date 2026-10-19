@@ -15,9 +15,19 @@ define NAV_SISTEMA = [
     ("Cargar", "load", "yotsuba", False),
     ("Opciones", "preferences", "miku", False),
     ("Acerca de", "about", "ichika", False),
-    ("Ayuda", "help", "flor", False),
+    ("Ayuda", "help", "isanari", False),
 ]
 
+define EXTRA_COLOR = {
+    "isanari": "#A9925C",
+    "raiha": "#F5B7B1",
+}
+
+## Valores por defecto de los ajustes.
+define AJUSTE_MUSICA = 0.7
+define AJUSTE_EFECTOS = 1.0
+define AJUSTE_TEXTO = 40
+define AJUSTE_AUTOAVANCE = 15
 
 init python:
 
@@ -41,7 +51,7 @@ init python:
 style vscrollbar:
     xsize 12
     base_bar Solid("#FFFFFF1F")
-    thumb Solid("#FFB7C5")
+    thumb Solid("#D9D2E6")
     unscrollable "hide"
 
 style etiqueta_opcion is default:
@@ -56,7 +66,7 @@ style hist_placa is default:
     padding (28, 0, 34, 0)
 
 style help_label_text:
-    color "#FFB7C5"
+    color "#D9D2E6"
     size 26
 
 style help_text:
@@ -134,7 +144,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     $ titulo_mayus = title.upper()
     text titulo_mayus xpos 70 ypos 48 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)] substitute False
 
-    ## --- Cintas de navegación ---
+        ## --- Cintas de navegación ---
     vbox:
         xpos 70
         ypos 175
@@ -151,9 +161,16 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
             if mostrar:
 
                 $ col = "#E8E0F2"
-                if clave != "flor":
+                $ ico = clave
+                if clave in PETALO_COLOR:
                     $ col = PETALO_COLOR[clave]
+                elif clave in EXTRA_COLOR:
+                    $ col = EXTRA_COLOR[clave]
+                    $ ico = None
                 $ osc = ui_mezclar(col, "#000000", 0.72)
+                $ x_texto = 112
+                if ico is None:
+                    $ x_texto = 74
 
                 button:
                     xysize (440, 68)
@@ -161,13 +178,13 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                     selected (title == nombre)
                     hover_sound audio.sfx_hover
                     activate_sound audio.sfx_click
-                    background ui_cinta_menu(col, clave, False)
-                    hover_background ui_cinta_menu(col, clave, True)
-                    selected_background ui_cinta_menu(col, clave, True)
+                    background ui_cinta_menu(col, ico, False)
+                    hover_background ui_cinta_menu(col, ico, True)
+                    selected_background ui_cinta_menu(col, ico, True)
                     at boton_slide
 
                     text nombre:
-                        xpos 112
+                        xpos x_texto
                         yalign 0.5
                         font gui.name_text_font
                         size 30
@@ -178,23 +195,26 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
         if not main_menu:
 
+            $ col_r = EXTRA_COLOR["raiha"]
+            $ osc_r = ui_mezclar(col_r, "#000000", 0.72)
+
             button:
                 xysize (440, 68)
                 action MainMenu()
                 hover_sound audio.sfx_hover
                 activate_sound audio.sfx_click
-                background ui_cinta_menu("#E8E0F2", "flor", False)
-                hover_background ui_cinta_menu("#E8E0F2", "flor", True)
+                background ui_cinta_menu(col_r, None, False)
+                hover_background ui_cinta_menu(col_r, None, True)
                 at boton_slide
 
                 text "Menú principal":
-                    xpos 112
+                    xpos 74
                     yalign 0.5
                     font gui.name_text_font
                     size 30
                     kerning 2
                     color "#F2EDF5"
-                    hover_color "#2B1B3F"
+                    hover_color osc_r
 
     ## --- Contenido de cada menú ---
     fixed:
@@ -279,7 +299,7 @@ screen slot_tarjeta(slot):
                     action FileDelete(slot)
                     text_size 36
                     text_idle_color "#FFFFFFAA"
-                    text_hover_color "#FFB7C5"
+                    text_hover_color "#FFFFFF"
 
         fixed:
             xysize (322, 26)
@@ -301,10 +321,10 @@ screen file_slots(title):
         fixed:
             xysize (1022, 960)
 
-            text encabezado xpos 0 ypos 0 font gui.name_text_font size 30 kerning 4 color "#FFB7C5" substitute False
+            text encabezado xpos 0 ypos 0 font gui.name_text_font size 30 kerning 4 color "#D9D2E6" substitute False
 
             vbox:
-                ypos 56
+                ypos 92
                 spacing 36
 
                 for fila in range(3):
@@ -317,7 +337,7 @@ screen file_slots(title):
 
             hbox:
                 xalign 0.5
-                ypos 810
+                ypos 834
                 spacing 12
 
                 textbutton "<":
@@ -325,7 +345,7 @@ screen file_slots(title):
                     yalign 0.5
                     text_size 34
                     text_idle_color "#BDB3D1"
-                    text_hover_color "#FFB7C5"
+                    text_hover_color "#D9D2E6"
                     text_insensitive_color "#FFFFFF33"
 
                 key "save_page_prev" action FilePagePrevious()
@@ -344,7 +364,7 @@ screen file_slots(title):
                     yalign 0.5
                     text_size 34
                     text_idle_color "#BDB3D1"
-                    text_hover_color "#FFB7C5"
+                    text_hover_color "#D9D2E6"
                     text_insensitive_color "#FFFFFF33"
 
                 key "save_page_next" action FilePageNext()
@@ -353,17 +373,17 @@ screen file_slots(title):
                 if CurrentScreenName() == "save":
                     textbutton "Subir Sync":
                         xalign 0.5
-                        ypos 890
+                        ypos 912
                         action UploadSync()
                         text_idle_color "#BDB3D1"
-                        text_hover_color "#FFB7C5"
+                        text_hover_color "#D9D2E6"
                 else:
                     textbutton "Descargar Sync":
                         xalign 0.5
-                        ypos 890
+                        ypos 912
                         action DownloadSync()
                         text_idle_color "#BDB3D1"
-                        text_hover_color "#FFB7C5"
+                        text_hover_color "#D9D2E6"
 
 
 ## --- OPCIONES ------------------------------------------------------------------
@@ -395,7 +415,10 @@ screen preferences():
                 null height 34
 
                 text "SONIDO" style "etiqueta_opcion"
-                use cinta_boton("Silenciar todo", Preference("all mute", "toggle"), "itsuki")
+                hbox:
+                    spacing 10
+                    use cinta_boton("Silenciar todo", Preference("all mute", "toggle"), "itsuki", 215, 58, 22)
+                    use cinta_boton("Restablecer", [Preference("music volume", AJUSTE_MUSICA), Preference("sound volume", AJUSTE_EFECTOS), Preference("text speed", AJUSTE_TEXTO), Preference("auto-forward time", AJUSTE_AUTOAVANCE), Preference("all mute", "disable"), Notify("Valores restablecidos")], "neutro", 215, 58, 22)
 
             vbox:
                 spacing 74
@@ -483,7 +506,7 @@ screen confirm(message, yes_action, no_action):
         xysize (1000, 380)
 
         add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#2B1B3F"))
-        add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#FFB7C5"))
+        add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#D9D2E6"))
 
         text _(message):
             xalign 0.5

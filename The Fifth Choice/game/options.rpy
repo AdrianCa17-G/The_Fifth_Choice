@@ -15,6 +15,10 @@
 
 define config.name = _("The Fifth Choice")
 
+## Valores de sonido por defecto
+
+define config.default_music_volume = 0.7
+define config.default_sfx_volume = 1.0
 
 ## Determina si el título dado más arriba se muestra en el menú principal.
 ## Ajústalo a 'False' para ocultar el título.

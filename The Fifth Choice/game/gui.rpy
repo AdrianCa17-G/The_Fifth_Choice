@@ -25,10 +25,10 @@ define config.check_conflicting_properties = True
 ##
 ## Los colores del texto de la interfaz
 
-define gui.accent_color = '#FFB7C5'
+define gui.accent_color = '#D9D2E6'
+define gui.hover_color = '#FFFFFF'
 define gui.idle_color = '#BDB3D1'
 define gui.idle_small_color = '#CFC6E0'
-define gui.hover_color = '#FFD9E6'
 define gui.selected_color = '#FFFFFF'
 
 ## El color de los botones de texto que no pueden ser seleccionados.

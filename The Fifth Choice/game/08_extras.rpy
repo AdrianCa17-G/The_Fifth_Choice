@@ -131,19 +131,25 @@ init python:
             return Transform(base, zoom=0.55)
         return Transform(base, zoom=0.55, matrixcolor=TintMatrix("#0B0712"), alpha=0.85)
 
-    def ui_cinta_menu(color, icono, activa):
-        """Fondo de una cinta del menú (reposo o activa)."""
+        def ui_cinta_menu(color, icono, activa):
+        """Fondo de una cinta del menú (reposo o activa). icono=None -> solo borde."""
         oscuro = ui_mezclar(color, "#000000", 0.72)
         claro = ui_mezclar(color, "#FFFFFF", 0.35)
         if activa:
-            return Fixed(
+            capas = [
                 Transform("ui/menu_cinta.png", matrixcolor=TintMatrix(claro)),
                 Transform("ui/menu_cinta_borde.png", matrixcolor=TintMatrix("#FFFFFF")),
-                Transform("ui/hud_icono_" + icono + ".png", matrixcolor=TintMatrix(oscuro), xpos=52, yalign=0.5))
-        return Fixed(
-            Transform("ui/menu_cinta.png", matrixcolor=TintMatrix("#1B1026"), alpha=0.80),
-            Transform("ui/menu_cinta_borde.png", matrixcolor=TintMatrix(color)),
-            Transform("ui/hud_icono_" + icono + ".png", matrixcolor=TintMatrix(color), xpos=52, yalign=0.5))
+            ]
+            if icono is not None:
+                capas.append(Transform("ui/hud_icono_" + icono + ".png", matrixcolor=TintMatrix(oscuro), xpos=52, yalign=0.5))
+        else:
+            capas = [
+                Transform("ui/menu_cinta.png", matrixcolor=TintMatrix("#1B1026"), alpha=0.80),
+                Transform("ui/menu_cinta_borde.png", matrixcolor=TintMatrix(color)),
+            ]
+            if icono is not None:
+                capas.append(Transform("ui/hud_icono_" + icono + ".png", matrixcolor=TintMatrix(color), xpos=52, yalign=0.5))
+        return Fixed(*capas)
 
 
 ## --- Piezas comunes ---------------------------------------------------------

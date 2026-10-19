@@ -31,6 +31,15 @@ image sakura_petals = Fixed(
 # ==============================================================
 init python:
 
+    ## La entrada animada solo ocurre la primera vez que se abre el menú en esta sesión.
+    _menu_estado = {"entrada_hecha": False}
+
+    def menu_entrada_pendiente():
+        return not _menu_estado["entrada_hecha"]
+
+    def menu_marcar_entrada():
+        _menu_estado["entrada_hecha"] = True
+
     ## Archivo de cada sprite. Cámbialo por "menu/ichika_menu.png", etc.
     MENU_SPR = {
         "ichika":  "images/menu/ichika_menu.png",
@@ -155,27 +164,43 @@ screen boton_menu(texto, accion, hermana):
 # PANTALLA PRINCIPAL
 # ==============================================================
 screen main_menu():
-
     tag menu
-    
-    $ quien = GetTooltip()
-    
-    ## 1. Primero el fondo del menú
+
+    ## `default` se evalúa una vez por pantalla: decide si esta apertura lleva entrada animada.
+    default entrada = menu_entrada_pendiente()
+    on "show" action Function(menu_marcar_entrada)
+
+    $ t_panel = estatico
+    $ t_logo = estatico
+    $ t_tag = estatico
+    if entrada:
+        $ t_panel = panel_fadein
+        $ t_logo = logo_fadein
+        $ t_tag = tagline_fadein
+
     add "main_menu_bg" fit "cover"
-
-    ## 2. Luego los sprites de las hermanas (quedan sobre el fondo)
-    for n, h in enumerate(["ichika", "itsuki", "nino", "yotsuba", "miku"]):
-        add menu_sprite(h) at [sprite_anim(0.2 * n, 0.4 * n), sprite_luz(menu_alfa(h, quien), menu_subida(h, quien))] xpos MENU_SPR_X[h] xanchor 0.5 ypos 1092 yanchor 1.0
-
-    ## 3. Efectos y paneles sobre los sprites
     add "sakura_petals"
-    add "ui/menu_panel.png" at panel_fadein
+
+    add "ui/menu_panel.png" at t_panel
+
+    $ quien = GetTooltip()
+
+    ## --- SPRITES: la hermana de la cinta con el ratón encima se enciende ---
+    for n, h in enumerate(["ichika", "itsuki", "nino", "yotsuba", "miku"]):
+        $ reaccion = sprite_luz(menu_alfa(h, quien), menu_subida(h, quien))
+        if entrada:
+            add menu_sprite(h) at [sprite_anim(0.2 * n, 0.4 * n), reaccion] xpos MENU_SPR_X[h] xanchor 0.5 ypos 1092 yanchor 1.0
+        else:
+            add menu_sprite(h) at reaccion xpos MENU_SPR_X[h] xanchor 0.5 ypos 1092 yanchor 1.0
+
+    if MENU_GUIA:
+        add Solid("#00FF00", xsize=1920, ysize=2) ypos (1092 - MENU_SPR_ALTO)
 
     ## --- LOGO ---
     add "main_menu_logo":
-        xalign 0.07
-        yalign 0.05
-        at logo_fadein
+        xalign 0.03
+        yalign 0.03
+        at t_logo
 
     ## --- TAGLINE ---
     text "¿A quién elegirás?":
@@ -190,7 +215,7 @@ screen main_menu():
             (6, "#1B1026CC", 0, 0),
             (2, "#FF9FBE", 0, 0)
         ]
-        at tagline_fadein
+        at t_tag
 
     text "Todas saben algo que no te quieren enseñar. Tú decides a quién escuchas.":
         xpos 1350
@@ -202,13 +227,13 @@ screen main_menu():
         color "#FFE3EE"
         size 27
         outlines [(3, "#1B1026CC", 0, 0)]
-        at tagline_fadein
+        at t_tag
 
     ## --- LAS CINCO CINTAS ---
     vbox:
-        xpos 95
-        yalign 0.89
-        spacing 30
+        xpos 90
+        yalign 0.78
+        spacing 10
 
         use boton_menu("Comenzar", Start(), "ichika")
         use boton_menu("Cargar", ShowMenu("load"), "nino")
@@ -249,6 +274,7 @@ screen main_menu():
             tooltip "Salir"
             at icono_hover
 
+    ## El letrero de los iconos no debe mostrar el nombre de una hermana.
     $ rotulo = quien
     if quien in MENU_SPR:
         $ rotulo = None
@@ -279,9 +305,12 @@ transform boton_slide:
     on hover:
         linear 0.18 xoffset 24
 
+transform estatico:
+    alpha 1.0
+
 # Sprite: se enciende o se apaga según el botón activo
 transform sprite_luz(alfa, subida):
-    ease 0.2 alpha alfa yoffset subida
+    ease 0.12 alpha alfa yoffset subida
 
 # Capa lateral: entra deslizándose desde la izquierda
 transform panel_fadein:
