@@ -167,6 +167,26 @@ segundo, o hace falta registrar un segundo canal.
 amplificar un archivo ya normalizado lo empuja por encima del techo digital y
 puede saturar: si un efecto cruje, es esto.
 
+Poner un texto con [variable] en mayúsculas rompe la interpolación ([MC] no existe):
+sustituye primero con renpy.substitute() y después pasa a mayúsculas.
+
+hovered / unhovered con una variable se queda “pegado” si la pantalla cambia con
+el ratón encima. Usa tooltip y GetTooltip(), que se limpian solos.
+
+window_style y window_background del Character pisan lo que se ponga en la
+pantalla say: los fondos por personaje van en el Character.
+
+narrator (sin la “d”) es el narrador interno de Ren’Py: lo usan las cajas vacías
+de transiciones y las preguntas de los menu:.
+
+Las pantallas con el mismo nombre en archivos distintos: gana la de mayor 
+prioridad de carga. Los estilos de screens.rpy no ven variables de 00_definiciones.rpy.
+
+Un default dentro de una pantalla se evalúa una vez por apertura, y sirve para 
+decidir “primera vez”.
+
+En ATL, las operaciones van entre paréntesis (rotate (i * 72)).
+
 ---
 
 ## 4. Diagnóstico rápido
