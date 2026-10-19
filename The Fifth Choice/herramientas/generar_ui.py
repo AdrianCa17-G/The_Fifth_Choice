@@ -561,16 +561,37 @@ def gal_bloqueo():
 
 
 def decoracion_final(motivo, semilla):
-    """Decoración de las cartas de Finales (320x450)."""
+    """Decoración de las cartas de Finales (320x490)."""
     azar = random.Random(semilla)
-    ancho, alto = 320, 450
+    ancho, alto = 320, 490
     g = Image.new("RGBA", (ancho * SS, alto * SS), (255, 255, 255, 0))
     d = ImageDraw.Draw(g)
+    # relleno tenue SOLO arriba: nada detrás del texto
     if ALFA_RELLENO > 0:
-        dibujar_relleno(d, motivo, azar, 40, 70, ancho - 40, alto - 70, 70, 56, ALFA_RELLENO + 10)
-    dibujar_fila(d, motivo, azar, 40, ancho - 20, 24, 90, 11, 16, ALFA_BORDE)
-    dibujar_fila(d, motivo, azar, 40, ancho - 20, alto - 24, 90, 11, 16, ALFA_BORDE)
+        dibujar_relleno(d, motivo, azar, 50, 62, ancho - 50, 280, 70, 56, ALFA_RELLENO + 10)
+    # filas de esquina a esquina
+    dibujar_fila(d, motivo, azar, 28, ancho - 10, 26, 66, 11, 15, ALFA_BORDE)
+    dibujar_fila(d, motivo, azar, 28, ancho - 10, alto - 26, 66, 11, 15, ALFA_BORDE)
+    # columnas en los dos costados (las esquinas que estaban vacías)
+    dibujar_columna(d, motivo, azar, 24, 70, 300, 52, 10, 14, ALFA_BORDE)
+    dibujar_columna(d, motivo, azar, ancho - 24, 70, 300, 52, 10, 14, ALFA_BORDE)
     return recortar_redondeado(g, ancho, alto, 36)
+
+
+def final_velo():
+    """Velo oscuro suave bajo el texto de la carta, para que se lea."""
+    ancho, alto = 320, 490
+    img = Image.new("RGBA", (ancho, alto), (0, 0, 0, 0))
+    px = img.load()
+    for y in range(alto):
+        a = 0
+        if y > 280:
+            a = int(175 * ((y - 280) / float(alto - 280)))
+        for x in range(ancho):
+            px[x, y] = (8, 4, 14, a)
+    alfa = ImageChops.multiply(img.getchannel("A"), mascara_redondeada(ancho, alto, 36))
+    img.putalpha(alfa)
+    return img
 
 
 if __name__ == "__main__":
@@ -660,3 +681,5 @@ if __name__ == "__main__":
         guardar(flor_caida(COLORES_HERMANAS[k]), "caida_" + NOMBRES_H[k] + "_flor.png")
     guardar(gal_marco(), "gal_marco.png")
     guardar(gal_bloqueo(), "gal_bloqueo.png")
+
+    guardar(final_velo(), "final_velo.png")

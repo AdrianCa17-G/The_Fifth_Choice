@@ -44,6 +44,8 @@ image cg_yotsuba_corriendo  = "cg/yotsuba_corriendo.webp"
 
 label prologo:
 
+    $ save_name = "Prólogo"
+
     ############################################################################
     ##  ESCENA 1 · Casa de los Uesugi
     ##  Presentación del protagonista por lo que le falta, no por lo que es.

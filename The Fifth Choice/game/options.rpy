@@ -127,13 +127,14 @@ define config.main_menu_music = "audio/bgm/main_theme.ogg"
 
 ## Entrar o salir del manú del juego.
 
-define config.enter_transition = dissolve
-define config.exit_transition = dissolve
+define config.enter_transition = Dissolve(0.15)
+define config.exit_transition = Dissolve(0.15)
+
 
 
 ## Entre pantallas del menú del juego.
 
-define config.intra_transition = dissolve
+define config.intra_transition = Dissolve(0.15)
 
 
 ## Transición tras la carga de una partida.

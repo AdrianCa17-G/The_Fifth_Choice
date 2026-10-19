@@ -14,28 +14,23 @@ image main_menu_bg = "images/Fondo_Menu.png"
 image main_menu_logo = Transform("images/Logo_Menu_v2.png", zoom=0.48)
 
 image sakura_petals = Fixed(
-    SnowBlossom("ui/caida_ichika_petalo.png",  count=3, border=50, yspeed=(60, 130), xspeed=(20, 60)),
-    SnowBlossom("ui/caida_ichika_flor.png",    count=2, border=50, yspeed=(50, 110), xspeed=(20, 50)),
-    SnowBlossom("ui/caida_nino_petalo.png",    count=3, border=50, yspeed=(70, 140), xspeed=(20, 60)),
-    SnowBlossom("ui/caida_nino_flor.png",      count=2, border=50, yspeed=(50, 120), xspeed=(20, 50)),
-    SnowBlossom("ui/caida_miku_petalo.png",    count=3, border=50, yspeed=(60, 120), xspeed=(20, 60)),
-    SnowBlossom("ui/caida_miku_flor.png",      count=2, border=50, yspeed=(55, 115), xspeed=(20, 50)),
-    SnowBlossom("ui/caida_yotsuba_petalo.png", count=3, border=50, yspeed=(65, 135), xspeed=(20, 60)),
-    SnowBlossom("ui/caida_yotsuba_flor.png",   count=2, border=50, yspeed=(50, 110), xspeed=(20, 50)),
-    SnowBlossom("ui/caida_itsuki_petalo.png",  count=3, border=50, yspeed=(60, 130), xspeed=(20, 60)),
-    SnowBlossom("ui/caida_itsuki_flor.png",    count=2, border=50, yspeed=(55, 120), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_ichika_petalo.png",  count=2, border=50, yspeed=(60, 130), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_ichika_flor.png",    count=1, border=50, yspeed=(50, 110), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_nino_petalo.png",    count=2, border=50, yspeed=(70, 140), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_nino_flor.png",      count=1, border=50, yspeed=(50, 120), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_miku_petalo.png",    count=2, border=50, yspeed=(60, 120), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_miku_flor.png",      count=1, border=50, yspeed=(55, 115), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_yotsuba_petalo.png", count=2, border=50, yspeed=(65, 135), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_yotsuba_flor.png",   count=1, border=50, yspeed=(50, 110), xspeed=(20, 50)),
+    SnowBlossom("ui/caida_itsuki_petalo.png",  count=2, border=50, yspeed=(60, 130), xspeed=(20, 60)),
+    SnowBlossom("ui/caida_itsuki_flor.png",    count=1, border=50, yspeed=(55, 120), xspeed=(20, 50)),
 )
-
-## Hermana cuyo botón tiene el ratón encima (None = ninguna).
-default menu_activa = None
-
 
 # ==============================================================
 # CONFIGURACIÓN Y FUNCIONES
 # ==============================================================
 init python:
 
-    
     ## Archivo de cada sprite. Cámbialo por "menu/ichika_menu.png", etc.
     MENU_SPR = {
         "ichika":  "images/menu/ichika_menu.png",
@@ -57,13 +52,6 @@ init python:
     ## Fila del PNG (contando desde arriba) donde empieza el PELO, sin contar el
     ## lazo de Yotsuba ni el ahoge de Itsuki. Es lo que iguala el tamaño de las cinco.
     MENU_CORONILLA = {"ichika": 0, "nino": 0, "miku": 0, "yotsuba": 75, "itsuki": 65}
-
-    def menu_sprite(hermana):
-        """Sprite escalado para que, desde la coronilla hasta los pies, mida MENU_SPR_ALTO."""
-        ruta = MENU_SPR[hermana]
-        ancho, alto = renpy.image_size(ruta)
-        contenido = alto - MENU_CORONILLA[hermana]
-        return Transform(ruta, zoom=MENU_SPR_ALTO / float(contenido))
 
     PANEL_ANCHO  = 600
     PANEL_COLOR  = "#2B1B3F"
@@ -97,18 +85,32 @@ init python:
 
         return Composite((ancho, alto), *args)
 
-    def menu_brillo(quien):
-        """Brillo del sprite: la hermana del botón activo se enciende, el resto se apaga."""
-        if store.menu_activa is None:
-            return 0.0
-        if store.menu_activa == quien:
-            return 0.06
-        return -0.32
+    _menu_spr_cache = {}
 
-    def menu_subida(quien):
-        """La hermana activa sube un poco."""
-        if store.menu_activa == quien:
-            return -16
+    def menu_sprite(hermana):
+        """Sprite escalado. Se crea UNA sola vez y se reutiliza: crear uno nuevo en
+        cada actualización de pantalla era una de las causas del lag."""
+        if hermana not in _menu_spr_cache:
+            ruta = MENU_SPR[hermana]
+            ancho, alto = renpy.image_size(ruta)
+            contenido = alto - MENU_CORONILLA[hermana]
+            _menu_spr_cache[hermana] = Transform(ruta, zoom=MENU_SPR_ALTO / float(contenido))
+        return _menu_spr_cache[hermana]
+
+    def menu_alfa(hermana, quien):
+        """Opacidad: si el ratón está sobre la cinta de OTRA hermana, esta baja un poco."""
+        if quien is None:
+            return 1.0
+        if quien == hermana:
+            return 1.0
+        if quien in MENU_SPR:
+            return 0.62
+        return 1.0
+
+    def menu_subida(hermana, quien):
+        """La hermana de la cinta bajo el ratón sube unos píxeles."""
+        if quien == hermana:
+            return -14
         return 0
 
 
@@ -126,8 +128,7 @@ screen boton_menu(texto, accion, hermana):
         xysize (440, 68)
         hover_sound audio.sfx_hover
         activate_sound audio.sfx_click
-        hovered SetVariable("menu_activa", hermana)
-        unhovered SetVariable("menu_activa", None)
+        tooltip hermana
         at boton_slide
 
         background Fixed(
@@ -156,17 +157,19 @@ screen boton_menu(texto, accion, hermana):
 screen main_menu():
 
     tag menu
-
+    
+    $ quien = GetTooltip()
+    
+    ## 1. Primero el fondo del menú
     add "main_menu_bg" fit "cover"
-    add "sakura_petals"
 
-    add "ui/menu_panel.png" at panel_fadein
-
-    ## --- SPRITES: la hermana de la cinta con el ratón encima se enciende ---
+    ## 2. Luego los sprites de las hermanas (quedan sobre el fondo)
     for n, h in enumerate(["ichika", "itsuki", "nino", "yotsuba", "miku"]):
-        fixed:
-            at sprite_tono(menu_brillo(h), menu_subida(h))
-            add menu_sprite(h) at sprite_anim(0.2 * n, 0.4 * n) xpos MENU_SPR_X[h] xanchor 0.5 ypos 1092 yanchor 1.0
+        add menu_sprite(h) at [sprite_anim(0.2 * n, 0.4 * n), sprite_luz(menu_alfa(h, quien), menu_subida(h, quien))] xpos MENU_SPR_X[h] xanchor 0.5 ypos 1092 yanchor 1.0
+
+    ## 3. Efectos y paneles sobre los sprites
+    add "sakura_petals"
+    add "ui/menu_panel.png" at panel_fadein
 
     ## --- LOGO ---
     add "main_menu_logo":
@@ -246,7 +249,9 @@ screen main_menu():
             tooltip "Salir"
             at icono_hover
 
-    $ rotulo = GetTooltip()
+    $ rotulo = quien
+    if quien in MENU_SPR:
+        $ rotulo = None
     if rotulo:
         text rotulo:
             xalign 1.0
@@ -263,7 +268,6 @@ screen main_menu():
         color "#FFFFFF44"
         size 18
 
-
 # ==============================================================
 # TRANSFORMACIONES
 # ==============================================================
@@ -276,8 +280,8 @@ transform boton_slide:
         linear 0.18 xoffset 24
 
 # Sprite: se enciende o se apaga según el botón activo
-transform sprite_tono(brillo, subida):
-    ease 0.2 matrixcolor BrightnessMatrix(brillo) yoffset subida
+transform sprite_luz(alfa, subida):
+    ease 0.2 alpha alfa yoffset subida
 
 # Capa lateral: entra deslizándose desde la izquierda
 transform panel_fadein:
@@ -308,3 +312,4 @@ transform tagline_fadein:
     alpha 0
     pause 1.8
     linear 1.0 alpha 1.0
+

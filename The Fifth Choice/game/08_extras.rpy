@@ -426,7 +426,7 @@ screen finales():
 ## --- Los cinco finales románticos ---
     hbox:
         xalign 0.5
-        ypos 150
+        ypos 132
         spacing 28
 
         for h in ["ichika", "nino", "miku", "yotsuba", "itsuki"]:
@@ -461,19 +461,20 @@ screen finales():
                 spacing 12
 
                 fixed:
-                    xysize (320, 450)
+                    xysize (320, 490)
                     add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(tono_h))
                     add ("ui/deco_final_" + h + ".png") matrixcolor TintMatrix(claro_h)
                     add final_sprite(h, logrado) xalign 0.5 ypos 16
+                    add "ui/final_velo.png"
                     add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde_h))
 
                     vbox:
                         xalign 0.5
                         ypos 316
                         xsize 280
-                        spacing 4
-                        text titulo_f xalign 0.5 text_align 0.5 font gui.name_text_font size 30 color "#FFF8FC"
-                        text sub_f xalign 0.5 text_align 0.5 xsize 280 size 17 color "#CFC6E0"
+                        spacing 6
+                        text titulo_f xalign 0.5 text_align 0.5 font gui.name_text_font size 30 color "#FFFFFF" outlines [(3, "#000000AA", 0, 0)]
+                        text sub_f xalign 0.5 text_align 0.5 xsize 280 size 18 color "#FFFFFF" outlines [(3, "#000000AA", 0, 0)]
 
                 button:
                     xysize (320, 56)
@@ -494,7 +495,7 @@ screen finales():
     ## --- Malos y secreto ---
     hbox:
         xalign 0.5
-        ypos 706
+        ypos 716
         spacing 28
 
         for f in FINALES_ESPECIALES:
