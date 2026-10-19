@@ -70,6 +70,10 @@ de PixAI.
 Composición y postproducción con herramientas propias en Python
 (Pillow, NumPy, SciPy) y GIMP.
 
+Sprites del menú principal generados con PixAI. Fondo del menú principal generado 
+con ChatGPT (OpenAI). Logo compuesto con scripts propios en Python a partir 
+de los sprites del juego.
+
 ---
 
 ## Tipografías
@@ -79,14 +83,16 @@ bajo [SIL Open Font License 1.1](https://scripts.sil.org/OFL). El texto completo
 de la licencia se distribuye con el juego en `game/fonts/OFL.txt`.
 
 Se emplea únicamente para los caracteres japoneses de esta pantalla de créditos;
-el resto del juego usa DejaVu Sans, incluida por defecto en Ren'Py.
+M PLUS Rounded 1c, Shippori Mincho B1 y Klee One (Google Fonts), bajo SIL OFL 1.1; 
+Noto Sans JP solo en esta pantalla.
 
 ---
 
 ## Motor
 
 Desarrollado con [Ren'Py](https://www.renpy.org/) 8.5.3, distribuido bajo
-licencia MIT. La interfaz parte de las plantillas por defecto del motor.
+licencia MIT. Interfaz propia generada con scripts en Python (Pillow); 
+algunos elementos parten de las plantillas del motor (MIT).
 
 ---
 
