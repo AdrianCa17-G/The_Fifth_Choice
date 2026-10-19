@@ -5,6 +5,7 @@
 *.rpab
 *.rpa
 *.rpymc
+*.pyc
 
 game/cache/
 game/saves/
@@ -16,6 +17,7 @@ game/libs/
 log.txt
 errors.txt
 traceback.txt
+__pycache__/
 
 # ── Trabajo intermedio de arte y audio ──────────────────────────────────────
 # Los renders crudos de PixAI y los proyectos de Audacity pesan mucho y no son
