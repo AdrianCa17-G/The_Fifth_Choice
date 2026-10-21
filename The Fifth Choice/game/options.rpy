@@ -65,7 +65,7 @@ Quintessential Quintuplets ({font=fonts/NotoSansJP-Regular.ttf}五等分の花�
 
 {font=fonts/NotoSansJP-Regular.ttf}音楽：魔王魂{/font} — bajo licencia CC BY 4.0
 
-DOVA-SYNDROME / OpenTracks — Kobat, KK, {font=fonts/NotoSansJP-Regular.ttf}ハモおた{/font}, shimtone, {font=fonts/NotoSansJP-Regular.ttf}蒲鉾さちこ{/font}, FLASH BEAT, KHAIM
+DOVA-SYNDROME / OpenTracks — Kobat, KK, {font=fonts/NotoSansJP-Regular.ttf}ハモおた{/font}, shimtone, {font=fonts/NotoSansJP-Regular.ttf}蒲鉾さちこ{/font}, FLASH BEAT, KHAIM, Hayato Sadohara
 
 {b}Efectos de sonido{/b}
 
