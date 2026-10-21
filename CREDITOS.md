@@ -52,13 +52,10 @@ Pistas de [DOVA-SYNDROME](https://dova-s.jp/) — actualmente **OpenTracks**:
 
 ## Efectos de sonido
 
-Efectos de [効果音ラボ](https://soundeffect-lab.info/).
-No requieren crédito; se incluye por cortesía.
+Efectos de [効果音ラボ](https://soundeffect-lab.info/) (no requieren crédito; se
+incluye por cortesía) y de [Freesound](https://freesound.org/).
 
 Ambiente (風 孤独感) de [Springin' Sound Stock](https://www.springin.org/sound-stock/).
-
-Efectos de [効果音ラボ](https://soundeffect-lab.info/) y de [Freesound](https://freesound.org/).
-
 ---
 
 ## Imágenes
@@ -78,13 +75,13 @@ de los sprites del juego.
 
 ## Tipografías
 
-**Noto Sans JP**, del proyecto [Noto](https://fonts.google.com/noto) de Google,
-bajo [SIL Open Font License 1.1](https://scripts.sil.org/OFL). El texto completo
-de la licencia se distribuye con el juego en `game/fonts/OFL.txt`.
+**M PLUS Rounded 1c**, **Shippori Mincho B1**, **Klee One** y **Noto Sans JP**, de
+[Google Fonts](https://fonts.google.com/), bajo
+[SIL Open Font License 1.1](https://scripts.sil.org/OFL). El texto de cada
+licencia se distribuye con el juego en `game/fonts/` (`OFL_*.txt`).
 
-Se emplea únicamente para los caracteres japoneses de esta pantalla de créditos;
-M PLUS Rounded 1c, Shippori Mincho B1 y Klee One (Google Fonts), bajo SIL OFL 1.1; 
-Noto Sans JP solo en esta pantalla.
+Noto Sans JP se emplea únicamente para los caracteres japoneses de la pantalla de
+créditos.
 
 ---
 
