@@ -9,11 +9,22 @@ Fuentes, licencias y todo lo aprendido montando la capa de audio del prólogo.
 
 ```
 game/audio/bgm/    hogar, cena, cotidiano, incomodo,
-                   extraneza, caos, contrato, derrota      (.ogg)
+                   extraneza, caos, contrato, derrota,
+                   hub, main_theme, descubrimiento,
+                   guardia, tregua                         (.ogg)
+
+game/audio/bgm/bgm_hermanas/   ichika_tema, nino_tema, miku_tema,
+                               yotsuba_tema, itsuki_tema   (.ogg)
+
 game/audio/sfx/    papel_mesa, timbre, silla, toque_puerta,
                    manija, puerta_abre, correr, portazo,
-                   bolsa, hoja, puerta_cierra              (.mp3)
-game/audio/        amb_viento.ogg
+                   bolsa, hoja, puerta_cierra,
+                   pisadas_pista, taza_mesa, mochila_suelo,
+                   lapiz_mesa, hover, click,
+                   hub_hover, hub_click                    (.mp3)
+
+game/audio/        amb_viento.ogg, silencio_exterior.ogg
+
 ```
 
 **Los nombres de archivo no repiten el prefijo de su carpeta. Las variables sí lo
@@ -77,7 +88,7 @@ volver a exportarlo comprime dos veces.
 
 ---
 
-## 3. Las ocho pistas
+## 3. Las pistas
 
 | Cue | Pista | Fuente |
 |---|---|---|
@@ -91,20 +102,13 @@ volver a exportarlo comprime dos veces.
 | `derrota` | ピアノ09 | 魔王魂 |
 | `amb_viento` | 風 孤独感 | Springin' Sound Stock |
 
-### La novena pista — pendiente
+### `descubrimiento` — ya existe
 
-`descubrimiento`, para el Capítulo 1. Ninguna de las ocho sirve: `cotidiano` es
-transición, `hogar` está reservado a Futaro y las cinco restantes son tensión o
-derrota. Los cinco eventos de hermana necesitan lo mismo —algo tranquilo y con
-curiosidad, sin dulzura— y una sola pista los cubre.
-
-**Regla de uso: suena únicamente mientras habla la hermana**, entra cuando se
-suelta y sale en el momento en que se corta. Si acompaña también al razonamiento
-de Futaro deja de ser el tema de ellas y pasa a ser fondo, que es exactamente el
-error del que nació `cena`.
-
-Si no se produce, las escenas aguantan en silencio. En el evento de la biblioteca
-ni se nota: es una biblioteca.
+Pista de los cinco eventos de hermana del Capítulo 1: algo tranquilo y con
+curiosidad, sin dulzura. **Regla de uso: suena únicamente mientras habla la
+hermana**, entra cuando se suelta y sale en el momento en que se corta. Si
+acompaña también al razonamiento de Futaro deja de ser el tema de ellas y pasa a
+ser fondo, que es exactamente el error del que nació `cena`.
 
 **`hogar` suena exactamente dos veces en todo el prólogo**: bajo el retrato
 familiar y en «Bien. Que sea difícil». Es el tema de Futaro. Si sonara también
