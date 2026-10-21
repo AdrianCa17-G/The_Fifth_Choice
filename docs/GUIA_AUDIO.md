@@ -212,6 +212,19 @@ En este orden:
 4. **Cambiar el archivo.** Si después de todo esto sigue tapado, la respuesta
    honesta no es seguir apretando: hay sonidos intrínsecamente pequeños y hay
    pistas que no les dejan sitio.
+   
+### Normalización de los archivos
+
+Objetivo de partida: **BGM a −15 LUFS** y **SFX a −23 LUFS**, con pico real máximo
+de −1 dBTP. Normalizar el archivo fija cuánto suena al 100 %; el control de Ren'Py
+lo multiplica entre 0 y 1 sin poder subirlo, por eso el volumen por defecto de la
+música es 0,7 y no 1,0.
+
+- **LUFS mide mal los sonidos de menos de 0,4 s** (un portazo, un clic de
+  interfaz): para esos, igualar el pico es más fiable.
+- Los multiplicadores `volume 2.5`, `1.5`… de la tabla de arriba se calibraron
+  contra los niveles de **antes** de esta normalización. Tras renormalizar hay que
+  volver a escuchar cada escena con efecto y ajustarlos.
 
 ---
 
