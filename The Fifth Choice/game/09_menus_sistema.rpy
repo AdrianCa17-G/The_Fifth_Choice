@@ -21,6 +21,7 @@ define NAV_SISTEMA = [
 define EXTRA_COLOR = {
     "isanari": "#A9925C",
     "raiha": "#F5B7B1",
+    "blanco": "#FFFFFF",
 }
 
 ## Valores por defecto de los ajustes.
@@ -418,8 +419,30 @@ screen preferences():
                 hbox:
                     spacing 10
                     use cinta_boton("Silenciar todo", Preference("all mute", "toggle"), "itsuki", 215, 58, 22)
-                    use cinta_boton("Restablecer", [Preference("music volume", AJUSTE_MUSICA), Preference("sound volume", AJUSTE_EFECTOS), Preference("text speed", AJUSTE_TEXTO), Preference("auto-forward time", AJUSTE_AUTOAVANCE), Preference("all mute", "disable"), Notify("Valores restablecidos")], "neutro", 215, 58, 22)
+                    
+                    button:
+                        xysize (215, 58)
+                        action [Preference("music volume", AJUSTE_MUSICA), Preference("sound volume", AJUSTE_EFECTOS), Preference("text speed", AJUSTE_TEXTO), Preference("auto-forward time", AJUSTE_AUTOAVANCE), Preference("all mute", "disable"), Notify("Valores restablecidos")]
+                        hover_sound audio.sfx_hover
+                        activate_sound audio.sfx_click
 
+                        background Fixed(
+                            Transform("ui/menu_cinta.png", xysize=(215, 58), fit="fill", matrixcolor=TintMatrix("#1B1026"), alpha=0.80),
+                            Transform("ui/menu_cinta_borde.png", xysize=(215, 58), fit="fill", matrixcolor=TintMatrix("#FFFFFF")))
+
+                        hover_background Fixed(
+                            Transform("ui/menu_cinta.png", xysize=(215, 58), fit="fill", matrixcolor=TintMatrix("#E8E0F2")),
+                            Transform("ui/menu_cinta_borde.png", xysize=(215, 58), fit="fill", matrixcolor=TintMatrix("#FFFFFF")))
+
+                        text "Restablecer":
+                            xalign 0.5
+                            yalign 0.5
+                            font gui.name_text_font
+                            size 22
+                            kerning 2
+                            color "#F2EDF5"
+                            hover_color "#2B1B3F"
+                            
             vbox:
                 spacing 74
                 xsize 480

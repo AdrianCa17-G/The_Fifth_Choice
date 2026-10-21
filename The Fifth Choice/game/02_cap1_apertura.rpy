@@ -170,7 +170,7 @@ label cap1_apertura:
 
     play music extraneza fadein 2.0
 
-    narrador "Las cinco estaban sentadas alrededor de la mesa."
+    narrador "Las cinco estaban sentadas en fila frente a la mesa."
 
     narrador "Rectas. En silencio. Con los cuadernos abiertos."
 
