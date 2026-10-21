@@ -13,6 +13,9 @@ con horas: leer antes de tocar código.
 variables, fondos, sprites, transforms, audio, funciones, la pantalla de nombre y
 `label start`.
 
+La interfaz vive aparte: `06_main_menu.rpy`, `07_ui.rpy`, `08_extras.rpy` y
+`09_menus_sistema.rpy` (ver `GUIA_UI.md`).
+
 Los archivos de capítulo contienen **solo su `label` y sus CG propios**. Si un CG
 se reutiliza en otro capítulo, sube a definiciones.
 
@@ -167,25 +170,37 @@ segundo, o hace falta registrar un segundo canal.
 amplificar un archivo ya normalizado lo empuja por encima del techo digital y
 puede saturar: si un efecto cruje, es esto.
 
-Poner un texto con [variable] en mayúsculas rompe la interpolación ([MC] no existe):
-sustituye primero con renpy.substitute() y después pasa a mayúsculas.
+**Mayúsculas antes de interpolar rompen `[variable]`.** `.upper()` convierte
+`[mc]` en `[MC]`, que no existe: sustituir primero con `renpy.substitute()` y
+después pasar a mayúsculas.
 
-hovered / unhovered con una variable se queda “pegado” si la pantalla cambia con
-el ratón encima. Usa tooltip y GetTooltip(), que se limpian solos.
+**`hovered` / `unhovered` con una variable se quedan «pegados»** si la pantalla
+cambia con el ratón encima. Usar `tooltip` y `GetTooltip()`, que se limpian solos.
 
-window_style y window_background del Character pisan lo que se ponga en la
-pantalla say: los fondos por personaje van en el Character.
+**`window_style` y `window_background` del `Character` pisan** lo que se ponga en
+la pantalla `say`: los fondos por personaje van en el `Character`.
 
-narrator (sin la “d”) es el narrador interno de Ren’Py: lo usan las cajas vacías
-de transiciones y las preguntas de los menu:.
+**`narrator` (sin la «d») es el narrador interno** de Ren'Py: lo usan las cajas
+vacías de las transiciones y las preguntas de los `menu:`.
 
-Las pantallas con el mismo nombre en archivos distintos: gana la de mayor 
-prioridad de carga. Los estilos de screens.rpy no ven variables de 00_definiciones.rpy.
+**Pantallas con el mismo nombre en archivos distintos:** gana la de mayor
+prioridad de carga. Los estilos de `screens.rpy` (init −1) no ven variables de
+`00_definiciones.rpy` (init 0): lo que usen va en `gui.rpy`.
 
-Un default dentro de una pantalla se evalúa una vez por apertura, y sirve para 
-decidir “primera vez”.
+**Un `default` dentro de una pantalla se evalúa una vez por apertura**, y sirve
+para decidir «primera vez» (la entrada animada del menú principal).
 
-En ATL, las operaciones van entre paréntesis (rotate (i * 72)).
+**En ATL, las operaciones van entre paréntesis:** `rotate (i * 72)`.
+
+**La música del menú principal se reinicia** si el `Play` va dentro de la
+pantalla: usar `define config.main_menu_music`, que suena una sola vez aunque se
+entre y salga de los submenús.
+
+**`config.all_character_callbacks`** se ejecuta en cada línea de diálogo: sirve
+para detectar cambios de fondo y enseñar la cinta del lugar con `renpy.show_screen`.
+
+**`size_group`** en un estilo de botón iguala el ancho de todos los del grupo al
+del más largo (las cajas de decisión ligeras).
 
 ---
 
