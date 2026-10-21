@@ -325,6 +325,11 @@ init python:
         renpy.music.set_volume(nivel, delay=bajada, channel="music")
         renpy.music.set_volume(1.0, delay=subida, channel="music")
 
+    ## En el `init python` de `00_definiciones.rpy`: reinicia el canal tras un `duck()`.
+    ## El punto de partida del jugador lo fija `config.default_music_volume = 0.7` (y
+    ## `config.default_sfx_volume = 1.0`) en `options.rpy`; el botón **Restablecer** de
+    ## Opciones vuelve a esos valores.
+
     renpy.music.set_volume(1.0, channel="music")
 
 ## Musica --------------------------------------------------------------------
