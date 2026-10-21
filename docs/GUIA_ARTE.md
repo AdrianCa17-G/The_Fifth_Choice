@@ -270,7 +270,7 @@ dibuja el modelo. Si se intenta quitar, se rompe el pelo.
 
 ## 5. Herramientas de post
 
-Cuatro scripts de Python en `herramientas/`, **fuera de `game/`**. No son scripts
+Scripts de Python en `herramientas/`, **fuera de `game/`**. No son scripts
 de Ren'Py. Requieren Python de python.org con `pillow`, `numpy` y `scipy`.
 
 | Script | Qué hace |
@@ -279,6 +279,9 @@ de Ren'Py. Requieren Python de python.org con `pillow`, `numpy` y `scipy`.
 | `limpiar_halo.py` | Sobre un sprite **ya normalizado**: desmatteado del contorno y borrado de huecos encerrados. `--solo-halo` para Yotsuba. |
 | `normalizar_extra.py` | Lo mismo para Isanari y Raiha, con sus filas de ojos propias y el modo por altura de Raiha. |
 | `escalar_cgs.py` | Pasa un lote de CG y fondos a 1920×1080 con Lanczos y WebP 95. Realce de nitidez **solo a las fuentes JPEG** y con umbral. |
+| `generar_ui.py` | Genera los PNG de la interfaz en `game/ui/` (cajas, cintas, tarjetas, iconos, decoración por hermana). Ver `GUIA_UI.md` |
+| `generar_logo.py` | Arma el logo del menú con los sprites `neutral` de las hermanas |
+| `recortar_menu.py` | Quita el fondo y recorta al contenido un sprite del menú (cuerpo completo) |
 
 ```
 python normalizar_sprite.py entrada.png salida.png
@@ -543,14 +546,32 @@ Cosas abiertas que afectan a todo el arte, no solo al prólogo:
 - **Las gafas de Isanari cambian de sitio entre sus dos sprites**: caladas en el
   neutral, en la frente en la sonrisa. Decisión tomada: se asume. Lo único que
   conviene evitar es alternarlos en réplicas consecutivas.
-- **Faltan expresiones a Nino, Miku y Yotsuba.** Cuatro ya tienen guion detrás y
-  se pueden generar: `nino pillada` y `yotsuba incomoda` (apertura del Capítulo 1)
-  y `miku animada` y `miku encogida` (evento de la biblioteca). Las fichas de las
-  cuatro están en `docs/CAP1.md`. Para las que no tienen escena todavía sigue
-  valiendo la lección de `itsuki_timida`: generar contra suposición produce arte
-  que no se usa.
+- **Expresiones del Capítulo 1: hechas.** `nino pillada`, `yotsuba incomoda`,
+  `miku animada` y `miku encogida` ya existen, junto con otras. Para las que no
+  tengan escena escrita sigue valiendo la lección de `itsuki_timida`: generar
+  contra suposición produce arte que no se usa.
 - **La diferencia entre expresiones tiene que estar en la silueta.** Es la regla
   que sale de las cuatro fichas nuevas y vale para todas las que vengan: a un 30 %
   de tamaño la cara no se lee. `nino pillada` descruza los brazos, `yotsuba
   incomoda` ocupa menos ancho, `miku animada` se queda sin nada delante del
   cuerpo. Si dos expresiones tienen la misma silueta, en pantalla son la misma.
+
+## 10. Sprites del menú principal
+
+Son **exclusivos del menú** (los del hub son otros) y van de **cuerpo completo
+hasta los zapatos**, a diferencia de los del juego, que se cortan bajo la rodilla.
+
+- Generar en vertical 768×1280, solo con su LoRA de personaje (0.8), sin LoRA de
+  serie. Una pose por hermana, según su personalidad.
+- Quitar el fondo y recortar al contenido con `herramientas/recortar_menu.py`
+  (Yotsuba con `--sin-huecos`). Van en `game/images/menu/`.
+- **El tamaño se iguala por la coronilla, no por la altura total:** el lazo de
+  Yotsuba y el ahoge de Itsuki cuentan en la altura y las encogían.
+  `MENU_CORONILLA` (en `06_main_menu.rpy`) guarda la fila del PNG donde empieza el
+  pelo; con `MENU_GUIA = True` aparece una línea verde que el pelo de las cinco
+  debe tocar.
+- Tras reemplazar un sprite, borrar `game/cache`.
+- El logo se genera por script (`generar_logo.py`) con los sprites `neutral`: no
+  regenerarlo con IA, porque las siluetas salían inconsistentes.
+- Para publicar no se usa arte oficial: los PNG bajados de internet al principio se
+  sustituyeron por estos.
