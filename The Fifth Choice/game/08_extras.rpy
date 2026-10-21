@@ -131,7 +131,7 @@ init python:
             return Transform(base, zoom=0.55)
         return Transform(base, zoom=0.55, matrixcolor=TintMatrix("#0B0712"), alpha=0.85)
 
-        def ui_cinta_menu(color, icono, activa):
+    def ui_cinta_menu(color, icono, activa):
         """Fondo de una cinta del menú (reposo o activa). icono=None -> solo borde."""
         oscuro = ui_mezclar(color, "#000000", 0.72)
         claro = ui_mezclar(color, "#FFFFFF", 0.35)
