@@ -100,7 +100,16 @@ volver a exportarlo comprime dos veces.
 | `caos` | Busy As A Bee (ハモおた) | DOVA |
 | `contrato` | Night Shade Story (shimtone) | DOVA |
 | `derrota` | ピアノ09 | 魔王魂 |
+| `descubrimiento` | Dreaming world | DOVA |
+| `guardia` | Blue Moon | DOVA |
+| `tregua` | Lonely Town | DOVA |
+| `ichika_tema` | Fancy Pop | DOVA |
+| `itsuki_tema` | Rippling heartbeat | DOVA |
+| `miku_tema` | The calm seaside | DOVA |
+| `nino_tema` | Mad Trick (Prod. Khaim) | DOVA |
+| `yotsuba_tema` | New Departure | DOVA |
 | `amb_viento` | 風 孤独感 | Springin' Sound Stock |
+| `silencio_exterior` | 風 孤独感 | Springin' Sound Stock  |
 
 ### `descubrimiento` — ya existe
 
