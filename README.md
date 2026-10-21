@@ -15,11 +15,12 @@ cinco quintillizas termina.
 |---|---|---|
 | 0 · Núcleo | `00_definiciones.rpy` | ✅ Terminado |
 | 1 · Prólogo | `01_prologo.rpy` | ✅ Terminado — 7 escenas, arte y audio completos |
-| 2 · Capítulo 1 | `02_capitulo1.rpy` | 🟨 Codificando — guion en `docs/CAP1.md`; apertura y eventos de hermanas cerrados |
+| 2 · Capítulo 1 | `02_capitulo1.rpy` | ✅ Terminado - Apertura, hubs, 5 eventos de hermana y 3 beats codificados |
 | 3 · Capítulo 2 | `03_capitulo2.rpy` | ⬜ Pendiente |
 | 4 · Capítulo 3 | `04_capitulo3.rpy` | ⬜ Pendiente |
 | 5 · Finales | `05_finales.rpy` | ⬜ Pendiente |
 | — · Menú principal | `06_main_menu.rpy` | ✅ Terminado |
+| — · Interfaz | `07_ui.rpy`, `08_extras.rpy`, `09_menus_sistema.rpy` | ✅ Terminado — HUD, decisiones, galería, finales y menús de sistema |
 
 ---
 
@@ -29,14 +30,15 @@ cinco quintillizas termina.
 |---|---|
 | Este README | Estructura, sistemas de juego, personajes, progreso |
 | [`docs/PROLOGO.md`](docs/PROLOGO.md) | Estado detallado del prólogo: escenas, guion, assets, problemas abiertos |
-| [`docs/CAP1.md`](docs/CAP1.md) | Capítulo 1: decisiones de diseño, estructura de hubs, guion y assets pendientes |
+| [`docs/CAPITULO_1/CAP1.md`](docs/CAPITULO_1/CAP1.md) | Estado: Apertura, hubs, 5 eventos de hermana y 3 beats terminados |
 | [`docs/GUIA_ARTE.md`](docs/GUIA_ARTE.md) | Generación de imágenes: PixAI, LoRAs, prompts, estándar de sprites, scripts de post |
 | [`docs/GUIA_AUDIO.md`](docs/GUIA_AUDIO.md) | Fuentes, licencias, escala de volumen, montaje |
 | [`docs/GUIA_RENPY.md`](docs/GUIA_RENPY.md) | Trampas del motor ya encontradas y convenciones de código |
+| [`docs/GUIA_UI.md`](docs/GUIA_UI.md) | Interfaz: motivos y colores, archivos, recetas (decisiones, galería, lugares) |
 | [`CREDITOS.md`](CREDITOS.md) | Atribuciones, licencias de los assets y aviso de proyecto fan |
 
-Las tres guías son **transversales**: valen para los tres capítulos que quedan,
-no solo para el prólogo. Consultarlas antes de generar arte nuevo o tocar audio.
+Las cuatro guías son **transversales**: valen para los tres capítulos que quedan,
+no solo para el prólogo. Consultarlas antes de generar arte nuevo, tocar audio o interfaz.
 
 ---
 
@@ -48,23 +50,48 @@ Quintuplets/
     ├── README.md                       ← esta página
     ├── docs/
     │   ├── PROLOGO.md
-    │   ├── CAP1.md
+    │   ├── CAPITULO_1
+    │   │   ├── CAP1.md
+    │   │   ├── APERTURA_CAP1.md
+    │   │   ├── HUBS_HERMANAS/   
+    │   │   │   ├── CAP1_evento_ichika.md   
+    │   │   │   ├── CAP1_evento_itsuki.md   
+    │   │   │   ├── CAP1_evento_miku.md   
+    │   │   │   ├── CAP1_evento_nino.md   
+    │   │   │   ├── CAP1_evento_yotsuba.md   
+    │   │   └── BEATS_CAP1/   
+    │   │       ├── CAP1_beat_casa.md
+    │   │       ├── CAP1_beat_itsuki.md
+    │   │       └── CAP1_beat_nino_crisis.md
     │   ├── GUIA_ARTE.md
     │   ├── GUIA_AUDIO.md
-    │   └── GUIA_RENPY.md
+    │   ├── GUIA_RENPY.md
+    │   └── GUIA_UI.md
     ├── herramientas/                    fuera de game/ — scripts de Python
     │   ├── normalizar_sprite.py
     │   ├── normalizar_extra.py
     │   ├── limpiar_halo.py
-    │   └── escalar_cgs.py
+    │   ├── escalar_cgs.py
+    │   ├── generar_ui.py
+    │   ├── generar_logo.py
+    │   └── recortar_menu.py
     └── game/
         ├── audio/
-        │   ├── bgm/                     8 pistas .ogg
-        │   ├── sfx/                     11 efectos .mp3
-        │   └── amb_viento.ogg
+        │   ├── bgm/                     13 pistas .ogg
+        │   │   ├── bgm_hermanas/        5 pistas .ogg para cada hermana
+        │   ├── sfx/                     19 efectos .mp3
+        │   ├── amb_viento.ogg
+        │   └── silencio_exterior.ogg
         ├── images/
-        │   ├── bg/                      8 fondos, 1920×1080 WebP
-        │   ├── cg/                      13 ilustraciones de escena
+        │   ├── bg/                      9 fondos, 1920×1080 WebP
+        │   │   ├── cap1_beats/          2 fondos, 1920×1080 WebP
+        │   │   └── hubs_hermanas/       5 fondos, 1920×1080 WebP
+        │   ├── cg/                      15 ilustraciones de escena
+        │   │   ├── cap1_apertura/       3 ilustraciones de escena
+        │   │   ├── cap1_beats/          5 ilustraciones de escena
+        │   │   └── hubs_hermanas/       15 ilustraciones de escena
+        │   ├── hubs/
+        │   ├── menu/
         │   ├── sprites/
         │   │   ├── ichika_sprites/
         │   │   ├── nino_sprites/
@@ -73,19 +100,30 @@ Quintuplets/
         │   │   ├── itsuki_sprites/
         │   │   ├── raiha_sprites/
         │   │   └── isanari_sprites/
+        │   ├── ui/
         │   ├── Fondo_Menu.png
         │   ├── Logo_Menu.png
         │   └── petal.png
         ├── fonts/
-        │   ├── NotoSansJP-Regular.ttf    solo para el japonés de los créditos
-        │   └── OFL.txt                   licencia, obligatorio distribuirla
+        │   ├── NotoSansJP-Regular.ttf
+        │   ├── OFL.txt                      licencia, obligatorio distribuirla  
+        │   ├── KleeOne-SemiBold.ttf
+        │   ├── OFL_KleeOne.txt              licencia, obligatorio distribuirla     
+        │   ├── MPLUSRounded1c-Bold.ttf
+        │   ├── MPLUSRounded1c-Medium.ttf
+        │   ├── OFL_MPLUSRounded1c.txt       licencia, obligatorio distribuirla  
+        │   ├── ShipporiMinchoB1-SemiBold.ttf
+        │   └── OFL_ShipporiMinchoB1.txt     licencia, obligatorio distribuirla 
         ├── 00_definiciones.rpy          ✅
         ├── 01_prologo.rpy               ✅
+        ├── 02_cap1_*.rpy                ✅
         ├── 06_main_menu.rpy             ✅
+        ├── 07_ui.rpy                    ✅
+        ├── 08_extras.rpy                ✅
+        ├── 09_menus_sistema.rpy         ✅
         ├── gui.rpy · options.rpy · screens.rpy
         │
         │   ── todavía no creados ──
-        ├── 02_capitulo1.rpy             ← siguiente
         ├── 03_capitulo2.rpy
         ├── 04_capitulo3.rpy
         ├── 05_finales.rpy
@@ -93,6 +131,12 @@ Quintuplets/
         │   ── generado por Ren'Py, no versionar ──
         ├── cache/  saves/  tl/  libs/  gui/
         └── *.rpyc
+
+Nota: `README.md`, `CREDITOS.md`, `.gitignore` y `docs/` están en la raíz del
+repositorio, junto a la carpeta `The Fifth Choice/` (el proyecto de Ren'Py).
+También existe `game/ui/` con los PNG de la interfaz, generados por
+`herramientas/generar_ui.py`.
+
 ```
 
 `cache/`, `saves/`, `tl/`, `libs/` y los `.rpyc` los crea y mantiene Ren'Py sola.
@@ -104,6 +148,10 @@ No deben subirse al repositorio: el `.gitignore` de la raíz ya los excluye.
 `00_definiciones.rpy` concentra **todo lo que no es narrativa**: personajes,
 variables, imágenes compartidas (fondos y sprites), transforms, audio, funciones
 de apoyo, la pantalla de nombre y `label start`.
+
+`06_main_menu.rpy`, `07_ui.rpy`, `08_extras.rpy` y `09_menus_sistema.rpy` son la
+interfaz (menú principal, HUD, decisiones, galería, finales y menús de sistema).
+Cómo funcionan y cómo ampliarlos: `docs/GUIA_UI.md`.
 
 Los archivos de capítulo contienen **solo su `label` y sus CG propios**. Un CG es
 la ilustración de un momento concreto; si alguno acaba reutilizándose en otro
@@ -300,11 +348,12 @@ o siete y cae en el Final Malo. El umbral de 10 funciona sin tocarlo.
 | Generación de imágenes | PixAI (modelo base Tsubaki.2) |
 | Corrección local de imágenes | Gemini |
 | Post de sprites y CG | Scripts propios de Python (`herramientas/`) con pillow, numpy y scipy |
+| Interfaz y logo | Scripts propios (`generar_ui.py`, `generar_logo.py`) con Pillow |
 | Música | 魔王魂 y DOVA-SYNDROME |
 | Efectos de sonido | 効果音ラボ |
 | Ambiente | Springin' Sound Stock |
 | Edición de audio | Audacity |
-| Tipografía japonesa | Noto Sans JP (SIL OFL 1.1), solo para los créditos |
+| Tipografías | M PLUS Rounded 1c, Shippori Mincho B1, Klee One y Noto Sans JP (SIL OFL 1.1) |
 | Asistencia de código y guion | Claude |
 
 Detalles de configuración en [`docs/GUIA_ARTE.md`](docs/GUIA_ARTE.md) y
