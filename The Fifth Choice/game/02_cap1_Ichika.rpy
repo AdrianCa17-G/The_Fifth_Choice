@@ -42,11 +42,11 @@ label hub_Ichika:
 
     narrador "La puerta estaba entreabierta."
 
-    narrador "Y fue ahí cuando la ví."
+    narrador "Y fue ahí cuando la vi."
 
     play music ichika fadein 2.0
 
-    scene ichika_ensayo
+    scene cg_ichika_ensayo
     with fade
 
     narrador "La reconocí por el pelo antes que por la cara."
@@ -128,22 +128,22 @@ label hub_Ichika:
     show ichika agotada at pj(0.5)
     with dissolve
 
-    mc "Luces demasiado cansada"
+    mc "Luces demasiado cansada."
 
     show ichika agotada at pj_habla(0.5)
     with disolucion_lenta
 
     ichika "¿Yo?"
 
-    ichika "Jaja, te preocupas demasiado por mi [mc]"
+    ichika "Jaja, te preocupas demasiado por mi, [mc]."
 
-    mc "¿Entonces que estabas haciendo?"
+    mc "¿Entonces qué estabas haciendo?"
 
     ichika "¡Estaba practicando!"
 
     mc "¿Practicando dormir?"
 
-    ichika "¡Es un método actoral! ¡Se llama sueño escénico!"
+    ichika "¡Es una técnica interpretativa! ¡Se llama... descanso escénico!"
 
     mc "No existe eso."
 
@@ -194,9 +194,9 @@ label hub_Ichika:
 
     mc_pensamiento "Vaya, tiene un horario muy bien cronometrado."
 
-    mc_pensamiento "Lo cual me preocupa bastante"
+    mc_pensamiento "Lo cual me preocupa bastante."
 
-    mc "Lo dijiste sin pausar, sin contar con los dedos, como si ya tuvieras la cuenta hecha de memoria."
+    mc "Lo dijiste de corrido, sin titubear, como si ya tuvieras la cuenta hecha en la cabeza."
 
     mc "Nadie improvisa ese número tan rápido."
 
@@ -215,9 +215,9 @@ label hub_Ichika:
 
     mc_pensamiento "Y ahora esto."
 
-    mc_pensamiento "Ninguna de las cuatro cosas es una casualidad sola."
+    mc_pensamiento "Ninguna de estas cuatro cosas es una casualidad aislada."
 
-    mc_pensamiento "Juntas, son un patrón."
+    mc_pensamiento "Juntas, forman un patrón evidente."
 
     stop music fadeout 1.5
 
@@ -603,7 +603,7 @@ label ichika_m6:
 
         mc_pensamiento "No hubo ningún cambio en ella."
 
-        mc_pensamiento "Siento como si no hubiera hecho nada para ayudarla"
+        mc_pensamiento "Siento como si no hubiera hecho nada para ayudarla."
 
         mc_pensamiento "Y cuando le ofrecieron el papel que quería, aceptó antes de que yo pudiera decir una sola palabra sobre todo lo demás que ya tiene encima."
 

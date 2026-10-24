@@ -50,7 +50,7 @@ label hub_Miku:
     scene cg_miku_biblioteca
     with fade
 
-    narrador "Logré encontrar a Miku"
+    narrador "Logré encontrar a Miku."
 
     narrador "Estaba al fondo, de espaldas a la puerta, con una pila de libros a la izquierda y los 
     audífonos colgados del cuello."
@@ -89,7 +89,7 @@ label hub_Miku:
 
     miku "…"
 
-    mc "Ah, Miku. Qué coincidencia encontrarte aquí.."
+    mc "Ah, Miku. Qué coincidencia encontrarte aquí..."
 
     miku "…"
 
@@ -97,7 +97,7 @@ label hub_Miku:
 
     mc "No lo sabía. Llevo una hora dando vueltas."
 
-    mc "Aunque alguien me dijo que la biblioteca podría ser tu rincón secreto de estudio"
+    mc "Aunque alguien me dijo que la biblioteca podría ser tu rincón secreto de estudio."
 
     narrador "Algo se le movió en la cara al oír eso, tan rápido que no me dio tiempo a leerlo."
 
@@ -127,9 +127,9 @@ label hub_Miku:
 
     mc "Historia es tu asignatura."
 
-    miku "No es mi asignatura"
+    miku "No es mi asignatura."
 
-    mc "Es la que mas conocimientos tienes y la que más fácil puedes aprender."
+    mc "Es la que más dominas y la que te resultará más fácil de aprender."
     
     mc "Empezamos por ahí."
 
@@ -206,7 +206,7 @@ label hub_Miku:
 
     mc "Y creo que el tipo que lo escribió se equivoca."
 
-    miku" …¿En qué?"
+    miku "…¿En qué?"
 
     mc "Le dedica cuarenta páginas a cómo se movía la comida y seis a la batalla más famosa del siglo."
     
@@ -278,7 +278,7 @@ label hub_Miku:
 
     miku "Llevaban diez años peleándose y ninguno de los dos había conseguido ganar."
 
-    mc "¿Si era su enemigo? ¿Por qué haría eso?"
+    mc "Pero si era su enemigo... ¿por qué hizo algo así?"
 
     miku "Dijo que él peleaba con armas, no con comida." 
 
@@ -349,7 +349,7 @@ label hub_Miku:
 
     menu:
 
-        "¿Que le dirás a Miku?"
+        "¿Qué le dirás a Miku?"
 
         "Mostrar interés. Preguntarle por un detalle del libro.": 
             jump miku_m4a
@@ -570,13 +570,13 @@ label miku_m5:
     
     if miku_rama_cap1 == "calida":
 
-        mc_pensamiento  "Miku no es timida."
+        mc_pensamiento  "Miku no es tímida."
 
         mc_pensamiento "Al contrario, es una persona muy abierta."
 
         mc_pensamiento "Hoy me habló durante un minuto seguido sin que yo se lo pidiera dos veces."
 
-        mc_pensamiento "Sin juzgarme del por qué estaba yo ahí."
+        mc_pensamiento "Sin juzgarme por estar ahí."
 
         mc_pensamiento "Eso, en esa casa, es un récord."
 
@@ -594,9 +594,9 @@ label miku_m5:
 
         mc_pensamiento "Tenía razón en lo del examen."
 
-        mc_pensamiento "El Sengoku ni si quiera es un tema de relevancia."
+        mc_pensamiento "El periodo Sengoku ni siquiera entra en el examen."
 
-        mc_pensamiento "Hize bien al decirle que estudiara lo que realmente le iban a preguntar."
+        mc_pensamiento "Hice bien al decirle que estudiara lo que realmente le iban a preguntar."
 
         mc_pensamiento "Lo raro es que llevo toda la tarde con la sensación de haber hecho algo mal teniendo razón."
 

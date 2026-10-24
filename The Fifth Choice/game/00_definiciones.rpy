@@ -144,6 +144,7 @@ default maruo_ultimatum = False
 default despido_cap1 = False
 default nino_rama_beat = None
 default clima_cap1 = "mixta"
+default despido_en_beat = False
 
 
 ## --- Rama completada -------------------------------------------------------

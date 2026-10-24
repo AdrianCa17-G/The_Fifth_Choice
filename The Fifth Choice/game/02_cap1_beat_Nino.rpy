@@ -110,53 +110,10 @@ label beat_Nino:
 
     if desaires_cap1 >= 2:
 
-        ## Dos desaires: despido anticipado. No hay hub 3 que lo salve.
-
-        stop music fadeout 1.0
-
-        scene bg_departamento
-        with fade
-
-        narrador "Fue entonces cuando Maruo levantó la vista y me encontró en la puerta."
-
-        scene cg_maruo_reunion
-        with fade
-
-        play music contrato fadein 2.0
-
-        maruo "Ya que estás aquí, ahorrémonos el drama."
-
-        mc "Perdón, no venía con la intención de interrumpirlos."
-
-        maruo "Ya nos interrumpiste con solo entrar."
-
-        narrador "Dejó la taza sobre la mesa, despacio, sin apurarse."
-
-        maruo "Hace un momento le dije a Nino que no rompería este contrato por un capricho."
-
-        maruo "Sigo pensando igual. Pero esto no es un capricho."
-
-        maruo "De las dos que has visitado, ninguna está más cerca de aprobar que el primer día."
-
-        mc "Señor, todavía quedan semanas. Déjeme—"
-
-        maruo "No es una discusión. Mañana no hace falta que vengas."
-
-        narrador "No levantó la voz. Nunca la levanta."
-
-        narrador "Nino miraba entre los dos. Abrió la boca para decir algo. Y no lo dijo."
-
-        mc_pensamiento "Lo que ella había pedido a gritos acababa de pasar sin que nadie gritara."
-
-        mc_pensamiento "Y no tenía sensación de victoria. Tampoco para ella."
-
-        stop music fadeout 2.0
-
         $ despido_en_beat = True
 
-        ## Sale de beat_Nino sin volver a interconexion_4.
         $ renpy.pop_call()
-
+        
         jump final_malo_temprano
 
     elif desaires_cap1 == 1:
@@ -185,11 +142,11 @@ label beat_Nino:
 
         maruo "Llevas más de una semana. No veo ningún cambio."
 
-        mc "He tenido inconvenientes con sus hijas, pero eso no me es excusa."
+        mc "He tenido inconvenientes con sus hijas, pero eso no es excusa."
 
-        mc "Porfavor, ¡Le suplico que me espere hasta el final de los examenes!"
+        mc "Por favor, ¡Le suplico que me espere hasta el final de los exámenes!"
 
-        mc "Los exámenes son en tres semanas, aun tenemos tiempo."
+        mc "Los exámenes son en tres semanas, aún tenemos tiempo."
 
         maruo "No te pedí un cronograma. Te pedí resultados."
 
@@ -216,6 +173,8 @@ label beat_Nino:
         mc_pensamiento "Esa era la última vez que lo iba a decir."
 
         mc_pensamiento "Y los dos lo sabíamos."
+
+        play music guardia fadein 1.5 fadeout 2.0
 
     else:
 
@@ -283,7 +242,7 @@ label beat_Nino:
 
     mc "Sé lo que le dijiste a tu padre." 
     
-    mc "Mas no de lo que piensas de mi, no es lo mismo."
+    mc "Mas no de lo que piensas de mí, no es lo mismo."
 
     show nino molesta at pj(0.5)
     with disolucion_lenta

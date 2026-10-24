@@ -66,9 +66,9 @@ label hub_Itsuki:
 
     mc_pensamiento "A su lado había tres respuestas tachadas."
 
-    mc_pensamiento "Parecían garabatos llenos de rabia"
+    mc_pensamiento "Parecían garabatos llenos de rabia."
 
-    mc_pensamiento "Y la misma cifra al final de los tres."
+    mc_pensamiento "Y la misma cifra al final de las tres."
 
     narrador "Me acerqué a buscar la mochila."
 
@@ -155,7 +155,7 @@ label hub_Itsuki:
 
     mc_pensamiento "Esta vez solo la dejó ahí."
 
-    mc_pensamiento "Está ganando, o perdiendo tiempo."
+    mc_pensamiento "Está ganando o perdiendo tiempo."
 
     mc "Las demás no estudian nada y les va igual de mal que a ti."
 
@@ -235,7 +235,7 @@ label hub_Itsuki:
 
     narrador "Tres líneas de planteamiento correctas."
 
-    narrador "La conversión de unidades del segundo paso, mal."
+    narrador "El segundo paso tiene mal la conversión de unidades."
 
     narrador "El mismo error, repetido igual las tres veces."
 
@@ -257,7 +257,7 @@ label hub_Itsuki:
 
     itsuki "¿Vas a quedarte mirando o vas a buscar tu cuaderno?"
 
-    mc "Las dos cosas, si me dejas."
+    mc "Ambas, si me lo permites."
 
     itsuki "No te dejo."
 
@@ -418,7 +418,7 @@ label itsuki_m4b:
 
     mc_pensamiento "Dijo que no quería que se lo explicara."
 
-    mc_pensamiento "Con ella eso puede ser lo mismo, o lo contrario." 
+    mc_pensamiento "Con ella eso puede ser lo mismo o lo contrario." 
     
     mc_pensamiento "Hoy no lo voy a averiguar."
 

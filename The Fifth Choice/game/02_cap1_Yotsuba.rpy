@@ -69,7 +69,7 @@ label hub_Yotsuba:
 
     mc_pensamiento "Y animándose a sí misma."
 
-    narrador "Me quedé observandóla y memorizando el número de vueltas que llevaba."
+    narrador "Me quedé observándola y memorizando el número de vueltas que llevaba."
 
     $ duck()
     play sound audio.sfx.pisadas_pista volume 2.5
@@ -129,7 +129,7 @@ label hub_Yotsuba:
     show yotsuba neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    yotsuba "…¿Cuánto llevas tú [mc]?"
+    yotsuba "…¿Cuánto llevas tú, [mc]?"
 
     mc "Tus últimas ocho vueltas."
 
@@ -292,7 +292,7 @@ label hub_Yotsuba:
 
     mc_pensamiento "Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacía por dentro, "
 
-    mc_pensamiento " o si le hago caer en cuenta su valor como persona."
+    mc_pensamiento " o si le hago notar su verdadero valor como persona."
 
     ############################################################################
     ##  MOVIMIENTO 4A · Rama cálida
@@ -306,7 +306,7 @@ label hub_Yotsuba:
     
     menu:
 
-        narrador "¿Cómo le ayudarias a sentirse mejor?"
+        narrador "¿Cómo le ayudarías a sentirse mejor?"
 
         "Tú vales tanto como cualquiera de tus hermanas":
             jump yotsuba_m4a
@@ -367,7 +367,7 @@ label yotsuba_m4a:
     show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
 
-    yotsuba "Oye [mc]… ¿Me estabas observando?"
+    yotsuba "Oye, [mc]… ¿Me estabas observando?"
 
     mc "Soy tu tutor. Observar es parte del trabajo."
 
@@ -457,7 +457,7 @@ label yotsuba_m4b:
 
     mc "¿Lo notas en el calentamiento?"
 
-    yotsuba "¡Siempre! Las piernas me avisan. ¡Es como un idioma secreto entre mis piernas y yo!"
+    yotsuba "¡Siempre! Las piernas me avisan. ¡Es como un idioma secreto entre mi cuerpo y yo!"
 
     narrador "Sonreí sin querer."
 
@@ -564,7 +564,7 @@ label yotsuba_m5:
 
     mc_pensamiento "Solo volvió a correr, como si la conversación nunca hubiera interrumpido nada."
 
-    mc_pensamiento "Un 'nos vemos mañana'. Hoy ninguna de las dos lo dijo."
+    mc_pensamiento "Un 'nos vemos mañana'. Hoy ninguno de los dos lo dijo."
 
     stop sound fadeout 1.0
 
@@ -583,7 +583,7 @@ label yotsuba_m6:
 
     stop music fadeout 1.5
 
-    mc_pensamiento "Una de cinco. Y esta acaba de llegar corriendo."
+    mc_pensamiento "Una de cinco. Y esta no paraba de correr."
 
     mc_pensamiento "Solo quedan [tiempo_restante]."
 

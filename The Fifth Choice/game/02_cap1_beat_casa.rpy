@@ -54,7 +54,7 @@ label beat_casa:
     
     raiha "Te guardé la cena, pero se enfrió como tres veces."
 
-    mc "Perdoname Raiha." 
+    mc "Perdóname, Raiha." 
     
     mc "Se me hizo tarde."
 
@@ -119,8 +119,9 @@ label beat_casa:
     
     mc_pensamiento "Se lo tomó como algo raro de verdad."
 
-    mc_pensamiento "Llevo semanas diciéndoles a cinco personas «no te lo voy a resolver, 
-    solo mira si está bien» tantas veces que ya no me sale de otra forma"
+    mc_pensamiento "Llevo semanas diciéndoles a cinco personas «no te lo voy a resolver, solo mira si está bien»." 
+    
+    mc_pensamiento "Lo he repetido tantas veces que ya no me sale de otra forma."
     
     mc_pensamiento "Ni siquiera con ella."
 
@@ -156,7 +157,7 @@ label beat_casa:
 
     isanari "Vaya [mc], te ves demasiado cansado."
 
-    isanari "¿Como vas? ¿Todo marcha bien en tu trabajo?"
+    isanari "¿Cómo vas? ¿Todo marcha bien en tu trabajo?"
 
     mc "El examen es mañana."
 
@@ -332,7 +333,7 @@ label beat_casa:
 
                             mc_pensamiento "Le dije que si tenía tiempo para chistes, tenía tiempo para estudiar."
 
-                            mc_pensamiento "Salimos sin decir nada y ella sonrió como siempre"
+                            mc_pensamiento "Salimos sin decir nada y ella sonrió como siempre."
 
                             mc_pensamiento "Fue correcta conmigo. Nada más."
 
@@ -373,19 +374,19 @@ label beat_casa:
 
                         mc_pensamiento "Luego, la encontré en una sección de repostería internacional, "
                         
-                        mc_pensamiento " tenia productos con nombres extranjeros, algunos que ni siquiera sabía su significado."
+                        mc_pensamiento " tenía productos con nombres extranjeros, algunos que ni siquiera sabía su significado."
 
                         mc_pensamiento "La encontré comparando dos cajas de harina, con una receta que no es suya escrita a mano."
 
                         mc_pensamiento "Logré interactuar con ella acerca de los nombres de esos productos."
 
-                        mc_pensamiento "Con dificultad para entablar una conversacion pacifica..."
+                        mc_pensamiento "Con dificultad para entablar una conversación pacífica..."
 
-                        mc_pensamiento "Me di cuenta que tiene un talento innato para el ingles."
+                        mc_pensamiento "Me di cuenta que tiene un talento innato para el inglés."
 
-                        mc_pensamiento "Aunque le cuesta hablarlo de manera fluida, sabe como leerlo y pronunciarlo."
+                        mc_pensamiento "Aunque le cuesta hablarlo de manera fluida, sabe cómo leerlo y pronunciarlo."
 
-                        mc_pensamiento "Tambien me dijo que ya perdió la cuenta de cuántos tutores vio irse."
+                        mc_pensamiento "También me dijo que ya perdió la cuenta de cuántos tutores vio irse."
 
                         mc_pensamiento "Yo no le prometí nada, no logré convencerla de lo contrario."
 
@@ -416,7 +417,7 @@ label beat_casa:
                             mc_pensamiento "Yo mismo me puse en la misma fila que los anteriores."
 
 
-                        mc_pensamiento "Y por último, ese dia, en su cocina."
+                        mc_pensamiento "Y por último, ese día, en su cocina."
                         
                         mc_pensamiento "Estuve escuchándola pedirle a su padre que me echara."
                         
@@ -527,7 +528,7 @@ label beat_casa:
 
                         mc_pensamiento "Si no, pierde la cuenta."
 
-                        mc_pensamiento "Es una chica muy energetica y positiva."
+                        mc_pensamiento "Es una chica muy energética y positiva."
 
                         mc_pensamiento "Siempre intenta verle el lado bueno a las cosas."
 
@@ -569,7 +570,7 @@ label beat_casa:
 
                         mc_pensamiento "Sospecho que se le da mejor leer a la gente de lo que ella misma cree."
 
-                        mc_pensamiento "Si."
+                        mc_pensamiento "Sí."
 
                         mc_pensamiento "Eso es."
 
@@ -581,7 +582,7 @@ label beat_casa:
 
                         mc_pensamiento "¿Así será cuando nadie la ve?"
 
-                        mc_pensamiento "¿O solo es una mascara?"
+                        mc_pensamiento "¿O solo es una máscara?"
 
                         mc_pensamiento "No lo sé." 
 
@@ -613,7 +614,7 @@ label beat_casa:
 
                             mc_pensamiento "Le señalé que el error estaba más atrás, en el segundo paso, sin decirle cuál era."
                             
-                            mc_pensamiento "Ella misma lo encontró y corrigió el ejercicio entera."
+                            mc_pensamiento "Ella misma lo encontró y corrigió el ejercicio entero."
                             
                             mc_pensamiento "No me dio las gracias."
                             
@@ -647,7 +648,7 @@ label beat_casa:
 
                         mc_pensamiento "Ya no le queda ningún sitio donde no tenga que fingir que está bien."
 
-                        mc_pensamiento "Y tampoco se como hacer que se sienta bien"
+                        mc_pensamiento "Y tampoco sé cómo hacer que se sienta bien."
 
                     stop music fadeout 2.0
 

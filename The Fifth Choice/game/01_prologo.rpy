@@ -53,6 +53,7 @@ label prologo:
 
     ## Apertura en silencio a proposito: la entrada de `hogar` sobre el
     ## retrato familiar solo significa algo si antes no sonaba nada.
+
     stop music
     stop ambiente
 
@@ -78,7 +79,7 @@ label prologo:
 
     mc_pensamiento "(Aunque a veces eso no es suficiente para cubrir esta deuda...)" 
 
-    mc_pensamiento "Luego está Raiha, que sin lugar a dudas, merece un futuro mejor que esta pobreza." 
+    mc_pensamiento "Luego está Raiha, que, sin lugar a dudas, merece un futuro mejor que esta pobreza." 
 
     mc_pensamiento "Por eso estudio." 
     
@@ -95,11 +96,11 @@ label prologo:
 
     mc_pensamiento "No es como que me alegre, eso no llenará la nevera."
 
-    narrador "De repente, una voz infantil interrumpió los pensamientos intrusivos de [mc]."
+    narrador "De repente, una voz infantil interrumpió mis pensamientos intrusivos."
 
     raiha "¡Hermanito! ¡Baja a cenar de una vez!"
 
-    mc "Dame un segundo Raiha, ya mismo termino la tarea."
+    mc "Dame un segundo, Raiha, ya mismo termino la tarea."
 
     raiha "¡Llevas media hora con el mismo 'segundo'! ¡Y el curry no va a durar caliente para siempre!"
 
@@ -168,7 +169,7 @@ label prologo:
     show isanari neutral at pj_habla(0.73)
     show raiha regano at pj_calla(0.20)
 
-    isanari "[mc]. Tengo un trabajo para ti."
+    isanari "[mc], tengo un trabajo para ti."
 
     mc "¿Un trabajo? ¿De qué tipo?"
 
@@ -184,7 +185,7 @@ label prologo:
 
     mc_pensamiento "Al escuchar la palabra 'pago', puse la mayor atención posible."
 
-    mc_pensamiento "(No es como que crea que el dinero lo es todo, pero en esta situación que nos encontramos...)"
+    mc_pensamiento "(No es como que crea que el dinero lo es todo, pero en esta situación en la que nos encontramos...)"
 
     mc "¿De cuánto estamos hablando?"
 
@@ -287,7 +288,7 @@ label prologo:
     scene cg_examen
     with fade
 
-    profe "[mc]. Enhorabuena por el examen de práctica. Otra vez el primer lugar."
+    profe "[mc], enhorabuena por el examen de práctica. Otra vez el primer lugar."
 
     mc "Gracias, profesor. Solo mantengo el nivel."
 
@@ -352,7 +353,7 @@ label prologo:
 
     mc "Aprender es un proceso personal."
 
-    mc "Gastar mi tiempo para explicar cosas básicas no tiene sentido para mí."
+    mc "Invertir mi tiempo para explicar cosas básicas no tiene sentido para mí."
 
     mc "Para eso están los profesores."
     
@@ -452,9 +453,13 @@ label prologo:
             with disolucion_lenta
 
             itsuki_inicio "…¿En serio vas a seguir estudiando incluso al terminar las clases?"
+
             mc "El temario del próximo examen no se va a repasar solo."
+
             itsuki_inicio "Qué persona tan agotadora."
+
             mc "Me lo dicen bastante."
+
             itsuki_inicio "No me extraña en lo absoluto."
 
         "Intentar rebajar la tensión.":
@@ -464,11 +469,16 @@ label prologo:
             scene cg_itsuki_azotea
             with fade
 
-            mc "Si te sirve de algo, no fui desagradable por gusto. Solo soy celoso con mi tiempo."
+            mc "Si te sirve de algo, no fui desagradable por gusto. Solo soy celoso de mi tiempo."
+
             itsuki_inicio "Eso no quita que hayas sido un grosero."
+
             mc "Tal vez, pero es la verdad."
+
             itsuki_inicio "…"
+
             itsuki_inicio "Al menos eres honesto..."
+
             mc "Fingir cortesía sería un gasto innecesario de energía."
             
 
@@ -700,7 +710,7 @@ label prologo:
 
     ichika "Vaya, qué frío."
     
-    ichika "Y yo que pensaba que los chicos como tu apreciaban estar con chicas bonitas como nosotras."
+    ichika "Y yo que pensaba que los chicos como tú apreciaban estar con chicas bonitas como nosotras."
 
     show nino at pj_habla(0.75)
     with disolucion_lenta
@@ -732,7 +742,7 @@ label prologo:
 
     yotsuba "¡Digo, claro que sí! ¡Obviamente!"
 
-    mc "Emmm... Gracias supongo..."
+    mc "Emmm... Gracias, supongo..."
     
     mc "Aunque ni siquiera he empezado."
 

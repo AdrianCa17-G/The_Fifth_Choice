@@ -123,7 +123,7 @@ label hub_Nino:
     show nino neutral at pj_habla(0.5)
     with dissolve
 
-    nino "¿Tu?"
+    nino "¿Tú?"
 
     nino "¿Qué haces aquí?"
 
@@ -141,7 +141,7 @@ label hub_Nino:
 
     nino "Eso no te importa."
 
-    narrador "Dio un paso, poniéndose entre yo y la estantería de importados, como si hubiera pisado algo que no me tocaba."
+    narrador "Dio un paso, interponiéndose entre mí y la estantería de productos importados, como si me hubiera acercado a un terreno prohibido."
 
     mc "En tu casa hay despensa." 
     
@@ -161,7 +161,7 @@ label hub_Nino:
     
     narrador "Volvió a mirar las dos cajas de harina, aunque ya había decidido."
 
-    mc "¿Qué dice esta lata?" 
+    mc "¿Qué dice esta caja?" 
     
     mc "No reconozco ni la mitad de las palabras."
 
@@ -194,7 +194,7 @@ label hub_Nino:
 
     narrador "Le costó más terminar esa frase que leer la etiqueta entera."
 
-    mc "¿Por qué a mí me tratas distinto que a ellas?"
+    mc "¿Por qué a mí me tratas de forma distinta que a ellas?"
 
     nino "No te trato distinto."
 
@@ -460,7 +460,7 @@ label nino_m4c:
 
     nino "Todos dicen eso también."
 
-    mc "Entonces qué querías que dijera."
+    mc "¿Entonces qué querías que dijera?"
 
     nino "Nada. Ese es el punto."
 

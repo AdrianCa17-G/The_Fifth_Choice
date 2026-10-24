@@ -97,7 +97,7 @@ label cap1_apertura:
 
         "¿Cómo te tomas su respuesta?"
 
-        "Con la misma frialdad.":
+        "Con la misma frialdad":
 
             mc_pensamiento "¡Bien!"
             
@@ -105,7 +105,7 @@ label cap1_apertura:
 
             mc_pensamiento "No es que necesite su compañía para nada."
 
-        "Con algo de curiosidad.":
+        "Con algo de curiosidad":
 
             mc_pensamiento "Es raro." 
             
@@ -113,7 +113,7 @@ label cap1_apertura:
 
             mc_pensamiento "Como si ya hubiera decidido que no valgo ni para enojarse."
 
-        "Con cierto alivio.":
+        "Con cierto alivio":
 
             mc_pensamiento "Mejor así, la verdad." 
             
@@ -310,7 +310,7 @@ label cap1_apertura:
 
     mc_pensamiento "Yotsuba no está de acuerdo con Nino."
 
-    mc_pensamiento "Pero está obedeciendola, que no es lo mismo."
+    mc_pensamiento "Pero está obedeciéndola, que no es lo mismo."
 
     show ichika sonriendo at pj_habla(0.50)
     show nino at pj_calla(0.20)
@@ -322,9 +322,9 @@ label cap1_apertura:
 
     mc "Contestaron las seis igual de mal."
 
-    ichika "¿Coincidencia?."
+    ichika "¿Coincidencia?"
     
-    ichika "Somos hermanas, pensamos parecido."
+    ichika "Somos quintillizas, pensamos parecido."
 
     mc_pensamiento "Mentía tan bien que casi daba gusto."
 
@@ -347,13 +347,13 @@ label cap1_apertura:
 
     mc "Última pregunta y me voy. La pregunta siete no está en la hoja."
 
-    mc "Veamos que tal les va en inglés"
+    mc "Veamos qué tal les va en inglés."
 
-    narrador "Empezé a leerles una oración"
+    narrador "Empecé a leerles una oración."
 
     mc "«He didn't want to go, but he had to.»"
 
-    narrador" Lo leí a propósito, con el peor acento que pude."
+    narrador "Lo leí a propósito, con el peor acento que pude."
 
     scene bg_departamento_anochecer
     with fade
@@ -438,7 +438,7 @@ label cap1_apertura:
     
     maruo "Supongo que no hace falta que te explique lo que significa."
 
-    mc "Si, no hace falta."
+    mc "Sí, no hace falta."
 
     maruo "¿Y bien?"
 
@@ -628,9 +628,9 @@ label cap1_apertura:
 
     raiha "Entonces no entiendo el problema."
 
-    raiha "Bueno da igual, te deseo mucha suerte hermanito."
+    raiha "Bueno, da igual, te deseo mucha suerte hermanito."
 
-    raiha "¡Se que podrás lidiar con cinco a la vez!"
+    raiha "¡Se qué podrás lidiar con cinco a la vez!"
 
     ############################################################################
     ##  ESCENA 6 · El mapa de las cinco
@@ -644,22 +644,20 @@ label cap1_apertura:
 
     mc "Raiha, espera un segundo."
 
-    show raiha at pj_habla(0.50)
+    show raiha hablando at pj_habla(0.50)
+    with disolucion_lenta
 
     raiha "¿Mm? ¿Qué pasa?"
 
     mc "Tengo una duda algo rara."
     
-    mc "Si tuvieras que adivinar dónde suele estar cada una de esas chicas despues de estudiar, "
+    mc "Si tuvieras que adivinar dónde suele estar cada una de esas chicas después de estudiar."
     
-    mc " ¿por dónde empezarías?"
-
-    show raiha hablando at pj_habla(0.50)
-    with disolucion_lenta
+    mc "¿Por dónde empezarías?"
 
     raiha "¡Eso es fácil hermanito!" 
     
-    raiha "Tú solo cuentame cómo es cada una y yo te digo dónde la buscaría."
+    raiha "Tú solo cuéntame cómo es cada una y yo te digo dónde la buscaría."
 
     raiha "¡Como un juego de adivinanzas!"
 
@@ -692,7 +690,7 @@ label cap1_apertura:
 
                 mc_pensamiento "Actuación... o pereza disfrazada de actuación." 
 
-                mc "¡Si! Probablemente ahí hace sus audiciones."
+                mc "¡Sí! Probablemente ahí hace sus audiciones."
                 
                 mc "Bien. Anotado."
 
@@ -714,7 +712,7 @@ label cap1_apertura:
                 
                 raiha "Es como yo, pero enojona."
 
-                raiha "Con esa actitud de jefa, seguro anda revisando que no falte nada en casa...." 
+                raiha "Con esa actitud de jefa, seguro anda revisando que no falte nada en casa..." 
                 
                 raiha "Capaz la encuentras en el 
                 {color=#9B6FB8}{b}centro comercial{/b}{/color}, comprando lo que las demás olvidaron."
@@ -814,8 +812,6 @@ label cap1_apertura:
         if len(hermanas_ubicadas) < 5:
             jump cap1_adivinanza_hermanas
 
-    show raiha at pj_habla(0.50)
-
     raiha "¡Ya está!" 
     
     raiha "Cinco hermanas, cinco escondites." 
@@ -874,7 +870,7 @@ label cap1_apertura:
 
     mc_pensamiento "Y no en su casa, donde se cubren entre ellas."
 
-    mc_pensamiento" Donde cada una esté sola."
+    mc_pensamiento "Donde cada una esté sola."
 
     narrador "Apagué la lámpara."
 
@@ -883,10 +879,10 @@ label cap1_apertura:
 
     narrador "Treinta días."
 
-    narrador "Se que puedo lograrlo."
+    narrador "Se qué puedo lograrlo."
 
-    narrador "Lograr que aprueben sus examenes."
+    narrador "Lograr que aprueben sus exámenes."
 
-    narrador "Si, asi será."
+    narrador "Sí, así será."
 
     jump cap1_interconexion_1

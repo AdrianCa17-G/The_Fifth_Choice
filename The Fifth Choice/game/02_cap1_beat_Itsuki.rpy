@@ -162,9 +162,9 @@ label beat_Itsuki:
 
     play music tregua fadein 1.5 fadeout 2.0
 
-    narrador "El viento seguía sonando igual que siempre aquí arriba, pero por debajo empezó a sonar algo más..."
+    narrador "El viento seguía soplando igual que siempre aquí arriba, pero por debajo de él comenzó a percibirse otra cosa... "
 
-    narrador "Bajo, casi nada."
+    narrador "Un sonido tenue, casi imperceptible."
 
     itsuki "¿Vas a preguntarme por qué lo traje?"
 
@@ -252,9 +252,9 @@ label beat_Itsuki:
 
             itsuki "Habla por ti." 
 
-            itsuki "Yo si me estoy esforzando en resolver estos ejercicios"
+            itsuki "Yo sí me estoy esforzando en resolver estos ejercicios."
 
-            itsuki "A comparación tuya..."
+            itsuki "En comparación contigo..."
 
             mc "Tienes el cuaderno cerrado hace diez minutos."
 
@@ -309,7 +309,7 @@ label beat_Itsuki:
 
     mc_pensamiento "Quedan casi tres semanas."
 
-    mc_pensamiento "Ella la va a pasar igual que hoy:" 
+    mc_pensamiento "Ella lo pasará exactamente igual que hoy: " 
     
     mc_pensamiento "Sola, con un cuaderno que no necesita, en el único sitio que le quedaba para no estarlo del todo."
 

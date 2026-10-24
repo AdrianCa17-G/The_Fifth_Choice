@@ -101,7 +101,7 @@ label reaccion_ichika:
 
         ichika "El dragón ya tiene nombre." 
 
-        ichika "Se llama Contrato."
+        ichika "Se llama «Contrato»."
 
         mc "Qué sutil."
 
@@ -121,7 +121,7 @@ label reaccion_ichika:
 
         mc_pensamiento "Ichika... Lo que te dije ayer."
 
-        mc_pensamiento "No sé que decirle."
+        mc_pensamiento "No sé qué decirle."
 
         mc "¿Qué tienes planeado hacer hoy?"
 
@@ -158,7 +158,7 @@ label reaccion_nino:
         show nino neutral at pj_habla(0.5)
         with dissolve
 
-        nino "Oye tu."
+        nino "Oye, tú."
 
         nino "Ni una palabra a mis hermanas de lo que pasó."
 
@@ -169,7 +169,7 @@ label reaccion_nino:
 
         nino "Bien. …Y come algo antes de clases."
 
-        nino "Tienes cara de no haber desayunado."
+        nino "Tienes la peor cara de no haber desayunado en semanas."
 
         mc "¿Eso es preocupación?"
 
@@ -284,7 +284,7 @@ label reaccion_miku:
 
         miku "…Gracias por leerlo."
 
-        miku "...Significa mucho para mi [mc]."
+        miku "...Significa mucho para mí, [mc]."
 
         show miku at pj_calla(0.5)
         with disolucion_lenta
@@ -367,9 +367,9 @@ label reaccion_yotsuba:
 
         yotsuba "Nadie me había dicho algo así sin pedirme que sonriera."
 
-        yotsuba "Tu entendiste lo que en verdad siento por dentro."
+        yotsuba "Tú entendiste lo que en verdad siento por dentro."
 
-        yotsuba "No solo lo que reflejo a los demas."
+        yotsuba "No solo lo que reflejo a los demás."
 
         show yotsuba sonriendo at pj_habla(0.5)
         with disolucion_lenta
@@ -1235,7 +1235,7 @@ label interconexion_2:
     scene bg_cuarto_mc
     with fade
 
-    narrador "Llegué a mi habitación" 
+    narrador "Llegué a mi habitación." 
     
     narrador "No abrí la libreta. Ya sabía lo que decía."
 
@@ -1344,7 +1344,7 @@ label interconexion_2:
     hide raiha
     with moveoutleft
 
-    narrador "Salí de casa y fuí al instituto."
+    narrador "Salí de casa y fui al instituto."
 
     ############################################################################
     ##  Instituto
@@ -1387,7 +1387,7 @@ label interconexion_2:
             show nino neutral at pj_habla(0.5)
             with dissolve
 
-            nino "¿Qué le hiziste a [nombre_h]?"
+            nino "¿Qué le hiciste a [nombre_h]?"
 
             nino "No paró de decir tu nombre anoche."
 
@@ -1495,7 +1495,7 @@ label interconexion_2:
 
             nino "Se encerró en su cuarto con una mirada perdida."
 
-            nino "Toqué su puerta para ver como estaba."
+            nino "Toqué su puerta para ver cómo estaba."
 
             nino "Dijo que estaba bien. Lo dijo tres veces."
 
@@ -1610,7 +1610,7 @@ label interconexion_3:
 
     narrador "Los días siguientes se me fueron entre clases, las tutorías y sueño atrasado."
 
-    narrador "Para cuando levanté la cabeza, ya habían pasadon 10 días."
+    narrador "Para cuando levanté la cabeza, habían pasadon 10 días."
 
     stop music fadeout 1.0
 
@@ -1778,7 +1778,7 @@ label interconexion_4:
 
         mc_pensamiento "Dormí. No sé si eso es buena o mala señal."
 
-        mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en que pensar"
+        mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en qué pensar"
 
         mc_pensamiento "Parece que no avanzamos nada, ni tampoco retorcedimos."
 
@@ -1834,7 +1834,7 @@ label interconexion_4:
 
             mc_pensamiento "Seguro me andan humillando de la peor manera posible."
 
-            mc_pensamiento "O inventandome apodos tontos."
+            mc_pensamiento "O inventándome apodos tontos."
 
             mc_pensamiento "Solo espero no lo publiquen en algún lado."
 
@@ -2271,7 +2271,7 @@ label interconexion_5:
 
             mc_pensamiento "Las fechas de los exámenes nunca se retrasan cuando de verdad te hace falta."
 
-            mc_pensamiento "Lo que mas me preocupa es como saldrán esas cinco."
+            mc_pensamiento "Lo que más me preocupa es cómo saldrán esas cinco."
 
         "Pelarme los dedos contando los días que quedan.":
 
@@ -2298,7 +2298,7 @@ label interconexion_5:
 
     narrador "Las cinco ya estaban en sus sitios."
 
-    narrador "Raro en ellas, parece que el peso de los examenes las está haciendose preocupar."
+    narrador "Raro en ellas, parece que el peso de los exámenes las está haciendose preocupar."
 
     stop music fadeout 1.0
 
@@ -2727,7 +2727,7 @@ label interconexion_6:
     scene cg_libreta
     with fade
 
-    narrador "Llegue a mi habitación y fuí directamente a mi escritorio."
+    narrador "Llegué a mi habitación y fuí directamente a mi escritorio."
 
     narrador "Agarré la libreta y la abrí por primera vez en semanas."
 
@@ -2749,7 +2749,7 @@ label interconexion_6:
 
     elif rama_hub == "tibia":
         
-        mc_pensamiento "No se si dormiré."
+        mc_pensamiento "No sé si dormiré."
 
         mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en que pensar"
 
@@ -2789,7 +2789,7 @@ label interconexion_6:
 
         mc_pensamiento "No quiero ni imaginar la cara que pondrán Raiha y mi padre."
 
-        mc_pensamiento "Todo por mis pesimas decisiones."
+        mc_pensamiento "Todo por mis pésimas decisiones."
 
     elif maruo_ultimatum:
 
@@ -2835,7 +2835,7 @@ label interconexion_6:
 
     mc_pensamiento "Los examenes son muy pronto, pero eso no es nada complicado."
 
-    mc_pensamiento "Para mi obviamente, ahora hablando de esas chicas..."
+    mc_pensamiento "Para mí, obviamente. Ahora hablando de esas chicas..."
 
     mc_pensamiento "Cierto, tengo que ir al aula."
 
@@ -2965,9 +2965,9 @@ label interconexion_6:
 
         mc "Gracias Nino, por el cumplido."
 
-        mc "Viniendo de tí, es porque en verdad hize un buen trabajo."
+        mc "Viniendo de ti, es porque en verdad hice un buen trabajo."
 
-        narrador "Se voltéo con la cara sonrojada."
+        narrador "Se volteó con la cara sonrojada."
 
         show nino pillada at pj_habla(X_NINO)
         with disolucion_lenta
@@ -3034,9 +3034,9 @@ label interconexion_6:
 
     itsuki "Nadie. Pero alguien tiene que decirlo."
 
-    itsuki "Y todas pensabamos lo mismo, ¿no?"
+    itsuki "Y todas pensábamos lo mismo, ¿no?"
 
-    itsuki "Somos quintillizas despues de todo."
+    itsuki "Somos quintillizas después de todo."
 
     show itsuki neutral at pj_calla(X_ITSUKI)
     with disolucion_lenta
@@ -3057,7 +3057,7 @@ label interconexion_6:
         show yotsuba incomoda at pj_habla(X_YOTSUBA)
         with disolucion_lenta
 
-        yotsuba "En verdad te lo agradezemos mucho."
+        yotsuba "En verdad te lo agradecemos mucho."
 
         show yotsuba at pj_calla(X_YOTSUBA)
         show itsuki neutral at pj_habla(X_ITSUKI)
@@ -3268,7 +3268,7 @@ label interconexion_6:
 
             maruo "Te dije que no repetiría la advertencia."
 
-            maruo "El lunes lo confirmo."
+            maruo "En el transcurso de la semana confirmaré mi decisión."
 
             narrador "Se fue sin esperar respuesta." 
             
@@ -3382,7 +3382,7 @@ label interconexion_6:
 
     mc_pensamiento "Les mandaré un mensaje de motivación."
 
-    mc_pensamiento "No se que decirles. Me haré un ritual de autohumillación."
+    mc_pensamiento "No sé qué decirles. Me haré un ritual de autohumillación."
 
     menu:
 
@@ -3448,7 +3448,7 @@ label interconexion_6:
 
         mc_pensamiento "Solo que no es la que uno quiere."
 
-        mc_pensamiento "Ni siquiera se tomaron la molestía en contestarme"
+        mc_pensamiento "Ni siquiera se tomaron la molestia en contestarme"
 
         mc_pensamiento "Bueno, no es que me sorprenda, están completamente decepcionadas de mí."
 
