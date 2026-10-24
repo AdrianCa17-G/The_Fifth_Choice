@@ -21,12 +21,14 @@ define GALERIA = [
         ("cg_cinco_estudiando", "Mesa de estudio"),
         ("cg_cinco_repasando", "Repaso final"),
         ("cg_raiha_correccion", "Raiha corrige"),
+        ("cg_maruo_espaldas", "Dándome la espalda"),
     ]),
     ("ichika", "Ichika", "ichika", [
         ("cg_ichika_puerta", "Bienvenido"),
         ("cg_ichika_ensayo", "Sala de ensayo"),
         ("cg_ichika_desarmada", "Sin máscara"),
         ("cg_ichika_mascara", "La máscara"),
+        ("cg_ichika_fracaso", "La función"),
     ]),
     ("nino", "Nino", "nino", [
         ("cg_nino_pasillo", "Ni una semana"),
@@ -35,18 +37,21 @@ define GALERIA = [
         ("cg_nino_llamada", "La llamada"),
         ("cg_nino_confrontacion_cocina", "La discusión"),
         ("cg_nino_grieta_cocina", "La grieta"),
+        ("cg_nino_fracaso", "Revisando"),
     ]),
     ("miku", "Miku", "miku", [
         ("cg_miku_sofa", "Logística"),
         ("cg_miku_biblioteca", "Biblioteca"),
         ("cg_miku_estudio", "El temario"),
         ("cg_miku_sorpresa", "Sorpresa"),
+        ("cg_miku_fracaso", "La goma"),
     ]),
     ("yotsuba", "Yotsuba", "yotsuba", [
         ("cg_yotsuba_corriendo", "Bienvenido"),
         ("cg_yotsuba_pista", "Vuelta veinte"),
         ("cg_yotsuba_rotulador", "El rotulador"),
         ("cg_yotsuba_despedida", "Una vuelta más"),
+        ("cg_yotsuba_fracaso", "Mirando a las demás"),
     ]),
     ("itsuki", "Itsuki", "itsuki", [
         ("cg_itsuki_sentada", "Mi asiento"),
@@ -58,6 +63,7 @@ define GALERIA = [
         ("cg_itsuki_atascada", "Atascada"),
         ("cg_itsuki_contraida", "Encogida"),
         ("cg_itsuki_reto", "La mirada"),
+        ("cg_itsuki_fracaso", "El mismo error"),
     ]),
 ]
 
@@ -71,7 +77,7 @@ define FINALES_PISTAS = {
 
 ## (clave, título, pista, color)
 define FINALES_ESPECIALES = [
-    ("temprano", "Despido temprano", "Tres puertas cerradas en el primer mes.", "#9AA7A8"),
+    ("temprano", "Despido temprano", "Decir que no cada vez que pudiste decir que sí.", "#9AA7A8"),
     ("malo", "Despedida", "Estar cerca de todas, y no llegar a ninguna.", "#C0504D"),
     ("secreto", "Final secreto", "Cinco caminos, un solo estudiante completo.", "#F4D03F"),
 ]

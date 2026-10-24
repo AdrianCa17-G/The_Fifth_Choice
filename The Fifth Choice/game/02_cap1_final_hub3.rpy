@@ -1,3 +1,19 @@
+################################################################################
+##  CGs PROPIOS DEL FINAL MALO TRAS BEAT CASA
+##  Son 5 CGs nuevos, cada 1 de cada quintilliza, todas han fracasado en sus
+##  examenes, cada CG muestra la faceta de fracaso de cada hermana.
+################################################################################
+
+image cg_ichika_fracaso = "images/cg/cap1_final_malo/ichika_fracaso.webp"
+
+image cg_nino_fracaso = "images/cg/cap1_final_malo/nino_fracaso.webp"
+
+image cg_miku_fracaso = "images/cg/cap1_final_malo/miku_fracaso.webp"
+
+image cg_yotsuba_fracaso = "images/cg/cap1_final_malo/yotsuba_fracaso.webp"
+
+image cg_itsuki_fracaso = "images/cg/cap1_final_malo/itsuki_fracaso.webp"
+
 ############################################################################
 ##  DESPIDO TRAS HUB 3
 ##  Tras desperdiciar una segunda oportunidad, las quintillizas reflejan
@@ -67,6 +83,10 @@ label final_malo_hub3:
 
     mc_pensamiento "Ellas saben que desperdiciamos todo este mes, y que no progresamos nada."
 
+    show ichika neutral at pj_calla(X_ICHIKA)
+    show nino neutral at pj_calla(X_NINO)
+    show miku neutral at pj_calla(X_MIKU)
+    show itsuki neutral at pj_calla(X_ITSUKI)
     show yotsuba at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
@@ -78,6 +98,7 @@ label final_malo_hub3:
     
     yotsuba "Cuando cierro el libro, no recuerdo qué sentía nadie."
 
+    show yotsuba at pj_calla(X_YOTSUBA)
     show ichika neutral at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
@@ -87,6 +108,7 @@ label final_malo_hub3:
 
     ichika "No me mires así. Ya sé que no era lo que tocaba."
 
+    show ichika at pj_calla(X_ICHIKA)
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
@@ -94,6 +116,17 @@ label final_malo_hub3:
 
     miku "…Pero no estoy segura si estaré en lo correcto."
 
+    show miku at pj_calla(X_MIKU)
+    show itsuki molesta at pj_habla(X_ITSUKI)
+    with disolucion_lenta
+
+    itsuki "He estudiado más que nadie en esta aula. Cada noche."
+
+    itsuki "Y no sé si me sé una sola cosa."
+
+    itsuki "Quisiera poder culparte. Sería más fácil."
+
+    show itsuki at pj_calla(X_ITSUKI)
     show nino neutral at pj_habla(X_NINO)
     with disolucion_lenta
 
@@ -105,14 +138,11 @@ label final_malo_hub3:
 
     nino "Aunque no sea solo culpa tuya. Eso no cambia que no sirvió."
 
-    show itsuki molesta at pj_habla(X_ITSUKI)
+    show ichika neutral at pj_habla(X_ICHIKA)
+    show miku neutral at pj_habla(X_MIKU)
+    show yotsuba incomoda at pj_habla(X_YOTSUBA)
+    show itsuki at pj_habla(X_ITSUKI)
     with disolucion_lenta
-
-    itsuki "He estudiado más que nadie en esta aula. Cada noche."
-
-    itsuki "Y no sé si me sé una sola cosa."
-
-    itsuki "Quisiera poder culparte. Sería más fácil."
 
     narrador "Me miraron las cinco. Esperando que les dijera algo."
 
@@ -160,7 +190,8 @@ label final_malo_hub3:
     
     narrador "Examen de japonés." 
 
-    ##[CG NUEVO — cg_examen_yotsuba]
+    scene cg_yotsuba_fracaso
+    with fade
 
     narrador "Las cinco lo hacían a la vez; yo solo podía mirar a una."
 
@@ -197,9 +228,12 @@ label final_malo_hub3:
     
     narrador "Examen de matemáticas."
 
+    play sound sfx_hoja volume 2.0
+
     ## 3.2 · Martes · Matemáticas · Ichika
 
-    ##[CG NUEVO — cg_examen_ichika]
+    scene cg_ichika_fracaso
+    with fade
 
     narrador "Las cinco lo hacían a la vez; yo solo podía mirar a una."
 
@@ -237,7 +271,7 @@ label final_malo_hub3:
 
     narrador "Nadie se rió. El profesor tampoco."
 
-    profe "Pensando se piensa con los ojos abiertos."
+    profe "Se piensa con los ojos abiertos."
 
     ichika "Lo siento..."
 
@@ -250,9 +284,12 @@ label final_malo_hub3:
     
     narrador "Examen de inglés."
 
+    play sound sfx_hoja volume 2.0
+
     ## 3.3 · Miércoles · Inglés · Nino
 
-    ##[CG NUEVO — cg_examen_nino]
+    scene cg_nino_fracaso
+    with fade
 
     narrador "Las cinco lo hacían a la vez; yo solo podía mirar a una."
 
@@ -299,8 +336,12 @@ label final_malo_hub3:
     
     narrador "Examen de Ciencias."
 
+    play sound sfx_hoja volume 2.0
+
     ## 3.4 · Jueves · Ciencias · Itsuki
-    ##[CG NUEVO — cg_examen_itsuki]
+
+    scene cg_itsuki_fracaso
+    with fade
 
     narrador "Las cinco lo hacían a la vez; yo solo podía mirar a una."
 
@@ -341,8 +382,12 @@ label final_malo_hub3:
     
     narrador "Examen de Sociales."
 
+    play sound sfx_hoja volume 2.0
+
     ## 3.5 · Viernes · Sociales · Miku
-    ##[CG NUEVO — cg_examen_miku]
+    
+    scene cg_miku_fracaso
+    with fade
 
     narrador "Las cinco lo hacían a la vez; yo solo podía mirar a una."
 
@@ -418,6 +463,10 @@ label final_malo_hub3:
 
     mc "Soy un fracaso."
 
+    show ichika neutral at pj_calla(X_ICHIKA)
+    show nino neutral at pj_calla(X_NINO)
+    show miku neutral at pj_calla(X_MIKU)
+    show itsuki neutral at pj_calla(X_ITSUKI)
     show yotsuba at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
@@ -437,6 +486,7 @@ label final_malo_hub3:
 
     yotsuba "No me digas que no es mi culpa."
 
+    show yotsuba at pj_calla(X_YOTSUBA)
     show ichika agotada at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
@@ -452,6 +502,7 @@ label final_malo_hub3:
 
     mc "Ichika..."
 
+    show ichika at pj_calla(X_ICHIKA)
     show miku encogida at pj_habla(X_MIKU)
     with disolucion_lenta
 
@@ -467,6 +518,7 @@ label final_malo_hub3:
 
     miku "...Lo único en lo que si tengo confianza."
 
+    show miku at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
@@ -480,6 +532,7 @@ label final_malo_hub3:
 
     mc "Itsuki... Yo..."
 
+    show itsuki at pj_calla(X_ITSUKI)
     show nino neutral at pj_habla(X_NINO)
     with disolucion_lenta
 
@@ -493,6 +546,9 @@ label final_malo_hub3:
 
     nino "No sé de qué hablas."
 
+    show nino neutral at pj_calla(X_NINO)
+    with disolucion_lenta
+
     mc_pensamiento "Un mes." 
     
     mc_pensamiento "Y mi única contribución había sido sentarme a mirar."
@@ -502,6 +558,13 @@ label final_malo_hub3:
     mc_pensamiento "Y ninguna me había enseñado."
 
     mc_pensamiento "Yo tampoco hice el esfuerzo de haberles preguntado."
+
+    hide ichika 
+    hide nino 
+    hide miku 
+    hide yotsuba 
+    hide itsuki
+    with disolucion_lenta 
 
     ############################################################################
     ##  MOVIMIENTO 5 · Noche en casa (todavía no lo saben)
@@ -610,7 +673,8 @@ label final_malo_hub3:
 
     mc_pensamiento "Lo sabía. La que se quedó hasta la campana."
 
-    ##[CG cg_maruo_espaldas] 
+    scene cg_maruo_espaldas
+    with fade 
 
     maruo "Te advertí en esa cocina que no repetiría la advertencia. Y no la repetí."
 

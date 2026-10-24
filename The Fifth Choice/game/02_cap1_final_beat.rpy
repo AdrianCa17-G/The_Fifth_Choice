@@ -1,5 +1,13 @@
+################################################################################
+##  CGs PROPIOS DEL FINAL MALO TRAS BEAT NINO
+##  Es únicamente un nuevo CG, es el de Maruo dandole la espalda a mc y
+##  retirandose, este CG se reusa en ambos finales del juego
+################################################################################
+
+image cg_maruo_espaldas = "images/cg/cap1_final_malo/maruo_espaldas.webp"
+
 ############################################################################
-##  DESPIDO TRAS BEAT 1
+##  DESPIDO TRAS BEAT 2
 ##  Despido directo en el beat (Cocina): Maruo despide al MC de forma 
 ##  inmediata y fría tras una fuerte discusión, provocando la profunda 
 ############################################################################
