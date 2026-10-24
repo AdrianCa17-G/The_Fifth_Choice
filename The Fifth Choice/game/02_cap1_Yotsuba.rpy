@@ -5,18 +5,18 @@
 ##  nuevos sprites que se definen en 00_definiciones
 ################################################################################
 
-image bg_pista_atletismo = "images/bg/hubs_hermanas/pista_atletismo.webp"
+image bg_pista_atletismo = "images/bg/cap1_hubs/pista_atletismo.webp"
 
 image bg_pista_atletismo_anochecer = Transform(
-    "images/bg/hubs_hermanas/pista_atletismo.webp",
+    "images/bg/cap1_hubs/pista_atletismo.webp",
     matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
 )
 
-image cg_yotsuba_pista = "images/cg/hubs_hermanas/yotsuba_pista.webp"
+image cg_yotsuba_pista = "images/cg/cap1_hubs/yotsuba_pista.webp"
     
-image cg_yotsuba_rotulador = "images/cg/hubs_hermanas/yotsuba_rotulador.webp"
+image cg_yotsuba_rotulador = "images/cg/cap1_hubs/yotsuba_rotulador.webp"
     
-image cg_yotsuba_despedida = "images/cg/hubs_hermanas/yotsuba_despedida.webp"
+image cg_yotsuba_despedida = "images/cg/cap1_hubs/yotsuba_despedida.webp"
     
 ################################################################################
 ##  HUB DE YOTSUBA

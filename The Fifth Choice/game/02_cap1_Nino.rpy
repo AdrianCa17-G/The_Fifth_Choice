@@ -5,18 +5,18 @@
 ##  nuevo sprites que se define en 00_definiciones
 ################################################################################
 
-image bg_centro_comercial = "images/bg/hubs_hermanas/centro_comercial.webp"
+image bg_centro_comercial = "images/bg/cap1_hubs/centro_comercial.webp"
 
 image bg_centro_comercial_anochecer = Transform(
-    "images/bg/hubs_hermanas/centro_comercial.webp",
+    "images/bg/cap1_hubs/centro_comercial.webp",
     matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
 )
 
-image cg_nino_centro_comercial = "images/cg/hubs_hermanas/nino_centro_comercial.webp"
+image cg_nino_centro_comercial = "images/cg/cap1_hubs/nino_centro_comercial.webp"
 
-image cg_nino_receta = "images/cg/hubs_hermanas/nino_receta.webp"
+image cg_nino_receta = "images/cg/cap1_hubs/nino_receta.webp"
 
-image cg_nino_llamada = "images/cg/hubs_hermanas/nino_llamada.webp"
+image cg_nino_llamada = "images/cg/cap1_hubs/nino_llamada.webp"
 
 ################################################################################
 ##  HUB DE NINO

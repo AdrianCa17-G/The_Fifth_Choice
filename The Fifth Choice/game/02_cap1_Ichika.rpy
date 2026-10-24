@@ -4,18 +4,18 @@
 ##  el hub reutiliza son los sprites existentes de Ichika, más dos nuevos.
 ################################################################################
 
-image bg_sala_ensayo = "images/bg/hubs_hermanas/sala_ensayo.webp"
+image bg_sala_ensayo = "images/bg/cap1_hubs/sala_ensayo.webp"
 
 image bg_sala_ensayo_anochecer = Transform(
-    "images/bg/hubs_hermanas/sala_ensayo.webp",
+    "images/bg/cap1_hubs/sala_ensayo.webp",
     matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
 )
 
-image cg_ichika_ensayo = "images/cg/hubs_hermanas/ichika_ensayo.webp"
+image cg_ichika_ensayo = "images/cg/cap1_hubs/ichika_ensayo.webp"
 
-image cg_ichika_desarmada = "images/cg/hubs_hermanas/ichika_desarmada.webp"
+image cg_ichika_desarmada = "images/cg/cap1_hubs/ichika_desarmada.webp"
 
-image cg_ichika_mascara = "images/cg/hubs_hermanas/ichika_mascara.webp"
+image cg_ichika_mascara = "images/cg/cap1_hubs/ichika_mascara.webp"
 
 ################################################################################
 ##  HUB DE ICHIKA

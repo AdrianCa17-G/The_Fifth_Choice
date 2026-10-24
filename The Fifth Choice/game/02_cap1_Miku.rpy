@@ -5,18 +5,18 @@
 ##  nuevos sprites que se definen en 00_definiciones
 ################################################################################
 
-image bg_biblioteca = "images/bg/hubs_hermanas/biblioteca.webp"
+image bg_biblioteca = "images/bg/cap1_hubs/biblioteca.webp"
 
 image bg_biblioteca_anochecer = Transform(
-    "images/bg/hubs_hermanas/biblioteca.webp",
+    "images/bg/cap1_hubs/biblioteca.webp",
     matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
 )
 
-image cg_miku_biblioteca = "images/cg/hubs_hermanas/miku_biblioteca.webp"
+image cg_miku_biblioteca = "images/cg/cap1_hubs/miku_biblioteca.webp"
 
-image cg_miku_estudio = "images/cg/hubs_hermanas/miku_estudio.webp"
+image cg_miku_estudio = "images/cg/cap1_hubs/miku_estudio.webp"
 
-image cg_miku_sorpresa = "images/cg/hubs_hermanas/miku_sorpresa.webp"
+image cg_miku_sorpresa = "images/cg/cap1_hubs/miku_sorpresa.webp"
 
 
 ################################################################################

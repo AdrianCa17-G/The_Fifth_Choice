@@ -5,18 +5,18 @@
 ##  se usó en la apertura
 ################################################################################
 
-image bg_aula_tarde = "images/bg/hubs_hermanas/aula_tarde.webp"
+image bg_aula_tarde = "images/bg/cap1_hubs/aula_tarde.webp"
 
 image bg_aula_anochecer = Transform(
-    "images/bg/hubs_hermanas/aula_tarde.webp",
+    "images/bg/cap1_hubs/aula_tarde.webp",
     matrixcolor = BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0")
 )
 
-image cg_itsuki_atascada = "images/cg/hubs_hermanas/itsuki_atascada.webp"
+image cg_itsuki_atascada = "images/cg/cap1_hubs/itsuki_atascada.webp"
 
-image cg_itsuki_contraida = "images/cg/hubs_hermanas/itsuki_contraida.webp"
+image cg_itsuki_contraida = "images/cg/cap1_hubs/itsuki_contraida.webp"
 
-image cg_itsuki_reto = "images/cg/hubs_hermanas/itsuki_reto.webp"
+image cg_itsuki_reto = "images/cg/cap1_hubs/itsuki_reto.webp"
 
 
 ################################################################################
