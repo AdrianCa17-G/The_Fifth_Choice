@@ -16,7 +16,7 @@ image cg_yotsuba_pista = "images/cg/cap1_hubs/yotsuba_pista.webp"
     
 image cg_yotsuba_rotulador = "images/cg/cap1_hubs/yotsuba_rotulador.webp"
     
-image cg_yotsuba_despedida = "images/cg/cap1_hubs/yotsuba_despedida.webp"
+image cg_yotsuba_cronometro = "images/cg/cap1_hubs/yotsuba_cronometro.webp"
     
 ################################################################################
 ##  HUB DE YOTSUBA
@@ -253,20 +253,28 @@ label hub_Yotsuba:
 
     yotsuba "¡Soy más rápida cuando alguien mira!"
 
+    narrador "Sacó un cronómetro del bolsillo de la falda y lo balanceó de su cordón."   
+
     mc_pensamiento "Cambió de tema."
 
     mc_pensamiento "Lo hizo tan rápido y con tanta energía que casi no lo noté."
 
     narrador "Dio un par de saltos en el sitio, sacudiendo los brazos, "
-    
+
     narrador " como si con eso pudiera sacudirse también lo que acababa de decir."
 
     yotsuba "¡Vamos, no hay tiempo que perder! ¡El sol no espera!"
 
-    show yotsuba  at pj_calla(0.5)
-    with disolucion_lenta
+    scene cg_yotsuba_cronometro
+    with dissolve
+
+    narrador "Y entonces se quedó quieta, con el puño en alto y el cronómetro colgando."
+
+    narrador "Ella seguía ahí, con el cronómetro en alto, esperando que lo tomara."
+
+    narrador "El sol llevaba rato escondido tras las nubes." 
     
-    narrador "El sol ya se había ido hacía rato; solo quedaba la luz naranja de emergencia."
+    narrador "Solo quedaba la luz naranja de emergencia."   
 
     stop music fadeout 1.5
 
@@ -277,18 +285,34 @@ label hub_Yotsuba:
     narrador "En lo que había dicho, y en lo que no."
 
     mc_pensamiento "'Yo corro y animo'"
-    
+
     mc_pensamiento "Como si fuera un puesto que le tocó por descarte, no algo que eligió."
+
+    yotsuba "¿Qué pasa? ¡Que el cronómetro no muerde!"   
+
+    narrador "En el brazo aún quedaba una mancha gris." 
+    
+    narrador "Lo único que no había conseguido borrar."   
 
     mc_pensamiento "Podía dejarlo pasar. Cronometrarla y ya."
 
-    mc_pensamiento "O podía decir algo que quizás le gustara haber oído."
+    yotsuba "¿[mc]? Parece que estás pensando en qué decir, ¿verdad?"  
+
+    narrador "La sonrisa se le torció un instante."    
+
+    narrador "Después volvió a sonreir nuevamente, como si nada."  
+
+    narrador "Ella seguía ahí, con el brazo estirado esperando que tomara el cronómetro, "
+
+    narrador " la sonrisa firme en su sitio."
+
+    scene bg_pista_atletismo
+    with fade
+
+    show yotsuba sonriendo at pj(0.5)
+    with dissolve
 
     play music descubrimiento fadein 2.0
-
-    narrador "Ella seguía ahí, con el brazo estirado esperando que le devolviera el cronómetro, "
-    
-    narrador " la sonrisa firme en su sitio."
 
     mc_pensamiento "Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacía por dentro, "
 
@@ -308,7 +332,7 @@ label hub_Yotsuba:
 
         narrador "¿Cómo le ayudarías a sentirse mejor?"
 
-        "Tú vales tanto como cualquiera de tus hermanas":
+        "Tú vales tanto como cualquiera de tus hermanas.":
             jump yotsuba_m4a
 
         "Claro, dame el cronómetro.":
@@ -547,7 +571,7 @@ label yotsuba_m4c:
 
 label yotsuba_m5:
 
-    scene cg_yotsuba_despedida
+    scene cg_yotsuba_pista
     with fade
 
     narrador "Recogí mis cosas y caminé hacia la salida del graderío."

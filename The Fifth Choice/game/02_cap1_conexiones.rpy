@@ -2681,7 +2681,7 @@ label interconexion_5:
         
         mc_pensamiento "Pero la confianza también se acaba."
 
-    mc_pensamiento "Pero ya no puedo seguir dudando."
+        mc_pensamiento "Pero ya no puedo seguir dudando."
 
     jump hub_3
 
@@ -3290,7 +3290,7 @@ label interconexion_6:
             
             narrador "Pero tardó un segundo de más en irse."
 
-            maruo "No te confíes. El examen es el lunes."
+            maruo "No te confíes. Los exámenes empiezan la siguiente semana."
 
             mc_pensamiento "Viniendo de él, eso casi era un aplauso."
 
@@ -3338,19 +3338,109 @@ label interconexion_6:
 
         narrador "Terminamos pasadas las seis. Nadie quería ser la primera en irse."
 
-        narrador "Parece que todas disfrutaron de esta sesión de estudio."
+        narrador "Yotsuba llevaba diez minutos diciendo que era su última pregunta."
 
-        narrador "O más bien parece que me han aceptado como su tutor."
+        yotsuba "¡Una más! ¡Pero esta sí es la última! ¡Palabra de atleta!"
+
+        mc "Esa ya la dijiste tres veces."
+
+        yotsuba "¡Y las tres iba en serio!"
+
+        narrador "Ichika se estiró y soltó un bostezo de verdad. No de actuación."
+
+        narrador "Y, por primera vez, no dijo que el estrés le arruinaba la piel."
+
+        narrador "Nino e Itsuki seguían comparando respuestas. Ya no discutían. Se corregían."
+
+        nino "Tu tercer paso estaba bien. La que no lo había entendido era yo."
+
+        itsuki "…Gracias."
+
+        narrador "Lo dijo tan bajito que Nino fingió no oírlo."
+
+        narrador "Miku fue la última en guardar el libro. Antes de irse se detuvo en la puerta."
+
+        miku "…Fue una buena tarde."
+
+        mc "Lo fue."
+
+        narrador "Lo dijo sin subirse los audífonos. Y sin pedir perdón después."
+
+        mc_pensamiento "Parecía que, por fin, me habían aceptado como su tutor."
+
+        mc_pensamiento "O, al menos, habían dejado de intentar echarme."
+
+        mc_pensamiento "Un mes atrás habría pagado por una tarde así. Y no habría creído que existía."
+
+    elif clima_cap1 == "mixta":
+
+        narrador "Terminamos pasadas las seis. Nadie se fue corriendo, pero nadie se quedó de más."
+
+        narrador "Ichika recogió sus cosas todavía medio dormida y se despidió con la mano. Sin chiste."
+
+        narrador "En ella, una despedida sin chiste ya era noticia."
+
+        narrador "Nino se fue sin decirme nada." 
+        
+        narrador "Pero la hoja de Yotsuba, que había quedado sobre la mesa, tenía tres correcciones con su letra."
+
+        yotsuba "¡Mañana seguiremos! ¡Y será mejor!"
+
+        narrador "Lo dijo guardando lápices más tiempo del necesario, esperando que alguien le contestara."
+
+        mc "Mañana seguiremos."
+
+        narrador "Itsuki cerró el cuaderno y dijo que le quedaba algo por repasar sola." 
+        
+        narrador "No me pidió ayuda. Tampoco me pidió que me fuera."
+
+        miku "…Hasta mañana."
+
+        narrador "Dos palabras, dichas desde la puerta, sin subirse los audífonos. Un avance enorme."
+
+        mc_pensamiento "No fue un aplauso. Pero tampoco fue el portazo del primer día."
+
+        mc_pensamiento "Con ellas, eso ya es mucho."
+
+        mc_pensamiento "Lo que no sabía era si sería suficiente para que aprueben los exámenes."
+
+        mc_pensamiento "No lo sé."
 
     else:
 
         narrador "Terminamos pasadas las seis. Se fueron saliendo de a una, sin despedirse del todo."
 
-        narrador "Nada ha cambiado desde el primer día."
+        narrador "Ichika se despertó cuando ya nadie la miraba." 
+        
+        narrador "Se frotó la cara y dijo «mañana me pongo al día»."
 
-        narrador "O más bien yo no las he hecho cambiar."
+        narrador "Sin gracia. Sin guiño. Como quien lo repite desde hace semanas."
 
-        narrador "Era un fracaso que ya se venía venir."
+        narrador "Miku salió con los audífonos puestos y sonando." 
+        
+        narrador "Me miró una vez, de reojo, y no dijo nada."
+
+        narrador "Nino pasó a mi lado con la hoja en blanco, doblada en cuatro."
+
+        narrador "No la dejó sobre la mesa. Se la llevó, como quien guarda una prueba."
+
+        yotsuba "¡Mañana lo hago mejor! ¡Lo prometo!"
+
+        narrador "Lo dijo sonriendo. Con la hoja casi vacía todavía en la mano."
+
+        narrador "Ya no sabía si me lo decía a mí o se lo decía a ella."
+
+        narrador "Itsuki fue la última. Seguía mirando el mismo problema. Cerró el cuaderno despacio."
+
+        itsuki "Hasta mañana."
+
+        narrador "Dos palabras, sin una pizca de rencor. Y sin una sola de calidez."
+
+        mc_pensamiento "Nada ha cambiado desde el primer día."
+
+        mc_pensamiento "O más bien yo no las he hecho cambiar."
+
+        mc_pensamiento "Era un fracaso que ya se venía venir."
 
     ############################################################################
     ##  Sábado · mensaje de aliento (menú de sabor, reconverge)

@@ -183,11 +183,11 @@ init python:
 # Placeholders de fondo 
 # ------------------------------------------------------------
 
-image ph_bg_ensayo     = "bg/hubs_hermanas/sala_ensayo.webp"
-image ph_bg_comercial  = "bg/hubs_hermanas/centro_comercial.webp"
-image ph_bg_biblioteca = "bg/hubs_hermanas/biblioteca.webp"
-image ph_bg_aula       = "bg/hubs_hermanas/aula_tarde.webp"
-image ph_bg_pista      = "bg/hubs_hermanas/pista_atletismo.webp"
+image ph_bg_ensayo     = "bg/cap1_hubs/sala_ensayo.webp"
+image ph_bg_comercial  = "bg/cap1_hubs/centro_comercial.webp"
+image ph_bg_biblioteca = "bg/cap1_hubs/biblioteca.webp"
+image ph_bg_aula       = "bg/cap1_hubs/aula_tarde.webp"
+image ph_bg_pista      = "bg/cap1_hubs/pista_atletismo.webp"
 
 
 # ------------------------------------------------------------

@@ -50,7 +50,7 @@ define GALERIA = [
         ("cg_yotsuba_corriendo", "Bienvenido"),
         ("cg_yotsuba_pista", "Vuelta veinte"),
         ("cg_yotsuba_rotulador", "El rotulador"),
-        ("cg_yotsuba_despedida", "Una vuelta más"),
+        ("cg_yotsuba_cronometro", "Una vuelta más"),
         ("cg_yotsuba_fracaso", "Mirando a las demás"),
     ]),
     ("itsuki", "Itsuki", "itsuki", [
