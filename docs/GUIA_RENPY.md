@@ -202,6 +202,11 @@ para detectar cambios de fondo y enseñar la cinta del lugar con `renpy.show_scr
 **`size_group`** en un estilo de botón iguala el ancho de todos los del grupo al
 del más largo (las cajas de decisión ligeras).
 
+**Un Replay arranca con el estado limpio.** Todas las variables vuelven a su default 
+y solo sobrevive persistent. Lo que el label necesite
+(nombre, *_rama_cap1, despido_en_beat) se pasa con Replay(label, scope={...}). 
+Sin eso, las ramas leen None y se saltan los bloques «fría».
+
 ---
 
 ## 4. Diagnóstico rápido
