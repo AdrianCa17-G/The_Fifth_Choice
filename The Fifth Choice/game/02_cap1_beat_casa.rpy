@@ -321,6 +321,12 @@ label beat_casa:
 
                             mc_pensamiento "Pero tardó un segundo de más en volver."
 
+                            mc_pensamiento "Entiendo cómo se siente. Yo también tengo personas a quien cuidar."
+
+                            mc_pensamiento "Hasta medio dormida, calculó minutos y trenes sin pensarlo dos veces."
+
+                            mc_pensamiento "Sé que esa cabeza para los números la va a hacer sobresalir en su examen, aunque ella no se dé cuenta."
+
                         elif ichika_rama_cap1 == "tibia":
 
                             mc_pensamiento "Nos pusimos a hablar de tonterías, y ella se rió de verdad."
@@ -337,17 +343,14 @@ label beat_casa:
 
                             mc_pensamiento "Fue correcta conmigo. Nada más."
 
-                        mc_pensamiento "Entiendo cómo se siente. Yo también tengo personas a quien cuidar."
-
-                        mc_pensamiento "Hasta medio dormida, calculó minutos y trenes sin pensarlo dos veces."
-
-                        mc_pensamiento "Sé que esa cabeza para los números la va a hacer sobresalir en su examen, aunque ella no se dé cuenta."
 
                         mc_pensamiento "Antes de irnos, le llegó un mensaje: un papel nuevo para la obra de primavera."
 
                         mc_pensamiento "Dijo que sí sin pensarlo, aunque ya no le quedaba tiempo para nada más."
 
-                        mc_pensamiento "Ni siquiera respondió el mensaje. Solo lo guardó, como guarda todo lo demás."
+                        mc_pensamiento "Ni siquiera respondió el mensaje." 
+                        
+                        mc_pensamiento "Solo lo guardó, como guarda todo lo demás."
                         
                     else:
 
@@ -437,6 +440,9 @@ label beat_casa:
 
                         mc_pensamiento "Pero entendí que no está enojada conmigo."
 
+                        mc_pensamiento "Ella es un tren de emociones que nunca frena."
+
+
                     stop music fadeout 2.0
                         
 
@@ -470,6 +476,12 @@ label beat_casa:
                             
                             mc_pensamiento "No me lo discutió."
 
+                            mc_pensamiento "Es una chica muy reservada."
+
+                            mc_pensamiento "Pero cuando la conoces es una persona totalmente interesante."
+
+                            mc_pensamiento "Confío en que hará brillar sus conocimientos de historia, en cuanto deje de disculparse por tenerlos."
+
                         elif miku_rama_cap1 == "tibia":
 
                             mc_pensamiento "Le dije que se le daba bien esto, sin pensar que la estaba comparando con sus hermanas otra vez."
@@ -489,16 +501,6 @@ label beat_casa:
                             mc_pensamiento "Antes no sonaban."
 
 
-                        mc_pensamiento "En su hoja del segundo día había una respuesta correcta borrada a medias."
-
-                        mc_pensamiento "Sabía la respuesta, pero no confió lo suficiente en ella misma para dejarla ahí."
-
-                        mc_pensamiento "Es una chica muy reservada."
-
-                        mc_pensamiento "Pero cuando la conoces es una persona totalmente interesante."
-
-                        mc_pensamiento "Confío en que hará brillar sus conocimientos de historia, en cuanto deje de disculparse por tenerlos."
-
                     else:
 
                         mc_pensamiento "Sigo sin saber mucho de ella."
@@ -506,6 +508,10 @@ label beat_casa:
                         mc_pensamiento "Los audífonos que lleva puestos en su cuello."
 
                         mc_pensamiento "Y el libro que escondió la primera noche."
+
+                        mc_pensamiento "Además que en su hoja del segundo día había una respuesta correcta borrada a medias."
+
+                        mc_pensamiento "Sabía la respuesta, pero no confió lo suficiente en ella misma para dejarla ahí."
 
                         mc_pensamiento "Ella es todo un misterio."
 
@@ -547,6 +553,16 @@ label beat_casa:
                             
                             mc_pensamiento "Pero cuando volvió a correr, ya no sonaba igual de insegura."
 
+                            mc_pensamiento "Animar a cinco personas distintas."
+
+                            mc_pensamiento "Cada una a su manera, no es tan simple como ella lo hace sonar."
+
+                            mc_pensamiento "Sospecho que se le da mejor leer a la gente de lo que ella misma cree."
+
+                            mc_pensamiento "Sí."
+
+                            mc_pensamiento "Eso es."
+
                         elif yotsuba_rama_cap1 == "tibia":
 
                             mc_pensamiento "Le tomé el tiempo con el cronómetro, un par de vueltas más."
@@ -563,16 +579,6 @@ label beat_casa:
                             
                             mc_pensamiento "Puede que le haya confirmado la única cosa de la que nadie debería haberla convencido nunca."
 
-
-                        mc_pensamiento "Animar a cinco personas distintas."
-
-                        mc_pensamiento "Cada una a su manera, no es tan simple como ella lo hace sonar."
-
-                        mc_pensamiento "Sospecho que se le da mejor leer a la gente de lo que ella misma cree."
-
-                        mc_pensamiento "Sí."
-
-                        mc_pensamiento "Eso es."
 
                     else:
 
@@ -638,6 +644,15 @@ label beat_casa:
                             
                             mc_pensamiento "Y le quité lo único que estaba defendiendo: hacerlo ella sola."
 
+
+                        mc_pensamiento "Ese día la encontré en la azotea."
+
+                        mc_pensamiento "Con un cuaderno que no llegó a abrir."
+
+                        mc_pensamiento "Ya no le queda ningún sitio donde no tenga que fingir que está bien."
+
+                        mc_pensamiento "Y tampoco sé cómo hacer que se sienta bien."
+
                     else:
 
                         mc_pensamiento "No fui a buscarla al aula."
@@ -651,7 +666,6 @@ label beat_casa:
                         mc_pensamiento "Y tampoco sé cómo hacer que se sienta bien."
 
                     stop music fadeout 2.0
-
 
             if len(hermanas_pensamiento) < 5:
                 jump cap1_hermanas_pensamiento

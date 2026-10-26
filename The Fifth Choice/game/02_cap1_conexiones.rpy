@@ -429,6 +429,7 @@ label reaccion_yotsuba:
         yotsuba "…Hoy serán cuarenta vueltas. ¡Cuarenta!"
 
         show yotsuba at pj_calla(0.5)
+        with disolucion_lenta
 
         narrador "Lo anotó en la muñeca. No me miró mientras lo hacía."
 
@@ -981,6 +982,7 @@ label cap1_interconexion_1:
 
     show nino neutral at pj_calla(X_NINO)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
 
     yotsuba "¿Un método efectivo? ¡Guau!"
 
@@ -988,21 +990,25 @@ label cap1_interconexion_1:
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     show ichika sonriendo at pj_habla(X_ICHIKA)
+    with disolucion_lenta
 
     ichika "Vaya, resulta que además de cerebrito eres un estratega."
 
     show ichika at pj_calla(X_ICHIKA)
     show itsuki molesta at pj_habla(X_ITSUKI)
+    with disolucion_lenta
 
     itsuki "Seguro es explotarnos estudiando todos los días y todas las noches."
 
     show itsuki molesta at pj_calla(X_ITSUKI)
     show miku neutral at pj_habla(X_MIKU)
+    with disolucion_lenta
 
     miku "…"
 
     show miku neutral at pj_calla(X_MIKU)
     show nino neutral at pj_habla(X_NINO)
+    with disolucion_lenta
 
     nino "No se preocupen, chicas. Su gran método es renunciar y largarse de nuestras vidas."
 
@@ -1010,20 +1016,24 @@ label cap1_interconexion_1:
 
     show nino neutral at pj_calla(X_NINO)
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
 
     yotsuba "¡Nino! Seguro no es eso. Él solo—"
 
     show nino neutral at pj_habla(X_NINO)
     show yotsuba incomoda at pj_calla(X_YOTSUBA)
+    with disolucion_lenta
 
     nino "Yotsuba."
 
     show nino neutral at pj_calla(X_NINO)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
 
     yotsuba "…¡Digo! ¡Nada! ¡Era una broma!"
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
+    with disolucion_lenta
 
     mc "Para ponerlo en marcha solo necesito que me respondan una pregunta."
 
@@ -1054,12 +1064,14 @@ label cap1_interconexion_1:
     miku "…Quiere dividirnos."
 
     show miku neutral at pj_calla(X_MIKU)
+    with disolucion_lenta
 
     mc_pensamiento "Fue la única que lo entendió. Y fue la que menos habló."
 
     mc_pensamiento "Me miraron entre sorprendidas y divertidas."
 
     show ichika sonriendo at pj_habla(X_ICHIKA)
+    with disolucion_lenta
 
     ichika "Ay, [mc]. ¿Para qué quieres saberlo?"
 
@@ -1071,6 +1083,7 @@ label cap1_interconexion_1:
 
     show ichika sonriendo at pj_calla(X_ICHIKA)
     show nino neutral at pj_habla(X_NINO)
+    with disolucion_lenta
 
     nino "¿Y a ti qué te importa dónde pasemos?"
 
@@ -1080,6 +1093,7 @@ label cap1_interconexion_1:
 
     show nino neutral at pj_calla(X_NINO)
     show itsuki sonriendo at pj_habla(X_ITSUKI)
+    with disolucion_lenta
 
     itsuki "Esperen. Tengo una idea."
 
@@ -1089,16 +1103,19 @@ label cap1_interconexion_1:
 
     show itsuki sonriendo at pj_calla(X_ITSUKI)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
 
     yotsuba "¿Estilo quintillizas? ¡Hurra! ¡Yo quiero jugar!"
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     show miku neutral at pj_habla(X_MIKU)
+    with disolucion_lenta
 
     miku "…Itsuki. Eso es justo lo que él quería."
 
     show miku neutral at pj_calla(X_MIKU)
     show itsuki sonriendo at pj_habla(X_ITSUKI)
+    with disolucion_lenta
 
     itsuki "Si [mc] dice que se preocupa por nosotras…"
 
@@ -1111,6 +1128,7 @@ label cap1_interconexion_1:
     mc "¿¡QUÉÉÉ!?"
 
     show itsuki at pj_calla(X_ITSUKI)
+    with disolucion_lenta
 
     mc_pensamiento "Esto debe ser una broma. Y de muy mal gusto."
 
@@ -1125,6 +1143,7 @@ label cap1_interconexion_1:
     mc "Sin querer me acabas de ayudar con mi plan. Bien hecho."
 
     show itsuki molesta at pj_habla(X_ITSUKI)
+    with disolucion_lenta
 
     itsuki "No me felicites. Solo te estoy complicando las cosas."
 
@@ -1142,6 +1161,7 @@ label cap1_interconexion_1:
 
     show itsuki molesta at pj_calla(X_ITSUKI)
     show ichika sonriendo at pj_habla(X_ICHIKA)
+    with disolucion_lenta
 
     ichika "¿Entonces pasarás la tarde con tu quintilliza favorita?"
 
@@ -1153,16 +1173,19 @@ label cap1_interconexion_1:
 
     show ichika sonriendo at pj_calla(X_ICHIKA)
     show nino neutral at pj_habla(X_NINO)
+    with disolucion_lenta
 
     nino "Ichika, no te rebajes. ¿Quién querría estar con ese nerd?"
 
     show nino neutral at pj_calla(X_NINO)
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
 
     yotsuba "¿Y elegirás a la que quieras conocer mejor? ¿O no?"
 
     show yotsuba at pj_calla(X_YOTSUBA)
     show miku neutral at pj_habla(X_MIKU)
+    with disolucion_lenta
 
     miku "…No te preocupes por mi."
 
@@ -1172,11 +1195,13 @@ label cap1_interconexion_1:
 
     show miku neutral at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
+    with disolucion_lenta
 
     itsuki "Yo no pienso esconderme. Estaré donde siempre."
 
     show itsuki molesta at pj_calla(X_ITSUKI)
     show nino neutral at pj_habla(X_NINO)
+    with disolucion_lenta
 
     nino "Treinta días, tutor. A ver a cuántas logras encontrar."
 
@@ -1202,13 +1227,20 @@ label cap1_interconexion_1:
     scene bg_negro
     with fade
 
+    scene bg_escuela
+    with fade
+
+    mc "Terminadas las clases, decidí cumplir con lo prometido."
+
     mc "Bien." 
     
     mc "Pasaré la tarde con una de ellas."
 
-    mc "Solo es para reforzar sus conocimientos y conocerlas mejor."
+    mc "Reforzaré sus conocimientos y la conoceré mejor."
 
     mc "No es para otro tipo de intenciones."
+
+    mc "Primera tarde, primera elección."
 
     mc_pensamiento "Bueno, empecemos."
 
@@ -1221,7 +1253,7 @@ label cap1_interconexion_1:
 ##  por la hermana visitada (destino) y por su rama (cálida/tibia/fría).
 ################################################################################
 
-label interconexion_2:
+label cap1_interconexion_2:
 
     $ rama_hub = rama_de(destino)
     $ nombre_h = destino.capitalize()
@@ -1473,6 +1505,7 @@ label interconexion_2:
             nino "Los que entran haciendo ruido son los que más rápido se van."
 
             show nino neutral at pj_calla(0.5)
+            with disolucion_lenta
 
             narrador "Se fue con la misma cara con la que llegó."
 
@@ -1555,7 +1588,7 @@ label interconexion_2:
 
     $ ui_escena("normal")
 
-    jump interconexion_3
+    jump cap1_interconexion_3
 
 
 ################################################################################
@@ -1564,7 +1597,7 @@ label interconexion_2:
 ##  de "¿cómo estás?" y Itsuki recuerda el juego antes de abrir el hub 2.
 ################################################################################
 
-label interconexion_3:
+label cap1_interconexion_3:
 
     ############################################################################
     ##  Noche · eco del beat de Itsuki
@@ -1729,16 +1762,34 @@ label interconexion_3:
 
     itsuki "Solo digo que el reloj no espera."
 
-    show itsuki molesta at pj_calla(X_ITSUKI)
+    itsuki "Y cada uno lo sabe."
+
+    hide itsuki
+    hide yotsuba
+    hide nino
+    hide miku
+    hide ichika
     with disolucion_lenta
 
-    mc_pensamiento "Tenía razón. Siempre la tiene cuando habla así."
+    mc_pensamiento "Todas se marcharon, esperando que yo de el siguiente paso."
+
+    stop music fadeout 1.5
+
+    scene bg_negro
+    with fade
+
+    scene bg_escuela
+    with fade
+
+    mc_pensamiento "Itsuki tenía razón. Siempre la tiene cuando habla así."
 
     mc_pensamiento "Dos tardes libres. Cuatro hermanas por alcanzar."
 
+    mc_pensamiento "Hoy es la segunda tarde y mi segunda elección."
+
     mc "Bien. A ver a quién busco hoy."
 
-    stop music fadeout 1.5
+    mc_pensamiento "Llegó el momento de decidir."
 
     jump hub_2
 
@@ -1750,7 +1801,7 @@ label interconexion_3:
 ##  clase: pista del beat.
 ################################################################################
 
-label interconexion_4:
+label cap1_interconexion_4:
 
     $ rama_hub = rama_de(destino)
     $ nombre_h = destino.capitalize()
@@ -2165,7 +2216,7 @@ label interconexion_4:
 
     $ ui_escena("normal")
 
-    jump interconexion_5
+    jump cap1_interconexion_5
 
 
 ################################################################################
@@ -2174,7 +2225,7 @@ label interconexion_4:
 ##  Más tensa que las anteriores: es la última decisión del capítulo.
 ################################################################################
 
-label interconexion_5:
+label cap1_interconexion_5:
 
     ############################################################################
     ##  Noche · eco del beat de Nino + la deuda
@@ -2626,6 +2677,7 @@ label interconexion_5:
         ichika "…Es broma. Más o menos."
 
     show ichika at pj_calla(X_ICHIKA)
+    with disolucion_lenta
 
     ############################################################################
     ##  Cierre · última decisión
@@ -2659,6 +2711,11 @@ label interconexion_5:
 
     narrador "Solo quedó el tic-tac del reloj, que hasta ahora nunca había oído."
 
+    narrador "Posteriormente me retiré igual del aula."
+
+    scene bg_escuela
+    with fade
+
     mc_pensamiento "Tres."
 
     mc_pensamiento "Tres chicas y una última decisión."
@@ -2683,8 +2740,15 @@ label interconexion_5:
 
         mc_pensamiento "Pero ya no puedo seguir dudando."
 
-    jump hub_3
+    mc_pensamiento "Bien."
 
+    mc_pensamiento "Esta es mi decisión final."
+
+    mc_pensamiento "Una decisión que puede cambiar el rumbo de las cosas."
+
+    mc_pensamiento "Empezemos."
+
+    jump hub_3
 
 
 ################################################################################
@@ -2694,7 +2758,7 @@ label interconexion_5:
 ##  Lee clima_cap1 ("buena" / "mixta" / "mala"), maruo_ultimatum y despido_cap1.
 ################################################################################
 
-label interconexion_6:
+label cap1_interconexion_6:
 
     $ rama_hub = rama_de(destino)
     $ nombre_h = destino.capitalize()
@@ -2737,13 +2801,13 @@ label interconexion_6:
 
     if rama_hub == "calida":
 
-        mc_pensamiento "Dormiré mejor de lo que esperaba."
+        mc_pensamiento "Esta última tarde fue un total éxito."
+
+        mc_pensamiento "Incluso creo que dormiré mejor de lo que esperaba."
 
         mc_pensamiento "Logré mejorar mi relación con [nombre_h]."
 
         mc_pensamiento "Eso para mi es un gran avance."
-
-        mc_pensamiento "La última tarde salió mejor de lo que esperaba."
 
         mc_pensamiento "Con ellas, eso siempre me asusta un poco."
 
@@ -2763,6 +2827,8 @@ label interconexion_6:
 
     else:
 
+        mc_pensamiento "Esta última tarde me pesaba."
+
         mc_pensamiento "Me va costar dormir." 
 
         mc_pensamiento "Repasé lo que dije más veces de las que voy a admitir."
@@ -2773,21 +2839,21 @@ label interconexion_6:
 
         mc_pensamiento "Más de lo que ya estaban."
 
-        mc_pensamiento "Esta última tarde me pesaba."
-
         mc_pensamiento "Seguía oyendo mi propia voz diciendo lo que dije."
 
     if despido_cap1:
 
+        mc_pensamiento "Y mi última oportunidad la desperdicié."
+
         mc_pensamiento "Sabía que algo se había roto con Maruo. Lo que no sabía era cuánto."
 
-        mc_pensamiento "Pero de manera sencilla será despues de los examenes."
+        mc_pensamiento "Pero de manera sencilla será despues de los exámenes."
 
         mc_pensamiento "Cuándo vea a todas sus hijas reprobar."
 
         mc_pensamiento "Y el gran culpable no sea otro que yo."
 
-        mc_pensamiento "No quiero ni imaginar la cara que pondrán Raiha y mi padre."
+        mc_pensamiento "No quiero ni imaginar la cara que pondrá Raiha y mi padre."
 
         mc_pensamiento "Todo por mis pésimas decisiones."
 
@@ -2823,11 +2889,13 @@ label interconexion_6:
 
     play sound sfx_timbre volume 2.5
 
-    narrador "Viernes. El instituto olía distinto: a papel subrayado y a café de máquina."
+    narrador "Viernes. El instituto olía distinto: a papel subrayado y estudiantes preocupados."
 
     narrador "Hasta los alumnos que nunca estudian tenían un cuaderno abierto."
 
     narrador "La tensión se siente hasta en los rincones del instituto."
+
+    narrador "Y yo no podía ser la excepción."
 
     play music cotidiano fadein 2.0
 
@@ -3132,7 +3200,11 @@ label interconexion_6:
     scene bg_departamento
     with fade
 
-    narrador "Esa tarde estudiamos en el departamento. Las cinco, juntas, como había pedido Itsuki."
+    narrador "Esa tarde estudiamos en el departamento." 
+    
+    narrador "Las cinco estaban juntas, como había pedido Itsuki."
+
+    narrador "Finalmente ví el resultado de nuestros estudios."
 
     if clima_cap1 == "buena":
 
@@ -3506,7 +3578,7 @@ label interconexion_6:
 
     if clima_cap1 == "buena":
 
-        narrador "Ichika mandó un corazón, lo borró y escribió «jajaja»."
+        narrador "Ichika me mandó un corazón y escribió «jajaja»."
 
         narrador "Nino escribió «Qué dramático.» Un minuto después: «Descansen.»"
 

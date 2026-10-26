@@ -80,7 +80,7 @@ label beat_Nino:
 
     maruo "No."
 
-    maruo "¡Es un tutor, no una sentencia de por vida!"
+    nino "¡Es un tutor, no una sentencia de por vida!"
 
     maruo "Es exactamente un contrato."
 

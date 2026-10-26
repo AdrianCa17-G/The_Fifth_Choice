@@ -170,6 +170,9 @@ default persistent.final_secreto_desbloqueado = False
 ## Opcional: registro de finales vistos, útil para una galería futura.
 default persistent.final_malo_visto = False
 
+## Nombre permanente para el jugador
+default persistent.nombre_jugador = ""
+
 ## --- Contador de desaires del Capitulo 1 (INVISIBLE) -------------------------
 ## Va aparte de los puntos y no resta afinidad. Sube solo cuando el jugador
 ## elige la opcion fria dentro de un evento de hermana. Se lee una sola vez, al
@@ -582,6 +585,7 @@ label configurar_nombre:
         nombre_jugador = nombre_jugador.strip()
         if not nombre_jugador:
             nombre_jugador = "Futaro"
+        persistent.nombre_jugador = nombre_jugador
 
     return
 

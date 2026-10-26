@@ -37,7 +37,7 @@ label hub_1:
 
     stop music fadeout 1.0
 
-    jump interconexion_2
+    jump cap1_interconexion_2
 
 
 
@@ -63,7 +63,7 @@ label hub_2:
 
     stop music fadeout 1.0
 
-    jump interconexion_4
+    jump cap1_interconexion_4
 
 
 
@@ -95,4 +95,4 @@ label hub_3:
     else:
         $ despido_cap1 = False
 
-    jump interconexion_6
+    jump cap1_interconexion_6

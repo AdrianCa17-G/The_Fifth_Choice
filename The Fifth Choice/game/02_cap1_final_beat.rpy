@@ -37,6 +37,8 @@ label final_malo_beat:
 
     maruo "Ya que estás aquí, me ahorras la llamada y  mi tiempo."
 
+    play sound sfx.taza_mesa volume 1.0
+
     narrador "Dejó la taza sobre la mesa, despacio."
 
     maruo "Mañana no vengas."
@@ -47,7 +49,8 @@ label final_malo_beat:
 
     mc "Señor, todavía quedan semanas. Si me deja explicarle…"
 
-    ##[CG NUEVO — cg_maruo_espaldas] 
+    scene cg_maruo_espaldas
+    with fade
 
     maruo "No hay nada que explicar."
 
@@ -69,7 +72,7 @@ label final_malo_beat:
 
     narrador "Pero no lo dijo."
     
-    play sound sfx_puerta_cierra volume 1.0
+    play sound sfx_puerta_cierra volume 2.5
     
     stop music fadeout 2.0
 

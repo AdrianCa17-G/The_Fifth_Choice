@@ -198,8 +198,8 @@ screen main_menu():
 
     ## --- LOGO ---
     add "main_menu_logo":
-        xalign 0.03
-        yalign 0.03
+        xalign 0.07
+        yalign 0.07
         at t_logo
 
     ## --- TAGLINE ---
@@ -231,9 +231,9 @@ screen main_menu():
 
     ## --- LAS CINCO CINTAS ---
     vbox:
-        xpos 90
-        yalign 0.78
-        spacing 10
+        xpos 0.06
+        yalign 0.88
+        spacing 25
 
         use boton_menu("Comenzar", Start(), "ichika")
         use boton_menu("Cargar", ShowMenu("load"), "nino")

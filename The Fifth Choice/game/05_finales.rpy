@@ -24,6 +24,11 @@ label final_malo_cierre:
     scene bg_negro
     with fade
 
+    if despido_en_beat:
+        $ persistent.final_malo_temprano_a_visto = True
+    else:
+        $ persistent.final_malo_temprano_b_visto = True
+
     $ persistent.final_malo_temprano_visto = True
 
     ## Tarjeta de final: texto centrado sobre negro, sin música.
