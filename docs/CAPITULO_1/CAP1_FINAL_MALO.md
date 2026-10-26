@@ -1,7 +1,9 @@
 ## Final Malo · Despido temprano — Capítulo 1
 
-**Escrito.** Assets pendientes. Un solo final con dos variantes: **A** (el portazo, en la
-cocina del beat de Nino) y **B** (la despedida, después del hub 3 y del examen).
+**Escrito y codificado** en `02_cap1_final_beat.rpy` (A), `02_cap1_final_hub3.rpy` (B) y 
+`05_finales.rpy` (dispatcher y cierre). Todos los CG están hechos. Un solo final con dos
+variantes: **A** (el portazo, en la cocina del beat de Nino) y 
+**B** (la despedida, después del hub 3 y del examen).
 
 Marcadores como en el resto del capítulo. `[BG]` fondo · `[CG]` ilustración · `[SPR]` sprite ·
 `[MUS]` música · `[SFX]` efecto · `[NUEVO]` asset que no existe todavía ·
@@ -11,7 +13,7 @@ Marcadores como en el resto del capítulo. `[BG]` fondo · `[CG]` ilustración �
 
 ### Decisiones de este final
 
-**Cuándo se dispara cada variante** (tu tabla de 27 combinaciones):
+**Cuándo se dispara cada variante** (Tabla de 27 combinaciones):
 
 | Variante | Combinaciones | Condición real en el código |
 |---|---|---|
@@ -80,7 +82,7 @@ su hub). No hay música ni efectos nuevos. No hay sprites nuevos.
 ### Dónde engancha en el código
 
 ```renpy
-## 00_definiciones.rpy — falta esta variable (hoy no está declarada)
+## 00_definiciones.rpy — ya declarada
 default despido_en_beat = False
 ```
 
@@ -526,7 +528,7 @@ pupitre de la segunda fila, termina los suyos antes de la mitad, y se queda mira
 
 #### 3.1 · Lunes · Japonés · Yotsuba
 
-`[CG NUEVO — cg_examen_yotsuba]`
+`[CG NUEVO — cg_yotsuba_fracaso]`
 
 **narrador:** Lunes. Japonés. Las cinco lo hacían a la vez; yo solo podía mirar a una.
 
@@ -552,7 +554,7 @@ pupitre de la segunda fila, termina los suyos antes de la mitad, y se queda mira
 
 #### 3.2 · Martes · Matemáticas · Ichika
 
-`[CG NUEVO — cg_examen_ichika]`
+`[CG NUEVO — cg_ichika_fracaso]`
 
 **narrador:** Martes. Matemáticas.
 
@@ -584,7 +586,7 @@ pupitre de la segunda fila, termina los suyos antes de la mitad, y se queda mira
 
 #### 3.3 · Miércoles · Inglés · Nino
 
-`[CG NUEVO — cg_examen_nino]`
+`[CG NUEVO — cg_nino_fracaso]`
 
 **narrador:** Miércoles. Inglés.
 
@@ -612,7 +614,7 @@ pupitre de la segunda fila, termina los suyos antes de la mitad, y se queda mira
 
 #### 3.4 · Jueves · Ciencias · Itsuki
 
-`[CG NUEVO — cg_examen_itsuki]`
+`[CG NUEVO — cg_itsuki_fracaso]`
 
 **narrador:** Jueves. Ciencias.
 
@@ -640,7 +642,7 @@ pupitre de la segunda fila, termina los suyos antes de la mitad, y se queda mira
 
 #### 3.5 · Viernes · Sociales · Miku
 
-`[CG NUEVO — cg_examen_miku]`
+`[CG NUEVO — cg_miku_fracaso]`
 
 **narrador:** Viernes. Sociales. El último.
 
@@ -1040,11 +1042,18 @@ if rama_de("itsuki") == "fria":
 
 # Cierre común
 
+Vive en `05_finales.rpy`. Marca qué versión se vio (A si `despido_en_beat`, B si no) y el flag general, que es el que enciende la caja «Despido temprano» en Finales.
+
 ```renpy
 label final_malo_cierre:
 
     scene bg_negro
     with fade
+
+    if despido_en_beat:
+        $ persistent.final_malo_temprano_a_visto = True
+    else:
+        $ persistent.final_malo_temprano_b_visto = True
 
     $ persistent.final_malo_temprano_visto = True
 
@@ -1054,8 +1063,7 @@ label final_malo_cierre:
     return
 ```
 
-El `return` con la pila vacía cierra la partida y vuelve al menú principal. Si más
-adelante `05_finales.rpy` tiene una pantalla de final, sustituir `narrador` por ella.
+El `return` con la pila vacía cierra la partida y vuelve al menú principal; dentro de un replay, cierra el replay. Si más adelante `05_finales.rpy` tiene una pantalla de final, sustituir `narrador` por ella.
 
 ---
 
@@ -1063,12 +1071,12 @@ adelante `05_finales.rpy` tiene una pantalla de final, sustituir `narrador` por 
 
 | Asset | Tipo | Estado | Nota |
 |---|---|---|---|
-| `cg_maruo_espaldas` | CG | pendiente | **Uno solo, compartido por A y B.** Ya estaba como opcional en `PROLOGO.md` §10 |
-| `cg_examen_yotsuba` | CG | pendiente | Movimiento B3.1 |
-| `cg_examen_ichika` | CG | pendiente | Movimiento B3.2 |
-| `cg_examen_nino` | CG | pendiente | Movimiento B3.3 |
-| `cg_examen_itsuki` | CG | pendiente | Movimiento B3.4 |
-| `cg_examen_miku` | CG | pendiente | Movimiento B3.5 |
+| `cg_maruo_espaldas` | CG | hecho | **Uno solo, compartido por A y B.** Declarado en `02_cap1_final_beat.rpy` |
+| `cg_yotsuba_fracaso` | CG | hecho | Movimiento B3.1. Declarado en `02_cap1_final_hub3.rpy` |
+| `cg_ichika_fracaso` | CG | hecho | Movimiento B3.2 |
+| `cg_nino_fracaso` | CG | hecho | Movimiento B3.3 |
+| `cg_itsuki_fracaso` | CG | hecho | Movimiento B3.4 |
+| `cg_miku_fracaso` | CG | hecho | Movimiento B3.5 |
 
 Reutilizados sin tocar: `cg_maruo_reunion`, `cg_libreta`, `bg_cocina`, `bg_aula`,
 `bg_aula_tarde`, `bg_escuela`, `bg_edificio`, `bg_departamento`, `bg_comedor`,
@@ -1091,15 +1099,15 @@ las cinco se leen como un set. Un solo personaje con LoRA por frame (serie 0.3 +
 personaje 0.7–0.8). **Generarlos en la misma sesión y guardar la semilla**, igual que los
 pares de Miku e Itsuki. Cinco siluetas distintas, para que se lean al 30 %:
 
-- **`cg_examen_yotsuba`** — cabeza girada hacia las otras, lápiz quieto sobre la hoja casi
+- **`cg_yotsuba_fracaso`** — cabeza girada hacia las otras, lápiz quieto sobre la hoja casi
   en blanco, sin sonrisa (cejas hacia arriba por dentro, boca pequeña cerrada).
-- **`cg_examen_ichika`** — tumbada sobre el brazo, un guion doblado asomando bajo la hoja,
+- **`cg_ichika_fracaso`** — tumbada sobre el brazo, un guion doblado asomando bajo la hoja,
   y **un ojo entreabierto vigilando**: finge dormir.
-- **`cg_examen_nino`** — brazos cruzados, hoja terminada boca abajo, lápiz soltado,
+- **`cg_nino_fracaso`** — brazos cruzados, hoja terminada boca abajo, lápiz soltado,
   mirada de lado y mandíbula tensa. Es la silueta más cerrada de las cinco.
-- **`cg_examen_itsuki`** — inclinada sobre una hoja con tachones prolijos, el lápiz
+- **`cg_itsuki_fracaso`** — inclinada sobre una hoja con tachones prolijos, el lápiz
   apoyado, y la mirada de reojo hacia la cámara un segundo.
-- **`cg_examen_miku`** — encogida, la goma reducida a un tocón, migas sobre un círculo
+- **`cg_miku_fracaso`** — encogida, la goma reducida a un tocón, migas sobre un círculo
   gris en la hoja, audífonos al cuello con la mano cerca sin tocarlos.
 
 **`cg_maruo_espaldas`** — Maruo de espaldas en el marco de la puerta de la cocina, la taza
@@ -1110,20 +1118,9 @@ el LoRA no lo puede feminizar.
 
 ### Notas de implementación
 
-- **Galería.** Los 6 CG **no** van en las pestañas de las hermanas: completar el 100 % de una
-  hermana desbloquea su extra, y obligaría a ver el final malo. Añadir una sección nueva a
-  `GALERIA` en `08_extras.rpy`:
-
-  ```renpy
-  ("malos", "Finales malos", None, [
-      ("cg_maruo_espaldas", "Dándome la espalda"),
-      ("cg_examen_yotsuba", "Mirando a las demás"),
-      ("cg_examen_ichika", "La función"),
-      ("cg_examen_nino", "Revisando"),
-      ("cg_examen_itsuki", "El mismo error"),
-      ("cg_examen_miku", "La goma"),
-  ]),
-  ```
+- **Galería.** Los 5 CG de examen van en la pestaña de su hermana (`cg_<hermana>_fracaso`)
+y `cg_maruo_espaldas` en «Capítulo 1». Consecuencia: el 100 % de cada hermana, que
+desbloquea su extra, exige haber visto el final malo B. Está asumido así.
 
 - **`FINALES_ESPECIALES`**: la pista de «temprano» dice «Tres puertas cerradas en el primer
   mes», que era la regla vieja. Propuesta: «Decir que no cada vez que pudiste decir que sí.»
@@ -1135,22 +1132,29 @@ el LoRA no lo puede feminizar.
 - `nino nerviosa` y `ichika agotada` solo aparecen en el instante de quiebre de B
   (B4 y B7). `itsuki timida` y `itsuki sorprendida` no aparecen.
 - Ninguna línea supera las dos líneas de caja de texto.
+- **Revivir desde Finales.** La caja «Despido temprano» abre un popup (`final_versiones`)
+  con las dos versiones, definidas en `FINALES_TEMPRANO` (`08_extras.rpy`). Cada versión
+  lleva su `label` (`final_malo_beat` / `final_malo_hub3`) y un `scope`, porque un replay
+  arranca con todas las variables en su `default`. El `scope` de A fuerza
+  `despido_en_beat = True`: el cierre lo lee para saber qué flag marcar. Los de B
+  dejan `maruo_ultimatum` y `despido_cap1` en `True` y simulan tres hubs visitados (dos fríos).
+- **Flags.** `persistent.final_malo_temprano_a_visto` y `_b_visto` bloquean o desbloquean
+  cada versión en el popup. `final_malo_temprano_visto` se mantiene para encender la caja.
+- **Nombre del jugador en replays.** Todo `Replay` pasa por `final_scope()`, que añade
+  `persistent.nombre_jugador`. Ese valor se guarda en `configurar_nombre`.
+- **Pendiente:** borrar el «puente de una sola vez» del `init python` de `08_extras.rpy`,
+  que desbloquea A y B a quien ya tenía el flag antiguo.
 
 ---
 
-### Cosas del repo que encontré al leer los `.rpy`
+### Cosas del repo (revisadas)
 
-1. `despido_en_beat` **no está declarada** en `00_definiciones.rpy`. Sin el `default`, el
-   dispatcher lanza `NameError` en la variante B.
-2. En `02_cap1_beat_Nino.rpy` (Movimiento 1), `«¡Es un tutor, no una sentencia de por
-   vida!»` está asignada a `maruo` y en el `.md` es de `nino`. Corregir el hablante.
-3. **Tiempo del examen.** `beat_casa` dice «el examen es mañana» y `interconexion_5` habla
-   de «cinco asignaturas, cinco fechas». Este guion pone **un examen por día, de lunes a
-   viernes**, que es lo que cuadra con «cinco fechas». `beat_casa` solo dice que el
-   examen es mañana: vale para el lunes. Hay que tocar una línea más, ver el punto 4.
-4. **Cambiar en `interconexion_6`** la línea de Maruo «El lunes lo confirmo.» por «Al terminar
-   la semana lo confirmo.» B1 y B6 ya cuentan con esto: el boletín llega el día siguiente
-   al último examen.
-5. `README.md` y `CAP1.md` siguen diciendo «tres desaires» y «Evento 6 en la mesa del
-   departamento». La regla real es: dos desaires antes del beat, o uno más un segundo
-   desaire en el hub 3. Y el evento 6 ahora sucede en el aula durante el examen.
+Resueltas en el código: `despido_en_beat` ya está declarada, el hablante de «¡Es un tutor, 
+no una sentencia de por vida!» ya es `nino`, y las fechas del examen cuadran
+(`beat_casa` dice «el examen es mañana», que vale para el lunes;
+Maruo ya no usa «El lunes lo confirmo»).
+
+**Pendiente:** `README.md` y `CAP1.md` siguen diciendo «tres desaires» y 
+«Evento 6 en la mesa del departamento». La regla real es: dos desaires antes del beat
+(versión A), o uno más un segundo en el hub 3 (versión B). 
+Y el evento 6 sucede en el aula durante el examen.
