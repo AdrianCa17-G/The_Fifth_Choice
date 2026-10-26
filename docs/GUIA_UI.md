@@ -18,7 +18,7 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 | `00_definiciones.rpy` | los `Character` (con `ui_personaje`) |
 | `07_ui.rpy` | funciones de UI, flor, HUD, cinta del lugar, decisiones con peso |
 | `06_main_menu.rpy` | menú principal |
-| `08_extras.rpy` | Galería (datos en `GALERIA`) y Finales |
+| `08_extras.rpy` | Galería (datos en GALERIA), Finales y el popup de versiones (final_versiones) |
 | `09_menus_sistema.rpy` | Guardar, Cargar, Opciones, Historial, Acerca de, Ayuda, confirmaciones |
 | `screens.rpy` | `say`, `choice`, menú rápido |
 | `herramientas/generar_ui.py` | genera todos los PNG de `game/ui/` |
@@ -39,6 +39,10 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 - **Sprite nuevo del menú:** generar (768×1280, cuerpo completo) → `recortar_menu.py` → ruta en `MENU_SPR` → calibrar `MENU_CORONILLA` con `MENU_GUIA = True`.
 - **Personaje nuevo:** `ui_personaje(nombre, color, petalo, deco)`.
 - **Capítulo en los guardados:** `$ save_name = "Capítulo 2"` al empezar cada capítulo.
+- **Final revivible:** crear label final_<clave> que termine en return. La carta o caja de Finales se vuelve clicable sola cuando el final está conseguido y el label existe (final_label() usa renpy.has_label).
+- **Final con versiones:** añadir cada versión a FINALES_TEMPRANO (08_extras.rpy) con su label y su scope, y poner su flag persistent.final_malo_temprano_<v>_visto en el cierre del final. El popup la muestra bloqueada hasta que se vea.
+- **Nombre en replays:** todo Replay de Finales pasa por final_scope(), que añade persistent.nombre_jugador. Ese valor se guarda en configurar_nombre.
+- **Galería:** el contador de cada pestaña es una pastilla de tamaño fijo con el motivo de la hermana de marca de agua. Se rellena cuando la sección está completa. La paginación usa el motivo de la hermana tintado con su color.
 
 ## 5. Trampas
 
@@ -47,3 +51,4 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 - El `Character` pisa el fondo que se ponga en la pantalla `say`.
 - `narrator` (sin "d") es el narrador interno: cajas vacías de transiciones y preguntas de menú.
 - Los cambios en `init python` no entran con recarga rápida: cerrar y abrir el juego.
+- FINALES_TEMPRANO es un define: se evalúa en init y no puede leer persistent. Lo que dependa del jugador (el nombre) se añade en final_scope().
