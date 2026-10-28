@@ -11,7 +11,7 @@ image cg_itsuki_azotea_cuaderno = "images/cg/cap1_beats/itsuki_azotea_cuaderno.w
 
 image cg_itsuki_azotea_manos = "images/cg/cap1_beats/itsuki_azotea_manos.webp"
 
-define audio.sfx.mochila_suelo = "audio/sfx/mochila_suelo.mp3"
+define audio.sfx_mochila_suelo = "audio/sfx/mochila_suelo.mp3"
 
 define audio.guardia   = "audio/bgm/guardia.ogg"
 
@@ -79,7 +79,7 @@ label beat_Itsuki:
     mc_pensamiento "Ya van varias veces que la veo así, en apenas unos días."
 
     $ duck()
-    play sound sfx.mochila_suelo volume 1.5
+    play sound audio.sfx_mochila_suelo volume 1.5
 
     narrador "Me senté a un par de metros, sin decir nada todavía."
 

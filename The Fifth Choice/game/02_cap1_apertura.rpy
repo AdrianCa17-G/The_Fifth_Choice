@@ -29,7 +29,7 @@ label cap1_apertura:
     scene bg_escuela 
     with fade
 
-    play sound sfx_timbre volume 2.5
+    play sound audio.sfx_timbre volume 1.5
 
     mc_pensamiento "Dormí cuatro horas. No por estudiar, por primera vez en meses."
 
@@ -153,9 +153,11 @@ label cap1_apertura:
     scene bg_departamento
     with fade 
     
-    play sound sfx_puerta_abre 
+    play sound audio.sfx_toque_puerta volume 1.5
 
     narrador "Toqué a las cuatro en punto."
+
+    play sound audio.sfx_puerta_abre volume 1.5
 
     narrador "Me abrió Ichika, otra vez, con la misma sonrisa de la primera vez."
 
@@ -214,6 +216,9 @@ label cap1_apertura:
 
     mc "Página doce. Empezamos por lo más simple del temario."
 
+    $ duck()
+    play sound audio.sfx_papel_mesa volume 2.5
+
     narrador "Repartí el ejercicio."
     
     narrador "Cinco copias idénticas, seis preguntas cada una, nivel de primer curso."
@@ -227,7 +232,7 @@ label cap1_apertura:
     mc_pensamiento "Eso también estaba mal."
 
     $ duck()
-    play sound sfx_hoja
+    play sound audio.sfx_hoja volume 2.0
 
     narrador "Corregí la primera hoja. Seis de seis mal."
 
@@ -378,8 +383,7 @@ label cap1_apertura:
 
     nino "¡Se acabó! ¡Fuera de mi casa!"
 
-    $ duck()
-    play sound sfx_puerta_cierra volume 2.0
+    play sound audio.sfx_puerta_cierra volume 2.0
     
     stop music fadeout 2.0
 
@@ -421,7 +425,7 @@ label cap1_apertura:
     ##  ESCENA 3 · El plazo
     ############################################################################
     
-    play sound sfx_puerta_abre volume 1.0
+    play sound audio.sfx_puerta_abre volume 1.0
 
     narrador "Estaba recogiendo mis cosas cuando la puerta del fondo se abrió."
 
@@ -456,8 +460,7 @@ label cap1_apertura:
 
     maruo "Ya te lo dije ayer y no lo voy a repetir dos veces."
 
-    $ duck()
-    play sound sfx_puerta_cierra volume 1.0
+    play sound audio.sfx_puerta_cierra volume 1.0
 
     narrador "Se fue como se había ido el día anterior, sin subir la voz y sin dejar espacio para contestar."
 
@@ -585,6 +588,9 @@ label cap1_apertura:
 
     play music hogar fadein 1.5 
 
+    scene cg_calificacion
+    with fade
+
     narrador "Puse las cinco hojas sobre el escritorio y las dejé ahí un buen rato sin tocarlas."
 
     mc_pensamiento "Ayer pensé que el problema era que no querían estudiar."
@@ -595,8 +601,10 @@ label cap1_apertura:
 
     mc_pensamiento "Y se defienden juntas."
 
-    $ duck()
-    play sound sfx_toque_puerta volume 1.5
+    play sound audio.sfx_toque_puerta volume 1.5
+
+    scene bg_cuarto_mc
+    with fade
     
     show raiha preocupada at pj(0.50)
     with dissolve

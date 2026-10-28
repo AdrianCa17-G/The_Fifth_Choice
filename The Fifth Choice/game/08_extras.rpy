@@ -360,6 +360,7 @@ screen galeria():
             button:
                 xysize (440, 68)
                 action [SetScreenVariable("seccion", s[0]), SetScreenVariable("pagina", 0)]
+                selected (seccion == s[0])
                 hover_sound audio.sfx_hover
                 activate_sound audio.sfx_click
                 background ui_cinta_menu(col, ico, False)
@@ -498,6 +499,9 @@ screen galeria():
                     text_idle_color color_sec
                     text_hover_color "#FFFFFF"
                     text_insensitive_color "#FFFFFF33"
+
+
+    use cinta_volver
 
 
 screen visor_cg(img, rotulo):

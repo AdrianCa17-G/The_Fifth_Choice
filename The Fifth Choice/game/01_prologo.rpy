@@ -159,7 +159,7 @@ label prologo:
 
     ## Compite con `cena`, guitarra acustica en su mismo rango.
     $ duck()
-    play sound sfx_papel_mesa volume 2.5
+    play sound audio.sfx_papel_mesa volume 2.5
 
     narrador "De repente, mi padre, Isanari, entró en el comedor y dejó caer un papel sobre la mesa."
 
@@ -273,7 +273,7 @@ label prologo:
     scene bg_escuela
     with fade
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     mc_pensamiento "A la mañana siguiente llegué al instituto antes que casi nadie."
 
@@ -366,7 +366,7 @@ label prologo:
 
     ## Compite con `incomodo`. El arrastre no tiene ataque y se disuelve.
     $ duck()
-    play sound sfx_silla volume 2.5
+    play sound audio.sfx_silla volume 2.5
 
     narrador "La chica apretó los dientes, masticando el último bocado a la fuerza antes de levantarse en silencio."
 
@@ -536,7 +536,8 @@ label prologo:
 
     mc_pensamiento "Piso alto. Puerta doble de madera fina. El tipo de lugar que impone silencio solo con verlo."
 
-    play sound sfx_toque_puerta volume 1.5
+    play sound audio.sfx_toque_puerta volume 1.5
+
     mc_pensamiento "Toqué la puerta cuidadosamente y, tras unos segundos, escuché una voz desde dentro."
 
     voz "—¡Adelante! Puedes pasar."
@@ -546,13 +547,18 @@ label prologo:
     stop music fadeout 2.0
 
     scene cg_manija_edificio
-    with fade
+    pause 1.5
 
-    mc_pensamiento "(Muy bien... empecemos)."
+    stop music fadeout 2.0
 
-    mc_pensamiento "Cero distracciones. Presentación formal, evaluación rápida y fijar el horario. Diez minutos máximo."
+    scene cg_manija_edificio with fade
+    pause 1.5
 
-    play sound sfx_manija volume 1.5
+    mc "(Muy bien... empecemos)."
+
+    mc "Cero distracciones. Presentación formal, evaluación rápida y fijar el horario. Diez minutos máximo."
+
+    play sound audio.sfx_manija volume 1.5
 
     narrador "Apenas puse la mano sobre el pomo, la puerta se abrió desde el otro lado..."
 
@@ -561,7 +567,7 @@ label prologo:
     ##  ESCENA 5 · La revelación
     ############################################################################
 
-    play sound sfx_puerta_abre volume 1.5
+    play sound audio.sfx_puerta_abre volume 1.5
 
     scene cg_ichika_puerta
     with fade
@@ -719,7 +725,7 @@ label prologo:
 
     ## --- Yotsuba -------------------------------------------------------------
 
-    play sound sfx_correr volume 1.75
+    play sound audio.sfx_correr volume 1.75
 
     narrador "Algo me pasó por al lado a toda velocidad antes de que pudiera reaccionar."
 
@@ -777,7 +783,7 @@ label prologo:
     show nino at pj_calla(0.5)
     with disolucion_lenta
     
-    play sound sfx_portazo volume 2.5
+    play sound audio.sfx_portazo volume 2.5
   
     narrador "Antes de que pudiera terminar la palabra, la puerta al fondo del pasillo se abrió de golpe."
 
@@ -790,7 +796,7 @@ label prologo:
 
     ## Compite con `caos`, que va a tope en esta escena.
     $ duck()
-    play sound sfx_bolsa volume 2.5
+    play sound audio.sfx_bolsa volume 2.5
 
     narrador "Se detuvo en seco a mitad del pasillo, congelada con la bolsa del supermercado en la mano."
 
@@ -953,7 +959,7 @@ label prologo:
     
     stop music fadeout 0.3
 
-    play sound sfx_puerta_abre volume 1.0
+    play sound audio.sfx_puerta_abre volume 1.0
 
     narrador "Cuando la figura de su padre apareció en el umbral."
 
@@ -1022,7 +1028,7 @@ label prologo:
     scene bg_departamento
     with fade
 
-    play sound sfx_puerta_cierra volume 1.0
+    play sound audio.sfx_puerta_cierra volume 1.0
 
     narrador "Se dio la vuelta y se fue, cerrando la puerta con la calma de quien ya dio una orden y no acepta réplicas."
 
@@ -1044,7 +1050,7 @@ label prologo:
     
     narrador "Cinco lápices."
     
-    play sound sfx_hoja volume 2.0
+    play sound audio.sfx_hoja volume 2.0
 
     narrador "Una hoja con un diagnóstico rápido de veinte preguntas."
 
@@ -1107,7 +1113,7 @@ label prologo:
 
     stop music fadeout 2.0
 
-    play sound sfx_puerta_cierra volume 2.0
+    play sound audio.sfx_puerta_cierra volume 2.0
 
     narrador "Agarró su hoja sin tocar el lápiz y se retiró a su habitación, cerrando la puerta con fuerza."
 
@@ -1118,19 +1124,19 @@ label prologo:
 
     narrador "Ichika se puso de pie bostezando, alegando que el estrés le arruinaría la piel para su audición de mañana."
 
-    play sound sfx_puerta_cierra volume 1.2
+    play sound audio.sfx_puerta_cierra volume 1.2
 
     narrador "Miku ni se molestó en dar explicaciones."
     
     narrador "Simplemente se ajustó los audífonos y se marchó a su habitación en completo silencio."
 
-    play sound sfx_puerta_cierra volume 1.2
+    play sound audio.sfx_puerta_cierra volume 1.2
 
     narrador "Y Yotsuba, aplastada por la culpa de ver a las demás irse."
     
     narrador "Me pidió perdón unas diez veces haciendo reverencias antes de salir huyendo a su cuarto prometiendo 'estudiar el doble mañana'."
 
-    play sound sfx_puerta_cierra volume 1.2
+    play sound audio.sfx_puerta_cierra volume 1.2
 
     narrador "En menos de diez minutos, la mesa quedó vacía."
 

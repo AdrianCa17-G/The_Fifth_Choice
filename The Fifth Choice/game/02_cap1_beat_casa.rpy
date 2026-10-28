@@ -7,7 +7,7 @@
 
 image cg_raiha_correccion = "images/cg/cap1_beats/raiha_correccion.webp"
 
-define audio.sfx.lapiz_mesa = "audio/sfx/lapiz_mesa.mp3"
+define audio.sfx_lapiz_mesa = "audio/sfx/lapiz_mesa.mp3"
 
 ################################################################################
 ##  HUB DE LA CASA 
@@ -99,7 +99,7 @@ label beat_casa:
     narrador "Levantó la vista de la hoja antes de corregir."
 
     $ duck()
-    play sound sfx.lapiz_mesa volume 2.5
+    play sound audio.sfx_lapiz_mesa volume 2.5
 
     narrador "Dejó el lápiz sobre la mesa, despacio."
 
@@ -148,7 +148,7 @@ label beat_casa:
     scene bg_comedor
     with fade
 
-    play sound sfx_puerta_abre volume 1.0
+    play sound audio.sfx_puerta_abre volume 1.0
 
     narrador "Mi padre entró cuando Raiha ya estaba guardando el cuaderno."
 
@@ -203,6 +203,8 @@ label beat_casa:
     isanari "Eso espero." 
     
     isanari "Cinco veces la tarifa no cae del cielo dos veces."
+
+    play sound audio.sfx_puerta_cierra volume 1.0
 
     narrador "Se sirvió agua y volvió a su cuarto sin esperar respuesta, "
     
@@ -364,6 +366,8 @@ label beat_casa:
 
                     stop music fadeout 2.0
 
+                    play music hogar fadein 2.0 volume 0.7
+
 
                 "Nino" if "nino" not in hermanas_pensamiento:
 
@@ -444,6 +448,8 @@ label beat_casa:
 
 
                     stop music fadeout 2.0
+
+                    play music hogar fadein 2.0 volume 0.7
                         
 
                 "Miku" if "miku" not in hermanas_pensamiento:
@@ -516,6 +522,8 @@ label beat_casa:
                         mc_pensamiento "Ella es todo un misterio."
 
                     stop music fadeout 2.0
+
+                    play music hogar fadein 2.0 volume 0.7
 
 
                 "Yotsuba" if "yotsuba" not in hermanas_pensamiento:
@@ -595,6 +603,8 @@ label beat_casa:
 
                     stop music fadeout 2.0
 
+                    play music hogar fadein 2.0 volume 0.7
+
 
                 "Itsuki" if "itsuki" not in hermanas_pensamiento:
 
@@ -666,6 +676,8 @@ label beat_casa:
                         mc_pensamiento "Y tampoco sé cómo hacer que se sienta bien."
 
                     stop music fadeout 2.0
+
+                    play music hogar fadein 2.0 volume 0.7
 
             if len(hermanas_pensamiento) < 5:
                 jump cap1_hermanas_pensamiento

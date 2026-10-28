@@ -911,7 +911,7 @@ label cap1_interconexion_1:
     scene bg_escuela
     with fade
 
-    play sound sfx_timbre volume 2.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Llegué al instituto temprano, como siempre."
 
@@ -1390,7 +1390,7 @@ label cap1_interconexion_2:
     scene bg_aula
     with fade
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Llegué al instituto con el almuerzo de Raiha en la mochila y la cabeza todavía en lo de ayer."
 
@@ -1568,7 +1568,7 @@ label cap1_interconexion_2:
 
     stop music fadeout 0.5
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "El timbre del almuerzo sonó y el aula se vació en segundos."
 
@@ -2302,7 +2302,7 @@ label cap1_interconexion_5:
     scene bg_escuela
     with fade
 
-    play sound sfx_timbre volume 2.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Llegué al instituto temprano, como siempre."
 
@@ -2887,7 +2887,7 @@ label cap1_interconexion_6:
     scene bg_escuela
     with fade
 
-    play sound sfx_timbre volume 2.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Viernes. El instituto olía distinto: a papel subrayado y estudiantes preocupados."
 
@@ -3320,7 +3320,7 @@ label cap1_interconexion_6:
         scene cg_maruo_reunion
         with fade
 
-        play sound sfx_puerta_abre volume 1.5
+        play sound audio.sfx_puerta_abre volume 1.5
 
         play music contrato fadein 2.0
 
@@ -3343,6 +3343,8 @@ label cap1_interconexion_6:
             maruo "En el transcurso de la semana confirmaré mi decisión."
 
             narrador "Se fue sin esperar respuesta." 
+
+            play sound audio.sfx_puerta_cierra volume 1.0
             
             narrador "Cerró con la calma de siempre."
 
@@ -3363,6 +3365,12 @@ label cap1_interconexion_6:
             narrador "Pero tardó un segundo de más en irse."
 
             maruo "No te confíes. Los exámenes empiezan la siguiente semana."
+
+            narrador "Se fue sin esperar respuesta." 
+
+            play sound audio.sfx_puerta_cierra volume 1.0
+
+            narrador "Cerró con la calma de siempre."
 
             mc_pensamiento "Viniendo de él, eso casi era un aplauso."
 
@@ -3631,6 +3639,8 @@ label cap1_interconexion_6:
     with fade
 
     play music cotidiano fadein 2.5
+
+    play sound audio.sfx_puerta_cierra volume 1.2
 
     narrador "Pasadas las ocho salí del departamento, después de dejarles las últimas hojas de repaso."
 

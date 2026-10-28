@@ -77,6 +77,8 @@ label hub_Miku:
 
     mc_pensamiento "Los lleva ahí abajo, listos, para el momento en que alguien se acerque."
 
+    play sound audio.sfx_silla volume 1.0
+
     narrador "Me senté enfrente."
 
     narrador "Tardó tres segundos largos en levantar la vista."
@@ -118,7 +120,7 @@ label hub_Miku:
     ##  Mc decide ayudar a Miku en la asignatura que se le da bien
     ############################################################################
 
-    play sound sfx_papel_mesa volume 2.5
+    play sound audio.sfx_papel_mesa volume 2.5
 
     narrador "Saqué el temario de sociales y lo puse sobre la mesa, girado hacia ella."
 
@@ -183,7 +185,7 @@ label hub_Miku:
 
     narrador "Cerré el temario y saqué de la mochila otro libro, con la misma etiqueta en el lomo que los suyos."
 
-    play sound sfx_papel_mesa volume 1.0
+    play sound audio.sfx_papel_mesa volume 2.5
 
     narrador "Lo reconoció antes de que llegara a la mesa."
 
@@ -528,7 +530,7 @@ label miku_m4c:
     miku "…Hoy no."
     
     $ duck()
-    play sound sfx_silla volume 2.5
+    play sound audio.sfx_silla volume 2.5
 
     show miku at pj_calla(0.5)
     with disolucion_lenta

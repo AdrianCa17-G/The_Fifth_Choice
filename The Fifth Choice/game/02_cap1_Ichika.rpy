@@ -31,7 +31,7 @@ label hub_Ichika:
     ##  con latas de energizante y un guión colgado a mano
     ############################################################################
 
-    scene sala_ensayo 
+    scene bg_sala_ensayo 
     with fade
 
     stop music fadeout 1.0
@@ -74,7 +74,7 @@ label hub_Ichika:
     mc_pensamiento "No llegué a decidirlo."
 
     $ duck()
-    play sound sfx_hoja volume 1.0
+    play sound audio.sfx_hoja volume 2.0
 
     narrador "El guion terminó de resbalarle de la mano y cayó al piso."
 
@@ -175,6 +175,8 @@ label hub_Ichika:
 
     narrador "Lo dijo con una sonrisa, pero cambió de tema otra vez, y esta ya era la segunda."
 
+    play sound audio.sfx_hoja
+
     narrador "Guardó el horario doblándolo rápido."
 
     narrador "Más rápido de lo necesario, antes de que yo pudiera leer lo que estaba tachado."
@@ -229,6 +231,8 @@ label hub_Ichika:
 
     scene cg_ichika_mascara
     with fade
+
+    play sound audio.sfx_silla volume 1.2
 
     narrador "Se sentó en una de las sillas plegables."
 

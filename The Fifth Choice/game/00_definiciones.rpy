@@ -303,7 +303,11 @@ transform pj_calla(x=0.5):
 define mover = MoveTransition(0.6)
 
 # Definir dissolve que dura 1.2 segundos
-define disolucion_lenta = Dissolve(0.4)
+define disolucion_lenta = Dissolve(1.2)
+
+define fade_dia   = Fade(0.7, 0.4, 0.7)
+
+define corte_seco = Dissolve(0.1)
 
 
 ################################################################################
@@ -384,7 +388,7 @@ define audio.sfx_portazo       = "audio/sfx/portazo.mp3"
 define audio.sfx_bolsa         = "audio/sfx/bolsa.mp3"
 define audio.sfx_hoja          = "audio/sfx/hoja.mp3"
 define audio.sfx_puerta_cierra = "audio/sfx/puerta_cierra.mp3"
-define audio.sfx.pisadas_pista = "audio/sfx/pisadas_pista.mp3"
+define audio.sfx_pisadas_pista = "audio/sfx/pisadas_pista.mp3"
 
 
 ## Musica del hub

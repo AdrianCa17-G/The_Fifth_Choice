@@ -11,7 +11,7 @@ image cg_nino_confrontacion_cocina = "images/cg/cap1_beats/nino_confrontacion_co
 
 image cg_nino_grieta_cocina = "images/cg/cap1_beats/nino_grieta_cocina.webp"
 
-define audio.sfx.taza_mesa     = "audio/sfx/taza_mesa.mp3"
+define audio.sfx_taza_mesa     = "audio/sfx/taza_mesa.mp3"
 
 define audio.tregua    = "audio/bgm/tregua.ogg"
 
@@ -45,7 +45,7 @@ label beat_Nino:
     scene cg_manija_edificio
     with fade
 
-    play sound sfx_manija volume 1.5
+    play sound audio.sfx_manija volume 1.5
 
     narrador "Antes de terminar de abrirla, escuché dos voces desde el fondo."
 
@@ -122,9 +122,6 @@ label beat_Nino:
 
         stop music fadeout 1.0
 
-        scene bg_departamento
-        with fade
-
         narrador "Fue entonces cuando Maruo levantó la vista y me encontró en la puerta."
 
         scene cg_maruo_reunion
@@ -137,6 +134,8 @@ label beat_Nino:
         mc "Perdón, no venía con la intención de interrumpirlos."
 
         maruo "Ya nos interrumpiste con solo entrar."
+
+        play sound audio.sfx.taza_mesa volume 1.0
 
         narrador "Dejó la taza sobre la mesa, despacio, sin apurarse."
 
@@ -160,8 +159,7 @@ label beat_Nino:
 
         mc_pensamiento "No subió la voz ni una vez. No hacía falta."
 
-        $ duck()
-        play sound sfx_puerta_cierra volume 1.0
+        play sound audio.sfx_puerta_cierra volume 1.0
 
         narrador "Recogió la taza y salió de la cocina sin esperar respuesta, dándonos la espalda a los dos por igual."
 
@@ -190,8 +188,7 @@ label beat_Nino:
 
         narrador "Se sirvió el resto del café en el fregadero y salió de la cocina sin mirar a ninguno de los dos."
 
-        $ duck()
-        play sound sfx_puerta_cierra volume 1.5
+        play sound audio.sfx_puerta_cierra volume 1.0
 
         scene bg_cocina
         with fade
@@ -225,8 +222,7 @@ label beat_Nino:
 
     narrador "Entré del todo a la cocina. Ella no se movió de donde estaba."
 
-    $ duck()
-    play sound sfx.taza_mesa volume 2.0
+    play sound audio.sfx_taza_mesa volume 2.0
 
     narrador "Dejó su propia taza sobre la mesa con más fuerza de la necesaria." 
     

@@ -37,7 +37,7 @@ label final_malo_beat:
 
     maruo "Ya que estás aquí, me ahorras la llamada y  mi tiempo."
 
-    play sound sfx.taza_mesa volume 1.0
+    play sound audio.sfx_taza_mesa volume 1.0
 
     narrador "Dejó la taza sobre la mesa, despacio."
 
@@ -72,7 +72,7 @@ label final_malo_beat:
 
     narrador "Pero no lo dijo."
     
-    play sound sfx_puerta_cierra volume 2.5
+    play sound audio.sfx_puerta_cierra volume 1.0
     
     stop music fadeout 2.0
 
@@ -144,7 +144,7 @@ label final_malo_beat:
     ##  eso no tienen igualmente sentimiento de culpa.
     ############################################################################
 
-    play sound sfx_puerta_abre volume 1.0
+    play sound audio.sfx_puerta_abre volume 1.0
 
     narrador "No pasó ni un minuto." 
     
@@ -310,7 +310,7 @@ label final_malo_beat:
 
     narrador "Tampoco nadie me acompañó hasta la puerta."
 
-    play sound sfx_puerta_cierra volume 1.5
+    play sound audio.sfx_puerta_cierra volume 1.0
 
     narrador "La cerré yo mismo. Sin portazo." 
     

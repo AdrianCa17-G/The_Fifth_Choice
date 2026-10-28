@@ -33,7 +33,7 @@ label final_malo_hub3:
     scene bg_escuela
     with fade
     
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     mc_pensamiento "Lunes. Primer día de exámenes." 
     
@@ -152,7 +152,7 @@ label final_malo_hub3:
 
     narrador "Lo dije y sonó a lo que era: una frase vacía e inutil."
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     ############################################################################
     ##  MOVIMIENTO 3 · Los cinco exámenes
@@ -182,7 +182,7 @@ label final_malo_hub3:
 
     profe "Pueden empezar."
 
-    play sound sfx_hoja volume 2.0
+    play sound audio.sfx_hoja volume 2.0
 
     ## 3.1 · Lunes · Japonés · Yotsuba
 
@@ -222,13 +222,13 @@ label final_malo_hub3:
     scene bg_negro
     with fade
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Día martes." 
     
     narrador "Examen de matemáticas."
 
-    play sound sfx_hoja volume 2.0
+    play sound audio.sfx_hoja volume 2.0
 
     ## 3.2 · Martes · Matemáticas · Ichika
 
@@ -278,13 +278,13 @@ label final_malo_hub3:
     scene bg_negro
     with fade
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Día miercoles." 
     
     narrador "Examen de inglés."
 
-    play sound sfx_hoja volume 2.0
+    play sound audio.sfx_hoja volume 2.0
 
     ## 3.3 · Miércoles · Inglés · Nino
 
@@ -330,13 +330,13 @@ label final_malo_hub3:
     scene bg_negro
     with fade
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Día jueves." 
     
     narrador "Examen de Ciencias."
 
-    play sound sfx_hoja volume 2.0
+    play sound audio.sfx_hoja volume 2.0
 
     ## 3.4 · Jueves · Ciencias · Itsuki
 
@@ -374,7 +374,7 @@ label final_malo_hub3:
     scene bg_negro
     with fade
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     narrador "Y ahí terminó el examen de Itsuki."
 
@@ -382,7 +382,7 @@ label final_malo_hub3:
     
     narrador "Examen de Sociales."
 
-    play sound sfx_hoja volume 2.0
+    play sound audio.sfx_hoja volume 2.0
 
     ## 3.5 · Viernes · Sociales · Miku
     
@@ -422,7 +422,7 @@ label final_malo_hub3:
     scene bg_negro
     with fade
 
-    play sound sfx_timbre volume 1.5
+    play sound audio.sfx_timbre volume 1.5
 
     ############################################################################
     ##  MOVIMIENTO 4 · Después del examen
@@ -590,7 +590,7 @@ label final_malo_hub3:
 
     mc_pensamiento "Y cada vez que necesitaba hablar, me quedé callado."
 
-    play sound sfx_toque_puerta volume 1.5 
+    play sound audio.sfx_toque_puerta volume 1.5 
     
     show raiha hablando at pj(0.30)
     with dissolve
@@ -704,7 +704,7 @@ label final_malo_hub3:
     
     maruo "Hasta aquí."
 
-    play sound sfx_puerta_cierra volume 1.0
+    play sound audio.sfx_puerta_cierra volume 1.0
     
     stop music fadeout 2.0
 

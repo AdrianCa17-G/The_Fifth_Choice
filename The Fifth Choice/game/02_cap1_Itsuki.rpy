@@ -97,7 +97,7 @@ label hub_Itsuki:
     ############################################################################
 
     $ duck()
-    play sound sfx_hoja volume 1.0
+    play sound audio.sfx_hoja volume 2.0
 
     narrador "Pasó a una hoja nueva del cuaderno, tapando la anterior con la mano."
 
@@ -227,6 +227,8 @@ label hub_Itsuki:
     scene cg_itsuki_reto
     with fade
 
+    play sound audio.sfx_mochila_suelo volume 1.5
+
     narrador "Dejé la mochila en el suelo."
 
     narrador "Me acerqué un paso. No dos."
@@ -333,6 +335,8 @@ label itsuki_m4a:
     itsuki "Lo sabía. Se me pasó."
 
     mc "No dije que no."
+
+    play sound audio.sfx_lapiz_mesa
 
     narrador "Tachó la línea entera, no solo el número."
 
@@ -447,6 +451,8 @@ label itsuki_m4c:
     mc "Ahorrarte tiempo."
 
     mc "El error está en el segundo paso, la conversión."
+
+    play sound audio.sfx.lapiz_mesa
 
     narrador "Lo resolví ahí mismo, de pie, con su propio lápiz."
 
