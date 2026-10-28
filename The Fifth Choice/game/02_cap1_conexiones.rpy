@@ -142,6 +142,8 @@ label reaccion_ichika:
 
         narrador "Antes me recibía con una broma. Hoy, con mi nombre y nada más."
 
+    stop music fadeout 1.5
+
     hide ichika
     with moveoutleft
 
@@ -236,6 +238,9 @@ label reaccion_nino:
 
         narrador "Pasó a mi lado sin rozarme. Ni siquiera con el hombro."
 
+    
+    stop music fadeout 1.5
+
     hide nino
     with moveoutleft
 
@@ -329,6 +334,9 @@ label reaccion_miku:
         narrador "No hubo reproche." 
 
         narrador "Eso fue lo peor: lo dijo como quien acepta un reglamento."
+
+    
+    stop music fadeout 1.5
 
     hide miku
     with moveoutleft
@@ -432,6 +440,9 @@ label reaccion_yotsuba:
         with disolucion_lenta
 
         narrador "Lo anotó en la muñeca. No me miró mientras lo hacía."
+
+    
+    stop music fadeout 1.5
 
     hide yotsuba
     with moveoutleft
@@ -578,6 +589,9 @@ label reaccion_itsuki:
         mc_pensamiento "Le había quitado la respuesta." 
         
         mc_pensamiento "Ella me la devolvía a su manera: tachada."
+
+    
+    stop music fadeout 1.5
 
     
     hide itsuki
@@ -909,7 +923,7 @@ label cap1_interconexion_1:
     stop music fadeout 1.5
 
     scene bg_escuela
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1306,7 +1320,7 @@ label cap1_interconexion_2:
     ############################################################################
 
     scene bg_comedor
-    with fade
+    with fade_dia
 
     play music cena fadeout 1.5 fadein 2.0
 
@@ -1316,7 +1330,7 @@ label cap1_interconexion_2:
 
     narrador "Esa energía me recuerda a alguien. No sé a quién."
 
-    show raiha hablando at pj_habla(0.20)
+    show raiha hablando at pj_habla(0.50)
     with dissolve
 
     raiha "¡Buenos días hermanito!"
@@ -1331,7 +1345,7 @@ label cap1_interconexion_2:
 
             mc "Lo que sea, menos curry."
 
-            show raiha regano at pj_habla(0.20)
+            show raiha regano at pj_habla(0.50)
             with disolucion_lenta
 
             raiha "¡El curry es amor líquido, hermanito!"
@@ -1346,7 +1360,7 @@ label cap1_interconexion_2:
 
             mc "¿Los pulpitos no se negocian?"
 
-            show raiha regano at pj_habla(0.20)
+            show raiha regano at pj_habla(0.50)
             with disolucion_lenta
 
             raiha "¡Nunca!"
@@ -1355,7 +1369,7 @@ label cap1_interconexion_2:
 
             mc "Nada. Con estas ojeras ya voy servido."
 
-            show raiha preocupada at pj_habla(0.20)
+            show raiha preocupada at pj_habla(0.50)
             with disolucion_lenta
 
             raiha "…Voy a prepararte doble porción."
@@ -1364,7 +1378,7 @@ label cap1_interconexion_2:
 
             narrador "Lo dijo con el tono de quien ya tomó una decisión por los dos."
 
-            show raiha regano at pj_habla(0.20)
+            show raiha regano at pj_habla(0.50)
             with disolucion_lenta
 
     raiha "¡Y no lo dejes olvidado en la mochila como la última vez!"
@@ -1374,7 +1388,7 @@ label cap1_interconexion_2:
     narrador "Me lo entregó envuelto en un pañuelo, con el nudo más apretado que he visto en mi vida."
 
     hide raiha
-    with moveoutleft
+    with dissolve
 
     narrador "Salí de casa y fui al instituto."
 
@@ -1388,7 +1402,7 @@ label cap1_interconexion_2:
     with fade
 
     scene bg_aula
-    with fade
+    with dissolve
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1639,7 +1653,7 @@ label cap1_interconexion_3:
     ############################################################################
 
     scene bg_negro
-    with fade
+    with fade_dia
 
     narrador "Los días siguientes se me fueron entre clases, las tutorías y sueño atrasado."
 
@@ -1655,7 +1669,7 @@ label cap1_interconexion_3:
     with fade
 
     scene bg_aula
-    with fade
+    with dissolve
 
     play music cotidiano fadein 2.0
 
@@ -1855,7 +1869,7 @@ label cap1_interconexion_4:
     ############################################################################
 
     scene bg_escuela
-    with fade
+    with fade_dia
 
     play music cotidiano fadein 2.0
 
@@ -2289,7 +2303,7 @@ label cap1_interconexion_5:
     ############################################################################
 
     scene bg_negro
-    with fade
+    with fade_dia
 
     narrador "Los días siguientes se me pasaron volando."
 
@@ -2789,7 +2803,7 @@ label cap1_interconexion_6:
     with fade
 
     scene cg_libreta
-    with fade
+    with dissolve
 
     narrador "Llegué a mi habitación y fuí directamente a mi escritorio."
 
@@ -2885,7 +2899,7 @@ label cap1_interconexion_6:
     ############################################################################
 
     scene bg_escuela
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -2921,13 +2935,11 @@ label cap1_interconexion_6:
 
     ## Las dos que se quedaron fuera.
 
-    stop music fadeout 1.5
-
     narrador "A media mañana me alcanzaron, las dos únicas quintillizas."
     
     narrador "A las que no había ido a buscar."
 
-    play music derrota fadein 1.5
+    play music derrota fadein 2.0
 
     if "ichika" not in hub_visitadas:
         call queja_ichika
@@ -2944,10 +2956,9 @@ label cap1_interconexion_6:
     if "itsuki" not in hub_visitadas:
         call queja_itsuki
 
-    ## Las cinco se reúnen. Itsuki cierra el juego que ella misma empezó.
+    stop music fadeout 1.5
 
-    hide itsuki
-    with disolucion_lenta
+    ## Las cinco se reúnen. Itsuki cierra el juego que ella misma empezó.
 
     show ichika neutral at pj(X_ICHIKA)
     show nino neutral at pj(X_NINO)
@@ -2955,8 +2966,6 @@ label cap1_interconexion_6:
     show yotsuba sonriendo at pj(X_YOTSUBA)
     show itsuki neutral at pj(X_ITSUKI)
     with dissolve
-
-    stop music fadeout 1.5
 
     narrador "Faltaba la cereza del pastel."
 
@@ -3055,6 +3064,8 @@ label cap1_interconexion_6:
         nino "Ya lo veremos en la semana de examenes."
 
     else:
+
+        stop music fadeout 1.5
 
         nino "Y, siendo sincera, tampoco es que haya servido de mucho."
 
@@ -3195,10 +3206,10 @@ label cap1_interconexion_6:
     with fade
 
     scene bg_entrada_edificio
-    with fade
+    with dissolve
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     narrador "Esa tarde estudiamos en el departamento." 
     
@@ -3211,7 +3222,7 @@ label cap1_interconexion_6:
         play music cotidiano fadein 2.0
 
         scene cg_cinco_estudiando
-        with fade
+        with dissolve
 
         narrador "Hacía un mes, esta mesa era un campo de batalla."
 
@@ -3254,7 +3265,7 @@ label cap1_interconexion_6:
         play music cotidiano fadein 2.0 
 
         scene cg_cinco_repasando
-        with fade
+        with dissolve
 
         narrador "Desde la puerta parecía la misma escena del primer día."
 
@@ -3285,7 +3296,7 @@ label cap1_interconexion_6:
         play music derrota fadein 2.5
 
         scene cg_hermanas_estudiando
-        with fade
+        with dissolve
 
         narrador "Era casi la misma imagen del primer día." 
         
@@ -3318,7 +3329,7 @@ label cap1_interconexion_6:
         stop music fadeout 1.0
 
         scene cg_maruo_reunion
-        with fade
+        with corte_seco
 
         play sound audio.sfx_puerta_abre volume 1.5
 
@@ -3379,7 +3390,7 @@ label cap1_interconexion_6:
         stop music fadeout 2.0
 
         scene bg_departamento
-        with fade
+        with dissolve
 
     else:
 
@@ -3529,7 +3540,7 @@ label cap1_interconexion_6:
     stop music fadeout 2.0
 
     scene bg_negro
-    with fade
+    with fade_dia
 
     narrador "Sábado."
 
@@ -3629,7 +3640,7 @@ label cap1_interconexion_6:
     stop music fadeout 1.5
 
     scene bg_negro
-    with fade
+    with fade_dia
 
     narrador "Domingo."
 
@@ -3637,8 +3648,6 @@ label cap1_interconexion_6:
 
     scene bg_departamento_anochecer
     with fade
-
-    play music cotidiano fadein 2.5
 
     play sound audio.sfx_puerta_cierra volume 1.2
 
@@ -3648,6 +3657,8 @@ label cap1_interconexion_6:
 
     if clima_cap1 == "buena":
 
+        play music cotidiano fadein 2.5
+
         narrador "Cinco puertas. Cinco rayas de luz. Ninguna dormía."
 
         mc_pensamiento "Hacía un mes, cada puerta cerrada era un portazo."
@@ -3655,6 +3666,8 @@ label cap1_interconexion_6:
         mc_pensamiento "Esa noche estaban cerradas por la misma razón."
 
     elif clima_cap1 == "mixta":
+
+        play music cotidiano fadein 2.5
 
         narrador "Cinco puertas. Tres rayas de luz."
 

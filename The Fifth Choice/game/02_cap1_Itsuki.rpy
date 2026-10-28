@@ -50,7 +50,7 @@ label hub_Itsuki:
     play music itsuki fadein 2.0
 
     scene cg_itsuki_atascada
-    with fade
+    with dissolve
 
     narrador "Menos un pupitre."
 
@@ -75,7 +75,7 @@ label hub_Itsuki:
     narrador "Fue entonces cuando levantó la vista."
 
     scene bg_aula_tarde
-    with fade
+    with dissolve
 
     show itsuki neutral at pj(0.5)
     with dissolve
@@ -196,7 +196,7 @@ label hub_Itsuki:
     narrador "La postura no había cambiado, pero algo en los hombros sí."
 
     scene cg_itsuki_contraida
-    with fade
+    with dissolve
 
     narrador "Se dejó caer sobre el pupitre. No dormida, hundida."
 
@@ -225,7 +225,7 @@ label hub_Itsuki:
     stop music fadeout 1.5
 
     scene cg_itsuki_reto
-    with fade
+    with dissolve
 
     play sound audio.sfx_mochila_suelo volume 1.5
 
@@ -250,7 +250,7 @@ label hub_Itsuki:
     narrador "Está corrigiendo el final y arrastrando el error del medio sin tocarlo."
 
     scene bg_aula_tarde
-    with fade
+    with dissolve
 
     play music descubrimiento fadein 2.0
 
@@ -452,7 +452,7 @@ label itsuki_m4c:
 
     mc "El error está en el segundo paso, la conversión."
 
-    play sound audio.sfx.lapiz_mesa
+    play sound audio.sfx_lapiz_mesa
 
     narrador "Lo resolví ahí mismo, de pie, con su propio lápiz."
 

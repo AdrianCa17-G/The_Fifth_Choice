@@ -27,7 +27,7 @@ label cap1_apertura:
     ############################################################################
 
     scene bg_escuela 
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -53,7 +53,7 @@ label cap1_apertura:
     narrador "Mi asiento estaba libre."
 
     scene cg_itsuki_apertura
-    with fade
+    with dissolve
 
     mc_pensamiento "Libre, y con el pupitre de al lado ocupado."
 
@@ -66,7 +66,7 @@ label cap1_apertura:
     mc_pensamiento "Eso también era un mensaje."
 
     scene bg_aula
-    with fade
+    with dissolve
 
     play music incomodo fadeout 1.0 fadein 1.5
 
@@ -123,7 +123,7 @@ label cap1_apertura:
 
 
     scene cg_itsuki_apertura
-    with fade
+    with dissolve
 
     narrador "Volvió a su cuaderno con un gesto seco y no dijo una palabra más en toda la mañana."
 
@@ -148,10 +148,10 @@ label cap1_apertura:
     stop music fadeout 1.5
     
     scene bg_edificio
-    with fade
+    with dissolve
     
     scene bg_departamento
-    with fade 
+    with dissolve 
     
     play sound audio.sfx_toque_puerta volume 1.5
 
@@ -168,7 +168,7 @@ label cap1_apertura:
     mc_pensamiento "Lo que no esperaba era lo que encontré al entrar."
 
     scene cg_cinco_sentadas 
-    with fade
+    with dissolve
 
     play music extraneza fadein 2.0
 
@@ -251,7 +251,7 @@ label cap1_apertura:
     play music caos fadeout 0.5 fadein 1.0
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     mc "Nino."
 
@@ -334,7 +334,7 @@ label cap1_apertura:
     mc_pensamiento "Mentía tan bien que casi daba gusto."
 
     scene cg_hermanas_estudiando
-    with fade
+    with dissolve
 
     narrador "Para cuando volví a levantar la vista, Ichika ya tenía los ojos cerrados y la cabeza apoyada en el respaldo."
 
@@ -361,7 +361,7 @@ label cap1_apertura:
     narrador "Lo leí a propósito, con el peor acento que pude."
 
     scene bg_departamento_anochecer
-    with fade
+    with dissolve
     
     show nino neutral at pj_habla(0.5)
     with dissolve
@@ -430,7 +430,7 @@ label cap1_apertura:
     narrador "Estaba recogiendo mis cosas cuando la puerta del fondo se abrió."
 
     scene cg_maruo_reunion
-    with fade
+    with corte_seco
     
     play music contrato fadein 2.0
 
@@ -589,7 +589,7 @@ label cap1_apertura:
     play music hogar fadein 1.5 
 
     scene cg_calificacion
-    with fade
+    with dissolve
 
     narrador "Puse las cinco hojas sobre el escritorio y las dejé ahí un buen rato sin tocarlas."
 
@@ -604,7 +604,7 @@ label cap1_apertura:
     play sound audio.sfx_toque_puerta volume 1.5
 
     scene bg_cuarto_mc
-    with fade
+    with dissolve
     
     show raiha preocupada at pj(0.50)
     with dissolve

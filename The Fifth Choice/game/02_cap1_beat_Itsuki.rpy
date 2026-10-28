@@ -42,7 +42,7 @@ label beat_Itsuki:
     narrador "La puerta ya estaba abierta."
 
     scene cg_itsuki_azotea_cuaderno
-    with fade
+    with dissolve
 
     play ambiente amb_viento fadein 2.0 volume 0.5
 
@@ -84,7 +84,7 @@ label beat_Itsuki:
     narrador "Me senté a un par de metros, sin decir nada todavía."
 
     scene bg_azotea
-    with fade
+    with dissolve
 
     show itsuki neutral at pj(0.5)
     with dissolve
@@ -152,7 +152,7 @@ label beat_Itsuki:
     mc_pensamiento "Como quien ya no sabe estar en un sitio sin la excusa de tener algo que hacer ahí."
 
     scene cg_itsuki_azotea_manos
-    with fade
+    with dissolve
 
     narrador "Tenía las manos apoyadas sobre la tapa, quietas. Sin una sola mancha de tinta."
 
@@ -177,7 +177,7 @@ label beat_Itsuki:
     narrador "No contestó. Pero no volvió a preguntar tampoco."
 
     scene bg_azotea 
-    with fade
+    with dissolve
 
     if itsuki_visitada_cap1 and itsuki_rama_cap1 != "tibia":
 

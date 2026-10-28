@@ -76,7 +76,7 @@ label beat_casa:
     narrador "Raiha no cerró su cuaderno."
 
     scene cg_raiha_correccion
-    with fade
+    with dissolve
 
     raiha "Hermanito, tengo un problema de matemáticas que no me sale."
 
@@ -146,7 +146,7 @@ label beat_casa:
     ############################################################################
 
     scene bg_comedor
-    with fade
+    with dissolve
 
     play sound audio.sfx_puerta_abre volume 1.0
 
@@ -247,7 +247,7 @@ label beat_casa:
     narrador "La misma de la primera noche."
 
     scene cg_libreta
-    with fade
+    with dissolve
     
     play music hogar fadein 1.5 
 
@@ -300,6 +300,9 @@ label beat_casa:
                 "Ichika" if "ichika" not in hermanas_pensamiento:
 
                     $ hermanas_pensamiento.add("ichika")
+
+                    scene expression collage_hermana("ichika", ichika_visitada_cap1)
+                    with dissolve
 
                     if ichika_visitada_cap1:
 
@@ -364,6 +367,10 @@ label beat_casa:
 
                         mc_pensamiento "No sé si sigue fingiendo o si dejó de hacerlo..."
 
+
+                    scene cg_libreta
+                    with dissolve
+
                     stop music fadeout 2.0
 
                     play music hogar fadein 2.0 volume 0.7
@@ -372,6 +379,9 @@ label beat_casa:
                 "Nino" if "nino" not in hermanas_pensamiento:
 
                     $ hermanas_pensamiento.add("nino")
+
+                    scene expression collage_hermana("nino", nino_visitada_cap1)
+                    with dissolve
 
                     if nino_visitada_cap1:
 
@@ -446,6 +456,9 @@ label beat_casa:
 
                         mc_pensamiento "Ella es un tren de emociones que nunca frena."
 
+            
+                    scene cg_libreta
+                    with dissolve
 
                     stop music fadeout 2.0
 
@@ -456,6 +469,9 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("miku")
 
+                    scene expression collage_hermana("miku", miku_visitada_cap1)
+                    with dissolve
+                    
                     if miku_visitada_cap1:
 
                         play music miku fadeout 1.0 fadein 1.5
@@ -521,6 +537,10 @@ label beat_casa:
 
                         mc_pensamiento "Ella es todo un misterio."
 
+                
+                    scene cg_libreta
+                    with dissolve
+
                     stop music fadeout 2.0
 
                     play music hogar fadein 2.0 volume 0.7
@@ -529,6 +549,9 @@ label beat_casa:
                 "Yotsuba" if "yotsuba" not in hermanas_pensamiento:
 
                     $ hermanas_pensamiento.add("yotsuba")
+
+                    scene expression collage_hermana("yotsuba", yotsuba_visitada_cap1)
+                    with dissolve                 
 
                     if yotsuba_visitada_cap1:
 
@@ -598,8 +621,11 @@ label beat_casa:
 
                         mc_pensamiento "¿O solo es una máscara?"
 
-                        mc_pensamiento "No lo sé." 
+                        mc_pensamiento "No lo sé."
 
+
+                    scene cg_libreta
+                    with dissolve
 
                     stop music fadeout 2.0
 
@@ -609,6 +635,9 @@ label beat_casa:
                 "Itsuki" if "itsuki" not in hermanas_pensamiento:
 
                     $ hermanas_pensamiento.add("itsuki")
+
+                    scene expression collage_hermana("itsuki", itsuki_visitada_cap1)
+                    with dissolve
 
                     if itsuki_visitada_cap1:
 
@@ -675,6 +704,10 @@ label beat_casa:
 
                         mc_pensamiento "Y tampoco sé cómo hacer que se sienta bien."
 
+
+                    scene cg_libreta
+                    with dissolve
+                    
                     stop music fadeout 2.0
 
                     play music hogar fadein 2.0 volume 0.7

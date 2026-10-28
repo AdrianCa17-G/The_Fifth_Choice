@@ -47,7 +47,7 @@ label hub_Ichika:
     play music ichika fadein 2.0
 
     scene cg_ichika_ensayo
-    with fade
+    with dissolve
 
     narrador "La reconocí por el pelo antes que por la cara."
 
@@ -87,12 +87,12 @@ label hub_Ichika:
     ############################################################################
 
     scene bg_sala_ensayo
-    with fade
+    with dissolve
 
     narrador "Abrió los ojos de golpe, sin saber todavía dónde estaba."
 
     scene cg_ichika_desarmada
-    with fade
+    with dissolve
 
     ichika "…¿[mc]?"
 
@@ -123,7 +123,7 @@ label hub_Ichika:
     narrador "Después pareció darse cuenta de que yo estaba ahí, y de que la había visto así."
 
     scene bg_sala_ensayo
-    with fade
+    with dissolve
 
     show ichika agotada at pj(0.5)
     with dissolve
@@ -230,7 +230,7 @@ label hub_Ichika:
     ############################################################################
 
     scene cg_ichika_mascara
-    with fade
+    with dissolve
 
     play sound audio.sfx_silla volume 1.2
 
@@ -251,7 +251,7 @@ label hub_Ichika:
     narrador "La que suele devolverle cualquiera que hable con ella."
 
     scene bg_sala_ensayo
-    with fade
+    with dissolve
 
     play music descubrimiento fadein 3.5
 

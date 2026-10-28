@@ -20,12 +20,15 @@ label final_malo_beat:
     ##  despido está asegurado, solo falta la sentencia final de Maruo.
     ############################################################################
 
+    scene cg_nino_confrontacion_cocina
+    with dissolve
+
     stop music fadeout 1.0
 
     narrador "Fue entonces cuando Maruo levantó la vista y me encontró en la puerta."
 
     scene cg_maruo_reunion
-    with fade
+    with corte_seco
     
     play music contrato fadein 2.0
 
@@ -50,7 +53,7 @@ label final_malo_beat:
     mc "Señor, todavía quedan semanas. Si me deja explicarle…"
 
     scene cg_maruo_espaldas
-    with fade
+    with corte_seco
 
     maruo "No hay nada que explicar."
 
@@ -90,7 +93,7 @@ label final_malo_beat:
     ############################################################################
 
     scene bg_departamento
-    with fade
+    with dissolve
     
     show nino neutral at pj_habla(0.5)
     with dissolve
@@ -403,7 +406,7 @@ label final_malo_beat:
     with fade
     
     scene cg_libreta
-    with fade
+    with dissolve
 
     narrador "Abrí la libreta por la página de los cinco nombres."
 

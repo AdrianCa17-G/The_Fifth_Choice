@@ -31,7 +31,7 @@ label final_malo_hub3:
     ############################################################################
 
     scene bg_escuela
-    with fade
+    with fade_dia
     
     play sound audio.sfx_timbre volume 1.5
 
@@ -220,7 +220,7 @@ label final_malo_hub3:
     mc_pensamiento "Aquel uno por ciento que pude ayudarle a aumentar, pero no lo hize."
 
     scene bg_negro
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -260,7 +260,7 @@ label final_malo_hub3:
     profe "Nakano. Despierte."
 
     scene bg_aula
-    with fade
+    with dissolve
 
     show ichika sonriendo at pj_habla(0.5)
     with dissolve
@@ -276,7 +276,7 @@ label final_malo_hub3:
     ichika "Lo siento..."
 
     scene bg_negro
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -328,7 +328,7 @@ label final_malo_hub3:
     mc_pensamiento "Y era la única que no podía hacer nada."
 
     scene bg_negro
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -372,7 +372,7 @@ label final_malo_hub3:
     narrador "No preguntó. Preguntar habría sido darme la razón."
     
     scene bg_negro
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -421,7 +421,7 @@ label final_malo_hub3:
 
     scene bg_negro
     with fade
-
+    
     play sound audio.sfx_timbre volume 1.5
 
     ############################################################################
@@ -634,7 +634,7 @@ label final_malo_hub3:
     ############################################################################
  
     scene bg_negro
-    with fade
+    with fade_dia
 
     narrador "Al día siguiente, a media mañana, me sonó el teléfono."
 
@@ -646,10 +646,10 @@ label final_malo_hub3:
     with fade
     
     scene bg_departamento
-    with fade
+    with dissolve
     
     scene cg_maruo_reunion
-    with fade
+    with corte_seco
     
     play music contrato fadein 2.0
 
@@ -674,8 +674,8 @@ label final_malo_hub3:
     mc_pensamiento "Lo sabía. La que se quedó hasta la campana."
 
     scene cg_maruo_espaldas
-    with fade 
-
+    with corte_seco
+    
     maruo "Te advertí en esa cocina que no repetiría la advertencia. Y no la repetí."
 
     maruo "No esperaba esto de ti, [mc]."
@@ -728,7 +728,7 @@ label final_malo_hub3:
     ############################################################################
 
     scene bg_departamento_anochecer
-    with fade
+    with dissolve
 
     narrador "No me dio tiempo a irme."
 
@@ -994,7 +994,7 @@ label final_malo_hub3:
     with fade
     
     scene cg_libreta
-    with fade
+    with dissolve
 
     narrador "Abrí la libreta. La página de los cinco nombres."
 

@@ -88,7 +88,7 @@ label prologo:
     mc_pensamiento "Estudio porque las notas son lo único que puedo controlar."
 
     scene cg_calificacion
-    with fade
+    with dissolve
 
     mc_pensamiento "Esta pila de libros es la única herramienta que tengo para cambiar nuestra realidad."
 
@@ -117,7 +117,7 @@ label prologo:
     play music cena fadeout 1.5 fadein 2.0
 
     scene bg_comedor
-    with fade
+    with dissolve
 
     mc "Hoy es una noche especial. ¡Raiha preparó curry!"
 
@@ -271,7 +271,7 @@ label prologo:
     stop music fadeout 1.0
 
     scene bg_escuela
-    with fade
+    with fade_dia
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -286,7 +286,7 @@ label prologo:
     mc_pensamiento "(Cierto... hoy entregan los resultados de los exámenes de práctica. Iré al salón)."
 
     scene cg_examen
-    with fade
+    with dissolve
 
     profe "[mc], enhorabuena por el examen de práctica. Otra vez el primer lugar."
 
@@ -297,7 +297,7 @@ label prologo:
     mc_pensamiento "(Palabras bonitas. Lástima que el futuro no pague las facturas de hoy)."
 
     scene bg_aula
-    with fade
+    with dissolve
 
     mc_pensamiento "Con mi examen perfecto en mano, fui a buscar mi asiento habitual."
 
@@ -310,7 +310,7 @@ label prologo:
     play music incomodo fadeout 1.0 fadein 1.5
 
     scene cg_itsuki_sentada
-    with fade
+    with dissolve
 
     mc_pensamiento "¡Estaba ocupado!"
 
@@ -327,7 +327,7 @@ label prologo:
     narrador "Sostuvo los palillos a mitad de camino y fijó su mirada en la hoja de examen que él llevaba en la mano."
 
     scene bg_aula
-    with fade
+    with dissolve
    
     show itsuki sonriendo at pj(0.5)
     with dissolve
@@ -467,7 +467,7 @@ label prologo:
             narrador "La chica dejó escapar un pequeño suspiro y se cruzó de brazos, mirando al horizonte."
 
             scene cg_itsuki_azotea
-            with fade
+            with dissolve
 
             mc "Si te sirve de algo, no fui desagradable por gusto. Solo soy celoso de mi tiempo."
 
@@ -483,7 +483,7 @@ label prologo:
             
 
     scene bg_azotea_tarde
-    with fade
+    with dissolve
 
     mc_pensamiento "Permanecimos en silencio con la luz del atardecer, cada uno en un extremo del banco." 
     
@@ -546,13 +546,8 @@ label prologo:
     ## revelacion entre con mas peso.
     stop music fadeout 2.0
 
-    scene cg_manija_edificio
-    pause 1.5
-
-    stop music fadeout 2.0
-
-    scene cg_manija_edificio with fade
-    pause 1.5
+    scene cg_manija_edificio 
+    with corte_seco
 
     mc "(Muy bien... empecemos)."
 
@@ -562,7 +557,6 @@ label prologo:
 
     narrador "Apenas puse la mano sobre el pomo, la puerta se abrió desde el otro lado..."
 
-
     ############################################################################
     ##  ESCENA 5 · La revelación
     ############################################################################
@@ -570,7 +564,7 @@ label prologo:
     play sound audio.sfx_puerta_abre volume 1.5
 
     scene cg_ichika_puerta
-    with fade
+    with dissolve
 
     play music extraneza fadein 2.0
 
@@ -601,7 +595,7 @@ label prologo:
     ## --- Nino ---------------------------------------------------------------
 
     scene cg_nino_pasillo
-    with fade
+    with dissolve
 
     nino "Ichika. ¿A quién diablos le abriste la puerta?"
 
@@ -624,7 +618,7 @@ label prologo:
     nino "Los suficientes como para saber cómo termina esto."
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     mc_pensamiento "Gemelas, entonces. Bien... eso explica el sueldo ridículamente alto."
 
@@ -633,7 +627,7 @@ label prologo:
     ## --- Miku ---------------------------------------------------------------
 
     scene cg_miku_sofa
-    with fade
+    with dissolve
 
     narrador "En el sofá, una tercera chica —la misma cara, otra vez— leía con los audífonos colgando del cuello."
 
@@ -676,7 +670,7 @@ label prologo:
     mc_pensamiento "Esto es cada vez más extraño."
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     show ichika neutral at pj(0.5)
     with dissolve
@@ -732,7 +726,7 @@ label prologo:
     yotsuba "¡¿Ya llegó?! ¡¿Ya llegó el tutor?!"
 
     scene cg_yotsuba_corriendo
-    with fade
+    with dissolve
 
     narrador "Se frenó a medio metro de mí."
     
@@ -765,7 +759,7 @@ label prologo:
     yotsuba "¡Alguien tiene que dárselas!"
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     mc_pensamiento "Cuatro."
 
@@ -792,7 +786,7 @@ label prologo:
     play music caos fadeout 0.5 fadein 1.0
 
     scene cg_itsuki_discusion
-    with fade
+    with dissolve
 
     ## Compite con `caos`, que va a tope en esta escena.
     $ duck()
@@ -845,7 +839,7 @@ label prologo:
     mc_pensamiento "Sentí un golpe de culpa... aunque ni loco se lo admitiría en la cara."
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     show ichika sonriendo at pj(0.5)
     with dissolve
@@ -964,7 +958,7 @@ label prologo:
     narrador "Cuando la figura de su padre apareció en el umbral."
 
     scene cg_maruo_reunion
-    with fade
+    with corte_seco
 
     play music contrato fadein 2.0
 
@@ -1009,7 +1003,7 @@ label prologo:
     narrador "Las cinco gritaron al mismo tiempo desde la entrada de la sala."
 
     scene cg_maruo_reunion
-    with fade
+    with corte_seco
 
     maruo "Ese es exactamente el problema que te estoy pagando por resolver."
 
@@ -1026,7 +1020,7 @@ label prologo:
     mc "…Entendido."
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     play sound audio.sfx_puerta_cierra volume 1.0
 
@@ -1057,7 +1051,7 @@ label prologo:
     play music derrota fadein 2.5
 
     scene cg_hermanas_estudiando
-    with fade
+    with dissolve
 
     mc "Bien. Vamos a empezar por lo básico."
     
@@ -1120,7 +1114,7 @@ label prologo:
     narrador "Su salida fue solo el detonante de un fracaso que ya se veía venir."
 
     scene bg_departamento_anochecer
-    with fade
+    with dissolve
 
     narrador "Ichika se puso de pie bostezando, alegando que el estrés le arruinaría la piel para su audición de mañana."
 

@@ -36,14 +36,14 @@ label beat_Nino:
     with fade
 
     scene bg_entrada_edificio
-    with fade
+    with dissolve
     
     narrador "Llegué al departamento a la hora de siempre."
 
     narrador "La puerta estaba entreabierta. Nadie la había cerrado del todo."
 
     scene cg_manija_edificio
-    with fade
+    with corte_seco
 
     play sound audio.sfx_manija volume 1.5
 
@@ -66,15 +66,15 @@ label beat_Nino:
     narrador "Elegí lo segundo."
 
     scene bg_departamento
-    with fade
+    with dissolve
 
     scene bg_cocina
-    with fade
+    with dissolve
 
     play music guardia fadein 1.5 fadeout 2.0
 
     scene cg_nino_confrontacion_cocina
-    with fade
+    with dissolve
 
     nino "…y no me importa lo que hayas firmado con él. Debes despedirlo."
 
@@ -125,7 +125,7 @@ label beat_Nino:
         narrador "Fue entonces cuando Maruo levantó la vista y me encontró en la puerta."
 
         scene cg_maruo_reunion
-        with fade
+        with corte_seco
 
         play music contrato fadein 2.0
 
@@ -135,7 +135,7 @@ label beat_Nino:
 
         maruo "Ya nos interrumpiste con solo entrar."
 
-        play sound audio.sfx.taza_mesa volume 1.0
+        play sound audio.sfx_taza_mesa volume 1.0
 
         narrador "Dejó la taza sobre la mesa, despacio, sin apurarse."
 
@@ -166,7 +166,7 @@ label beat_Nino:
         stop music fadeout 2.0
 
         scene bg_cocina
-        with fade
+        with dissolve
 
         mc_pensamiento "Esa era la última vez que lo iba a decir."
 
@@ -199,7 +199,7 @@ label beat_Nino:
 
     narrador "Nino se quedó mirando el pasillo por donde se había ido su padre, todavía con los brazos cruzados."
 
-    show nino neutral at pj(0.5)
+    show nino neutral at pj_calla(0.5)
     with dissolve
 
     mc_pensamiento "Tengo que romper el hielo."
@@ -207,8 +207,11 @@ label beat_Nino:
     mc "Hola..." 
     
     mc "No me mires así, solo iba de paso." 
-    
+
     mc "No tengo intenciones de molestarte hoy, así que puedes ahorrarte tus quejas."
+
+    show nino neutral at pj_habla(0.5)
+    with disolucion_lenta
 
     nino "No es un buen momento."
 
@@ -252,7 +255,7 @@ label beat_Nino:
     nino "Mi padre no tiene que vivir con esto todos los días. Yo sí."
 
     scene cg_nino_grieta_cocina
-    with fade
+    with dissolve
 
     narrador "Se sentó en uno de los bancos de la cocina, de golpe, como si las piernas hubieran dejado de sostenerla el tiempo justo."
 
@@ -283,7 +286,7 @@ label beat_Nino:
     narrador "Se detuvo de golpe, con la taza a medio camino de la boca."
 
     scene bg_cocina
-    with fade
+    with dissolve
 
     show nino neutral at pj(0.5)
     with dissolve

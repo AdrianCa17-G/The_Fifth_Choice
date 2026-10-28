@@ -48,7 +48,7 @@ label hub_Miku:
     play music miku fadein 2.0
 
     scene cg_miku_biblioteca
-    with fade
+    with dissolve
 
     narrador "Logré encontrar a Miku."
 
@@ -84,7 +84,7 @@ label hub_Miku:
     narrador "Tardó tres segundos largos en levantar la vista."
 
     scene bg_biblioteca
-    with fade 
+    with dissolve 
     
     show miku neutral at pj(0.5)
     with dissolve
@@ -125,7 +125,7 @@ label hub_Miku:
     narrador "Saqué el temario de sociales y lo puse sobre la mesa, girado hacia ella."
 
     scene cg_miku_estudio
-    with fade
+    with dissolve
 
     mc "Historia es tu asignatura."
 
@@ -190,7 +190,7 @@ label hub_Miku:
     narrador "Lo reconoció antes de que llegara a la mesa."
 
     scene cg_miku_sorpresa
-    with fade
+    with dissolve
 
     miku "…Ese es el que estaba leyendo yo."
 
@@ -217,7 +217,7 @@ label hub_Miku:
     mc "Las guerras se ganan en el campo de batalla. Lo demás es puro papeleo."
 
     scene bg_biblioteca
-    with fade
+    with dissolve
 
     narrador "Miku cerró el libro sobre el dedo índice, para no perder la página."
 

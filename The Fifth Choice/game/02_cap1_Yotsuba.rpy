@@ -47,7 +47,7 @@ label hub_Yotsuba:
     play music yotsuba fadein 1.5 fadeout 2.0
 
     scene cg_yotsuba_pista
-    with fade
+    with dissolve
 
     mc_pensamiento "El club se había ido hace por lo menos media hora."
 
@@ -72,7 +72,7 @@ label hub_Yotsuba:
     narrador "Me quedé observándola y memorizando el número de vueltas que llevaba."
 
     $ duck()
-    play sound audio.sfx_pisadas_pista volume 1.75
+    play sound audio.sfx_pisadas_pista loop volume 1.75
 
     yotsuba "¡Veintidós! ¡Esto es fácil! ¡Podría hacer cien! ¡Bueno, quizás no cien, pero sí veinticinco!" 
     
@@ -96,7 +96,7 @@ label hub_Yotsuba:
     ############################################################################
 
     scene bg_pista_atletismo
-    with fade
+    with dissolve
 
     show yotsuba sorprendida at pj(0.5)
     with dissolve
@@ -144,7 +144,7 @@ label hub_Yotsuba:
     stop music fadeout 1.5
 
     scene cg_yotsuba_rotulador
-    with fade
+    with dissolve
 
     narrador "Bajó la mirada, con las manos recogidas contra el pecho."
     
@@ -209,7 +209,7 @@ label hub_Yotsuba:
     narrador "Miró la pista, el rotulador, las gradas vacías."
 
     scene bg_pista_atletismo
-    with fade
+    with dissolve
 
     play music yotsuba fadein 2.0 fadeout 1.5
 
@@ -276,13 +276,13 @@ label hub_Yotsuba:
     
     narrador "Solo quedaba la luz naranja de emergencia."   
 
-    stop music fadeout 1.5
-
     mc_pensamiento "No había sol que esperar. Ella lo sabía tan bien como yo."
 
     narrador "Pensé en lo que había visto estas últimas ocho vueltas."
 
     narrador "En lo que había dicho, y en lo que no."
+
+    stop music fadeout 1.5
 
     mc_pensamiento "'Yo corro y animo'"
 
@@ -292,7 +292,9 @@ label hub_Yotsuba:
 
     narrador "En el brazo aún quedaba una mancha gris." 
     
-    narrador "Lo único que no había conseguido borrar."   
+    narrador "Lo único que no había conseguido borrar." 
+
+    play music descubrimiento fadein 2.0  
 
     mc_pensamiento "Podía dejarlo pasar. Cronometrarla y ya."
 
@@ -307,12 +309,10 @@ label hub_Yotsuba:
     narrador " la sonrisa firme en su sitio."
 
     scene bg_pista_atletismo
-    with fade
-
-    show yotsuba sonriendo at pj(0.5)
     with dissolve
 
-    play music descubrimiento fadein 2.0
+    show yotsuba neutral at pj_calla(0.5)
+    with dissolve
 
     mc_pensamiento "Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacía por dentro, "
 
@@ -467,7 +467,7 @@ label yotsuba_m4b:
     mc "Preparado."
 
     $ duck()
-    play sound audio.sfx_pisadas_pista volume 1.75
+    play sound audio.sfx_pisadas_pista loop volume 1.75
 
     narrador "Salió disparada. Era rápida de verdad."
 
@@ -578,7 +578,7 @@ label yotsuba_m5:
 
     mc_pensamiento "Pensé en decirle algo antes de irme."
 
-    play sound audio.sfx_pisadas_pista fadein 1.0 volume 1.75
+    play sound audio.sfx_pisadas_pista loop volume 1.75
 
     narrador "Pero cuando llegué, ella ya había vuelto a la pista."
 

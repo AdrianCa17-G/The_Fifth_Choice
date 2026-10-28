@@ -71,7 +71,7 @@ label hub_Nino:
     narrador "La encontré por descarte, no porque alguien me lo dijera."
 
     scene cg_nino_centro_comercial
-    with fade
+    with dissolve
 
     narrador "Tenía una caja en cada mano, leyendo la etiqueta de una y después la otra."
 
@@ -111,7 +111,7 @@ label hub_Nino:
     ############################################################################
 
     scene bg_centro_comercial
-    with fade
+    with dissolve
 
     show nino neutral at pj(0.5)
     with dissolve
@@ -226,7 +226,7 @@ label hub_Nino:
     narrador "Sin cortar la frase a la mitad como acostumbra."
 
     scene cg_nino_receta 
-    with fade
+    with dissolve
 
     nino "También decían que iban a quedarse. Que esta vez iba a ser distinto."
 
@@ -247,7 +247,7 @@ label hub_Nino:
     mc_pensamiento "Está protegiendo a sus hermanas de algo que ya les pasó demasiadas veces."
 
     scene bg_centro_comercial
-    with fade
+    with dissolve
 
     stop music fadeout 1.5
 
@@ -528,7 +528,7 @@ label nino_m5:
     ############################################################################
 
     scene bg_centro_comercial_anochecer
-    with fade
+    with dissolve
 
     stop music fadeout 1.5
 
