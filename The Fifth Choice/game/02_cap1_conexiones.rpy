@@ -1299,7 +1299,7 @@ label cap1_interconexion_2:
 
         mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en que pensar"
 
-        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retorcedimos."
+        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retrocedimos."
 
         mc_pensamiento "Es como si nada hubiera pasado."
 
@@ -1657,7 +1657,7 @@ label cap1_interconexion_3:
 
     narrador "Los días siguientes se me fueron entre clases, las tutorías y sueño atrasado."
 
-    narrador "Para cuando levanté la cabeza, habían pasadon 10 días."
+    narrador "Para cuando levanté la cabeza, habían pasado 10 días."
 
     stop music fadeout 1.0
 
@@ -1845,7 +1845,7 @@ label cap1_interconexion_4:
 
         mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en qué pensar"
 
-        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retorcedimos."
+        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retrocedimos."
 
         mc_pensamiento "Es como si nada hubiera pasado."
 
@@ -2500,7 +2500,7 @@ label cap1_interconexion_5:
 
     narrador "Las otras cuatro fueron llegando de a una. Esta vez nadie hizo ruido."
 
-    narrador "Las saludé y fuí directo al grano en lo que debía decirles."
+    narrador "Las saludé y fui directo al grano en lo que debía decirles."
 
     play music cotidiano fadein 1.5
 
@@ -2721,11 +2721,15 @@ label cap1_interconexion_5:
     hide itsuki
     with dissolve
 
+    play ambiente amb_reloj fadein 2.0 volume 0.4
+
     narrador "El aula se quedó vacía de golpe."
 
     narrador "Solo quedó el tic-tac del reloj, que hasta ahora nunca había oído."
 
     narrador "Posteriormente me retiré igual del aula."
+
+    stop ambiente fadeout 1.0
 
     scene bg_escuela
     with fade
@@ -2805,7 +2809,7 @@ label cap1_interconexion_6:
     scene cg_libreta
     with dissolve
 
-    narrador "Llegué a mi habitación y fuí directamente a mi escritorio."
+    narrador "Llegué a mi habitación y fui directamente a mi escritorio."
 
     narrador "Agarré la libreta y la abrí por primera vez en semanas."
 
@@ -3075,7 +3079,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "No le discutí, tiene razón."
 
-        mc_pensamiento "Parece que solo fuí a perder el tiempo."
+        mc_pensamiento "Parece que solo fui a perder el tiempo."
 
     show nino at pj_calla(X_NINO)
     show miku neutral at pj_habla(X_MIKU)
@@ -3215,7 +3219,7 @@ label cap1_interconexion_6:
     
     narrador "Las cinco estaban juntas, como había pedido Itsuki."
 
-    narrador "Finalmente ví el resultado de nuestros estudios."
+    narrador "Finalmente vi el resultado de nuestros estudios."
 
     if clima_cap1 == "buena":
 
@@ -3575,6 +3579,9 @@ label cap1_interconexion_6:
             
             mc_pensamiento "Sigo sintiendo que escribí un mensaje humillante."
 
+            $ duck()
+            play sound audio.sfx_celular 
+
             narrador "Yotsuba respondió en cuatro segundos con una foto de su almohada. Con cara dibujada."
 
         "«Confío en las cinco. Pase lo que pase el lunes.»":
@@ -3583,11 +3590,17 @@ label cap1_interconexion_6:
 
             mc_pensamiento "Acabo de firmar mi sentencia de humillación."
 
+            $ duck()    
+            play sound audio.sfx_celular 
+
             narrador "Yotsuba respondió con once signos de exclamación. Los conté."
 
         "«Si algo sale mal, la culpa es mía. Para eso me pagan.»":
 
             mc_pensamiento "Mitad broma, mitad cierto."
+
+            $ duck()
+            play sound audio.sfx_celular 
 
             narrador "Yotsuba respondió: «¡La culpa no se paga, se comparte!»"
 
@@ -3597,9 +3610,15 @@ label cap1_interconexion_6:
 
     if clima_cap1 == "buena":
 
+        $ duck()
+        play sound audio.sfx_celular 
+
         narrador "Ichika me mandó un corazón y escribió «jajaja»."
 
         narrador "Nino escribió «Qué dramático.» Un minuto después: «Descansen.»"
+
+        $ duck()
+        play sound audio.sfx_celular 
 
         narrador "Miku mandó tres puntos. Y después, sorprendentemente, una palabra completa: «Gracias.»"
 
@@ -3612,6 +3631,9 @@ label cap1_interconexion_6:
         mc_pensamiento "Me agradecieron y todo."
 
     elif clima_cap1 == "mixta":
+
+        $ duck()
+        play sound audio.sfx_celular 
 
         narrador "Ichika mandó un corazón, lo borró y escribió «jajaja»."
 

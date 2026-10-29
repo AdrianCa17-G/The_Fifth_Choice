@@ -301,8 +301,7 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("ichika")
 
-                    scene expression collage_hermana("ichika", ichika_visitada_cap1)
-                    with dissolve
+                    call collage_abrir("ichika")
 
                     if ichika_visitada_cap1:
 
@@ -368,8 +367,7 @@ label beat_casa:
                         mc_pensamiento "No sé si sigue fingiendo o si dejó de hacerlo..."
 
 
-                    scene cg_libreta
-                    with dissolve
+                    call collage_cerrar 
 
                     stop music fadeout 2.0
 
@@ -380,8 +378,7 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("nino")
 
-                    scene expression collage_hermana("nino", nino_visitada_cap1)
-                    with dissolve
+                    call collage_abrir("nino")
 
                     if nino_visitada_cap1:
 
@@ -457,8 +454,7 @@ label beat_casa:
                         mc_pensamiento "Ella es un tren de emociones que nunca frena."
 
             
-                    scene cg_libreta
-                    with dissolve
+                    call collage_cerrar 
 
                     stop music fadeout 2.0
 
@@ -469,8 +465,7 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("miku")
 
-                    scene expression collage_hermana("miku", miku_visitada_cap1)
-                    with dissolve
+                    call collage_abrir("miku")
                     
                     if miku_visitada_cap1:
 
@@ -538,8 +533,7 @@ label beat_casa:
                         mc_pensamiento "Ella es todo un misterio."
 
                 
-                    scene cg_libreta
-                    with dissolve
+                    call collage_cerrar 
 
                     stop music fadeout 2.0
 
@@ -550,8 +544,7 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("yotsuba")
 
-                    scene expression collage_hermana("yotsuba", yotsuba_visitada_cap1)
-                    with dissolve                 
+                    call collage_abrir("yotsuba")               
 
                     if yotsuba_visitada_cap1:
 
@@ -624,8 +617,7 @@ label beat_casa:
                         mc_pensamiento "No lo sé."
 
 
-                    scene cg_libreta
-                    with dissolve
+                    call collage_cerrar 
 
                     stop music fadeout 2.0
 
@@ -636,8 +628,7 @@ label beat_casa:
 
                     $ hermanas_pensamiento.add("itsuki")
 
-                    scene expression collage_hermana("itsuki", itsuki_visitada_cap1)
-                    with dissolve
+                    call collage_abrir("itsuki")
 
                     if itsuki_visitada_cap1:
 
@@ -705,8 +696,7 @@ label beat_casa:
                         mc_pensamiento "Y tampoco sé cómo hacer que se sienta bien."
 
 
-                    scene cg_libreta
-                    with dissolve
+                    call collage_cerrar 
                     
                     stop music fadeout 2.0
 

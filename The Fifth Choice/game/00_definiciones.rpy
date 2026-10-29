@@ -380,6 +380,7 @@ define audio.amb_silencio_exterior = "audio/silencio_exterior.ogg"
 define audio.sfx_papel_mesa    = "audio/sfx/papel_mesa.mp3"
 define audio.sfx_timbre        = "audio/sfx/timbre.mp3"
 define audio.sfx_silla         = "audio/sfx/silla.mp3"
+define audio.sfx_celular       = "audio/sfx/celular.mp3"
 define audio.sfx_toque_puerta  = "audio/sfx/toque_puerta.mp3"
 define audio.sfx_manija        = "audio/sfx/manija.mp3"
 define audio.sfx_puerta_abre   = "audio/sfx/puerta_abre.mp3"
@@ -388,7 +389,8 @@ define audio.sfx_portazo       = "audio/sfx/portazo.mp3"
 define audio.sfx_bolsa         = "audio/sfx/bolsa.mp3"
 define audio.sfx_hoja          = "audio/sfx/hoja.mp3"
 define audio.sfx_puerta_cierra = "audio/sfx/puerta_cierra.mp3"
-define audio.sfx_pisadas_pista = "audio/sfx/pisadas_pista.mp3"
+define audio.sfx_pisadas_pista = "audio/sfx/pisadas_pista.ogg"
+define audio.amb_reloj         = "audio/amb_reloj.ogg"
 
 
 ## Musica del hub
@@ -520,53 +522,6 @@ init python:
             if getattr(store, hermana + "_rama_cap1") == tipo:
                 total += 1
         return total
-
-    COLLAGE_CG = {
-        "ichika": {
-            True:  ["cg_ichika_ensayo", "cg_ichika_desarmada", "cg_ichika_mascara"],
-            False: ["cg_ichika_puerta", "cg_cinco_sentadas"],
-        },
-        "nino": {
-            True:  ["cg_nino_centro_comercial", "cg_nino_receta", "cg_nino_grieta_cocina"],
-            False: ["cg_nino_pasillo", "cg_nino_confrontacion_cocina", "cg_nino_grieta_cocina"],
-        },
-        "miku": {
-            True:  ["cg_miku_biblioteca", "cg_miku_estudio", "cg_miku_sorpresa"],
-            False: ["cg_miku_sofa", "cg_hermanas_estudiando"],
-        },
-        "yotsuba": {
-            True:  ["cg_yotsuba_pista", "cg_yotsuba_rotulador", "cg_yotsuba_cronometro"],
-            False: ["cg_yotsuba_corriendo", "cg_cinco_sentadas"],
-        },
-        "itsuki": {
-            True:  ["cg_itsuki_atascada", "cg_itsuki_contraida", "cg_itsuki_reto"],
-            False: ["cg_itsuki_sentada", "cg_itsuki_azotea", "cg_itsuki_azotea_cuaderno"],
-        },
-    }
-
-    ## (x, y, ángulo) de cada polaroid. Ajusta a gusto.
-    COLLAGE_POS = [(110, 110, -5), (1320, 90, 4), (1290, 520, -3)]
-
-    def collage_polaroid(nombre_cg, x, y, angulo):
-        foto = Transform(nombre_cg, xysize=(520, 293), fit="cover")
-        marco = Fixed(
-            Solid("#FFF8FC", xsize=548, ysize=321),
-            Transform(foto, xpos=14, ypos=14),
-            xysize=(548, 321))
-        return Transform(marco, rotate=angulo, xpos=x, ypos=y)
-
-    def collage_hermana(hermana, visitada):
-        color = PETALO_COLOR[hermana]
-        fondo = ui_mezclar(color, "#000000", 0.45)
-        capas = []
-        capas.append(Solid(fondo, xsize=1920, ysize=1080))
-        capas.append(Transform(hermana + " neutral", xalign=0.5, yalign=1.0, zoom=1.15))
-        fotos = COLLAGE_CG[hermana][visitada]
-        for n in range(len(fotos)):
-            pos = COLLAGE_POS[n]
-            capas.append(collage_polaroid(fotos[n], pos[0], pos[1], pos[2]))
-        return Fixed(*capas, xysize=(1920, 1080))
-
 
 ################################################################################
 ##  10. PANTALLA DE ENTRADA DE NOMBRE

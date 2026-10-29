@@ -150,7 +150,7 @@ label final_malo_hub3:
 
     mc "Hagan lo que sepan."
 
-    narrador "Lo dije y sonó a lo que era: una frase vacía e inutil."
+    narrador "Lo dije y sonó a lo que era: una frase vacía e inútil."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -181,6 +181,8 @@ label final_malo_hub3:
     mc_pensamiento "Ahora venía lo peor: no tener nada que hacer más que mirar."
 
     profe "Pueden empezar."
+
+    play ambiente amb_reloj fadein 2.0 volume 0.4
 
     play sound audio.sfx_hoja volume 2.0
 
@@ -217,7 +219,7 @@ label final_malo_hub3:
 
     mc_pensamiento "El mismo uno por ciento del primer día."
 
-    mc_pensamiento "Aquel uno por ciento que pude ayudarle a aumentar, pero no lo hize."
+    mc_pensamiento "Aquel uno por ciento que pude ayudarle a aumentar, pero no lo hice."
 
     scene bg_negro
     with fade_dia
@@ -280,7 +282,7 @@ label final_malo_hub3:
 
     play sound audio.sfx_timbre volume 1.5
 
-    narrador "Día miercoles." 
+    narrador "Día miércoles." 
     
     narrador "Examen de inglés."
 
@@ -430,6 +432,8 @@ label final_malo_hub3:
     ##  sucedido, aquí es la cúspide de los mayores temores y miedos de las
     ##  chicas, saben que tanto ellas como mc fracasaron en todo ese mes.
     ############################################################################
+
+    stop ambiente fadeout 1.0
 
     narrador "Sonó la última campana de la semana." 
     
@@ -582,7 +586,7 @@ label final_malo_hub3:
     
     narrador "No abrí la libreta."
 
-    mc_pensamiento "Repasé todo lo que hize en el mes." 
+    mc_pensamiento "Repasé todo lo que hice en el mes." 
     
     mc_pensamiento "Cada vez que pude decir que sí, dije que no."
 
@@ -635,6 +639,8 @@ label final_malo_hub3:
  
     scene bg_negro
     with fade_dia
+
+    play sound audio.sfx_celular volume 1.0
 
     narrador "Al día siguiente, a media mañana, me sonó el teléfono."
 

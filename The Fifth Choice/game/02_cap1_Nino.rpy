@@ -486,6 +486,10 @@ label nino_m4c:
 
 label nino_m5:
 
+    stop music fadeout 1.0
+
+    play sound audio.sfx_celular volume 1.0
+
     narrador "Casi en la puerta, el celular de Nino sonó."
 
     scene cg_nino_llamada

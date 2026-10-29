@@ -488,6 +488,9 @@ label ichika_m4c:
 
 label ichika_m5:
 
+    $ duck()
+    play sound audio.sfx_celular volume 1.5
+
     narrador "Terminó de guardar el guion en la mochila cuando el teléfono le vibró en el bolsillo."
 
     show ichika neutral at pj(0.5)
