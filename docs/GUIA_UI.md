@@ -17,24 +17,29 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 |---|---|
 | `00_definiciones.rpy` | los `Character` (con `ui_personaje`) |
 | `07_ui.rpy` | funciones de UI, flor, HUD, cinta del lugar, decisiones con peso |
+| `07b_collage.rpy` |	Collage de pensamientos del beat casa (datos `COLLAGE_CG` y `COLLAGE_POS`)
 | `06_main_menu.rpy` | menú principal |
 | `08_extras.rpy` | Galería (datos en GALERIA), Finales y el popup de versiones (final_versiones) |
 | `09_menus_sistema.rpy` | Guardar, Cargar, Opciones, Historial, Acerca de, Ayuda, confirmaciones |
+| `hub_mapa.rpy` |	Pantalla del mapa de hubs (`HUB_DESTINOS`, el orden de la tabla es el orden en pantalla)
 | `screens.rpy` | `say`, `choice`, menú rápido |
 | `herramientas/generar_ui.py` | genera todos los PNG de `game/ui/` |
 | `herramientas/generar_logo.py` | genera el logo con los sprites `neutral` |
 | `herramientas/recortar_menu.py` | prepara los sprites del menú |
+| `herramientas/generar_fondos_collage.py` | Genera `game/ui/collage_fondo_<hermana>.webp` |
 
 ## 3. Regenerar los PNG
 
 `cd herramientas` y `python generar_ui.py` → `game/ui/`. Las constantes (opacidad de la decoración, alturas de tarjeta…) están arriba del script. **Si un número está también en un `.rpy`** (por ejemplo `TARJETA_ALTOS`), cámbialo en los dos sitios.
+
+Los fondos del collage: python `generar_fondos_collage.py`. Importa `generar_ui.py`, así que tienen que estar en la misma carpeta.
 
 ## 4. Recetas
 
 - **Decisión con peso:** `$ decision_peso("hermana", "Pregunta", "Por qué importa")` justo antes del `menu:`. Las opciones van en orden cálida, tibia, fría.
 - **Menú cuyas opciones son hermanas:** `$ ligera_hermanas = {"Ichika": "ichika"}` antes del `menu:` y `$ ligera_hermanas = {}` al terminar.
 - **Hub o beat:** `$ ui_escena("hub", destino, lugar)` ... `$ ui_escena("normal")` (los beats usan `"beat"`).
-- **Fondo nuevo:** añadirlo a `BG_LUGAR`; si no debe verse en el prólogo, también a `BG_OCULTOS_PROLOGO`.
+- **Fondo nuevo:** añadirlo a `BG_LUGAR`; si no debe verse en el prólogo, también a `BG_OCULTOS_PROLOGO`. «Las variantes `_anochecer` se declaran con `Transform` sobre el mismo webp y también van en `BG_LUGAR`»
 - **CG nuevo:** añadirlo a `GALERIA` (`08_extras.rpy`). El porcentaje se recalcula solo.
 - **Sprite nuevo del menú:** generar (768×1280, cuerpo completo) → `recortar_menu.py` → ruta en `MENU_SPR` → calibrar `MENU_CORONILLA` con `MENU_GUIA = True`.
 - **Personaje nuevo:** `ui_personaje(nombre, color, petalo, deco)`.
@@ -43,6 +48,9 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 - **Final con versiones:** añadir cada versión a FINALES_TEMPRANO (08_extras.rpy) con su label y su scope, y poner su flag persistent.final_malo_temprano_<v>_visto en el cierre del final. El popup la muestra bloqueada hasta que se vea.
 - **Nombre en replays:** todo Replay de Finales pasa por final_scope(), que añade persistent.nombre_jugador. Ese valor se guarda en configurar_nombre.
 - **Galería:** el contador de cada pestaña es una pastilla de tamaño fijo con el motivo de la hermana de marca de agua. Se rellena cuando la sección está completa. La paginación usa el motivo de la hermana tintado con su color.
+- **Collage de recuerdo:** `call collage_abrir("ichika")` … pensamientos … `call collage_cerrar`. Si la hermana no fue visitada, `collage_abrir` no hace nada y collage_cerrar tampoco.
+- **Mapa de hub:** `$ quick_menu = False`, `call screen mapa_hub(n)`, `$ quick_menu = True`. Las visitadas se bloquean con `hub_visitadas`.
+- **Botón nuevo:** `hover_sound` `audio.sfx_hover` y `activate_sound audio.sfx_click`. El mapa usa `sfx_hhover` y `sfx_hclick`.
 
 ## 5. Trampas
 
@@ -52,3 +60,4 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 - `narrator` (sin "d") es el narrador interno: cajas vacías de transiciones y preguntas de menú.
 - Los cambios en `init python` no entran con recarga rápida: cerrar y abrir el juego.
 - FINALES_TEMPRANO es un define: se evalúa en init y no puede leer persistent. Lo que dependa del jugador (el nombre) se añade en final_scope().
+- El collage apaga `quick_menu`, y de eso cuelga todo el HUD. Si se sale de un collage sin `call collage_cerrar`, la interfaz no vuelve.
