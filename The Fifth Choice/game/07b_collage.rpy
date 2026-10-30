@@ -28,7 +28,7 @@ define COLLAGE_CG = {
     "nino":    ["cg_nino_pasillo", "cg_nino_centro_comercial", "cg_nino_receta", "cg_nino_grieta_cocina"],
     "miku":    ["cg_miku_sofa", "cg_miku_biblioteca", "cg_miku_estudio", "cg_miku_sorpresa"],
     "yotsuba": ["cg_yotsuba_corriendo", "cg_yotsuba_pista", "cg_yotsuba_rotulador", "cg_yotsuba_cronometro"],
-    "itsuki":  ["cg_itsuki_azotea_cuaderno", "cg_itsuki_atascada", "cg_itsuki_contraida", "cg_itsuki_reto"],
+    "itsuki":  ["cg_itsuki_discusion", "cg_itsuki_sentada", "cg_itsuki_azotea_cuaderno", "cg_itsuki_contraida"],
 }
 
 ## (x, y, ángulo) del CENTRO de cada polaroid, en píxeles de 1920x1080.

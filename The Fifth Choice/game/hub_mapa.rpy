@@ -15,12 +15,39 @@ init python:
     HUB_ANG   = 10.0
     HUB_W     = config.screen_width
     HUB_H     = config.screen_height
-    HUB_N     = 5
-    HUB_SLOT  = HUB_W // HUB_N
     HUB_GAP   = 10
 
+    # --- ANCHO DE CADA FRANJA ---------------------------------------
+    # Peso relativo de cada franja, en el MISMO orden que HUB_DESTINOS
+    # (Ichika, Nino, Miku, Yotsuba, Itsuki).
+    #   1.0 = ancho parejo. Mas alto = franja mas ancha.
+    # Los pesos se normalizan solos: siempre llenan la pantalla completa.
+    # [1, 1, 1, 1, 1] = el reparto anterior (todas iguales).
+    HUB_PESOS = [0.96, 1.00, 1.08, 1.00, 0.96]
+
+    HUB_N    = len(HUB_PESOS)
+    HUB_SLOT = HUB_W // HUB_N      # ancho promedio (solo referencia)
+
+    def hub_calcular_cortes():
+        """Posicion x (a media altura) donde empieza/termina cada franja."""
+        suma = float(sum(HUB_PESOS))
+        cortes = [0.0]
+        for p in HUB_PESOS:
+            cortes.append(cortes[-1] + HUB_W * p / suma)
+        return cortes
+
+    HUB_CORTES   = hub_calcular_cortes()
+    HUB_SLOT_MAX = max(HUB_CORTES[i + 1] - HUB_CORTES[i] for i in range(HUB_N))
+
+    def hub_slot_w(i):
+        return HUB_CORTES[i + 1] - HUB_CORTES[i]
+
+    def hub_slot_cx(i):
+        return (HUB_CORTES[i] + HUB_CORTES[i + 1]) / 2.0
+
     HUB_DESPL  = int(HUB_H / 2.0 * math.tan(math.radians(abs(HUB_ANG))))
-    HUB_CARD_W = HUB_SLOT + 2 * HUB_DESPL + 40
+    # la "tarjeta" es del tamano de la franja MAS ANCHA; todas comparten tamano
+    HUB_CARD_W = int(HUB_SLOT_MAX) + 2 * HUB_DESPL + 40
 
     # --- look ---
     HUB_FUENTE      = "fonts/MPLUSRounded1c-Bold.ttf"
@@ -118,14 +145,14 @@ init python:
     
     def hub_subtitulo(n):
         if n == 1:
-            return "Tres tardes. Cinco hermanas. Solo vas a alcanzar a tres."
+            return "Tres tardes por delante. Empieza por quien más ganas tengas de ver."
         elif n == 2:
-            return "Dos tardes. Cuatro hermanas. Dos van a quedar fuera."
+            return "Quedan dos tardes. Que cada una sea especial a su manera."
         else:
-            return "Última tarde. Tres hermanas. Dos se quedan fuera."
+            return "La última tarde. Que sea una que quieras recordar."
 
-    def hub_mask(borde=None):
-        ancho = int((HUB_SLOT - HUB_GAP) * math.cos(math.radians(HUB_ANG)))
+    def hub_mask(i, borde=None):
+        ancho = int((hub_slot_w(i) - HUB_GAP) * math.cos(math.radians(HUB_ANG)))
         dx = 0
         extra = 2 * HUB_DESPL + 80
         if borde == "izq":
@@ -167,7 +194,7 @@ init python:
         return Fixed(*capas, xysize=(HUB_W, HUB_H))
 
 
-    def hub_panel(fondo, ruta, color, escala=1.0, xoff=0, yoff=0, borde=None, coronilla=None):
+    def hub_panel(i, fondo, ruta, color, escala=1.0, xoff=0, yoff=0, borde=None, coronilla=None):
         capas = [
             Transform(fondo, xysize=(HUB_CARD_W, HUB_H), fit="cover"),
             Transform(Solid(color), xysize=(HUB_CARD_W, HUB_H), alpha=HUB_VELO),
@@ -176,7 +203,7 @@ init python:
             hub_degradado(520),
             Transform(Solid(color), xysize=(HUB_CARD_W, 12), yalign=1.0),
         ]
-        return AlphaMask(Fixed(*capas, xysize=(HUB_CARD_W, HUB_H)), hub_mask(borde))
+        return AlphaMask(Fixed(*capas, xysize=(HUB_CARD_W, HUB_H)), hub_mask(i, borde))
 
 
 # ------------------------------------------------------------
@@ -219,7 +246,7 @@ init 2 python:
         dict(hermana="yotsuba", nombre="Yotsuba", lugar="Pista de atletismo",
              fondo="ph_bg_pista",
              sprite="hubs/yotsuba_hub.png",
-             color="#58D68D", escala=1.00, xoff=0, yoff=0, coronilla=57),
+             color="#58D68D", escala=0.88, xoff=0, yoff=30, coronilla=57),
 
         dict(hermana="itsuki",  nombre="Itsuki",  lugar="Aula vacía",
              fondo="ph_bg_aula",
@@ -288,6 +315,7 @@ screen mapa_hub(hub_actual=1):
 screen destino_hub(indice, d):
     $ visitada = d["hermana"] in hub_visitadas
     $ borde = "izq" if indice == 0 else ("der" if indice == HUB_N - 1 else None)
+    $ card_x = int(hub_slot_cx(indice) - HUB_CARD_W / 2.0)
 
     button:
 
@@ -296,7 +324,7 @@ screen destino_hub(indice, d):
         hover_sound audio.sfx_hhover
         activate_sound audio.sfx_hclick
         
-        xpos indice * HUB_SLOT - (HUB_CARD_W - HUB_SLOT) // 2
+        xpos card_x
         ypos 0
         xysize (HUB_CARD_W, HUB_H)
         background None
@@ -304,7 +332,7 @@ screen destino_hub(indice, d):
         action Return(d["hermana"])
         at (hub_visitado if visitada else hub_normal)
 
-        add hub_panel(d["fondo"], d["sprite"], d["color"],
+        add hub_panel(indice, d["fondo"], d["sprite"], d["color"],
                       d.get("escala", 1.0), d.get("xoff", 0), d.get("yoff", 0),
                       borde, d.get("coronilla"))
 
