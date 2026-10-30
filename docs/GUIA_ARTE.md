@@ -57,7 +57,7 @@ expresiones — conviene apuntarla igual, pero ya no obliga a rehacer sets enter
 
 Con LoRA de personaje **hay que quitar la redundancia del prompt**, no sumarla:
 competir con él es lo que rompe el parecido. El de Raiha trae los ojos turquesa
-del anime; se corrigen a marrón por prompt sin pelea.
+y el lazo lila del anime, y son el canon: no se corrigen.
 
 **Futaro no tiene LoRA.** Esa es la razón de fondo de que salga como silueta
 negra cada vez que se le pide de frente. La solución no es prompting: es
@@ -95,10 +95,11 @@ Un solo atuendo por hermana: el uniforme escolar, también dentro del
 departamento. Ahorra un set entero de cuerpos y nadie lo cuestiona. Pero **el
 uniforme no es igual entre las cinco**: lo único común es la falda verde
 plisada, y esa diferencia es justo lo que las hace distinguibles en pantalla.
+Ichika va sin blazer para no parecerse a Nino, que es la única con blazer.
 
 | Hermana | Pelo | Vestuario |
 |---|---|---|
-| Ichika | Corto rosa pálido, flequillo en mechones separados de largo desigual con las puntas hacia dentro, silueta redondeada que se ahueca a los lados de la cara. Sin lazos. | Blazer azul marino con ribete blanco, camisa blanca, suéter amarillo atado a la cintura. |
+| Ichika | Corto rosa pálido, flequillo en mechones separados de largo desigual con las puntas hacia dentro, silueta redondeada que se ahueca a los lados de la cara. Sin lazos. | Camisa blanca, suéter amarillo atado a la cintura, falda verde plisada. Sin blazer. |
 | Nino | Corto, rosa más oscuro y apagado, lazos negros con verde a ambos lados de la cabeza. | Blazer azul marino con ribete blanco, camisa blanca abotonada, calcetas blancas altas. |
 | Miku | Castaño, media melena. | Sudadera azul claro con capucha y cremallera, **audífonos azules colgados del cuello, nunca puestos**, medias oscuras. Sin blazer. |
 | Yotsuba | Corto naranja, cinta verde en la cabeza. | Chaleco amarillo, camisa blanca de manga corta, lazo verde a cuadros. |
@@ -108,10 +109,10 @@ plisada, y esa diferencia es justo lo que las hace distinguibles en pantalla.
 |---|---|---|
 | Futaro | Negro corto, con un mechón levantado. | **Cárdigan gris claro abierto**, manga larga, camisa blanca de cuello debajo, pantalón azul marino. No es el blazer azul de las hermanas: son prendas distintas y no hay que mezclarlas. |
 | Isanari | Rubio arena apagado, corto y en pinchos, gafas de sol apoyadas en la cabeza. Ojos marrones. Delgado y fibroso, **no musculado**. | Camiseta gris oscuro de manga corta, cinturón marrón, pantalón beige, zapatos marrones. |
-| Raiha | Castaño oscuro muy largo, flequillo recto, coleta alta con lazo rosa. **Ojos marrones rojizos y piel clara.** | Camiseta de rayas blancas y rosa coral de manga corta, peto vaquero azul con bajos remangados, sandalias. |
+| Raiha | Pelo negro con tinte azul marino, muy largo, flequillo recto, coleta alta que sube y se curva hacia un lado, lazo lila pequeño en la base. **Ojos turquesa, piel clara.** | Camiseta de rayas blancas y rosa coral de manga corta, peto vaquero azul con bajos remangados, sandalias. |
 
 Las marcas en negrita de Isanari y Raiha son correcciones que costaron tandas: el
-modelo tira a hacerle a él cuerpo de gimnasio y a ella la piel tostada, y ninguna
+modelo tira a hacerle a él cuerpo de gimnasio y a ella la piel clara, y ninguna
 de las dos cede sin tokens redundantes.
 
 **Miku es la única que no va de uniforme**, y es decisión de guion, no límite de
@@ -153,13 +154,13 @@ a una escala distinta por dentro y en pantalla no parecían quintillizas.
 |---|---|---|
 | `miku_neutral` (antes `miku_aburrida`) | 73,9 | 1,045 |
 | `itsuki_molesta` | 60,8 | 1,270 |
-| `yotsuba_sonrisa` | 76,4 | **1,011** |
+| `yotsuba_sonriendo` | 76,4 | **1,011** |
 | `nino_neutral` | 71,3 | 1,083 |
 | `ichika_neutral` | 68,1 | 1,134 |
-| `ichika_sonrisa` (ojos cerrados) | 105,8 | 0,730 |
-| `itsuki_sorpresa` | 63,9 | 1,209 |
+| `ichika_sonriendo` (ojos cerrados) | 105,8 | 0,730 |
+| `itsuki_sorprendida` | 63,9 | 1,209 |
 | `itsuki_timida` | 61,6 | 1,254 |
-| `itsuki_sonrisa` | 53,9 | 1,431 |
+| `itsuki_sonriendo` | 53,9 | 1,431 |
 | `itsuki_neutral` | 48,7 | **1,584** |
 
 **Generar en vertical 768 × 1280 importa mucho.** Yotsuba y Nino vinieron así y
@@ -282,14 +283,18 @@ de Ren'Py. Requieren Python de python.org con `pillow`, `numpy` y `scipy`.
 | `generar_ui.py` | Genera los PNG de la interfaz en `game/ui/` (cajas, cintas, tarjetas, iconos, decoración por hermana). Ver `GUIA_UI.md` |
 | `generar_logo.py` | Arma el logo del menú con los sprites `neutral` de las hermanas |
 | `recortar_menu.py` | Quita el fondo y recorta al contenido un sprite del menú (cuerpo completo) |
+| `quitar_fondo_ia.py` |	Quita el fondo de un render con rembg (modelo de anime). Flujo: este → `normalizar_sprite.py` → `limpiar_halo.py --solo-halo` |
+| `generar_fondos_collage.py` |	Fondos de pétalos del collage del beat casa, 1920×1080 WebP 90 |
+| `ajustar_transiciones.py` |	Cambia `fade` por `dissolve` en BG↔CG y escenas seguidas. Solo informa; `--aplicar escribe` |
 
 ```
 python normalizar_sprite.py entrada.png salida.png
 python limpiar_halo.py entrada.png salida.png [--solo-halo]
 ```
 
-**Detección de ojos: los scripts buscan iris azul.** Isanari y Raiha los tienen
-marrones y Maruo negros, así que con ellos hay que pasar `--ojos x1,y1,x2,y2`
+**Detección de ojos: los scripts buscan iris azul.** Isanari los tiene marrones y 
+Maruo negros. Los de Raiha son turquesa, pero `normalizar_extra.py` exige 
+`--ojos` igual., así que con ellos hay que pasar `--ojos x1,y1,x2,y2`
 copiando las coordenadas de las pupilas de otra versión del mismo render. Con los
 ojos cerrados la detección también falla.
 
@@ -384,8 +389,9 @@ the counter, bright evenly lit room, teal glow from the aquarium, soft warm
 shadows on the floor, soft shading, bright colors, anime background art
 ```
 
-Para una versión nocturna sin regenerar, `bg_departamento_noche` ya está definida
-en `00_definiciones.rpy` con `MatrixColor`.
+Las variantes `_anochecer` de los fondos de hub se declaran sin regenerar: 
+`Transform("…webp", matrixcolor=BrightnessMatrix(-0.06) * SaturationMatrix(0.88) * TintMatrix("#e0d8f0"))`. 
+`bg_departamento_anochecer` es un webp aparte.
 
 ### Ficha de prompt de Maruo
 
@@ -439,9 +445,10 @@ nuevos donde él aparece:
 - **Un solo personaje con LoRA en el frame.** Él no cuenta porque no es un
   personaje para el modelo: es un objeto en primer plano.
 
-`cg_pupitre_manana` y `cg_estudio_biblioteca` van los dos con esta receta. La
-ventaja no es solo técnica: un plano subjetivo obliga al jugador a mirar desde
-donde mira él, que es justo lo que hace el juego con el protagonista sin rostro.
+`cg_itsuki_apertura` (antes cg_pupitre_manana) y `cg_miku_estudio`
+(antes cg_estudio_biblioteca) van con esta receta. La ventaja no es solo técnica:
+un plano subjetivo obliga al jugador a mirar desde donde mira él, que es justo 
+lo que hace el juego con el protagonista sin rostro.
 
 ### CG en pareja — misma semilla, un solo cambio
 
@@ -477,6 +484,14 @@ atributo en su dueña (`red vest only on this girl`).
 **Jerarquía de qué defender cuando no sale todo:** primero que sean cinco, luego
 los colores de pelo, luego las poses, y el vestuario al final. Un blazer mal
 asignado se nota mucho menos que una sexta hermana.
+
+### CG de serie con receta común
+
+Cuando varios CG forman un set (los 5 de examen del final malo), llevan el mismo 
+primer plano y solo cambia la hermana del fondo. Se generan en la misma sesión con
+la misma semilla, y cada hermana tiene una silueta distinta que se lee al 30 %. 
+`cg_maruo_espaldas`: Maruo de espaldas, LoRA de serie a 0.1; sin rostro visible no 
+se puede feminizar.
 
 ---
 
@@ -525,18 +540,7 @@ desde cero.
 
 Cosas abiertas que afectan a todo el arte, no solo al prólogo:
 
-- **El pelo de Miku no coincide entre CG y sprite.** En los CG quedó castaño
-  oscuro tras la corrección en Gemini; el sprite sigue en castaño claro. Hay que
-  decidir cuál manda, porque si no la inconsistencia se arrastra a todo el juego.
-  **Esto se decide antes de generar el evento de la biblioteca**, que trae tres CG
-  suyos: si se generan sin resolverlo, el problema pasa de dos imágenes a cinco.
-- **La falda de `itsuki_neutral` es olivácea.** Color medio (92, 102, 74) frente a
-  (90, 118, 63) del resto del set. Alternar esa expresión con otra en la misma
-  escena hace que la falda cambie de tono en pantalla. Se corrige en post con un
-  ajuste de tono sobre la región verde, sin regenerar.
-- **El corte inferior del set sigue fijado por Itsuki.** Sus cuatro renders
-  vinieron apaisados en 1280 × 720. Para subir el corte hay que regenerarla en
-  vertical y rehacer las cinco. Cuanto más tarde, más sprites hay que rehacer.
+- **El pelo de Miku está resuelto.** Ganó el pelo castaño.
 - **El lazo de Yotsuba viene cortado en el propio render**: hay verde en la fila 0
   del PNG original de PixAI. No es la normalización. Para tenerlo entero hay que
   regenerar con más margen arriba.
@@ -546,10 +550,11 @@ Cosas abiertas que afectan a todo el arte, no solo al prólogo:
 - **Las gafas de Isanari cambian de sitio entre sus dos sprites**: caladas en el
   neutral, en la frente en la sonrisa. Decisión tomada: se asume. Lo único que
   conviene evitar es alternarlos en réplicas consecutivas.
-- **Expresiones del Capítulo 1: hechas.** `nino pillada`, `yotsuba incomoda`,
-  `miku animada` y `miku encogida` ya existen, junto con otras. Para las que no
-  tengan escena escrita sigue valiendo la lección de `itsuki_timida`: generar
-  contra suposición produce arte que no se usa.
+- **Expresiones del Capítulo 1: hechas.** Ichika `agotada` y `determinada`; Nino
+  `pillada`, `nerviosa` y `molesta`; Miku `animada`, `relajada` y `encogida`;
+  Yotsuba `neutral`, `incomoda` y `sorprendida`; Itsuki `timida` y `sorprendida`;
+  Raiha `preocupada`. Para las que no tengan escena escrita sigue valiendo la
+  lección de itsuki_timida.
 - **La diferencia entre expresiones tiene que estar en la silueta.** Es la regla
   que sale de las cuatro fichas nuevas y vale para todas las que vengan: a un 30 %
   de tamaño la cara no se lee. `nino pillada` descruza los brazos, `yotsuba
@@ -575,3 +580,10 @@ hasta los zapatos**, a diferencia de los del juego, que se cortan bajo la rodill
   regenerarlo con IA, porque las siluetas salían inconsistentes.
 - Para publicar no se usa arte oficial: los PNG bajados de internet al principio se
   sustituyeron por estos.
+
+## 11. Sprites del hub
+
+Exclusivos del mapa de hubs (game/images/hubs/<hermana>_hub.png). Una pose propia por hermana,
+cintura para arriba, 768×1280, fondo blanco, solo LoRA de personaje a 0.8. Fondo quitado en 
+Photoshop. No usan el estándar de 760×930: hub_sprite los escala por la altura real del contenido. 
+Si un lazo o el ahoge sobresale, se pasa coronilla en HUB_DESTINOS (Yotsuba 57, Itsuki 84).
