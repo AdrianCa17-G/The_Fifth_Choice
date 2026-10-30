@@ -18,12 +18,12 @@ game/audio/bgm/bgm_hermanas/   ichika_tema, nino_tema, miku_tema,
 
 game/audio/sfx/    papel_mesa, timbre, silla, toque_puerta,
                    manija, puerta_abre, correr, portazo,
-                   bolsa, hoja, puerta_cierra,
-                   pisadas_pista, taza_mesa, mochila_suelo,
-                   lapiz_mesa, hover, click,
-                   hub_hover, hub_click                    (.mp3)
+                   bolsa, hoja, puerta_cierra, taza_mesa,
+                   mochila_suelo, lapiz_mesa, celular,
+                   hover, click, hub_hover, hub_click      (.mp3)
+                   pisadas_pista                           (.ogg, cicla)
 
-game/audio/        amb_viento.ogg, silencio_exterior.ogg
+game/audio/        amb_viento.ogg, silencio_exterior.ogg, amb_reloj.ogg
 
 ```
 
@@ -34,7 +34,10 @@ eso se pierde si se acortan los dos lados a la vez. Los ocho BGM no lo necesitan
 porque `hogar`, `cena` o `contrato` ya son palabras que no se confunden.
 
 **OGG para todo lo que cicle, MP3 para los efectos puntuales.** El MP3 mete un
-silencio en el punto de bucle: un golpe de puerta no cicla, un viento sí.
+silencio en el punto de bucle: un golpe de puerta no cicla, un viento sí. 
+pisadas_pista es el caso límite: es un efecto, pero cicla (loop), así que 
+va en .ogg. Los ambientes llevan prefijo amb_ en la variable 
+(amb_viento, amb_silencio_exterior, amb_reloj) y se tocan por el canal ambiente.
 
 Todo en minúsculas, sin espacios ni tildes. Ren'Py distingue mayúsculas en Linux
 y Android: un `SFX_Papel.mp3` funciona en Windows y revienta al exportar.
@@ -92,36 +95,61 @@ volver a exportarlo comprime dos veces.
 
 | Cue | Pista | Fuente |
 |---|---|---|
-| `hogar` | ピアノ34「静寂の世界へ」 | 魔王魂 |
-| `cena` | アコースティック04 | 魔王魂 |
-| `cotidiano` | ピアノ25「Cookie Cookie」 | 魔王魂 |
-| `incomodo` | Zany Escape (Kobat) | DOVA |
-| `extraneza` | 日曜の午後 (KK) | DOVA |
+| `amb_viento` | 風 孤独感 | Springin' Sound Stock |
+| `amb_reloj` |  | |
 | `caos` | Busy As A Bee (ハモおた) | DOVA |
+| `cena` | アコースティック04 | 魔王魂 |
 | `contrato` | Night Shade Story (shimtone) | DOVA |
-| `derrota` | ピアノ09 | 魔王魂 |
+| `cotidiano` | ピアノ25「Cookie Cookie」 | 魔王魂 |
 | `descubrimiento` | Dreaming world | DOVA |
+| `derrota` | ピアノ09 | 魔王魂 |
+| `extraneza` | 日曜の午後 (KK) | DOVA |
 | `guardia` | Blue Moon | DOVA |
+| `hogar` | ピアノ34「静寂の世界へ」 | 魔王魂 |
+| `hub` |  | |
+| `incomodo` | Zany Escape (Kobat) | DOVA |
+| `main_theme` |  |  |
+| `silencio_exterior` | 風 孤独感 | Springin' Sound Stock  |
 | `tregua` | Lonely Town | DOVA |
 | `ichika_tema` | Fancy Pop | DOVA |
 | `itsuki_tema` | Rippling heartbeat | DOVA |
 | `miku_tema` | The calm seaside | DOVA |
 | `nino_tema` | Mad Trick (Prod. Khaim) | DOVA |
 | `yotsuba_tema` | New Departure | DOVA |
-| `amb_viento` | 風 孤独感 | Springin' Sound Stock |
-| `silencio_exterior` | 風 孤独感 | Springin' Sound Stock  |
+
 
 ### `descubrimiento` — ya existe
 
-Pista de los cinco eventos de hermana del Capítulo 1: algo tranquilo y con
-curiosidad, sin dulzura. **Regla de uso: suena únicamente mientras habla la
-hermana**, entra cuando se suelta y sale en el momento en que se corta. Si
-acompaña también al razonamiento de Futaro deja de ser el tema de ellas y pasa a
-ser fondo, que es exactamente el error del que nació `cena`.
+Pista de los cinco eventos de hermana del Capítulo 1: algo tranquilo y 
+con curiosidad, sin dulzura. **Regla de uso: entra antes del monólogo de 
+Futaro que precede al menú de decisión (cuando repasa lo que acaba de
+ver de esa hermana)**. Sigue durante el menú y la rama, y sale en el 
+cierre del evento con stop music fadeout 1.5. Antes de ese punto suena
+el tema de la hermana, y descubrimiento lo reemplaza.
 
 **`hogar` suena exactamente dos veces en todo el prólogo**: bajo el retrato
 familiar y en «Bien. Que sea difícil». Es el tema de Futaro. Si sonara también
 durante la cena dejaría de ser un tema y sería fondo — por eso existe `cena`.
+Desde el Capítulo 1, hogar suena siempre que el fondo es bg_cuarto_mc, sin 
+importar la situación: es el cuarto y el tema de Futaro. Entra siempre después
+de un stop music, para que lo haga sobre silencio. En el beat casa vuelve al 
+final de cada reflexión con `play music hogar` fadein 2.0 volume 0.7. 
+La regla de «solo dos veces» vale únicamente para el prólogo.
+
+### Temas por hermana (`ichika_tema`, `nino_tema`, `miku_tema`, `yotsuba_tema`, `itsuki_tema`)
+
+Suenan al llegar al hub de cada una, en su reacción de las interconexiones 
+y en su reflexión del beat casa. Cuando llega la decisión, descubrimiento los reemplaza.
+
+### `guardia` y `tregua`
+
+**guardia:** pista exclusiva de las escenas de tensión intensa (hoy, el beat de Nino). 
+Suena de principio a fin de la escena.
+
+**tregua:** beat de Itsuki, a volumen normal. Al entrar se corta el viento (stop ambiente).
+
+**derrota:** además de los finales malos, se usa en la interconexión 4 porque es de
+las menos usadas y no suena a fracaso total.
 
 **El viento se alargó a mano en Audacity.** El original dura 4 s y un ciclo tan
 corto se reconoce enseguida. Se repitió 7 veces hasta 35 s con fundidos de un
@@ -130,10 +158,13 @@ porque va por debajo del diálogo.
 
 ---
 
-## 4. Los doce efectos
+## 4. Los efectos
 
-Todos de 効果音ラボ. Los términos de búsqueda son en japonés, que es lo único que
-entiende su buscador.
+Los del prólogo son de 効果音ラボ. Los nuevos del Capítulo 1 
+(`pisadas_pista`, `taza_mesa`, `mochila_suelo`, `lapiz_mesa`, `celular`) 
+salen de Freesound  porque 効果音ラボ no tenía: confirma la licencia de cada
+uno. Los términos de búsqueda de 効果音ラボ son en japonés, que es lo único
+que entiende su buscador.
 
 | Variable | Origen | Notas de montaje |
 |---|---|---|
@@ -148,6 +179,11 @@ entiende su buscador.
 | `sfx_bolsa` | ビニール袋 | 17 s → 1 s, el tramo del 0:14 al 0:15 |
 | `sfx_hoja` | ページをめくる1 | La versión lenta, no la rápida |
 | `sfx_puerta_cierra` | ドアを閉める2 (残響なし) | Un solo archivo, cinco reproducciones |
+| `sfx_pisadas_pista` | Freesound |	.ogg, cicla con loop; se corta con stop sound |
+| `sfx_taza_mesa` | Freesound |	Golpe seco de cerámica, sin rebote |
+| `sfx_mochila_suelo` | Freesound |	Tela sobre concreto, un golpe sordo sin eco |
+| `sfx_lapiz_mesa` | 	Freesound |	Madera contra madera, pequeño y seco |
+| `sfx_celular` | Freesound |	Vibración corta |
 
 **`portazo` y `puerta_cierra` son la misma puerta a propósito.** El portazo se
 fabricó a partir del cierre: amplificar al máximo sin distorsionar y recortar la
@@ -172,12 +208,12 @@ se delate la repetición.
 
 | Nivel | Qué |
 |---|---|
-| 2.5 | Portazo de Itsuki, y los tres sonidos suaves de origen: papel, silla, bolsa |
-| 2.0 | Hoja, y la puerta de Nino en la escena 7 |
-| 1.75 | Pasos de Yotsuba |
-| 1.5 | Campana, toque de puerta, pomo, puerta que abre Ichika |
+| 2.5 | Portazo de Itsuki, los tres suaves de origen (papel, silla, bolsa) y el lápiz del beat casa |
+| 2.0 | Hoja, la puerta de Nino en la escena 7 y la taza de Nino |
+| 1.75 | Pasos de Yotsuba (pisadas_pista, con loop) |
+| 1.5 | Campana, toque de puerta, pomo, puerta que abre Ichika, mochila y celular |
 | 1.2 | Las tres puertas que se cierran después de la de Nino |
-| 1.0 | La puerta de Maruo |
+| 1.0 | La puerta de Maruo, su taza, y la puerta de Isanari en el beat casa |
 
 Los tres suaves están arriba **porque el archivo es flojo, no porque la escena lo
 pida**. La de Maruo está abajo a propósito: cierra «con la calma de quien ya dio
@@ -260,8 +296,11 @@ lo que lo hace imperceptible. Al revés se nota muchísimo.
 en todas partes deja de ser una excepción y se oye como bombeo: una pista que se
 encoge y se estira catorce veces suena a fallo técnico, no a intención.
 
-En el prólogo hay exactamente tres: el papel bajo `cena`, la silla bajo
-`incomodo` y la bolsa bajo `caos`. La hoja no lleva, porque suena sobre silencio.
+En el prólogo hay exactamente tres: el papel bajo cena, la silla bajo incomodo y 
+la bolsa bajo caos. En el Capítulo 1 se suman los suaves que caen sobre música: 
+`hoja`, `mochila`, `lápiz`, `pisadas` y `celular`. Nunca en puertas, toque de 
+puerta ni tazas: tienen ataque y se oyen solos. Si el efecto cae sobre silencio,
+tampoco hace falta.
 
 Si un sitio necesita más margen, `duck(0.3)`. Si necesita más tiempo,
 `duck(0.4, 0.2, 2.5)`.
@@ -290,6 +329,12 @@ Un ambiente no empieza, ya estaba ahí. Con tres segundos entra sin que se note 
 momento exacto. El 0.35 es bajo a propósito: los ambientes funcionan mucho más
 bajos de lo que uno cree, y el criterio es que a mitad de escena ya no te acuerdes
 de que está sonando, pero que si lo quitaras lo echaras de menos.
+
+sound es único: un play sound ... loop lo ocupa hasta el stop sound, y cualquier 
+otro play sound lo corta. ambiente cicla solo (no hace falta loop) y es donde 
+van amb_viento, amb_silencio_exterior y amb_reloj: play ambiente amb_reloj fadein
+2.0 volume 0.4 y stop ambiente fadeout 1.0. El reloj solo marca cuenta atrás: 
+interconexión 5, exámenes del final malo B y examen del evento 6.
 
 ---
 
@@ -337,14 +382,30 @@ se oye entera. La regla general que deja el prólogo se sostiene aquí sin esfue
 
 ### Un capítulo entero puede no necesitar efectos nuevos
 
-La apertura del Capítulo 1 y el evento de Miku se montan **con los doce efectos
-que ya existen**: timbre, hoja, papel, silla y las dos puertas. Antes de salir a
-buscar sonidos nuevos, revisar la tabla de arriba: los archivos ya están
+La apertura del Capítulo 1 y el evento de Miku se montan **con los efectos que ya 
+existían tras el prólogo**: timbre, hoja, papel, silla y las dos puertas. Antes 
+de salir a buscar sonidos nuevos, revisar la tabla de arriba: los archivos ya están
 recortados, normalizados y calibrados contra la música, que es la parte cara. Un
 efecto nuevo cuesta una tarde; reutilizar uno cuesta escribir su nombre.
+El resto del Capítulo 1 sí pidió efectos nuevos, siempre porque la escena los 
+narra: `pisadas`, `taza`, `mochila`, `lápiz`, `celular` y el tic-tac del `reloj`.
 
 ### La repetición idéntica es un recurso
 
 Las cuatro puertas de la escena 7 usan el mismo archivo sin variar nada más que el
 volumen. Que se repita igual es lo que hace que la última suene más sola que la
 primera.
+
+## 9. Música por situación (Capítulo 1)
+
+| Situación |	Música |
+|---|---|
+| Cuarto de Futaro | `hogar` siempre |
+| Llegada al hub y reacción de la hermana	| Su tema |
+| Monólogo previo a la decisión hasta el cierre	| `descubrimiento` |
+| Escena de tensión intensa (beat de Nino) | `guardia` |
+| Azotea del beat de Itsuki	| `Viento`, luego `tregua` (corta el viento) |
+| Maruo	| `contrato` |
+| Quejas de la interconexión 6	| `incomodo` |
+| Después de las quejas y domingo	| `cotidiano` en clima buena o mixta, silencio en mala |
+| Exámenes | Sin música, `amb_reloj` bajo |
