@@ -16,8 +16,11 @@ variables, fondos, sprites, transforms, audio, funciones, la pantalla de nombre 
 La interfaz vive aparte: `06_main_menu.rpy`, `07_ui.rpy`, `08_extras.rpy` y
 `09_menus_sistema.rpy` (ver `GUIA_UI.md`).
 
-Los archivos de capítulo contienen **solo su `label` y sus CG propios**. Si un CG
-se reutiliza en otro capítulo, sube a definiciones.
+Los archivos de capítulo contienen su label y lo que solo ese evento usa: 
+sus CG, sus fondos (con su variante _anochecer) y sus audios propios. Si otro 
+archivo lo reutiliza, sube a 00_definiciones.rpy. Hoy pasa con `bg_aula_tarde`, 
+`cg_nino_confrontacion_cocina` y `sfx_taza_mesa`, que usan los finales malos. 
+Funciona porque los define son globales, pero es deuda, no bug.
 
 Esto estuvo escrito antes que cumplido: el prólogo llevaba dentro los fondos, los
 sprites, los transforms y el audio entero, y funcionaba solo porque los `define`
@@ -36,6 +39,11 @@ de carga.
 ```renpy
 $ sumar_punto("nino", 2)
 ```
+
+En los eventos de hermana: cálida `sumar_punto("x", 3)`, tibia `sumar_punto("x", 1)`, 
+fría `$ desaires_cap1 += 1` (sin puntos). Cada evento guarda su rama en `<h>_rama_cap1`
+("calida", "tibia", "fria"; se lee con `rama_de("x")`) y marca `<h>_visitada_cap1 = True` 
+antes del return. El beat de Nino usa `nino_rama_beat` y no `toca desaires_cap1`.
 
 Nunca tocar `puntos_*` a mano. El helper es lo único que garantiza que
 `primera_conexion` se escriba una sola vez, y de eso depende el desempate de toda
@@ -124,8 +132,15 @@ Para salidas, `hide <tag>` con `moveoutleft`. Antes se movía el sprite a
 
 ### Otras transiciones
 
-`with dissolve` para cambios de escena entre BG y CG. `with fade` para saltos de
-tiempo y cortes duros.
+| Transición | Cuándo |
+|---|---|
+| `dissolve` | BG↔CG de la misma escena y entrada de un sprite nuevo |
+| `disolucion_lenta` (0.4 s)	| Cambio de expresión o de quién habla (`show x at pj_habla`(...)) |
+| `fade` | Cambio de lugar dentro del mismo día |
+| `fade_dia` (0.7 / 0.4 / 0.7) | Salto de día o noche explícito en el texto |
+| `corte_seco` (0.1 s)	| Aparece Maruo o un golpe de guion |
+
+Varios scene seguidos sin texto en medio: el primero con fade, el resto con dissolve.
 
 ---
 
@@ -206,6 +221,14 @@ del más largo (las cajas de decisión ligeras).
 y solo sobrevive persistent. Lo que el label necesite
 (nombre, *_rama_cap1, despido_en_beat) se pasa con Replay(label, scope={...}). 
 Sin eso, las ramas leen None y se saltan los bloques «fría».
+También arranca en negro: todo label revivible abre con su propio scene + with, 
+o el Replay empieza sin fondo.
+
+**play sound ... loop ocupa el canal sound hasta el stop sound:** cualquier otro play 
+sound en medio lo corta.
+
+**Salir de un call sin volver (un final malo desde un beat):** $ renpy.pop_call() y luego 
+jump. Sin el pop_call, la pila queda con un return pendiente.
 
 ---
 
@@ -234,7 +257,10 @@ imgs = {m.strip() for m in re.findall(r'^image ([\w ]+?)\s*=', s, re.M)}
 tags = {i.split()[0] for i in imgs}
 used = set(re.findall(r'^\s*(?:scene|show) ([a-z_]\w*)', s, re.M))
 print("sin declarar:", {u for u in used if u not in tags and u not in imgs})
+
+print("audio con punto (error):", re.findall(r'audio\.sfx\.\w+', s))
 ```
+
 
 Sobre todos los `.rpy` a la vez, no sobre uno: desde que las declaraciones viven
 en definiciones y los usos en los capítulos, mirar un archivo suelto da falsos
