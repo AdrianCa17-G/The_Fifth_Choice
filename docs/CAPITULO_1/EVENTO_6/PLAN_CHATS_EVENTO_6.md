@@ -52,29 +52,32 @@ Estado inicial: `PROPUESTA`. Al responder, cambia a `DECIDIDO` (y anota tu corre
 
 | ID | Propuesta | Estado | Bloquea chats |
 |---|---|---|---|
-| P-01 | Los cinco tienen bloque completo (nombre, CG, monólogo); minijuego solo en cálida. | PROPUESTA | 1, 2, 3, 4 |
-| P-02 | Modelo **núcleo + capas** y **focos por estado** (cálida: lo que cambió; tibia: tarea y duda; fría: herida como método; no visitada: la espera). | PROPUESTA | 1, 2, 3, 4 |
-| P-03 | Exámenes **en el aula con MC presente**, espejo del Final B. | PROPUESTA | 2, 3, 4, 7 |
-| P-04 | Orden: L→V → Maruo → las cinco → casa → cuarto/chat/libreta. Última línea sin resolver. | PROPUESTA | 2 |
-| P-05 | Frases de cambio y variantes (cortada / cerrada / espera), según tabla del análisis §2. | PROPUESTA | 3, 4 |
-| P-06 | Minijuegos: **Y2** relevo, **I1′** la máscara se cansa, **N1′** compras para seis, **It1** conversiones + levantar la mano, **M3** el compás. | PROPUESTA | 1, 5, 6 |
-| P-07 | Fallos: puntos de control por fase, líneas de fallo con carácter, asistencia adaptativa (paso a mitad tras 2 fallos, completo tras 4, «Que lo haga ella» tras 6), saltar tras ganar una vez, opción «Asistencia». | PROPUESTA | 1, 5, 6 |
-| P-08 | Dificultad: tablas del análisis §5.4; tres niveles (difícil / media / asistida); el boost de Nino sube el *suelo* de la asistencia. | PROPUESTA | 1, 5, 6 |
-| P-09 | Puntos en E6: **+1 por minijuego ganado en cálida**, vía `sumar_punto`. (Alternativa: 0.) | PROPUESTA | 1 |
-| P-10 | Notas: aprobado 60, diagonal 100, rangos por estado, boletín como pantalla `boletin_cinco`. | PROPUESTA | 1, 2 |
-| P-11 | Voz interior: cinco `Character` `<h>_int` con su color y sin placa; solo lo académico y emocional, sin romance. | PROPUESTA | 1, 3, 4 |
-| P-12 | No visitadas: monólogo con callback a su `queja_*` + **promesa pendiente** (flag para Cap. 2). | PROPUESTA | 3, 4 |
-| P-13 | Disculpa de Itsuki: **no se gasta**; solo un intento interrumpido. | PROPUESTA | 4 |
-| P-14 | Nino puede llegar a «no confío… todavía», nunca a «confío». | PROPUESTA | 4 |
-| P-15 | Nivel de CG **B** (8): 5 de examen + `cg_cinco_aprobadas` + `cg_miku_audifonos_mesa` + 1 opcional; CG estado-agnósticos. Confirmar si hay semillas guardadas. | PROPUESTA | 7 |
-| P-16 | Audio: sin BGM nuevo; su tema solo suena si cálida; `descubrimiento` durante su monólogo; reloj en el resto; SFX de acierto/fallo opcionales. | PROPUESTA | 3, 4, 6, 8 |
-| P-17 | Capa opcional por `persistent` para quien vio el Final B. | PROPUESTA (no por ahora) | 2 |
-| P-18 | Chat de grupo como pantalla de revelación final. | PROPUESTA | 2, 8 |
-| P-19 | Coda en casa (curry) dentro de E6. | PROPUESTA | 2 |
-| P-20 | Solo PC; minijuegos con ratón o un botón. | PROPUESTA | 1, 5, 6 |
-| P-21 | Galería: añadir los CG de E6 (sin romper el conteo); díptico opcional. | PROPUESTA | 1, 7 |
-| P-22 | Ganchos para Cap. 2: `e6_frase`, `e6_promesas` y matriz de notas persistente. | PROPUESTA | 1, 2 |
-| P-23 | Sprites nuevos: diferir hasta tener el guion. | PROPUESTA | 7 |
+| P-01 | Los cinco tienen bloque completo (nombre, CG, monólogo); minijuego solo en cálida. | DECIDIDO - Si, de acuerdo | 1, 2, 3, 4 |
+| P-02 | Modelo **núcleo + capas** y **focos por estado** (cálida: lo que cambió; tibia: tarea y duda; fría: herida como método; no visitada: la espera). | DECIDIDO - Si, de acuerdo | 1, 2, 3, 4 |
+| P-03 | Exámenes **en el aula con MC presente**, espejo del Final B. | DECIDIDO - Si, de acuerdo | 2, 3, 4, 7 |
+| P-04 | Orden: L→V → Maruo → las cinco → casa → cuarto/chat/libreta. Última línea sin resolver. | DECIDIDO - Si, de acuerdo | 2 |
+| P-05 | Frases de cambio y variantes (cortada / cerrada / espera), según tabla del análisis §2. | DECIDIDO - Si, de acuerdo | 3, 4 |
+| P-06 | Minijuegos: **Y2** relevo, **I1′** la máscara se cansa, **N1′** compras para seis, **It1** conversiones + levantar la mano, **M3** el compás. | DECIDIDO - Si, de acuerdo| 1, 5, 6 |
+| P-07 | Fallos: puntos de control por fase, líneas de fallo con carácter, asistencia adaptativa (paso a mitad tras 2 fallos, completo tras 4, «Que lo haga ella» tras 6), saltar tras ganar una vez, opción «Asistencia». | DECIDIDO - Si, de acuerdo | 1, 5, 6 |
+| P-08 | Dificultad: tablas del análisis §5.4; tres niveles (difícil / media / asistida); el boost de Nino sube el *suelo* de la asistencia. | DECIDIDO - Respecto a lo del beat de nino, no debe sumar puntos en nada, solo debe servir de boost para los minijuegos, si hay que cambiar algo de codigo, me avisas. | 1, 5, 6 |
+| P-09 | Puntos en E6: **+1 por minijuego ganado en cálida**, vía `sumar_punto`. (Alternativa: 0.) | DECIDIDO - No, los puntos son solo en los hubs y solo ahí | 1 |
+| P-10 | Notas: aprobado 60, diagonal 100, rangos por estado, boletín como pantalla `boletin_cinco`. | DECIDIDO - Si, de acuerdo | 1, 2 |
+| P-11 | Voz interior: cinco `Character` `<h>_int` con su color y sin placa; solo lo académico y emocional, sin romance. | DECIDIDO - Si, de acuerdo | 1, 3, 4 |
+| P-12 | No visitadas: monólogo con callback a su `queja_*` + **promesa pendiente** (flag para Cap. 2). | DECIDIDO - Si, de acuerdo | 3, 4 |
+| P-13 | Disculpa de Itsuki: **no se gasta**; solo un intento interrumpido. | DECIDIDO - Si, de acuerdo | 4 |
+| P-14 | Nino puede llegar a «no confío… todavía», nunca a «confío». | DECIDIDO - Creo que ya debería confiar pero no admitirlo directamente, es decir duró mas que otro tutor y no hizo promesas vacias | 4 |
+| P-15 | Nivel de CG **B** (8): 5 de examen + `cg_cinco_aprobadas` + `cg_miku_audifonos_mesa` + 1 opcional; CG estado-agnósticos. Confirmar si hay semillas guardadas. | DECIDIDO - Si, las guardé a las semillas y respecto al cg de miku_audifonos_mesa, no conviene en si, no digo que es mala idea pero tocaria que cada hermana tambien tuviera un cg nuevo o que ichika y yotsuba tambien tengan un cg nuevo para que ellas 3 esten iguales, nino e itsuki se pordrian omitir porque son las que mas cgs tienen, no digo que es mala idea, pero por reparticion y equidad discrepo un poco. | 7 |
+| P-16 | Audio: sin BGM nuevo; su tema solo suena si cálida; `descubrimiento` durante su monólogo; reloj en el resto; SFX de acierto/fallo opcionales. | DECIDIDO - Si, de acuerdo en todo | 3, 4, 6, 8 |
+| P-17 | Capa opcional por `persistent` para quien vio el Final B. | DECIDIDO - Si, de acuerdo, de paso esos cg de fracaso ya no sean obligatorios que esten en la seccion de cada hermana, pero tocaria rediseñar el menu de galeria para que haya mas espacio o hacer mini menus. | 2 |
+| P-18 | Chat de grupo como pantalla de revelación final. | DECISION -  Si, de acuerdo es muy innovador | 2, 8 |
+| P-19 | Coda en casa (curry) dentro de E6. | DECISION - Si, de acuerdo | 2 |
+| P-20 | Solo PC; minijuegos con ratón o un botón. | DECISION - No estoy de acuerdo, es que tambien hay jugadores de movil, por eso pregunto si esos minigames se pueden adaptar a moviles o mejor en las versiones de movil poner que esos videojuesgos son exclusivos de pc para ahorrarnos adaptarlos. | 1, 5, 6 |
+| P-21 | Galería: añadir los CG de E6 (sin romper el conteo); díptico opcional. | DECISION - Si, de acuerdo | 1, 7 |
+| P-22 | Ganchos para Cap. 2: `e6_frase`, `e6_promesas` y matriz de notas persistente. | DECISION - Si, pero el cap2 no debe centrarse del todo en eso | 1, 2 |
+| P-23 | Sprites nuevos: diferir hasta tener el guion. | DECISION - Si, si el guion lo necesita, ademas serian utiles para el cap2 donde habrian nuevas facetas de las hermanas o nuevas personalidades | 7 |
+
+Otra decision adicional tambien es respecto a la suma de puntos que estás confundido, bien, se quedan sollo en los hubs los puntos, y al final son 9 no? tu te preguntas y como llegamos a los 10, y ahi entra la decision final del jugador, digamos que el jugador en los 3 capitulos escogió calida en todos los hubs en las mismas 3 hermanas, ejemplo miku, nino e itsuki, las 3 tienen 9 puntos no? bueno en el final el jugador decidira a quien declarará su amor, a quien elija le suma 1 punto con lo cual esa chica llegará a 10 puntos y se desbloqueará su final, este punto final es decision del jugador, ahora hay caso hipotetico de que solo una chica llegó a 9 puntos y nadie mas, entonces por defecto ella será la elegída y la que obtendrá el punto adicional, osea supongo que si el jugaodr eligió a esa chica y fue calido con ella 3 veces es porque es su favorita, supongo. Con eso solucionamos el problema de los puntos.
+
 
 ### 1.D Reglas que valen en todos los chats
 
