@@ -928,7 +928,7 @@ Columna «Bloquea»: el primer chat que no puede empezar sin esa respuesta (nume
 | **P-14** | Nino puede llegar a «no confío… todavía»; nunca a «confío». | Sí | 4 | Creo que ya debería confiar pero no admitirlo directamente, es decir duró mas que otro tutor y no hizo promesas vacias |
 | **P-15** | Nivel de CG (A / B / C) y estado-agnósticos; ¿guardaste las semillas de los `*_fracaso` y de `cg_cinco_estudiando`? | B | 7 | Si, las guardé |
 | **P-16** | Audio: sin BGM nuevo; su tema solo suena si cálida; reloj en el resto; SFX de acierto/fallo opcionales. | Sí | 3, 4, 6, 8 | Si, de acuerdo en todo |
-| **P-17** | Capa opcional por `persistent` para quien vio el Final B. | No por ahora | 2 | Si, de acuerdo, de paso esos cg de fracaso ya no sean boligatorios que esten en la seccion de cada hermana, pero tocaria rediseñar el menu de galeria para que haya mas espacio o hacer mini menus. |
+| **P-17** | Capa opcional por `persistent` para quien vio el Final B. | No por ahora | 2 | Si, de acuerdo, de paso esos cg de fracaso ya no sean obligatorios que esten en la seccion de cada hermana, pero tocaria rediseñar el menu de galeria para que haya mas espacio o hacer mini menus. |
 | **P-18** | Chat de grupo como pantalla de revelación. | Sí | 2, 8 | Si, de acuerdo es muy innovador |
 | **P-19** | Coda en casa (curry) en E6. | Sí | 2 | Si, de acuerdo |
 | **P-20** | Solo PC; minijuegos con un botón o ratón. | Sí | 1, 5, 6 | No estoy de acuerdo, es que tambien hay jugadores de movil, por eso pregunto si esos minigames se pueden adaptar a moviles o mejor en las versiones de movil poner que esos videojuesgos son exclusivos de pc para ahorrarnos adaptarlos. |
@@ -938,6 +938,11 @@ Columna «Bloquea»: el primer chat que no puede empezar sin esa respuesta (nume
 
 Otra decision adicional es el del nuevo cg de miku_audifonos_mesa, no conviene en si, no digo que es mala idea pero tocaria que cada hermana tambien tuviera un
 cg nuevo o que ichika y yotsuba tambien tengan un cg nuevo para que ellas 3 esten iguales, nino e itsuki se pordrian omitir porque son las que mas cgs tienen, no digo que es mala idea, pero por reparticion y equidad discrepo un poco.
+
+Otra decision adicional tambien es respecto a la suma de puntos que estás confundido, bien, se quedan sollo en los hubs los puntos, y al final son 9 no? tu te preguntas y como llegamos a los 10, y ahi entra la decision final del jugador, digamos que el jugador en los 3 capitulos escogió calida en todos los hubs en las mismas 3 hermanas, ejemplo miku, nino e itsuki, las 3 tienen 9 puntos no? bueno en el final el jugador decidira a quien declarará su amor, a quien elija le suma 1 punto con lo cual esa chica llegará a 10 puntos y se desbloqueará su final, este punto final es decision del jugador, ahora hay caso hipotetico de que solo una chica llegó a 9 puntos y nadie mas, entonces por defecto ella será la elegída y la que obtendrá el punto adicional, osea supongo que si el jugaodr eligió a esa chica y fue calido con ella 3 veces es porque es su favorita, supongo. Con eso solucionamos el problema de los puntos.
+
+
+Tambien respecto a lo del beat de nino, no debe sumar puntos en nada, solo debe servir de boost para los minijuegos, si hay que cambiar algo de codigo, me avisas.
 
 ---
 
