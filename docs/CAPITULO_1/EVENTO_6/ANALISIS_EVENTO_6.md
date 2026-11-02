@@ -910,31 +910,39 @@ Todo con lenguaje de pantallas de Ren'Py, sin librerías externas.
 
 Columna «Bloquea»: el primer chat que no puede empezar sin esa respuesta (numeración del plan). **Mi recomendación** va por defecto: si respondes «ok todo», se toma tal cual.
 
-| ID | Decisión | Mi recomendación | Bloquea |
-|---|---|---|---|
-| **P-01** | Los **cinco** tienen bloque completo (nombre, CG, monólogo); el minijuego solo en cálida. | Sí | 1, 2, 3, 4 |
-| **P-02** | Modelo **núcleo + capas** y **focos por estado** en lugar de «menos MC». | Sí | 1, 2, 3, 4 |
-| **P-03** | Examen **en el aula con MC presente** (espejo del Final B). | Sí | 2, 3, 4, 7 |
-| **P-04** | Estructura: L→V (Y, I, N, It, M) → Maruo → las cinco → casa → cuarto; última línea sin resolver. | Sí | 2 |
-| **P-05** | Frases de cambio (§2) y sus variantes cortada / cerrada / espera. | Sí, con ajustes tuyos | 3, 4 |
-| **P-06** | Minijuegos: Y2, I1′, N1′, It1, M3. | Sí | 1, 5, 6 |
-| **P-07** | Política de fallo: puntos de control + líneas de fallo con carácter + asistencia adaptativa + saltar tras 6 o tras ganar una vez. | Sí | 1, 5, 6 |
-| **P-08** | Dificultad: tablas de §5.4; boost por `nino_rama_beat`; boost se conserva bajo asistencia. | Sí | 1, 5, 6 |
-| **P-09** | Puntos en E6: **+1 por minijuego ganado en cálida** (vía `sumar_punto`) o 0. | +1 | 1 |
-| **P-10** | Notas: aprobado = 60, diagonal 100, rangos de §3.5, boletín como **pantalla**. | Sí | 1, 2 |
-| **P-11** | Voz interior con cajas propias (`<h>_int`), solo lo académico/emocional, sin romance. | Sí | 1, 3, 4 |
-| **P-12** | No visitadas: monólogo con callback a su queja + **promesa pendiente** (flag). | Sí | 3, 4 |
-| **P-13** | Disculpa de Itsuki: **no se gasta**; solo intento interrumpido. | Sí | 4 |
-| **P-14** | Nino puede llegar a «no confío… todavía»; nunca a «confío». | Sí | 4 |
-| **P-15** | Nivel de CG (A / B / C) y estado-agnósticos; ¿guardaste las semillas de los `*_fracaso` y de `cg_cinco_estudiando`? | B | 7 |
-| **P-16** | Audio: sin BGM nuevo; su tema solo suena si cálida; reloj en el resto; SFX de acierto/fallo opcionales. | Sí | 3, 4, 6, 8 |
-| **P-17** | Capa opcional por `persistent` para quien vio el Final B. | No por ahora | 2 |
-| **P-18** | Chat de grupo como pantalla de revelación. | Sí | 2, 8 |
-| **P-19** | Coda en casa (curry) en E6. | Sí | 2 |
-| **P-20** | Solo PC; minijuegos con un botón o ratón. | Sí | 1, 5, 6 |
-| **P-21** | Galería: añadir los CG de E6; díptico opcional. | Sí | 1, 7 |
-| **P-22** | Ganchos para Cap. 2: `e6_frase`, `e6_promesas`, matriz persistente. | Sí | 1, 2 |
-| **P-23** | Sprites nuevos (candidatos): decidir tras el guion. | Diferir | 7 |
+| ID | Decisión | Mi recomendación | Bloquea | Mi Respuesta |
+|---|---|---|---|---|
+| **P-01** | Los **cinco** tienen bloque completo (nombre, CG, monólogo); el minijuego solo en cálida. | Sí | 1, 2, 3, 4 | Si, de acuerdo |
+| **P-02** | Modelo **núcleo + capas** y **focos por estado** en lugar de «menos MC». | Sí | 1, 2, 3, 4 | Si, de acuerdo |
+| **P-03** | Examen **en el aula con MC presente** (espejo del Final B). | Sí | 2, 3, 4, 7 | Si, de acuerdo |
+| **P-04** | Estructura: L→V (Y, I, N, It, M) → Maruo → las cinco → casa → cuarto; última línea sin resolver. | Sí | 2 | Si, de acuerdo |
+| **P-05** | Frases de cambio (§2) y sus variantes cortada / cerrada / espera. | Sí, con ajustes tuyos | 3, 4 | Si, de acuerdo |
+| **P-06** | Minijuegos: Y2, I1′, N1′, It1, M3. | Sí | 1, 5, 6 | Si, de acuerdo, aunque quiero saber si hay como adaptarlos a moviles |
+| **P-07** | Política de fallo: puntos de control + líneas de fallo con carácter + asistencia adaptativa + saltar tras 6 o tras ganar una vez. | Sí | 1, 5, 6 | Si, de acuerdo |
+| **P-08** | Dificultad: tablas de §5.4; boost por `nino_rama_beat`; boost se conserva bajo asistencia. | Sí | 1, 5, 6 | Si, de acuerdo |
+| **P-09** | Puntos en E6: **+1 por minijuego ganado en cálida** (vía `sumar_punto`) o 0. | +1 | 1 | No, los puntos son solo en los hubs y solo ahí |
+| **P-10** | Notas: aprobado = 60, diagonal 100, rangos de §3.5, boletín como **pantalla**. | Sí | 1, 2 | Si, de acuerdo |
+| **P-11** | Voz interior con cajas propias (`<h>_int`), solo lo académico/emocional, sin romance. | Sí | 1, 3, 4 | Si, de acuerdo |
+| **P-12** | No visitadas: monólogo con callback a su queja + **promesa pendiente** (flag). | Sí | 3, 4 | Si, de acuerdo |
+| **P-13** | Disculpa de Itsuki: **no se gasta**; solo intento interrumpido. | Sí | 4 | Si, de acuerdo |
+| **P-14** | Nino puede llegar a «no confío… todavía»; nunca a «confío». | Sí | 4 | Creo que ya debería confiar pero no admitirlo directamente, es decir duró mas que otro tutor y no hizo promesas vacias |
+| **P-15** | Nivel de CG (A / B / C) y estado-agnósticos; ¿guardaste las semillas de los `*_fracaso` y de `cg_cinco_estudiando`? | B | 7 | Si, las guardé |
+| **P-16** | Audio: sin BGM nuevo; su tema solo suena si cálida; reloj en el resto; SFX de acierto/fallo opcionales. | Sí | 3, 4, 6, 8 | Si, de acuerdo en todo |
+| **P-17** | Capa opcional por `persistent` para quien vio el Final B. | No por ahora | 2 | Si, de acuerdo, de paso esos cg de fracaso ya no sean obligatorios que esten en la seccion de cada hermana, pero tocaria rediseñar el menu de galeria para que haya mas espacio o hacer mini menus. |
+| **P-18** | Chat de grupo como pantalla de revelación. | Sí | 2, 8 | Si, de acuerdo es muy innovador |
+| **P-19** | Coda en casa (curry) en E6. | Sí | 2 | Si, de acuerdo |
+| **P-20** | Solo PC; minijuegos con un botón o ratón. | Sí | 1, 5, 6 | No estoy de acuerdo, es que tambien hay jugadores de movil, por eso pregunto si esos minigames se pueden adaptar a moviles o mejor en las versiones de movil poner que esos videojuesgos son exclusivos de pc para ahorrarnos adaptarlos. |
+| **P-21** | Galería: añadir los CG de E6; díptico opcional. | Sí | 1, 7 | Si, de acuerdo |
+| **P-22** | Ganchos para Cap. 2: `e6_frase`, `e6_promesas`, matriz persistente. | Sí | 1, 2 | Si, pero el cap2 no debe centrarse del todo en eso |
+| **P-23** | Sprites nuevos (candidatos): decidir tras el guion. | Diferir | 7 | Si, si el guion lo necesita, ademas serian utiles para el cap2 donde habrian nuevas facetas de las hermanas |
+
+Otra decision adicional es el del nuevo cg de miku_audifonos_mesa, no conviene en si, no digo que es mala idea pero tocaria que cada hermana tambien tuviera un
+cg nuevo o que ichika y yotsuba tambien tengan un cg nuevo para que ellas 3 esten iguales, nino e itsuki se pordrian omitir porque son las que mas cgs tienen, no digo que es mala idea, pero por reparticion y equidad discrepo un poco.
+
+Otra decision adicional tambien es respecto a la suma de puntos que estás confundido, bien, se quedan sollo en los hubs los puntos, y al final son 9 no? tu te preguntas y como llegamos a los 10, y ahi entra la decision final del jugador, digamos que el jugador en los 3 capitulos escogió calida en todos los hubs en las mismas 3 hermanas, ejemplo miku, nino e itsuki, las 3 tienen 9 puntos no? bueno en el final el jugador decidira a quien declarará su amor, a quien elija le suma 1 punto con lo cual esa chica llegará a 10 puntos y se desbloqueará su final, este punto final es decision del jugador, ahora hay caso hipotetico de que solo una chica llegó a 9 puntos y nadie mas, entonces por defecto ella será la elegída y la que obtendrá el punto adicional, osea supongo que si el jugaodr eligió a esa chica y fue calido con ella 3 veces es porque es su favorita, supongo. Con eso solucionamos el problema de los puntos.
+
+
+Tambien respecto a lo del beat de nino, no debe sumar puntos en nada, solo debe servir de boost para los minijuegos, si hay que cambiar algo de codigo, me avisas.
 
 ---
 
