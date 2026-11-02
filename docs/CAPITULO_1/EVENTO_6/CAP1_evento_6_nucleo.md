@@ -63,9 +63,17 @@ en `pj_calla(X_*)` dentro del mismo `with disolucion_lenta`. Posiciones de la fo
 
 **narrador:** El timbre sonó en un instituto donde nadie hablaba de otra cosa.
 
+**narrador:** Otra cosa que no sean los exámenes.
+
 **mc_pensamiento:** Lunes, japonés. Martes, matemáticas. Miércoles, inglés. Jueves, ciencias. Viernes, sociales.
 
 **mc_pensamiento:** Cada día, una materia. Y detrás de cada materia, una de ellas.
+
+**mc_pensamiento:** Como dijo Miku, son cinco materias y ellas con cinco.
+
+**mc_pensamiento:** Pensé que lo dijo por decir, pero esa frase tenía un gran significado.
+
+**mc_pensamiento:** Un significado que ahora descubriré.
 
 `[SLOT S1 · call e6_s1_<estado_entrada>]`
 
@@ -73,11 +81,11 @@ en `pj_calla(X_*)` dentro del mismo `with disolucion_lenta`. Posiciones de la fo
 
 **mc_pensamiento:** «Si una sola reprueba, se acabó.» Maruo lo dijo en la cocina y no lo repitió.
 
-**mc_pensamiento:** No hacía falta. Una frase así no se repite: se espera.
+**mc_pensamiento:** No hacía falta. Una frase así no se repite: se cumple.
 
 **mc_pensamiento:** Cinco exámenes, cinco días, y esa frase sentada al lado de cada uno.
 
-**mc_pensamiento:** Hace un mes entré a este instituto con una palabra clavada: despedido.
+**mc_pensamiento:** Hace un mes comencé este trabajo con una palabra clavada: despedido.
 
 **mc_pensamiento:** Hoy entro con cinco nombres. Y con la palabra exactamente donde estaba.
 
@@ -103,9 +111,17 @@ en `pj_calla(X_*)` dentro del mismo `with disolucion_lenta`. Posiciones de la fo
 
 **mc_pensamiento:** Eso no garantiza nada. Lo sé. Una nota es una nota.
 
-**mc_pensamiento:** Pero esta mañana los cinco nombres suenan distinto: ya no son una lista, son personas.
+**mc_pensamiento:** Pero esta mañana los cinco nombres suenan distinto: 
+
+**mc_pensamiento:** Ya no son una lista mas de lo respecta a mi trabajo, son personas.
+
+**mc_pensamiento:** O mas bien quintillizas, aunque luzcan iguales, cada una es un mundo diferente.
+
+**mc_pensamiento:** Y cada una me lo ha demostrado, a su modo.
 
 **mc_pensamiento:** Qué raro. Me da más miedo ahora que antes.
+
+**mc_pensamiento:** Pero confío en ellas.
 
 #### Aula
 
@@ -125,26 +141,41 @@ en `pj_calla(X_*)` dentro del mismo `with disolucion_lenta`. Posiciones de la fo
 if alcanzada:
 
 > **yotsuba:** ¡Estudié las lecturas dos veces! Y todavía recuerdo qué sentía cada personaje.
+> **yotsuba:** Aunque... bueno, admito que a mitad de camino me distraje pensando en tí.
+> **yotsuba:** Creí que te ibas a quedar dormido y llegarías tarde al examen, [mc].
+> **yotsuba:** Pero ya que estás aquí... ¿me das un mensaje de aliento?
 
 else:
 
-> **yotsuba:** ¡Repasé las fechas con Miku y las fórmulas con Ichika! …Mis lecturas, para después.
+> **yotsuba:** ¡Repasé las fechas con Miku y las fórmulas con Ichika! 
+> **yotsuba:** …Mis lecturas, para después.
+> **yotsuba:** Quería terminar a tiempo para asegurarme de que no te desmayaras de los nervios antes del examen, [mc].
+> **yotsuba:** ¡Pero al menos lo intentaré con toda la energía que me queda!
 
 `[SPR ichika sonriendo at pj_habla(X_ICHIKA)]` *(en «no alcanzada»: `ichika neutral`)*
 
 if alcanzada:
 
-> **ichika:** Dormí cuatro horas y las gasté en fórmulas, no en el papel de la obra. Rarísimo, ¿no?
+> **ichika:** Dormí cuatro horas y las gasté en fórmulas, no en el papel de la obra.
+> **ichika:** Rarísimo, ¿no? Y todo gracias a cierto tutor terco que no se me sale de la cabeza.
+> **ichika:** Si no saco una nota perfecta después de este esfuerzo...
+> **ichika:** Me vas a deber una cita muy larga tú a mí, [mc], ¿eh?
 
 else:
 
-> **ichika:** Dormí cuatro horas. Con el guion y con las fórmulas. Las dos cosas a medias.
+> **ichika:** Dormí cuatro horas. Con el guion y con las fórmulas. 
+> **ichika:** Supongo que me distraje pensando en si de verdad lograríamos aprobar todos estos exámenes. 
+> **ichika:** Aunque... haber tenido un poco más de compañia esa tarde no habría estado mal, ¿sabes?
+> **ichika:** Los hermanos mayores también necesitamos tiempo para nosotros mismo, ¿no crees, [mc]?
 
 `[SPR miku neutral at pj_habla(X_MIKU)]`
 
 if alcanzada:
 
 > **miku:** …Sé más de lo que van a preguntar. …Lo comprobé tres veces. …Por si acaso.
+> **miku:** Quería asegurarme de que no tuvieras que preocuparte por mí ni un solo segundo, [mc].
+> **miku:** …Y si con esto logro sorprenderte.
+> **miku:** …Venceré mis miedos por completo.
 
 else:
 
