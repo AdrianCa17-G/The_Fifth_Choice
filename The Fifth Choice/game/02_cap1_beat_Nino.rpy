@@ -353,8 +353,6 @@ label beat_Nino:
 
     label nino_beat_m4a:
 
-        $ sumar_punto("nino", 1)
-
         $ nino_rama_beat = "calida"
 
         mc "¿Y quién junta los tuyos?"

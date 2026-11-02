@@ -26,6 +26,7 @@ define GALERIA = [
         ("cg_cinco_repasando", "Un avance no tan esperado"),
         ("cg_maruo_espaldas", "Se terminó"),
         ("cg_raiha_correccion", "Corrigiendo a Raiha"),
+                # ("cg_cinco_aprobadas", "Cinco aprobadas"),
     ]),
     ("ichika", "Ichika", "ichika", [
         ("cg_ichika_puerta", "Bienvenido"),
@@ -33,6 +34,7 @@ define GALERIA = [
         ("cg_ichika_desarmada", "Sin máscara"),
         ("cg_ichika_mascara", "La máscara"),
         ("cg_ichika_fracaso", "No puedo mas"),
+                # ("cg_ichika_examen", "Examen · Matemáticas"),
     ]),
     ("nino", "Nino", "nino", [
         ("cg_nino_pasillo", "Ni una semana"),
@@ -42,6 +44,7 @@ define GALERIA = [
         ("cg_nino_confrontacion_cocina", "Una discusión intensa"),
         ("cg_nino_grieta_cocina", "La crisis de Nino"),
         ("cg_nino_fracaso", "Se los dije"),
+                # ("cg_nino_examen", "Examen · Inglés"),
     ]),
     ("miku", "Miku", "miku", [
         ("cg_miku_sofa", "¿Hablando de Sengoku?"),
@@ -49,6 +52,7 @@ define GALERIA = [
         ("cg_miku_estudio", "El temario"),
         ("cg_miku_sorpresa", "Sorpresa"),
         ("cg_miku_fracaso", "Quiero usar mis audifonos"),
+                # ("cg_miku_examen", "Examen · Sociales"),
     ]),
     ("yotsuba", "Yotsuba", "yotsuba", [
         ("cg_yotsuba_corriendo", "Bienvenido"),
@@ -56,6 +60,7 @@ define GALERIA = [
         ("cg_yotsuba_rotulador", "El rotulador"),
         ("cg_yotsuba_cronometro", "Una vuelta más"),
         ("cg_yotsuba_fracaso", "Solo me preocupan las demás"),
+                # ("cg_yotsuba_examen", "Examen · Japonés"),
     ]),
     ("itsuki", "Itsuki", "itsuki", [
         ("cg_itsuki_discusion", "¿Otra vez tú?"),
@@ -66,6 +71,7 @@ define GALERIA = [
         ("cg_itsuki_contraida", "No pienso admitir mi error"),
         ("cg_itsuki_reto", "¿Qué pasa?"),
         ("cg_itsuki_fracaso", "El mismo error"),
+                # ("cg_itsuki_examen", "Examen · Ciencias"),
     ]),
 ]
 

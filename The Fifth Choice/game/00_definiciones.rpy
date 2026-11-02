@@ -95,6 +95,13 @@ define itsuki_inicio = ui_personaje("Estudiante Nueva", C_ITSUKI)
 define quintillizas = ui_personaje("Las quintillizas", "#F4D03F", "todas")
 define voz          = ui_personaje("???", "#95A5A6")
 
+## Voz interior de cada hermana (Evento 6): caja de su color, sin placa.
+define ichika_int  = ui_interior(C_ICHIKA,  "ichika")
+define nino_int    = ui_interior(C_NINO,    "nino")
+define miku_int    = ui_interior(C_MIKU,    "miku")
+define yotsuba_int = ui_interior(C_YOTSUBA, "yotsuba")
+define itsuki_int  = ui_interior(C_ITSUKI,  "itsuki")
+
 ## --- Secundarios ----------------------------------------------------------
 define isanari = ui_personaje("Isanari", "#A9925C")
 define raiha   = ui_personaje("Raiha",   "#F5B7B1")
@@ -177,10 +184,28 @@ default persistent.nombre_jugador = ""
 ## Va aparte de los puntos y no resta afinidad. Sube solo cuando el jugador
 ## elige la opcion fria dentro de un evento de hermana. Se lee una sola vez, al
 ## cerrar el Capitulo 1: con 3 de 3, despido temprano.
+
 default desaires_cap1 = 0
 
 
 default hub_visitadas = []
+
+## --- Evento 6 · cierre del Capítulo 1 ----------------------------------------
+## e6_iniciar() (10_minijuegos.rpy) los rellena. Aquí solo el valor inicial.
+default e6_estado_entrada = "mixto"
+default e6_estado = {}
+default e6_frase = {}
+default e6_promesas = []
+default e6_notas = {}
+default e6_mj = {}
+default e6_puntos_ini = {}
+
+default persistent.e6_mj_ganado_ichika  = False
+default persistent.e6_mj_ganado_nino    = False
+default persistent.e6_mj_ganado_miku    = False
+default persistent.e6_mj_ganado_yotsuba = False
+default persistent.e6_mj_ganado_itsuki  = False
+
 ################################################################################
 ##  3. FONDOS BG
 ################################################################################

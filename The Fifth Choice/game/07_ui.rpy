@@ -194,6 +194,32 @@ init -5 python:
             ctc_position="nestled",
         )
 
+
+    def ui_interior(color, hermana):
+        """Voz interior de una hermana (Evento 6): caja de su color más clara que
+        la de diálogo, SIN placa (who=None: la pantalla say no dibuja la namebox),
+        texto en cursiva y su pétalo activo en la flor."""
+        placa = ui_mezclar(color, "#FFFFFF", 0.45)
+        tinta = ui_mezclar(color, "#000000", 0.72)
+        base = ui_mezclar(color, "#FFFFFF", 0.35)
+        caja = Transform("ui/caja.png", matrixcolor=TintMatrix(base))
+        deco = Transform("ui/deco_" + hermana + ".png", alpha=0.6)
+        fondo = Composite((1340, 240), (0, 0), caja, (0, 0), deco)
+        return Character(
+            None,
+            what_color="#2B1B3F",
+            what_italic=True,
+            window_style="caja",
+            window_background=fondo,
+            show_tipo="interior",
+            show_placa=placa,
+            show_tinta=tinta,
+            show_petalo=hermana,
+            ctc="ctc_oscuro",
+            ctc_position="nestled",
+        )
+        
+
 define PETALO_ORDEN = ["ichika", "nino", "miku", "yotsuba", "itsuki"]
 
 define PETALO_COLOR = {
