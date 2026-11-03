@@ -113,7 +113,7 @@ en `pj_calla(X_*)` dentro del mismo `with disolucion_lenta`. Posiciones de la fo
 
 **mc_pensamiento:** Pero esta mañana los cinco nombres suenan distinto: 
 
-**mc_pensamiento:** Ya no son una lista mas de lo respecta a mi trabajo, son personas.
+**mc_pensamiento:** Ya no son una lista mas de mi trabajo, son personas.
 
 **mc_pensamiento:** O mas bien quintillizas, aunque luzcan iguales, cada una es un mundo diferente.
 
@@ -126,84 +126,137 @@ en `pj_calla(X_*)` dentro del mismo `with disolucion_lenta`. Posiciones de la fo
 #### Aula
 
 `[BG bg_aula]` `[with fade]`
-`[SPR ichika neutral at pj(X_ICHIKA)]` `[SPR nino neutral at pj(X_NINO)]` `[SPR miku neutral at pj(X_MIKU)]`
-`[SPR yotsuba sonriendo at pj(X_YOTSUBA)]` `[SPR itsuki neutral at pj(X_ITSUKI)]` `[with dissolve]`
 
-**narrador:** Las cinco ya estaban en sus pupitres, con los libros cerrados.
+`[CG NUEVO — cg_cinco_aula: Las cinco hermanas en el aula mirando a mc.
+nose como explicarte lo que quiero pero el punto es que es un POV de ellas
+cinco mirandonos y tiene que concordar con todo el guió que sigue.]`
+
+**narrador:** Las cinco ya estaban en el aula, con los libros cerrados.
 
 **narrador:** No por desinterés: por haber llegado al final de lo que se podía repasar.
+
+**narrador:** Me miraron, y cada una se acercó hacia mí.
+
+**mc_pensamiento:** Supongo que esperan alguna típica frase de aliento por parte mía.
+
+**mc_pensamiento:** Nunca he sido bueno en eso, pero...
+
+**mc:** ¡Hola, chicas! ¿Preparadas para los exámenes?
+
+**mc:** Sé que todas tienen dudas o miedos sobre si aprobarán o no.
+
+**mc:** Pero recuerden todo este mes que hemos estudiado.
+
+**mc:** ¡Todos nosotros dimos nuestro mejor esfuerzo!
+
+**mc:** ¡Así que sé que lo lograrán! ¡Aprobarán los exámenes!
+
+**mc:**  ¡Confío plenamente en ustedes!
+
+**mc:**  ¡ASÍ QUE TODOS APROBAREMOS! ¡SIN EXCEPCIÓN! 
+
+**mc_pensamiento:**  Fue una de las mejores frases de aliento que he lanzado en mi vida.
+
+**mc_pensamiento:**  Di lo mejor de mí.
+
+**mc_pensamiento:** Y ellas escucharon lo que dije... Escuché lo que dije.
+
+**narrador:** Cada una reaccionó de distinta manera.
+
+**narrador:** Y me confesaron todo.
 
 *Confesiones. Orden fijo: Yotsuba, Ichika, Miku, Itsuki, Nino. Una línea cada una; condición
 `e6_estado_de(h) != "no_visitada"` para «alcanzada».*
 
-`[SPR yotsuba sonriendo at pj_habla(X_YOTSUBA)]`
+`[BG bg_aula]` `[with fade]`
+
+`[SPR yotsuba sonriendo at pj_habla(X_YOTSUBA)]` *(en «no alcanzada»: `yotsuba neutral`)*
 
 if alcanzada:
 
-> **yotsuba:** ¡Estudié las lecturas dos veces! Y todavía recuerdo qué sentía cada personaje.
-> **yotsuba:** Aunque... bueno, admito que a mitad de camino me distraje pensando en tí.
-> **yotsuba:** Creí que te ibas a quedar dormido y llegarías tarde al examen, [mc].
-> **yotsuba:** Pero ya que estás aquí... ¿me das un mensaje de aliento?
+ > **yotsuba:** ¡Estudié las lecturas dos veces! Y todavía recuerdo qué sentía cada personaje.
+ > **yotsuba:** Esta vez no las dejé para después: ayudé a Miku con las fechas y a Ichika con las fórmulas, ¡pero calenté mis lecturas primero!
+ > **yotsuba:** Como antes de una carrera: si no calientas, el cuerpo se queja a mitad de camino.
+ > **yotsuba:** Así que no te preocupes por mí, [mc]. ¡Voy a llegar a la meta, y las cinco juntas!
 
 else:
 
-> **yotsuba:** ¡Repasé las fechas con Miku y las fórmulas con Ichika! 
-> **yotsuba:** …Mis lecturas, para después.
-> **yotsuba:** Quería terminar a tiempo para asegurarme de que no te desmayaras de los nervios antes del examen, [mc].
-> **yotsuba:** ¡Pero al menos lo intentaré con toda la energía que me queda!
+ > **yotsuba:** ¡Repasé las fechas con Miku y las fórmulas con Ichika!
+ > **yotsuba:** …Mis lecturas, para después. Siempre se quedan para después.
+ > **yotsuba:** Quería terminar a tiempo para que nadie se desmayara de los nervios antes del examen, ¡tú incluido, [mc]!
+ > **yotsuba:** ¡Pero lo intentaré con toda la energía que me queda!
 
 `[SPR ichika sonriendo at pj_habla(X_ICHIKA)]` *(en «no alcanzada»: `ichika neutral`)*
 
 if alcanzada:
 
-> **ichika:** Dormí cuatro horas y las gasté en fórmulas, no en el papel de la obra.
-> **ichika:** Rarísimo, ¿no? Y todo gracias a cierto tutor terco que no se me sale de la cabeza.
-> **ichika:** Si no saco una nota perfecta después de este esfuerzo...
-> **ichika:** Me vas a deber una cita muy larga tú a mí, [mc], ¿eh?
+ > **ichika:** Dormí cuatro horas por estudiar fórmulas, no en el papel de la obra.
+ > **ichika:** Rarísimo, ¿no? Yo, que me sé el guion entero y las fórmulas a medias.
+ > **ichika:** El guion está en la mochila, doblado, y de ahí no sale hasta el último timbre.
+ > **ichika:** Y si todo sale bien, tú, tutor terco, me debes una tarde entera sin libros.
 
 else:
 
-> **ichika:** Dormí cuatro horas. Con el guion y con las fórmulas. 
-> **ichika:** Supongo que me distraje pensando en si de verdad lograríamos aprobar todos estos exámenes. 
-> **ichika:** Aunque... haber tenido un poco más de compañia esa tarde no habría estado mal, ¿sabes?
-> **ichika:** Los hermanos mayores también necesitamos tiempo para nosotros mismo, ¿no crees, [mc]?
+ > **ichika:** Dormí cuatro horas. Con el guion en una mano y las fórmulas en la otra.
+ > **ichika:** Supongo que me distraje pensando en si de verdad lograríamos aprobarlo todo.
+ > **ichika:** Aunque… un poco de compañía esa tarde no me habría venido mal, ¿sabes?
+ > **ichika:** Las hermanas mayores también necesitamos que alguien nos eche una mano de vez en cuando, ¿no crees, [mc]?
 
-`[SPR miku neutral at pj_habla(X_MIKU)]`
+`[SPR miku animada at pj_habla(X_MIKU)]` *(en «no alcanzada»: `miku neutral`)*
 
 if alcanzada:
 
-> **miku:** …Sé más de lo que van a preguntar. …Lo comprobé tres veces. …Por si acaso.
-> **miku:** Quería asegurarme de que no tuvieras que preocuparte por mí ni un solo segundo, [mc].
-> **miku:** …Y si con esto logro sorprenderte.
-> **miku:** …Venceré mis miedos por completo.
+ > **miku:** …Sé más de lo que van a preguntar. …Lo comprobé tres veces.
+ > **miku:** …Repasé las batallas, los clanes, las fechas. …Hasta lo que ni sale en el libro.
+ > **miku:** …La silla de enfrente ya no se siente vacía.
+ > **miku:** …Por si acaso, lo comprobaré una cuarta vez. …Ya sé que es demasiado.
 
 else:
 
-> **miku:** …Repasé sola, como siempre. …Dejé libre la silla de enfrente. …Costumbre.
+ > **miku:** …Repasé sola, como siempre.
+ > **miku:** …Las batallas, los clanes, las fechas. …Todo, dos veces.
+ > **miku:** …Dejé libre la silla de enfrente. …Por costumbre.
+ > **miku:** …No esperaba a nadie. …Eso quiero pensar.
 
-`[SPR itsuki neutral at pj_habla(X_ITSUKI)]`
+`[SPR itsuki sonriendo at pj_habla(X_ITSUKI)]` *(en «no alcanzada»: `itsuki neutral`)*
 
 if alcanzada:
 
-> **itsuki:** He estudiado cada noche. Y por primera vez sé qué es lo que sé.
+ > **itsuki:** He estudiado cada noche. Y por primera vez sé lo que hago.
+ > **itsuki:** Ya encontré por qué fallaba en las conversiones de unidades. Tres veces el mismo error, y yo sin verlo.
+ > **itsuki:** Sigo sin ser rápida. Pero ahora, cuando me trabo, sé por dónde volver.
+ > **itsuki:** No me felicites todavía. Esto se demuestra en el examen, no antes.
 
 else:
 
-> **itsuki:** He estudiado cada noche. Sola, como siempre. Hay un problema que no sale. Saldrá.
+ > **itsuki:** He estudiado cada noche. Si tengo un problema que no sale. Saldrá.
+ > **itsuki:** Lo repito, lo reviso, lo repito otra vez. …Siempre llego a la misma cifra.
+ > **itsuki:** No pedí ayuda a nadie. Prefiero equivocarme por mi cuenta que acertar por ayuda de un tercero.
+ > **itsuki:** Dijiste «sin excepción». Pues prepárate: yo me lo tomo en serio.
 
-`[SPR nino neutral at pj_habla(X_NINO)]`
+`[SPR nino pillada at pj_habla(X_NINO)]` *(en «no alcanzada»: `nino neutral`)*
 
 if alcanzada:
 
-> **nino:** Treinta días. El último duró cuatro. …Haz la cuenta tú. Yo no dije nada.
+if alcanzada:
+
+ > **nino:** Treinta días. El último tutor duró cuatro. …Haz la cuenta tú.
+ > **nino:** Y no pongas esa cara. Yo no dije nada. Los números hablan solos.
+ > **nino:** Repasé inglés leyendo etiquetas en voz baja. …Si me viste mover los labios en el súper, no viste nada.
+ > **nino:** Y la próxima vez que quieras dar un discurso, baja la voz. Se oyó hasta el pasillo.
 
 else:
 
-> **nino:** No viniste a buscarme y tampoco te fuiste. …No es un cumplido. Es un dato.
+ > **nino:** No viniste a buscarme y tampoco te fuiste. …No es un cumplido. Es un dato.
+ > **nino:** Repasé inglés sola, con las etiquetas de la cocina, en voz baja. …Nadie me escuchó. Mejor para mí.
+ > **nino:** Y no, no te estaba esperando. …Contaba los días. Es distinto.
+ > **nino:** Ahora cállate un momento y déjame repasar la última página.
 
 #### Cierre del movimiento
 
-**narrador:** Me miraron las cinco. Esperaban una frase para empezar.
+`[CG NUEVO — cg_cinco_aula: ya está definido anteriormente]`
+
+**narrador:** Me miraron las cinco. Esperaban una frase para terminar.
 
 **mc_pensamiento:** Hace un mes no tenía nada que decirles que no fuera mentira.
 
@@ -217,7 +270,15 @@ if persistent.final_malo_temprano_b_visto:
 
 > **narrador:** Sentí que ya había dicho esa frase antes. Con otro verbo, y con otro final.
 
+> **narrador:** Siempre me imagino escenarios catastróficos antes de ver mi realidad.
+
+**profe:** Bien, todos a sus pupitres.
+
+**profe:** Volteen las hojas de sus exámenes.
+
 **profe:** Pueden empezar.
+
+`[BG bg_aula]` `[with fade]`
 
 `[SFX sfx_hoja volume 2.0]` `[AMB amb_reloj fadein 2.0 volume 0.4]`
 
@@ -239,22 +300,42 @@ con la hermana del día; del Mov. 7 en adelante vuelve a `normal`.
 
 `[$ ui_escena("normal")]` `[AMB stop fadeout 1.0]` `[BG bg_negro]` `[with fade_dia]` `[SFX sfx_celular volume 1.5]`
 
-**narrador:** El mensaje llegó el sábado a media mañana: «Cinco. Departamento.» Sin firma.
+**narrador:** Sábado a media mañana.
+
+**narrador:** Estaba en mi casa, repasando todo lo que sucedió esta semana.
+
+**narrador:** Una semana totalmente diferente a las mismas de siempre.
+
+**mc_pensamiento:** No hacía nada más que pensar en los resultados de los exámenes.
+
+**mc_pensamiento:** No los míos, los de ellas.
+
+**narrador:** Sin embargo, el tiempo de espera duró poco.
+
+**narrador:** Mi teléfono sonó y tenía el nombre de quien diría el veredicto final.
+
+**narrador:** Maruo.
+
+**narrador:** El mensaje llegó y decía: «Cinco. Departamento.».
 
 **mc_pensamiento:** Cinco: la hora. O la cuenta. Con Maruo, nunca se sabe cuál de las dos.
 
+**narrador:** Me alisté y fui directamente al departamento de las Nakano.
+
 `[BG bg_edificio]` `[with fade]` `[BG bg_departamento]` `[with dissolve]` `[CG cg_maruo_reunion]` `[with corte_seco]`
 `[MUS contrato fadein 2.0 · volumen según S2]`
+
+**mc:** Buenas tardes, señor Maruo.
 
 **maruo:** Siéntate.
 
 **mc:** Sí, señor.
 
-**narrador:** Me senté. Esta vez no había nada que demostrar con las piernas.
+**narrador:** Me senté. Esta vez no había nada que demostrar.
 
 **narrador:** Cinco boletines sobre la mesa, boca abajo, alineados al borde.
 
-**maruo:** Llegaron esta mañana.
+**maruo:** Los resultados llegaron esta mañana.
 
 **maruo:** Cinco.
 
@@ -274,7 +355,7 @@ if persistent.final_malo_temprano_b_visto:
 
 **mc:** ¿La condición…?
 
-**maruo:** Se cumplió. Cinco aprobadas. La más justa marcó sesenta.
+**maruo:** Se cumplió. Cinco aprobadas. La más baja llegó a sesenta.
 
 **maruo:** Un punto menos y esta conversación sería otra.
 
@@ -294,7 +375,7 @@ if persistent.final_malo_temprano_b_visto:
 
 **mc:** ¿Qué tienen de malo los márgenes?
 
-**maruo:** Nada. Salvo que a veces se aprueba por poco y se cree que fue por mucho.
+**maruo:** Nada. Salvo que a veces se aprueba por poco y se cree que fue un éxito.
 
 **narrador:** Miró los boletines al decirlo. Pero la frase parecía dirigida a otra mesa.
 
@@ -318,9 +399,29 @@ if persistent.final_malo_temprano_b_visto:
 
 **maruo:** Mis hijas llegan a casa y hablan de lo que estudian. Antes llegaban y se encerraban.
 
-`[MUS stop fadeout 0.3]`
+**maruo:** Pensé que era la edad. Que se les pasaría.
+
+**maruo:** No era la edad.
+
+**mc:** Yo no hice tanto, señor.
+
+**maruo:** No te pedí humildad. Te dije lo que vi.
+
+**maruo:** Esta semana, cada noche, las cinco en la cocina discutiendo a la vez.
+
+**maruo:** Por quién lava los platos, por quién se queda con el último bocado.
+
+**maruo:** Una noche estuve diez minutos en el pasillo. No entré.
+
+**maruo:** No quería que se callaran. 
+
+**maruo:** Parecía que alguien las había cambiado. 
+
+[MUS stop fadeout 0.3]
 
 **narrador:** Alineó los boletines con dos dedos, aunque ya estaban alineados.
+
+**narrador:** Seguían boca abajo. Ninguno de los dos hizo el gesto de darles la vuelta.
 
 **maruo:** No te lo repetiré: esto no fue una casualidad.
 
@@ -346,13 +447,17 @@ if persistent.final_malo_temprano_b_visto:
 
 **mc_pensamiento:** Aprobar no es lo mismo que salvarse. Hoy, por hoy, me alcanzaba con aprobar.
 
+**mc_pensamiento:** Aunque saldré de este departamento con un pensamiento totalmente nuevo.
+
 ---
 
 ### Movimiento 8 · Las cinco
 
 `[BG bg_departamento]` `[with dissolve]` *(silencio: las puertas suenan sobre nada)*
 
-**narrador:** Esperé. En esta sala el silencio y la espera siempre han sido lo mismo.
+**narrador:** Esperé a que ellas salieran. 
+
+**narrador:** En esta sala el silencio y la espera siempre han sido lo mismo.
 
 if persistent.final_malo_temprano_b_visto:
 
@@ -387,9 +492,13 @@ por partida); no cita ninguna nota; puede tener su boletín como objeto; termina
 
 *(Las cinco en formación, MC en la sala.)*
 
-**narrador:** Éramos seis en la sala, y por primera vez nadie parecía estar de paso.
+**narrador:** Éramos seis en la sala, y por primera vez nadie parecía estar aquí por obligación.
+
+**narrador:** La primera en querer hablar fue ella, Itsuki.
 
 **narrador:** Itsuki dio un paso hacia mí. Yo, sin proponérmelo, di otro hacia ella.
+
+**narrador:** Aun habían cosas pendientes que teníamos que resolver.
 
 `[SPR itsuki neutral at pj_habla(X_ITSUKI)]`
 
@@ -407,17 +516,23 @@ por partida); no cita ninguna nota; puede tener su boletín como objeto; termina
 
 **mc:** «No, tú» también lo es.
 
+**mc:** Además, las damas primero.
+
 **itsuki:** …Ese argumento es válido.
 
 `[SPR yotsuba sonriendo at pj_habla(X_YOTSUBA)]`
 
-**yotsuba:** ¡¡Esperen!! ¡Antes de que se arruguen! ¡Los boletines! ¡A la mesa!
+**yotsuba:** ¡¡Esperen!! ¡Antes de que se arruguen! ¡Los boletines! ¡Ya están en la mesa!
 
-**narrador:** Itsuki cerró la boca. Yo cerré la mía. La frase se quedó entre los dos, sin dueño.
+**narrador:** Itsuki se calló. Yo tambien me callé. La frase se quedó entre los dos, sin dueño.
+
+**mc_pensamiento:** La disculpa seguía entre nosotros. Y esta vez no me pareció tarde: me pareció pendiente.
+
+**narrador:** Así es, parece que eso aun seguirá pendiente.
 
 #### La mesa
 
-`[CG cg_cinco_aprobadas NUEVO]` `[with dissolve]` `[MUS cotidiano fadein 2.0]` *(tinte según estado: ver notas de CG)*
+`[CG cg_cinco_aprobadas NUEVO]` `[with dissolve]` `[MUS main_theme fadein 2.0]` *(tinte según estado: ver notas de CG)*
 
 **nino:** A la de tres. Y que nadie mire de reojo.
 
@@ -429,9 +544,10 @@ por partida); no cita ninguna nota; puede tener su boletín como objeto; termina
 
 **mc_pensamiento:** Hoy se pusieron de acuerdo para mostrarse distintas.
 
-**yotsuba:** ¡Cada una, la foto del suyo! ¡Y al grupo! ¡Sin trampas!
+**yotsuba:** ¡Cada una, muestre su examen!
 
-**mc_pensamiento:** La disculpa seguía entre nosotros. Y esta vez no me pareció tarde: me pareció pendiente.
+**yotsuba:** ¡Y una foto! ¡Al grupo! ¡Sin trampas!
+
 
 `[$ e6_disculpa_pendiente = True]`
 
