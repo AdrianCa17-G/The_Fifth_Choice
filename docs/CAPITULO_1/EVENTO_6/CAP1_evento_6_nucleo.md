@@ -532,22 +532,341 @@ por partida); no cita ninguna nota; puede tener su boletín como objeto; termina
 
 #### La mesa
 
-`[CG cg_cinco_aprobadas NUEVO]` `[with dissolve]` `[MUS main_theme fadein 2.0]` *(tinte según estado: ver notas de CG)*
+**narrador:** Nos sentamos alrededor de la mesa sin que nadie lo propusiera.
+
+**narrador:** Ellas, de un lado. Yo, enfrente. Cada una dejó su boletín frente a su silla, boca abajo.
+
+**narrador:** Ninguna lo tocó. Ninguna quería ser la primera en darle la vuelta.
+
+[SPR itsuki neutral at pj_habla(X_ITSUKI)]
+
+**itsuki:** Propongo lo siguiente.
+
+**itsuki:** Cada una lo abre en silencio, lo lee dos veces y solo después comparamos.
+
+[SPR ichika sonriendo at pj_habla(X_ICHIKA)]
+
+**ichika:** Qué plan tan ordenado, Itsuki. 
+
+**ichika:** Hablas con mucha confianza para alguien que lleva un minuto con la mano encima del papel.
+
+[SPR itsuki timida at pj_habla(X_ITSUKI)]
+
+**itsuki:** …Es para que no se vuele.
+
+[SPR nino neutral at pj_habla(X_NINO)]
+
+**nino:**  No hay ninguna ventana abierta.
+
+**itsuki:** …Es por si acaso.
+
+[SPR ichika neutral at pj_habla(X_ICHIKA)]
+
+**ichika:** Hablando por todas, debería decir que todo va a salir bien.
+
+**ichika:** …¡Corazonada de hermana mayor!.
+
+[SPR yotsuba incomoda at pj_habla(X_YOTSUBA)]
+
+**yotsuba:** ¡A todas les habrá ido genial! ¡Seguro!
+
+**yotsuba:** Y si a alguna no… ¡no pasa nada! ¡Cenaremos un plato hecho por Nino y se nos pasa!
+
+**yotsuba:** …Pero si a mí no me fue bien, ¡que nadie ponga cara de puchero, eh!
+
+[SPR nino nerviosa at pj_habla(X_NINO)]
+
+**nino:** Seis sillas ocupadas. …Seis personas en esta mesa.
+
+**nino:** Hace un mes no habría apostado por que todos estuvieramos reunidos. Sin problemas.
+
+**nino:** …Es una observación. No le des importancia.
+
+[SPR miku encogida at pj_habla(X_MIKU)]
+
+**narrador:** Miku tenía las manos juntas delante del cuerpo y los audífonos colgados al cuello. Sin tocarlos.
+
+**miku:** …Hoy no me los puse.
+
+**miku:** …Quiero oír lo que diremos todas.
+
+**miku:** …Todas a la vez.
+
+[SPR nino molesta at pj_habla(X_NINO)]
+
+**nino:** Tú estuviste con él antes de que saliéramos. …Sabes algo.
+
+**mc_pensamiento:** Sabía que ninguna se quedaba fuera. No sabía nada más: ni cuánto, ni de quién.
+
+**mc_pensamiento:** Y sabía que no me tocaba a mí quitarles este momento.
+
+**mc:** Sé lo que Maruo me dijo a mí. Lo que dicen esos papeles es de ustedes.
+
+[SPR ichika sonriendo at pj_habla(X_ICHIKA)]
+
+**ichika:** Qué tutor más cruel.
+
+**mc:** Lo sé.
+
+[SPR itsuki neutral at pj_habla(X_ITSUKI)]
+
+**itsuki:** Tu expresión no es la de quien trae malas noticias. …Aunque no es una garantía.
+
+[SPR yotsuba animada at pj_habla(X_YOTSUBA)]
+
+**yotsuba:** ¡¡Entonces abrámolos ya!!
+
+[SPR nino neutral at pj_habla(X_NINO)]
 
 **nino:** A la de tres. Y que nadie mire de reojo.
 
 **nino:** Una. Dos. Y…
 
+[SFX sfx_hoja volume 2.0]
+[SFX sfx_hoja volume 2.0]
+[SFX sfx_hoja volume 2.0]
+[SFX sfx_hoja volume 2.0]
+[SFX sfx_hoja volume 2.0]
+
 **narrador:** Dieron vuelta a los cinco boletines a la vez. Y, claro, todas miraron de reojo.
+
+(pausa de un segundo y medio, sin música)
+
+**narrador:** Cinco hojas, un solo sonido.
+
+play music main_theme fadein 1.5
+
+[SPR miku encogida at pj_habla(X_MIKU)]
+
+**miku:** …Sonaron juntas. …Como si fuera una sola hoja.
+
+**narrador:** Una lágrima le recorrió por toda la cara. No se la secó.
+
+**miku:** …No es tristeza. …Es que no sé dónde poner esto.
+
+[SPR ichika sonriendo at pj_habla(X_ICHIKA)]
+
+**narrador:** Ichika soltó una risa corta, de las que se escapan solas.
+
+**ichika:** Ja. …Ja, ja. …Me quedé sin chiste. A mí, que siempre tengo uno.
+
+**ichika:** Cuatro horas de sueño. …Y valieron cada minuto. Qué cosa más rara.
+
+[SPR nino nerviosa at pj_habla(X_NINO)]
+
+**narrador:** Nino leyó el suyo. Luego miró el de Miku, el de Yotsuba, el de Ichika, el de Itsuki. Movía los labios sin sonido.
+
+**nino:** Uno. Dos. Tres. Cuatro. …Cinco.
+
+**nino:** Cinco. Los conté dos veces.
+
+**nino:** …Que nadie diga nada. Si alguien dice algo, me voy.
+
+**narrador:** Se le quebró la voz en la última palabra. Nadie dijo nada. Nino se quedó.
+
+[SPR yotsuba animada at pj_habla(X_YOTSUBA)]
+
+**narrador:** Yotsuba ni miró el suyo. Miraba los de las demás, uno por uno, con los ojos muy abiertos.
+
+**yotsuba:** ¡Todas! ¡¡Todas, todas, todas!!
+
+**yotsuba:** ¡¡Miku, mira el tuyo!! ¡¡Nino, el tuyo!!
+
+**ichika:** Yotsuba. El tuyo.
+
+**yotsuba:** ¿Eh? …¡Ah, el mío!
+
+[SPR yotsuba neutral at pj_habla(X_YOTSUBA)]
+
+**narrador:** Bajó la vista. Y, por primera vez en todo el mes, Yotsuba se quedó callada.
+
+**yotsuba:** …Este es mi boletin. …Esta soy yo. …Esto lo hice yo.
+
+[SPR yotsuba animada at pj_habla(X_YOTSUBA)]
+
+**yotsuba:** ¡¡Y lo hicimos todas!! ¡¡Y tú también, [mc]!! 
+
+**yotsuba:** ¡Tú te quedaste hasta el último momento! ¡Eso también cuenta!
+
+[SPR itsuki sonriendo at pj_habla(X_ITSUKI)]
+
+**narrador:** Itsuki lo leyó línea por línea, como se lee un contrato. Dos veces, tal como había propuesto.
+
+**itsuki:** Lo leí dos veces. …El resultado no cambió.
+
+**itsuki:** Debería decir algo acorde a este momento.
+
+**itsuki:** …Estoy pensando que decir pero no tengo ni idea.
+
+**itsuki:** Lo que siento no lo puedo expresar con palabras.
+
+**itsuki** …Anótenlo, provisionalmente, como «algo bueno».
+
+**narrador:** Entonces levantó la vista y me miró. Quiso decirme algo. Pero nuevamente se calló.
+
+**narrador:** Yo asentí, apenas. Lo de antes seguía ahí, entre los dos, y esta vez ninguno intentó sacarlo.
+
+[SPR ichika sonriendo at pj_habla(X_ICHIKA)]
+
+**ichika:** Y tú, tutor. Tienes cara de querer decirnos algo.
+
+**mc:** No tengo nada que decirles. Esta vez no.
+
+[SPR itsuki neutral at pj_habla(X_ITSUKI)]
+
+**itsuki:** Es un alivio. Eres malo dando discursos.
+
+**ichika:** La última vez fue «sin excepción». A gritos.
+
+**mc:** Lo sé. Solo quiero decir una cosa, y corta.
+
+**mc:** Hace un mes, esta mesa me daba miedo. Cinco personas iguales mirándome, esperando que yo supiera qué hacer.
+
+**mc:** Los primeros días me botaron rápidamente de su departamento, no querían que sea su tutor.
+
+**mc:** No por que me odiaran, sino por los temores que cada una tenía.
+
+**mc:** Cargas que no podían aliviarlas solas y se las guardaban como si no fueran importantes.
+
+**mc:** Por eso yo no me rendí. Nunca lo hago.
+
+**mc:** A pesar de que me odiaran yo seguía yendo y yendo.
+
+**mc:** Creía que era solo por el trabajo y la paga. 
+
+**mc: **Pero me di cuenta que no es así, hay algo de ustedes que intenté descubrir.
+
+**mc:** Hoy sigo sin saberlo del todo. Pero ya no veo cinco iguales.
+
+**mc:** Veo a una Yotsuba. A una Ichika. A una Miku. A una Itsuki. A una Nino. 
+
+**mc:** Cada una con su cara, su manera, su ruido.
+
+**mc:** Lo que sea que diga ese papel lo escribieron ustedes. Nadie se los regaló.
+
+**mc:** Y estoy contento de haber estado sentado frente a esta mesa cuando lo abrieron. 
+
+**mc:** Nada más.
+
+stop music fadeout 0.5
+
+[SPR nino molesta at pj_habla(X_NINO)]
+
+**nino:** …Eso fue un discurso.
+
+**mc:** Dije que no tenía mucho que decir.
+
+**nino:** Fue un resumen. Pocas frases. Las conté.
+
+[SPR miku encogida at pj_habla(X_MIKU)]
+
+**miku:** …Fue lindo.
+
+**miku:** …A tu manera ...Fue lindo.
+
+**miku:** …Gracias por tus palabras mc.
+
+[SPR itsuki neutral at pj_habla(X_ITSUKI)]
+
+**itsuki:** Breve. Aceptable. Bien dicho.
 
 **mc_pensamiento:** Hace un mes se pusieron de acuerdo para fallar igual.
 
 **mc_pensamiento:** Hoy se pusieron de acuerdo para mostrarse distintas.
 
-**yotsuba:** ¡Cada una, muestre su examen!
+[MUS main_theme fadein 2.0] 
 
-**yotsuba:** ¡Y una foto! ¡Al grupo! ¡Sin trampas!
+[SPR yotsuba animada at pj_habla(X_YOTSUBA)]
 
+**yotsuba:** ¡Cada una, muestre su examen! ¡Y nos tomaremos una foto! 
+
+**yotsuba:** ¡La subiremos al grupo! ¡Sin trampas!
+
+**yotsuba:** ¡[mc], tú la sacas! ¡Tienes los brazos más largos!
+
+**mc:** ¿Y yo no salgo?
+
+**yotsuba:** ¡Tú sales en la próxima! ¡Hoy es de las cinco!
+
+**narrador:** Me puse de pie al otro lado de la mesa, con el celular de Yotsuba en las manos.
+
+**yotsuba:** ¡Más arriba! ¡El mío más arriba!
+
+**ichika:** Que se me vea la cara, no el flequillo.
+
+**nino:** Un solo brazo. Es mi mejor ángulo.
+
+**miku:** …¿Dónde pongo las manos? …Mejor delante.
+
+**itsuki:** Debo salir recta. Con el boletín recto.
+
+[CG cg_cinco_aprobadas] [with dissolve] (tinte según estado)
+
+**mc:** ¡Digan «cinco»!
+
+**quintillizas:** ¡¡Cinco!!
+
+sfx camara (nuevo)
+
+**narrador:** Tomé la foto. Ninguna bajó el boletín.
+
+**ichika:** ¿Ya está? …Me tiembla el brazo y no pienso ser la primera en bajarlo.
+
+**nino:** Yo tampoco. …Que baje primero Yotsuba.
+
+**yotsuba:** ¡Yo no bajo nada! ¡Puedo quedarme así hasta mañana!
+
+**itsuki:** Los brazos no funcionan así. Tarde o temprano se cansan.
+
+**yotsuba:** ¡Pues que se cansen tarde!
+
+**miku:** …Yo tampoco quiero bajar las manos todavía. …Mientras sigamos así, …esto sigue pasando.
+
+**narrador:** Nadie se rio. Se quedaron un momento en silencio, juntas, cada una en su sitio, con la hoja en alto.
+
+**mc_pensamiento:** Pensé en decirles que la foto ya estaba. No lo dije. Hay cosas que un «ya está» arruina.
+
+**ichika:** Oigan, ¿saben qué es lo más raro? 
+
+**ichika:** …Que esta mañana tenía miedo de abrirlo sola. Y no estaba sola.
+
+**nino:** …Nunca había estado tan cansada. …Y tan bien. …Que no se repita esa frase.
+
+**itsuki:** Lo anoto. «Nino dijo: tan bien.»
+
+**nino:** Si lo anotas, te lo quito.
+
+**itsuki:** Es un registro. Los registros no se quitan.
+
+**yotsuba:** ¡Quiero una foto así cada vez que algo salga bien! 
+
+**yotsuba:** ¡Y cuando salga mal, también! ¡Igual de juntas!
+
+**itsuki:** …Moción aceptada. Con una condición: el boletín, recto.
+
+**miku:** …Yo también. …Aunque salga mal. …Sobre todo si sale mal.
+
+**nino:** No hablemos de que salga mal el día en que salió bien.
+
+**mc:** Si sale mal, la foto la saco yo. Y la guardo igual que esta.
+
+**ichika:** Qué tutor más cursi. …Me gusta.
+
+**mc:** Pues yo no bajo el celular hasta que baje el último brazo.
+
+**itsuki:** Entonces será larga la espera. …Bajo en tres.
+
+**yotsuba:** ¡Una! ¡Dos!
+
+**nino:** …Y.
+
+**narrador:** Bajaron los brazos todas a la vez, sin contarlo. Igual que habían abierto los boletines.
+
+**mc_pensamiento:** No leí ni un solo número. No hacía falta: cinco caras que ya no fingían nada.
+
+**mc_pensamiento:** Dijeron «cinco». Y yo, detrás del celular, dije «seis». Bajito, para que no me oyeran.
+
+**mc_pensamiento:** Ahora formo parte de ellas, y ellas de mí.
 
 `[$ e6_disculpa_pendiente = True]`
 
@@ -555,17 +874,31 @@ por partida); no cita ninguna nota; puede tener su boletín como objeto; termina
 
 ### Movimiento 9 · Casa
 
+`[BG bg_negro]`
+
+**narrador:** Me despedí de todas y volví a casa.
+
+**narrador:** Con una gran sensación de seguir conservando mi trabajo.
+
 `[MUS stop fadeout 1.5]` `[BG bg_comedor]` `[with fade]` `[MUS cena fadein 2.0]`
 
-**narrador:** El curry se olía desde el rellano.
+**narrador:** Al llegar, alguien me estaba esperando, y yo tambien quería verla.
+
+**mc_pensamiento:** Mi hermana Raiha, la única que ha confiado en mi desde el principio.
+
+**mc_pensamiento:** Una de las razones por las que acepté el trabajo cuando no sabía que decidir.
+
+**narrador:** El curry se olía por toda la casa.
 
 `[SPR raiha hablando at pj(0.20)]` `[SPR isanari neutral at pj(0.73)]` `[with dissolve]`
 
-**raiha:** ¡Hermanito! Hice curry antes de saber cómo salía todo.
+**raiha:** ¡Hermanito! Hice curry antes de saber cómo te iba a ir.
 
-**raiha:** Así, salga lo que salga, ya está hecho. ¡El curry nunca falla!
+**raiha:** Así, como te haya ido, la cena ya está hecha. ¡El curry nunca falla!
 
-**mc:** Aprobaron las cinco.
+**mc:** Pues hoy comeremos un banquete, ¿No crees Raiha?
+
+**mc:** ¡¡APROBARON LAS CINCO!!.
 
 **raiha:** …¿Las cinco?
 
@@ -575,11 +908,15 @@ por partida); no cita ninguna nota; puede tener su boletín como objeto; termina
 
 **raiha:** ¡Te dije que podías con cinco a la vez!
 
-**mc:** Me lo dijiste con voz de «ojalá».
+**mc:** Me lo dijiste con voz de «ojalá». 
+
+**mc:** Aunque te perdono porque tambien dudaba de mi en ese momento, jeje.
 
 **raiha:** ¡Pero la voz de «ojalá» también cuenta!
 
 `[SPR isanari neutral at pj_habla(0.73)]`
+
+**isanari:** Hola mc, veo que hoy ha sido un éxito para tí.
 
 **isanari:** Maruo llamó. Cobramos el mes entero.
 
@@ -674,6 +1011,14 @@ MC no escribe en el chat.
 **mc_pensamiento:** Lo único que controlé fue a dónde fui.
 
 **mc_pensamiento:** Y a dónde no.
+
+**mc_pensamiento:** ¡ESO ES! ¡LO DESCUBRÍ!
+
+**mc_pensamiento:** Separadas, son solo una quinta parte, una parte incompleta.
+
+**mc_pensamiento:** Pero juntas, forman un estudiante perfecto, o a una chica perfecta.
+
+**mc_pensamiento:** Capáz de superar cualquier obstaculo que se le atraviese.
 
 #### La libreta
 
