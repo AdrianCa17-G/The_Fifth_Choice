@@ -998,7 +998,7 @@ MC no escribe en el chat.
 
 `[SCREEN boletin_cinco · fase 3: la diagonal se funde en una sola fila de cinco cienes]` `[$ quick_menu = True]`
 
-**mc_pensamiento:** Cinco máximos en cinco materias distintas. Ni un hueco, ni una repetida.
+**mc_pensamiento:** Cinco notas perfectas en cinco materias distintas. Esa diagonal lo delata.
 
 **mc_pensamiento:** Un boletín perfecto. De un alumno que no existe.
 
@@ -1012,13 +1012,17 @@ MC no escribe en el chat.
 
 **mc_pensamiento:** Y a dónde no.
 
-**mc_pensamiento:** ¡ESO ES! ¡LO DESCUBRÍ!
+**mc_pensamiento:** Cinco hojas en fila. Cinco notas de cien. Cada cien, de una persona distinta.
 
-**mc_pensamiento:** Separadas, son solo una quinta parte, una parte incompleta.
+**mc_pensamiento:** Y entonces lo entendí, lo que siempre me estaba preguntando.
 
-**mc_pensamiento:** Pero juntas, forman un estudiante perfecto, o a una chica perfecta.
+**mc_pensamiento:** Cada una, sola, es una quinta parte. Brillante, pero una parte.
 
-**mc_pensamiento:** Capáz de superar cualquier obstaculo que se le atraviese.
+**mc_pensamiento:** Juntas son lo que ninguna sería sola: un estudiante perfecto. Capaz de cualquier cosa.
+
+**mc_pensamiento:** Yo creí que mi trabajo era enseñarles a estudiar.
+
+**mc_pensamiento:** Mi trabajo era conseguir que, por fin, se miraran entre ellas.
 
 #### La libreta
 
