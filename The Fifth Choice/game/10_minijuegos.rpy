@@ -34,8 +34,8 @@ define E6_AJUSTE_NOTA = {"bueno": 3, "mixto": 0, "superado": -2}
 ## Qué minijuego del MJ_REGISTRO usa cada hermana. Ahora todos "prueba":
 ## los chats 5 y 6 cambian aquí a "y2", "i1", "n1", "it1", "m3".
 define E6_MJ_JUEGO = {
-    "yotsuba": "prueba", "ichika": "prueba", "nino": "prueba",
-    "itsuki": "prueba", "miku": "prueba",
+    "yotsuba": "y2", "ichika": "prueba", "nino": "n1",
+    "itsuki": "it1", "miku": "prueba",
 }
 
 define MJ_NIVELES = ["dificil", "media", "asistida"]

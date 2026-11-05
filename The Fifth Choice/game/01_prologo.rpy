@@ -324,7 +324,7 @@ label prologo:
 
     itsuki_inicio "*Munch...* ¿Mm? Ah... tú debes ser [mc]."
 
-    narrador "Sostuvo los palillos a mitad de camino y fijó su mirada en la hoja de examen que él llevaba en la mano."
+    narrador "Sostuvo los palillos a mitad de camino y fijó su mirada en la hoja de examen que llevaba en la mano."
 
     scene bg_aula
     with dissolve
