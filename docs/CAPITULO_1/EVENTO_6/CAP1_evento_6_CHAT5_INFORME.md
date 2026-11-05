@@ -47,8 +47,8 @@ En `10_minijuegos.rpy`, `E6_MJ_JUEGO` sigue apuntando a `"prueba"`. Cambiar solo
 |---|---|---|
 | P-20 | **Móvil: se adapta, no se excluye.** Los tres minijuegos se juegan solo con clic/toque (Y2: un toque en cualquier sitio; N1′ e It1: botones grandes), sin teclado. Mantienen `MJ_MODO_TACTIL` y la opción «saltar». Lo que sigue sin resolverse es la legibilidad en pantallas pequeñas (textos de 19–20 px) | DECIDIDO — pendiente de comprobar en un móvil real |
 | P-24 (nueva) | **Chibis en los minijuegos.** Un chibi protagonista por minijuego con escalera de expresiones (neutral → animo → esfuerzo → feliz; triste al fallar) y globos de texto con líneas aleatorias por evento. Y2 usa además a las cinco como corredoras | DECIDIDO por Adrian; el arte va en la ficha del chat 7 |
-| P-25 (nueva) | **Sexto hueco de N1′.** Tres opciones sin respuesta correcta (`celebrar` / `consolar` / `vacio`), guardada en `e6_mj["nino"]["datos"]["sexto"]`. El guion del chat 4 decide qué línea cuelga de cada una | PROPUESTA — el significado exacto del «sexto» es mío |
-| P-26 (nueva) | **It1: frase A/B.** `it1_frase()` devuelve `"A"` si pidió ayuda o se saltó el minijuego; `"B"` si resolvió sola | PROPUESTA — confirmar que el salto debe dar la frase A |
+| P-25 (nueva) | **Sexto hueco de N1′.** Tres opciones sin respuesta correcta (`celebrar` / `consolar` / `vacio`), guardada en `e6_mj["nino"]["datos"]["sexto"]`. El guion del chat 4 decide qué línea cuelga de cada una | DECIDIDO — el significado exacto del «sexto» es mío |
+| P-26 (nueva) | **It1: frase A/B.** `it1_frase()` devuelve `"A"` si pidió ayuda o se saltó el minijuego; `"B"` si resolvió sola | DECIDIDO — confirmar que el salto debe dar la frase A |
 
 **Cambios al mapa de chats §2:** marcar el chat 5 como hecho **con reservas** (sin probar en Ren'Py). El chat 7 gana una tarea: los chibis. El chat 6 puede reutilizar `10_mj_chibi.rpy` y debe escribir las líneas de globo de Ichika y Miku en `MJ_GLOBOS`.
 
