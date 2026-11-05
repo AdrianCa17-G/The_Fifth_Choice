@@ -34,8 +34,8 @@ define E6_AJUSTE_NOTA = {"bueno": 3, "mixto": 0, "superado": -2}
 ## Qué minijuego del MJ_REGISTRO usa cada hermana. Ahora todos "prueba":
 ## los chats 5 y 6 cambian aquí a "y2", "i1", "n1", "it1", "m3".
 define E6_MJ_JUEGO = {
-    "yotsuba": "y2", "ichika": "prueba", "nino": "n1",
-    "itsuki": "it1", "miku": "prueba",
+    "yotsuba": "y2", "ichika": "i1", "nino": "n1",
+    "itsuki": "it1", "miku": "m3",
 }
 
 define MJ_NIVELES = ["dificil", "media", "asistida"]
@@ -79,8 +79,8 @@ define MJ_PARAMS = {
     },
     "m3": {
         "dificil":  {"fase1_notas": 48, "ventana_ms": 80,  "fallos_max": 8,  "fase2_notas": 24, "fase2_guia": "ninguna", "puntos_control": [48]},
-        "media":    {"fase1_notas": 36, "ventana_ms": 140, "fallos_max": 14, "fase2_notas": 16, "fase2_guia": "tenue",   "puntos_control": [16, 32, 48]},
-        "asistida": {"fase1_notas": 28, "ventana_ms": 200, "fallos_max": 24, "fase2_notas": 12, "fase2_guia": "clara",   "puntos_control": [12, 24, 36]},
+        "media":    {"fase1_notas": 36, "ventana_ms": 140, "fallos_max": 14, "fase2_notas": 16, "fase2_guia": "tenue",   "puntos_control": [16, 32, 36]},
+        "asistida": {"fase1_notas": 28, "ventana_ms": 200, "fallos_max": 24, "fase2_notas": 12, "fase2_guia": "clara",   "puntos_control": [12, 24, 28]},
     },
 }
 
@@ -89,7 +89,7 @@ define MJ_PARAMS = {
 ## RELLENO tomado de §5.5: lo sustituyen los guiones de los chats 3 y 4.
 define MJ_FALLOS = {
     "yotsuba": [("int", "¡Otra vez!"), ("int", "¡Otra vez! ¡Esta sí!"), ("int", "…Otra vez. Despacio.")],
-    "ichika":  [("narrador", "Ichika sonríe. Casi enseguida."), ("narrador", "La sonrisa tarda un poco más en volver."), ("narrador", "La sonrisa tarda mucho en volver.")],
+    "ichika":  [("narrador", "Se quedó en blanco. Sonrió para que no se notara."), ("narrador", "La sonrisa tardó un poco más en volver."), ("narrador", "Esta vez no sonrió. Respiró, y empezó otra vez.")],
     "nino":    [("int", "Tsk."), ("int", "…Otra vez. No mires."), ("int", "Otra vez.")],
     "itsuki":  [("int", "Revisaré desde el principio."), ("int", "Revisaré desde el principio."), ("int", "Revisaré desde el principio.")],
     "miku":    [("int", "…Perdón."), ("int", "…Perd—"), ("int", "…Otra vez.")],

@@ -24,7 +24,7 @@ define MJ_CHIBI_RUTA = "images/chibis/"
 define MJ_GLOBO_DURACION = 2.2
 
 ## False (por defecto): la línea de fallo del marco (MJ_FALLOS) la dice el
-## marco con renpy.say, como hasta ahora, y el globo del minijuego usa sus
+## marco con rcenpy.say, como hasta ahora, y el globo del minijuego usa sus
 ## propias reacciones. True: el globo de la pantalla enseña la línea de
 ## MJ_FALLOS en el momento de perder — pide el parche de 2 líneas en
 ## mj_linea_fallo() (ver CAP1_evento_6_CHAT5_INFORME.md) o se dice dos veces.
@@ -83,6 +83,33 @@ define MJ_GLOBOS = {
         "ayuda":      ["…Profesor. ¿Puede mirar esto?", "Una duda. Solo una."],
         "tras_ayuda": ["Entendido. Lo reviso.", "Ahí. Ahora lo veo."],
         "final":      ["Cuadra. Esta vez cuadra.", "Salió. Lo hice yo."],
+    },
+
+    ## Miku: «…» al inicio mientras se esconde; cuando se suelta (final) desaparece.
+    "miku": {
+        "inicio":   ["…Vale. Empiezo.", "…Cuento hasta cuatro.", "…Con los audífonos puestos, sí.", "…Esto es solo compás."],
+        "acierto":  ["…Ahí.", "…Eso.", "…Sí.", "…Encaja."],
+        "racha":    ["…Se oye bien.", "…Ya casi no pienso.", "…Sigo, sigo.", "…Va solo."],
+        "fallo":    ["…Uy.", "…Sigo.", "…Otra nota."],
+        "caida":    ["…Aguanta.", "…No te escondas ahora.", "…Despacio. …Despacio."],
+        "mitad":    ["…Se apagaron.", "…Solo queda el reloj.", "…Sin música. …Sigo."],
+        "silencio": ["…Lo oigo. …Es el reloj.", "…El reloj no pide perdón.", "…Sin audífonos suena igual."],
+        "casi":     ["…Ya queda poco.", "…Casi. …Casi.", "…No pares ahora."],
+        "final":    ["Esto sí lo sé.", "Lo tenía.", "No me escondí."],
+        "perdida":  ["…Se me fue el compás.", "…Perdí el hilo."],
+    },
+
+    ## Ichika: exclamación = máscara; sin exclamación = sincera.
+    "ichika": {
+        "inicio":    ["¡Telón! …Las líneas, una a una.", "Respira, Ichika. Tú puedes.", "Me sé el guion. Falta saber cuál es el mío.", "¡Luces, cámara…!"],
+        "actuada":   ["¡Ta-chán!", "¡Qué entrada!", "¡Aplausos, por favor!", "¡Sonríe, Ichika!"],
+        "sincera":   ["…Eso era mío.", "Eso salió sin guion.", "Pesó menos de lo que pensaba.", "Ya. Lo dije."],
+        "improviso": ["¡Improviso! …Me sale solo.", "Ay. Actué sin querer.", "Actué sin querer. Otra vez."],
+        "mitad":     ["Mitad de función. La sonrisa pesa.", "Ya van varias. …Sigo.", "Tres cuartos de sonrisa."],
+        "caida":     ["La sonrisa se me cae…", "Me pesa la cara.", "Casi me quedo en blanco."],
+        "casi":      ["La última. Esta no se actúa.", "Una más. Solo mía.", "Ya llega la última."],
+        "blanco":    ["…Me quedé en blanco.", "Se apagaron las luces.", "No me sale nada. Ni el chiste."],
+        "final":     ["Respira. Ya está.", "Sonreí despacio. …Mejor.", "Eso no lo ensayé."],
     },
 }
 

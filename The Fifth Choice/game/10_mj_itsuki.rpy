@@ -447,7 +447,7 @@ screen mj_it1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     use mj_marco(hermana, titulo, intento, fallos, nivel, hechas, vivo.n, vivo.restante(), vivo.total, "PASOS"):
 
-        text "CUADERNO DE CIENCIAS · " + vivo.cadena["titulo"].upper():
+        text ("CUADERNO DE CIENCIAS · " + vivo.cadena["titulo"].upper()):
             xpos 320
             ypos 150
             font gui.name_text_font
