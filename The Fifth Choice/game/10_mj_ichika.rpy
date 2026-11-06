@@ -447,7 +447,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                 color "#FFFFFF"
                 outlines [(3, "#1B102699", 0, 0)]
 
-        use mj_retrato("ichika", vivo.expresion(), vivo.globo, vivo.anim(), 280, 900, 0.5)
+        use mj_retrato("ichika", vivo.expresion(), vivo.globo, vivo.anim(), 220, 1090, 1.0)
 
         ## Pantalla de inicio
         if vivo.estado == "listo":

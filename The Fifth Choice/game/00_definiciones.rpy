@@ -630,6 +630,114 @@ label configurar_nombre:
 
 label start:
 
+    ################################################################################
+##  Video #3: la ruta de Itsuki.
+##  Cómo lanzarlo: partida nueva, en el primer diálogo Shift+O (consola) y:
+##      jump grabacion_v3
+################################################################################
+
+label grabacion_v3:
+
+    ## --- Preparación ---------------------------------------------------------
+    $ hub_visitadas = []
+    $ tiempo_restante = "casi cuatro semanas"
+    $ quick_menu = False
+    $ ui_escena("normal")
+    stop music
+    stop ambiente
+
+    ## --- 1 · HOOK: el asiento (0-4 s) -----------------------------------------
+    scene cg_itsuki_apertura
+    with fade
+    pause 5.3
+
+    ## --- 2 · "Soy Itsuki… la que más estudia" (4-11 s) -------------------------
+    scene bg_aula
+    with dissolve
+    show itsuki sonriendo at pj(0.5)
+    with dissolve
+    pause 1.5
+    show itsuki sorprendida at pj(0.5)
+    with dissolve
+    pause 2.5
+
+ 
+    ## --- 3 · "Una vez te pedí ayuda. Dijiste que no." (11-18 s) -----------------
+    show itsuki molesta at pj(0.5)
+    with dissolve
+    itsuki "Olvidalo."
+    itsuki "No te necesito"
+    
+    ## --- 4 · EL MAPA: ir directa a la banda roja (la última a la derecha) ---------
+    ## Entra por la izquierda, cruza despacio y haz clic en la de Itsuki.
+    scene bg_negro
+    with fade
+    call screen mapa_hub(1)
+
+    ## --- 5 · El aula vacía con la cinta ENCUENTRO ----------------------------------
+    $ ui_escena("hub", "itsuki", "Aula vacía")
+    $ quick_menu = True
+    scene bg_aula_tarde
+    with fade
+    show itsuki neutral at pj(0.5)
+    with dissolve
+    pause 3.5
+
+    ## --- 6 · LA DECISIÓN CON PESO (26-32 s) ------------------------------------------
+    ## Pasa el cursor despacio por las tres tarjetas y haz clic en cualquiera.
+    ## Las opciones están acortadas a propósito para no soltar spoilers.
+    $ quick_menu = False
+    $ decision_peso("itsuki", "¿Qué le dirás a Itsuki?", "Responde")
+
+    menu:
+
+        "¿Cómo respondes?"
+
+        "Respuesta Calida":
+            pass
+
+        "Respuesta Tibia":
+            pass
+
+        "Respuesta Fria":
+            pass
+
+    ## --- 7 · "No esperes un gracias. Y si sonrío…" (32-37 s) ----------------------------
+    $ ui_escena("normal")
+    scene bg_aula_tarde
+    with fade
+    show itsuki molesta at pj_habla(0.5)
+    with dissolve
+    pause 2.5
+
+    show itsuki sonriendo at pj_habla(0.5)
+    with disolucion_lenta
+    pause 3.0
+
+    show itsuki molesta at pj_habla(0.5)
+    with dissolve
+    pause 2.5
+
+    scene cg_itsuki_reto
+    with dissolve
+    pause 3.0
+
+    ## --- 8 · "El resto no pienso contártelo" (37-41 s) -----------------------------------
+    ## Se desenfoca y se le pone el sello "CLASIFICADO" en CapCut.
+   
+    ## --- 9 · CIERRE: ella sola, mirando a cámara (41-45 s) ---------------------------------
+    scene bg_aula_tarde
+    with dissolve
+    show itsuki timida at pj(0.5)
+    with dissolve
+    pause 3.6
+
+    $ quick_menu = True
+    $ ui_escena("normal")
+    scene bg_negro
+    with fade
+    return
+
     stop music fadeout 1.5
 
     call configurar_nombre

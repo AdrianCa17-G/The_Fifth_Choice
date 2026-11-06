@@ -323,4 +323,4 @@ screen mj_retrato(hermana, expresion, globo, anim="bob", x=250, y=560, zoom=0.6)
     use mj_chibi_vista(hermana, expresion, x, y, zoom, anim)
 
     if globo.visible():
-        use mj_globo(globo.texto, hermana, x + 40, y - int(500 * zoom) - 8)
+        use mj_globo(globo.texto, hermana, x + 10, y - int(500 * zoom) + 30)
