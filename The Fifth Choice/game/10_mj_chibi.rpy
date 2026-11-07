@@ -40,10 +40,10 @@ define MJ_FALLO_EN_GLOBO = False
 ################################################################################
 
 define MJ_GLOBOS_GENERICO = {
-    "inicio":  ["…Vamos."],
-    "acierto": ["…Bien."],
-    "fallo":   ["…Otra vez."],
-    "final":   ["…Listo."],
+    "inicio":  ["...Vamos."],
+    "acierto": ["...Bien."],
+    "fallo":   ["...Otra vez."],
+    "final":   ["...Listo."],
 }
 
 define MJ_GLOBOS = {
@@ -59,19 +59,21 @@ define MJ_GLOBOS = {
         "caida":   ["¡Ay! ¡El testigo!", "¡Se cayó! ¡Lo recojo!"],
         "fallo":   ["¡Otra vez! ¡Con ganas!", "¡No pasa nada! ¡Otra!"],
         "final":   ["Llegamos. Todas.", "Llegamos todas."],
+        "racha":   ["¡Vamos en racha!", "¡No paramos!", "¡Así, así!"],
+        "cura":    ["¡Testigo nuevo! ¡Gracias, equipo!", "¡Recuperado!"],
     },
 
     ## Nino: corta, seca, sin dejar contestar.
     "nino": {
         "inicio":  ["Tres cosas por lista. Sin perder el tiempo.", "Lee bien. No adivines.", "Lee las etiquetas. Todas."],
-        "acierto": ["Esa.", "Bien. Siguiente.", "…Correcto."],
+        "acierto": ["Esa.", "Bien. Siguiente.", "...Correcto."],
         "lista":   ["Una lista menos.", "Ahí va otra.", "Siguiente. Rápido."],
         "mitad":   ["Vamos bien. No lo celebres."],
         "casi":    ["Falta una. Una."],
         "fallo":   ["Esa no. Lee la etiqueta.", "Tsk. Casi igual no es igual.", "Otra vez. No mires tanto."],
         "tiempo":  ["Se nos acaba el tiempo.", "Rápido. Pero no a lo loco."],
-        "sexto":   ["…Queda un hueco. Elige tú.", "Sitio para una cosa más. No me mires."],
-        "final":   ["Hecho. Y no lo comentes.", "…Ya está. Vámonos."],
+        "sexto":   ["...Queda un hueco. Elige tú.", "Sitio para una cosa más. No me mires."],
+        "final":   ["Hecho. Y no lo comentes.", "...Ya está. Vámonos."],
     },
 
     ## Itsuki: oración cerrada, sujeto-verbo-punto.
@@ -80,36 +82,37 @@ define MJ_GLOBOS = {
         "paso":       ["Siguiente paso.", "Anotado.", "Ese paso está hecho."],
         "fallo":      ["El resultado no cuadra.", "Hay un error en alguna parte.", "No cuadra. Otra vez."],
         "tiempo":     ["Queda poco tiempo.", "El tiempo corre."],
-        "ayuda":      ["…Profesor. ¿Puede mirar esto?", "Una duda. Solo una."],
+        "ayuda":      ["...Profesor. ¿Puede mirar esto?", "Una duda. Solo una."],
         "tras_ayuda": ["Entendido. Lo reviso.", "Ahí. Ahora lo veo."],
         "final":      ["Cuadra. Esta vez cuadra.", "Salió. Lo hice yo."],
     },
 
-    ## Miku: «…» al inicio mientras se esconde; cuando se suelta (final) desaparece.
+    ## Miku: «...» al inicio mientras se esconde; cuando se suelta (final) desaparece.
     "miku": {
-        "inicio":   ["…Vale. Empiezo.", "…Cuento hasta cuatro.", "…Con los audífonos puestos, sí.", "…Esto es solo compás."],
-        "acierto":  ["…Ahí.", "…Eso.", "…Sí.", "…Encaja."],
-        "racha":    ["…Se oye bien.", "…Ya casi no pienso.", "…Sigo, sigo.", "…Va solo."],
-        "fallo":    ["…Uy.", "…Sigo.", "…Otra nota."],
-        "caida":    ["…Aguanta.", "…No te escondas ahora.", "…Despacio. …Despacio."],
-        "mitad":    ["…Se apagaron.", "…Solo queda el reloj.", "…Sin música. …Sigo."],
-        "silencio": ["…Lo oigo. …Es el reloj.", "…El reloj no pide perdón.", "…Sin audífonos suena igual."],
-        "casi":     ["…Ya queda poco.", "…Casi. …Casi.", "…No pares ahora."],
+        "inicio":   ["...Vale. Empiezo.", "...Cuento hasta cuatro.", "...Con los audífonos puestos, sí.", "...Esto es solo compás."],
+        "acierto":  ["...Ahí.", "...Eso.", "...Sí.", "...Encaja."],
+        "racha":    ["...Se oye bien.", "...Ya casi no pienso.", "...Sigo, sigo.", "...Va solo."],
+        "fallo":    ["...Uy.", "...Sigo.", "...Otra nota."],
+        "caida":    ["...Aguanta.", "...No te escondas ahora.", "...Despacio. ...Despacio."],
+        "mitad":    ["...Se apagaron.", "...Solo queda el reloj.", "...Sin música. ...Sigo."],
+        "silencio": ["...Lo oigo. ...Es el reloj.", "...El reloj no pide perdón.", "...Sin audífonos suena igual."],
+        "casi":     ["...Ya queda poco.", "...Casi. ...Casi.", "...No pares ahora."],
         "final":    ["Esto sí lo sé.", "Lo tenía.", "No me escondí."],
-        "perdida":  ["…Se me fue el compás.", "…Perdí el hilo."],
+        "perdida":  ["...Se me fue el compás.", "...Perdí el hilo."],
     },
 
     ## Ichika: exclamación = máscara; sin exclamación = sincera.
     "ichika": {
-        "inicio":    ["¡Telón! …Las líneas, una a una.", "Respira, Ichika. Tú puedes.", "Me sé el guion. Falta saber cuál es el mío.", "¡Luces, cámara…!"],
+        "inicio":    ["¡Telón! ...Las líneas, una a una.", "Respira, Ichika. Tú puedes.", "Me sé el guion. Falta saber cuál es el mío.", "¡Luces, cámara...!"],
         "actuada":   ["¡Ta-chán!", "¡Qué entrada!", "¡Aplausos, por favor!", "¡Sonríe, Ichika!"],
-        "sincera":   ["…Eso era mío.", "Eso salió sin guion.", "Pesó menos de lo que pensaba.", "Ya. Lo dije."],
-        "improviso": ["¡Improviso! …Me sale solo.", "Ay. Actué sin querer.", "Actué sin querer. Otra vez."],
-        "mitad":     ["Mitad de función. La sonrisa pesa.", "Ya van varias. …Sigo.", "Tres cuartos de sonrisa."],
-        "caida":     ["La sonrisa se me cae…", "Me pesa la cara.", "Casi me quedo en blanco."],
+        "sincera":   ["...Eso era mío.", "Eso salió sin guion.", "Pesó menos de lo que pensaba.", "Ya. Lo dije."],
+        "improviso": ["¡Improviso! ...Me sale solo.", "Ay. Actué sin querer.", "Actué sin querer. Otra vez."],
+        "mitad":     ["Mitad de función. La sonrisa pesa.", "Ya van varias. ...Sigo.", "Tres cuartos de sonrisa."],
+        "caida":     ["La sonrisa se me cae...", "Me pesa la cara.", "Casi me quedo en blanco."],
         "casi":      ["La última. Esta no se actúa.", "Una más. Solo mía.", "Ya llega la última."],
-        "blanco":    ["…Me quedé en blanco.", "Se apagaron las luces.", "No me sale nada. Ni el chiste."],
-        "final":     ["Respira. Ya está.", "Sonreí despacio. …Mejor.", "Eso no lo ensayé."],
+        "blanco":    ["...Me quedé en blanco.", "Se apagaron las luces.", "No me sale nada. Ni el chiste."],
+        "final":     ["Respira. Ya está.", "Sonreí despacio. ...Mejor.", "Eso no lo ensayé."],
+        "sinfuerzas": ["Me quedé sin pilas...", "Sin energía. Actúo por inercia.", "No me da la voz.", "Necesito un respiro."],
     },
 }
 

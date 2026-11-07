@@ -17,6 +17,9 @@ default e6_chat_activo = False
 default e6_disculpa_pendiente = False
 
 
+image cg_cinco_aula      = "cg/cap1_mov6/cinco_aula.webp"
+
+
 ################################################################################
 ##  AYUDAS DE SPRITES
 ##  Las formaciones usan renpy.show con at_list (pj / pj_habla / pj_calla): cada

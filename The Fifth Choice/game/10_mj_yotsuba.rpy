@@ -30,35 +30,62 @@ define Y2_LONG = 330
 define Y2_SUELO = 775
 define Y2_ZOOM = 0.34
 define Y2_VEL_BASE = 0.55
-define Y2_PREP_PRIMERO = 0.9
-define Y2_PREP = 0.45
-define Y2_T_PASA = 0.65
+define Y2_PREP_PRIMERO = 0.7
+define Y2_PREP = 0.28
+define Y2_PREP_VUELTA = 0.55
+define Y2_PREP_JITTER = 0.25      ## aleatoriedad en la espera: no se puede contar el ritmo
+define Y2_MIN_T_MARCA = 0.45      ## segundos mínimos hasta la marca (siempre da tiempo a reaccionar)
+define Y2_T_PASA = 0.40
 define Y2_T_FALSA = 0.7
-define Y2_T_ERROR = 1.0
+define Y2_T_ERROR = 0.85
 define Y2_T_ERROR_LARGO = 1.9
 define Y2_T_LIBRE = 0.8
 define Y2_T_FIN = 1.8
+
+define Y2_NIVEL_TXT = {"dificil": "DIFÍCIL", "media": "MEDIA", "asistida": "ASISTIDA"}
+
+transform y2_quieto:
+    xoffset 0
+
+transform y2_pulso:
+    alpha 1.0
+    block:
+        ease 0.25 alpha 0.55
+        ease 0.25 alpha 1.0
+        repeat
+    
 
 init python:
 
     import math
 
     def y2_x(i):
-        """x de la línea de salida del tramo i (i = 0..5; 5 es la meta)."""
+        """x de la línea de salida del carril i (i = 0..5; 5 es la meta)."""
         return Y2_X0 + Y2_LONG * i
 
     class MJY2(object):
-        """Estado vivo del relevo. Lo crea la screen (default): no se guarda;
-        si se carga una partida a mitad, el intento reinicia desde el punto
-        de control."""
+        """Relevo de N tramos (N sale de MJ_PARAMS). Las cinco corren en ciclo.
+        Lo crea la screen (default): no se guarda; al cargar reinicia desde el punto de control."""
 
-        def __init__(self, params, inicio, fallos_previos):
+        def __init__(self, params, inicio, fallos_previos, intro=False):
             self.p = params
             self.reloj = MJReloj()
-            self.tramo = inicio
+            self.n = int(params["tramos"])
+            tope = self.n - 5
+            if tope < 0:
+                tope = 0
+            if inicio > tope:
+                inicio = tope
+            if inicio < 0:
+                inicio = 0
+            self.tramo = int(inicio)
             self.fallos_prev = fallos_previos
             self.caidos = 0
             self.falsas = 0
+            self.perfectos = 0
+            self.curados = 0
+            self.racha = 0
+            self.mejor_racha = 0
             self.gratis = {}
             self.globo = MJGlobo("yotsuba")
             self.aviso = ""
@@ -67,14 +94,40 @@ init python:
             self.humor = ""
             self.dur_error = Y2_T_ERROR
             self.marca = 0.7
+            self.senuelo = None
             self.v = 0.5
+            self.ventana = float(params["ventana"])
             self.t_marca = 1.0
             self.t0 = 0.0
             self.t_fase = 0.0
-            self.fase = "listos"
             self.prep = Y2_PREP_PRIMERO
+            self.fase = "listos"
             self.nuevo_tramo(Y2_PREP_PRIMERO)
-            self.globo.decir("inicio", True)
+            if intro:
+                self.fase = "intro"
+            else:
+                if self.tramo > 0:
+                    self.poner_aviso("Punto de control · tramo " + str(self.tramo + 1), "#E8E0F2")
+                self.globo.decir("inicio", True)
+
+        # ---- reglas (para la pantalla de explicación) -----------------------
+        def reglas(self):
+            p = self.p
+            r = []
+            r.append("Es un relevo de " + str(self.n) + " tramos: las cinco corren por turnos y el testigo no puede caerse.")
+            r.append("Pulsa ¡AHORA! (clic, toque o Espacio) justo cuando la corredora cruce la MARCA dorada.")
+            r.append("Pronto es salida en falso; tarde, se cae el testigo. Cada error gasta uno de tus " + str(p["testigos"]) + " testigos. Sin testigos, pierdes el intento.")
+            r.append("Encadena " + str(p["cura"]) + " aciertos «Perfectos» seguidos y recuperas un testigo.")
+            r.append("Cada tramo es más rápido y la ventana de acierto se estrecha.")
+            if not p["zona"]:
+                r.append("Aquí no hay zona sombreada: confía en el ritmo.")
+            if p["ocultar"] < 1.0:
+                r.append("La marca se esconde antes de que llegue la corredora.")
+            if p["senuelo"] > 0.0:
+                r.append("Ojo con los señuelos rojos (×): no son la marca.")
+            if p["salida_falsa"] == "ignora":
+                r.append("En asistencia, salir antes de tiempo no cuenta como error.")
+            return r
 
         # ---- tiempos ---------------------------------------------------------
         def cambiar(self, fase):
@@ -87,16 +140,53 @@ init python:
         def t_tramo(self):
             return self.reloj.t - self.t0
 
+        def fraccion(self):
+            if self.n <= 1:
+                return 0.0
+            f = float(self.tramo) / float(self.n - 1)
+            if f > 1.0:
+                f = 1.0
+            return f
+
+        def ritmo(self):
+            return self.v / Y2_VEL_BASE
+
+        def tramo_vis(self):
+            t = self.tramo
+            if t > self.n - 1:
+                t = self.n - 1
+            return t
+
+        def slot(self):
+            return self.tramo_vis() % 5
+
         def nuevo_tramo(self, prep):
-            self.marca = 0.55 + renpy.random.random() * 0.25
-            self.v = Y2_VEL_BASE * self.p["velocidad"]
-            self.t_marca = self.marca / self.v
-            self.prep = prep
+            f = self.fraccion()
+            self.v = Y2_VEL_BASE * float(self.p["velocidad"]) * (1.0 + float(self.p["rampa"]) * f)
+            fin = float(self.p["ventana_fin"])
+            self.ventana = float(self.p["ventana"]) * (1.0 + (fin - 1.0) * f)
+
+            marca = 0.40 + renpy.random.random() * 0.45
+            minimo = Y2_MIN_T_MARCA * self.v
+            if marca < minimo:
+                marca = minimo
+            if marca > 0.90:
+                marca = 0.90
+            self.marca = marca
+            self.t_marca = marca / self.v
+
+            self.senuelo = None
+            if renpy.random.random() < float(self.p["senuelo"]):
+                pos = marca - (0.10 + renpy.random.random() * 0.10)
+                if pos > 0.12:
+                    self.senuelo = pos
+
+            self.prep = prep + renpy.random.random() * Y2_PREP_JITTER
             self.humor = ""
             self.cambiar("listos")
 
         def es_final(self):
-            return self.tramo == 4
+            return self.slot() == 4
 
         def texto(self, clave):
             final = self.es_final()
@@ -117,7 +207,7 @@ init python:
         def poner_aviso(self, texto, color):
             self.aviso = texto
             self.aviso_color = color
-            self.aviso_t = 1.1
+            self.aviso_t = 1.0
 
         # ---- geometría -------------------------------------------------------
         def x_fin(self, i):
@@ -126,14 +216,11 @@ init python:
             return y2_x(i + 1) - 95
 
         def quien(self):
-            i = self.tramo
-            if i > 4:
-                i = 4
-            return Y2_ORDEN[i]
+            return Y2_ORDEN[self.slot()]
 
         def u_visual(self):
             f = self.fase
-            if f == "listos":
+            if f == "listos" or f == "intro":
                 return 0.0
             if f == "pasa":
                 s = self.dt_fase() / Y2_T_PASA
@@ -148,24 +235,35 @@ init python:
             return u
 
         def geometria(self):
-            T = self.tramo
-            if T > 4:
-                T = 4
+            T = self.slot()
             xs = y2_x(T)
             xe = self.x_fin(T)
-            marca_x = xs + self.marca * (xe - xs)
-            zw = self.p["ventana"] * self.v * (xe - xs)
+            ancho = xe - xs
+            marca_x = xs + self.marca * ancho
+            zw = self.ventana * self.v * ancho
+            sen_x = None
+            if self.senuelo is not None:
+                sen_x = int(round(xs + self.senuelo * ancho))
+            visible = (self.fase != "fin")
+            oc = float(self.p["ocultar"])
+            if self.fase == "corre" and oc < 1.0:
+                if self.u_visual() >= self.marca * oc:
+                    visible = False
             return {
-                "n": T + 1,
+                "n": self.tramo_vis() + 1,
+                "vuelta": self.tramo_vis() // 5 + 1,
                 "marca_x": int(round(marca_x)),
                 "zona_x": int(round(marca_x - zw)),
                 "zona_w": int(round(2.0 * zw)),
+                "senuelo_x": sen_x,
+                "marca_visible": visible,
+                "zona_visible": visible and bool(self.p["zona"]),
                 "mostrar": self.fase != "fin",
             }
 
         def posiciones(self):
             res = []
-            T = self.tramo
+            T = self.slot()
             u = self.u_visual()
             f = self.fase
             for i in range(5):
@@ -178,7 +276,7 @@ init python:
                     xs = y2_x(i)
                     xe = self.x_fin(i)
                     r["x"] = xs + u * (xe - xs)
-                    if f != "listos":
+                    if f != "listos" and f != "intro":
                         r["expr"] = "esfuerzo"
                         r["anim"] = "bob"
                     if f == "cae":
@@ -204,9 +302,7 @@ init python:
 
         def testigo(self):
             """(x, y, giro) del testigo, o None si no se dibuja."""
-            T = self.tramo
-            if T >= 5:
-                return None
+            T = self.slot()
             pos = self.posiciones()
             c = pos[T]
             bx = c["x"] + 46
@@ -230,7 +326,7 @@ init python:
             return (int(round(bx)), int(round(by)), int(round(giro)))
 
         def expresion_star(self):
-            return mj_chibi_expresion(self.tramo, 5, self.humor)
+            return mj_chibi_expresion(self.tramo, self.n, self.humor)
 
         def anim_star(self):
             if self.humor == "feliz":
@@ -244,12 +340,19 @@ init python:
             return {
                 "resultado": que,
                 "progreso": self.tramo,
-                "datos": {"caidos": self.caidos, "falsas": self.falsas},
+                "datos": {
+                    "caidos": self.caidos,
+                    "falsas": self.falsas,
+                    "perfectos": self.perfectos,
+                    "curados": self.curados,
+                    "mejor_racha": self.mejor_racha,
+                },
             }
 
         def error(self, clave_texto, evento):
-            """Consume un testigo y arranca la animación de error."""
+            """Consume un testigo, corta la racha y arranca la animación de error."""
             self.caidos += 1
+            self.racha = 0
             self.poner_aviso(self.texto(clave_texto), "#FFC4C4")
             self.humor = "triste"
             self.dur_error = Y2_T_ERROR
@@ -260,28 +363,70 @@ init python:
                 self.globo.decir(evento, True)
 
         # ---- entrada ---------------------------------------------------------
+        def empezar(self):
+            if self.fase != "intro":
+                return None
+            self.reloj.avanzar()
+            self.globo.decir("inicio", True)
+            self.cambiar("listos")
+            return None
+
+        def accion(self):
+            if self.fase == "intro":
+                return self.empezar()
+            return self.pulsar()
+
         def pulsar(self):
             if self.fase != "corre":
                 return None
             self.reloj.avanzar()
             dif = self.t_tramo() - self.t_marca
-            vent = self.p["ventana"]
+            vent = self.ventana
             if dif > vent:
                 self.error("tarde", "caida")
                 self.cambiar("cae")
                 return None
             if dif >= -vent:
-                self.poner_aviso(self.texto("ok"), "#CFFFD8")
-                self.cambiar("pasa")
-                hechos = self.tramo + 1
-                if hechos == 3:
-                    self.globo.decir("mitad", True)
-                elif hechos == 4:
-                    self.globo.decir("casi", True)
-                elif hechos < 5:
-                    self.globo.decir("acierto", True)
-                return None
+                return self.acierto(dif)
             return self.salida_falsa()
+
+        def acierto(self, dif):
+            perfecto = (abs(dif) <= self.ventana * 0.5)
+            cura = int(self.p["cura"])
+            if perfecto:
+                self.perfectos += 1
+                self.racha += 1
+                if self.racha > self.mejor_racha:
+                    self.mejor_racha = self.racha
+                self.poner_aviso("¡Perfecto!", "#FFF0A8")
+            else:
+                self.racha = 0
+                self.poner_aviso(self.texto("ok"), "#CFFFD8")
+
+            curo = False
+            if self.racha >= cura:
+                if self.caidos > 0:
+                    self.caidos -= 1
+                    self.curados += 1
+                    self.racha = 0
+                    curo = True
+                    self.poner_aviso("¡Testigo recuperado!", "#CFFFD8")
+                else:
+                    self.racha = cura
+
+            self.cambiar("pasa")
+            hechos = self.tramo + 1
+            if curo:
+                self.globo.decir("cura", True)
+            elif hechos == self.n // 2:
+                self.globo.decir("mitad", True)
+            elif hechos == self.n - 2:
+                self.globo.decir("casi", True)
+            elif perfecto and self.racha == max(2, cura // 2):
+                self.globo.decir("racha", True)
+            elif hechos % 6 == 0:
+                self.globo.decir("acierto", True)
+            return None
 
         def salida_falsa(self):
             modo = self.p["salida_falsa"]
@@ -306,6 +451,9 @@ init python:
                 self.aviso_t -= dt
             f = self.fase
 
+            if f == "intro":
+                return None
+
             if f == "listos":
                 if self.dt_fase() >= self.prep:
                     self.t0 = self.reloj.t
@@ -313,7 +461,7 @@ init python:
                 return None
 
             if f == "corre":
-                if self.t_tramo() > self.t_marca + self.p["ventana"]:
+                if self.t_tramo() > self.t_marca + self.ventana:
                     self.error("tarde", "caida")
                     self.cambiar("cae")
                 return None
@@ -321,12 +469,16 @@ init python:
             if f == "pasa":
                 if self.dt_fase() >= Y2_T_PASA:
                     self.tramo += 1
-                    if self.tramo >= 5:
+                    if self.tramo >= self.n:
                         self.humor = "feliz"
                         self.globo.decir("final", True)
                         self.cambiar("fin")
                     else:
-                        self.nuevo_tramo(Y2_PREP)
+                        prep = Y2_PREP
+                        if self.slot() == 0:
+                            prep = Y2_PREP_VUELTA
+                            self.poner_aviso("Vuelta " + str(self.tramo // 5 + 1), "#E8E0F2")
+                        self.nuevo_tramo(prep)
                 return None
 
             if f == "libre":
@@ -358,12 +510,12 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
     modal True
     zorder 95
 
-    default vivo = MJY2(params, inicio, fallos)
+    default vivo = MJY2(params, inicio, fallos, (intento == 1 and inicio == 0))
 
     timer 0.033 repeat True action Function(vivo.tick)
 
-    key "K_SPACE" action Function(vivo.pulsar)
-    key "K_RETURN" action Function(vivo.pulsar)
+    key "K_SPACE" action Function(vivo.accion)
+    key "K_RETURN" action Function(vivo.accion)
 
     $ pos = vivo.posiciones()
     $ geo = vivo.geometria()
@@ -371,107 +523,206 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ quien = vivo.quien()
     $ color_q = PETALO_COLOR[quien]
     $ vivos_t = vivo.p["testigos"] - vivo.caidos
+    $ en_error = (vivo.fase == "cae" or vivo.fase == "falsa")
+    $ en_intro = (vivo.fase == "intro")
+    $ lit = int(28 * vivo.tramo / float(vivo.n))
+    $ ritmo = vivo.ritmo()
+    $ ritmo_txt = "{:.1f}".format(ritmo).replace(".", ",")
 
     add "bg_pista_atletismo" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.tramo, 5, None, None, "TRAMOS"):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.tramo, vivo.n, None, None, "TRAMOS"):
 
-        ## Toda la pantalla es un botón: sirve el toque en móvil.
+        ## Toda la pantalla es un botón (sirve el toque en móvil). Inactivo en la explicación.
         button:
             xysize (1920, 1080)
             background None
+            sensitive (not en_intro)
             action Function(vivo.pulsar)
 
-        text ("TRAMO " + str(geo["n"]) + "/5 · " + quien.capitalize()):
-            xalign 0.5
-            ypos 150
-            font gui.name_text_font
-            size 40
-            kerning 3
-            color color_q
-            outlines [(5, "#1B1026CC", 0, 0)]
+        fixed at (mj_chibi_tiembla if en_error else y2_quieto):
+            xysize (1920, 1080)
 
-        text "Pulsa cuando la corredora pase la marca.":
-            xalign 0.5
-            ypos 210
-            size 28
-            color "#FFFFFF"
-            outlines [(3, "#1B102699", 0, 0)]
+            if en_error:
+                add Solid("#C0303033")
 
-        ## --- La pista ---
-        add Solid("#B8453CE0", xsize=1720, ysize=190) xpos 110 ypos 610
-        add Solid("#FFFFFFB0", xsize=1720, ysize=4) xpos 110 ypos 610
-        add Solid("#FFFFFFB0", xsize=1720, ysize=4) xpos 110 ypos 796
-
-        for k in range(6):
-            add Solid("#FFFFFFAA", xsize=4, ysize=190) xpos (Y2_X0 + Y2_LONG * k - 2) ypos 610
-
-        for k in range(28):
-            add Solid("#FFFFFF77", xsize=3, ysize=14) xpos (Y2_X0 + int(k * (Y2_LONG * 5) / 27.0)) ypos 592
-
-        text "28":
-            xpos (Y2_X0 + Y2_LONG * 5)
-            xanchor 0.5
-            ypos 548
-            font gui.name_text_font
-            size 34
-            color "#FFFFFF"
-            outlines [(4, "#1B1026CC", 0, 0)]
-
-        add Solid("#FFFFFF", xsize=8, ysize=190) xpos (Y2_X0 + Y2_LONG * 5 - 4) ypos 610
-
-        ## --- Marca y ventana del tramo actual ---
-        if geo["mostrar"]:
-            add Solid(color_q + "66", xsize=geo["zona_w"], ysize=190) xpos geo["zona_x"] ypos 610
-            add Solid("#FFE3A0", xsize=6, ysize=190) xpos (geo["marca_x"] - 3) ypos 610
-            text "MARCA":
-                xpos geo["marca_x"]
-                xanchor 0.5
-                ypos 566
-                size 20
-                color "#FFE3A0"
-                outlines [(3, "#1B1026CC", 0, 0)]
-
-        ## --- Las cinco chibis ---
-        for r in pos:
-            use mj_chibi_vista(r["h"], r["expr"], r["x"], Y2_SUELO, r["zoom"], r["anim"])
-
-        if bat is not None:
-            add Transform(Solid("#FFE3A0", xsize=46, ysize=10), rotate=bat[2]) xpos bat[0] ypos bat[1] xanchor 0.5 yanchor 0.5
-
-        if vivo.aviso_t > 0.0:
-            text vivo.aviso:
+            ## --- Cabecera ---
+            text ("TRAMO " + str(geo["n"]) + " / " + str(vivo.n) + " · " + quien.capitalize()):
                 xalign 0.5
-                ypos 480
+                ypos 135
                 font gui.name_text_font
                 size 44
-                color vivo.aviso_color
+                kerning 3
+                color color_q
                 outlines [(5, "#1B1026CC", 0, 0)]
 
-        ## --- Testigos que quedan ---
-        hbox:
-            xpos 60
-            ypos 112
-            spacing 12
-            text "TESTIGOS":
-                size 22
-                color "#FFFFFF"
-                yalign 0.5
+            text ("VUELTA " + str(geo["vuelta"]) + "   ·   " + Y2_NIVEL_TXT[nivel]):
+                xalign 0.5
+                ypos 196
+                size 24
+                kerning 3
+                color "#E8E0F2"
                 outlines [(3, "#1B102699", 0, 0)]
-            for k in range(vivo.p["testigos"]):
-                if k < vivos_t:
-                    add Solid("#FFE3A0", xsize=36, ysize=10) yalign 0.5
-                else:
-                    add Solid("#FFFFFF33", xsize=36, ysize=10) yalign 0.5
 
-        ## --- Yotsuba chibi: el estado de ánimo y sus globos ---
+            ## --- Testigos (izquierda) ---
+            hbox:
+                xpos 60
+                ypos 112
+                spacing 10
+                text "TESTIGOS":
+                    size 22
+                    color "#FFFFFF"
+                    yalign 0.5
+                    outlines [(3, "#1B102699", 0, 0)]
+                for k in range(vivo.p["testigos"]):
+                    if k < vivos_t:
+                        add Solid("#FFE3A0", xsize=26, ysize=10) yalign 0.5
+                    else:
+                        add Solid("#FFFFFF33", xsize=26, ysize=10) yalign 0.5
+
+            ## --- Ritmo y racha (derecha) ---
+            vbox:
+                xpos 1480
+                ypos 150
+                spacing 8
+                text ("RITMO  ×" + ritmo_txt):
+                    font gui.name_text_font
+                    size 22
+                    kerning 3
+                    color "#FFFFFF"
+                    outlines [(3, "#1B102699", 0, 0)]
+                use barra_progreso(ritmo, 2.2, "#FF9F6B", 360)
+                null height 6
+                text ("RACHA  " + str(vivo.racha) + " / " + str(vivo.p["cura"])):
+                    font gui.name_text_font
+                    size 22
+                    kerning 3
+                    color "#FFF0A8"
+                    outlines [(3, "#1B102699", 0, 0)]
+                use barra_progreso(vivo.racha, vivo.p["cura"], "#FFE3A0", 360)
+
+            ## --- La pista ---
+            add Solid("#B8453CE0", xsize=1720, ysize=190) xpos 110 ypos 610
+            add Solid("#FFFFFFB0", xsize=1720, ysize=4) xpos 110 ypos 610
+            add Solid("#FFFFFFB0", xsize=1720, ysize=4) xpos 110 ypos 796
+
+            for k in range(6):
+                add Solid("#FFFFFFAA", xsize=4, ysize=190) xpos (Y2_X0 + Y2_LONG * k - 2) ypos 610
+
+            ## Las 28 marcas se iluminan con el progreso.
+            for k in range(28):
+                if k < lit:
+                    add Solid("#FFE3A0", xsize=4, ysize=20) xpos (Y2_X0 + int(k * (Y2_LONG * 5) / 27.0)) ypos 586
+                else:
+                    add Solid("#FFFFFF77", xsize=3, ysize=14) xpos (Y2_X0 + int(k * (Y2_LONG * 5) / 27.0)) ypos 592
+
+            text "28":
+                xpos (Y2_X0 + Y2_LONG * 5)
+                xanchor 0.5
+                ypos 548
+                font gui.name_text_font
+                size 34
+                color "#FFFFFF"
+                outlines [(4, "#1B1026CC", 0, 0)]
+
+            add Solid("#FFFFFF", xsize=8, ysize=190) xpos (Y2_X0 + Y2_LONG * 5 - 4) ypos 610
+
+            ## --- Zona, señuelo y marca del tramo actual ---
+            if geo["mostrar"]:
+                if geo["zona_visible"]:
+                    add Solid(color_q + "66", xsize=geo["zona_w"], ysize=190) xpos geo["zona_x"] ypos 610
+                if geo["senuelo_x"] is not None:
+                    add Solid("#FF8A8A99", xsize=4, ysize=190) xpos (geo["senuelo_x"] - 2) ypos 610
+                    text "×":
+                        xpos geo["senuelo_x"]
+                        xanchor 0.5
+                        ypos 556
+                        size 34
+                        color "#FF8A8A"
+                        outlines [(3, "#1B1026CC", 0, 0)]
+                if geo["marca_visible"]:
+                    add Solid("#FFE3A0", xsize=6, ysize=190) xpos (geo["marca_x"] - 3) ypos 610 at y2_pulso
+                    add Transform(Solid("#FFE3A0", xsize=20, ysize=20), rotate=45) xpos geo["marca_x"] xanchor 0.5 yanchor 0.5 ypos 590 at y2_pulso
+                    text "MARCA":
+                        xpos geo["marca_x"]
+                        xanchor 0.5
+                        ypos 538
+                        size 20
+                        color "#FFE3A0"
+                        outlines [(3, "#1B1026CC", 0, 0)]
+
+            ## --- Las cinco chibis ---
+            for r in pos:
+                use mj_chibi_vista(r["h"], r["expr"], r["x"], Y2_SUELO, r["zoom"], r["anim"])
+
+            if bat is not None:
+                add Transform(Solid("#FFE3A0", xsize=46, ysize=10), rotate=bat[2]) xpos bat[0] ypos bat[1] xanchor 0.5 yanchor 0.5
+
+            if vivo.aviso_t > 0.0:
+                text vivo.aviso:
+                    xalign 0.5
+                    ypos 440
+                    font gui.name_text_font
+                    size 50
+                    color vivo.aviso_color
+                    outlines [(5, "#1B1026CC", 0, 0)]
+
+        ## --- Yotsuba chibi y sus globos ---
         use mj_retrato("yotsuba", vivo.expresion_star(), vivo.globo, vivo.anim_star(), 250, 560, 0.6)
 
-        fixed:
-            xalign 0.5
-            ypos 822
-            xysize (420, 84)
-            use cinta_boton("¡Ahora!", Function(vivo.pulsar), quien, 420, 84, 38)
+        ## --- Botón ¡Ahora! ---
+        if not en_intro:
+            fixed:
+                xalign 0.5
+                ypos 822
+                xysize (420, 84)
+                use cinta_boton("¡Ahora!", Function(vivo.pulsar), quien, 420, 84, 38)
+
+        ## --- Pantalla de explicación (solo al empezar) ---
+        if en_intro:
+            $ reglas = vivo.reglas()
+
+            fixed:
+                xalign 0.5
+                ypos 100
+                xysize (1200, 760)
+
+                add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026"))
+                add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(PETALO_COLOR["yotsuba"]))
+
+                vbox:
+                    xalign 0.5
+                    ypos 30
+                    xsize 1080
+                    spacing 12
+
+                    text "EL RELEVO DE LAS CINCO":
+                        xalign 0.5
+                        font gui.name_text_font
+                        size 40
+                        kerning 4
+                        color "#FFF8FC"
+
+                    text (Y2_NIVEL_TXT[nivel] + "  ·  " + str(vivo.n) + " tramos"):
+                        xalign 0.5
+                        font gui.name_text_font
+                        size 26
+                        kerning 3
+                        color PETALO_COLOR["yotsuba"]
+
+                    null height 8
+
+                    for r in reglas:
+                        text ("•  " + r):
+                            size 24
+                            color "#E8E0F2"
+                            xsize 1080
+
+                fixed:
+                    xalign 0.5
+                    ypos 665
+                    xysize (420, 70)
+                    use cinta_boton("Empezar", Function(vivo.empezar), "yotsuba", 420, 70, 34)
 
 
 ################################################################################
