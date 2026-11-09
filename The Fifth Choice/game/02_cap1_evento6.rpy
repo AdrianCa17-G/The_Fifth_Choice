@@ -15,6 +15,9 @@ default e6_p2 = ""
 default e6_boletin_fase = 1
 default e6_chat_activo = False
 default e6_disculpa_pendiente = False
+default e6_domingo = ""
+default e6_domingo_hermana = ""
+default persistent.cap1_completado = False
 
 image cg_cinco_aula  = "cg/cap1_mov6/cinco_aula.webp"
 
@@ -133,6 +136,7 @@ label evento_6:
     call e6_cinco
     call e6_casa
     call e6_cuarto
+    call e6_retrato
 
     $ e6_cerrar()
 
@@ -3984,7 +3988,7 @@ label e6_casa:
 
     mc "Todavía no lo sé."
 
-    narrador "Mi padre no contestó. Pero se quedó mirando su plato más tiempo del necesario."
+    narrador "Mi padre no contestó."
 
     show raiha hablando at pj_habla(0.20)
     show isanari neutral at pj_calla(0.73)
@@ -4107,9 +4111,43 @@ label e6_cuarto:
 
     narrador "Y debajo, más chico, dos nombres: [e6_p1] y [e6_p2]."
 
-    mc_pensamiento "Dos promesas hechas sin que nadie me las pidiera. Esas no caducan."
+    mc_pensamiento "Dos promesas hechas sin que nadie me las pidiera." 
+    
+    mc_pensamiento "Esas no caducan. Se cumplen."
 
     call expression ("e6_s3_" + e6_estado_entrada)
+
+    ## --- S3 · última línea del capítulo -------------------------------------------------
+
+    label e6_s3_superado:
+
+        mc_pensamiento "Maruo dijo «cinco». No dijo «para siempre»."
+
+        mc_pensamiento "La condición no se venció: se renovó."
+
+        mc_pensamiento "Esta vez, un punto de margen. ¿Cuántos tendré la próxima?"
+
+        return
+
+    label e6_s3_mixto:
+
+        mc_pensamiento "Aprobaron las cinco. Lo repasé tres veces, por si el papel cambiaba de opinión."
+
+        mc_pensamiento "No sé qué parte fue mía. Tampoco sé a quién preguntárselo."
+
+        mc_pensamiento "La libreta no tiene una casilla para eso."
+
+        return
+
+    label e6_s3_bueno:
+
+        mc_pensamiento "Abrí las fotos sin contener el aire. Hace un mes no sabía hacerlo."
+
+        mc_pensamiento "Los cinco nombres ya no son una lista. Son cinco personas que salieron bien."
+
+        mc_pensamiento "Y cuando alguien te importa, lo único que queda por temer es lo que viene después."
+
+        return
 
     stop music fadeout 3.0
 
@@ -4118,38 +4156,296 @@ label e6_cuarto:
 
     return
 
+################################################################################
+##  MOV. 12 · EL RETRATO (EPÍLOGO DEL CAPÍTULO 1)
+##  Espejo de la Escena 1 del prólogo: mismas tres líneas sobre negro, «hogar»
+##  sobre silencio y cg_familia. Contesta a «dos clases de personas» y a
+##  «Me permití el lujo de equivocarme. Y salió caro» (Final B). Guion general:
+##  el estado de entrada ya ramificó en S3. Único menú del E6: el domingo.
+##  Sin puntos. Escribe e6_domingo (y e6_domingo_hermana) para el Cap. 2.
+################################################################################
 
-## --- S3 · última línea del capítulo -------------------------------------------------
-label e6_s3_superado:
+label e6_retrato:
 
-    mc_pensamiento "Maruo dijo «cinco». No dijo «para siempre»."
+    $ ui_escena("normal")
 
-    mc_pensamiento "La condición no se venció: se renovó."
+    ## El Mov. 11 termina en bg_negro y sin música: se entra sobre silencio.
 
-    mc_pensamiento "Esta vez, un punto de margen. ¿Cuántos tendré la próxima?"
+    scene cg_calificacion
+    with fade
+
+    narrador "Hay dos clases de personas en este mundo."
+
+    narrador "Las que pueden permitirse el lujo de equivocarse."
+
+    narrador "Y las que no."
+
+    mc_pensamiento "Hace un mes lo tenía clarísimo: yo pertenecía a la segunda."
+
+    mc_pensamiento "Y siempre pensé que iba a pertenecer ahí."
+
+    mc_pensamiento "Ahora, esa realidad ha cambiado, no del todo, pero ha cambiado."
+
+    play music hogar fadein 3.0
+
+    scene cg_familia
+    with fade
+
+    mc_pensamiento "La foto de siempre. La que miro cada noche sin mirarla de verdad."
+
+    mc_pensamiento "La deuda sigue donde estaba. Un mes de sueldo no la borra: apenas la reduce."
+
+    mc_pensamiento "Raiha sigue mereciendo un futuro mejor que este. Eso no cambió esta semana."
+
+    mc_pensamiento "Sigo siendo de los que no pueden permitirse equivocarse."
+
+    mc_pensamiento "Y aun así, este mes me equivoqué. Dos tardes que no fueron. Dos nombres esperando."
+
+    mc_pensamiento "Pensé que lo pagaría caro. No lo pagué solo."
+
+    mc_pensamiento "Cinco personas que tampoco podían fallar se sentaron conmigo en la misma semana."
+
+    mc_pensamiento "Eso no viene en ningún libro: los que no pueden equivocarse no tienen por qué hacerlo solos."
+
+    mc_pensamiento "Siempre dije que no estudiaba por vocación. Que eso era cosa de ceremonias."
+
+    mc_pensamiento "Esta semana no abrí un libro mío. Pasé cinco días mirando estudiar a otras."
+
+    mc_pensamiento "Y fue la semana en que más aprendí."
+
+    mc_pensamiento "Si eso no es una vocación, no se que palabra podría definirla."
+
+    ## --- Las dos fotos ----------------------------------------------------------------
+
+    narrador "Tenía el celular en la otra mano. En el grupo, sobre los cinco boletines, estaba la foto de la tarde."
+
+    if e6_estado_entrada == "superado":
+        scene cg_cinco_aprobadas at e6_tinte_superado
+        with dissolve
+    elif e6_estado_entrada == "bueno":
+        scene cg_cinco_aprobadas at e6_tinte_bueno
+        with dissolve
+    else:
+        scene cg_cinco_aprobadas at e6_tinte_mixto
+        with dissolve
+
+    mc_pensamiento "Cinco boletines en alto. Cinco caras que ya no fingían nada."
+
+    mc_pensamiento "Y yo en ninguna parte. Detrás del celular, que es donde estuve todo el mes."
+
+    scene cg_familia
+    with disolucion_lenta
+
+    mc_pensamiento "Dos fotos. Una guarda a alguien que ya no está."
+
+    mc_pensamiento "La otra deja fuera a alguien que estuvo ahí todo el tiempo. Yo."
+
+    mc_pensamiento "Yotsuba dijo que salgo en la próxima."
+
+    mc_pensamiento "Hasta hoy, las fotos eran para recordar lo que perdí."
+
+    mc_pensamiento "Esta es la primera que me hace pensar en la siguiente."
+
+    ## --- Raiha y el domingo -------------------------------------------------------------
+
+    play sound audio.sfx_toque_puerta volume 1.0
+
+    scene bg_cuarto_mc
+    with dissolve
+
+    show raiha hablando at pj_habla(0.5)
+    with dissolve
+
+    raiha "Hermanito, ¿sigues despierto? Tienes la luz encendida."
+
+    raiha "¿Qué miras? ...¿Esas son las quintillizas?"
+
+    raiha "¡Son iguales! ¿Cómo las distingues?"
+
+    mc "No se parecen en nada."
+
+    show raiha regano at pj_habla(0.5)
+    with disolucion_lenta
+
+    raiha "Hermanito, son literalmente la misma cara."
+
+    mc "La misma cara. Nada más."
+
+    show raiha hablando at pj_habla(0.5)
+    with disolucion_lenta
+
+    narrador "Raiha se rió. Me miró un rato, como quien busca algo que no encuentra."
+
+    raiha "Oye. Mañana es domingo." 
+    
+    raiha "Tu primer domingo sin ningún examen que preparar."
+
+    raiha "¿Qué vas a hacer?"
+
+    menu:
+
+        mc_pensamiento "¿Qué hago con un domingo libre?"
+
+        "Llevar a Raiha a algún sitio.":
+
+            $ e6_domingo = "raiha"
+
+            mc "Te llevo a algún sitio. Tú eliges."
+
+            raiha "¿¡De verdad!? ¿A cualquier sitio?"
+
+            mc "A cualquiera que cueste menos de lo que estás pensando."
+
+            raiha "¡Al acuario! ...No, al parque. ¡No, al acuario!"
+
+            mc_pensamiento "Hace un mes, el dinero de este trabajo ya estaba gastado antes de cobrarlo."
+
+            mc_pensamiento "Mañana, una parte va a ser suya. Aunque sea una entrada de acuario."
+
+        "Contestar al grupo.":
+
+            $ e6_domingo = "grupo"
+
+            mc "Primero, contestar un mensaje."
+
+            raiha "¿A las cinco? ¡Hermanito, eso es casi una vida social!"
+
+            narrador "Escribí. Lo borré. Escribí otra cosa. La borré también."
+
+            mc_pensamiento "Así se siente Miku, entonces."
+
+            narrador "Al final mandé una sola línea: «¿Y la próxima foto, cuándo?»"
+
+            play sound audio.sfx_celular volume 1.5
+
+            narrador "El celular vibró cinco veces seguidas. No las leí." 
+            
+            narrador "Ya sabía de quién era cada una."
+
+        "Cumplir una promesa.":
+
+            $ e6_domingo = "promesa"
+
+            mc "Tengo algo pendiente. Dos cosas, en realidad."
+
+            menu:
+
+                mc_pensamiento "¿Por cuál empiezo?"
+
+                "[e6_p1]":
+                    $ e6_domingo_hermana = e6_promesas[0]
+
+                "[e6_p2]":
+                    $ e6_domingo_hermana = e6_promesas[1]
+
+            raiha "¿Pendiente? ¿Con quién?"
+
+            mc "Con alguien que me esperó. Y no fui."
+
+            show raiha preocupada at pj_habla(0.5)
+            with disolucion_lenta
+
+            raiha "Entonces tienes que ir. Esperar es lo peor."
+
+            narrador "Lo dijo como lo dice alguien que espera a su hermano cada noche con la cena hecha."
+
+        "Dormir hasta tarde. Por una vez.":
+
+            $ e6_domingo = "dormir"
+
+            mc "Dormir. Hasta tarde."
+
+            show raiha preocupada at pj_habla(0.5)
+            with disolucion_lenta
+
+            raiha "...¿Estás enfermo?"
+
+            mc "Estoy cansado. Es distinto."
+
+            raiha "Hermanito... Nunca te había oído decir eso."
+
+            show raiha hablando at pj_habla(0.5)
+            with disolucion_lenta
+
+            raiha "¡Pues mañana no te despierto! ...Salvo que haya curry."
+
+    show raiha hablando at pj_habla(0.5)
+    with disolucion_lenta
+
+    raiha "Buenas noches, hermanito."
+
+    raiha "Hoy pareces el de siempre." 
+    
+    raiha "Pero sin la cara de estar haciendo cuentas y resolviendo tareas."
+
+    hide raiha
+    with dissolve
+
+    ## --- Isanari: el «gracias por la comida» del Mov. 10 ---------------------------
+
+    show isanari neutral at pj_habla(0.5)
+    with dissolve
+
+    narrador "Mi padre se asomó a la puerta poco después. Miró la foto antes de mirarme a mí."
+
+    isanari "En la cena dijiste «gracias por la comida»."
+
+    mc "Lo digo siempre."
+
+    show isanari sonriendo at pj_habla(0.5)
+    with disolucion_lenta
+
+    isanari "No así. Así lo decía tu madre."
+
+    isanari "Como si de verdad estuviera dando las gracias por algo."
+
+    narrador "No dijo nada más." 
+    
+    narrador "Me dió las buenas noches."
+
+    narrador "Y se retiró."
+
+    mc_pensamiento "En la cena se quedó mirando su plato más tiempo del necesario." 
+    
+    mc_pensamiento "Ahora sé por qué."
+
+    hide isanari
+    with dissolve
+
+    ## --- La lámpara (espejo del prólogo y del Final B) ----------------------------
+
+    scene cg_familia
+    with disolucion_lenta
+
+    narrador "Dejé el celular boca abajo, junto a la foto." 
+    
+    narrador "Como se dejan los boletines antes de leerlos."
+
+    narrador "Apagué la lámpara."
+
+    mc_pensamiento "Hace un mes anoté cinco nombres y escribí que al día siguiente empezaba la verdadera batalla."
+
+    mc_pensamiento "Mañana no empieza ninguna."
+
+    mc_pensamiento "Mañana las cosas van a ser diferentes."
+
+    mc_pensamiento "Empieza una nueva etapa." 
+    
+    mc_pensamiento "Una nueva etapa de mi vida."
+
+    stop music fadeout 4.0
+
+    scene bg_negro
+    with fade
+
+    pause 1.0
+
+    $ persistent.cap1_completado = True
+
+    ## Tarjeta de fin: mismo formato que la del final malo, sobre negro y sin música.
+    narrador "FIN DEL CAPÍTULO 1 · Un estudiante perfecto"
 
     return
-
-label e6_s3_mixto:
-
-    mc_pensamiento "Aprobaron las cinco. Lo repasé tres veces, por si el papel cambiaba de opinión."
-
-    mc_pensamiento "No sé qué parte fue mía. Tampoco sé a quién preguntárselo."
-
-    mc_pensamiento "La libreta no tiene una casilla para eso."
-
-    return
-
-label e6_s3_bueno:
-
-    mc_pensamiento "Abrí las fotos sin contener el aire. Hace un mes no sabía hacerlo."
-
-    mc_pensamiento "Los cinco nombres ya no son una lista. Son cinco personas que salieron bien."
-
-    mc_pensamiento "Y cuando alguien te importa, lo único que queda por temer es lo que viene después."
-
-    return
-
 
 ## ============================= CAPÍTULO 2 ======================================
 ## Stub de salida. BORRAR cuando exista 03_capitulo2.rpy (label duplicado).
