@@ -929,8 +929,10 @@ label beat_casa:
 
                     mc_pensamiento "No me dio las gracias. Tampoco me pidió que me fuera."
 
-                    mc_pensamiento "Al día siguiente me contó que había rehecho el ejercicio desde el principio, sin mirar la corrección."
+                    mc_pensamiento "Al día siguiente me contó que había rehecho el ejercicio desde el principio."
 
+                    mc_pensamiento "Sin mirar la corrección."
+                   
                     mc_pensamiento "Salió bien."
 
                 elif itsuki_rama_cap1 == "tibia":
@@ -969,9 +971,9 @@ label beat_casa:
 
             ## --- Beat de la azotea (siempre) ---
 
-            mc_pensamiento "Unos días después subí a la azotea y estaba ahí, con el cuaderno cerrado sobre las rodillas."
+            mc_pensamiento "En la azotea la encontré con el cuaderno cerrado sobre las rodillas."
 
-            if not itsuki_visitada_cap1:
+            if hub_visitadas[0] != "itsuki":
 
                 mc_pensamiento "Antes de que lo cerrara alcancé a ver la página: un ejercicio con un círculo a lápiz."
 
@@ -1007,7 +1009,7 @@ label beat_casa:
 
                 mc_pensamiento "Lo que sea que le pase, no es falta de esfuerzo."
 
-                mc_pensamiento "Y tampoco sé cómo hacer que deje de fingir que está bien."
+                mc_pensamiento "Y no sé cómo ofrecerle ayuda sin que la tome como una derrota."
 
             jump bcl_fin
 

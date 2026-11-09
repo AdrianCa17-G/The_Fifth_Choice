@@ -302,12 +302,25 @@ label final_malo_beat:
 
     if "itsuki" in hub_visitadas:
 
-        itsuki "Me quitaste el cuaderno de las manos." 
-        
-        itsuki "Me lo resolviste delante de mí."
+        if rama_de("itsuki") == "fria":
 
-        itsuki "Eso no se me va a olvidar."
+            itsuki "Me quitaste el cuaderno de las manos."
 
+            itsuki "Me lo resolviste delante de mí."
+
+            itsuki "Eso no se me va a olvidar."
+
+        elif rama_de("itsuki") == "calida":
+
+            itsuki "Me dijiste dónde mirar. Una vez."
+
+            itsuki "Pensé que habría una segunda."
+
+        elif rama_de("itsuki") == "tibia":
+
+            itsuki "Me ofreciste revisarlo desde el principio. Te dije que no."
+
+            itsuki "Ahora no voy a saber qué ibas a explicarme."
 
     play music derrota fadein 2.5
 
@@ -955,13 +968,31 @@ label final_malo_hub3:
     show itsuki molesta at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
-    itsuki "Estudié todas las noches." 
-    
-    itsuki "Y en cuanto vi la hoja, no supe que contestar."
+    itsuki "Estudié todas las noches."
 
-    itsuki "Te pedí que no me ayudaras. Y no lo hiciste."
+    itsuki "Y en cuanto vi la hoja, no supe qué contestar."
 
-    itsuki "No sé qué es peor."
+    if rama_de("itsuki") == "calida":
+
+        itsuki "Una vez me dijiste dónde mirar." 
+        
+        itsuki "Una vez no alcanzó."
+
+        itsuki "No sé si la culpa es tuya o mía."
+
+    elif rama_de("itsuki") == "fria":
+
+        itsuki "Me resolviste un ejercicio." 
+        
+        itsuki "Uno. Y no aprendí nada de él."
+
+        itsuki "No sé qué es peor."
+
+    else:
+
+        itsuki "Te pedí que no me ayudaras. Y no lo hiciste."
+
+        itsuki "No sé qué es peor."
 
     mc "Itsuki... Yo..."
 

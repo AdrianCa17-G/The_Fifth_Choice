@@ -373,16 +373,20 @@ label e6_lunes:
 
         miku "...No esperaba a nadie. ...Eso quiero pensar."
 
+
     ## Itsuki
-    if e6_estado_de("itsuki") != "no_visitada":
+
+    if e6_estado_de("itsuki") == "calida" or e6_estado_de("itsuki") == "fria":
 
         call e6_foco("itsuki", "sonriendo")
 
         itsuki "He estudiado cada noche. Y por primera vez sé lo que hago."
 
-        itsuki "Ya encontré por qué fallaba en las conversiones de unidades. Tres veces el mismo error, y yo sin verlo."
+        itsuki "Ya sé por qué fallaba en las conversiones de unidades."
 
-        itsuki "Sigo sin ser rápida. Pero ahora, cuando me trabo, sé por dónde volver."
+        itsuki "Tres veces el mismo error, y yo sin verlo."
+
+        itsuki "Saberlo no impide que vuelva a pasar. Pero ya sé por dónde volver."
 
         itsuki "No me felicites todavía. Esto se demuestra en el examen, no antes."
 
@@ -390,15 +394,17 @@ label e6_lunes:
 
         call e6_foco("itsuki", "neutral")
 
-        itsuki "He estudiado cada noche. Si tengo un problema que no sale. Saldrá."
+        itsuki "He estudiado cada noche. Si un problema no sale, lo repito hasta que salga."
 
         itsuki "Lo repito, lo reviso, lo repito otra vez. ...Siempre llego a la misma cifra."
 
-        itsuki "No pedí ayuda a nadie. Prefiero equivocarme por mi cuenta que acertar por ayuda de un tercero."
+        itsuki "No pedí ayuda a nadie. Prefiero equivocarme sola que acertar con ayuda."
 
-        itsuki "Dijiste «sin excepción». Pues prepárate: yo me lo tomo en serio."
+        itsuki "Dijiste «sin excepción». Me lo tomo en serio. Tú también deberías."
+
 
     ## Nino
+
     if e6_estado_de("nino") != "no_visitada":
 
         call e6_foco("nino", "pillada")
@@ -415,7 +421,7 @@ label e6_lunes:
 
         call e6_foco("nino", "neutral")
 
-        nino "No viniste a buscarme y tampoco te fuiste. ...No es un cumplido. Es un dato."
+        nino "No viniste a buscarme y tampoco te fuiste. ...No es un cumplido. No lo repitas."
 
         nino "Repasé inglés sola, con las etiquetas de la cocina, en voz baja. ...Nadie me escuchó. Mejor para mí."
 
@@ -1375,7 +1381,7 @@ label e6_itsuki_nucleo:
 
     narrador "Jueves. Ciencias."
     
-    narrador "La penultima prueba de cinco."
+    narrador "La penúltima prueba de cinco."
 
     play sound audio.sfx_hoja volume 2.0
 
@@ -1402,7 +1408,7 @@ label e6_itsuki_nucleo:
 
 
 ## --- Capa de beat de Itsuki: eco de la azotea -------------------------------------
-##  ayudada = hub visitado y rama no tibia (cálida o fría) · sola = el resto.
+##  ayudada = su evento fue el hub 1 (rama cálida o fría) · sola = el resto.
 
 label e6_itsuki_beat_ayudada:
 
@@ -1418,7 +1424,7 @@ label e6_itsuki_beat_ayudada:
 
 label e6_itsuki_beat_sola:
 
-    itsuki_int "En la azotea no le pregunté dónde había estado." 
+    itsuki_int "En la azotea no le pregunté cómo iba su juego."
     
     itsuki_int "Él no me lo contó. Fue un buen acuerdo."
 
@@ -1441,7 +1447,10 @@ label e6_itsuki_mono_calida:
 
     itsuki_int "Es el mismo error de siempre: en un sitio que no encuentro, con un número que reconozco."
 
-    call e6_itsuki_beat_ayudada
+    if hub_visitadas[0] == "itsuki":
+        call e6_itsuki_beat_ayudada
+    else:
+        call e6_itsuki_beat_sola
 
     itsuki_int "Me dijo: «Solo te digo dónde mirar»." 
     
@@ -1503,11 +1512,14 @@ label e6_itsuki_mono_fria:
 
     itsuki_int "Revisaré cada paso, uno por uno, desde el primero. Sin ayuda."
 
-    call e6_itsuki_beat_ayudada
+    if hub_visitadas[0] == "itsuki":
+        call e6_itsuki_beat_ayudada
+    else:
+        call e6_itsuki_beat_sola
 
     itsuki_int "Me quitó el cuaderno de las manos. Lo resolvió de pie, con mi propio lápiz."
 
-    itsuki_int "Bien y rápido. No era el ejercicio lo que defendía. Era hacerlo por mi misma."
+    itsuki_int "Bien y rápido. No era el ejercicio lo que defendía. Era hacerlo por mí misma."
 
     itsuki_int "Taché su solución y escribí la mía debajo. Le dije que ya tenía lo que necesitaba de él."
 
@@ -1614,6 +1626,8 @@ label e6_itsuki_promesa:
     mc_pensamiento "Dijo que si hubiera ido a buscarla no me habría echado." 
     
     mc_pensamiento "No inmediatamente. Y que no lo apuntara."
+
+    mc_pensamiento "Todavía me debe cuatro bocados del almuerzo de Raiha. No pienso cobrárselos."
 
     mc_pensamiento "No lo apunté. Pero voy a subir con comida para dos, y a pedirle que suba ella sin el cuaderno." 
     
@@ -2405,7 +2419,7 @@ label e6_despues:
 
         itsuki "Entregué pasada la hora. La cuarta, recién resuelta."
 
-        itsuki "Tarde. Pero todo lo hize yo."
+        itsuki "Tarde. Pero todo lo hice yo."
 
         itsuki "...Si alguien me hubiera dicho dónde mirar, habría llegado a tiempo."
 
@@ -2518,7 +2532,7 @@ label e6_despues:
 
             call e6_foco("itsuki", "neutral")
 
-            itsuki "Falta un informe. ¿Y a ti cómo te fue?"
+            itsuki "Falta un resultado. ¿Y a ti cómo te fue?"
 
             narrador "Lo preguntó sin rodeos." 
             
@@ -3345,7 +3359,7 @@ label e6_cinco:
 
             mc "¿Y quién ganó?"
 
-            itsuki "Eso no se pregunta."
+            itsuki "Eso no se pregunta, [mc]."
 
             if it1_frase() == "A":
 
@@ -3354,6 +3368,10 @@ label e6_cinco:
             else:
 
                 itsuki "No levanté la mano. Pero ya sé que puedo. Es un informe, no una invitación a aplaudir."
+
+            narrador "Dijo mi nombre como quien firma al pie de un informe."
+
+            narrador "Y aun así tardó en soltar el bolígrafo."
 
             call e6_foco("", "")
 
@@ -3411,7 +3429,7 @@ label e6_cinco:
 
             narrador "Lo dijo con la oración cerrada y terminada." 
             
-            narrador "Pero su frase tenía sentimientos.."
+            narrador "Pero no sonó a victoria."
 
             call e6_foco("", "")
 
@@ -3483,7 +3501,7 @@ label e6_cinco:
 
             call e6_foco("miku", "neutral")
 
-            miku "...La silla sigue vacía. ...No es un reproche. ...Es información."
+            miku "...La silla sigue vacía. ...No es un reproche. ...Solo está ahí."
 
             mc "Lo sé."
 
@@ -3512,7 +3530,7 @@ label e6_intento:
 
     narrador "Itsuki dio un paso hacia mí. Yo, sin proponérmelo, di otro hacia ella."
 
-    narrador "Aun había cosas pendientes que teníamos que resolver."
+    narrador "Aún había cosas pendientes que teníamos que resolver."
 
     call e6_foco("itsuki", "neutral")
 
@@ -3542,7 +3560,15 @@ label e6_intento:
 
     mc_pensamiento "La disculpa seguía entre nosotros. Y esta vez no me pareció tarde: me pareció pendiente."
 
-    narrador "Así es, parece que eso aún seguirá pendiente."
+    call e6_foco("itsuki", "timida")
+
+    itsuki "...Queda pendiente."
+
+    itsuki "Esta vez sí lo anoto."
+
+    narrador "Lo dijo sin mirarme. Pero se le habían puesto rojas las orejas."
+
+    call e6_foco("", "")
 
     $ e6_disculpa_pendiente = True
 
@@ -3713,11 +3739,9 @@ label e6_mesa:
 
     itsuki "Lo leí dos veces. ...El resultado no cambió."
 
-    itsuki "Debería decir algo acorde a este momento."
+    itsuki "Debería decir algo acorde al momento. Algo con sujeto, verbo y—"
 
-    itsuki "...Estoy pensando qué decir, pero no tengo ni idea."
-
-    itsuki "Lo que siento no lo puedo expresar con palabras."
+    narrador "No le salió el punto. Por una vez, no pareció importarle."
 
     itsuki "...Anótenlo, provisionalmente, como «algo bueno»."
 
@@ -3914,7 +3938,6 @@ label e6_mesa:
     mc_pensamiento "Ahora formo parte de ellas, y ellas de mí."
 
     return
-
 
 ################################################################################
 ##  MOV. 10 · CASA

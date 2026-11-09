@@ -70,6 +70,12 @@ label hub_Itsuki:
 
     mc_pensamiento "Y la misma cifra al final de las tres."
 
+    if len(hub_visitadas) > 0:
+
+        mc_pensamiento "En el margen, un círculo a lápiz. Repasado hasta hundir el papel."
+
+        mc_pensamiento "El ejercicio del diagnóstico. El mismo que se llevó a la azotea."
+        
     narrador "Me acerqué a buscar la mochila."
 
     narrador "Fue entonces cuando levantó la vista."
@@ -107,7 +113,7 @@ label hub_Itsuki:
 
     itsuki "No te incumbe."
 
-    mc "Es tu asignatura."
+    mc "Soy tu tutor."
 
     mc "Sí me incumbe."
 
@@ -155,7 +161,7 @@ label hub_Itsuki:
 
     mc_pensamiento "Esta vez solo la dejó ahí."
 
-    mc_pensamiento "Está ganando o perdiendo tiempo."
+    mc_pensamiento "No está pensando. Está esperando a que el error se corrija solo."
 
     mc "Las demás no estudian nada y les va igual de mal que a ti."
 
@@ -368,9 +374,11 @@ label itsuki_m4a:
     
     itsuki "Puedes buscar tu cuaderno ahora."
 
-    itsuki "[mc]..."
-
     mc "Ya lo sé. No me voy a ir todavía."
+
+    itsuki "…Como quieras, [mc]."
+
+    narrador "Era la primera vez que decía mi nombre desde el día del asiento."
 
     show itsuki neutral at pj_calla(0.5)
     with disolucion_lenta
@@ -517,7 +525,7 @@ label itsuki_m5:
 
     narrador "Ella seguía en su pupitre."
 
-    mc_pensamiento "Una de cinco. Y esta no pidió nada."
+    mc_pensamiento "Una de las cinco. Y esta no pidió nada."
 
     mc_pensamiento "Quedan [tiempo_restante]."
 
@@ -527,7 +535,7 @@ label itsuki_m5:
 
         mc_pensamiento "Pero tampoco me dijo que me fuera."
 
-        mc_pensamiento "Llevo dos días aprendiendo que con ella eso cuenta más que un gracias."
+        mc_pensamiento "Con ella empiezo a entender que eso cuenta más que un gracias."
 
     elif itsuki_rama_cap1 == "tibia":
 

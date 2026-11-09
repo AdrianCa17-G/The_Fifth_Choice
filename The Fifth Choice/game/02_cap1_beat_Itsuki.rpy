@@ -58,7 +58,9 @@ label beat_Itsuki:
 
         narrador "Desde la puerta alcancé a ver la página."
 
-        narrador "Un solo ejercicio, con un círculo a lápiz alrededor, repasado tantas veces que había hundido el papel."
+        narrador "Un solo ejercicio, con un círculo a lápiz alrededor."
+
+        narrador "Repasado tantas veces que había hundido el papel."
 
         mc_pensamiento "Lo reconocí."
 
@@ -162,7 +164,9 @@ label beat_Itsuki:
 
     play music tregua fadein 1.5 fadeout 2.0
 
-    narrador "El viento seguía soplando igual que siempre aquí arriba, pero por debajo de él comenzó a percibirse otra cosa... "
+    narrador "El viento seguía soplando igual que siempre aquí arriba."
+
+    narrador "Pero por debajo de él comenzó a percibirse otra cosa..."
 
     narrador "Un sonido tenue, casi imperceptible."
 
@@ -179,19 +183,34 @@ label beat_Itsuki:
     scene bg_azotea 
     with dissolve
 
-    if itsuki_visitada_cap1 and itsuki_rama_cap1 != "tibia":
+    if itsuki_visitada_cap1 and itsuki_rama_cap1 == "calida":
 
         show itsuki molesta at pj(0.5)
         with disolucion_lenta
 
-        itsuki "Ya me ayudaste con el ejercicio el otro día." 
-        
+        itsuki "Ya me ayudaste con el ejercicio el otro día."
+
         itsuki "No hace falta que sigas viniendo a comprobar cómo voy."
 
         mc "No vine a comprobar nada."
 
-        narrador "No pareció creérselo del todo." 
-        
+        narrador "No pareció creérselo del todo."
+
+        narrador "Pero no insistió."
+
+    elif itsuki_visitada_cap1 and itsuki_rama_cap1 == "fria":
+
+        show itsuki molesta at pj(0.5)
+        with disolucion_lenta
+
+        itsuki "Ya me resolviste el ejercicio el otro día."
+
+        itsuki "No hace falta que sigas viniendo a comprobar cómo voy."
+
+        mc "No vine a comprobar nada."
+
+        narrador "No pareció creérselo del todo."
+
         narrador "Pero no insistió."
 
     else:
@@ -199,12 +218,12 @@ label beat_Itsuki:
         show itsuki molesta at pj(0.5)
         with disolucion_lenta
 
-        itsuki "No voy a preguntarte a ti dónde has estado estos días."
+        itsuki "No voy a preguntarte cómo va tu juego."
 
         mc "No te lo iba a contar de todas formas."
 
 
-    narrador "Los dos volvieron a mirar al frente, cada uno con su propio libro cerrado sobre las piernas."
+    narrador "Los dos volvimos a mirar al frente, cada uno con su propio libro cerrado sobre las piernas."
 
     mc_pensamiento "Llevamos pocos días de esto y ya la convivencia se volvió jornada completa para las dos partes."
 
@@ -222,6 +241,41 @@ label beat_Itsuki:
 
     mc_pensamiento "Ahora me importa más no moverme."
 
+    narrador "Entonces sonó algo que no era el viento."
+
+    show itsuki sorprendida at pj(0.5)
+    with disolucion_lenta
+
+    itsuki "Eso no fue mi estómago."
+
+    mc "No dije nada."
+
+    itsuki "Lo ibas a decir."
+
+    narrador "Saqué la caja de almuerzo que Raiha me había preparado y la abrí entre los dos."
+
+    mc "Raiha siempre pone de más. Dice que estudio con el estómago vacío."
+
+    show itsuki timida at pj(0.5)
+    with disolucion_lenta
+
+    itsuki "No pienso aceptar comida de mi tutor."
+
+    narrador "Lo dijo mirando el arroz. Fijo. Sin parpadear."
+
+    mc "Entonces no es del tutor. Es de Raiha."
+
+    itsuki "...Un bocado. Y queda anotado como deuda."
+
+    narrador "Fueron cuatro bocados. Yo no dije nada. Ella tampoco lo anotó."
+
+    mc_pensamiento "Desde el primer día no la había vuelto a ver comer."
+
+    mc_pensamiento "Comía como si se le hubiera olvidado cuánto le gustaba."
+
+    show itsuki neutral at pj(0.5)
+    with disolucion_lenta
+
     ############################################################################
     ##  MOVIMIENTO 3 · Menú comsetico
     ##  No otorga puntos como el hub de cada una de ellas, es mas como un
@@ -234,7 +288,7 @@ label beat_Itsuki:
 
         "¿Qué piensas decirle a Itsuki mientras el descanso se acaba?"
 
-        "En que a este paso me va a tocar traer los libros hasta al baño.":
+        "En que a este paso me va a tocar traer los libros hasta el baño.":
 
             mc "Al menos ahí nadie me interrumpe."
 

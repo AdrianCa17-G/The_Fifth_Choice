@@ -489,7 +489,9 @@ label prologo:
     
     mc_pensamiento "Como dos países que firman una tregua sin reconocerse."
 
-    mc_pensamiento "Ella conocía mi apellido por el examen, pero no intercambiamos una sola palabra más."
+    mc_pensamiento "Ella sabía mi nombre por el profesor." 
+    
+    mc_pensamiento "Yo no sabía el suyo, y no lo pregunté."
 
     stop ambiente fadeout 2.0
 
@@ -800,7 +802,7 @@ label prologo:
 
     mc "…Tú."
 
-    itsuki_inicio "¿Qué demonios haces en mi casa?"
+    itsuki_inicio "¿Se puede saber qué haces en mi casa?"
 
     mc "Podría preguntarte exactamente lo mismo."
 
@@ -810,7 +812,7 @@ label prologo:
 
     mc_pensamiento "De entre todos los departamentos de la ciudad, tenía que ser el suyo."
     
-    itsuki_inicio "¿Me estuviste siguiendo desde la escuela? ¿Eres un acosador?"
+    itsuki_inicio "¿Me seguiste desde la escuela? Eso tiene un nombre, y es acoso."
 
     mc "Ni que tuviera tiempo libre para malgastarlo contigo."
 
@@ -856,7 +858,7 @@ label prologo:
     show itsuki at pj_habla(0.70)
     with disolucion_lenta
     
-    itsuki "¡Ichika, no te le acerques! Es el idiota del asiento de la escuela."
+    itsuki "¡Ichika, no te le acerques! Es el maleducado del asiento."
 
     show itsuki at pj_calla(0.70)
     with disolucion_lenta

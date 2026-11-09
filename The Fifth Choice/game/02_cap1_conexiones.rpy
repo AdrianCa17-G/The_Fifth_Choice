@@ -465,9 +465,9 @@ label reaccion_itsuki:
 
         mc "Buenos días."
 
-        itsuki "Hoy no me senté en tu sitio."
+        itsuki "Ayer me viste equivocarme. No va a ser costumbre."
 
-        itsuki "Aprendo rápido. Es lo único que se me da bien."
+        itsuki "Corrijo rápido. Es lo único que se me da bien."
 
         mc "No es lo único."
 
@@ -527,7 +527,7 @@ label reaccion_itsuki:
 
         mc "Es mi trabajo."
 
-        itsuki "Sí. Y es un fastidio."
+        itsuki "Sí. Y es una costumbre desagradable."
 
         show itsuki neutral at pj_habla(0.5)
         with disolucion_lenta
@@ -1012,7 +1012,7 @@ label cap1_interconexion_1:
     show itsuki molesta at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
-    itsuki "Seguro es explotarnos estudiando todos los días y todas las noches."
+    itsuki "Supongo que consiste en hacernos estudiar de día y de noche."
 
     show itsuki molesta at pj_calla(X_ITSUKI)
     show miku neutral at pj_habla(X_MIKU)
@@ -1106,16 +1106,20 @@ label cap1_interconexion_1:
     mc "Ya lo suponía."
 
     show nino neutral at pj_calla(X_NINO)
-    show itsuki sonriendo at pj_habla(X_ITSUKI)
+    show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
-    itsuki "Esperen. Tengo una idea."
+    itsuki "Al contrario. Que lo averigüe él."
 
     mc "¿Eh?"
 
-    itsuki "Hagamos un juego. Al estilo quintillizas."
+    itsuki "El profesor dice que eres el mejor alumno de la clase."
 
-    show itsuki sonriendo at pj_calla(X_ITSUKI)
+    itsuki "Entonces resuelve esto: dónde pasa la tarde cada una."
+
+    itsuki "Un juego de busca y encuentra. Al estilo quintillizas."
+
+    show itsuki neutral at pj_calla(X_ITSUKI)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
@@ -1128,23 +1132,21 @@ label cap1_interconexion_1:
     miku "…Itsuki. Eso es justo lo que él quería."
 
     show miku neutral at pj_calla(X_MIKU)
-    show itsuki sonriendo at pj_habla(X_ITSUKI)
+    show itsuki molesta at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
-    itsuki "Si [mc] dice que se preocupa por nosotras…"
+    itsuki "No. Él quería que se lo dijéramos. Yo le propongo que lo descubra."
 
-    itsuki "…y que nos conoce mejor que nadie…"
+    itsuki "Si se equivoca de sitio, pierde la tarde. Es justo."
 
-    itsuki "…que adivine dónde pasamos las tardes."
+    mc "¿Me estás retando?"
 
-    itsuki "Un juego de busca y encuentra."
-
-    mc "¿¡QUÉÉÉ!?"
+    itsuki "Te estoy evaluando. Como tú a nosotras con tu hoja."
 
     show itsuki at pj_calla(X_ITSUKI)
     with disolucion_lenta
 
-    mc_pensamiento "Esto debe ser una broma. Y de muy mal gusto."
+    mc_pensamiento "No era una broma. Era una revancha por la hoja de diagnóstico."
 
     mc_pensamiento "Pero en parte es mi culpa: fui yo quien preguntó."
 
@@ -1628,13 +1630,13 @@ label cap1_interconexion_3:
 
         mc_pensamiento "Busqué el ejercicio que Itsuki tenía rodeado en el cuaderno."
 
-        mc_pensamiento "No era difícil. Ella lo resolvería con los ojos cerrados."
+        mc_pensamiento "No era difícil. Un paso de conversión, nada más."
 
-        mc_pensamiento "Y llevaba días hundiendo el papel con el lápiz sin intentarlo de verdad."
+        mc_pensamiento "Y llevaba días repasándolo sin ver dónde se le torcía."
 
-        mc_pensamiento "Eso no es falta de talento."
+        mc_pensamiento "Eso no es falta de esfuerzo."
 
-        mc_pensamiento "Es miedo a equivocarse delante de alguien."
+        mc_pensamiento "Es que nadie le ha dicho dónde mirar. Y ella no va a pedirlo."
 
     else:
 
@@ -2196,7 +2198,7 @@ label cap1_interconexion_4:
 
     itsuki "No es asunto tuyo. Pero tampoco es casualidad."
 
-    itsuki "Tú tienes algo que ver con esto, estoy segura."
+    itsuki "Y la hipótesis más probable eres tú."
 
     show itsuki molesta at pj_calla(X_ITSUKI)
     with disolucion_lenta
@@ -2609,7 +2611,7 @@ label cap1_interconexion_5:
 
         itsuki "Me preocupa llegar el día del examen y que no salgan."
 
-        mc "Saldrán. Confía en tí."
+        mc "Saldrán. Confía en ti."
 
         itsuki "No te pedí que lo dijeras."
 
@@ -2631,7 +2633,7 @@ label cap1_interconexion_5:
 
         itsuki "Entonces deja de mirarme el cuaderno."
 
-        itsuki "Y con esa cara de que quieres intrometerte."
+        itsuki "Y quita esa cara de querer intrometerte."
 
         show itsuki at pj_calla(X_ITSUKI)
         with disolucion_lenta
@@ -2988,11 +2990,13 @@ label cap1_interconexion_6:
 
     mc "¿Ya?"
 
-    mc "Obviamente que lo sabía, señora obvia."
+    itsuki "Era la última tarde libre. No quedan más."
+
+    mc "Ya lo sabía, señora obvia."
 
     itsuki "Te dije que no alcanzarías para todas. Tres de cinco."
 
-    itsuki "El trabajo es pesado, ¿no?"
+    itsuki "El trabajo resultó más pesado de lo que creías."
 
     mc "Lo sé."
 
@@ -3097,7 +3101,7 @@ label cap1_interconexion_6:
     show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
-    itsuki "Pues hoy no queda nada que adivinar."
+    itsuki "Por lo tanto, hoy no queda nada que adivinar."
 
     itsuki "Esta tarde se estudia en casa." 
     
@@ -3117,7 +3121,7 @@ label cap1_interconexion_6:
 
     itsuki "Nadie. Pero alguien tiene que decirlo."
 
-    itsuki "Y todas pensábamos lo mismo, ¿no?"
+    itsuki "Y todas pensábamos lo mismo. No hace falta votarlo."
 
     itsuki "Somos quintillizas después de todo."
 
@@ -3148,7 +3152,7 @@ label cap1_interconexion_6:
 
         itsuki "No te emociones tanto. Todavía no aprobamos nada."
 
-        itsuki "En la semana de examenes se lo agradeceremos, si se lo merece."
+        itsuki "En la semana de exámenes se lo agradeceremos, si se lo merece."
 
         show itsuki neutral at pj_calla(X_ITSUKI)
         with disolucion_lenta

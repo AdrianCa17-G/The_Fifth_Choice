@@ -84,7 +84,7 @@ label cap1_apertura:
 
     itsuki "Ya sé que vas a ir." 
     
-    itsuki "Tienes el mismo horario que yo desde ayer."
+    itsuki "Mi padre nos dio tu horario anoche."
 
     mc "Solo lo estoy avisando."
 
