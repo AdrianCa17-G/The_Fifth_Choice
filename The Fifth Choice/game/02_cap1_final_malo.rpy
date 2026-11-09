@@ -834,7 +834,7 @@ label final_malo_hub3:
 
     mc_pensamiento "Igual que en la hoja del segundo día. Igual que siempre."
 
-    narrador "Su borrador quedó desgastado de tanto uso."
+    narrador "Su goma quedó desgastada de tanto uso."
 
     narrador "De tanto desconfiar en lo que ella sabía."
 

@@ -713,7 +713,7 @@ label queja_nino:
 
     nino "Distintas. No te digo si mejor o peor."
 
-    nino "Y alguien tiene que ser la que no cambia."
+    nino "Pero alguien tiene que ser la que no cambia."
 
     nino "Para que las demás tengan a dónde volver."
 

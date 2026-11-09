@@ -10,9 +10,9 @@
 ##  segundos y bloquea esa caja. El tiempo es común a todo el intento.
 ##  Tras la quinta lista queda un SEXTO HUECO en la cesta: tres opciones, sin
 ##  respuesta correcta. Se anota en datos["sexto"]:
-##      "celebrar"  comprar lo de la tarta antes de saber el resultado
-##      "consolar"  chocolate «por si sale mal»
-##      "vacio"     dejar el hueco vacío
+##      "taza"  Escribir «una taza más»
+##      "blanco"  "Dejarlo en blanco
+##      "cuando"     Anotar «cuando se sepa»
 ##  El guion lee e6_mj["nino"]["datos"]["sexto"] para decidir la línea.
 ##
 ##  Parámetros: MJ_PARAMS["n1"] (10_minijuegos.rpy).
@@ -114,9 +114,9 @@ define MJ_N1_LISTAS = [
 
 ## (clave, título, subtítulo)
 define MJ_N1_SEXTO = [
-    ("celebrar", "Lo de una tarta de celebración", "Comprarlo antes de saber el resultado."),
-    ("consolar", "Chocolate para consolar", "Por si sale mal."),
-    ("vacio",    "Dejar el hueco vacío", "Ya se verá."),
+    ("taza",   "Escribir «una taza más»", "Se compra igual aunque nadie la pida."),
+    ("blanco", "Dejarlo en blanco",       "Sin tachar."),
+    ("cuando", "Anotar «cuando se sepa»", "Con el resultado en la mano."),
 ]
 
 init python:
