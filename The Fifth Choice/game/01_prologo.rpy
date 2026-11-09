@@ -408,7 +408,7 @@ label prologo:
     
     mc_pensamiento "Pero haber sido tan tajante con la chica nueva me dejó un mal sabor de boca el resto del día."
 
-    narrador "Mientras reflexionaba, su momento de tranquilidad duró poco."
+    narrador "Mientras reflexionaba, mi momento de tranquilidad duró poco."
 
     narrador "Apenas diez minutos después, la puerta de la azotea se abrió."
 

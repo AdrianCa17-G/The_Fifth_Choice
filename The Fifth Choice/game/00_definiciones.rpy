@@ -636,58 +636,61 @@ label start:
 ##      jump grabacion_v3
 ################################################################################
 
-label grabacion_v3:
+################################################################################
+##  SHOWCASE · VIDEO 4 · YOTSUBA
+##  Solo para grabar pantalla. Sin diálogo: la voz se añade en edición.
+##  Lanzar desde la consola (Shift+O):  jump showcase_yotsuba
+################################################################################
 
-    ## --- Preparación ---------------------------------------------------------
-    $ hub_visitadas = []
-    $ tiempo_restante = "casi cuatro semanas"
+label showcase_yotsuba:
+
     $ quick_menu = False
-    $ ui_escena("normal")
+    window hide
     stop music
     stop ambiente
 
-    ## --- 1 · HOOK: el asiento (0-4 s) -----------------------------------------
-    scene cg_itsuki_apertura
-    with fade
-    pause 5.3
+    ## --- 0–6 s · [excited] ¡Hola, hola! ¡Soy Yotsuba! Soy la segunda hermana, y siempre reboso de energía [pause] 
+    scene cg_yotsuba_corriendo
+    with dissolve
+    pause 6.0
 
-    ## --- 2 · "Soy Itsuki… la que más estudia" (4-11 s) -------------------------
-    scene bg_aula
+    ## --- 6–10 s · ¿Sabías que en mi ruta me vas a encontrar en la pista de atletismo? 
+    scene bg_pista_atletismo
     with dissolve
-    show itsuki sonriendo at pj(0.5)
-    with dissolve
-    pause 1.5
-    show itsuki sorprendida at pj(0.5)
-    with dissolve
-    pause 2.5
 
- 
-    ## --- 3 · "Una vez te pedí ayuda. Dijiste que no." (11-18 s) -----------------
-    show itsuki molesta at pj(0.5)
+    show yotsuba sonriendo at pj(0.5)
     with dissolve
-    itsuki "Olvidalo."
-    itsuki "No te necesito"
-    
-    ## --- 4 · EL MAPA: ir directa a la banda roja (la última a la derecha) ---------
-    ## Entra por la izquierda, cruza despacio y haz clic en la de Itsuki.
+
+    yotsuba "¡Cómo estás! ¡Me alegra verte!"
+    yotsuba "Soy Yotsuba, un gusto."
+
+    ## --- 10–15 s · ¡Yo estaré dando vueltas, contando cada una en voz alta! [chuckling] 
+    scene cg_yotsuba_pista
+    with dissolve
+    pause 5.0
+
+    ## --- 15–20 s · Pero ojo: tienes solo tres tardes y somos cinco hermanas. 
     scene bg_negro
     with fade
+    pause 0.8
     call screen mapa_hub(1)
 
-    ## --- 5 · El aula vacía con la cinta ENCUENTRO ----------------------------------
-    $ ui_escena("hub", "itsuki", "Aula vacía")
-    $ quick_menu = True
-    scene bg_aula_tarde
-    with fade
-    show itsuki neutral at pj(0.5)
+    ## --- 21–23 s · ¡Tendrás que elegir bien si quieres venir a verme!
+    scene bg_pista_atletismo
     with dissolve
-    pause 3.5
 
-    ## --- 6 · LA DECISIÓN CON PESO (26-32 s) ------------------------------------------
-    ## Pasa el cursor despacio por las tres tarjetas y haz clic en cualquiera.
-    ## Las opciones están acortadas a propósito para no soltar spoilers.
+    show yotsuba sonriendo at pj(0.5)
+    with dissolve
+    pause 2.0
+
+    ## --- 23–26 s · [soft] Yo sonrío mucho, ¿sabes? [pause] 
+    show yotsuba neutral at pj(0.5)
+    with dissolve
+    pause 3.0
+
+    ## --- 26-33 s · Pero lo que tú me digas ese día va a importarme más de lo que crees. [excited] ¡Así que piénsalo bien! 
     $ quick_menu = False
-    $ decision_peso("itsuki", "¿Qué le dirás a Itsuki?", "Responde")
+    $ decision_peso("yotsuba", "¿Qué le dirás a Yotsuba?", "Elige")
 
     menu:
 
@@ -702,42 +705,23 @@ label grabacion_v3:
         "Respuesta Fria":
             pass
 
-    ## --- 7 · "No esperes un gracias. Y si sonrío…" (32-37 s) ----------------------------
-    $ ui_escena("normal")
-    scene bg_aula_tarde
-    with fade
-    show itsuki molesta at pj_habla(0.5)
+    ## --- 33-37 s  Capítulo uno, próximamente en itch.io. [pause]
+    scene cg_yotsuba_pista
     with dissolve
-    pause 2.5
+    pause 4.0
 
-    show itsuki sonriendo at pj_habla(0.5)
-    with disolucion_lenta
-    pause 3.0
-
-    show itsuki molesta at pj_habla(0.5)
+    ## --- 37-41 s  Ahora dime... ¿quieres recorrer toda la pista junto a mí?" ---
+    scene bg_pista_atletismo
     with dissolve
-    pause 2.5
 
-    scene cg_itsuki_reto
+    show yotsuba incomoda at pj(0.5)
     with dissolve
-    pause 3.0
+    pause 4.0
 
-    ## --- 8 · "El resto no pienso contártelo" (37-41 s) -----------------------------------
-    ## Se desenfoca y se le pone el sello "CLASIFICADO" en CapCut.
-   
-    ## --- 9 · CIERRE: ella sola, mirando a cámara (41-45 s) ---------------------------------
-    scene bg_aula_tarde
-    with dissolve
-    show itsuki timida at pj(0.5)
-    with dissolve
-    pause 3.6
-
-    $ quick_menu = True
-    $ ui_escena("normal")
+    ## --- Cierre ---
     scene bg_negro
     with fade
-    return
-
+    
     stop music fadeout 1.5
 
     call configurar_nombre

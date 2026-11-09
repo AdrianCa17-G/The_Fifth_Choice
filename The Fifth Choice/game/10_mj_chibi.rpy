@@ -74,6 +74,8 @@ define MJ_GLOBOS = {
         "tiempo":  ["Se nos acaba el tiempo.", "Rápido. Pero no a lo loco."],
         "sexto":   ["...Queda un hueco. Elige tú.", "Sitio para una cosa más. No me mires."],
         "final":   ["Hecho. Y no lo comentes.", "...Ya está. Vámonos."],
+        "racha":   ["Bien. Sigue así.", "Tres seguidas. No te confíes.", "Eso. Sin pausas."],
+        "mirar":   ["Tsk. ¿Ya se te olvidó la lista?", "Mírala. Pero eso cuesta tiempo."],
     },
 
     ## Itsuki: oración cerrada, sujeto-verbo-punto.

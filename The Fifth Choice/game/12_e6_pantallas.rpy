@@ -22,7 +22,7 @@ transform e6_tinte_bueno:
 ##  CG DEL EVENTO 6 — con sustituto visible si el archivo no existe
 ################################################################################
 
-define E6_CG_CARPETA = "images/cg/cap1_evento6/"
+define E6_CG_CARPETA = "images/cg/cap1_mov6"
 
 init python:
 
@@ -54,7 +54,7 @@ init 10 python:
 
     def e6_galeria_agregar():
         extra = {
-            "cap1":    [("cg_cinco_aula", "Cinco miradas"), ("cg_cinco_aprobadas", "Cinco aprobadas")],
+            "cap1":    [("cg_cinco_aula", "Cinco miradas antes del examen"), ("cg_cinco_aprobadas", "Un final feliz")],
             "yotsuba": [("cg_yotsuba_examen", "Examen · Japonés")],
             "ichika":  [("cg_ichika_examen", "Examen · Matemáticas")],
             "nino":    [("cg_nino_examen", "Examen · Inglés")],

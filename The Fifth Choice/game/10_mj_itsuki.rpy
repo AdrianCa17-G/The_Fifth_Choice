@@ -79,6 +79,12 @@ init python:
     import math
     from fractions import Fraction
 
+    def it1_caja(fondo, borde):
+        """Caja redondeada con el estilo de las opciones del juego."""
+        return Fixed(
+            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo)),
+            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde)))
+
     def it1_agrupar(n):
         """12345 -> '12.345'."""
         s = "{:,}".format(int(n))
@@ -122,7 +128,7 @@ init python:
     class MJIt1(object):
         """Estado vivo de la cadena. Lo crea la screen (default): no se guarda."""
 
-        def __init__(self, params, inicio, fallos_previos):
+        def __init__(self, params, inicio, fallos_previos, intento=1):
             self.p = params
             self.reloj = MJReloj()
             self.fallos_prev = fallos_previos
@@ -168,7 +174,9 @@ init python:
                 except Exception:
                     self.fantasma = self.inicial
 
-            self.fase = "juego"
+            self.fase = "listo"
+            if intento > 1:
+                self.fase = "juego"
             self.t_fase = 0.0
             self.humor = ""
             self.aviso = ""
@@ -176,7 +184,8 @@ init python:
             self.avisado_tiempo = False
             self.globo = MJGlobo("itsuki")
             self.generar_opciones()
-            self.globo.decir("inicio", True)
+            if self.fase == "juego":
+                self.globo.decir("inicio", True)
 
         # ---- utilidades ------------------------------------------------------
         def cambiar(self, fase):
@@ -219,6 +228,30 @@ init python:
 
         def puede_entregar(self):
             return self.fase == "juego" and len(self.elegidas) >= self.n
+
+        def empezar(self):
+            if self.fase != "listo":
+                return None
+            self.fase = "juego"
+            self.t_fase = self.reloj.t
+            self.globo.decir("inicio", True)
+            return None
+
+        def reglas(self):
+            """Líneas de reglas para la pantalla de intro, según el nivel vigente."""
+            lineas = []
+            lineas.append(str(self.n) + " pasos · " + str(int(self.total)) + " segundos.")
+            ent = self.p["intentos"]
+            if ent is None:
+                lineas.append("Puedes entregar las veces que quieras.")
+            else:
+                lineas.append("Entregas erróneas permitidas: " + str(int(ent)) + ".")
+            usos = self.p["ayuda_usos"]
+            if usos is None:
+                lineas.append("«Levantar la mano»: ilimitada y gratis. El profesor te señala el paso que falla.")
+            else:
+                lineas.append("«Levantar la mano»: " + str(int(usos)) + " por intento, cuesta " + str(int(self.p["ayuda_costo"])) + " s. El profesor te señala el paso que falla.")
+            return lineas
 
         def raro(self, k):
             """¿La opción elegida en el paso k se aleja ≥ 100× del valor correcto?"""
@@ -432,211 +465,369 @@ screen mj_it1(hermana, params, inicio, intento, fallos, nivel, titulo):
     modal True
     zorder 95
 
-    default vivo = MJIt1(params, inicio, fallos)
+    default vivo = MJIt1(params, inicio, fallos, intento)
 
     timer 0.033 repeat True action Function(vivo.tick)
 
-    key "K_RETURN" action NullAction()
+    key "K_RETURN" action Function(vivo.empezar)
 
     $ color = PETALO_COLOR["itsuki"]
-    $ tinta = ui_mezclar(color, "#000000", 0.75)
     $ hechas = len(vivo.elegidas)
-    $ unidad_final = vivo.pasos[vivo.n - 1][1]
+    $ t_rest = None
+    $ t_tot = None
+    if vivo.fase != "listo":
+        $ t_rest = vivo.restante()
+        $ t_tot = vivo.total
 
     add "bg_aula_tarde" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, hechas, vivo.n, vivo.restante(), vivo.total, "PASOS"):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, hechas, vivo.n, t_rest, t_tot, "PASOS"):
 
-        text ("CUADERNO DE CIENCIAS · " + vivo.cadena["titulo"].upper()):
-            xpos 320
-            ypos 150
-            font gui.name_text_font
-            size 34
-            kerning 3
-            color color
-            outlines [(4, "#1B1026CC", 0, 0)]
+        if vivo.fase == "listo":
+            use it1_intro(vivo, color)
+        else:
+            use it1_juego(vivo, color)
 
-        text ("Parte de " + it1_fmt(vivo.inicial) + " " + vivo.unidad_origen() + " y llega a " + unidad_final + ".   Cada paso parte de lo que llevas."):
-            xpos 320
-            ypos 205
-            size 26
-            color "#FFFFFF"
-            outlines [(3, "#1B102699", 0, 0)]
+        ## --- Itsuki chibi y su globo ---
+        use mj_retrato("itsuki", vivo.expresion_star(), vivo.globo, vivo.anim_star(), 250, 1090, 1.0)
 
-        ## --- El fantasma, en el margen ---
+
+## --- Pantalla de explicación ----------------------
+screen it1_intro(vivo, color):
+
+    $ reglas = vivo.reglas()
+
+    fixed:
+        xalign 0.5
+        ypos 138
+        xysize (1160, 740)
+
+        add it1_caja("#1B1026", color)
+
         vbox:
-            xpos 60
-            ypos 300
-            spacing 2
+            xpos 50
+            ypos 30
+            xsize 1060
+            spacing 26
+
+            text "CADENA DE CONVERSIONES":
+                xalign 0.5
+                font gui.name_text_font
+                size 40
+                kerning 4
+                color "#FFF8FC"
+
+            text "Itsuki convierte unidades paso a paso. En cada paso aparecen cuatro resultados: elige el correcto a partir del valor que llevas. Si te equivocas en uno, el error se arrastra a los siguientes (el número gris «arrastrado» es el que ella copia sin querer). Al terminar, pulsa «Entregar»; puedes tocar un paso ya hecho para rehacerlo.":
+                size 26
+                color "#E8E0F2"
+
+            hbox:
+                spacing 40
+
+                vbox:
+                    xsize 540
+                    spacing 10
+
+                    text "REGLAS":
+                        font gui.name_text_font
+                        size 22
+                        kerning 5
+                        color color
+
+                    for r in reglas:
+                        text ("· " + r):
+                            size 24
+                            color "#CFC6E0"
+
+                ## Nota que rompe la cuarta pared
+                fixed:
+                    xysize (480, 250)
+                    add Solid("#F6EEDC", xsize=480, ysize=250)
+                    add Solid("#E8B04A", xsize=480, ysize=10)
+
+                    vbox:
+                        xpos 24
+                        ypos 26
+                        xsize 432
+                        spacing 6
+
+                        text "NOTA FUERA DEL CUADERNO":
+                            font gui.libreta_font
+                            size 20
+                            color "#B94A4A"
+
+                        text "Sí: aquí hay cuentas largas, de miles y millones. Ten una calculadora a mano (la del móvil o la del PC) y úsala sin culpa. Se evalúa tu método, no tu paciencia.":
+                            font gui.libreta_font
+                            size 24
+                            color "#2F2A44"
+
+        fixed:
+            xalign 0.5
+            ypos 600
+            xysize (420, 80)
+            use cinta_boton("Empezar", Function(vivo.empezar), "itsuki", 420, 80, 34)
+
+
+## --- El juego: solo el paso actual + la hoja de lo ya hecho --------------------
+screen it1_juego(vivo, color):
+
+    $ hechas = len(vivo.elegidas)
+    $ revision = (hechas >= vivo.n)
+    $ unidad_final = vivo.pasos[vivo.n - 1][1]
+
+    text ("CUADERNO DE CIENCIAS · " + vivo.cadena["titulo"].upper()):
+        xpos 320
+        ypos 138
+        font gui.name_text_font
+        size 34
+        kerning 3
+        color color
+        outlines [(4, "#1B1026CC", 0, 0)]
+
+    text ("Parte de " + it1_fmt(vivo.inicial) + " " + vivo.unidad_origen() + " y llega a " + unidad_final + "."):
+        xpos 320
+        ypos 190
+        size 26
+        color "#FFFFFF"
+        outlines [(3, "#1B102699", 0, 0)]
+
+    ## --- Tu hoja (pasos ya hechos) ---
+    vbox:
+        xpos 320
+        ypos 262
+        spacing 10
+
+        if hechas == 0:
+            text "Tu hoja irá apareciendo aquí,\npaso a paso.":
+                size 20
+                color "#FFFFFF77"
+                outlines [(3, "#1B102699", 0, 0)]
+        else:
+            text "TU HOJA · toca un paso para rehacerlo":
+                size 17
+                kerning 3
+                color "#FFFFFFAA"
+                outlines [(3, "#1B102699", 0, 0)]
+
+        for k in range(hechas):
+            use it1_fila(vivo, k, color)
+
+    ## --- Tarjeta del paso actual ---
+    fixed:
+        xpos 830
+        ypos 250
+        xysize (860, 490)
+
+        add it1_caja("#1B1026", color)
+
+        vbox:
+            xalign 0.96
+            ypos 20
             text "ARRASTRADO":
-                size 16
+                xalign 1.0
+                size 15
                 kerning 3
                 color "#FFFFFF55"
             text it1_fmt(vivo.fantasma):
-                size 34
-                color "#FFFFFF44"
+                xalign 1.0
+                size 26
+                color "#FFFFFF55"
 
-        ## --- Los pasos ---
-        for k in range(vivo.n):
+        if not revision:
 
-            $ paso = vivo.pasos[k]
-            $ hecha = k < hechas
-            $ actual = (k == hechas)
-            $ borde = color
-            $ fondo = "#2B1B3F"
-            if vivo.pista == k:
-                $ borde = "#FFE3A0"
-            elif not hecha and not actual:
-                $ fondo = "#1B1026"
-            $ valor_txt = "—"
-            if hecha:
-                $ valor_txt = it1_fmt(vivo.elegidas[k]["valor"]) + " " + paso[1]
-            elif actual:
-                $ valor_txt = "¿?"
+            $ paso = vivo.pasos[hechas]
 
-            button:
-                xpos 320
-                ypos (300 + k * 108)
-                xysize (700, 96)
-                sensitive (hecha and vivo.fase == "juego")
-                action Function(vivo.rehacer, k)
-                hover_sound audio.sfx_hover
-                background Fixed(
-                    Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo)),
-                    Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde)))
-                hover_background Fixed(
-                    Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(ui_mezclar(color, "#000000", 0.55))),
-                    Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#FFFFFF")))
+            text ("PASO " + str(hechas + 1) + " DE " + str(vivo.n)):
+                xpos 40
+                ypos 24
+                font gui.name_text_font
+                size 22
+                kerning 5
+                color color
 
-                text (str(k + 1) + " · " + paso[0] + " → " + paso[1]):
-                    xpos 28
-                    yalign 0.5
-                    size 26
-                    color "#CFC6E0"
-
-                text valor_txt:
-                    xalign 0.97
-                    yalign 0.5
-                    size 34
-                    color "#FFFFFF"
-
-                if hecha and vivo.p["plausibilidad"] and vivo.raro(k):
-                    text "(¿raro?)":
-                        xpos 330
-                        yalign 0.5
-                        size 22
-                        color "#FFE3A0"
-
-        ## --- Opciones del paso actual ---
-        if hechas < vivo.n:
-
-            $ paso_a = vivo.pasos[hechas]
-
-            text ("Paso " + str(hechas + 1) + ": " + paso_a[0] + " → " + paso_a[1]):
-                xpos 1090
-                ypos 300
-                size 30
+            text (paso[0] + " → " + paso[1]):
+                xpos 40
+                ypos 58
+                size 46
                 color "#FFFFFF"
-                outlines [(3, "#1B102699", 0, 0)]
 
-            text paso_a[4]:
-                xpos 1090
-                ypos 345
-                size 28
-                color "#FFE3A0"
-                outlines [(3, "#1B102699", 0, 0)]
+            hbox:
+                xpos 40
+                ypos 126
+                spacing 14
+                text "Equivalencia:":
+                    yalign 0.5
+                    size 24
+                    color "#CFC6E0"
+                text paso[4]:
+                    yalign 0.5
+                    size 30
+                    color "#FFE3A0"
+
+            text ("Llevas: " + it1_fmt(vivo.valor_actual()) + " " + vivo.unidad_actual()):
+                xpos 40
+                ypos 172
+                size 32
+                color "#FFFFFF"
 
             vbox:
-                xpos 1090
-                ypos 400
-                spacing 16
+                xpos 40
+                ypos 236
+                spacing 20
 
-                for i in range(len(vivo.opciones)):
-
-                    $ op = vivo.opciones[i]
-                    $ etiqueta = ""
-                    if vivo.p["trampa_marcada"] and op["tipo"] == "fantasma":
-                        $ etiqueta = "  (¡ojo!)"
-
-                    button:
-                        xysize (660, 80)
-                        action Function(vivo.elegir, i)
-                        hover_sound audio.sfx_hover
-                        activate_sound audio.sfx_click
-                        background Fixed(
-                            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#2B1B3F")),
-                            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
-                        hover_background Fixed(
-                            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(ui_mezclar(color, "#000000", 0.55))),
-                            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#FFFFFF")))
-
-                        text (it1_fmt(op["valor"]) + " " + paso_a[1] + etiqueta):
-                            xalign 0.5
-                            yalign 0.5
-                            size 34
-                            color "#FFFFFF"
+                for fila in range(0, len(vivo.opciones), 2):
+                    hbox:
+                        spacing 20
+                        for i in range(fila, min(fila + 2, len(vivo.opciones))):
+                            use it1_opcion(vivo, i, color)
 
         else:
 
-            text "Todos los pasos están hechos. Revisa tus filas o entrega.":
-                xpos 1090
-                ypos 400
-                xsize 660
-                size 30
-                color "#FFFFFF"
-                outlines [(3, "#1B102699", 0, 0)]
-
-        ## --- Botones ---
-        fixed:
-            xpos 1090
-            ypos 780
-            xysize (320, 70)
-            if vivo.ayuda_disponible():
-                use cinta_boton("Levantar la mano" + vivo.ayudas_restantes_texto(), Function(vivo.levantar), "itsuki", 320, 70, 24)
-            else:
-                add Solid("#FFFFFF14", xsize=320, ysize=70)
-                text "Sin ayuda":
-                    xalign 0.5
-                    yalign 0.5
-                    size 24
-                    color "#FFFFFF66"
-
-        fixed:
-            xpos 1440
-            ypos 780
-            xysize (310, 70)
-            if vivo.puede_entregar():
-                use cinta_boton("Entregar", Function(vivo.entregar), "itsuki", 310, 70, 28)
-            else:
-                add Solid("#FFFFFF14", xsize=310, ysize=70)
-                text "Entregar":
-                    xalign 0.5
-                    yalign 0.5
-                    size 28
-                    color "#FFFFFF66"
-
-        if vivo.msg_pista != "":
-            text vivo.msg_pista:
-                xpos 1090
-                ypos 862
-                xsize 700
-                size 24
-                color "#FFE3A0"
-                outlines [(3, "#1B102699", 0, 0)]
-
-        if vivo.aviso_t > 0.0:
-            text vivo.aviso:
-                xpos 1090
-                xanchor 0
-                ypos 735
+            text "REVISIÓN":
+                xpos 40
+                ypos 24
                 font gui.name_text_font
-                size 36
-                color "#FFC4C4"
-                outlines [(4, "#1B1026CC", 0, 0)]
+                size 22
+                kerning 5
+                color color
 
-        ## --- Itsuki chibi y su globo ---
-        use mj_retrato("itsuki", vivo.expresion_star(), vivo.globo, vivo.anim_star(), 170, 890, 0.5)
+            text "Tu resultado final":
+                xpos 40
+                ypos 64
+                size 30
+                color "#CFC6E0"
 
+            text (it1_fmt(vivo.valor_actual()) + " " + unidad_final):
+                xpos 40
+                ypos 108
+                size 64
+                color "#FFFFFF"
+
+            text "Si algún paso no te convence, tócalo en tu hoja (a la izquierda) y rehazlo desde ahí.":
+                xpos 40
+                ypos 210
+                xsize 780
+                size 26
+                color "#E8E0F2"
+
+            if vivo.aviso_t > 0.0:
+                text vivo.aviso:
+                    xpos 40
+                    ypos 300
+                    font gui.name_text_font
+                    size 38
+                    color "#FFC4C4"
+
+            if vivo.puede_entregar():
+                fixed:
+                    xalign 0.5
+                    ypos 370
+                    xysize (420, 84)
+                    use cinta_boton("Entregar", Function(vivo.entregar), "itsuki", 420, 84, 34)
+
+    ## --- Pista del profesor ---
+    if vivo.msg_pista != "":
+        text vivo.msg_pista:
+            xpos 830
+            ypos 752
+            xsize 860
+            size 24
+            color "#FFE3A0"
+            outlines [(3, "#1B102699", 0, 0)]
+
+    ## --- Pie: levantar la mano + consejo de calculadora ---
+    fixed:
+        xpos 830
+        ypos 806
+        xysize (340, 66)
+        if vivo.ayuda_disponible():
+            use cinta_boton("Levantar la mano" + vivo.ayudas_restantes_texto(), Function(vivo.levantar), "itsuki", 340, 66, 24)
+        else:
+            add Solid("#FFFFFF14", xsize=340, ysize=66)
+            text "Sin ayuda":
+                xalign 0.5
+                yalign 0.5
+                size 24
+                color "#FFFFFF66"
+
+    text "Consejo fuera del cuaderno: la calculadora está permitida.":
+        xpos 1200
+        ypos 818
+        xsize 480
+        font gui.libreta_font
+        size 20
+        color "#FFE3A0"
+        outlines [(3, "#1B102699", 0, 0)]
+
+
+## Una fila de "tu hoja" (paso ya hecho, tocable para rehacer)
+screen it1_fila(vivo, k, color):
+
+    $ paso = vivo.pasos[k]
+    $ borde = color
+    if vivo.pista == k:
+        $ borde = "#FFE3A0"
+    $ raro = vivo.p["plausibilidad"] and vivo.raro(k)
+
+    button:
+        xysize (450, 78)
+        sensitive (vivo.fase == "juego")
+        action Function(vivo.rehacer, k)
+        hover_sound audio.sfx_hover
+        background it1_caja("#2B1B3F", borde)
+        hover_background it1_caja(ui_mezclar(color, "#000000", 0.55), "#FFFFFF")
+        insensitive_background it1_caja("#2B1B3F", borde)
+
+        text (str(k + 1) + " · " + paso[0] + " → " + paso[1]):
+            xpos 24
+            ypos 9
+            size 19
+            color "#CFC6E0"
+
+        text (it1_fmt(vivo.elegidas[k]["valor"]) + " " + paso[1]):
+            xpos 24
+            ypos 34
+            size 30
+            color "#FFFFFF"
+
+        if raro:
+            text "(¿raro?)":
+                xalign 0.96
+                yalign 0.5
+                size 20
+                color "#FFE3A0"
+
+
+## Una opción del paso actual (rejilla de 2 columnas)
+screen it1_opcion(vivo, i, color):
+
+    $ op = vivo.opciones[i]
+    $ paso = vivo.pasos[len(vivo.elegidas)]
+    $ marcada = (vivo.p["trampa_marcada"] and op["tipo"] == "fantasma")
+    $ tinta = ui_mezclar(color, "#000000", 0.75)
+
+    button:
+        xysize (390, 104)
+        sensitive (vivo.fase == "juego")
+        action Function(vivo.elegir, i)
+        hover_sound audio.sfx_hover
+        activate_sound audio.sfx_click
+        background it1_caja("#2B1B3F", color)
+        hover_background it1_caja(ui_mezclar(color, "#000000", 0.55), "#FFFFFF")
+        insensitive_background it1_caja("#2B1B3F", color)
+
+        text (it1_fmt(op["valor"]) + " " + paso[1]):
+            xalign 0.5
+            yalign 0.4
+            size 34
+            color "#FFFFFF"
+
+        if marcada:
+            text "(¡ojo!)":
+                xalign 0.5
+                yalign 0.9
+                size 18
+                color "#FFE3A0"
 
 ################################################################################
 ##  PRUEBA — jump mj_probar_it1

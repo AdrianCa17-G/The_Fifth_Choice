@@ -74,9 +74,9 @@ define MJ_PARAMS = {
         "asistida": {"lineas": 8,  "mascara_ini": 20, "energia_ini": 100, "mascara_actuada": 8, "mascara_sincera": 26, "energia_actuada": 12, "energia_sincera": 18, "peso_mascara": 0.4, "mantener": 0.35, "tiempo_linea": 4.5, "puntos_control": [3, 6]},
     },
     "n1": {
-        "dificil":  {"tiempo_total": 75,  "retardo_traduccion": 1.4, "distractores": 3, "penalizacion": 6, "puntos_control": [3]},
-        "media":    {"tiempo_total": 105, "retardo_traduccion": 0.5, "distractores": 2, "penalizacion": 3, "puntos_control": [1, 2, 3, 4, 5]},
-        "asistida": {"tiempo_total": 140, "retardo_traduccion": 0.0, "distractores": 1, "penalizacion": 1, "puntos_control": [1, 2, 3, 4, 5]},
+        "dificil":  {"tiempo_total": 58,  "productos": 4, "distractores": 3, "mezclado": True,  "deriva": 140, "memoria": 5.0,   "mirar_costo": 2.0, "retardo_traduccion": 2.5, "penalizacion": 6, "racha_bonus": 1.5, "puntos_control": [3]},
+        "media":    {"tiempo_total": 80,  "productos": 3, "distractores": 3, "mezclado": False, "deriva": 55,  "memoria": 12.0,  "mirar_costo": 1.0, "retardo_traduccion": 0.8, "penalizacion": 3, "racha_bonus": 2.0, "puntos_control": [1, 2, 3, 4, 5]},
+        "asistida": {"tiempo_total": 115, "productos": 3, "distractores": 1, "mezclado": False, "deriva": 0,   "memoria": 999.0, "mirar_costo": 0.0, "retardo_traduccion": 0.0, "penalizacion": 1, "racha_bonus": 3.0, "puntos_control": [1, 2, 3, 4, 5]},
     },
     "it1": {
         "dificil":  {"pasos": 5, "tiempo": 55,  "numeros_trampa": 2, "trampa_marcada": False, "intentos": 3,    "ayuda_usos": 1,    "ayuda_costo": 10, "plausibilidad": False, "puntos_control": []},
@@ -84,9 +84,18 @@ define MJ_PARAMS = {
         "asistida": {"pasos": 3, "tiempo": 110, "numeros_trampa": 1, "trampa_marcada": True,  "intentos": None, "ayuda_usos": None, "ayuda_costo": 0,  "plausibilidad": True,  "puntos_control": []},
     },
     "m3": {
-        "dificil":  {"fase1_notas": 48, "ventana_ms": 80,  "fallos_max": 8,  "fase2_notas": 24, "fase2_guia": "ninguna", "puntos_control": [48]},
-        "media":    {"fase1_notas": 36, "ventana_ms": 140, "fallos_max": 14, "fase2_notas": 16, "fase2_guia": "tenue",   "puntos_control": [16, 32, 36]},
-        "asistida": {"fase1_notas": 28, "ventana_ms": 200, "fallos_max": 24, "fase2_notas": 12, "fase2_guia": "clara",   "puntos_control": [12, 24, 28]},
+        "dificil":  {"fase1_notas": 56, "ventana_ms": 85,  "fallos_max": 7,  "fase2_notas": 28, "fase2_guia": "ninguna",
+                    "caida": 1.05, "p_corchea": 0.45, "p_doble": 0.20, "p_silencio": 0.18,
+                    "p_corchea2": 0.30, "p_silencio2": 0.22, "penal_extra": 0.5,
+                    "combo_cada": 10, "regen_combo": 0.10, "regen_acierto": 0.0, "puntos_control": [28, 56]},
+        "media":    {"fase1_notas": 40, "ventana_ms": 130, "fallos_max": 11, "fase2_notas": 20, "fase2_guia": "tenue",
+                    "caida": 1.40, "p_corchea": 0.28, "p_doble": 0.10, "p_silencio": 0.12,
+                    "p_corchea2": 0.15, "p_silencio2": 0.12, "penal_extra": 0.25,
+                    "combo_cada": 8, "regen_combo": 0.10, "regen_acierto": 0.0, "puntos_control": [20, 40]},
+        "asistida": {"fase1_notas": 30, "ventana_ms": 190, "fallos_max": 20, "fase2_notas": 14, "fase2_guia": "clara",
+                    "caida": 1.85, "p_corchea": 0.08, "p_doble": 0.0,  "p_silencio": 0.0,
+                    "p_corchea2": 0.0,  "p_silencio2": 0.0,  "penal_extra": 0.0,
+                    "combo_cada": 5, "regen_combo": 0.10, "regen_acierto": 0.0, "puntos_control": [15, 30]},
     },
 }
 
@@ -94,11 +103,11 @@ define MJ_PARAMS = {
 ## (quién, texto): "int" = voz interior de la hermana, "narrador" = narrador.
 ## RELLENO tomado de §5.5: lo sustituyen los guiones de los chats 3 y 4.
 define MJ_FALLOS = {
-    "yotsuba": [("int", "¡Otra vez!"), ("int", "¡Otra vez! ¡Esta sí!"), ("int", "…Otra vez. Despacio.")],
+    "yotsuba": [("int", "¡Otra vez!"), ("int", "¡Otra vez! ¡Esta sí!"), ("int", "...Otra vez. Despacio.")],
     "ichika":  [("narrador", "Se quedó en blanco. Sonrió para que no se notara."), ("narrador", "La sonrisa tardó un poco más en volver."), ("narrador", "Esta vez no sonrió. Respiró, y empezó otra vez.")],
-    "nino":    [("int", "Tsk."), ("int", "…Otra vez. No mires."), ("int", "Otra vez.")],
+    "nino":    [("int", "Tsk."), ("int", "...Otra vez. No mires."), ("int", "Otra vez.")],
     "itsuki":  [("int", "Revisaré desde el principio."), ("int", "Revisaré desde el principio."), ("int", "Revisaré desde el principio.")],
-    "miku":    [("int", "…Perdón."), ("int", "…Perd—"), ("int", "…Otra vez.")],
+    "miku":    [("int", "...Perdón."), ("int", "...Perd—"), ("int", "...Otra vez.")],
 }
 
 ################################################################################
