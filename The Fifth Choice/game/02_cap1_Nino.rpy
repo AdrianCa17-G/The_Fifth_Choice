@@ -141,7 +141,9 @@ label hub_Nino:
 
     nino "Eso no te importa."
 
-    narrador "Dio un paso, interponiéndose entre mí y la estantería de productos importados, como si me hubiera acercado a un terreno prohibido."
+    narrador "Dio un paso y se interpuso entre la estantería de importados y yo."
+
+    narrador "Como si me hubiera acercado a un terreno prohibido."
 
     mc "En tu casa hay despensa." 
     
@@ -194,22 +196,41 @@ label hub_Nino:
 
     narrador "Le costó más terminar esa frase que leer la etiqueta entera."
 
-    mc "¿Por qué a mí me tratas de forma distinta que a ellas?"
+        if len(hub_visitadas) == 2:
 
-    nino "No te trato distinto."
+        mc "En la cocina me hablaste de ellas."
 
-    mc "Sí lo haces. Y no solo a mí."
-    
-    mc "A todos los que han entrado antes que yo."
+        mc "De los que vinieron antes que yo no dijiste nada."
 
-    narrador "Ahí sí levantó la vista."
+        nino "Porque no hace falta."
 
-    show nino nerviosa at pj_habla(0.5)
-    with disolucion_lenta
+        narrador "Pero levantó la vista."
 
-    nino "…"
+        show nino nerviosa at pj_habla(0.5)
+        with disolucion_lenta
 
-    nino "Porque los que entraron antes también sonreían el primer día."
+        nino "…"
+
+        nino "Los que entraron antes también sonreían el primer día."
+
+    else:
+
+        mc "¿Por qué a mí me tratas de forma distinta que a ellas?"
+
+        nino "No te trato distinto."
+
+        mc "Sí lo haces. Y no solo a mí."
+
+        mc "A todos los que han entrado antes que yo."
+
+        narrador "Ahí sí levantó la vista."
+
+        show nino nerviosa at pj_habla(0.5)
+        with disolucion_lenta
+
+        nino "…"
+
+        nino "Porque los que entraron antes también sonreían el primer día."
 
     nino "Y no es que yo sea así porque sí, ¿sabes?"
     
@@ -217,13 +238,11 @@ label hub_Nino:
 
     nino "Es que ya perdí la cuenta de cuántas veces mis hermanas..."
 
-    narrador "Se detuvo, pero solo un segundo." 
-    
-    narrador "No fue el corte de siempre."
+    narrador "Se detuvo, pero solo un segundo."
 
-    narrador "Lo dijo más rápido de lo que suele hablar."
+    narrador "Esperé el «olvídalo» de antes. No llegó."
 
-    narrador "Sin cortar la frase a la mitad como acostumbra."
+    narrador "Siguió hablando, más rápido de lo que suele."
 
     scene cg_nino_receta 
     with dissolve
@@ -234,7 +253,9 @@ label hub_Nino:
 
     mc_pensamiento "No está hablando de mí."
 
-    mc_pensamiento "Está hablando de todos los que vinieron antes, y me está poniendo en la misma fila sin que yo haya hecho nada todavía."
+    mc_pensamiento "Está hablando de todos los que vinieron antes."
+
+    mc_pensamiento "Y me pone en la misma fila sin que yo haya hecho nada todavía."
 
     nino "Mis hermanas se ilusionan cada vez. Cada una a su manera, pero se ilusionan."
 
@@ -242,9 +263,17 @@ label hub_Nino:
 
     narrador "Apretó la tarjeta un poco más fuerte contra el pecho."
 
-    mc_pensamiento "No está protegiéndose a ella."
-    
-    mc_pensamiento "Está protegiendo a sus hermanas de algo que ya les pasó demasiadas veces."
+    if len(hub_visitadas) == 2:
+
+        mc_pensamiento "Lo de sus hermanas ya lo sabía desde la cocina."
+
+        mc_pensamiento "Lo nuevo era cómo apretaba esa tarjeta mientras lo decía."
+
+    else:
+
+        mc_pensamiento "No está protegiéndose a ella."
+
+        mc_pensamiento "Está protegiendo a sus hermanas de algo que ya les pasó demasiadas veces."
 
     scene bg_centro_comercial
     with dissolve
@@ -261,7 +290,7 @@ label hub_Nino:
     show nino neutral at pj_calla(0.5) 
     with disolucion_lenta
 
-    narrador "Se cortó a mitad de frase, algo que ella nunca hace por accidente."
+    narrador "Ahí estaba el «olvídalo». Tarde, como le llega siempre que habla de más."
 
     narrador "Guardó la tarjeta en su bolsillo."
 
@@ -290,11 +319,11 @@ label hub_Nino:
 
     mc_pensamiento "Eso no se lo puedo discutir."
 
-    mc_pensamiento "Lo que diga ahora decide si me pone en la misma fila que los otros cuatro, o no."
+    mc_pensamiento "Lo que diga ahora decide si me pone en la misma fila que los anteriores, o no."
 
     # Menu de Nino
 
-    $ decision_peso("nino", "¿Qué le dirás a Nino?", "Ya perdió la cuenta de quienes prometieron quedarse. Lo que digas ahora puede ser uno más de ellos, o algo distinto.")
+    $ decision_peso("nino", "¿Qué le dirás a Nino?", ..."Ya perdió la cuenta de quiénes prometieron quedarse. ...")
 
     menu:
         "¿Cómo respondes?"
@@ -302,7 +331,7 @@ label hub_Nino:
         "Tienes razón en desconfiar. Solo el tiempo lo va a demostrar.":
             jump nino_m4a
 
-        "Ayudarla con las bolsas, sin decir nada.":
+        "Cargarle la cesta, sin decir nada."::
             jump nino_m4b
 
         "Yo sí voy a durar.":
@@ -371,8 +400,10 @@ label nino_m4a:
     show nino at pj_calla(0.5)
     with disolucion_lenta
 
-    narrador "Terminó de subir la cesta al brazo y siguió caminando hacia la caja, sin esperarme, pero sin decirme que me fuera tampoco."
+    narrador "Terminó de subir la cesta al brazo y siguió caminando hacia la caja."
 
+    narrador "No me esperó. Tampoco me dijo que me fuera."
+    
     mc_pensamiento "No gané su confianza. Todavía no."
   
     mc_pensamiento "Pero por lo menos entendió que no iba a regalarle promesas vacías."
@@ -391,7 +422,7 @@ label nino_m4b:
 
     narrador "No dije nada."
 
-    narrador "Levanté la otra cesta que había dejado en el suelo y empecé a caminar hacia la caja."
+    narrador "Le quité la cesta del brazo y empecé a caminar hacia la caja."
 
     show nino molesta at pj_habla(0.5)
     with disolucion_lenta
@@ -413,7 +444,9 @@ label nino_m4b:
 
     mc "Ya lo noté."
 
-    narrador "Fue lo más parecido a un agradecimiento que iba a conseguir, y terminó caminando a mi lado sin discutirlo."
+    narrador "Fue lo más parecido a un agradecimiento que iba a conseguir."
+
+    narrador "Terminó caminando a mi lado sin discutirlo."
 
     nino "Esto no significa nada."
 
@@ -422,7 +455,9 @@ label nino_m4b:
 
     mc "No dije que significara algo."
 
-    narrador "Hicimos el resto del pasillo en silencio, cada uno con su cesta."
+    narrador "Hicimos el resto del pasillo en silencio." 
+    
+    narrador "Yo con su cesta; ella sin saber dónde poner las manos."
 
     mc_pensamiento "No dijo nada más de lo que se le escapó."
 
@@ -538,11 +573,11 @@ label nino_m5:
 
     narrador "La acompañé hasta la salida, cargando lo que me dejó cargar."
 
-    narrador "En la caja, pagó ella misma, sin dejarme acercar la cartera."
+    narrador "En la caja pagó ella, sin mirar el total."
 
-    mc_pensamiento "Ni eso me lo iba a dejar hacer."
+    mc_pensamiento "Lo que costaba esa cesta era lo que yo gasto en comida en un mes."
 
-    mc_pensamiento "Una de cinco. Y esta no bajó la guardia ni un minuto entero."
+    mc_pensamiento "Una de las cinco. Y esta solo bajó la guardia un minuto."
     
     mc_pensamiento "Quedan [tiempo_restante]."
 
@@ -558,7 +593,7 @@ label nino_m5:
 
     elif nino_rama_cap1 == "tibia":
 
-        mc_pensamiento "Cargué dos bolsas y no dijimos nada importante."
+        mc_pensamiento "Cargué su cesta y no dijimos nada importante."
 
         mc_pensamiento "No sé si eso cuenta como algo."
 

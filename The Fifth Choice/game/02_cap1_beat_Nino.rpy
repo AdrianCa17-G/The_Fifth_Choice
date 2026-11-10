@@ -90,9 +90,13 @@ label beat_Nino:
 
     mc_pensamiento "No es por mi cara. Es por algo que no tiene nada que ver conmigo."
 
-    nino "No se trata de su cara." 
-    
-    nino "Se trata de que va a durar lo mismo que los anteriores, y ellas van a volver a creer que esta vez sí va a ser diferente."
+    nino "No se trata de su cara."
+
+    nino "Yotsuba ya le hizo un grupo de chat. Le puso «tutor» en el nombre."
+
+    nino "Va a durar lo mismo que los anteriores."
+
+    nino "Y ellas van a volver a creer que esta vez sí va a ser diferente."
 
     maruo "Eso ya lo decidiré yo, cuando corresponda."
 
@@ -171,6 +175,10 @@ label beat_Nino:
         mc_pensamiento "Esa era la última vez que lo iba a decir."
 
         mc_pensamiento "Y los dos lo sabíamos."
+
+        narrador "Nino seguía en la cocina. Había venido a pedir eso."
+
+        narrador "Lo había conseguido a medias, y no tenía cara de haber ganado nada."
 
         play music guardia fadein 1.5 fadeout 2.0
 
@@ -257,7 +265,9 @@ label beat_Nino:
     scene cg_nino_grieta_cocina
     with dissolve
 
-    narrador "Se sentó en uno de los bancos de la cocina, de golpe, como si las piernas hubieran dejado de sostenerla el tiempo justo."
+    narrador "Se sentó en uno de los bancos de la cocina, de golpe."
+
+    narrador "Como si las piernas hubieran dejado de sostenerla el tiempo justo."
 
     nino "No es porque seas malo en esto." 
     
@@ -275,7 +285,11 @@ label beat_Nino:
 
     narrador "Hablaba rápido, sin las pausas que suele dejar entre frase y frase."
 
-    nino "Y cuando se van, a mí me toca juntar los pedazos de las cuatro, porque soy la única que no se ilusionó nunca."
+    nino "Y cuando se van, a mí me toca juntar los pedazos de las cuatro."
+
+    nino "Porque soy la única que no se ilusionó nunca."
+
+    nino "Cada vez que uno se va, quedamos un poco menos juntas. Y nadie lo nota."
 
     nino "Alguien tiene que quedarse con la cabeza fría." 
     
@@ -304,6 +318,18 @@ label beat_Nino:
     
     narrador "Bajó la taza sin haber bebido nada."
 
+    narrador "Al bajarla, la taza quedó encima de una tarjeta escrita a mano."
+
+    narrador "Tinta gastada, letra redonda. No era la suya."
+
+    if nino_visitada_cap1:
+
+        mc_pensamiento "La misma tarjeta del súper."
+
+        mc_pensamiento "Allí me contó lo de los tutores. Hoy, lo de ellas."
+
+        mc_pensamiento "Ahora tenía las dos mitades."
+
     mc_pensamiento "No está exagerando." 
     
     mc_pensamiento "No conmigo, al menos."
@@ -318,7 +344,9 @@ label beat_Nino:
     ##  efecto en la relación con Nino.
     ############################################################################
 
-    narrador "Se puso de pie y se acomodó el uniforme, como quien intenta recomponer algo que ya se salió de su sitio."
+    narrador "Se puso de pie y se acomodó el uniforme."
+
+    narrador "Como quien intenta recomponer algo que ya se salió de su sitio."
 
     show nino neutral at pj(0.5)
     with disolucion_lenta
@@ -335,7 +363,7 @@ label beat_Nino:
 
         "¿Cómo respondes?"
 
-        "¿Y quién junta tus pedazos?":   
+        "¿Y quién junta los tuyos?":
 
             jump nino_beat_m4a
 
@@ -367,7 +395,7 @@ label beat_Nino:
 
         mc "Hoy fuiste a pedirle a tu padre que me echara." 
         
-        mc "Sola, sin avisarle a nadie."
+        mc "Sola. Sin que ninguna de ellas te lo pidiera."
 
         mc "Eso no lo hace alguien con la cabeza fría."
 
@@ -414,6 +442,27 @@ label beat_Nino:
         narrador "Me señaló la tabla con la barbilla, sin mirarme."
 
         narrador "Cortamos en silencio. En toda la tarde no volvió a hablar de despedirme."
+
+        narrador "Antes de ponerse con la olla, dejó un táper vacío junto a mi mochila."
+
+        show nino molesta at pj(0.5)
+        with disolucion_lenta
+
+        nino "Eso es para ti. Lo que sobre."
+
+        mc "Todavía no ha sobrado nada."
+
+        show nino pillada at pj(0.5)
+        with disolucion_lenta
+
+        nino "...Va a sobrar."
+
+        narrador "Sobró. Exactamente lo que cabía en el táper."
+
+        mc_pensamiento "No le di las gracias. Me pareció que, si lo hacía, lo iba a tirar."
+
+        show nino neutral at pj(0.5)
+        with disolucion_lenta
 
         mc_pensamiento "No me dejó entrar. Me dio una tarea."
 
@@ -494,7 +543,7 @@ label beat_Nino:
 
         nino "Genial."
 
-        nino "Ni un día entero de conocerme y ya sabes exactamente qué decirme para que me calle."
+        nino "Dos semanas aquí y ya sabes exactamente qué decirme para que me calle."
 
         mc "No dije que te callaras."
 
@@ -511,9 +560,9 @@ label beat_Nino:
 
         narrador "Se fue a su habitación sin volver a mirarme, con la taza todavía en la mano."
 
-        mc_pensamiento "Le dije justo lo que un padre le diría."
+        mc_pensamiento "Le hablé como le habla Maruo."
 
-        mc_pensamiento "Y ella me contestó justo lo que le contesta a un padre."
+        mc_pensamiento "Y ella me contestó como le contesta a Maruo: yéndose."
 
         jump nino_beat_m5    
 

@@ -409,11 +409,13 @@ label e6_lunes:
 
         call e6_foco("nino", "pillada")
 
-        nino "Treinta días. El último tutor duró cuatro. ...Haz la cuenta tú."
+        nino "Treinta días. Y sigues viniendo. ...No digo nada más."
 
         nino "Y no pongas esa cara. Yo no dije nada. Los números hablan solos."
 
-        nino "Repasé inglés leyendo etiquetas en voz baja. ...Si me viste mover los labios en el súper, no viste nada."
+        nino "Repasé inglés leyendo etiquetas en voz baja."
+
+        nino "...Si me viste mover los labios en el súper, no viste nada."
 
         nino "Y la próxima vez que quieras dar un discurso, baja la voz. Se oyó hasta el pasillo."
 
@@ -1012,9 +1014,9 @@ label e6_nino_nucleo:
 
     mc_pensamiento "Así que no se lo dije. Hay cosas que es mejor no señalarlas."
 
-    mc_pensamiento "Además que no hay como hablar en un examen..."
+    mc_pensamiento "Además, en un examen no se habla."
 
-    narrador "Mientras otros estaban en la primera pregunta."
+    narrador "Los demás seguían en la primera pregunta."
 
     narrador "Nino iba a la velocidad de un tren que no frena."
 
@@ -1030,13 +1032,17 @@ label e6_nino_nucleo:
 
 label e6_nino_beat_calida:
 
-    nino_int "«¿Y quién junta los tuyos?» No contesté. No supe que." 
+    nino_int "«¿Y quién junta los tuyos?» No contesté. No supe qué."
     
     nino_int "La pregunta sigue en la cocina. Y ahí se quedará."
 
     nino_int "Le mandé cortar cebollas finas. Las cortó gruesas." 
     
     nino_int "Parece que nunca escucha. Las usé igual."
+
+    nino_int "Le dejé un táper antes de cocinar. «Va a sobrar», le dije."
+
+    nino_int "Cociné de más para que sobrara. Eso no lo sabe nadie."
 
     return
 
@@ -1054,9 +1060,9 @@ label e6_nino_beat_tibia:
 
 label e6_nino_beat_fria:
 
-    nino_int "'Deja de juntar los pedazos de los demás y concentrate en los tuyos'"
+    nino_int "«Deja de juntar los pedazos de las demás y ocúpate de los tuyos.»" 
 
-    nino_int "Que gran respuesta, era de esperarse de un tonto como él."
+    nino_int "Qué gran respuesta. Era de esperarse de un tonto como él."
 
     nino_int "Le dije que hablaba el mismo idioma que papá. Lo dije para que le doliera."
 
@@ -1103,6 +1109,10 @@ label e6_nino_mono_calida:
 
     nino_int "Hay cena, pase lo que pase con las notas. Cocino yo. Siempre cocino yo."
 
+    nino_int "La receta de la tarjeta me la sé de memoria. La llevo igual."
+
+    nino_int "Hay letras que, si dejas de mirarlas, se te olvida cómo eran."
+
     nino_int "Cinco listas, una por hermana. La mía la escribo la última, y es la más corta."
 
     nino_int "Y una sexta línea que todavía no sé cómo llenar. ...Primero las cinco."
@@ -1147,7 +1157,7 @@ label e6_nino_mono_fria:
     
     nino_int "Casi palabra por palabra."
 
-    nino_int "Le dije que se guardara su promesa vacia." 
+    nino_int "Le dije que se guardara su promesa vacía."
     
     nino_int "Prometió durar. Ha durado. Eso hay que reconocérselo."
 
@@ -1185,7 +1195,7 @@ label e6_nino_mono_no_visitada:
 
     nino_int "Las que fue a ver llegaron distintas a casa." 
     
-    nino_int "No le dije si mejor o peor. No pienso decirselo."
+    nino_int "No le dije si mejor o peor. No pienso decírselo."
 
     nino_int "Alguien tiene que ser la que no cambia." 
     
@@ -1199,7 +1209,7 @@ label e6_nino_mono_no_visitada:
     
     nino_int "Y no se fue."
 
-    nino_int "Eso queda en la columna de los datos sin conclusión."
+    nino_int "Eso no sé en qué lista ponerlo."
 
     nino_int "El chat lo sigo leyendo. Alguien tiene que leerlo."
 
@@ -1263,15 +1273,15 @@ label e6_nino_mj:
 
 label e6_nino_promesa:
 
-    mc_pensamiento "Esa vez me dijo que ni le molestaba que no la haya visitado."
+    mc_pensamiento "Me dijo que ni le molestaba que no la hubiera ido a buscar."
 
-    mc_pensamiento "Dijo que alguien tiene que ser la que no cambia." 
-    
+    mc_pensamiento "Dijo que alguien tiene que ser la que no cambia."
+
     mc_pensamiento "Para que las demás tengan a dónde volver."
 
-    mc_pensamiento "También dijo que ya me había visto en su casa más de lo que quería." 
-    
-    mc_pensamieto "Que eso contaba como visita."
+    mc_pensamiento "También dijo que ya me había visto en su casa más de lo que quería."
+
+    mc_pensamiento "Que eso contaba como visita."
 
     mc_pensamiento "Voy al centro comercial, al pasillo de importados." 
     
@@ -1282,7 +1292,9 @@ label e6_nino_promesa:
 
 label e6_nino_gesto_calida:
 
-    narrador "Nino terminó, revisó la hoja una vez mas y dejó el lápiz sobre la mesa."
+    narrador "Nino terminó. Soltó el lápiz sin ruido y giró la hoja boca abajo."
+
+    narrador "Cruzó los brazos, un poco más fuerte que otras veces."
 
     profe "Nakano. Si ya terminó, puede entregar."
 
@@ -1294,7 +1306,7 @@ label e6_nino_gesto_calida:
 
     narrador "A las demás no les echó ni una mirada de guardia. Ni una."
 
-    narrador "Ya no hacia falta ver por las demas."
+    narrador "Ya no hacía falta vigilar a las demás."
 
     play sound audio.sfx_puerta_cierra volume 1.0
 
@@ -2282,9 +2294,9 @@ label e6_despues:
 
         nino "Terminé mi examen a los quince minutos. Y me fui."
 
-        nino "Sin vigilar a nadie de mis hermanas. Sin quedarme de guardia." 
-        
-        nino "Se que ninguna falló en sus examenes."
+        nino "Sin vigilar a ninguna de mis hermanas. Sin quedarme de guardia."
+
+        nino "No sé cómo les fue. Por primera vez, no necesité saberlo antes."
 
         mc "Te vi salir."
 
@@ -2324,7 +2336,7 @@ label e6_despues:
 
         mc "Te vi quedarte."
 
-        nino "Pues mira a alguien mas." 
+        nino "Pues mira a otra."
         
         nino "¿Por qué te fijas en mí?"
 
@@ -2338,7 +2350,7 @@ label e6_despues:
         
         nino "A la media hora levanté la vista."
 
-        nino "Seguías en tu sitio. Eso es todo. Una observación."
+        nino "Seguías en tu sitio. Eso es todo."
 
         mc "Seguía."
 
@@ -2747,7 +2759,11 @@ label e6_despues:
 
         narrador "Nino ya estaba en la puerta, sujetándola abierta con la espalda."
 
-        nino "Sal. Si no sales tú, aquí no sale nadie."
+        nino "Sal, [mc]. Si no sales tú, aquí no sale nadie."
+
+        narrador "Era la primera vez que decía mi nombre. Lo dijo como una orden."
+
+        mc_pensamiento "Supongo que, con ella, es lo mismo."
 
         narrador "Esperó a que estuviera a su lado. Cruzamos la puerta juntos."
 
@@ -3331,7 +3347,7 @@ label e6_cinco:
 
             nino "Alguien tenía que ser a la que no iban a buscar."
 
-            nino "Y fui yo. La que siempre recibe el golpe mas antes que todas." 
+            nino "Y fui yo. La que siempre ve venir el golpe antes que nadie."
             
             nino "...Eso sonó mejor en mi cabeza."
 
@@ -3626,7 +3642,7 @@ label e6_mesa:
 
     nino "Seis sillas ocupadas. ...Seis personas en esta mesa."
 
-    nino "Hace un mes no habría apostado por que todos estuvieramos reunidos. Sin problemas."
+    nino "Hace un mes no habría apostado a vernos a los seis en esta mesa."
 
     nino "...Es una observación. No le des importancia."
 
@@ -3699,7 +3715,9 @@ label e6_mesa:
 
     call e6_foco("nino", "nerviosa")
 
-    narrador "Nino leyó el suyo. Luego miró el de Miku, el de Yotsuba, el de Ichika, el de Itsuki. Movía los labios sin sonido."
+    narrador "Nino leyó el suyo. Luego, uno por uno, los de las demás."
+
+    narrador "Movía los labios sin sonido."
 
     nino "Uno. Dos. Tres. Cuatro. ...Cinco."
 

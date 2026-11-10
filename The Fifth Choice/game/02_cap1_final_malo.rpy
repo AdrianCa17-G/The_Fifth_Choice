@@ -110,7 +110,7 @@ label final_malo_beat:
     show nino neutral at pj_habla(0.5)
     with dissolve
 
-    if "nino" in hub_visitadas:
+    if rama_de("nino") == "fria":
 
         nino "Me dijiste que ibas a durar."
 
@@ -138,7 +138,7 @@ label final_malo_beat:
 
     nino "No es un cumplido."
 
-    nino "Aunque si deberías sentirte orgulloso."
+    nino "Aunque sí deberías sentirte orgulloso."
 
     mc_pensamiento "Tenía que sentirse como ganar. Ella lo sabía. Yo lo sabía."
 
@@ -574,7 +574,7 @@ label final_malo_hub3:
 
     nino "Ya basta de rodeos."
 
-    nino "Alguien tiene que decirtelo y me toca a mí."
+    nino "Alguien tiene que decírtelo y me toca a mí."
 
     nino "No aprendimos nada. Ni nos enseñaste, ni nosotras quisimos."
 
@@ -1290,7 +1290,7 @@ label final_malo_hub3:
 
     nino "Yo ni siquiera sé si…"
 
-    narrador "Se cortó a mitad de frase. Esta vez no era una táctica."
+    narrador "Se cortó a mitad de frase. Esta vez no era por haber hablado de más."
 
     nino "Cuídate."
 

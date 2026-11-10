@@ -544,7 +544,9 @@ label beat_casa:
 
                 mc_pensamiento "Dijo que no se trataba de mí, sino de que iba a durar lo mismo que los anteriores."
 
-                mc_pensamiento "Que Ichika finge, que Yotsuba se esfuerza el doble, que Miku se encierra más y que Itsuki se lo toma personal."
+                mc_pensamiento "Que Ichika finge y Yotsuba se esfuerza el doble."
+
+                mc_pensamiento "Que Miku se encierra más e Itsuki se lo toma personal."
 
                 mc_pensamiento "Y que a ella le toca juntar los pedazos de las cuatro porque es la única que nunca se ilusionó."
 
@@ -566,13 +568,15 @@ label beat_casa:
 
                 mc_pensamiento "Nadie corrige por reflejo algo que no domina."
 
-                mc_pensamiento "Cuando supo que no la había buscado dijo que le daba igual, que ya me había visto en su casa de sobra."
+                mc_pensamiento "Cuando supo que no la había buscado dijo que le daba igual."
 
+                mc_pensamiento "Que ya me había visto en su casa de sobra."
+                
                 mc_pensamiento "Y que alguien tiene que ser la que no cambia, para que las demás tengan a dónde volver."
 
                 mc_pensamiento "Después vino la cocina. La oí pedirle a su padre que me echara."
 
-                mc_pensamiento "Gritó, y se frenó antes de decir por qué."
+                mc_pensamiento "Gritó. Y después, sentada en la cocina, me explicó por qué."
 
                 mc_pensamiento "Habló de sus hermanas una por una, y de sí misma como la única que nunca se ilusionó."
 

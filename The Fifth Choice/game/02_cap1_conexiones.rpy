@@ -1099,9 +1099,11 @@ label cap1_interconexion_1:
     show nino neutral at pj_habla(X_NINO)
     with disolucion_lenta
 
-    nino "¿Y a ti qué te importa dónde pasemos?"
+    nino "¿Y a ti qué te importa dónde pasamos la tarde?"
 
-    nino "Ninguna te lo va a decir."
+    nino "Ya oíste a Miku. Quiere separarnos, una por una."
+
+    nino "Somos cinco. Ninguna te lo va a decir."
 
     mc "Ya lo suponía."
 
@@ -1463,11 +1465,15 @@ label cap1_interconexion_2:
 
             mc "…¿Qué?"
 
-            nino "¡Nada! ¡Era una pregunta retórica!"
+            nino "¡Nada!" 
+            
+            nino "Que si te vas a llevar a mis hermanas de una en una, primero se me avisa."
 
-            mc "Nino. ¿Estás celosa?"
+            nino "Yo organizo esta casa. Las cosas pasan por mí."
 
-            nino "¡¿CELOSA?! ¡Ni en tus sueños, tonto!"
+            mc "¿Te molesta no haber sido la primera?"
+
+            nino "¡Me molesta que hagas planes con mis hermanas, tonto!"
 
             show nino molesta at pj_habla(0.5)
             with disolucion_lenta
@@ -1489,7 +1495,7 @@ label cap1_interconexion_2:
 
             mc_pensamiento "No pude ver si estaba roja." 
             
-            mc_pensamiento "Pero parece que esa pregunta sí la dijo desde sus sentimientos."
+            mc_pensamiento "La excusa le llegó un segundo tarde. La pregunta, no."
 
         elif rama_hub == "tibia":
 
@@ -2189,6 +2195,26 @@ label cap1_interconexion_4:
     miku "…Nino nunca se queda quieta."
 
     show miku neutral at pj_calla(X_MIKU)
+    show yotsuba incomoda at pj_habla(X_YOTSUBA)
+    with disolucion_lenta
+
+    yotsuba "…Puede que sea culpa mía."
+
+    yotsuba "Esta mañana armé un grupo de chat. Las cinco… y tú."
+
+    yotsuba "Le puse «¡Equipo Quintillizas + Tutor!»." 
+    
+    yotsuba "Nino lo leyó y se fue."
+
+    narrador "Saqué el celular. Era verdad."
+    
+    narrador "Ahí estaba: un grupo nuevo, y mi número al final."
+
+    mc_pensamiento "No era un grupo para burlarse de mí." 
+    
+    mc_pensamiento "Era peor: me incluía."
+
+    show yotsuba incomoda at pj_calla(X_YOTSUBA)
     show itsuki molesta at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
@@ -2373,7 +2399,7 @@ label cap1_interconexion_5:
 
     narrador "Cuando iba a verlas una de ellas se interceptó en mi camino."
 
-    mc_pensamiento "Ya sabía quien era con solo ver esa mirada de odio hacia mi."
+    mc_pensamiento "Ya sabía quién era antes de verle la cara. Solo una se me cruza así."
 
     play music incomodo fadein 1.5 
 
@@ -3077,7 +3103,7 @@ label cap1_interconexion_6:
 
         nino "Y, siendo sincera, tampoco es que haya servido de mucho."
 
-        nino "Solo haz empeorado las cosas."
+        nino "Solo has empeorado las cosas."
 
         nino "Todas lo sabemos."
 
@@ -3561,9 +3587,7 @@ label cap1_interconexion_6:
 
     narrador "Pasé el día mirando el chat del grupo."
 
-    narrador "Se llamaba «¡Equipo Quintillizas + Tutor!»." 
-    
-    narrador "Obra de Yotsuba. Con tres signos de exclamación de más."
+    narrador "El de Yotsuba. Seguía con sus tres signos de exclamación de más."
 
     narrador "Nino lo había silenciado. Y se había salido tres veces." 
     
