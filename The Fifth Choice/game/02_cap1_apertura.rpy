@@ -78,7 +78,7 @@ label cap1_apertura:
     show itsuki molesta at pj(0.5)
     with disolucion_lenta
 
-    itsuki "…"
+    itsuki "..."
 
     mc "Voy a ir esta tarde."
 
@@ -176,7 +176,7 @@ label cap1_apertura:
 
     narrador "Rectas. En silencio. Con los cuadernos abiertos."
 
-    mc_pensamiento "…"
+    mc_pensamiento "..."
 
     mc_pensamiento "Esto está mal."
 
@@ -238,7 +238,7 @@ label cap1_apertura:
 
     narrador "Corregí la segunda hoja. Seis de seis mal."
 
-    mc_pensamiento "…"
+    mc_pensamiento "..."
 
     narrador "Las cinco hojas tenían exactamente las mismas seis respuestas equivocadas." 
     
@@ -303,7 +303,7 @@ label cap1_apertura:
     show yotsuba at pj_habla(0.80)
     with disolucion_lenta
    
-    yotsuba "…No dije nada."
+    yotsuba "...No dije nada."
 
     show yotsuba at pj_calla(0.80)
     with disolucion_lenta
@@ -373,7 +373,7 @@ label cap1_apertura:
     show nino pillada at pj(0.5)
     with disolucion_lenta
 
-    nino "…"
+    nino "..."
 
     mc "Gracias."
 
@@ -402,18 +402,20 @@ label cap1_apertura:
     show miku neutral at pj(0.5)
     with dissolve
 
-    miku "…No fue idea mía."
+    miku "...No fue idea mía."
 
     narrador "Lo dijo tan bajo que tuve que reconstruirlo un segundo después, cuando ya no estaba."
 
     narrador "Porque en cuanto lo dijo, se dio cuenta de que lo había dicho."
 
-    miku "…Olvídalo. Perdón."
+    miku "...Olvídalo. Perdón."
 
     hide miku  
     with moveoutleft
 
-    mc_pensamiento "Es la segunda vez que habla sin querer y la segunda vez que pide perdón por haberlo hecho."
+    mc_pensamiento "Segunda vez que habla sin querer. La primera se escondió detrás del libro."
+
+    mc_pensamiento "Esta vez, además, pidió perdón."
 
     mc_pensamiento "Nadie se disculpa por decir algo cierto, a menos que le hayan enseñado que decirlo cuesta."
 
@@ -835,7 +837,7 @@ label cap1_apertura:
 
     narrador "Se fue tan rápido como había entrado, muy contenta de haber resuelto algo."
 
-    mc_pensamiento "…"
+    mc_pensamiento "..."
 
     mc_pensamiento "Repasemos."
 

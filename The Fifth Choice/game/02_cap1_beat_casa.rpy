@@ -103,7 +103,7 @@ label beat_casa:
 
     narrador "Dejó el lápiz sobre la mesa, despacio."
 
-    raiha "…Hablaste raro."
+    raiha "...Hablaste raro."
 
     mc "¿Raro cómo?"
 
@@ -131,7 +131,7 @@ label beat_casa:
 
     narrador "Volvió a mirar su hoja, ya sin el mismo ánimo de antes."
 
-    raiha "…Está bien el signo."
+    raiha "...Está bien el signo."
 
     mc "Entonces revisa el siguiente paso con la misma lógica."
 
@@ -571,7 +571,7 @@ label beat_casa:
                 mc_pensamiento "Cuando supo que no la había buscado dijo que le daba igual."
 
                 mc_pensamiento "Que ya me había visto en su casa de sobra."
-                
+
                 mc_pensamiento "Y que alguien tiene que ser la que no cambia, para que las demás tengan a dónde volver."
 
                 mc_pensamiento "Después vino la cocina. La oí pedirle a su padre que me echara."
@@ -647,13 +647,15 @@ label beat_casa:
 
                 mc_pensamiento "Miku fue la tercera, y la que menos ruido hizo."
 
-                mc_pensamiento "Estaba en el sofá, con unos audífonos azules colgando del cuello y un libro de estrategas del Sengoku."
+                mc_pensamiento "Estaba en el sofá, con unos audífonos azules colgando del cuello."
+
+                mc_pensamiento "Y un libro de estrategas del Sengoku."
 
                 mc_pensamiento "Le pregunté si eso eran samuráis y duelos. Dijo «no, es logística» sin levantar la vista."
 
                 mc_pensamiento "«Las batallas las gana quien mueve el arroz.» Y se escondió detrás del libro al darse cuenta."
 
-                mc_pensamiento "Al día siguiente, en la mesa, se subió los audífonos en cuanto saqué las hojas."
+                mc_pensamiento "Esa misma tarde, en la mesa, se subió los audífonos en cuanto saqué las hojas."
 
                 mc_pensamiento "Me borró del mapa sin decir una palabra."
 
@@ -677,9 +679,13 @@ label beat_casa:
 
                 mc_pensamiento "Esa noche me había leído su libro hasta la página noventa y dos."
 
-                mc_pensamiento "Se quedó mirando el ejemplar sobre la mesa y, por primera vez, miró hacia fuera del libro."
+                mc_pensamiento "Se quedó mirando el ejemplar sobre la mesa."
 
-                mc_pensamiento "Me contó lo de la sal de Takeda Shingen, y cómo los vecinos dejaron de vendérsela sin mover un soldado."
+                mc_pensamiento "Y, por primera vez, miró hacia fuera del libro."
+
+                mc_pensamiento "Me contó lo de la sal de Takeda Shingen."
+
+                mc_pensamiento "Cómo los vecinos dejaron de vendérsela sin mover un soldado."
 
                 mc_pensamiento "Hablaba más rápido, sin la pausa de siempre delante de cada frase."
 
@@ -691,7 +697,9 @@ label beat_casa:
 
                     mc_pensamiento "Cuando fue a disculparse, la corté: eso no se disculpa."
 
-                    mc_pensamiento "Me dijo que lo de la sal estaba en la página ciento veinte. Lo dijo despacio, como quien termina una cuenta."
+                    mc_pensamiento "Me dijo que lo de la sal estaba en la página ciento veinte."
+
+                    mc_pensamiento "Lo dijo despacio, como quien termina una cuenta."
 
                     mc_pensamiento "Al día siguiente me pidió que le avisara al llegar a esa página. Quería ver mi cara."
 
@@ -705,7 +713,7 @@ label beat_casa:
 
                 else:
 
-                    mc_pensamiento "Le dije que el Sengoku no entraba en el examen."
+                    mc_pensamiento "Le dije que lo de la sal no entraba en el examen."
 
                     mc_pensamiento "No protestó. Recogió sus libros, se subió los audífonos y esta vez sí sonaba la música."
 
@@ -719,7 +727,9 @@ label beat_casa:
 
                 mc_pensamiento "Sabe cómo se sostiene un lugar entero y por qué se cae."
 
-                mc_pensamiento "Lo cuenta como si lo hubiera vivido. Y después borra la respuesta antes de que alguien la lea."
+                mc_pensamiento "Lo cuenta como si lo hubiera vivido."
+
+                mc_pensamiento "Y después borra la respuesta antes de que alguien la lea."
 
                 call collage_cerrar
 
@@ -741,7 +751,9 @@ label beat_casa:
 
                 mc_pensamiento "Después me dijo que así estuvo bien. Pero que habría acertado con el sitio."
 
-                mc_pensamiento "Que hay una silla vacía enfrente de la suya, y que dejó un libro abierto dos días por si hacía falta una excusa."
+                mc_pensamiento "Que hay una silla vacía enfrente de la suya."
+
+                mc_pensamiento "Y que dejó un libro abierto dos días, por si hacía falta una excusa."
 
                 mc_pensamiento "Dijo que no pasaba nada. Y pidió perdón por haber sonado triste."
 

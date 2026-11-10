@@ -67,7 +67,7 @@ label hub_Miku:
 
     mc_pensamiento "Y los audífonos estaban apagados."
 
-    mc_pensamiento "A esta distancia no se oye algo, aunque sea un zumbido. No escuchaba nada."
+    mc_pensamiento "A esta distancia se oye algo, aunque sea un zumbido. No había nada."
 
     mc_pensamiento "El otro día, en el departamento, se los subió en cuanto saqué las hojas."
 
@@ -89,29 +89,29 @@ label hub_Miku:
     show miku neutral at pj(0.5)
     with dissolve
 
-    miku "…"
+    miku "..."
 
-    mc "Ah, Miku. Qué coincidencia encontrarte aquí..."
+    mc "Buenas tardes, Miku."
 
-    miku "…"
+    miku "..."
 
-    miku "[mc]… ¿Cómo sabías que estaba aquí?"
+    miku "[mc]... ¿Cómo sabías que estaba aquí?"
 
     mc "No lo sabía. Llevo una hora dando vueltas."
 
-    mc "Aunque alguien me dijo que la biblioteca podría ser tu rincón secreto de estudio."
+    mc "Alguien me dijo que las calladas siempre tienen un rincón secreto."
 
     narrador "Algo se le movió en la cara al oír eso, tan rápido que no me dio tiempo a leerlo."
 
-    miku "…¿Y entonces?"
+    miku "...¿Y entonces?"
 
     mc "El libro que llevabas el otro día tenía la etiqueta de una biblioteca."
-    
-    mc "Esta es la que queda cerca del edificio."
+
+    mc "Esta es la que te queda de camino a casa."
 
     narrador "Bajó el libro dos dedos, lo justo para mirarme por encima del canto."
 
-    miku "…Ah."
+    miku "...Ah."
 
     narrador "No pareció convencerle del todo, pero tampoco se levantó."
 
@@ -129,21 +129,21 @@ label hub_Miku:
 
     mc "Historia es tu asignatura."
 
-    miku "No es mi asignatura."
+    miku "...No es mi asignatura."
 
-    mc "Es la que más dominas y la que te resultará más fácil de aprender."
+    mc "Es la que mejor sabes y la que peor se te ve en las notas."
     
     mc "Empezamos por ahí."
 
-    miku "…"
+    miku "..."
 
     mc "Unificación de Japón. Del final de las guerras civiles al periodo Edo."
 
-    miku "…Está bien."
+    miku "...Está bien."
 
     mc "¿Está bien que sí, o está bien que me calle?"
 
-    miku "…"
+    miku "..."
 
     mc "Lo voy a tomar como que sí."
 
@@ -153,7 +153,7 @@ label hub_Miku:
 
     mc_pensamiento "Perfecto. Un muro de ladrillo, pero educado."
 
-    mc_pensamiento "Llevo días haciendo lo mismo con las cinco y progresando con ninguna."
+    mc_pensamiento "Con cada una de las cinco me toca empezar de cero."
 
     mc_pensamiento "Repasemos lo que sé de Miku."
 
@@ -192,13 +192,15 @@ label hub_Miku:
     scene cg_miku_sorpresa
     with dissolve
 
-    miku "…Ese es el que estaba leyendo yo."
+    miku "...Ese es el que estaba leyendo yo."
 
     mc "Hay dos ejemplares. Lo saqué anoche."
 
-    miku "…¿Por qué?"
+    miku "...¿Por qué?"
 
-    mc "Porque el otro día dijiste que las batallas las gana quien mueve el arroz y no entendí a que te referías."
+    mc "Porque el otro día dijiste que las batallas las gana quien mueve el arroz."
+
+    mc "Y no entendí a qué te referías."
 
     mc "Sentí intriga por lo que esa frase significaba."
 
@@ -208,7 +210,7 @@ label hub_Miku:
 
     mc "Y creo que el tipo que lo escribió se equivoca."
 
-    miku "…¿En qué?"
+    miku "...¿En qué?"
 
     mc "Le dedica cuarenta páginas a cómo se movía la comida y seis a la batalla más famosa del siglo."
     
@@ -221,20 +223,20 @@ label hub_Miku:
 
     narrador "Miku cerró el libro sobre el dedo índice, para no perder la página."
 
-    mc_pensamiento "Era la primera vez en dos días que dejaba de mirar a otro lado."
+    mc_pensamiento "Era la primera vez que dejaba de mirar a otro lado."
 
     show miku neutral at pj_habla(0.5)
     with dissolve
 
-    miku "…¿Y qué comían?"
+    miku "...¿Y qué comían?"
 
     mc "¿Quiénes?"
 
-    miku "…Los treinta mil hombres. En esa batalla famosa."
+    miku "...Los treinta mil hombres. En esa batalla famosa."
 
-    mc "…"
+    mc "..."
 
-    miku "…Tres veces al día. Todos los días." 
+    miku "...Tres veces al día. Todos los días." 
     
     miku "Durante las seis semanas que tardaron en llegar hasta ahí caminando."
 
@@ -268,7 +270,7 @@ label hub_Miku:
 
     miku "Y un día los vecinos se pusieron de acuerdo y dejaron de vendérsela."
 
-    mc "…Sin atacarlo."
+    mc "...Sin atacarlo."
 
     miku "Sin un soldado. Sin salir de su casa. Solo dejaron de vender."
 
@@ -297,13 +299,15 @@ label hub_Miku:
 
     miku "Aunque seguramente no pasó."
 
-    mc "…¿Cómo que no pasó?"
+    mc "...¿Cómo que no pasó?"
 
     miku "Esa parte no aparece en ningún papel de la época."
 
     miku "Está escrita cien años después, solo para que la historia sonara más atractiva."
 
-    miku "Lo que sí es seguro es que les quitaron el acceso a la sal y que ahí dentro siguió habiendo sal igual."
+    miku "Lo que sí es seguro es que les quitaron el acceso a la sal."
+
+    miku "Y que ahí dentro siguió habiendo sal igual."
 
     miku "Alguien se la vendió."
 
@@ -323,9 +327,17 @@ label hub_Miku:
 
     narrador "Fue eso: se oyó a sí misma hablando en voz alta durante un minuto entero."
 
-    miku "…"
+    miku "..."
 
-    miku "…Perdón. Hablé mucho."
+    miku "...Perdón. Hablé mucho."
+
+    mc "¿Por qué perdón?"
+
+    miku "...La gente pone una cara. Cuando hablo de esto."
+
+    mc "¿Qué cara?"
+
+    miku "...La de esperar a que termine."
 
     show miku at pj_calla(0.5)
     with dissolve
@@ -341,9 +353,9 @@ label hub_Miku:
 
     mc_pensamiento "Tercera vez."
 
-    mc_pensamiento "Tercera vez que dice algo que nadie le pidió y tercera vez que se disculpa por haberlo dicho."
+    mc_pensamiento "Tercera vez que dice algo que nadie le pidió. Y otra vez, el perdón detrás."
 
-    mc_pensamiento "Nadie se disculpa por decir algo cierto, a menos que le hayan enseñado que decirlo cuesta."
+    mc_pensamiento "Nadie le enseñó a callarse. Se lo fueron enseñando las caras de los demás."
 
     ## Menú de Miku.
 
@@ -359,7 +371,7 @@ label hub_Miku:
         "Reconocer su nivel. Hacer una valoración de su esfuerzo.":
             jump miku_m4b
 
-        "El Sengoku no entra en el examen":
+        "Lo de la sal no entra en el examen.":
             jump miku_m4c
 
 
@@ -377,13 +389,13 @@ label miku_m4a:
     show miku neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    miku "…¿Qué?"
+    miku "...¿Qué?"
 
     mc "Es una pregunta."
 
     mc "Montaña, carga a lomo de animal, hace quinientos años. Cuánto tardaba."
 
-    miku "…Diez días. Doce si llovía."
+    miku "...Diez días. Doce si llovía."
 
     mc "¿Y cuánto aguantaban ellos sin sal?"
 
@@ -403,11 +415,11 @@ label miku_m4a:
 
     narrador "Se detuvo mirándome a mí, no al libro."
 
-    miku "…Per—"
+    miku "...Per—"
 
     mc "No."
 
-    miku "…"
+    miku "..."
 
     mc "Estabas contestando una pregunta que te hice yo. Eso no se disculpa."
 
@@ -418,11 +430,11 @@ label miku_m4a:
     show miku relajada at pj_habla(0.5)
     with disolucion_lenta
 
-    miku "…Dijiste que llegaste a la página noventa."
+    miku "...Dijiste que llegaste a la página noventa."
 
     mc "Noventa y dos."
 
-    miku "…Lo de la sal está en la ciento veinte."
+    miku "...Lo de la sal está en la ciento veinte."
 
     show miku at pj_calla(0.5)
     with disolucion_lenta
@@ -448,9 +460,9 @@ label miku_m4a:
     show miku encogida at pj_habla(0.5)
     with disolucion_lenta
 
-    miku "…No es lo mismo."
+    miku "...No es lo mismo."
 
-    mc "Es exactamente lo mismo, y lo vas a comprobar en tres semanas."
+    mc "Es exactamente lo mismo, y lo vas a comprobar en el examen."
 
     show miku at pj_calla(0.5)
     with disolucion_lenta
@@ -476,21 +488,23 @@ label miku_m4b:
     show miku at pj_habla(0.5)
     with dissolve
 
-    miku "…No se me da bien. Solo lo he leído."
+    miku "...No se me da bien. Solo lo he leído."
 
     mc "Que es más de lo que ha hecho nadie en tu casa."
 
     show miku neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    miku "…Eso no es difícil."
+    miku "...Eso no es difícil."
 
     show miku neutral at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Lo dijo sin ninguna gracia, como quien cierra una puerta con educación."
 
-    mc_pensamiento "Le acabo de poner una etiqueta."
+    mc_pensamiento "Le acabo de poner una nota."
+
+    mc_pensamiento "Y una nota es otra forma de decirle que ya puede dejar de hablar."
 
     mc_pensamiento "Y ella lleva toda la vida escuchando etiquetas comparadas con otras cuatro."
 
@@ -521,13 +535,13 @@ label miku_m4c:
     show miku neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    miku "…Ya lo sé."
+    miku "...Ya lo sé."
 
     narrador "Miró un segundo el ejemplar que yo había dejado sobre la mesa, y después apartó la vista."
 
     mc "Entonces empecemos por el tema uno."
 
-    miku "…Hoy no."
+    miku "...Hoy no."
     
     $ duck()
     play sound audio.sfx_silla volume 2.5
@@ -539,7 +553,7 @@ label miku_m4c:
 
     narrador "Y esta vez, desde donde yo estaba, se oía la música."
 
-    mc_pensamiento "…"
+    mc_pensamiento "..."
 
     mc_pensamiento "Antes no sonaban."
 
@@ -561,9 +575,15 @@ label miku_m5:
 
     stop music fadeout 1.5
 
-    narrador "Salí de la biblioteca con Miku cuando estaban apagando las luces de la segunda planta."
+    narrador "Salí de la biblioteca cuando estaban apagando las luces de la segunda planta."
 
-    narrador "De ahí nos despedimos."
+    if miku_rama_cap1 == "fria":
+
+        narrador "Su silla llevaba una hora vacía. Mal puesta, como la dejó al irse."
+
+    else:
+
+        narrador "Miku bajó conmigo. En la puerta nos despedimos."
 
     mc_pensamiento "Una de cinco. Y esta sabía mucho de lo que yo no."
 
@@ -572,13 +592,11 @@ label miku_m5:
     
     if miku_rama_cap1 == "calida":
 
-        mc_pensamiento  "Miku no es tímida."
+        mc_pensamiento "Miku no es callada." 
+        
+        mc_pensamiento "Está callada, que no es lo mismo."
 
-        mc_pensamiento "Al contrario, es una persona muy abierta."
-
-        mc_pensamiento "Hoy me habló durante un minuto seguido sin que yo se lo pidiera dos veces."
-
-        mc_pensamiento "Sin juzgarme por estar ahí."
+        mc_pensamiento "Hoy me habló durante un minuto seguido sin que tuviera que pedírselo."
 
         mc_pensamiento "Eso, en esa casa, es un récord."
 
@@ -588,7 +606,7 @@ label miku_m5:
 
         mc_pensamiento "No se defendió."
 
-        mc_pensamiento "Dijo cuatro frases y volvió a esconderse." 
+        mc_pensamiento "Dijo tres frases y volvió a esconderse."
 
         mc_pensamiento "No sé si perdí algo, pero desde luego no gané nada."
 
@@ -596,7 +614,7 @@ label miku_m5:
 
         mc_pensamiento "Tenía razón en lo del examen."
 
-        mc_pensamiento "El periodo Sengoku ni siquiera entra en el examen."
+        mc_pensamiento "La sal no viene en el temario. Lo comprobé dos veces."
 
         mc_pensamiento "Hice bien al decirle que estudiara lo que realmente le iban a preguntar."
 

@@ -64,7 +64,7 @@ label reaccion_ichika:
         show ichika neutral at pj_habla(0.5)
         with disolucion_lenta
 
-        ichika "…Tú deberías hacer lo mismo. Dormir, digo."
+        ichika "...Tú deberías hacer lo mismo. Dormir, digo."
 
         ichika "Siempre estás cuidando de las demás."
 
@@ -78,7 +78,7 @@ label reaccion_ichika:
 
         ichika "Yo puedo hacerlo. Si me dejas."
 
-        ichika "Con mucho gusto. Jeje…"
+        ichika "Con mucho gusto. Jeje..."
 
         ichika "¡Consejo gratis! Exclusivo para ti [mc]"
 
@@ -169,7 +169,7 @@ label reaccion_nino:
         show nino molesta at pj_habla(0.5)
         with disolucion_lenta
 
-        nino "Bien. …Y come algo antes de clases."
+        nino "Bien. ...Y come algo antes de clases."
 
         nino "Tienes la peor cara de no haber desayunado en semanas."
 
@@ -180,7 +180,7 @@ label reaccion_nino:
 
         nino "¡No! Es que si te desmayas, nos echan la culpa."
 
-        nino "…Anoche pensé en lo que dijiste." 
+        nino "...Anoche pensé en lo que dijiste." 
 
         nino "Que no ibas a prometer nada."
 
@@ -257,39 +257,51 @@ label reaccion_miku:
         show miku relajada at pj_habla(0.5)
         with disolucion_lenta
 
-        miku "Ah... [mc]. Qué bueno que llegaste..." 
-        
-        miku "Estaba... esperándote."
+        miku "...Buenos días, [mc]."
 
-        miku "…¿Ya llegaste a la página ciento veinte?"
+        miku "...¿Ya llegaste a la página ciento veinte?"
 
         mc "Voy por la noventa y cinco."
 
-        miku "La primera mitad es lenta. Aguanta."
+        miku "...La primera mitad es lenta. ...Aguanta."
 
-        miku "Cuando llegues a la página de la sal, avísame." 
+        miku "...Cuando llegues a la página de la sal, avísame."
 
-        miku "Quiero ver tu cara."
+        miku "...Quiero ver tu cara."
 
         mc "¿Mi cara?"
-
-        show miku animada at pj_habla(0.5)
-        with disolucion_lenta
-
-        miku "Anoche me quedé pensando en que alguien se pasó la noche en mi tema."
-
-        miku "Nadie lo había hecho. Nunca."
-
-        miku "Siento como si alguien al fin comprendiera mis gustos."
 
         show miku encogida at pj_habla(0.5)
         with disolucion_lenta
 
-        miku "…Digo. Para ver si te sorprendes."
+        miku "...Para ver si pones la de siempre."
 
-        miku "…Gracias por leerlo."
+        mc "¿Cuál es la de siempre?"
 
-        miku "...Significa mucho para mí, [mc]."
+        miku "...La de esperar a que termine."
+
+        miku "...Anoche pensé que alguien se pasó la noche en mi tema." 
+        
+        miku "...Nadie lo había hecho."
+
+        miku "...Gracias por leerlo, [mc]."
+
+        narrador "Me tendió una lata. Verde, de una marca que no conocía."
+
+        miku "...Soda de matcha. ...Es mi favorita."
+
+        miku "...Casi nadie la aguanta."
+
+        narrador "Se quedó mirando cómo la abría. Como quien espera una nota."
+
+        mc "...Sabe a pasto."
+
+        show miku relajada at pj_habla(0.5)
+        with disolucion_lenta
+
+        miku "...Sí. ...Es lo bueno."
+
+        narrador "Me la terminé entera. No le dije por qué. Tampoco lo sabía."
 
         show miku at pj_calla(0.5)
         with disolucion_lenta
@@ -301,7 +313,7 @@ label reaccion_miku:
         show miku neutral at pj_habla(0.5)
         with dissolve
 
-        miku "…Buenos días."
+        miku "...Buenos días."
 
         show miku at pj_calla(0.5)
         with disolucion_lenta
@@ -324,7 +336,7 @@ label reaccion_miku:
         show miku neutral at pj_habla(0.5)
         with disolucion_lenta
 
-        miku "…Voy a estudiar solo lo que entra en el examen."
+        miku "...Voy a estudiar solo lo que entra en el examen."
 
         miku "Como dijiste."
 
@@ -369,7 +381,7 @@ label reaccion_yotsuba:
         show yotsuba neutral at pj_habla(0.5)
         with disolucion_lenta
 
-        yotsuba "…Ayer dijiste que mi punto de partida no era cero."
+        yotsuba "...Ayer dijiste que mi punto de partida no era cero."
 
         yotsuba "Anoche no pude dejar de pensarlo."
 
@@ -395,7 +407,7 @@ label reaccion_yotsuba:
         show yotsuba incomoda at pj_habla(0.5)
         with disolucion_lenta
 
-        yotsuba "¡No es un corazón! ¡Es… una vuelta!"
+        yotsuba "¡No es un corazón! ¡Es... una vuelta!"
 
         show yotsuba at pj_calla(0.5)
         with disolucion_lenta
@@ -427,14 +439,14 @@ label reaccion_yotsuba:
 
         narrador "Me llamó «tutor» con el tono que se usa con un desconocido."
 
-        mc "Yotsuba, ayer yo…"
+        mc "Yotsuba, ayer yo..."
 
         show yotsuba neutral at pj_habla(0.5)
         with disolucion_lenta
 
         yotsuba "¡Tenías razón! ¡Correr es lo mío!"
 
-        yotsuba "…Hoy serán cuarenta vueltas. ¡Cuarenta!"
+        yotsuba "...Hoy serán cuarenta vueltas. ¡Cuarenta!"
 
         show yotsuba at pj_calla(0.5)
         with disolucion_lenta
@@ -461,7 +473,7 @@ label reaccion_itsuki:
         show itsuki neutral at pj_habla(0.5)
         with dissolve
 
-        itsuki "…Buenos días."
+        itsuki "...Buenos días."
 
         mc "Buenos días."
 
@@ -474,7 +486,7 @@ label reaccion_itsuki:
         show itsuki timida at pj_habla(0.5)
         with disolucion_lenta
 
-        itsuki "…No digas cosas así. Sin avisar."
+        itsuki "...No digas cosas así. Sin avisar."
 
         narrador "Se quedó callada un momento, con la mano sobre el cuaderno."
 
@@ -484,7 +496,7 @@ label reaccion_itsuki:
 
         mc "¿Y?"
 
-        itsuki "…Salió bien."
+        itsuki "...Salió bien."
 
         itsuki "Lo logré sola. Del todo."
 
@@ -499,7 +511,7 @@ label reaccion_itsuki:
 
         mc "Era un error que llevabas tres intentos arrastrando."
 
-        itsuki "…Lo sé."
+        itsuki "...Lo sé."
 
         show itsuki neutral at pj_calla(0.5)
         with disolucion_lenta
@@ -532,7 +544,7 @@ label reaccion_itsuki:
         show itsuki neutral at pj_habla(0.5)
         with disolucion_lenta
 
-        itsuki "…Todavía."
+        itsuki "...Todavía."
 
         mc "¿Todavía qué?"
 
@@ -559,7 +571,7 @@ label reaccion_itsuki:
 
         narrador "Encima, el cuaderno de ciencias, abierto en la misma página de ayer."
 
-        mc "Itsuki, ese es mi…"
+        mc "Itsuki, ese es mi..."
 
         itsuki "Lo sé."
 
@@ -573,7 +585,7 @@ label reaccion_itsuki:
 
         itsuki "Lo que hiciste ayer no cuenta. Quería que fuera mío."
 
-        mc "Itsuki…"
+        mc "Itsuki..."
 
         itsuki "No me lo agradezcas ni me lo reproches." 
         
@@ -629,7 +641,7 @@ label queja_ichika:
     show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "…Estaba tan segura de que me ibas a elegir que ni preparé plan B."
+    ichika "...Estaba tan segura de que me ibas a elegir que ni preparé plan B."
 
     ichika "Ensayé tres formas de reaccionar cuando me encontraras."
 
@@ -637,7 +649,7 @@ label queja_ichika:
 
     mc "¿Y cuál habrías usado?"
 
-    ichika "…No lo sé."
+    ichika "...No lo sé."
 
     ichika "Son todas actuación. Y no sé si habría podido con otra cosa."
 
@@ -653,7 +665,7 @@ label queja_ichika:
     show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "…Pero la próxima vez, no tardes tanto."
+    ichika "...Pero la próxima vez, no tardes tanto."
 
     ichika "Estas cosas se agradecen. Aunque no lo parezca."
 
@@ -703,7 +715,7 @@ label queja_nino:
     show nino neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    nino "…Mira. No esperaba nada."
+    nino "...Mira. No esperaba nada."
 
     nino "Esa es la ventaja de no esperar: nadie te decepciona."
 
@@ -720,7 +732,7 @@ label queja_nino:
     show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
-    nino "…Eso no significa que quisiera que vinieras. Que quede claro."
+    nino "...Eso no significa que quisiera que vinieras. Que quede claro."
 
     mc "Queda clarísimo."
 
@@ -746,42 +758,42 @@ label queja_miku:
     show miku neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    miku "…No me buscaste."
+    miku "...No me buscaste."
 
     mc "Tenía tres tardes."
 
-    miku "…Ya sé."
+    miku "...Ya sé."
 
-    miku "…Así estuvo bien. Estuve tranquila."
+    miku "...Así estuvo bien. Estuve tranquila."
 
-    miku "…Pero habrías acertado, por cierto."
+    miku "...Pero habrías acertado, por cierto."
 
     mc "¿Con el sitio?"
 
-    miku "…Con el sitio."
+    miku "...Con el sitio."
 
-    miku "…Hay una silla enfrente de la mía. Siempre está vacía."
+    miku "...Hay una silla enfrente de la mía. Siempre está vacía."
 
     narrador "Lo dijo mirando el libro. Pero esta vez no lo subió hasta media cara."
 
     show miku encogida at pj_habla(0.5)
     with disolucion_lenta
 
-    miku "Dejé el libro abierto en la misma página dos días."
+    miku "...Dejé el libro abierto en la misma página dos días."
 
-    miku "Por si hacía falta una excusa."
+    miku "...Por si hacía falta una excusa."
 
     mc "¿Una excusa para qué?"
 
-    miku "Para hablar. Si alguien se sentaba."
+    miku "...Para hablar. Si alguien se sentaba."
 
-    miku "Nadie lo hizo. No pasa nada."
+    miku "...Nadie lo hizo. No pasa nada."
 
     mc "Lo siento, Miku."
 
-    miku "…No lo sientas. Soy buena esperando."
+    miku "...No lo sientas. Soy buena esperando."
 
-    miku "…Perdón. Eso sonó triste. No era la idea."
+    miku "...Perdón. Eso sonó triste. No era la idea."
 
     show miku at pj_calla(0.5)
     with disolucion_lenta
@@ -807,14 +819,14 @@ label queja_yotsuba:
 
     yotsuba "¡Tres tardes no alcanzan para cinco! ¡Eso lo entiende cualquiera!"
 
-    mc "Yotsuba…"
+    mc "Yotsuba..."
 
     yotsuba "¡Te lo digo en serio!"
 
     show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
 
-    yotsuba "…Aunque estuve entrenando por si venías."
+    yotsuba "...Aunque estuve entrenando por si venías."
 
     yotsuba "Me quedé quince minutos más cada tarde. Los conté."
 
@@ -861,7 +873,7 @@ label queja_itsuki:
 
     itsuki "Eso no cuenta. Subiste por costumbre, no por buscarme."
 
-    mc "…Es verdad."
+    mc "...Es verdad."
 
     itsuki "Entonces gané el juego."
 
@@ -881,9 +893,9 @@ label queja_itsuki:
     show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    itsuki "…Tampoco esperaba que me buscaras."
+    itsuki "...Tampoco esperaba que me buscaras."
 
-    itsuki "Yo no iba a pedírtelo. Pedirlo habría sido…"
+    itsuki "Yo no iba a pedírtelo. Pedirlo habría sido..."
 
     narrador "Se detuvo. Una oración de Itsuki sin cerrar era como ver a alguien tropezar en terreno plano."
 
@@ -1018,7 +1030,7 @@ label cap1_interconexion_1:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…"
+    miku "..."
 
     show miku neutral at pj_calla(X_MIKU)
     show nino neutral at pj_habla(X_NINO)
@@ -1026,7 +1038,7 @@ label cap1_interconexion_1:
 
     nino "No se preocupen, chicas. Su gran método es renunciar y largarse de nuestras vidas."
 
-    nino "Y aunque no lo creas… esta vez sí te apoyaré."
+    nino "Y aunque no lo creas... esta vez sí te apoyaré."
 
     show nino neutral at pj_calla(X_NINO)
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
@@ -1044,7 +1056,7 @@ label cap1_interconexion_1:
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "…¡Digo! ¡Nada! ¡Era una broma!"
+    yotsuba "...¡Digo! ¡Nada! ¡Era una broma!"
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     with disolucion_lenta
@@ -1075,7 +1087,7 @@ label cap1_interconexion_1:
     show itsuki at pj_calla(X_ITSUKI)
     with disolucion_lenta
 
-    miku "…Quiere dividirnos."
+    miku "...Quiere dividirnos."
 
     show miku neutral at pj_calla(X_MIKU)
     with disolucion_lenta
@@ -1131,7 +1143,7 @@ label cap1_interconexion_1:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Itsuki. Eso es justo lo que él quería."
+    miku "...Itsuki. Eso es justo lo que él quería."
 
     show miku neutral at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
@@ -1205,11 +1217,15 @@ label cap1_interconexion_1:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…No te preocupes por mi."
+    miku "...No te preocupes por mí."
 
-    miku "…Yo estoy bien sola."
+    miku "...Yo estoy bien sola."
 
     narrador "Se subió los audífonos antes de que pudiera contestar."
+
+    narrador "Ichika, sin mirarla, le bajó un audífono con un dedo."
+
+    narrador "Miku se lo volvió a subir. Parecía un juego viejo entre ellas."
 
     show miku neutral at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
@@ -1376,7 +1392,7 @@ label cap1_interconexion_2:
             show raiha preocupada at pj_habla(0.50)
             with disolucion_lenta
 
-            raiha "…Voy a prepararte doble porción."
+            raiha "...Voy a prepararte doble porción."
 
             raiha "Recuerda que cuidarte a ti mismo y alimentarte bien tambien es importante."
 
@@ -1461,9 +1477,9 @@ label cap1_interconexion_2:
             show nino pillada at pj_habla(0.5)
             with disolucion_lenta
 
-            nino "…¿Y por qué no me buscaste a mí primero?"
+            nino "...¿Y por qué no me buscaste a mí primero?"
 
-            mc "…¿Qué?"
+            mc "...¿Qué?"
 
             nino "¡Nada!" 
             
@@ -1522,7 +1538,7 @@ label cap1_interconexion_2:
             show nino neutral at pj_habla(0.5)
             with disolucion_lenta
 
-            nino "…Pero sí. Me tranquiliza."
+            nino "...Pero sí. Me tranquiliza."
 
             nino "Los que entran haciendo ruido son los que más rápido se van."
 
@@ -1556,7 +1572,7 @@ label cap1_interconexion_2:
 
             nino "Nadie dice «estoy bien» tres veces si lo está."
 
-            mc "No fue mi intención…"
+            mc "No fue mi intención..."
 
             nino "Nunca lo es."
 
@@ -1719,11 +1735,11 @@ label cap1_interconexion_3:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Tienes ojeras."
+    miku "...Tienes ojeras."
 
     mc "Ya me lo dijeron."
 
-    miku "…Es verdad igual."
+    miku "...Es verdad igual."
 
     show miku neutral at pj_calla(X_MIKU)
     show nino neutral at pj_habla(X_NINO)
@@ -1955,7 +1971,7 @@ label cap1_interconexion_4:
 
             yotsuba "[nombre_h] se quedó despierta hasta tarde."
 
-            yotsuba "No estaba estudiando. Estaba como… pensando con una sonrisa."
+            yotsuba "No estaba estudiando. Estaba como... pensando con una sonrisa."
 
             yotsuba "¡Yo sé distinguir! ¡Es lo que mejor se me da!"
 
@@ -1982,7 +1998,7 @@ label cap1_interconexion_4:
             show yotsuba incomoda at pj_habla(0.5)
             with disolucion_lenta
 
-            yotsuba "…Es que no sé si le sirvió o no. Y eso me da un poco de cosa."
+            yotsuba "...Es que no sé si le sirvió o no. Y eso me da un poco de cosa."
 
             mc "¿Por qué?"
 
@@ -2004,7 +2020,7 @@ label cap1_interconexion_4:
 
             yotsuba "[nombre_h] no durmió bien. Se le nota en cómo sostiene el lápiz."
 
-            yotsuba "Yo la conozco, y tal vez lo que le dijiste… le dolió."
+            yotsuba "Yo la conozco, y tal vez lo que le dijiste... le dolió."
 
             yotsuba "No te lo digo para que te sientas mal."
 
@@ -2032,37 +2048,55 @@ label cap1_interconexion_4:
             show miku neutral at pj_habla(0.5)
             with disolucion_lenta
 
-            miku "Hola, [mc]."
+            if rama_de("miku") == "calida":
 
-            narrador "Me saludó sin pausa antes de la primera palabra. Eso ya era un cambio."
+                miku "Hola, [mc]."
 
-            miku "Tienes un número escrito en la muñeca."
+                narrador "Me saludó sin pausa antes de la primera palabra." 
+                
+                miku "Eso ya era un cambio."
 
-            miku "Un uno. Con algo al lado. Torcido."
+            else:
+
+                miku "...Hola, [mc]."
+
+            miku "...Tienes un número escrito en la muñeca."
+
+            miku "...Un uno. Con algo al lado. Torcido."
 
             mc "Es largo de explicar."
 
-            miku "Yotsuba habló dormida anoche. Decía números."
+            miku "...Anoche oí a Yotsuba a través de la pared. Decía números dormida."
 
-            miku "Y sonreía."
+            miku "...Y sonreía."
 
             show miku relajada at pj_habla(0.5)
             with disolucion_lenta
 
-            miku "Hoy tú tienes uno en el brazo. No creo que sea casualidad."
+            miku "...Hoy tú tienes uno en el brazo." 
+            
+            miku "...No creo que sea casualidad."
 
-            miku "Está más rara de lo normal. Pero contenta."
+            miku "...Está más rara de lo normal. Pero contenta."
 
-            miku "Eso casi no pasa."
+            miku "...Eso casi no pasa."
 
             mc "Me alegra."
 
             show miku encogida at pj_habla(0.5)
             with disolucion_lenta
 
-            miku "…No es por ti."
+            miku "...No es por ti."
 
-            miku "…Bueno. Un poco."
+            miku "...Bueno. Un poco."
+
+            if rama_de("miku") == "calida":
+
+                miku "...A ella le dejaste un número."
+
+                miku "...A mí me debes una página."
+
+                narrador "No sonó a reproche. Sonó a algo que llevaba un rato pensando."
 
             show miku at pj_calla(0.5)
             with disolucion_lenta
@@ -2072,23 +2106,23 @@ label cap1_interconexion_4:
             show miku neutral at pj_habla(0.5)
             with disolucion_lenta
 
-            miku "…Buenos días, [mc]."
+            miku "...Buenos días, [mc]."
 
             narrador "Lo dijo mirándome una vez. Después volvió al libro."
 
-            miku "…Yotsuba llegó anoche a la hora de siempre."
+            miku "...Yotsuba llegó anoche a la hora de siempre."
 
-            miku "…Cenó dos platos. Hizo ruido. Normal."
+            miku "...Cenó dos platos. Hizo ruido. Normal."
 
-            miku "…Tenía números escritos en el brazo. Como siempre."
+            miku "...Tenía números escritos en el brazo. Como siempre."
 
-            miku "…Pero esta vez se los quedó mirando un buen rato antes de lavárselos."
+            miku "...Pero esta vez se los quedó mirando un buen rato antes de lavárselos."
 
             mc "¿Y qué significa eso?"
 
-            miku "…No sé. No es mi sección."
+            miku "...No sé. No es mi sección."
 
-            miku "…Ayer te tocaba tu juego, ¿no? …Solo pregunto."
+            miku "...Ayer te tocaba tu juego, ¿no? ...Solo pregunto."
 
             show miku neutral at pj_calla(0.5)
             with disolucion_lenta
@@ -2100,23 +2134,23 @@ label cap1_interconexion_4:
             show miku neutral at pj_habla(0.5)
             with disolucion_lenta
 
-            miku "…Hola."
+            miku "...Hola."
 
             mc "Hola, Miku."
 
-            miku "…Yotsuba llegó tarde anoche. Con el brazo lleno de rotulador."
+            miku "...Yotsuba llegó tarde anoche. Con el brazo lleno de rotulador."
 
-            miku "…No se lo lavó. Se acostó con él."
+            miku "...No se lo lavó. Se acostó con él."
 
-            miku "…No hizo ruido en toda la cena."
+            miku "...No hizo ruido en toda la cena."
 
-            miku "…Yotsuba siempre hace ruido. Aunque nadie se lo pida."
+            miku "...Yotsuba siempre hace ruido. Aunque nadie se lo pida."
 
             narrador "Lo dijo mirando el libro. Pero las páginas no se movían."
 
-            miku "…No sé si fuiste tú. Ayer te tocaba tu juego."
+            miku "...No sé si fuiste tú. Ayer te tocaba tu juego."
 
-            miku "…Pero si fuiste tú, no lo dejes así."
+            miku "...Pero si fuiste tú, no lo dejes así."
 
             show miku neutral at pj_calla(0.5)
             with disolucion_lenta
@@ -2184,23 +2218,23 @@ label cap1_interconexion_4:
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "…Aunque cuando sale así, es porque es un asunto serio."
+    yotsuba "...Aunque cuando sale así, es porque es un asunto serio."
 
     show yotsuba incomoda at pj_calla(X_YOTSUBA)
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Miró el celular y se quedó quieta."
+    miku "...Miró el celular y se quedó quieta."
 
-    miku "…Nino nunca se queda quieta."
+    miku "...Nino nunca se queda quieta."
 
     show miku neutral at pj_calla(X_MIKU)
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "…Puede que sea culpa mía."
+    yotsuba "...Puede que sea culpa mía."
 
-    yotsuba "Esta mañana armé un grupo de chat. Las cinco… y tú."
+    yotsuba "Esta mañana armé un grupo de chat. Las cinco... y tú."
 
     yotsuba "Le puse «¡Equipo Quintillizas + Tutor!»." 
     
@@ -2426,7 +2460,7 @@ label cap1_interconexion_5:
         show nino pillada at pj_habla(0.5)
         with disolucion_lenta
 
-        nino "…Gruesas. Las cortaste gruesas."
+        nino "...Gruesas. Las cortaste gruesas."
 
         mc "Pero no te quejaste."
 
@@ -2442,7 +2476,7 @@ label cap1_interconexion_5:
         show nino neutral at pj_habla(0.5)
         with disolucion_lenta
 
-        nino "Solo… hoy no me preguntes nada."
+        nino "Solo... hoy no me preguntes nada."
 
         nino "Si me preguntas, no voy a saber qué contestar."
 
@@ -2467,7 +2501,7 @@ label cap1_interconexion_5:
         show nino molesta at pj_habla(0.5)
         with disolucion_lenta
 
-        nino "…Lavaste mi taza."
+        nino "...Lavaste mi taza."
 
         mc "Era una taza."
 
@@ -2478,7 +2512,7 @@ label cap1_interconexion_5:
         show nino neutral at pj_habla(0.5)
         with disolucion_lenta
 
-        nino "…O sea. Haz lo que quieras."
+        nino "...O sea. Haz lo que quieras."
 
         show nino neutral at pj_calla(0.5)
         with disolucion_lenta
@@ -2487,11 +2521,11 @@ label cap1_interconexion_5:
 
     else:
 
-        mc "Nino…"
+        mc "Nino..."
 
         narrador "No contestó. No giró la cabeza ni para ignorarme."
 
-        mc "Lo que te dije en la cocina…"
+        mc "Lo que te dije en la cocina..."
 
         show nino molesta at pj_habla(0.5)
         with disolucion_lenta
@@ -2564,13 +2598,13 @@ label cap1_interconexion_5:
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "…Bueno. Si te soy sincera..." 
+    yotsuba "...Bueno. Si te soy sincera..." 
     
     yotsuba "Creo que estoy un poco mas nerviosa que las demás."
 
     yotsuba "Es que si alguna de nosotras reprueba, se acaba todo."
 
-    yotsuba "¡Pero no va a pasar! ¡Digo… creo que no va a pasar!"
+    yotsuba "¡Pero no va a pasar! ¡Digo... creo que no va a pasar!"
 
     yotsuba "Porque todas confían en ti."
 
@@ -2579,7 +2613,7 @@ label cap1_interconexion_5:
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "…¡Eso sí lo acepto!"
+    yotsuba "...¡Eso sí lo acepto!"
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     with disolucion_lenta
@@ -2589,27 +2623,59 @@ label cap1_interconexion_5:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Son cinco materias de examen."
+    miku "...Son cinco materias de examen."
 
     mc "Ya lo sé."
 
-    miku "…Y nosotras somos cinco."
+    miku "...Y nosotras somos cinco."
 
     mc_pensamiento "No sé si lo soltó por soltar, pero la frase se me quedó dando vueltas."
 
-    show miku encogida at pj_habla(X_MIKU)
+    show miku neutral at pj_calla(X_MIKU)
+    show yotsuba sonriendo at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    miku "…Perdón. Pienso cosas raras cuando hay examen."
+    yotsuba "¡Una materia para cada una! ¡Como un equipo de relevos!"
 
-    mc "No tienes que disculparte."
-
-    miku "…Está bien."
-
-    show miku at pj_calla(X_MIKU)
+    show yotsuba sonriendo at pj_calla(X_YOTSUBA)
+    show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    narrador "Lo dijo como quien oye una frase en otro idioma y asiente por educación."
+    miku "...Eso quise decir."
+
+    if rama_de("miku") == "calida":
+
+        show miku encogida at pj_habla(X_MIKU)
+        with disolucion_lenta
+
+        miku "...Perd—"
+
+        narrador "Se cortó sola. Me miró, como esperando que la cortara yo."
+
+        mc "Ya sabes lo que te voy a decir."
+
+        miku "...Que eso no se disculpa."
+
+        show miku at pj_calla(X_MIKU)
+        with disolucion_lenta
+
+        narrador "Lo repitió como una lección que todavía no se cree. Pero la repitió."
+
+    else:
+
+        show miku encogida at pj_habla(X_MIKU)
+        with disolucion_lenta
+
+        miku "...Perdón. Pienso cosas raras cuando hay examen."
+
+        mc "No tienes que disculparte."
+
+        miku "...Está bien."
+
+        show miku at pj_calla(X_MIKU)
+        with disolucion_lenta
+
+        narrador "Lo dijo como quien oye una frase en otro idioma y asiente por educación."
 
     ## --- Itsuki ---
 
@@ -2680,7 +2746,7 @@ label cap1_interconexion_5:
     show ichika neutral at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
-    ichika "…Y no te lo digo por mí." 
+    ichika "...Y no te lo digo por mí." 
     
     ichika "Te lo digo porque después ya no hay vuelta atrás."
 
@@ -2696,7 +2762,7 @@ label cap1_interconexion_5:
         show ichika sonriendo at pj_habla(X_ICHIKA)
         with disolucion_lenta
 
-        ichika "Solo… elige a quien de verdad lo necesite."
+        ichika "Solo... elige a quien de verdad lo necesite."
 
         ichika "No a la que mejor lo disimule."
 
@@ -2716,7 +2782,7 @@ label cap1_interconexion_5:
         show ichika neutral at pj_habla(X_ICHIKA)
         with disolucion_lenta
 
-        ichika "…Es broma. Más o menos."
+        ichika "...Es broma. Más o menos."
 
     show ichika at pj_calla(X_ICHIKA)
     with disolucion_lenta
@@ -3072,7 +3138,7 @@ label cap1_interconexion_6:
 
         nino "...Pero pensandolo bien."
 
-        nino "…Hasta ahora no fue el peor tutor que hemos tenido."
+        nino "...Hasta ahora no fue el peor tutor que hemos tenido."
 
         mc "Gracias Nino, por el cumplido."
 
@@ -3115,13 +3181,13 @@ label cap1_interconexion_6:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Entonces ya no hay dónde esconderse."
+    miku "...Entonces ya no hay dónde esconderse."
 
     mc "No era esa la idea."
 
-    miku "…Ya lo sé."
+    miku "...Ya lo sé."
 
-    miku "…Pero suena a eso."
+    miku "...Pero suena a eso."
 
     show miku neutral at pj_calla(X_MIKU)
     show itsuki neutral at pj_habla(X_ITSUKI)
@@ -3196,11 +3262,11 @@ label cap1_interconexion_6:
         show miku neutral at pj_habla(X_MIKU)
         with disolucion_lenta
 
-        miku "…Yo me quedo hasta tarde."
+        miku "...Yo me quedo hasta tarde."
 
         mc "¿En serio?"
 
-        miku "…Si no tengo que hablar mucho."
+        miku "...Si no tengo que hablar mucho."
 
         show miku neutral at pj_calla(X_MIKU)
         with disolucion_lenta
@@ -3381,7 +3447,7 @@ label cap1_interconexion_6:
 
             maruo "Ya vi suficiente."
 
-            mc "Señor, todavía quedan…"
+            mc "Señor, todavía quedan..."
 
             maruo "Te dije que no repetiría la advertencia."
 
@@ -3479,13 +3545,13 @@ label cap1_interconexion_6:
 
         nino "Tu tercer paso estaba bien. La que no lo había entendido era yo."
 
-        itsuki "…Gracias."
+        itsuki "...Gracias."
 
         narrador "Lo dijo tan bajito que Nino fingió no oírlo."
 
         narrador "Miku fue la última en guardar el libro. Antes de irse se detuvo en la puerta."
 
-        miku "…Fue una buena tarde."
+        miku "...Fue una buena tarde."
 
         mc "Lo fue."
 
@@ -3519,7 +3585,7 @@ label cap1_interconexion_6:
         
         narrador "No me pidió ayuda. Tampoco me pidió que me fuera."
 
-        miku "…Hasta mañana."
+        miku "...Hasta mañana."
 
         narrador "Dos palabras, dichas desde la puerta, sin subirse los audífonos. Un avance enorme."
 

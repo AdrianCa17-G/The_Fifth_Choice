@@ -670,7 +670,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                         kerning 4
                         color "#FFF8FC"
 
-                    text "Ichika repasa su papel. Cada línea tiene dos versiones: lo que el guion pide decir… y lo que de verdad siente.":
+                    text "Ichika repasa su papel. Cada línea tiene dos versiones: lo que el guion pide decir... y lo que de verdad siente.":
                         xalign 0.5
                         text_align 0.5
                         size 26

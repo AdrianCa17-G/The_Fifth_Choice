@@ -48,7 +48,7 @@ label final_malo_beat:
 
     mc "Buenas tardes."
 
-    mc "Disculpe, no venía a interrumpirlos. Yo solo…"
+    mc "Disculpe, no venía a interrumpirlos. Yo solo..."
 
     maruo "Ya que estás aquí, me ahorras la llamada y  mi tiempo."
 
@@ -58,11 +58,11 @@ label final_malo_beat:
 
     maruo "Mañana no vengas."
 
-    mc "…¿Perdón?"
+    mc "...¿Perdón?"
 
     maruo "El contrato queda terminado. Tu padre cobrará lo trabajado hasta hoy."
 
-    mc "Señor, todavía quedan semanas. Si me deja explicarle…"
+    mc "Señor, todavía quedan semanas. Si me deja explicarle..."
 
     scene cg_maruo_espaldas
     with corte_seco
@@ -75,7 +75,7 @@ label final_malo_beat:
 
     maruo "Las condiciones las sabías desde el principio."
 
-    mc "Por favor, solo un…"
+    mc "Por favor, solo un..."
 
     maruo "No."
 
@@ -114,7 +114,7 @@ label final_malo_beat:
 
         nino "Me dijiste que ibas a durar."
 
-        nino "…"
+        nino "..."
 
         nino "Ya ves."
 
@@ -122,7 +122,7 @@ label final_malo_beat:
 
     narrador "Hacía un minuto me quería fuera. Ahora me tenía fuera."
 
-    nino "…"
+    nino "..."
 
     nino "Bueno."
 
@@ -148,7 +148,7 @@ label final_malo_beat:
 
     nino "Es mejor así. Hoy. Antes de que se ilusionen más."
 
-    mc "Nino…"
+    mc "Nino..."
 
     nino "Y no me mires con esa cara de pena. No te va a servir de nada."
 
@@ -181,7 +181,7 @@ label final_malo_beat:
 
     yotsuba "Y vimos a papá retirándose del edificio."
     
-    yotsuba "¿Quién gritaba? ¿Fue…?"
+    yotsuba "¿Quién gritaba? ¿Fue...?"
 
     narrador "Se detuvo al verme la cara."
 
@@ -203,7 +203,7 @@ label final_malo_beat:
     show nino neutral at pj_calla(X_NINO)
     with disolucion_lenta
 
-    itsuki "…¿Hoy?"
+    itsuki "...¿Hoy?"
 
     show itsuki at pj_calla(X_ITSUKI)
     show nino neutral at pj_habla(X_NINO)
@@ -215,14 +215,14 @@ label final_malo_beat:
     show ichika sonriendo at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
-    ichika "Bueno… al menos fue rápido. ¿No?"
+    ichika "Bueno... al menos fue rápido. ¿No?"
 
     narrador "Nadie se rió. Ni ella."
 
     show ichika neutral at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
-    ichika "…Perdón. Es lo que hago cuando no sé qué decir."
+    ichika "...Perdón. Es lo que hago cuando no sé qué decir."
 
     ichika "No te voy a defender, [mc]. No sabría con qué."
 
@@ -239,7 +239,7 @@ label final_malo_beat:
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "Pero si él… él solo estaba…"
+    yotsuba "Pero si él... él solo estaba..."
 
     show nino neutral at pj_habla(X_NINO)
     show yotsuba incomoda at pj_calla(X_YOTSUBA)
@@ -251,7 +251,7 @@ label final_malo_beat:
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "…No dije nada."
+    yotsuba "...No dije nada."
 
     narrador "Se quedó mirando el suelo, con las manos juntas delante."
 
@@ -273,24 +273,24 @@ label final_malo_beat:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Yo no pedí esto."
+    miku "...Yo no pedí esto."
 
-    miku "…Tampoco lo evité."
+    miku "...Tampoco lo evité."
 
     narrador "Se llevó las manos a los audífonos." 
     
     narrador "No se los subió. Los dejó ahí, apoyadas."
 
-    if "miku" in hub_visitadas:
+    if rama_de("miku") == "fria":
 
         show miku encogida at pj_habla(X_MIKU)
         with disolucion_lenta
 
-        miku "…Dijiste que el Sengoku no entraba en el examen."
+        miku "...Dijiste que lo de la sal no entraba en el examen."
 
-        miku "…Tenías razón." 
-        
-        miku "Por eso no volví a abrir el libro."
+        miku "...Tenías razón."
+
+        miku "...Por eso no volví a abrir el libro."
 
     show miku at pj_calla(X_MIKU)
     show itsuki at pj_habla(X_ITSUKI)
@@ -375,7 +375,7 @@ label final_malo_beat:
     show raiha preocupada at pj_habla(0.20)
     with disolucion_lenta
 
-    raiha "…¿Qué?"
+    raiha "...¿Qué?"
 
     isanari "¿Quién?"
 
@@ -392,7 +392,7 @@ label final_malo_beat:
 
     raiha "Pregúntale cómo está, no cuánto le pagaron."
 
-    isanari "…"
+    isanari "..."
 
     narrador "Mi papá intentó decir algo. No contestó."
 
@@ -409,7 +409,7 @@ label final_malo_beat:
     show raiha preocupada at pj(0.20)
     with disolucion_lenta
 
-    raiha "Hermanito…"
+    raiha "Hermanito..."
 
     mc "Todavía no era el examen, Raiha. Me despidieron antes."
 
@@ -534,7 +534,7 @@ label final_malo_hub3:
 
     yotsuba "Buenos días, [mc]." 
     
-    yotsuba "…Quería decirlo con más ganas. No me sale."
+    yotsuba "...Quería decirlo con más ganas. No me sale."
 
     yotsuba "Estudié las lecturas dos veces." 
     
@@ -554,9 +554,9 @@ label final_malo_hub3:
     show miku neutral at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Solo sé la mitad de lo que van a preguntar."
+    miku "...Solo sé la mitad de lo que van a preguntar."
 
-    miku "…Pero no estoy segura si estaré en lo correcto."
+    miku "...Y no sé si esa mitad está bien."
 
     show miku at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
@@ -849,13 +849,35 @@ label final_malo_hub3:
 
     narrador "Su goma quedó desgastada de tanto uso."
 
-    narrador "De tanto desconfiar en lo que ella sabía."
+    narrador "De tanto desconfiar de lo que ella sabía."
 
     narrador "Al final escribió una sola línea. La respuesta que cabe en una línea."
 
-    mc_pensamiento "No le falta conocimientos. Le falta confianza."
+    mc_pensamiento "No le faltan conocimientos. Le falta confianza."
 
-    mc_pensamiento "Lo vi en su hoja hace semanas. Y no hice nada."
+    if rama_de("miku") == "calida":
+
+        mc_pensamiento "Le dije que lo que sabe cuenta como saber." 
+        
+        mc_pensamiento "No bastó con decírselo una vez."
+
+    elif rama_de("miku") == "tibia":
+
+        mc_pensamiento "Le dije que se le daba bien." 
+        
+        mc_pensamiento "Una etiqueta más. No le servía de nada."
+
+    elif rama_de("miku") == "fria":
+
+        mc_pensamiento "Le dije que estudiara solo lo que entraba." 
+        
+        mc_pensamiento "Lo que borró era justo lo que sabía."
+
+    else:
+
+        mc_pensamiento "Lo vi en su hoja hace semanas." 
+        
+        mc_pensamiento "Y no hice nada."
 
     narrador "Su mano subió hasta el cuello, hasta los audífonos. Se quedó ahí."
 
@@ -928,7 +950,7 @@ label final_malo_hub3:
 
     yotsuba "Con toda esta energía que me sobra, y no pude hacer nada por ninguna."
 
-    mc "Yotsuba, no es tu…"
+    mc "Yotsuba, no es tu..."
 
     yotsuba "No me digas que no es mi culpa."
 
@@ -952,17 +974,17 @@ label final_malo_hub3:
     show miku encogida at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Sabía las respuestas." 
+    miku "...Sabía las respuestas." 
     
-    miku "…Las escribí. …Las borré."
+    miku "...Las escribí. ...Las borré."
 
-    miku "…Perdón."
+    miku "...Perdón."
 
     mc "No pidas perdón."
 
-    miku "…Es lo único que sé decir."
+    miku "...Es lo único que sé decir."
 
-    miku "...Lo único en lo que si tengo confianza."
+    miku "...Lo único en lo que sí tengo confianza."
 
     show miku at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
@@ -1071,7 +1093,7 @@ label final_malo_hub3:
 
     narrador "Lo dijo con tanta convicción que me dieron ganas de creerle."
 
-    mc "…Sí."
+    mc "...Sí."
 
     mc_pensamiento "No. No lo hice."
 
@@ -1133,7 +1155,7 @@ label final_malo_hub3:
 
     maruo "Una aprobó. Cuatro no."
 
-    mc "¿Quién…?"
+    mc "¿Quién...?"
 
     maruo "No necesito decirte cuál."
 
@@ -1160,7 +1182,7 @@ label final_malo_hub3:
 
     maruo "No lo conseguiste con ninguna."
 
-    mc "Si me diera un mes más…"
+    mc "Si me diera un mes más..."
 
     maruo "Ya tuviste uno."
 
@@ -1255,21 +1277,35 @@ label final_malo_hub3:
     show miku neutral at pj_habla(0.5)
     with dissolve
 
-    miku "…Adiós, [mc]."
+    miku "...Adiós, [mc]."
 
-    miku "…Yo te lo habría contado. …Todo lo que sé."
+    if rama_de("miku") == "calida":
 
-    miku "…Si hubieras preguntado."
+        miku "...Me preguntaste." 
+        
+        miku "...Y te lo conté."
 
-    narrador "Se subió los audífonos. Y esta vez sí sonó la música."
+        miku "...Lo que no supe fue escribirlo sin que nadie me preguntara."
+
+    else:
+
+        miku "...Yo te lo habría contado." 
+        
+        miku "...Todo lo que sé."
+
+        miku "...Si hubieras preguntado."
+
+    narrador "Se subió los audífonos." 
+    
+    narrador "Y esta vez sí sonó la música."
 
     if rama_de("miku") == "fria":
 
-        miku "…Hoy no, dije esa vez." 
+        miku "...Hoy no, dije esa vez." 
         
-        miku "…Ya no hay otro día."
+        miku "...Ya no hay otro día."
 
-        miku "…Este es el final."
+        miku "...Este es el final."
     
     hide miku 
     with disolucion_lenta
@@ -1288,7 +1324,7 @@ label final_malo_hub3:
     show nino nerviosa at pj_habla(0.5)
     with disolucion_lenta
 
-    nino "Yo ni siquiera sé si…"
+    nino "Yo ni siquiera sé si..."
 
     narrador "Se cortó a mitad de frase. Esta vez no era por haber hablado de más."
 
@@ -1318,7 +1354,7 @@ label final_malo_hub3:
 
     itsuki "Sí. Debiste."
 
-    itsuki "…"
+    itsuki "..."
 
     show itsuki timida at pj_habla(0.5)
     with disolucion_lenta
@@ -1405,9 +1441,9 @@ label final_malo_hub3:
     show raiha preocupada at pj(0.20)
     with disolucion_lenta
 
-    raiha "…¿Qué?"
+    raiha "...¿Qué?"
 
-    mc "Cuatro reprobaron. Y yo… no pude hacer nada."
+    mc "Cuatro reprobaron. Y yo... no pude hacer nada."
 
     mc "Tuve un mes. Y tuve una última oportunidad." 
     
@@ -1433,11 +1469,11 @@ label final_malo_hub3:
 
     raiha "Papá, déjalo."
 
-    isanari "…"
+    isanari "..."
 
     narrador "Mi padre se sentó. No dijo nada más."
 
-    raiha "…No pasa nada, hermanito."
+    raiha "...No pasa nada, hermanito."
 
     raiha "Vamos a comer. El curry se enfría."
 

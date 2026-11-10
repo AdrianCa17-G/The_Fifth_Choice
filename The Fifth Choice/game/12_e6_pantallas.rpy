@@ -217,7 +217,7 @@ screen boletin_cinco():
 define E6_CHAT_FILAS = [
     ("yotsuba", True,  ["¡¡¡CIEN EN JAPONÉS!!! ¡¡¡MIREN!!!", "¡¡Manden el suyo!! ¡¡Sin trampas!!"]),
     ("ichika",  True,  ["Cien en matemáticas. Pueden aplaudir. Con moderación."]),
-    ("miku",    True,  ["…Sociales: cien."]),
+    ("miku",    True,  ["...Sociales: cien."]),
     ("nino",    True,  ["Que conste que no me salí."]),
     ("itsuki",  True,  ["Ciencias: cien. Es un dato, no una celebración."]),
     ("yotsuba", False, ["¡¡¡ES UNA CELEBRACIÓN!!!"]),

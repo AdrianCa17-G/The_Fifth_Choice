@@ -196,7 +196,7 @@ label hub_Nino:
 
     narrador "Le costó más terminar esa frase que leer la etiqueta entera."
 
-        if len(hub_visitadas) == 2:
+    if len(hub_visitadas) == 2:
 
         mc "En la cocina me hablaste de ellas."
 
@@ -323,7 +323,7 @@ label hub_Nino:
 
     # Menu de Nino
 
-    $ decision_peso("nino", "¿Qué le dirás a Nino?", ..."Ya perdió la cuenta de quiénes prometieron quedarse. ...")
+    $ decision_peso("nino", "¿Qué le dirás a Nino?", "Ya perdió la cuenta de quiénes prometieron quedarse...")
 
     menu:
         "¿Cómo respondes?"
@@ -331,7 +331,7 @@ label hub_Nino:
         "Tienes razón en desconfiar. Solo el tiempo lo va a demostrar.":
             jump nino_m4a
 
-        "Cargarle la cesta, sin decir nada."::
+        "Cargarle la cesta, sin decir nada.":
             jump nino_m4b
 
         "Yo sí voy a durar.":
@@ -403,7 +403,7 @@ label nino_m4a:
     narrador "Terminó de subir la cesta al brazo y siguió caminando hacia la caja."
 
     narrador "No me esperó. Tampoco me dijo que me fuera."
-    
+
     mc_pensamiento "No gané su confianza. Todavía no."
   
     mc_pensamiento "Pero por lo menos entendió que no iba a regalarle promesas vacías."

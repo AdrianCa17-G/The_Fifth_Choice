@@ -147,7 +147,7 @@ label prologo:
 
     raiha "¡No lo es! ¡Cuidar tu salud durmiendo bien también es importante!"
 
-    raiha "…Anoche también te escuché pasar páginas a las tres."
+    raiha "...Anoche también te escuché pasar páginas a las tres."
 
     narrador "Lo dijo sin gritar, que en ella era prácticamente un susurro."
 
@@ -452,7 +452,7 @@ label prologo:
             show itsuki molesta at pj(0.5)
             with disolucion_lenta
 
-            itsuki_inicio "…¿En serio vas a seguir estudiando incluso al terminar las clases?"
+            itsuki_inicio "...¿En serio vas a seguir estudiando incluso al terminar las clases?"
 
             mc "El temario del próximo examen no se va a repasar solo."
 
@@ -475,7 +475,7 @@ label prologo:
 
             mc "Tal vez, pero es la verdad."
 
-            itsuki_inicio "…"
+            itsuki_inicio "..."
 
             itsuki_inicio "Al menos eres honesto..."
 
@@ -649,7 +649,7 @@ label prologo:
 
     narrador "Cerró el libro contra el pecho, como si lo hubiera atrapado leyendo algo que no debía."
 
-    miku "…Miku."
+    miku "...Miku."
 
     narrador "Nada más. Volvió a bajar la mirada, aunque el libro siguió cerrado un rato largo."
 
@@ -659,7 +659,7 @@ label prologo:
 
     mc "¿Sengoku? Eso son samuráis y duelos, ¿no?"
 
-    miku "…No. Es logística."
+    miku "...No. Es logística."
 
     narrador "Lo dijo sin levantar la vista, pero sin pensarlo, como si la respuesta llevara horas esperando su turno."
 
@@ -738,7 +738,7 @@ label prologo:
     
     yotsuba "¡Bienvenido! ¡Vas a hacerlo genial!"
 
-    yotsuba "…¿Verdad?"
+    yotsuba "...¿Verdad?"
 
     narrador "La pregunta le salió medio tono más baja que todo lo anterior."
 
@@ -750,7 +750,7 @@ label prologo:
 
     yotsuba "¡No importa! ¡Yo confío en ti al cien por ciento!"
 
-    mc "…Pero si ni siquiera me conoces."
+    mc "...Pero si ni siquiera me conoces."
 
     yotsuba "¡Pues te conoceré a partir de hoy!" 
     
@@ -798,9 +798,9 @@ label prologo:
 
     mc_pensamiento "Fue ahí cuando la reconocí."
 
-    itsuki_inicio "…¿Tú?"
+    itsuki_inicio "...¿Tú?"
 
-    mc "…Tú."
+    mc "...Tú."
 
     itsuki_inicio "¿Se puede saber qué haces en mi casa?"
 
@@ -808,7 +808,7 @@ label prologo:
 
     itsuki_inicio "¡Es obvio! ¡Yo vivo aquí!"
 
-    mc "…Ah. Claro."
+    mc "...Ah. Claro."
 
     mc_pensamiento "De entre todos los departamentos de la ciudad, tenía que ser el suyo."
     
@@ -846,7 +846,7 @@ label prologo:
     show ichika sonriendo at pj(0.5)
     with dissolve
 
-    ichika "Vaya, vaya… Veo que no necesitan presentación."
+    ichika "Vaya, vaya... Veo que no necesitan presentación."
 
     show ichika at pj(0.30)
     with mover
@@ -914,9 +914,9 @@ label prologo:
     show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
-    miku "…Demasiado ruido."
+    miku "...Demasiado ruido."
 
-    miku "…Avisen cuando terminen de gritar."
+    miku "...Avisen cuando terminen de gritar."
 
     show ichika at pj_habla(X_ICHIKA)
     show nino at pj_habla(X_NINO)
@@ -929,7 +929,7 @@ label prologo:
 
     narrador "Eran cinco. Cinco rostros idénticos mirándome al mismo tiempo."
 
-    mc "¿Cinco? Pero entonces ustedes son…"
+    mc "¿Cinco? Pero entonces ustedes son..."
 
     show ichika at pj_calla(X_ICHIKA)
     show miku at pj_calla(X_MIKU)
@@ -1019,7 +1019,7 @@ label prologo:
 
     stop music fadeout 1.5
 
-    mc "…Entendido."
+    mc "...Entendido."
 
     scene bg_departamento
     with dissolve
@@ -1067,9 +1067,9 @@ label prologo:
 
     narrador "Ichika soltó una sonrisa perezosa y recostó la cabeza en el respaldo del sillón, cerrando los ojos al instante."
 
-    narrador "Miku intentó responder, pero se rindió rápidamente."
+    narrador "Miku tomó el lápiz, leyó la primera pregunta y lo volvió a dejar." 
     
-    narrador "Se subió los audífonos, miró perdidamente y me borró del mapa por completo."
+    narrador "Se subió los audífonos y me borró del mapa por completo."
 
     mc_pensamiento "Dos fuera en menos de diez segundos. Excelente récord."
 
@@ -1143,7 +1143,7 @@ label prologo:
     show itsuki neutral at pj(0.5)
     with dissolve
 
-    itsuki "…Esto no va a funcionar, ¿sabes?"
+    itsuki "...Esto no va a funcionar, ¿sabes?"
 
     mc "Te seré sincero: me quedó bastante claro desde los dos primeros minutos."
 
@@ -1158,23 +1158,37 @@ label prologo:
         "¿Qué le respondes?"
 
         "Porque me pagan.":
+
             mc "Porque me pagan."
+
             show itsuki molesta at pj(0.5)
+
             with disolucion_lenta
+
             itsuki "Qué actitud tan desagradable."
+
             mc "Es la verdad."
-            itsuki "…Al menos eres honesto, por horrible que suene."
+
+            itsuki "...Al menos eres honesto, por horrible que suene."
 
         "Porque no sé perder.":
+
             mc "Porque nunca he dejado un problema sin resolver."
+
             show itsuki molesta at pj(0.5)
+
             with disolucion_lenta
+
             itsuki "Mis hermanas y yo no somos un problema de matemáticas."
+
             mc "Todavía no sé lo que son."
 
         "No responder.":
+
             narrador "No dije nada. Recogí los cuadernos uno por uno."
-            itsuki "…Entendido. Haz lo que quieras."
+
+            itsuki "...Entendido. Haz lo que quieras."
+
             narrador "No sé qué fue lo que interpretó, pero no volvió a insistir."
 
     ## Silencio hasta que decida seguir adelante. "Despedido." cae en seco.

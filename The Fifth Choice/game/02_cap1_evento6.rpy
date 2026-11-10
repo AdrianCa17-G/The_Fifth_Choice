@@ -1,7 +1,7 @@
 ################################################################################
 ##  02_cap1_evento6.rpy — EVENTO 6 · PARTE A (Chat 8)
 ##  Núcleo (Mov. 1, 7, 8, 9, 10) + bloques de Yotsuba (Mov. 2) e Ichika (Mov. 3).
-##  Nino, Itsuki y Miku siguen como stubs (Chat 9). Pantallas: 12_e6_pantallas.rpy
+##  Nino, Itsuki y Miku (Chat 9). Pantallas: 12_e6_pantallas.rpy
 ################################################################################
 
 default e6_i = 0
@@ -183,7 +183,7 @@ label e6_lunes:
 
     mc_pensamiento "Cada día, una materia. Y detrás de cada materia, una de ellas."
 
-    mc_pensamiento "Como dijo Miku, son cinco materias y ellas con cinco."
+    mc_pensamiento "Como dijo Miku, son cinco materias y ellas son cinco."
 
     mc_pensamiento "Pensé que lo dijo por decir, pero esa frase tenía un gran significado."
 
@@ -207,7 +207,6 @@ label e6_lunes:
 
         mc_pensamiento "La diferencia es que ahora sé quién está detrás de cada hoja."
 
-        return
 
     label e6_s1_mixto:
 
@@ -220,8 +219,6 @@ label e6_lunes:
         mc_pensamiento "Cinco exámenes que no puedo corregir, ni acompañar, ni adelantar."
 
         mc_pensamiento "Hoy no se evalúa lo que yo hice. Se evalúa lo que ellas ya sabían."
-
-        return
 
     label e6_s1_bueno:
 
@@ -243,8 +240,6 @@ label e6_lunes:
 
         mc_pensamiento "Pero confío en ellas."
 
-        return
-
     ## --- Aula: el discurso de MC (POV de las cinco) ----------------------------
     scene bg_aula
     with fade
@@ -264,7 +259,7 @@ label e6_lunes:
 
     mc_pensamiento "Nunca he sido bueno en eso, pero..."
 
-    mc "¡Hola, chicas! ¿Preparadas para los exámenes?"
+    mc "¡Hola chicas! ¿Preparadas para los exámenes?"
 
     mc "Sé que todas tienen dudas o miedos sobre si aprobarán o no."
 
@@ -305,8 +300,10 @@ label e6_lunes:
 
         yotsuba "¡Estudié las lecturas dos veces! Y todavía recuerdo qué sentía cada personaje."
 
-        yotsuba "Esta vez no las dejé para después: ayudé a Miku con las fechas y a Ichika con las fórmulas, ¡pero calenté mis lecturas primero!"
+        yotsuba "Esta vez no las dejé para después: le tomé las fechas a Miku y las fórmulas a Ichika."
 
+        yotsuba "¡Pero calenté mis lecturas primero!"
+       
         yotsuba "Como antes de una carrera: si no calientas, el cuerpo se queja a mitad de camino."
 
         yotsuba "Así que no te preocupes por mí, [mc]. ¡Voy a llegar a la meta, y las cinco juntas!"
@@ -349,17 +346,48 @@ label e6_lunes:
         ichika "Las hermanas mayores también necesitamos que alguien nos eche una mano de vez en cuando, ¿no crees, [mc]?"
 
     ## Miku
-    if e6_estado_de("miku") != "no_visitada":
+
+    if e6_estado_de("miku") == "calida":
 
         call e6_foco("miku", "animada")
 
         miku "...Sé más de lo que van a preguntar. ...Lo comprobé tres veces."
 
-        miku "...Repasé las batallas, los clanes, las fechas. ...Hasta lo que ni sale en el libro."
+        miku "...Repasé las batallas, los clanes, las fechas." 
+        
+        miku "...Hasta lo que no sale en el libro."
 
         miku "...La silla de enfrente ya no se siente vacía."
 
-        miku "...Por si acaso, lo comprobaré una cuarta vez. ...Ya sé que es demasiado."
+        miku "...Por si acaso, lo comprobaré una cuarta vez." 
+        
+        miku "...Ya sé que es demasiado."
+
+    elif e6_estado_de("miku") == "tibia":
+
+        call e6_foco("miku", "neutral")
+
+        miku "...Repasé las batallas, los clanes, las fechas." 
+        
+        miku "..Todo, dos veces."
+
+        miku "...Creo que lo sé." 
+        
+        miku "...No me digas si se me da bien."
+
+    elif e6_estado_de("miku") == "fria":
+
+        call e6_foco("miku", "neutral")
+
+        miku "...Estudié lo que entra. ...Tres temas." 
+        
+        miku "...Como me dijeron."
+
+        miku "...El libro de la biblioteca lo devolví."
+
+        miku "...Bueno. ...Lo renové." 
+        
+        miku "...No sé por qué."
 
     else:
 
@@ -1741,7 +1769,7 @@ label e6_miku_nucleo:
 
     narrador "Viernes. Sociales."
 
-    narrador "Hoy es el último día de examenes."
+    narrador "Hoy es el último día de exámenes."
 
     narrador "Hoy termina todo."
     
@@ -1760,7 +1788,7 @@ label e6_miku_nucleo:
 
     narrador "Miku tenía el lápiz en la mano derecha y, junto al lápiz, la goma." 
     
-    narraodor "Limpia, entera. Con las cuatro esquinas sin usarse."
+    narrador "Limpia, entera. Con las cuatro esquinas sin usarse."
 
     mc_pensamiento "En su hoja del segundo día, la goma había trabajado más que el lápiz."
 
@@ -1781,9 +1809,9 @@ label e6_miku_mono_calida:
 
     miku_int "...Sal."
 
-    miku_int "...La pregunta dice cuánto tardaba la sal en llegar." 
-    
-    miku_int "...Diez días. Doce si llovía."
+    miku_int "...No dice «sal». Pero la respuesta es la sal."
+
+    miku_int "...Él me preguntó cuánto tardaba en llegar. ...Diez días. Doce si llovía."
 
     miku_int "...Contesté sin pensar. Iba a pedir perdón." 
     
@@ -1845,11 +1873,11 @@ label e6_miku_mono_fria:
 
     miku_int "...Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
 
-    miku_int "...Dijo que el Sengoku no entra en el examen." 
-    
-    miku_int "...Tres temas, y ninguno pregunta por la sal."
+    miku_int "...«Sin costa». ...Eso es Shingen. ...Eso es la sal."
 
-    miku_int "...Tenía razón. La pregunta es de comercio."
+    miku_int "...Dijo que lo de la sal no entraba. Tres temas, y ninguno pregunta por ella."
+
+    miku_int "...La pregunta no dice «sal». ...Entonces tenía razón."
 
     miku_int "...Cuatro renglones del libro de texto: rutas, mercados, impuestos. Está todo."
 
@@ -1869,17 +1897,13 @@ label e6_miku_mono_no_visitada:
 
     miku_int "...No debería. Es un examen. ...Borro."
 
-    miku_int "...Hay una silla enfrente de la mía. Siempre está vacía."
+    miku_int "...Cuando hablo de esto, la gente pone una cara. La de esperar a que termine."
 
-    miku_int "...Dejé el libro abierto en la misma página dos días. Por si hacía falta una excusa."
+    miku_int "...El papel no pone caras. ...Igual borro."
 
-    miku_int "...Nadie se sentó. No pasa nada."
-
-    miku_int "...Soy buena esperando."
+    miku_int "...La silla de enfrente sigue vacía. ...Eso ya lo dije una vez."
 
     miku_int "...Escribo tres líneas de rutas. La sal, otro día."
-
-    miku_int "...Perdón. Eso sonó triste. No era la idea."
 
     return
 
@@ -1899,7 +1923,7 @@ label e6_miku_mj:
 
     miku_int "Alguien se la vendió. Y eso me parece mucho más importante que la leyenda."
 
-    miku_int "Dejaré de tener miedo a lo que más amo."
+    miku_int "Si alguien pone la cara de esperar a que termine, que espere."
 
     miku_int "Esperé el perdón. Es lo que viene después. No llegó."
 
@@ -1916,15 +1940,17 @@ label e6_miku_mj:
 
 label e6_miku_promesa:
 
-    mc_pensamiento "Me dijo que estaba tranquila porque no la visité."
+    mc_pensamiento "Me dijo que así había estado bien. Que estuvo tranquila."
 
     mc_pensamiento "Y que habría acertado con el sitio."
 
-    mc_pensamiento "Tambien que hay una silla enfrente de la suya. Siempre vacía."
+    mc_pensamiento "También, que hay una silla enfrente de la suya. Siempre vacía."
 
-    mc_pensamiento "Dejó un libro abierto dos días por si alguien hacía falta de excusa."
+    mc_pensamiento "Dejó un libro abierto dos días, por si hacía falta una excusa."
 
-    mc_pensamiento "Voy a sentarme en esa silla. Y a leer lo mismo que ella, aunque no entienda nada."
+    mc_pensamiento "Voy a sentarme en esa silla." 
+    
+    mc_pensamiento "Y a leer lo mismo que ella, aunque no entienda nada."
 
     return
 
@@ -1979,7 +2005,7 @@ label e6_miku_gesto_fria:
     
     mc_pensamiento "Era una respuesta correcta y me dolió mirarla."
 
-    mc_pensamiento "Tenía la razón de su lado. Esa fue otra forma de no ganar."
+    mc_pensamiento "Tuve razón en la letra del temario. Esa fue otra forma de no ganar."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1991,7 +2017,7 @@ label e6_miku_gesto_no_visitada:
     
     narrador "Pasó la goma una sola vez, con cuidado."
 
-    narrador "La goma se redujo un borde. Aun se podía usar."
+    narrador "A la goma le faltaba un borde. Aún se podía usar."
 
     mc_pensamiento "Desde la segunda fila no pude leer lo que borró. Pude ver cuánto ocupaba."
 
@@ -2447,7 +2473,7 @@ label e6_despues:
     call expression ("e6_miku_tarde_" + e6_estado_de("miku"))
 
     ##  Espejo B4: «Sabía las respuestas. Las escribí. Las borré. Perdón.»
-    ##  Cálida: primera vez que habla EN VOZ ALTA sin «…» ni «perdón» (su cambio es de hoy).
+    ##  Cálida: primera vez que habla EN VOZ ALTA sin «...» ni «perdón» (su cambio es de hoy).
 
     label e6_miku_tarde_calida:
 
@@ -2668,9 +2694,11 @@ label e6_despues:
 
     call e6_foco("nino", "neutral")
 
-    nino "Nadie le va a preguntar nada. Mañana se sabe."
+    nino "Nadie le va a preguntar nada."
 
-    nino "Lo que tenga que pasar, que pase mañana. Hoy no."
+    nino "Lo que tenga que pasar, que pase mañana."
+
+    nino "Mañana se sabe. Y ya."
 
     call e6_foco("", "")
 
@@ -3061,7 +3089,7 @@ label e6_resultados:
 
 ################################################################################
 ##  MOV. 9 · LAS CINCO (puertas → intento → mesa → foto)
-##  Ecos de Yotsuba e Ichika: abajo. Los de Nino, Itsuki y Miku: stubs (Chat 9).
+##  Ecos de Yotsuba e Ichika: abajo. Los de Nino, Itsuki y Miku (Chat 9).
 ################################################################################
 
 label e6_cinco:
@@ -3648,9 +3676,17 @@ label e6_mesa:
 
     call e6_foco("miku", "encogida")
 
-    narrador "Miku tenía las manos juntas delante del cuerpo y los audífonos colgados al cuello. Sin tocarlos."
+    if e6_estado_de("miku") == "fria":
 
-    miku "...Hoy no me los puse."
+        narrador "Miku se bajó los audífonos al cuello antes de sentarse. La música se cortó a medio compás."
+
+        miku "...Hoy me los quito."
+
+    else:
+
+        narrador "Miku tenía las manos juntas delante del cuerpo y los audífonos colgados al cuello. Sin tocarlos."
+
+        miku "...Hoy no me los puse."
 
     miku "...Quiero oír lo que diremos todas."
 
@@ -3701,7 +3737,7 @@ label e6_mesa:
 
     miku "...Sonaron juntas. ...Como si fuera una sola hoja."
 
-    narrador "Una lágrima le recorrió por toda la cara. No se la secó."
+    narrador "Le corrió una lágrima por la cara. No se la secó."
 
     miku "...No es tristeza. ...Es que no sé dónde poner esto."
 

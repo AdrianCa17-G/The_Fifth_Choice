@@ -574,7 +574,7 @@ screen pantalla_nombre():
             spacing 26
             xalign 0.5
 
-            text "Antes de empezar…":
+            text "Antes de empezar...":
                 size 24
                 color "#8E9AAF"
                 xalign 0.5
