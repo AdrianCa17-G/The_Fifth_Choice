@@ -629,10 +629,7 @@ label configurar_nombre:
 ################################################################################
 
 label start:
-
-    $ quick_menu = True
-    return
-
+    
     call configurar_nombre
 
     jump prologo

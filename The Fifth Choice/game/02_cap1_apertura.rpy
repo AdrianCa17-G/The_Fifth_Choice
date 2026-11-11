@@ -161,6 +161,12 @@ label cap1_apertura:
 
     narrador "Me abrió Ichika, otra vez, con la misma sonrisa de la primera vez."
 
+    mc "¿Qué tal la audición?"
+
+    ichika "¡Un éxito rotundo!"
+
+    narrador "No dijo de qué. Y se apartó de la puerta antes de que pudiera preguntar."
+
     mc_pensamiento "Esta vez venía preparado."
 
     mc_pensamiento "Cinco cuadernos, un temario dividido por materias y ninguna expectativa."
@@ -185,6 +191,8 @@ label cap1_apertura:
     mc "No soy profesor."
 
     ichika "Hoy sí. Hoy vamos a portarnos bien."
+
+    ichika "Que conste."
 
     mc_pensamiento "Ayer tuve que arrastrarlas una por una para que se sentaran."
     
@@ -323,6 +331,8 @@ label cap1_apertura:
 
     ichika "Bueno, tampoco hay que dramatizar."
 
+    narrador "Lo dijo mirando a Yotsuba, no a mí. Yotsuba soltó el borde de la hoja."
+
     ichika "Contestamos las seis. Nadie dijo que hubiera que acertarlas."
 
     mc "Contestaron las seis igual de mal."
@@ -336,7 +346,9 @@ label cap1_apertura:
     scene cg_hermanas_estudiando
     with dissolve
 
-    narrador "Para cuando volví a levantar la vista, Ichika ya tenía los ojos cerrados y la cabeza apoyada en el respaldo."
+    narrador "Cuando volví a levantar la vista, Ichika ya tenía los ojos cerrados."
+
+    narrador "La cabeza, apoyada en el respaldo."
 
     mc_pensamiento "Y ahí se cayó la función."
 

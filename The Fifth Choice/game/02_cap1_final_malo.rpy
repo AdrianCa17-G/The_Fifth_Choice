@@ -226,7 +226,7 @@ label final_malo_beat:
 
     ichika "No te voy a defender, [mc]. No sabría con qué."
 
-    if "ichika" in hub_visitadas:
+    if rama_de("ichika") == "fria":
 
         ichika "Fuiste correcto conmigo. Como un padre."
 
@@ -1259,15 +1259,25 @@ label final_malo_hub3:
 
     ichika "Ni contar algún chiste."
 
-    ichika "Te lo diré desde el fondo de mi corazón."
-
     ichika "Fue un placer conocerte, [mc]. Y lo digo sin guiones."
 
-    if rama_de("ichika") == "fria":
+    if rama_de("ichika") == "calida":
 
-        ichika "Nunca más cubriré estos momentos con chistes."
-        
-        ichika "Entendí por qué. Tenías razón en decirmelo."
+        ichika "Una vez me dejaste quedarme callada sin llenar el silencio."
+
+        ichika "Eso me lo llevo."
+
+    elif rama_de("ichika") == "tibia":
+
+        ichika "El dragón te lo dejo. Cuídalo."
+
+        ichika "Se llama «Contrato». Pero eso ya lo sabías."
+
+    elif rama_de("ichika") == "fria":
+
+        ichika "Me dijiste que si tenía energía para chistes, la tenía para estudiar."
+
+        ichika "Hoy no me queda para ninguna de las dos."
 
     hide ichika 
     with disolucion_lenta

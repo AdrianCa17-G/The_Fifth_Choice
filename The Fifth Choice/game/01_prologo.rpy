@@ -570,7 +570,9 @@ label prologo:
 
     play music extraneza fadein 2.0
 
-    narrador "Apareció una chica de sonrisa fácil, sosteniendo la perilla como si llevara un buen rato esperando al otro lado."
+    narrador "Apareció una chica de sonrisa fácil."
+
+    narrador "Sostenía la perilla como si llevara un buen rato esperando al otro lado."
 
     ## --- Ichika ---------------------------------------------------------------
 
@@ -1065,7 +1067,9 @@ label prologo:
 
     mc "Tu audición es mañana. La hoja es para hoy."
 
-    narrador "Ichika soltó una sonrisa perezosa y recostó la cabeza en el respaldo del sillón, cerrando los ojos al instante."
+    narrador "Ichika soltó una sonrisa perezosa y recostó la cabeza en el respaldo del sillón."
+
+    narrador "Cerró los ojos al instante."
 
     narrador "Miku tomó el lápiz, leyó la primera pregunta y lo volvió a dejar." 
     
@@ -1118,7 +1122,9 @@ label prologo:
     scene bg_departamento_anochecer
     with dissolve
 
-    narrador "Ichika se puso de pie bostezando, alegando que el estrés le arruinaría la piel para su audición de mañana."
+    narrador "Ichika se puso de pie bostezando."
+
+    narrador "Alegó que el estrés le arruinaría la piel para su audición de mañana."
 
     play sound audio.sfx_puerta_cierra volume 1.2
 

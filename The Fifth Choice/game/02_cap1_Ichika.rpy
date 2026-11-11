@@ -49,7 +49,7 @@ label hub_Ichika:
     scene cg_ichika_ensayo
     with dissolve
 
-    narrador "La reconocí por el pelo antes que por la cara."
+    narrador "La reconocí por el suéter amarillo atado a la cintura antes que por la cara."
 
     mc_pensamiento "Está dormida."
 
@@ -94,17 +94,17 @@ label hub_Ichika:
     scene cg_ichika_desarmada
     with dissolve
 
-    ichika "…¿[mc]?"
+    ichika "...¿[mc]?"
 
     ichika "¿Qué haces aquí?"
 
-    ichika "…¿Qué hora es?"
+    ichika "...¿Qué hora es?"
 
     narrador "Me preguntó sin actuación, sin la voz que usa para todo."
 
     mc "Las cuatro y media."
 
-    ichika "…"
+    ichika "..."
 
     ichika "Perdí la tarde entera."
 
@@ -135,7 +135,7 @@ label hub_Ichika:
 
     ichika "¿Yo?"
 
-    ichika "Jaja, te preocupas demasiado por mi, [mc]."
+    ichika "Jaja, te preocupas demasiado por mí, [mc]."
 
     mc "¿Entonces qué estabas haciendo?"
 
@@ -171,7 +171,7 @@ label hub_Ichika:
 
     mc "Eso no es un número."
    
-    ichika "¿Y desde cuándo un tutor de matemáticas pide cifras exactas de otras cosas?"
+    ichika "¿Y desde cuándo un tutor pide cifras de algo que no entra en el examen?"
 
     narrador "Lo dijo con una sonrisa, pero cambió de tema otra vez, y esta ya era la segunda."
 
@@ -190,9 +190,13 @@ label hub_Ichika:
 
     ichika "Martes a las cinco y veinte. Nunca antes de eso."
 
-    mc "¿Por qué no a las cinco y media, si total es casi lo mismo?"
+    mc "¿Por qué no a las cinco? Es más preciso."
 
-    ichika "Porque el tren de las cuatro cuarenta y cinco tarda seis minutos en llegar a la estación desde aquí, y necesito cuatro para cambiarme."
+    ichika "Salgo del ensayo a las cuatro treinta y cinco. Cuatro minutos para cambiarme."
+
+    ichika "Seis hasta la estación. El tren de las cuatro cuarenta y cinco tarda veinticinco."
+
+    ichika "Y diez andando hasta casa. Cinco y veinte."
 
     mc_pensamiento "Vaya, tiene un horario muy bien cronometrado."
 
@@ -240,7 +244,7 @@ label hub_Ichika:
 
     ichika "Bueno, ¿viniste a verme actuar o viniste a regañarme?"
 
-    mc "Vine a buscarte para las clases de mañana."
+    mc "Vine a darte clase. Aunque sea media hora."
 
     ichika "¡Qué aburrido!"
 
@@ -298,7 +302,7 @@ label ichika_m4a:
     show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "…¿Qué?"
+    ichika "...¿Qué?"
 
     mc "Nada."
 
@@ -315,7 +319,7 @@ label ichika_m4a:
     show ichika agotada at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "…No sé cuánto más puedo seguir haciendo esto."
+    ichika "...No sé cuánto más puedo seguir haciendo esto."
 
     mc "¿Esto qué?"
 
@@ -337,14 +341,18 @@ label ichika_m4a:
 
     narrador "Se quedó mirando el guion, sin pasar la página."
 
-    mc_pensamiento "La semana pasada faltó a algo. No sé a qué."
+    ichika "La audición que tenía cuando llegaste... no fui."
 
-    mc_pensamiento "Y por como dobló ese horario, tampoco creo que se lo haya contado a nadie."
+    ichika "Me dormí en el tren. Desperté tres estaciones después."
+
+    mc_pensamiento "Lo tachado del horario. Apostaría a que era eso."
+
+    mc_pensamiento "Y al día siguiente me abrió la puerta diciendo que había sido un éxito."
 
     show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "…"
+    ichika "..."
 
     ichika "¿No vas a decir nada aprovechado sobre esto?"
 
@@ -361,7 +369,7 @@ label ichika_m4a:
     show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "…Gracias por no decir la frase obvia."
+    ichika "...Gracias por no decir la frase obvia."
 
     show ichika sonriendo at pj_calla(0.5)
     with disolucion_lenta
@@ -391,7 +399,7 @@ label ichika_m4b:
     show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "¡Eso ya lo hice el primer día! Hay que innovar."
+    ichika "¡Eso es de telenovela de la tarde! Hay que innovar."
 
     mc "¿Qué tal un dragón?"
 
@@ -441,14 +449,14 @@ label ichika_m4c:
     $ ichika_rama_cap1 = "fria"
     $ desaires_cap1 += 1
 
-    mc "Si tienes tiempo para esto, tienes tiempo para estudiar."
+    mc "Si tienes energía para hacer chistes, tienes energía para estudiar."
 
     show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
     narrador "La sonrisa no desapareció del todo, pero algo detrás de ella sí."
 
-    ichika "…"
+    ichika "..."
 
     ichika "Ya veo."
 
@@ -503,7 +511,7 @@ label ichika_m5:
     show ichika determinada at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "…"
+    ichika "..."
 
     mc "¿Pasa algo?"
 
@@ -555,11 +563,13 @@ label ichika_m5:
     show ichika at pj_calla(0.5)
     with disolucion_lenta
 
-    mc_pensamiento "No contestó la llamada. Ni siquiera el mensaje."
+    mc_pensamiento "No contestó el mensaje. Ni siquiera lo volvió a mirar."
 
     mc_pensamiento "Solo lo guardó, como guarda todo lo demás."
 
-    narrador "Guardó el teléfono en el bolsillo de la falda, en el mismo movimiento con el que había guardado el guion."
+    narrador "Guardó el teléfono en el bolsillo de la falda."
+
+    narrador "Con el mismo movimiento con el que había guardado el guion."
 
     jump ichika_m6
 
@@ -612,7 +622,9 @@ label ichika_m6:
 
         mc_pensamiento "Siento como si no hubiera hecho nada para ayudarla."
 
-        mc_pensamiento "Y cuando le ofrecieron el papel que quería, aceptó antes de que yo pudiera decir una sola palabra sobre todo lo demás que ya tiene encima."
+        mc_pensamiento "Y cuando le ofrecieron el papel que quería, aceptó antes de que yo dijera nada."
+
+        mc_pensamiento "Ni una palabra sobre todo lo que ya tiene encima."
 
     else:
 
@@ -624,7 +636,9 @@ label ichika_m6:
 
         mc_pensamiento "Y aun con todo lo que le dije, aceptó un papel más antes de que llegáramos a la salida."
 
-        mc_pensamiento "Como si lo único que le hubiera enseñado hoy fuera a esconder mejor la cuenta, no a hacerla más corta."
+        mc_pensamiento "Como si hoy solo le hubiera enseñado a esconder mejor la cuenta."
+
+        mc_pensamiento "No a hacerla más corta."
 
     # Marca el evento como consumido para el evento 6 y para que el hub
     # ofrezca la revisita corta en lugar del evento completo.

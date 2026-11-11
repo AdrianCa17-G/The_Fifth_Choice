@@ -71,21 +71,23 @@ label reaccion_ichika:
         show ichika determinada at pj_habla(0.5)
         with disolucion_lenta
 
-        ichika "¿Pero quién cuida de ti?"  
+        ichika "¿Pero quién cuida de ti?"
+
+        ichika "Yo puedo hacerlo. Si me dejas."
+
+        narrador "Lo dijo sin exclamación. Se dio cuenta un segundo después."
 
         show ichika sonriendo at pj_habla(0.5)
         with disolucion_lenta
 
-        ichika "Yo puedo hacerlo. Si me dejas."
-
-        ichika "Con mucho gusto. Jeje..."
-
-        ichika "¡Consejo gratis! Exclusivo para ti [mc]"
+        ichika "¡Era un consejo gratis! Exclusivo para ti, [mc]."
 
         ichika "¡No se lo cuentes a nadie!"
 
         show ichika at pj_calla(0.5)
         with disolucion_lenta
+
+        narrador "El chiste llegó tarde. Los dos lo notamos."
 
         mc_pensamiento "No supe qué contestar. Nadie me lo había preguntado en años."
 
@@ -1725,11 +1727,19 @@ label cap1_interconexion_3:
 
     ichika "Pregunta seria, [mc]: ¿cuántas horas llevas sin dormir bien?"
 
-    mc "He dormido bien, Las suficientes horas."
+    mc "He dormido bien. Las suficientes."
 
     mc "Cuidar de cinco bebés no es nada fácil."
 
     ichika "Eso lo diría alguien que no duerme."
+
+    if rama_de("ichika") == "calida" or rama_de("ichika") == "tibia":
+
+        ichika "Y «las suficientes» no es un número. Me lo enseñó un tutor muy terco."
+
+    else:
+
+        ichika "Qué tutor más terco."
 
     show ichika sonriendo at pj_calla(X_ICHIKA)
     show miku neutral at pj_habla(X_MIKU)
@@ -2192,11 +2202,15 @@ label cap1_interconexion_4:
     show ichika sonriendo at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
-    ichika "Te ves muy preocupado por Nino, ¿no [mc]?"
+    ichika "Te ves muy preocupado por Nino, ¿no, [mc]?"
 
     ichika "¿Acaso hay algo entre ustedes dos?"
 
-    mc "Ve al grano Ichika."
+    if rama_de("ichika") == "calida":
+
+        narrador "Lo preguntó en broma. Pero se quedó esperando la respuesta un segundo de más."
+
+    mc "Ve al grano, Ichika."
 
     show ichika neutral at pj_habla(X_ICHIKA)
     with disolucion_lenta
@@ -2205,7 +2219,11 @@ label cap1_interconexion_4:
 
     ichika "Con el celular en la mano y esa cara que ya conoces."
 
-    ichika "Dijo que iba a hablar algo urgente con nuestro papá"
+    ichika "Dijo que iba a hablar de algo urgente con nuestro papá."
+
+    ichika "Si a la noche no ha vuelto, la llamo yo. A mí siempre me contesta."
+
+    ichika "...Al tercer intento. Pero me contesta."
 
     show ichika neutral at pj_calla(X_ICHIKA)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
@@ -2750,17 +2768,47 @@ label cap1_interconexion_5:
     
     ichika "Te lo digo porque después ya no hay vuelta atrás."
 
-    if ichika_visitada_cap1:
+    if rama_de("ichika") == "calida":
+
+        show ichika neutral at pj_habla(X_ICHIKA)
+        with disolucion_lenta
+
+        ichika "Iba a decirte que estoy bien."
+
+        ichika "Contigo ya no me sale."
+
+        narrador "Lo dijo bajito. Sin chiste detrás."
+
+        show ichika sonriendo at pj_habla(X_ICHIKA)
+        with disolucion_lenta
+
+        ichika "Solo... elige a quien de verdad lo necesite."
+
+        ichika "No a la que mejor lo disimule."
+
+        ichika "Todas te necesitan. A su manera."
+
+        ichika "Aunque no lo creas."
+
+    elif ichika_visitada_cap1:
 
         show ichika agotada at pj_habla(X_ICHIKA)
         with disolucion_lenta
 
         ichika "Yo estoy bien. Que conste."
 
-        mc_pensamiento "Era la segunda persona esa semana que me decía «estoy bien» sin sonar convencida."
+        mc_pensamiento "No era la primera en esa casa que me decía «estoy bien» sin sonar convencida."
 
         show ichika sonriendo at pj_habla(X_ICHIKA)
         with disolucion_lenta
+
+        ichika "Solo... elige a quien de verdad lo necesite."
+
+        ichika "No a la que mejor lo disimule."
+
+        ichika "Todas te necesitan. A su manera."
+
+        ichika "Aunque no lo creas."
 
         ichika "Solo... elige a quien de verdad lo necesite."
 
@@ -3114,7 +3162,17 @@ label cap1_interconexion_6:
 
     ichika "Y el pobre tutor corriendo detrás de nosotras todo el mes."
 
-    ichika "Qué romántico. Casi me dan ganas de haberme dejado encontrar."
+    if ichika_visitada_cap1:
+
+        ichika "Qué romántico." 
+        
+        ichika "A mí me encontró dormida en el suelo."
+
+    else:
+
+        ichika "Qué romántico." 
+        
+        ichika "Casi me dan ganas de haberme dejado encontrar."
 
     mc "Fue mi trabajo."
 
@@ -3283,7 +3341,7 @@ label cap1_interconexion_6:
 
         narrador "Nadie se rió. Ni siquiera Ichika."
 
-        mc_pensamiento "Cuando Ichika no rellena un silencio con un chiste, es que ese silencio es molestía."
+        mc_pensamiento "Cuando Ichika no rellena un silencio con un chiste, ese silencio es molestia."
 
         mc_pensamiento "Saben que lo arruiné."
 

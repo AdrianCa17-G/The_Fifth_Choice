@@ -320,18 +320,41 @@ label e6_lunes:
 
         yotsuba "¡Pero lo intentaré con toda la energía que me queda!"
 
+
     ## Ichika
-    if e6_estado_de("ichika") != "no_visitada":
+    if e6_estado_de("ichika") == "calida":
 
         call e6_foco("ichika", "sonriendo")
 
-        ichika "Dormí cuatro horas por estudiar fórmulas, no en el papel de la obra."
+        ichika "Dormí cuatro horas. Esta vez por las fórmulas, no por el papel de la obra."
 
-        ichika "Rarísimo, ¿no? Yo, que me sé el guion entero y las fórmulas a medias."
+        ichika "Yo, que me sé el guion entero. Las fórmulas, a medias. ...Bueno, a tres cuartos."
 
-        ichika "El guion está en la mochila, doblado, y de ahí no sale hasta el último timbre."
+        ichika "El guion va en el bolsillo, doblado, y de ahí no sale hasta el último timbre."
 
-        ichika "Y si todo sale bien, tú, tutor terco, me debes una tarde entera sin libros."
+        ichika "Y si todo sale bien, tutor terco, me debes una tarde entera sin libros."
+
+    elif e6_estado_de("ichika") == "tibia":
+
+        call e6_foco("ichika", "sonriendo")
+
+        ichika "¡Dormí cuatro horas! Mitad fórmulas, mitad guion." 
+        
+        ichika "¡Equilibrio artístico!"
+
+        ichika "El guion viene conmigo. Por si el examen pide drama."
+
+        narrador "Lo dijo riéndose. No dijo si pensaba sacarlo."
+
+    elif e6_estado_de("ichika") == "fria":
+
+        call e6_foco("ichika", "sonriendo")
+
+        ichika "Dormí lo justo y repasé lo justo. Todo cronometrado."
+
+        ichika "Hoy me portaré muy bien. Que conste."
+
+        narrador "La sonrisa, en su sitio. Los ojos, en la pizarra."
 
     else:
 
@@ -341,9 +364,11 @@ label e6_lunes:
 
         ichika "Supongo que me distraje pensando en si de verdad lograríamos aprobarlo todo."
 
-        ichika "Aunque... un poco de compañía esa tarde no me habría venido mal, ¿sabes?"
+        ichika "Aunque... compañía alguna de esas tardes no me habría venido mal, ¿sabes?"
 
-        ichika "Las hermanas mayores también necesitamos que alguien nos eche una mano de vez en cuando, ¿no crees, [mc]?"
+        ichika "Las hermanas mayores también necesitamos que nos echen una mano." 
+        
+        ichika "¿No crees, [mc]?"
 
     ## Miku
 
@@ -787,9 +812,9 @@ label e6_ichika_nucleo:
     
     narrador "Despacio, sin dormirse. Eso en ella ya es una noticia."
 
-    narrador "El guion de la obra asomaba doblado por el bolsillo de su falda." 
-    
-    narrador "Lo había traído. No lo sacó."
+    narrador "El guion de la obra asomaba doblado por el bolsillo de su falda."
+
+    narrador "Lo había traído, como siempre."
 
     mc_pensamiento "La pregunta cuatro era un problema de trenes." 
     
@@ -818,15 +843,23 @@ label e6_ichika_mono_calida:
     
     ichika_int "Lo dije en voz alta. Nada cambió por eso."
 
-    ichika_int "Le digo «estoy bien» a todos. Es mi máscara." 
-    
-    ichika_int "A él no se la dije."
+    ichika_int "A todos les digo «estoy bien». Me sale antes que el saludo."
 
-    ichika_int "Dijo que eso ya lo sabía yo sola. Tenía razón, que es lo más incómodo de todo."
+    ichika_int "A él no se lo dije. Ni lo intenté."
 
-    ichika_int "El papel nuevo lo acepté sin pensar. Sigue en pie. Pero ahora sé que fue sin pensar."
+    ichika_int "Le pedí la frase de tutor y no me la dio. «Eso ya lo sabes tú sola.»"
 
-    ichika_int "Tengo doce líneas del guión de la obra memorizadas." 
+    ichika_int "Tenía razón, que es lo más incómodo de todo."
+
+    ichika_int "El papel nuevo lo acepté sin pensar. Sigue en pie."
+
+    ichika_int "En un escenario nadie me confunde con otra. Por eso digo que sí a todo."
+
+    ichika_int "Y si la mayor encuentra algo suyo, las otras cuatro pueden buscar lo suyo."
+
+    ichika_int "Pero ahora sé que dije que sí sin pensar."
+
+    ichika_int "Tengo doce líneas del guion de la obra memorizadas."
     
     ichika_int "Salen solas. Las mías tardan un segundo entero."
 
@@ -860,7 +893,7 @@ label e6_ichika_mono_fria:
 
     ichika_int "Pregunta cuatro. Trenes. Cuatro treinta y cinco."
 
-    ichika_int "«Si tienes tiempo para esto, tienes tiempo para estudiar.» Eso dijo."
+    ichika_int "«Si tienes energía para hacer chistes, tienes energía para estudiar.» Eso dijo."
 
     ichika_int "Contesté «tienes razón», con mi sonrisa de siempre. Salió perfecto."
 
@@ -919,15 +952,13 @@ label e6_ichika_mj:
 
 label e6_ichika_promesa:
 
-    mc_pensamiento "Ese día Ichika me dijo que ensayó tres formas de recibirme."
+    mc_pensamiento "Ichika ensayó tres caras para recibirme. No le di ocasión de usar ninguna."
 
-    mc_pensamiento "La graciosa, la dramática, la de «qué sorpresa»."
+    mc_pensamiento "Me pidió que la próxima vez no tardara tanto."
 
-    mc_pensamiento "Dijo que estas cosas se agradecen. Yo no supe qué contestarle."
+    mc_pensamiento "Voy a ir a verla ensayar. Sin avisar."
 
-    mc_pensamiento "Voy a ir a verla ensayar." 
-    
-    mc_pensamiento "Sin que tenga que prepararme ninguna de las tres caras."
+    mc_pensamiento "Que no le dé tiempo a preparar ninguna cara."
 
     return
 
@@ -2248,6 +2279,10 @@ label e6_despues:
 
         ichika "No era otra persona. Eso es lo que todavía no me creo."
 
+        ichika "Tú lo viste antes que yo, [mc]. En la sala de ensayo."
+
+        ichika "...Eso tampoco me lo creo."
+
         narrador "Ni un chiste. Ni una máscara. Solo lo que había pasado."
 
         return
@@ -3283,9 +3318,9 @@ label e6_cinco:
 
             ichika "Ensayé cómo salir y no me sale ninguna."
 
-            ichika "Tengo la graciosa, la dramática y la de «qué sorpresa». La cuarta todavía no existe."
+            ichika "Me salen las tres de siempre. Y ninguna sirve para esto."
 
-            mc "No tiene que existir hoy."
+            mc "Hoy no necesitas ninguna."
 
             call e6_foco("ichika", "sonriendo")
 
@@ -3747,7 +3782,9 @@ label e6_mesa:
 
     ichika "Ja. ...Ja, ja. ...Me quedé sin chiste. A mí, que siempre tengo uno."
 
-    ichika "Cuatro horas de sueño. ...Y valieron cada minuto. Qué cosa más rara."
+    ichika "Tantas noches cortas. ...Y valieron cada minuto." 
+    
+    ichika "Eso no venía en el guion."
 
     call e6_foco("nino", "nerviosa")
 
@@ -3949,9 +3986,9 @@ label e6_mesa:
 
     mc_pensamiento "Pensé en decirles que la foto ya estaba. No lo dije. Hay cosas que un «ya está» arruina."
 
-    ichika "Oigan, ¿saben qué es lo más raro?"
+    ichika "Oigan. ¿Les confieso algo?"
 
-    ichika "...Que esta mañana tenía miedo de abrirlo sola. Y no estaba sola."
+    ichika "...Esta mañana tenía miedo de abrirlo sola. Y no estaba sola."
 
     nino "...Nunca había estado tan cansada. ...Y tan bien. ...Que no se repita esa frase."
 

@@ -381,6 +381,8 @@ label beat_casa:
 
                     mc_pensamiento "Las audiciones, las clases, fingir que puede con las dos."
 
+                    mc_pensamiento "Y que a la audición del primer día no llegó. Se durmió en el tren."
+
                     mc_pensamiento "No creo que me lo dijera a mí. Creo que se le escapó."
 
                     mc_pensamiento "Al día siguiente me contó que había dormido siete horas y cuarto. Y que redondeaba hacia arriba."
@@ -421,7 +423,9 @@ label beat_casa:
 
                 mc_pensamiento "Aun así, hay algo en ella que no encaja."
 
-                mc_pensamiento "No sabe cuántas horas durmió, pero sabe cuántos minutos tarda un tren y cuántos necesita para cambiarse."
+                mc_pensamiento "No sabe cuántas horas durmió."
+
+                mc_pensamiento "Pero sabe cuánto tarda un tren, cuánto la estación y cuánto cambiarse."
 
                 mc_pensamiento "Lo dijo de corrido, sin contar con los dedos. Y después lo llamó «ser organizada»."
 
@@ -437,7 +441,9 @@ label beat_casa:
 
                 mc_pensamiento "La primera vez me abrió la puerta con una sonrisa fácil y una disculpa por adelantado."
 
-                mc_pensamiento "Al día siguiente fingió dormir para tapar una hoja que había contestado mal a propósito."
+                mc_pensamiento "Al día siguiente me dijo que su audición había sido un éxito. No dijo de qué."
+
+                mc_pensamiento "Después fingió dormir para tapar una hoja que había contestado mal a propósito."
 
                 mc_pensamiento "Desde entonces, cada vez que la veo, hay un chiste antes de que yo diga nada."
 
