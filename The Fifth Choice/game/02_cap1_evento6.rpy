@@ -294,19 +294,35 @@ label e6_lunes:
     call e6_formacion_neutral
 
     ## Yotsuba
-    if e6_estado_de("yotsuba") != "no_visitada":
+    if e6_estado_de("yotsuba") == "calida" or e6_estado_de("yotsuba") == "tibia":
 
         call e6_foco("yotsuba", "sonriendo")
 
-        yotsuba "¡Estudié las lecturas dos veces! Y todavía recuerdo qué sentía cada personaje."
+        yotsuba "¡Estudié las lecturas dos veces!" 
+        
+        yotsuba "Y todavía recuerdo qué sentía cada personaje."
 
-        yotsuba "Esta vez no las dejé para después: le tomé las fechas a Miku y las fórmulas a Ichika."
+        yotsuba "Esta vez no las dejé para después. Las calenté primero."
 
-        yotsuba "¡Pero calenté mis lecturas primero!"
-       
         yotsuba "Como antes de una carrera: si no calientas, el cuerpo se queja a mitad de camino."
 
-        yotsuba "Así que no te preocupes por mí, [mc]. ¡Voy a llegar a la meta, y las cinco juntas!"
+        yotsuba "Después les tomé las fechas a Miku y las fórmulas a Ichika."
+
+        yotsuba "Así que no te preocupes por mí, [mc]." 
+        
+        yotsuba "¡Voy a llegar a la meta, y las cinco juntas!"
+
+    elif e6_estado_de("yotsuba") == "fria":
+
+        call e6_foco("yotsuba", "sonriendo")
+
+        yotsuba "¡Estudié las lecturas dos veces!" 
+        
+        yotsuba "¡Y les tomé las fechas a Miku y las fórmulas a Ichika!"
+
+        yotsuba "¡Hoy me concentro en lo mío! ¡Nada más!"
+
+        narrador "Lo dijo de corrido, sin mirar a ninguna de sus hermanas."
 
     else:
 
@@ -316,7 +332,9 @@ label e6_lunes:
 
         yotsuba "...Mis lecturas, para después. Siempre se quedan para después."
 
-        yotsuba "Quería terminar a tiempo para que nadie se desmayara de los nervios antes del examen, ¡tú incluido, [mc]!"
+        yotsuba "Quería terminar a tiempo para que nadie se desmayara de los nervios."
+
+        yotsuba "¡Tú incluido, [mc]!"
 
         yotsuba "¡Pero lo intentaré con toda la energía que me queda!"
 
@@ -564,6 +582,8 @@ label e6_yotsuba_nucleo:
 
     mc_pensamiento "A Yotsuba."
 
+    narrador "En un examen nadie habla. Eso no quiere decir que nadie piense."
+
     narrador "Yotsuba escribió su nombre primero. Siempre lo hace."
 
     mc_pensamiento "El uno por ciento del primer día, bien hecho. Esta vez era solo el principio de la hoja."
@@ -593,17 +613,13 @@ label e6_yotsuba_mono_calida:
 
     yotsuba_int "Yo siempre pensé que era el uno. El más pequeño. El que nadie cuenta."
 
-    yotsuba_int "¡Yotsuba! ¿En qué estas pensando?"
-
-    yotsuba_int "¡Concentremonos en el examen!"
+    yotsuba_int "Vuelve al examen, Yotsuba. Despacio. Nadie te está cronometrando."
 
     yotsuba_int "Segunda pregunta. ¿Qué pasa cuando alguien llega para ayudarte?"
 
-    yotsuba_int "Esa no me la sé del todo... pero creo que es como un relevo."
+    yotsuba_int "Esa no me la sé del todo. Creo que es como un relevo."
 
-    yotsuba_int "Un relevo no se gana corriendo más que nadie. Se gana recibiendo bien. Trabajando juntos."
-    
-    yotsuba_int "¡Vamos!"
+    yotsuba_int "Un relevo no se gana corriendo más que nadie. Se gana recibiendo bien."
 
     return
 
@@ -621,7 +637,7 @@ label e6_yotsuba_mono_tibia:
 
     yotsuba_int "Si termino rápido, ¿alguien va a necesitarme para algo?"
 
-    yotsuba_int "Ichika duerme poco. Nino cocina. Miku sabe de historia. Itsuki estudia."
+    yotsuba_int "Ichika actúa. Nino cocina. Miku sabe de historia. Itsuki estudia."
 
     yotsuba_int "Yo corro y animo, y en un examen no se anima a nadie."
 
@@ -661,15 +677,13 @@ label e6_yotsuba_mono_no_visitada:
 
     yotsuba_int "Pregunta uno. ¿Qué siente el protagonista cuando se queda solo?"
 
-    yotsuba_int "Sé cómo se siente esperar. Entrené quince minutos más cada tarde, por si venía."
+    yotsuba_int "Esa me la sé. Se queda quince minutos más en la pista. Por si acaso."
 
-    yotsuba_int "Cronometré dos vueltas de más. Por si acaso. Las conté."
+    yotsuba_int "Le dije que la tercera vuelta de ventaja la corría ese mismo día."
 
-    yotsuba_int "No vino. No pasa nada. Tres tardes no alcanzan para cinco. Eso lo entiende cualquiera."
+    yotsuba_int "No la corrí. Al doblar la esquina me puse a caminar."
 
-    yotsuba_int "Si nadie me necesita, ¿para qué me sobra tanta energía?"
-
-    yotsuba_int "Entonces la reparto. Tres vueltas de ventaja para cuando venga. Si viene."
+    yotsuba_int "Tres suena mejor que dos. Tres suena a que no me importó tanto."
 
     yotsuba_int "Escribo que el protagonista espera a alguien y no sabe si llega."
 
@@ -695,7 +709,9 @@ label e6_yotsuba_mj:
 
     yotsuba_int "Y el testigo no pesa menos por pasar por mis manos."
 
-    yotsuba_int "La segunda pregunta trataba de eso... de cuando alguien llega para ayudarte y no te deja correr sola."
+    yotsuba_int "La segunda pregunta trataba de eso."
+
+    yotsuba_int "De cuando alguien llega para ayudarte y no te deja correr sola."
 
     yotsuba_int "Alguien llegó. Y esta vez... supe recibir el testigo."
 
@@ -730,7 +746,7 @@ label e6_yotsuba_gesto_calida:
 
     mc_pensamiento "Escribir y mirar a la vez. Nadie le había dicho que se podían hacer las dos cosas."
 
-    narrador "En la muñeca llevaba un 28 con una raya encima. Hoy no necesitaba la cuenta."
+    narrador "En la muñeca llevaba escrito un 28. No era una cuenta de vueltas."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -2192,7 +2208,7 @@ label e6_despues:
 
         yotsuba "No sé si está bien. Pero esta vez la hoja también era mía."
 
-        narrador "Lo dijo sin exclamación. En Yotsuba, eso sonaba más fuerte que un grito."
+        narrador "Lo dijo sin gritar. En Yotsuba, eso sonaba más fuerte que un grito."
 
         return
 
@@ -2220,7 +2236,7 @@ label e6_despues:
 
         call e6_foco("yotsuba", "sonriendo")
 
-        yotsuba "¡[mc]! ¡Hoja llena! ¡Sin mirar a nadie ni una sola vez!"
+        yotsuba "¡Tutor! ¡Hoja llena! ¡Sin mirar a nadie ni una sola vez!"
 
         yotsuba "Me concentré en lo mío. Como dijiste."
 
@@ -2228,7 +2244,7 @@ label e6_despues:
 
         yotsuba "¡Es lo que tenía que hacer!"
 
-        yotsuba "¡Es lo que mejor se hacer! Lo sé."
+        yotsuba "¡Es lo que mejor sé hacer! Lo sé."
 
         narrador "Me sonrió a mí. Hacia sus hermanas no giró la cabeza. Ni siquiera ahora."
 
@@ -2619,7 +2635,7 @@ label e6_despues:
 
             narrador "Yotsuba, siempre la primera en incluir a todas." 
             
-            narrador "Hasta al menos importante como yo."
+            narrador "Hasta al que nunca entraba en la cuenta: yo."
 
         else:
 
@@ -3183,7 +3199,13 @@ label e6_cinco:
 
             call e6_foco("yotsuba", "sonriendo")
 
-            yotsuba "¡Esta vez sin corazón torcido! ¡Solo cuenta!"
+            yotsuba "¡Esta vez sin corazón torcido!"
+
+            call e6_foco("yotsuba", "incomoda")
+
+            yotsuba "...Todavía no me sale recto. Lo estoy practicando."
+
+            narrador "No dijo para cuándo. Tapó el rotulador y se fue a su sitio."
 
             call e6_foco("", "")
 
@@ -3749,7 +3771,7 @@ label e6_mesa:
 
     call e6_foco("yotsuba", "sonriendo")
 
-    yotsuba "¡¡Entonces abrámolos ya!!"
+    yotsuba "¡¡Entonces abrámoslos ya!!"
 
     call e6_foco("nino", "neutral")
 
@@ -3821,6 +3843,10 @@ label e6_mesa:
     call e6_foco("yotsuba", "sonriendo")
 
     yotsuba "¡¡Y lo hicimos todas!! ¡¡Y tú también, [mc]!!"
+
+    if e6_estado_de("yotsuba") == "fria":
+
+        narrador "Me llamó por mi nombre. Desde la pista no lo había vuelto a hacer."
 
     yotsuba "¡Tú te quedaste hasta el último momento! ¡Eso también cuenta!"
 

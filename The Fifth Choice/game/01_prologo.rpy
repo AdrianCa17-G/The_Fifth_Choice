@@ -998,13 +998,15 @@ label prologo:
     show ichika neutral at pj_habla(X_ICHIKA)
     show nino neutral at pj_habla(X_NINO)
     show miku neutral at pj_habla(X_MIKU)
-    show yotsuba sonriendo at pj_habla(X_YOTSUBA)
+    show yotsuba incomoda at pj_habla(X_YOTSUBA)
     show itsuki molesta at pj_habla(X_ITSUKI)
     with dissolve
 
     quintillizas "¡No pensamos estudiar!"
 
     narrador "Las cinco gritaron al mismo tiempo desde la entrada de la sala."
+
+    narrador "Yotsuba también. Medio tono más bajo que las demás."
 
     scene cg_maruo_reunion
     with corte_seco
@@ -1134,10 +1136,10 @@ label prologo:
 
     play sound audio.sfx_puerta_cierra volume 1.2
 
-    narrador "Y Yotsuba, aplastada por la culpa de ver a las demás irse."
-    
-    narrador "Me pidió perdón unas diez veces haciendo reverencias antes de salir huyendo a su cuarto prometiendo 'estudiar el doble mañana'."
+    narrador "Yotsuba, aplastada por la culpa de ver a las demás irse, me pidió perdón unas diez veces."
 
+    narrador "Con reverencias. Y salió huyendo a su cuarto, prometiendo «estudiar el doble mañana»."
+    
     play sound audio.sfx_puerta_cierra volume 1.2
 
     narrador "En menos de diez minutos, la mesa quedó vacía."

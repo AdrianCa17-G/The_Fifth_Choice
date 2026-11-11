@@ -818,13 +818,15 @@ label beat_casa:
 
                 if yotsuba_rama_cap1 == "calida":
 
-                    mc_pensamiento "Le conté lo que yo había notado: que supo que Nino no había dormido antes de que Nino dijera nada."
+                    mc_pensamiento "Le conté lo que yo había notado."
 
-                    mc_pensamiento "Que sabía qué libro buscaba Miku y si Ichika estaba cansada o preocupada."
+                    mc_pensamiento "Que supo que Nino no había dormido antes de que Nino dijera nada."
+
+                    mc_pensamiento "Que sabía dónde dejaba Miku su libro, y que bajaba la voz cuando Ichika se dormía."
 
                     mc_pensamiento "Le dije que su punto de partida no era cero. Que nunca lo había sido."
 
-                    mc_pensamiento "En la vuelta veinticuatro ya no gritó para darse ánimos."
+                    mc_pensamiento "En la vuelta veinticuatro siguió contando en voz alta. El tiempo se lo decía yo."
 
                     mc_pensamiento "Al día siguiente me escribió un «1» en la muñeca con un corazón torcido. Dijo que era una vuelta."
 
@@ -852,7 +854,7 @@ label beat_casa:
 
                 mc_pensamiento "Y sin embargo hay algo que sí lee, y lo lee mejor que yo."
 
-                mc_pensamiento "Sabe quién está cansada, quién está preocupada y quién miente, sin que nadie se lo diga."
+                mc_pensamiento "Sabe quién no durmió, quién busca algo y quién necesita silencio, sin que se lo digan."
 
                 mc_pensamiento "Lo hace con cinco personas a la vez, y ni siquiera lo cuenta como un mérito."
 
@@ -870,7 +872,7 @@ label beat_casa:
 
                 mc_pensamiento "El segundo intentó defenderme y Nino la cortó."
 
-                mc_pensamiento "Cuando le dije que no había tenido tiempo, repitió tres veces que no pasaba nada."
+                mc_pensamiento "Cuando le pedí perdón, me dijo de tres maneras distintas que no pasaba nada."
 
                 mc_pensamiento "Pero entrenó quince minutos más cada tarde, por si yo iba. Los contó."
 

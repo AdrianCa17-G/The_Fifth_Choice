@@ -255,7 +255,7 @@ label final_malo_beat:
 
     narrador "Se quedó mirando el suelo, con las manos juntas delante."
 
-    if "yotsuba" in hub_visitadas:
+    if rama_de("yotsuba") == "fria":
 
         narrador "Después, me miró a mí."
 
@@ -532,7 +532,13 @@ label final_malo_hub3:
     show yotsuba at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    yotsuba "Buenos días, [mc]." 
+    if rama_de("yotsuba") == "fria":
+
+        yotsuba "Buenos días, tutor."
+
+    else:
+
+        yotsuba "Buenos días, [mc]."
     
     yotsuba "...Quería decirlo con más ganas. No me sale."
 
@@ -653,7 +659,13 @@ label final_malo_hub3:
 
     mc_pensamiento "Es lo que mejor hace: leer a las demás."
 
-    mc_pensamiento "Nadie le había dicho que eso también contaba. Yo tampoco."
+    if rama_de("yotsuba") == "calida":
+
+        mc_pensamiento "Se lo dije una vez, en la pista. Una sola vez no bastó."
+
+    else:
+
+        mc_pensamiento "Nadie le había dicho que eso también contaba. Yo tampoco."
 
     narrador "La pregunta uno preguntaba qué siente el protagonista cuando se queda solo."
 
@@ -661,7 +673,21 @@ label final_malo_hub3:
 
     mc_pensamiento "El mismo uno por ciento del primer día."
 
-    mc_pensamiento "Aquel uno por ciento que pude ayudarle a aumentar, pero no lo hice."
+    if rama_de("yotsuba") == "calida":
+
+        mc_pensamiento "Le dije que su punto de partida no era cero." 
+        
+        mc_pensamiento "Y se quedó en el uno."
+
+    elif rama_de("yotsuba") == "fria":
+
+        mc_pensamiento "Le dije que se concentrara en lo suyo."
+        
+        mc_pensamiento "Nunca le dije qué era lo suyo."
+
+    else:
+
+        mc_pensamiento "Aquel uno por ciento que pude ayudarle a aumentar, pero no lo hice."
 
     scene bg_negro
     with fade_dia

@@ -389,10 +389,6 @@ label reaccion_yotsuba:
 
         yotsuba "Nadie me había dicho algo así sin pedirme que sonriera."
 
-        yotsuba "Tú entendiste lo que en verdad siento por dentro."
-
-        yotsuba "No solo lo que reflejo a los demás."
-
         show yotsuba sonriendo at pj_habla(0.5)
         with disolucion_lenta
 
@@ -836,7 +832,7 @@ label queja_yotsuba:
 
     mc "Lo siento."
 
-    yotsuba "No lo sientas. Es que pensé que a lo mejor hoy te hacía falta alguien que te animara."
+    yotsuba "No lo sientas. Es que pensé que a lo mejor te hacía falta alguien que te animara."
 
     yotsuba "Y si nadie me necesita, ¿para qué me sobra tanta energía?"
 
@@ -846,6 +842,10 @@ label queja_yotsuba:
     yotsuba "¡Pero no importa! ¡Me sobra, así que la reparto!"
 
     yotsuba "¡Y para la próxima vez ya tengo tres vueltas de ventaja!"
+
+    mc "Dijiste dos."
+
+    yotsuba "¡La tercera la corro ahora mismo!"
 
     show yotsuba at pj_calla(0.5)
     with disolucion_lenta
@@ -1062,6 +1062,8 @@ label cap1_interconexion_1:
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     with disolucion_lenta
+
+    mc_pensamiento "Igual que ayer. A Nino le basta con decir su nombre."
 
     mc "Para ponerlo en marcha solo necesito que me respondan una pregunta."
 
@@ -1715,11 +1717,23 @@ label cap1_interconexion_3:
     show itsuki at pj_calla(X_ITSUKI)
     with disolucion_lenta
 
-    yotsuba "¡[mc]! ¿Cómo estás? ¡Tienes cara de haber peleado con un oso!"
+    if destino == "yotsuba" and rama_hub == "fria":
 
-    mc "Gracias, Yotsuba."
+        yotsuba "¡Buenos días, tutor! ¡Tienes cara de cansado!"
 
-    yotsuba "¡Es un cumplido! ¡Los osos son fuertes!"
+        mc "Gracias, Yotsuba."
+
+        yotsuba "¡De nada!"
+
+        narrador "Lo dijo mirando la pizarra."
+
+    else:
+
+        yotsuba "¡[mc]! ¿Cómo estás? ¡Tienes cara de haber peleado con un oso!"
+
+        mc "Gracias, Yotsuba."
+
+        yotsuba "¡Es un cumplido! ¡Los osos son fuertes!"
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     show ichika sonriendo at pj_habla(X_ICHIKA)
@@ -1767,7 +1781,25 @@ label cap1_interconexion_3:
     ## La hermana del hub 1 deja una huella corta según la rama.
     ## Itsuki queda fuera: su reacción va en su propio cierre.
 
-    if destino != "itsuki":
+    if destino == "yotsuba":
+
+        if rama_hub == "calida":
+
+            narrador "Yotsuba me miró la muñeca." 
+            
+            narrador "El «1» seguía ahí, a medio borrar."
+
+            narrador "Sonrió como quien comprueba un resultado."
+
+        elif rama_hub == "tibia":
+
+            narrador "Yotsuba levantó el brazo desde su sitio: otro tiempo anotado en la muñeca."
+
+        else:
+
+            narrador "Después volvió a su sitio y se puso a ordenar la mochila. No me miró más."
+
+    elif destino != "itsuki":
 
         if rama_hub == "calida":
 
@@ -1975,7 +2007,13 @@ label cap1_interconexion_4:
             show yotsuba sonriendo at pj_habla(0.5)
             with disolucion_lenta
 
-            yotsuba "¡[mc]! ¡Ven un momento!" 
+            if rama_de("yotsuba") == "fria":
+
+                yotsuba "¡Tutor! ¡Ven un momento!"
+
+            else:
+
+                yotsuba "¡[mc]! ¡Ven un momento!"
             
             yotsuba "¡Es un secreto! ¡Rápido!"
 
@@ -1983,13 +2021,25 @@ label cap1_interconexion_4:
 
             yotsuba "No estaba estudiando. Estaba como... pensando con una sonrisa."
 
-            yotsuba "¡Yo sé distinguir! ¡Es lo que mejor se me da!"
+            if rama_de("yotsuba") == "calida":
+
+                yotsuba "¡Yo sé distinguir! Alguien me dijo que eso cuenta."
+
+            else:
+
+                yotsuba "¡Yo sé distinguir! ...Bueno, eso lo nota cualquiera."
 
             mc "¿Qué quieres decir?"
 
             yotsuba "Que lo que le dijiste, o lo que hiciste, le dejó algo bueno por dentro."
 
             yotsuba "Gracias por no rendirte con ella. ¡Es todo!"
+
+            if rama_de("yotsuba") == "calida":
+
+                narrador "Antes de irse me miró la muñeca. El «1» ya casi no se veía."
+
+                narrador "No dijo nada de eso. Se fue dando saltitos, igual que siempre."
 
             show yotsuba sonriendo at pj_calla(0.5)
             with disolucion_lenta
@@ -1999,7 +2049,13 @@ label cap1_interconexion_4:
             show yotsuba sonriendo at pj_habla(0.5)
             with disolucion_lenta
 
-            yotsuba "¡[mc]! [nombre_h] está igual que siempre."
+            if rama_de("yotsuba") == "fria":
+
+                yotsuba "¡Tutor! [nombre_h] está igual que siempre."
+
+            else:
+
+                yotsuba "¡[mc]! [nombre_h] está igual que siempre."
 
             yotsuba "¡Y eso está bien! ¡A veces igual es lo mejor que se puede pedir!"
 
@@ -2022,11 +2078,17 @@ label cap1_interconexion_4:
             show yotsuba incomoda at pj_habla(0.5)
             with disolucion_lenta
 
-            yotsuba "[mc]. ¿Tienes un minuto?"
+            if rama_de("yotsuba") == "fria":
 
-            narrador "Lo dijo sin exclamación. Sin sonrisa." 
-            
-            narrador "Era la primera vez que la veía así."
+                yotsuba "Tutor. ¿Tienes un minuto?"
+
+            else:
+
+                yotsuba "[mc]. ¿Tienes un minuto?"
+
+            narrador "Lo dijo sin levantar la voz. Sin sonrisa."
+
+            narrador "En el aula, delante de todas, era la primera vez que la veía así."
 
             yotsuba "[nombre_h] no durmió bien. Se le nota en cómo sostiene el lápiz."
 
@@ -2618,13 +2680,21 @@ label cap1_interconexion_5:
 
     yotsuba "...Bueno. Si te soy sincera..." 
     
-    yotsuba "Creo que estoy un poco mas nerviosa que las demás."
+    yotsuba "Creo que estoy un poco más nerviosa que las demás."
 
     yotsuba "Es que si alguna de nosotras reprueba, se acaba todo."
 
     yotsuba "¡Pero no va a pasar! ¡Digo... creo que no va a pasar!"
 
-    yotsuba "Porque todas confían en ti."
+    if rama_de("yotsuba") == "fria":
+
+        yotsuba "Porque las demás confían en ti."
+
+        mc_pensamiento "Las demás. Ella no se contó."
+
+    else:
+
+        yotsuba "Porque todas confiamos en ti."
 
     mc "Voy a estar ahí. Eso sí lo puedo decir."
 
@@ -3756,9 +3826,9 @@ label cap1_interconexion_6:
 
             narrador "Yotsuba respondió: «¡La culpa no se paga, se comparte!»"
 
-            narrador "Me sorprende que ese mensaje venga de Yotsuba."
+            mc_pensamiento "Lo escribió la que siempre se queda con la culpa de las cinco."
 
-            narrador "Sabe más de lo que aparenta."
+            mc_pensamiento "A ella nadie se lo dice."
 
     if clima_cap1 == "buena":
 

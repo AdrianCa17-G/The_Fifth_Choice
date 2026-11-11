@@ -101,9 +101,9 @@ label hub_Yotsuba:
     show yotsuba sorprendida at pj(0.5)
     with dissolve
 
-    narrador "Se paró en seco a mitad de la pista, "
+    narrador "Se paró en seco a mitad de la pista." 
     
-    narrador " murmurando algo entre dientes mientras contenía la respiración."
+    narrador "Murmuró algo entre dientes, sin aire."
 
     yotsuba "…"
 
@@ -160,7 +160,7 @@ label hub_Yotsuba:
 
     yotsuba "¿Y eso por qué importa?"
 
-    mc "Porque soy tu tutor... y me preocupo por ti."
+    mc "Porque soy tu tutor."
 
     narrador "Lo procesó un segundo."
 
@@ -192,7 +192,9 @@ label hub_Yotsuba:
 
     mc "¿Entrenas así todos los días?"
 
-    yotsuba "¡Solo cuando quiero mejorar!... Que sí... ¡Es todos los días!"
+    yotsuba "¡Solo cuando quiero mejorar!"
+
+    yotsuba "…O sea, todos los días."
 
     mc "¿Y el club no se queda?"
 
@@ -259,9 +261,9 @@ label hub_Yotsuba:
 
     mc_pensamiento "Lo hizo tan rápido y con tanta energía que casi no lo noté."
 
-    narrador "Dio un par de saltos en el sitio, sacudiendo los brazos, "
-
-    narrador " como si con eso pudiera sacudirse también lo que acababa de decir."
+    narrador "Dio un par de saltos en el sitio, sacudiendo los brazos." 
+    
+    narrador "Como si así pudiera sacudirse también lo que acababa de decir."
 
     yotsuba "¡Vamos, no hay tiempo que perder! ¡El sol no espera!"
 
@@ -269,8 +271,6 @@ label hub_Yotsuba:
     with dissolve
 
     narrador "Y entonces se quedó quieta, con el puño en alto y el cronómetro colgando."
-
-    narrador "Ella seguía ahí, con el cronómetro en alto, esperando que lo tomara."
 
     narrador "El sol llevaba rato escondido tras las nubes." 
     
@@ -300,13 +300,11 @@ label hub_Yotsuba:
 
     yotsuba "¿[mc]? Parece que estás pensando en qué decir, ¿verdad?"  
 
-    narrador "La sonrisa se le torció un instante."    
+    narrador "La sonrisa se le torció un instante."
 
-    narrador "Después volvió a sonreir nuevamente, como si nada."  
+    narrador "Después volvió a su sitio, como si nada."
 
-    narrador "Ella seguía ahí, con el brazo estirado esperando que tomara el cronómetro, "
-
-    narrador " la sonrisa firme en su sitio."
+    narrador "Seguía con el brazo estirado. El cronómetro, colgando de su cordón."
 
     scene bg_pista_atletismo
     with dissolve
@@ -314,9 +312,7 @@ label hub_Yotsuba:
     show yotsuba neutral at pj_calla(0.5)
     with dissolve
 
-    mc_pensamiento "Lo que diga ahora decide si se queda con esa sonrisa intacta pero vacía por dentro, "
-
-    mc_pensamiento " o si le hago notar su verdadero valor como persona."
+    mc_pensamiento "Lo que diga ahora, se lo va a llevar igual: con esa sonrisa puesta."
 
     ############################################################################
     ##  MOVIMIENTO 4A · Rama cálida
@@ -330,7 +326,7 @@ label hub_Yotsuba:
     
     menu:
 
-        narrador "¿Cómo le ayudarías a sentirse mejor?"
+        narrador "¿Qué le dirás a Yotsuba?"
 
         "Tú vales tanto como cualquiera de tus hermanas.":
             jump yotsuba_m4a
@@ -338,7 +334,7 @@ label hub_Yotsuba:
         "Claro, dame el cronómetro.":
             jump yotsuba_m4b
 
-        "Si vas a seguir corriendo, deja de perder el tiempo.":
+        "Si correr es lo tuyo, concéntrate en eso.":
             jump yotsuba_m4c
 
 ## ---------------------------------------------------------------
@@ -368,9 +364,9 @@ label yotsuba_m4a:
     show yotsuba neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    narrador "Su sonrisa no desapareció,"
-            
-    narrador " pero tardó un poco más en reaccionar."
+    narrador "Su sonrisa no desapareció." 
+    
+    narrador "Pero tardó un poco más en llegar."
 
     yotsuba "…¿Qué me salté?"
 
@@ -378,11 +374,13 @@ label yotsuba_m4a:
 
     yotsuba "Estaba un poco más callada que de costumbre."
 
-    mc "Y ayer le dijiste a Miku que el libro que buscaba estaba en la segunda planta antes de que Miku siquiera preguntara."
+    mc "Y le dijiste a Miku dónde estaba su libro antes de que ella preguntara."
 
-    yotsuba "Es que siempre lo deja ahí después de leerlo."
+    yotsuba "Es que siempre lo deja en el mismo sitio después de leerlo."
 
-    mc "Y la semana pasada, cuando Ichika llegó tarde al departamento, fuiste la primera en saber que estaba agotada." 
+    mc "Y cuando Ichika se duerme en la mesa, eres la única que baja la voz."
+
+    mc "Nadie te lo pidió. Ni siquiera ella."
 
     narrador "Hubo un breve silencio."
 
@@ -406,7 +404,7 @@ label yotsuba_m4a:
 
     yotsuba "…Pero eso no entra en ningún examen."
 
-    mc "En Literatura entra algo que se llama comprensión lectora."
+    mc "En Japonés entra algo que se llama comprensión lectora."
 
     mc "Solo que tú no lo haces con libros. Lo haces con personas."
 
@@ -445,9 +443,11 @@ label yotsuba_m4a:
 
     narrador "Me lo pasó sin decir nada más."
 
-    narrador "Cuando arrancó la vuelta veinticuatro, ya no le hizo falta gritar para darse ánimos."
+    narrador "Arrancó la vuelta veinticuatro. Al pasar por la grada, dijo el número en voz alta."
 
-    narrador "Algo en ella lucía distinto. No era que estuviera más rápida. Era que estaba más segura."
+    narrador "Yo le contesté con el tiempo."
+
+    narrador "Ya no se gritaba ánimos. Ahora la cuenta la llevábamos entre dos."
 
     jump yotsuba_m5
     
@@ -575,6 +575,10 @@ label yotsuba_m5:
     with fade
 
     narrador "Recogí mis cosas y caminé hacia la salida del graderío."
+
+    if yotsuba_rama_cap1 != "fria":
+
+        narrador "Le dejé el cronómetro colgado de la valla, donde pudiera verlo."
 
     mc_pensamiento "Pensé en decirle algo antes de irme."
 
