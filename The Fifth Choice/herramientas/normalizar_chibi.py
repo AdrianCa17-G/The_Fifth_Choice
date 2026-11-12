@@ -13,10 +13,22 @@ Qué hace, por hermana:
   4. Coloca cada chibi en un lienzo de 512x512 RGBA: pies en la fila 496 y eje
      horizontal en el centro (columna 256).
 
-La escala común sale de la expresión `neutral` (por defecto mide 420 px de alto)
-pero nunca sube tanto como para cortar la expresión más alta (`feliz` con los
-brazos arriba) ni la más ancha. Si el tope lo pone otra expresión, el informe lo
-dice y propone el valor de --alto-neutral que evita la reducción.
+La escala común sale de la expresión `neutral`, con una de dos anclas:
+
+  - ANCLA OJOS (preferida): la línea de ojos del neutral queda a OJOS_A_PIES px
+    (280) por encima de los pies. Así el ahoge de Itsuki, el lazo de Yotsuba o
+    los moños de Nino no cuentan como "alto" y no encogen el cuerpo: las cinco
+    quedan con la cabeza y el cuerpo del mismo tamaño, como los sprites.
+    La fila de ojos se mide a mano en el render crudo `<hermana>_neutral` (la
+    fila Y en px del archivo crudo, a la altura de las pupilas, o de la curva
+    del ojo si están cerrados) y se guarda en OJOS_NEUTRAL o se pasa con --ojos-y.
+    --medir genera una regla sobre el neutral crudo para leerla fácil.
+  - ANCLA CAJA (respaldo): si la hermana no tiene fila de ojos, el neutral mide
+    --alto-neutral px (420) de alto total, accesorios incluidos.
+
+En los dos casos la escala nunca sube tanto como para cortar la expresión más
+alta (`feliz` con los brazos arriba) ni la más ancha; si hay tope, el informe lo
+dice.
 
 Los nombres de entrada tienen que ser  <hermana>_<expresion>.png  (o .jpg/.webp):
     ichika_neutral.png   nino_animo.png   miku_esfuerzo.png
@@ -30,6 +42,8 @@ Uso (desde herramientas/):
     python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --simular
     python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --alto-neutral 400
     python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --eje masa
+    python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --hermana nino --medir
+    python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --hermana nino --ojos-y 402
 
 Importante: procesa SIEMPRE las cinco expresiones de una hermana a la vez (misma
 carpeta). Si pasas un solo archivo hay que dar --escala a mano, o el tamaño no
@@ -53,7 +67,19 @@ LIENZO = 512
 PIES = 496               # fila donde queda la planta de los pies
 MARGEN_SUP = 8           # aire mínimo sobre la cabeza o las manos levantadas
 MARGEN_LADO = 8          # aire mínimo a cada lado
-ALTO_NEUTRAL = 420       # alto por defecto del chibi neutral, en px del lienzo
+ALTO_NEUTRAL = 420       # ancla caja: alto total del chibi neutral, en px del lienzo
+OJOS_A_PIES = 280        # ancla ojos: de la línea de ojos a los pies, en px del lienzo
+
+# Fila Y de la línea de ojos en el render CRUDO <hermana>_neutral, en px del
+# archivo crudo (no del lienzo de 512). None = sin medir: se usa el ancla caja.
+# Si regeneras el neutral crudo, vuelve a medirla.
+OJOS_NEUTRAL = {
+    "ichika": None,
+    "nino": None,
+    "miku": None,
+    "yotsuba": None,
+    "itsuki": None,
+}
 UMBRAL_ALFA = 8
 MIN_COMPONENTE = 30      # px; las motas opacas más chicas se borran
 
@@ -169,6 +195,42 @@ def eje_x(recorte, modo):
     return float(np.average(np.arange(ancho), weights=pesos))
 
 
+def guardar_regla(h, datos):
+    """Guarda medir_<hermana>_<expresion>.png: el crudo con una regla horizontal
+    cada 10 px (etiquetada cada 50) para leer la fila de la línea de ojos."""
+    from PIL import ImageDraw
+
+    ref = None
+    for d in datos:
+        if d["expr"] == "neutral":
+            ref = d
+    if ref is None:
+        ref = datos[0]
+        print("  AVISO: no hay " + h + "_neutral; la regla se hace sobre '" + ref["expr"] + "'.")
+
+    arr = ref["arr"]
+    alto = arr.shape[0]
+    ancho = arr.shape[1]
+    fondo = Image.new("RGBA", (ancho + 90, alto), (70, 70, 80, 255))
+    fondo.alpha_composite(Image.fromarray(arr), (90, 0))
+    dib = ImageDraw.Draw(fondo)
+
+    y = 0
+    while y < alto:
+        if y % 50 == 0:
+            dib.line([(0, y), (ancho + 90, y)], fill=(255, 60, 60, 200), width=1)
+            dib.text((4, y + 2), str(y), fill=(255, 255, 255, 255))
+        else:
+            dib.line([(60, y), (ancho + 90, y)], fill=(255, 230, 0, 90), width=1)
+        y += 10
+
+    destino = Path("medir_" + h + "_" + ref["expr"] + ".png")
+    fondo.save(destino)
+    print("  Regla guardada en " + str(destino.resolve()))
+    print("  Contenido del crudo: filas " + str(ref["y_top"]) + " a " + str(ref["y_pies"]) + ".")
+    print("  Lee la fila de las pupilas y pásala con --ojos-y, o guárdala en OJOS_NEUTRAL[\"" + h + "\"].")
+
+
 # ---------------------------------------------------------------------------
 # Proceso de un grupo (una hermana)
 # ---------------------------------------------------------------------------
@@ -204,10 +266,17 @@ def procesar_grupo(h, items, args, salida):
             "recorte": recorte,
             "ancho": c[2] - c[0],
             "alto": c[3] - c[1],
+            "y_top": c[1],
+            "y_pies": c[3],
+            "arr": arr,
         })
 
     if len(datos) == 0:
         print("  (nada que procesar)")
+        return 0
+
+    if args.medir:
+        guardar_regla(h, datos)
         return 0
 
     # --- Escala común ---------------------------------------------------------
@@ -231,12 +300,29 @@ def procesar_grupo(h, items, args, salida):
         if ref is None:
             ref = datos[0]
             print("  AVISO: no hay " + h + "_neutral; la escala se toma de '" + ref["expr"] + "'. Revisa que el tamaño coincida.")
-        e_ref = float(args.alto_neutral) / float(ref["alto"])
+        ojos_y = None
+        if args.ojos_y is not None:
+            ojos_y = args.ojos_y
+        elif OJOS_NEUTRAL.get(h) is not None:
+            ojos_y = OJOS_NEUTRAL[h]
+
+        if ojos_y is not None:
+            dist = ref["y_pies"] - ojos_y
+            if dist <= 0 or ojos_y < ref["y_top"]:
+                sys.exit("  La fila de ojos " + str(ojos_y) + " no cae dentro del chibi '" + ref["expr"] + "' (filas "
+                         + str(ref["y_top"]) + " a " + str(ref["y_pies"]) + " del crudo). Revisa --ojos-y / OJOS_NEUTRAL.")
+            e_ref = float(args.ojos_a_pies) / float(dist)
+            motivo = "ancla ojos: '" + ref["expr"] + "' con los ojos a " + str(args.ojos_a_pies) + " px de los pies"
+        else:
+            e_ref = float(args.alto_neutral) / float(ref["alto"])
+            motivo = "ancla caja: '" + ref["expr"] + "' queda en " + str(args.alto_neutral) + " px de alto"
+            print("  AVISO: " + h + " no tiene fila de ojos medida; el accesorio de la cabeza cuenta como alto.")
+            print("         Mídela con --medir y pásala con --ojos-y (o guárdala en OJOS_NEUTRAL).")
+
         e_alto = float(PIES - MARGEN_SUP) / float(max_alto)
         e_ancho = float(LIENZO - 2 * MARGEN_LADO) / float(max_ancho)
 
         escala = e_ref
-        motivo = "'" + ref["expr"] + "' queda en " + str(args.alto_neutral) + " px de alto"
 
         if e_alto < escala:
             escala = e_alto
@@ -246,9 +332,18 @@ def procesar_grupo(h, items, args, salida):
             motivo = "tope por la expresión más ancha (" + str(max_ancho) + " px de origen)"
 
         if motivo.startswith("tope"):
-            nuevo = int(round(escala * float(ref["alto"])))
-            print("  AVISO: " + motivo + ". El neutral queda en " + str(nuevo) + " px en vez de " + str(args.alto_neutral) + ".")
-            print("         Para evitarlo, regenera la expresión más grande con el chibi más pequeño, o usa --alto-neutral " + str(nuevo) + ".")
+            print("  AVISO: " + motivo + ". Esta hermana queda más pequeña que el resto del set.")
+            if ojos_y is not None:
+                nuevo = int(round(escala * float(ref["y_pies"] - ojos_y)))
+                print("         Para igualarla, baja --ojos-a-pies a " + str(nuevo) + " en TODAS las hermanas,")
+                print("         o regenera la expresión más grande con el chibi más pequeño en el encuadre.")
+            else:
+                nuevo = int(round(escala * float(ref["alto"])))
+                print("         Para evitarlo, regenera la expresión más grande con el chibi más pequeño, o usa --alto-neutral " + str(nuevo) + ".")
+
+        if ojos_y is not None:
+            fila = PIES - int(round(escala * float(ref["y_pies"] - ojos_y)))
+            print("  Línea de ojos del neutral en el lienzo: fila " + str(fila))
 
     print("  Escala común: " + "{:.4f}".format(escala) + "  (" + motivo + ")")
 
@@ -337,7 +432,14 @@ def main():
     ap.add_argument("--hermana", choices=HERMANAS, default=None, help="procesa solo esa hermana")
     ap.add_argument("--escala", type=float, default=None, help="fuerza la escala (px de origen -> px de lienzo)")
     ap.add_argument("--alto-neutral", type=int, default=ALTO_NEUTRAL, dest="alto_neutral",
-                    help="alto en px del chibi neutral en el lienzo (por defecto " + str(ALTO_NEUTRAL) + ")")
+                    help="ancla caja: alto total en px del chibi neutral en el lienzo (por defecto " + str(ALTO_NEUTRAL) + ")")
+    ap.add_argument("--ojos-y", type=int, default=None, dest="ojos_y",
+                    help="fila de la línea de ojos en el neutral CRUDO (px del archivo); activa el ancla ojos. "
+                         "Solo con --hermana")
+    ap.add_argument("--ojos-a-pies", type=int, default=OJOS_A_PIES, dest="ojos_a_pies",
+                    help="ancla ojos: px del lienzo entre la línea de ojos y los pies (por defecto " + str(OJOS_A_PIES) + ")")
+    ap.add_argument("--medir", action="store_true",
+                    help="no normaliza: guarda medir_<hermana>_neutral.png con una regla para leer la fila de ojos")
     ap.add_argument("--eje", choices=["pies", "masa", "bbox"], default="pies",
                     help="cómo se calcula el eje horizontal (por defecto pies)")
     ap.add_argument("--sin-huecos", action="store_true", dest="sin_huecos",
@@ -352,6 +454,12 @@ def main():
     if args.entrada.is_file() and args.escala is None:
         sys.exit("Con un solo archivo hay que pasar --escala; si no, no coincidirá con el resto del set.")
 
+    if args.ojos_y is not None and args.hermana is None:
+        sys.exit("--ojos-y es de una sola hermana: úsalo junto con --hermana.")
+
+    if args.ojos_a_pies < 100 or args.ojos_a_pies > PIES - MARGEN_SUP:
+        sys.exit("--ojos-a-pies debe estar entre 100 y " + str(PIES - MARGEN_SUP) + ".")
+
     if args.alto_neutral < 100 or args.alto_neutral > PIES - MARGEN_SUP:
         sys.exit("--alto-neutral debe estar entre 100 y " + str(PIES - MARGEN_SUP) + ".")
 
@@ -359,7 +467,7 @@ def main():
     if len(grupos) == 0:
         sys.exit("No se encontraron imágenes <hermana>_<expresion> compatibles.")
 
-    if not args.simular:
+    if not args.simular and not args.medir:
         args.salida.mkdir(parents=True, exist_ok=True)
 
     total = 0

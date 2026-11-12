@@ -916,8 +916,8 @@ screen mj_n1(hermana, params, inicio, intento, fallos, nivel, titulo):
                         use mj_n1_sexto_op(op[1], op[2], Function(vivo.elegir_sexto, op[0]), PETALO_COLOR["nino"], (vivo.sexto == op[0]))
 
             ## --- Nino chibi y su globo ---
-            use mj_retrato("nino", vivo.expresion_star(), vivo.globo, vivo.anim_star(), 200, 900, 0.5)
-
+            use mj_retrato("nino", vivo.expresion_star(), vivo.globo, vivo.anim_star(), 250, 1090, 1.0)
+            
             ## --- Cuenta atrás ---
             if vivo.fase == "cuenta":
                 add Solid("#0B0712A0")
