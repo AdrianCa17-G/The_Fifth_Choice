@@ -58,10 +58,10 @@ label beat_casa:
     
     mc "Se me hizo tarde."
 
-    show raiha regano at pj(0.20)
+    show raiha preocupada at pj(0.20)
     with disolucion_lenta
 
-    raiha "Desde que comenzaste tu trabajo como tutor, siempre se te hace tarde."
+    raiha "Desde que eres tutor, siempre llegas tarde."
 
     narrador "No lo dijo con reproche. Lo dijo como quien ya lleva la cuenta."
 
@@ -138,6 +138,12 @@ label beat_casa:
     narrador "Lo dije otra vez con el mismo tono."
 
     narrador "Esta vez lo noté yo también, medio segundo tarde."
+
+    raiha "Ya me salía, hermanito."
+
+    raiha "Solo quería que te sentaras conmigo un rato."
+
+    narrador "Cerró el cuaderno. Esta vez sí."
 
     ############################################################################
     ##  MOVIMIENTO 3 · Isanari
@@ -218,7 +224,7 @@ label beat_casa:
 
     narrador "Raiha se quedó mirando la puerta de su cuarto un momento más de lo necesario."
 
-    show raiha hablando at pj(0.20)
+    show raiha preocupada at pj(0.20)
     with disolucion_lenta
 
     raiha "No le hagas caso."
@@ -226,6 +232,15 @@ label beat_casa:
     mc "No le hago caso."
 
     narrador "Los dos sabíamos que no era del todo cierto."
+
+    show raiha preocupada at pj(0.20)
+    with disolucion_lenta
+
+    raiha "...A veces pones la misma cara que él."
+
+    raiha "La de estar haciendo cuentas."
+
+    mc_pensamiento "No le contesté. No sabía si era verdad."
 
     ############################################################################
     ##  MOVIMIENTO 4 · A SOLAS

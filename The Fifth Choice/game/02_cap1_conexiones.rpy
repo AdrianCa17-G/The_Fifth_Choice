@@ -1352,12 +1352,12 @@ label cap1_interconexion_2:
 
     narrador "Me llamó al comedor muy alegre."
 
-    narrador "Esa energía me recuerda a alguien. No sé a quién."
+    narrador "Esa energía me recordaba a alguien. No supe a quién."
 
     show raiha hablando at pj_habla(0.50)
     with dissolve
 
-    raiha "¡Buenos días hermanito!"
+    raiha "¡Buenos días, hermanito!"
 
     raiha "¿Qué quieres de desayuno? ¡Tienes que decidirlo ya!"
 
@@ -1398,7 +1398,7 @@ label cap1_interconexion_2:
 
             raiha "...Voy a prepararte doble porción."
 
-            raiha "Recuerda que cuidarte a ti mismo y alimentarte bien tambien es importante."
+            raiha "¡Desayunar también es importante! ¡Lo dijo la maestra!"
 
             narrador "Lo dijo con el tono de quien ya tomó una decisión por los dos."
 
@@ -2437,6 +2437,52 @@ label cap1_interconexion_5:
         mc_pensamiento "El lado positivo es que Maruo parece seguir confiando en mi."
 
         mc_pensamiento "No había soltado nada nuevo. Pero el reloj no para."
+
+    
+    play sound audio.sfx_toque_puerta volume 1.5
+
+    show raiha hablando at pj(0.50)
+    with dissolve
+
+    raiha "Hermanito, llegó esto. Lo dejo aquí, ¿sí?"
+
+    narrador "Un sobre del banco. Lo dejó boca abajo en mi escritorio, como si así pesara menos."
+
+    mc "Es para papá."
+
+    show raiha preocupada at pj(0.50)
+    with disolucion_lenta
+
+    raiha "Ya sé. Pero cuando abre esos, se pone serio toda la noche."
+
+    raiha "Tú también. Pero tú por lo menos te comes la cena."
+
+    narrador "En la otra mano llevaba una hoja doblada."
+
+    mc "¿Y eso?"
+
+    show raiha regano at pj(0.50)
+    with disolucion_lenta
+
+    raiha "Nada. Una excursión de la escuela. Al acuario."
+
+    raiha "No voy a ir. Los peces son aburridos."
+
+    mc "Te encantan los peces."
+
+    raiha "¡Me encantaban! Ya soy grande."
+
+    show raiha hablando at pj(0.50)
+    with disolucion_lenta
+
+    raiha "¡Buenas noches, hermanito!"
+
+    hide raiha
+    with dissolve
+
+    mc_pensamiento "Antes de salir dobló la hoja una vez más. Para que no se viera el precio."
+
+    mc_pensamiento "Yo hacía lo mismo a su edad. No sabía que ella también."
 
     mc_pensamiento "Solo me quedaba una última tarde libre."
 

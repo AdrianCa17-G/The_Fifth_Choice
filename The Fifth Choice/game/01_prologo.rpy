@@ -141,11 +141,14 @@ label prologo:
     show raiha regano at pj(0.20)
     with disolucion_lenta
 
-    raiha "¡Por supuesto! Tú das el ejemplo de alguien obsesionado con los estudios y que no duerme bien."
+    raiha "¡Claro! El ejemplo de alguien que estudia todo el día y no duerme nada."
 
     mc "La parte de dormir es negociable."
 
     raiha "¡No lo es! ¡Cuidar tu salud durmiendo bien también es importante!"
+
+    show raiha preocupada at pj(0.20)
+    with disolucion_lenta
 
     raiha "...Anoche también te escuché pasar páginas a las tres."
 
@@ -167,7 +170,7 @@ label prologo:
     with dissolve
 
     show isanari neutral at pj_habla(0.73)
-    show raiha regano at pj_calla(0.20)
+    show raiha preocupada at pj_calla(0.20)
 
     isanari "[mc], tengo un trabajo para ti."
 
@@ -232,6 +235,10 @@ label prologo:
     mc "Me lo pensaré, Raiha."
 
     show raiha hablando at pj_calla(0.20)
+
+    mc_pensamiento "«Cada cosa que compramos». Lo dijo en plural."
+
+    mc_pensamiento "Ella también hace las cuentas. Nunca le pedí que las hiciera."
 
     mc_pensamiento "No es el trabajo de mis sueños, pero..."
 
@@ -1206,6 +1213,47 @@ label prologo:
     with fade
 
     narrador "Salí del edificio pasadas las nueve. La ciudad estaba fría y el trayecto a casa era largo."
+
+    scene bg_comedor
+    with fade
+
+    narrador "En el comedor quedaba una sola luz encendida."
+
+    show raiha preocupada at pj_habla(0.50)
+    with dissolve
+
+    raiha "¡Hermanito! ¡Por fin!"
+
+    raiha "Papá me mandó a dormir, pero no le hice caso."
+
+    mc "Son más de las nueve, Raiha."
+
+    raiha "¡Ya sé qué hora es! Por eso te estaba esperando."
+
+    show raiha regano at pj_habla(0.50)
+    with disolucion_lenta
+
+    raiha "¿Y esa cara? Traes cara de haber perdido."
+
+    mc "Una chica se sentó en mi asiento a almorzar. Discutimos."
+
+    mc "Y resulta que es una de mis alumnas."
+
+    raiha "¿Y quién ganó?"
+
+    mc "Nadie. Por eso traigo esta cara."
+
+    show raiha hablando at pj_habla(0.50)
+    with disolucion_lenta
+
+    raiha "Mañana le ganas. ¡Tú siempre sacas el primer lugar!"
+
+    hide raiha
+    with dissolve
+
+    narrador "Se fue a su cuarto sin esperar a que le contestara."
+
+    narrador "Me había esperado despierta solo para eso."
 
     scene bg_cuarto_mc
     with fade

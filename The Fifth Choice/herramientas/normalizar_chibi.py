@@ -13,18 +13,23 @@ Qué hace, por hermana:
   4. Coloca cada chibi en un lienzo de 512x512 RGBA: pies en la fila 496 y eje
      horizontal en el centro (columna 256).
 
-La escala común sale de la expresión `neutral`, con una de dos anclas:
+La escala común sale de la expresión `neutral`: de la coronilla a los pies mide
+--alto-neutral px (420). La coronilla es el punto más alto del PELO, sin contar
+accesorios: el ahoge de Itsuki, el lazo de Yotsuba o los moños de Nino quedan
+fuera, así que no encogen el cuerpo.
 
-  - ANCLA OJOS (preferida): la línea de ojos del neutral queda a OJOS_A_PIES px
-    (280) por encima de los pies. Así el ahoge de Itsuki, el lazo de Yotsuba o
-    los moños de Nino no cuentan como "alto" y no encogen el cuerpo: las cinco
-    quedan con la cabeza y el cuerpo del mismo tamaño, como los sprites.
-    La fila de ojos se mide a mano en el render crudo `<hermana>_neutral` (la
-    fila Y en px del archivo crudo, a la altura de las pupilas, o de la curva
-    del ojo si están cerrados) y se guarda en OJOS_NEUTRAL o se pasa con --ojos-y.
-    --medir genera una regla sobre el neutral crudo para leerla fácil.
-  - ANCLA CAJA (respaldo): si la hermana no tiene fila de ojos, el neutral mide
-    --alto-neutral px (420) de alto total, accesorios incluidos.
+  - Si la hermana no lleva nada sobre la cabeza (Ichika, Miku), la coronilla es
+    el borde superior del contenido y no hay que medir nada.
+  - Si lleva accesorio, la fila de la coronilla se mide a mano en el render
+    crudo (fila Y en px del archivo crudo, p. ej. con el panel Info de
+    Photoshop) y se guarda en CORONILLA["<hermana>_neutral"] o se pasa con
+    --coronilla-y. --medir genera una regla sobre el neutral crudo.
+  - AJUSTE_OPTICO permite un retoque final a ojo (1.00 = sin cambio).
+
+MODO INDIVIDUAL: si una expresión tiene su propia entrada en CORONILLA (p. ej.
+"itsuki_feliz": 160), esa imagen se escala sola para medir también 420 px de
+coronilla a pies. Sirve cuando la IA dibujó esa expresión con otras proporciones.
+Las expresiones sin entrada usan la escala común del neutral.
 
 En los dos casos la escala nunca sube tanto como para cortar la expresión más
 alta (`feliz` con los brazos arriba) ni la más ancha; si hay tope, el informe lo
@@ -43,7 +48,7 @@ Uso (desde herramientas/):
     python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --alto-neutral 400
     python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --eje masa
     python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --hermana nino --medir
-    python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --hermana nino --ojos-y 402
+    python normalizar_chibi.py renders_crudos/chibis/ ../game/images/chibis/ --hermana nino --coronilla-y 180
 
 Importante: procesa SIEMPRE las cinco expresiones de una hermana a la vez (misma
 carpeta). Si pasas un solo archivo hay que dar --escala a mano, o el tamaño no
@@ -67,18 +72,42 @@ LIENZO = 512
 PIES = 496               # fila donde queda la planta de los pies
 MARGEN_SUP = 8           # aire mínimo sobre la cabeza o las manos levantadas
 MARGEN_LADO = 8          # aire mínimo a cada lado
-ALTO_NEUTRAL = 420       # ancla caja: alto total del chibi neutral, en px del lienzo
-OJOS_A_PIES = 280        # ancla ojos: de la línea de ojos a los pies, en px del lienzo
+ALTO_NEUTRAL = 420       # de la coronilla (sin accesorios) a los pies del neutral, px del lienzo
 
-# Fila Y de la línea de ojos en el render CRUDO <hermana>_neutral, en px del
-# archivo crudo (no del lienzo de 512). None = sin medir: se usa el ancla caja.
-# Si regeneras el neutral crudo, vuelve a medirla.
-OJOS_NEUTRAL = {
-    "ichika": None,
-    "nino": None,
-    "miku": None,
-    "yotsuba": None,
-    "itsuki": None,
+# Fila Y de la coronilla (lo más alto del pelo, SIN ahoge, lazo ni moños) en el
+# render CRUDO, en px del archivo crudo (no del lienzo de 512). Clave:
+# "<hermana>_<expresion>", igual que el nombre del archivo.
+#   - "<hermana>_neutral" fija la escala común de la hermana. Si no está, la
+#     coronilla del neutral es el borde superior del contenido.
+#   - Cualquier otra expresión que aparezca aquí se escala sola (modo individual).
+# Si regeneras un crudo, vuelve a medir su fila.
+CORONILLA = {
+    "itsuki_neutral": 137,
+    "itsuki_feliz": 109,
+    "itsuki_triste": 87,
+    "itsuki_esfuerzo": 121,
+    "itsuki_animo": 90,
+
+    "nino_neutral": 111,
+    "nino_feliz": 87,
+    "nino_triste": 42,
+    "nino_esfuerzo": 55,
+    "nino_animo": 67,
+
+    "yotsuba_neutral": 208,
+    "yotsuba_feliz": 170,
+    "yotsuba_triste": 128,
+    "yotsuba_esfuerzo": 158,
+    "yotsuba_animo": 183,
+}
+
+# Retoque a ojo después de medir (1.00 = sin cambio; 0.97 = 3 % más pequeña).
+AJUSTE_OPTICO = {
+    "ichika": 1.00,
+    "nino": 1.00,
+    "miku": 1.00,
+    "yotsuba": 1.00,
+    "itsuki": 1.00,
 }
 UMBRAL_ALFA = 8
 MIN_COMPONENTE = 30      # px; las motas opacas más chicas se borran
@@ -197,7 +226,7 @@ def eje_x(recorte, modo):
 
 def guardar_regla(h, datos):
     """Guarda medir_<hermana>_<expresion>.png: el crudo con una regla horizontal
-    cada 10 px (etiquetada cada 50) para leer la fila de la línea de ojos."""
+    cada 10 px (etiquetada cada 50) para leer la fila de la coronilla."""
     from PIL import ImageDraw
 
     ref = None
@@ -228,7 +257,8 @@ def guardar_regla(h, datos):
     fondo.save(destino)
     print("  Regla guardada en " + str(destino.resolve()))
     print("  Contenido del crudo: filas " + str(ref["y_top"]) + " a " + str(ref["y_pies"]) + ".")
-    print("  Lee la fila de las pupilas y pásala con --ojos-y, o guárdala en OJOS_NEUTRAL[\"" + h + "\"].")
+    print("  Lee la fila de la coronilla (lo más alto del PELO, sin ahoge, lazo ni moños)")
+    print("  y pásala con --coronilla-y, o guárdala en CORONILLA[\"" + h + "_" + ref["expr"] + "\"].")
 
 
 # ---------------------------------------------------------------------------
@@ -300,24 +330,31 @@ def procesar_grupo(h, items, args, salida):
         if ref is None:
             ref = datos[0]
             print("  AVISO: no hay " + h + "_neutral; la escala se toma de '" + ref["expr"] + "'. Revisa que el tamaño coincida.")
-        ojos_y = None
-        if args.ojos_y is not None:
-            ojos_y = args.ojos_y
-        elif OJOS_NEUTRAL.get(h) is not None:
-            ojos_y = OJOS_NEUTRAL[h]
+        coronilla = None
+        if args.coronilla_y is not None:
+            coronilla = args.coronilla_y
+        elif CORONILLA.get(h + "_" + ref["expr"]) is not None:
+            coronilla = CORONILLA[h + "_" + ref["expr"]]
 
-        if ojos_y is not None:
-            dist = ref["y_pies"] - ojos_y
-            if dist <= 0 or ojos_y < ref["y_top"]:
-                sys.exit("  La fila de ojos " + str(ojos_y) + " no cae dentro del chibi '" + ref["expr"] + "' (filas "
-                         + str(ref["y_top"]) + " a " + str(ref["y_pies"]) + " del crudo). Revisa --ojos-y / OJOS_NEUTRAL.")
-            e_ref = float(args.ojos_a_pies) / float(dist)
-            motivo = "ancla ojos: '" + ref["expr"] + "' con los ojos a " + str(args.ojos_a_pies) + " px de los pies"
+        if coronilla is None:
+            coronilla = ref["y_top"]
+            origen = "borde superior del contenido"
         else:
-            e_ref = float(args.alto_neutral) / float(ref["alto"])
-            motivo = "ancla caja: '" + ref["expr"] + "' queda en " + str(args.alto_neutral) + " px de alto"
-            print("  AVISO: " + h + " no tiene fila de ojos medida; el accesorio de la cabeza cuenta como alto.")
-            print("         Mídela con --medir y pásala con --ojos-y (o guárdala en OJOS_NEUTRAL).")
+            origen = "fila " + str(coronilla) + " del crudo"
+
+        dist = ref["y_pies"] - coronilla
+        if dist <= 0 or coronilla < ref["y_top"]:
+            sys.exit("  La coronilla " + str(coronilla) + " no cae dentro del chibi '" + ref["expr"] + "' (filas "
+                     + str(ref["y_top"]) + " a " + str(ref["y_pies"]) + " del crudo). Revisa --coronilla-y / CORONILLA.")
+
+        ajuste = AJUSTE_OPTICO.get(h, 1.0)
+        if args.ajuste is not None:
+            ajuste = args.ajuste
+
+        e_ref = float(args.alto_neutral) * ajuste / float(dist)
+        motivo = "'" + ref["expr"] + "' mide " + str(args.alto_neutral) + " px de coronilla a pies (coronilla: " + origen + ")"
+        if ajuste != 1.0:
+            motivo = motivo + ", ajuste óptico x" + "{:.2f}".format(ajuste)
 
         e_alto = float(PIES - MARGEN_SUP) / float(max_alto)
         e_ancho = float(LIENZO - 2 * MARGEN_LADO) / float(max_ancho)
@@ -333,32 +370,57 @@ def procesar_grupo(h, items, args, salida):
 
         if motivo.startswith("tope"):
             print("  AVISO: " + motivo + ". Esta hermana queda más pequeña que el resto del set.")
-            if ojos_y is not None:
-                nuevo = int(round(escala * float(ref["y_pies"] - ojos_y)))
-                print("         Para igualarla, baja --ojos-a-pies a " + str(nuevo) + " en TODAS las hermanas,")
-                print("         o regenera la expresión más grande con el chibi más pequeño en el encuadre.")
-            else:
-                nuevo = int(round(escala * float(ref["alto"])))
-                print("         Para evitarlo, regenera la expresión más grande con el chibi más pequeño, o usa --alto-neutral " + str(nuevo) + ".")
+            nuevo = int(round(escala * float(dist)))
+            print("         Para igualarla, usa --alto-neutral " + str(nuevo) + " en TODAS las hermanas,")
+            print("         o regenera la expresión más grande con el chibi más pequeño en el encuadre.")
 
-        if ojos_y is not None:
-            fila = PIES - int(round(escala * float(ref["y_pies"] - ojos_y)))
-            print("  Línea de ojos del neutral en el lienzo: fila " + str(fila))
+        fila = PIES - int(round(escala * float(dist)))
+        print("  Coronilla del neutral en el lienzo: fila " + str(fila))
 
     print("  Escala común: " + "{:.4f}".format(escala) + "  (" + motivo + ")")
 
     # --- Composición ----------------------------------------------------------
+    alto_objetivo = float(args.alto_neutral) * AJUSTE_OPTICO.get(h, 1.0)
+    if args.ajuste is not None:
+        alto_objetivo = float(args.alto_neutral) * args.ajuste
+
     hechos = 0
     for d in datos:
-        nuevo_w = int(round(d["ancho"] * escala))
-        nuevo_h = int(round(d["alto"] * escala))
+        escala_d = escala
+        clave = h + "_" + d["expr"]
+        propia = CORONILLA.get(clave)
+        if d is ref:
+            propia = None
+        if args.escala is not None:
+            propia = None
+
+        if propia is not None:
+            dist_d = d["y_pies"] - propia
+            if dist_d <= 0 or propia < d["y_top"]:
+                print("  x " + d["ruta"].name + ": la coronilla " + str(propia) + " no cae dentro del chibi (filas "
+                      + str(d["y_top"]) + " a " + str(d["y_pies"]) + "). Revisa CORONILLA[\"" + clave + "\"].")
+                continue
+            escala_d = alto_objetivo / float(dist_d)
+            tope_alto = float(PIES - MARGEN_SUP) / float(d["alto"])
+            tope_ancho = float(LIENZO - 2 * MARGEN_LADO) / float(d["ancho"])
+            if tope_alto < escala_d:
+                escala_d = tope_alto
+                print("  AVISO: " + clave + " toca el tope de alto; queda algo más pequeña.")
+            if tope_ancho < escala_d:
+                escala_d = tope_ancho
+                print("  AVISO: " + clave + " toca el tope de ancho; queda algo más pequeña.")
+            print("  " + clave + ": escala individual " + "{:.4f}".format(escala_d)
+                  + " (común " + "{:.4f}".format(escala) + ", coronilla en fila " + str(PIES - int(round(escala_d * dist_d))) + ")")
+
+        nuevo_w = int(round(d["ancho"] * escala_d))
+        nuevo_h = int(round(d["alto"] * escala_d))
         if nuevo_w < 1:
             nuevo_w = 1
         if nuevo_h < 1:
             nuevo_h = 1
 
         peq = resize_premultiplied(d["recorte"], (nuevo_w, nuevo_h))
-        eje = eje_x(d["recorte"], args.eje) * escala
+        eje = eje_x(d["recorte"], args.eje) * escala_d
 
         x0 = int(round(LIENZO / 2.0 - eje))
         y0 = PIES - nuevo_h
@@ -432,14 +494,13 @@ def main():
     ap.add_argument("--hermana", choices=HERMANAS, default=None, help="procesa solo esa hermana")
     ap.add_argument("--escala", type=float, default=None, help="fuerza la escala (px de origen -> px de lienzo)")
     ap.add_argument("--alto-neutral", type=int, default=ALTO_NEUTRAL, dest="alto_neutral",
-                    help="ancla caja: alto total en px del chibi neutral en el lienzo (por defecto " + str(ALTO_NEUTRAL) + ")")
-    ap.add_argument("--ojos-y", type=int, default=None, dest="ojos_y",
-                    help="fila de la línea de ojos en el neutral CRUDO (px del archivo); activa el ancla ojos. "
-                         "Solo con --hermana")
-    ap.add_argument("--ojos-a-pies", type=int, default=OJOS_A_PIES, dest="ojos_a_pies",
-                    help="ancla ojos: px del lienzo entre la línea de ojos y los pies (por defecto " + str(OJOS_A_PIES) + ")")
+                    help="px del lienzo de la coronilla a los pies del neutral (por defecto " + str(ALTO_NEUTRAL) + ")")
+    ap.add_argument("--coronilla-y", type=int, default=None, dest="coronilla_y",
+                    help="fila de la coronilla (sin accesorio) en el neutral CRUDO, px del archivo. Solo con --hermana")
+    ap.add_argument("--ajuste", type=float, default=None,
+                    help="retoque óptico de esta pasada (1.0 = nada); pisa AJUSTE_OPTICO. Solo con --hermana")
     ap.add_argument("--medir", action="store_true",
-                    help="no normaliza: guarda medir_<hermana>_neutral.png con una regla para leer la fila de ojos")
+                    help="no normaliza: guarda medir_<hermana>_neutral.png con una regla para leer la fila de la coronilla")
     ap.add_argument("--eje", choices=["pies", "masa", "bbox"], default="pies",
                     help="cómo se calcula el eje horizontal (por defecto pies)")
     ap.add_argument("--sin-huecos", action="store_true", dest="sin_huecos",
@@ -454,11 +515,14 @@ def main():
     if args.entrada.is_file() and args.escala is None:
         sys.exit("Con un solo archivo hay que pasar --escala; si no, no coincidirá con el resto del set.")
 
-    if args.ojos_y is not None and args.hermana is None:
-        sys.exit("--ojos-y es de una sola hermana: úsalo junto con --hermana.")
+    if args.coronilla_y is not None and args.hermana is None:
+        sys.exit("--coronilla-y es de una sola hermana: úsalo junto con --hermana.")
 
-    if args.ojos_a_pies < 100 or args.ojos_a_pies > PIES - MARGEN_SUP:
-        sys.exit("--ojos-a-pies debe estar entre 100 y " + str(PIES - MARGEN_SUP) + ".")
+    if args.ajuste is not None and args.hermana is None:
+        sys.exit("--ajuste es de una sola hermana: úsalo junto con --hermana.")
+
+    if args.ajuste is not None and (args.ajuste < 0.8 or args.ajuste > 1.2):
+        sys.exit("--ajuste debe estar entre 0.8 y 1.2.")
 
     if args.alto_neutral < 100 or args.alto_neutral > PIES - MARGEN_SUP:
         sys.exit("--alto-neutral debe estar entre 100 y " + str(PIES - MARGEN_SUP) + ".")

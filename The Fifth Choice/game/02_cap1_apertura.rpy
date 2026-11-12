@@ -627,7 +627,7 @@ label cap1_apertura:
 
     mc "No están en blanco."
 
-    raiha "Están llenos de cosas mal hechas y tachones, que es casi peor."
+    raiha "Están llenos de tachones. ¡Eso es peor!"
 
     mc "Gracias por el ánimo."
 
@@ -650,9 +650,14 @@ label cap1_apertura:
 
     raiha "Entonces no entiendo el problema."
 
-    raiha "Bueno, da igual, te deseo mucha suerte hermanito."
+    show raiha hablando at pj(0.50)
+    with disolucion_lenta
 
-    raiha "¡Se qué podrás lidiar con cinco a la vez!"
+    raiha "Bueno, da igual. ¡Mucha suerte, hermanito!"
+
+    raiha "¡Sé que puedes con las cinco a la vez!"
+
+    narrador "Lo dijo muy segura. Casi."
 
     ############################################################################
     ##  ESCENA 6 · El mapa de las cinco
@@ -677,7 +682,7 @@ label cap1_apertura:
     
     mc "¿Por dónde empezarías?"
 
-    raiha "¡Eso es fácil hermanito!" 
+    raiha "¡Eso es fácil, hermanito!"
     
     raiha "Tú solo cuéntame cómo es cada una y yo te digo dónde la buscaría."
 
@@ -732,7 +737,7 @@ label cap1_apertura:
 
                 raiha "¡Uy, esa suena a hermana mayor de verdad!" 
                 
-                raiha "Es como yo, pero enojona."
+                raiha "Es como yo cuando te regaño. ¡Pero enojona todo el día!"
 
                 raiha "Con esa actitud de jefa, seguro anda revisando que no falte nada en casa..." 
                 
@@ -811,11 +816,11 @@ label cap1_apertura:
 
                 raiha "¡Espera, espera!"
 
-                raiha "¿Es la misma con la que discutías ese día?"
+                raiha "¿La del asiento? ¿La que me contaste?"
 
                 mc "...Sí, esa misma."
 
-                raiha "¡Con razón te veías tan raro cuando volviste ese día!"
+                raiha "¡Con razón volviste con esa cara aquella noche!"
 
                 mc "Es bastante aplicada, eso sí. Se queda repasando después de que terminan
                 las clases, aunque nadie se lo pida."

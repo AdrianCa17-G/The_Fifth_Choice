@@ -366,14 +366,14 @@ label final_malo_beat:
 
     narrador "Se quedó callada al verme la cara."
 
-    raiha "Hermanito... ¿Te encuentras bien?"
-
-    mc "Disculpame, Raiha."
-
-    mc "Me despidieron."
-
     show raiha preocupada at pj_habla(0.20)
     with disolucion_lenta
+
+    raiha "Hermanito... ¿Te encuentras bien?"
+
+    mc "Discúlpame, Raiha."
+
+    mc "Me despidieron."
 
     raiha "...¿Qué?"
 
@@ -383,14 +383,14 @@ label final_malo_beat:
 
     isanari "¿Y el mes? ¿Te pagó lo trabajado?"
 
-    mc "Dijo que si."
+    mc "Dijo que sí."
 
     show raiha regano at pj(0.20)
     with disolucion_lenta
 
     raiha "¡Papá!"
 
-    raiha "Pregúntale cómo está, no cuánto le pagaron."
+    raiha "¡Primero mírale la cara!"
 
     isanari "..."
 
@@ -1463,6 +1463,9 @@ label final_malo_hub3:
     
     narrador "Y se le apagó la sonrisa entera."
 
+    show raiha preocupada at pj(0.20)
+    with disolucion_lenta
+
     show isanari neutral at pj(0.73)
     with dissolve
 
@@ -1474,7 +1477,7 @@ label final_malo_hub3:
 
     mc "Me despidieron, Raiha."
 
-    show raiha preocupada at pj(0.20)
+    show raiha preocupada at pj_habla(0.20)
     with disolucion_lenta
 
     raiha "...¿Qué?"

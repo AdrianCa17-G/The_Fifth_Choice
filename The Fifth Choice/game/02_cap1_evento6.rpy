@@ -4206,7 +4206,7 @@ label e6_casa:
 
     narrador "Al llegar, alguien me estaba esperando, y yo también quería verla."
 
-    mc_pensamiento "Mi hermana Raiha, la única que ha confiado en mí desde el principio."
+    mc_pensamiento "Mi hermana Raiha. La primera que dijo que yo podía con las cinco."
 
     mc_pensamiento "Una de las razones por las que acepté el trabajo cuando no sabía qué decidir."
 
@@ -4540,12 +4540,32 @@ label e6_retrato:
     show raiha regano at pj_habla(0.5)
     with disolucion_lenta
 
-    raiha "Hermanito, son literalmente la misma cara."
+    raiha "¡Hermanito, si tienen la misma cara!"
 
     mc "La misma cara. Nada más."
 
     show raiha hablando at pj_habla(0.5)
     with disolucion_lenta
+
+    raiha "¿Y cuál es la de la pista? ¿La que me cae bien?"
+
+    mc "La del lazo verde."
+
+    if yotsuba_visitada_cap1:
+
+        mc "Estaba justo donde dijiste."
+
+    else:
+
+        mc "Me esperó en esa pista varias tardes. Justo donde dijiste."
+
+    raiha "¿¡Acerté!?"
+
+    raiha "¡Te dije que siempre sirvo!"
+
+    mc "Gracias, Raiha. Esta vez lo digo en serio."
+
+    raiha "...Algún día quiero conocerla."
 
     narrador "Raiha se rió. Me miró un rato, como quien busca algo que no encuentra."
 
@@ -4569,11 +4589,21 @@ label e6_retrato:
 
             mc "A cualquiera que cueste menos de lo que estás pensando."
 
-            raiha "¡Al acuario! …No, al parque. ¡No, al acuario!"
+            raiha "¡Al acuario! …No, al parque."
+
+            mc_pensamiento "El parque es gratis. Lo pensó antes que yo."
+
+            mc "Dijiste acuario primero."
+
+            raiha "¡¡Al acuario!!"
+
+            mc_pensamiento "Para alguien a quien ya no le gustaban los peces, lo dijo muy rápido."
 
             mc_pensamiento "Hace un mes, el dinero de este trabajo ya estaba gastado antes de cobrarlo."
 
-            mc_pensamiento "Mañana, una parte va a ser suya. Aunque sea una entrada de acuario."
+            mc_pensamiento "Mañana, una parte va a ser suya." 
+            
+            mc_pensamiento "Aunque sea una entrada de acuario."
 
         "Contestar al grupo.":
 
@@ -4581,7 +4611,7 @@ label e6_retrato:
 
             mc "Primero, contestar un mensaje."
 
-            raiha "¿A las cinco? ¡Hermanito, eso es casi una vida social!"
+            raiha "¿A las cinco? ¡Hermanito, ya tienes amigas!"
 
             narrador "Escribí. Lo borré. Escribí otra cosa. La borré también."
 
@@ -4637,6 +4667,10 @@ label e6_retrato:
 
             raiha "Hermanito… Nunca te había oído decir eso."
 
+            raiha "…Dormir también es importante."
+
+            mc "Lo sé. Me lo dijiste tú."
+
             show raiha hablando at pj_habla(0.5)
             with disolucion_lenta
 
@@ -4649,7 +4683,7 @@ label e6_retrato:
 
     raiha "Hoy pareces el de siempre."
 
-    raiha "Pero sin la cara de estar haciendo cuentas y resolviendo tareas."
+    raiha "Pero sin la cara de estar haciendo cuentas."
 
     hide raiha
     with dissolve
@@ -4674,7 +4708,7 @@ label e6_retrato:
 
     narrador "No dijo nada más."
 
-    narrador "Me dió las buenas noches."
+    narrador "Me dio las buenas noches."
 
     narrador "Y se retiró."
 
