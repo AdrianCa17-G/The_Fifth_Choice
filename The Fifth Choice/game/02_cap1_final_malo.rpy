@@ -50,7 +50,7 @@ label final_malo_beat:
 
     mc "Disculpe, no venía a interrumpirlos. Yo solo..."
 
-    maruo "Ya que estás aquí, me ahorras la llamada y  mi tiempo."
+    maruo "Ya que estás aquí, me ahorras la llamada."
 
     play sound audio.sfx_taza_mesa volume 1.0
 
@@ -69,9 +69,9 @@ label final_malo_beat:
 
     maruo "No hay nada que explicar."
 
-    maruo "Muchas tardes con mis hijas, y ninguna está más cerca de aprobar que el primer día."
+    maruo "Anoche revisé sus cuadernos. Los cinco."
 
-    maruo "Están incluso peor desde que viniste."
+    maruo "Muchas tardes con mis hijas, y ninguna está más cerca de aprobar que el primer día."
 
     maruo "Las condiciones las sabías desde el principio."
 
@@ -1198,7 +1198,7 @@ label final_malo_hub3:
     
     maruo "Te advertí en esa cocina que no repetiría la advertencia. Y no la repetí."
 
-    maruo "No esperaba esto de ti, [mc]."
+    maruo "Esperaba equivocarme contigo, [mc]."
 
     maruo "Tu padre me habló de alguien que no se rendía."
 
@@ -1206,13 +1206,13 @@ label final_malo_hub3:
 
     maruo "No te rendiste. Tampoco hiciste nada."
 
-    narrador "Lo dijo sin dureza. Y por eso se me dolió mas."
+    narrador "Lo dijo sin dureza. Y por eso me dolió más."
 
     maruo "No te pedí que fueras amable con mis hijas." 
     
     maruo "Te pedí que estudiaran."
 
-    maruo "No lo conseguiste con ninguna."
+    maruo "Con cuatro de ellas no lo conseguiste."
 
     mc "Si me diera un mes más..."
 

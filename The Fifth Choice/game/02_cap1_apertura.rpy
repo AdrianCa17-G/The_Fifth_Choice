@@ -472,7 +472,7 @@ label cap1_apertura:
 
     mc "¿Y si una sola reprueba?"
 
-    maruo "Ya te lo dije ayer y no lo voy a repetir dos veces."
+    maruo "Ya te lo dije ayer. No lo repito."
 
     play sound audio.sfx_puerta_cierra volume 1.0
 

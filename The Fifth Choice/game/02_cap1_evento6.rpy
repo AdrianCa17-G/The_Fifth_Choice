@@ -3113,6 +3113,8 @@ label e6_resultados:
 
     narrador "Me senté. Esta vez no había nada que demostrar."
 
+    narrador "Él se quedó de pie, junto a la puerta. Como el primer día."
+
     narrador "Cinco boletines sobre la mesa, boca abajo, alineados al borde."
 
     maruo "Los resultados llegaron esta mañana."
@@ -3127,7 +3129,6 @@ label e6_resultados:
 
     call expression ("e6_s2_" + e6_estado_entrada)
 
-
     maruo "Los exámenes no terminan aquí."
 
     mc "Lo sé."
@@ -3136,7 +3137,15 @@ label e6_resultados:
 
     mc "Entendido."
 
+    maruo "Y habla de sus notas. Solo de sus notas."
+
+    narrador "Lo dijo mirando hacia el pasillo de sus habitaciones. No a mí."
+
+    mc "…Sí, señor."
+
     maruo "Eso espero."
+
+    narrador "Miró el reloj. Era sábado, y aun así lo esperaban en el hospital."
 
     play sound audio.sfx_puerta_cierra volume 1.0
 
@@ -3186,7 +3195,13 @@ label e6_s2_mixto:
 
     maruo "Nada. Salvo que a veces se aprueba por poco y se cree que fue un éxito."
 
-    narrador "Miró los boletines al decirlo. Pero la frase parecía dirigida a otra mesa."
+    narrador "Miró los boletines al decirlo. Pero no parecía estar hablando de ellos."
+
+    mc "¿Usted aprobó alguna vez por poco, señor?"
+
+    maruo "Nunca en un examen."
+
+    narrador "No dijo en qué, entonces. Y yo no me atreví a preguntarlo."
 
     mc_pensamiento "No sonó a elogio. Tampoco a reproche. Sonó a alguien que sigue haciendo la cuenta."
 
@@ -3235,7 +3250,7 @@ label e6_s2_bueno:
 
     narrador "Seguían boca abajo. Ninguno de los dos hizo el gesto de darles la vuelta."
 
-    maruo "No te lo repetiré: esto no fue una casualidad."
+    maruo "Esto no fue una casualidad. No lo repito."
 
     mc "…Gracias, señor."
 

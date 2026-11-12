@@ -987,6 +987,8 @@ label prologo:
 
     narrador "Un hombre serio, de pocas palabras y que no perdió el tiempo en saludos."
 
+    narrador "No se parecía a ninguna de las cinco. Ni en un solo rasgo."
+
     maruo "Seré directo, [mc]. Las calificaciones de mis hijas son un desastre."
     
     maruo "Todas están al borde de reprobar."
@@ -1008,6 +1010,10 @@ label prologo:
     mc "¿Y qué le hace pensar que yo sí?"
 
     maruo "Tienes notas perfectas y tu padre me prometió que te tomarías esto en serio."
+
+    maruo "Tu padre lleva media vida prometiéndome cosas."
+
+    maruo "Es la primera que le acepto."
 
     mc_pensamiento "Mi papá confía en mí..."
     

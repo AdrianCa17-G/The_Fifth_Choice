@@ -2475,13 +2475,13 @@ label cap1_interconexion_5:
 
         mc_pensamiento "Pero lo peor de todo es lo que me dijo Maruo."
 
-        mc_pensamiento "«Se acabó. Ese día no hay discusión ni segundas oportunidades». "
+        mc_pensamiento "«Se acabó. Ese día no hay discusión ni segunda oportunidad.»"
 
         mc_pensamiento "Maruo no es de los que repiten las cosas. Su voz me seguía zumbando en la cabeza."
 
     else:
 
-        mc_pensamiento "El lado positivo es que Maruo parece seguir confiando en mi."
+        mc_pensamiento "El lado positivo es que Maruo parece seguir confiando en mí."
 
         mc_pensamiento "No había soltado nada nuevo. Pero el reloj no para."
 
@@ -2544,6 +2544,7 @@ label cap1_interconexion_5:
     narrador "Le dejé el sobre al lado. Lo miró sin tocarlo."
 
     show isanari neutral at pj_habla(0.5)
+    with disolucion_lenta
 
     isanari "Otra carta de amor del banco. Me escriben más que tu madre cuando éramos novios."
 
@@ -2592,6 +2593,59 @@ label cap1_interconexion_5:
     mc_pensamiento "Raiha tenía razón. Se ponía serio con esos sobres."
 
     mc_pensamiento "Solo que nunca delante de nosotros."
+
+    scene bg_cuarto_mc
+    with fade
+
+    play sound audio.sfx_celular volume 1.0
+
+    narrador "Pasadas las once, me sonó el teléfono. En la pantalla decía «Maruo»."
+
+    mc "¿Diga?"
+
+    maruo "¿Te desperté?"
+
+    mc "No, señor."
+
+    narrador "De fondo se oía una megafonía. Llamaban al doctor Nakano a la tercera planta."
+
+    maruo "Esta tarde estuviste en la cocina."
+
+    mc "No era mi intención escuchar."
+
+    maruo "No te llamo por eso."
+
+    if maruo_ultimatum:
+
+        maruo "Lo que te dije ahí sigue en pie. No lo repito."
+
+    maruo "Cuando te fuiste, ¿mis hijas habían cenado?"
+
+    mc_pensamiento "De todas las preguntas posibles, era la última que esperaba."
+
+    if nino_rama_beat == "calida":
+
+        mc "Nino estaba cocinando. Le ayudé con las cebollas."
+
+        narrador "Hubo un silencio largo. La megafonía volvió a llamarlo."
+
+        maruo "…Entiendo."
+
+    else:
+
+        mc "No lo sé, señor. Me fui antes."
+
+        maruo "Ya."
+
+    maruo "Es todo. Buenas noches, [mc]."
+
+    narrador "Colgó antes de que pudiera contestarle."
+
+    mc_pensamiento "Me llamó desde un hospital, a las once, para preguntar si sus hijas habían cenado."
+
+    mc_pensamiento "No parecía un hombre que no quisiera estar en casa."
+
+    mc_pensamiento "Parecía uno que no sabía cómo volver."
 
     mc_pensamiento "Solo me quedaba una última tarde libre."
 
@@ -3232,9 +3286,9 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Sabía que algo se había roto con Maruo. Lo que no sabía era cuánto."
 
-        mc_pensamiento "Pero de manera sencilla será despues de los exámenes."
+        mc_pensamiento "Lo sabré después de los exámenes."
 
-        mc_pensamiento "Cuándo vea a todas sus hijas reprobar."
+        mc_pensamiento "Cuando vea reprobar a sus hijas."
 
         mc_pensamiento "Y el gran culpable no sea otro que yo."
 
@@ -3594,6 +3648,14 @@ label cap1_interconexion_6:
     scene bg_departamento
     with dissolve
 
+    narrador "En la entrada había un par de zapatos de hombre." 
+    
+    narrador "Negros, alineados con cuidado."
+
+    mc_pensamiento "Un mes viniendo todos los días." 
+    
+    mc_pensamiento "Era la primera vez que los veía a esta hora."
+
     narrador "Esa tarde estudiamos en el departamento." 
     
     narrador "Las cinco estaban juntas, como había pedido Itsuki."
@@ -3718,9 +3780,9 @@ label cap1_interconexion_6:
 
         play music contrato fadein 2.0
 
-        narrador "Maruo apareció en la puerta del salón." 
-        
-        narrador "No levantó la voz. Nunca la levanta."
+        narrador "Maruo apareció en la puerta del departamento."
+
+        narrador "Los zapatos de la entrada eran suyos."
 
         maruo "Vine a ver cómo iba el estudio."
 
@@ -3732,9 +3794,9 @@ label cap1_interconexion_6:
 
             mc "Señor, todavía quedan..."
 
-            maruo "Te dije que no repetiría la advertencia."
+            maruo "Al terminar la semana lo confirmo."
 
-            maruo "En el transcurso de la semana confirmaré mi decisión."
+            narrador "No repitió la advertencia. Ya no era una advertencia."
 
             narrador "Se fue sin esperar respuesta." 
 
@@ -3754,13 +3816,11 @@ label cap1_interconexion_6:
 
             maruo "Veo que no la desperdiciaste."
 
-            narrador "No sonrió. Maruo no sonríe." 
-            
+            narrador "No sonrió. Maruo no sonríe."
+
             narrador "Pero tardó un segundo de más en irse."
 
             maruo "No te confíes. Los exámenes empiezan la siguiente semana."
-
-            narrador "Se fue sin esperar respuesta." 
 
             play sound audio.sfx_puerta_cierra volume 1.0
 
@@ -3782,31 +3842,28 @@ label cap1_interconexion_6:
 
         if clima_cap1 == "buena":
 
-            mc_pensamiento "Maruo no apareció esa tarde." 
-            
+            mc_pensamiento "Maruo no apareció esa tarde."
+
             mc_pensamiento "Con la mesa así, ni falta hacía."
 
-            mc_pensamiento "Confía totalmente en mí."
+            mc_pensamiento "Pero cuando me fui, sus zapatos seguían en la entrada."
 
-            mc_pensamiento "Aunque nunca me lo haya dicho."
+            mc_pensamiento "No sé a qué hora llegó. No sé cuánto escuchó."
 
-            mc_pensamiento "El que no aparezca significa que no necesita darme ningún llamado de atención."
-
-            mc_pensamiento "Sabe que sus hijas aprobarán."
-
-            mc_pensamiento "Bajo mi tutoría, he hecho un buen trabajo."
+            mc_pensamiento "Solo sé que no interrumpió."
 
         else:
 
-            mc_pensamiento "Maruo no apareció esa tarde." 
-            
+            mc_pensamiento "Maruo no apareció esa tarde."
+
             mc_pensamiento "Con él, no saber si eso es buena o mala señal ya es costumbre."
 
-            mc_pensamiento "Talvez aparezca finalizado los examenes."
+            mc_pensamiento "Aunque sus zapatos seguían en la entrada cuando me fui."
 
-            mc_pensamiento "Con su último mensaje hacia mí."
+            mc_pensamiento "Tal vez aparezca cuando terminen los exámenes. Con su último mensaje para mí."
 
             mc_pensamiento "Ojalá no llegue ese día."
+
 
     if clima_cap1 == "buena":
 

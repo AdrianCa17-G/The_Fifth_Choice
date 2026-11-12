@@ -106,6 +106,10 @@ label beat_Nino:
 
     narrador "La única vez que la escuché gritarle a su padre."
 
+    narrador "Maruo no contestó enseguida."
+
+    narrador "Bajó la vista a la taza, como si la respuesta estuviera en el fondo."
+
     ############################################################################
     ##  MOVIMIENTO 2 · Maruo
     ##  Dependiendo de las decisiones del jugador en los 2 hubs anteriores,
@@ -143,7 +147,9 @@ label beat_Nino:
 
         narrador "Dejó la taza sobre la mesa, despacio, sin apurarse."
 
-        maruo "Llevas más de una semana. No veo ningún cambio."
+        maruo "Llevas más de una semana. Anoche revisé sus cuadernos."
+
+        maruo "No veo ningún cambio."
 
         mc "He tenido inconvenientes con sus hijas, pero eso no es excusa."
 
@@ -155,9 +161,11 @@ label beat_Nino:
 
         narrador "Nino miraba entre los dos, sin intervenir por primera vez en toda la conversación."
 
-        maruo "Las condiciones te las dije el primer día. No las voy a repetir una tercera vez."
+        maruo "Las condiciones te las dije el primer día. Hoy te las digo por segunda vez."
 
         maruo "Si una sola de mis hijas reprueba, se acabó. Ese día no hay discusión ni segunda oportunidad."
+
+        maruo "No habrá una tercera."
 
         narrador "Lo dijo exactamente con el mismo tono que usó para cerrar la puerta esa primera noche."
 
@@ -194,7 +202,7 @@ label beat_Nino:
         
         maruo "Hasta entonces, esta conversación está cerrada."
 
-        narrador "Se sirvió el resto del café en el fregadero y salió de la cocina sin mirar a ninguno de los dos."
+        narrador "Vació el resto del café en el fregadero y salió de la cocina sin mirar a ninguno."
 
         play sound audio.sfx_puerta_cierra volume 1.0
 
