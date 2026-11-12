@@ -4242,9 +4242,11 @@ label e6_casa:
     show isanari neutral at pj_habla(0.73)
     with disolucion_lenta
 
-    isanari "[mc], veo que hoy ha sido todo un éxito para ti."
+    isanari "Mira nada más. El tutor que sobrevivió a las cinco hijas de Maruo."
 
     isanari "Maruo llamó. Cobramos el mes entero."
+
+    isanari "Dijo algo más, pero no te lo repito. Se te subiría a la cabeza."
 
     mc "Lo sé."
 
@@ -4256,7 +4258,7 @@ label e6_casa:
 
     mc "Todavía no lo sé."
 
-    narrador "Mi padre no contestó."
+    narrador "Mi padre no dijo nada. Se quedó mirando su plato."
 
     show raiha hablando at pj_habla(0.20)
     show isanari neutral at pj_calla(0.73)
@@ -4695,6 +4697,14 @@ label e6_retrato:
 
     narrador "Mi padre se asomó a la puerta poco después. Miró la foto antes de mirarme a mí."
 
+    narrador "Después vio el celular, con la foto de las cinco todavía en la pantalla."
+
+    isanari "Buen encuadre. Y tú no sales."
+
+    mc "Alguien tenía que tomarla."
+
+    isanari "Eso lo sacaste de mí. Los que toman la foto nunca salen en ella."
+
     isanari "En la cena dijiste «gracias por la comida»."
 
     mc "Lo digo siempre."
@@ -4706,15 +4716,17 @@ label e6_retrato:
 
     isanari "Como si de verdad estuviera dando las gracias por algo."
 
-    narrador "No dijo nada más."
+    isanari "Buenas noches, [mc]."
 
-    narrador "Me dio las buenas noches."
+    isanari "...Examen sorpresa aprobado."
 
-    narrador "Y se retiró."
+    narrador "Y se retiró antes de que pudiera contestarle."
 
     mc_pensamiento "En la cena se quedó mirando su plato más tiempo del necesario."
 
     mc_pensamiento "Ahora sé por qué."
+
+    mc_pensamiento "Un mes de «examen sorpresa». Era la primera vez que venía con nota."
 
     hide isanari
     with dissolve

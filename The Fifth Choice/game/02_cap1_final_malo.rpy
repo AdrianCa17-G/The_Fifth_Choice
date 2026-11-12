@@ -396,7 +396,9 @@ label final_malo_beat:
 
     narrador "Mi papá intentó decir algo. No contestó."
 
-    narrador "Se bajó las gafas de la cabeza y las dejó sobre la mesa, sin mirarlas."
+    narrador "Se acomodó las gafas oscuras, aunque era de noche." 
+    
+    narrador "Como para no tener que mirarme."
 
     isanari "Le di mi palabra a Maruo."
 
@@ -405,6 +407,8 @@ label final_malo_beat:
     mc "Me lo tomé en serio."
 
     isanari "No lo suficiente."
+
+    narrador "Lo dijo mirando la mesa. No supe si me lo decía a mí o a él mismo."
 
     show raiha preocupada at pj(0.20)
     with disolucion_lenta
@@ -1126,10 +1130,12 @@ label final_malo_hub3:
     show isanari neutral at pj(0.73)
     with dissolve
 
-    isanari "Mañana Maruo te pagará el mes. Cobramos entero."
+    narrador "Mi padre se asomó detrás de ella."
 
-    isanari "Cinco veces la tarifa." 
-    
+    isanari "Mañana Maruo cierra el mes."
+
+    isanari "Si salen bien, el domingo cenamos fuera. Los tres."
+
     isanari "Es lo mejor que nos ha pasado en años."
 
     narrador "Raiha me miró. Yo no le devolví la mirada."
@@ -1502,9 +1508,9 @@ label final_malo_hub3:
     
     isanari "Cubría lo que ni tú ni yo cubrimos."
 
-    isanari "No te lo digo para hundirte." 
-    
-    isanari "Contaba con eso. Es todo."
+    isanari "No te lo digo para hundirte."
+
+    isanari "Conté con eso. Y no tenía derecho a contar contigo para eso."
 
     raiha "Papá, déjalo."
 

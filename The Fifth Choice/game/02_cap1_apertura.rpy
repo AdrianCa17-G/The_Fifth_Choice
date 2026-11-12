@@ -544,6 +544,12 @@ label cap1_apertura:
 
             isanari "Cinco cabezas puestas de acuerdo contra una... suena a un problema serio."
 
+            isanari "Me recuerda a mí en el instituto." 
+            
+            isanari "Solo que yo era uno contra todos los profesores."
+
+            mc "No ayudas."
+
         "Suavizar la situación: 'Va bien, dentro de lo normal.'":
 
             mc "Va bien. Dentro de lo que cabe esperar de un segundo día."
@@ -564,7 +570,7 @@ label cap1_apertura:
             
             mc "No quiero pensar en eso ahora mismo."
 
-            isanari "Como quieras [mc]. No voy a insistir."
+            isanari "Como quieras, [mc]. No voy a insistir."
 
             show raiha hablando at pj_habla(0.20)
             show isanari neutral at pj_calla(0.73)
@@ -577,7 +583,9 @@ label cap1_apertura:
     show raiha at pj_calla(0.20)
     with disolucion_lenta
 
-    isanari "Solo recuerda que un mes no es mucho tiempo, y el trato con esa familia depende de que cumplas."
+    isanari "Solo recuerda que un mes no es mucho tiempo."
+
+    isanari "Y que le di mi palabra a Maruo."
 
     mc "Lo sé. No hace falta que me lo recuerdes."
 

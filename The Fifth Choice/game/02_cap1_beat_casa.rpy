@@ -158,7 +158,7 @@ label beat_casa:
 
     narrador "Mi padre entró cuando Raiha ya estaba guardando el cuaderno."
 
-    show isanari neutral at pj(0.73)
+    show isanari neutral at pj_habla(0.73)
     with dissolve
 
     isanari "Vaya [mc], te ves demasiado cansado."
@@ -173,7 +173,7 @@ label beat_casa:
 
     mc "El mío ya lo rendí hace un mes, cuando dijiste que sí por mí."
 
-    show isanari sonriendo at pj(0.73)
+    show isanari sonriendo at pj_habla(0.73)
     with disolucion_lenta
 
     isanari "No suenes tan dramático."
@@ -186,10 +186,11 @@ label beat_casa:
 
     mc_pensamiento "No es que me sorprenda."
 
-    mc_pensamiento "Es que después de un mes viéndolas a ellas cinco fingir que no les importo,
-    se siente distinto verlo a él sin fingir nada."
+    mc_pensamiento "Es que llevo un mes viéndolas a ellas cinco fingir que no les importo."
 
-    show raiha regano at pj(0.20)
+    mc_pensamiento "Y se siente distinto verlo a él sin fingir nada."
+
+    show raiha regano at pj_habla(0.20)
     with disolucion_lenta
 
     raiha "¡Papá!"
@@ -206,17 +207,22 @@ label beat_casa:
 
     mc "Las cinco van a salir bien."
 
-    isanari "Eso espero." 
-    
+    isanari "Eso espero."
+
     isanari "Cinco veces la tarifa no cae del cielo dos veces."
 
-    play sound audio.sfx_puerta_cierra volume 1.0
+    narrador "Se sirvió agua y volvió a su cuarto sin esperar respuesta."
 
-    narrador "Se sirvió agua y volvió a su cuarto sin esperar respuesta, "
-    
-    narrador " exactamente con la misma calma con la que había entrado."
+    narrador "En la puerta se detuvo, con la mano en el marco, como si fuera a decir algo más."
 
-    mc_pensamiento "No dijo suerte." 
+    narrador "No lo dijo."
+
+    hide isanari
+    with dissolve
+
+    play sound audio.sfx_puerta_cierra volume 1.5
+
+    mc_pensamiento "No dijo suerte."
     
     mc_pensamiento "No preguntó de qué se trataba el examen."
 

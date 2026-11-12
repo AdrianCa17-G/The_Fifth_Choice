@@ -1676,6 +1676,53 @@ label cap1_interconexion_3:
 
     mc_pensamiento "Quedan casi tres semanas."
 
+    play sound audio.sfx_toque_puerta volume 1.0
+
+    show isanari sonriendo at pj_habla(0.5)
+    with dissolve
+
+    narrador "Mi padre asomó la cabeza. Venía de fotografiar una boda y todavía olía a pastel."
+
+    isanari "¿Sigues vivo? Maruo dice que todavía no te han echado."
+
+    isanari "Con sus hijas, eso ya es récord."
+
+    mc "¿Hablas con él?"
+
+    isanari "Desde el instituto. Él era el primero de la clase."
+
+    isanari "Yo era el problema de la clase."
+
+    mc "Eso explica muchas cosas."
+
+    isanari "Explica que nos debamos favores. Él a mí, uno. Yo a él, todos los demás."
+
+    isanari "¿Y? ¿Cuál de las cinco te odia menos?"
+
+    mc "Depende del día."
+
+    isanari "Entonces vas bien. Tu madre me odió un año entero."
+
+    narrador "Lo dijo sonriendo. Casi nunca la nombra así, de pasada."
+
+    show isanari neutral at pj_habla(0.5)
+    with disolucion_lenta
+
+    isanari "Le dije a Maruo que eras terco. Que no sabes rendirte."
+
+    isanari "Lo tomó como un elogio. No me hagas quedar de mentiroso."
+
+    mc "¿Eso fue un elogio?"
+
+    isanari "Fue una advertencia. Para los dos."
+
+    hide isanari
+    with dissolve
+
+    mc_pensamiento "Antes de cerrar, miró la libreta abierta sobre mi escritorio. No preguntó nada."
+
+    mc_pensamiento "Nunca pregunta. Pero esta vez miró."
+
     ############################################################################
     ##  Transición
     ############################################################################
@@ -2484,6 +2531,68 @@ label cap1_interconexion_5:
 
     mc_pensamiento "Yo hacía lo mismo a su edad. No sabía que ella también."
 
+    narrador "Esperé a oír su puerta y bajé con el sobre."
+
+    scene bg_comedor
+    with fade
+
+    narrador "Mi padre estaba en la mesa, con la cámara desarmada sobre un trapo."
+
+    show isanari neutral at pj_calla(0.5)
+    with dissolve
+
+    narrador "Le dejé el sobre al lado. Lo miró sin tocarlo."
+
+    show isanari neutral at pj_habla(0.5)
+
+    isanari "Otra carta de amor del banco. Me escriben más que tu madre cuando éramos novios."
+
+    mc "Raiha dice que cuando abres esos te pones serio toda la noche."
+
+    isanari "Raiha exagera."
+
+    narrador "Lo abrió. Leyó la primera línea y lo volvió a doblar."
+
+    narrador "Se quedó callado tanto rato que terminé sentándome enfrente."
+
+    isanari "El restaurante era el sueño de tu madre."
+
+    isanari "Los papeles del préstamo los firmé yo. Sonriendo."
+
+    isanari "Con ella al lado, no se me ocurrió que podía salir mal."
+
+    mc "Nadie podía saberlo."
+
+    isanari "Yo era el adulto. Me tocaba saberlo."
+
+    narrador "Dejó el lente encima del sobre, como un pisapapeles."
+
+    isanari "Ella quería que estudiaras para que tengas un buen futuro." 
+    
+    isanari "No para pagar lo que firmé yo."
+
+    isanari "Y aun así te traje este trabajo."
+
+    mc "Lo acepté yo."
+
+    isanari "Después de que yo dijera que sí."
+
+    isanari "No me quites la culpa. Es lo único que me sobra."
+
+    show isanari sonriendo at pj_habla(0.5)
+    with disolucion_lenta
+
+    isanari "Bueno. Suficiente drama por hoy."
+
+    isanari "Anda a dormir. Todavía te quedan cinco por enseñar."
+
+    hide isanari
+    with dissolve
+
+    mc_pensamiento "Raiha tenía razón. Se ponía serio con esos sobres."
+
+    mc_pensamiento "Solo que nunca delante de nosotros."
+
     mc_pensamiento "Solo me quedaba una última tarde libre."
 
     ############################################################################
@@ -3129,7 +3238,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Y el gran culpable no sea otro que yo."
 
-        mc_pensamiento "No quiero ni imaginar la cara que pondrá Raiha y mi padre."
+        mc_pensamiento "No quiero ni imaginar la cara que pondrán Raiha y mi padre."
 
         mc_pensamiento "Todo por mis pésimas decisiones."
 

@@ -73,9 +73,13 @@ label prologo:
     scene cg_familia
     with fade
 
-    mc_pensamiento "Mi madre murió cuando yo era pequeño, dejándonos una deuda que todavía nos persigue." 
+    mc_pensamiento "Mi madre murió cuando yo era pequeño."
 
-    mc_pensamiento "Mi padre y yo trabajamos hasta el cansancio."
+    mc_pensamiento "El restaurante que abrió con mi padre cerró poco después. La deuda no cerró con él."
+
+    mc_pensamiento "Mi padre hace fotos por encargo: bodas, graduaciones, lo que salga."
+
+    mc_pensamiento "Él trabaja y yo estudio. Los dos, hasta el cansancio."
 
     mc_pensamiento "(Aunque a veces eso no es suficiente para cubrir esta deuda...)" 
 
@@ -176,7 +180,9 @@ label prologo:
 
     mc "¿Un trabajo? ¿De qué tipo?"
 
-    isanari "Un conocido mío está buscando un tutor privado para su familia."
+    isanari "Uno legal, antes de que pongas esa cara."
+
+    isanari "Un viejo amigo del instituto busca un tutor privado para su familia."
 
     mc "¿Tutor privado?... Creo que esta vez paso."
     
@@ -265,6 +271,12 @@ label prologo:
     show isanari sonriendo at pj_habla(0.73)
    
     isanari "Sabía que entrarías en razón."
+
+    isanari "Mejor así. Ya le había dicho a Maruo que sí."
+
+    mc "¿Antes de preguntarme?"
+
+    isanari "Te pregunté. Solo que después."
 
     show raiha hablando at pj_habla(0.20)
 
@@ -515,7 +527,7 @@ label prologo:
 
     mc_pensamiento "Tenía un mensaje de mi padre con una dirección y una instrucción clara:"
     
-    narrador "'Ve hoy mismo al terminar las clases. La paga es excelente, no los hagas esperar'."
+    narrador "'Ve hoy al salir de clases. Saluda a Maruo de mi parte. Y no pongas esa cara'."
 
     mc_pensamiento "Acepté el trabajo sin dudarlo, pero no imaginaba a dónde me mandaba."
 
@@ -997,7 +1009,7 @@ label prologo:
 
     maruo "Tienes notas perfectas y tu padre me prometió que te tomarías esto en serio."
 
-    mc_pensamiento "Mi papá confía en mi..."
+    mc_pensamiento "Mi papá confía en mí..."
     
     mc_pensamiento "Me toca aguantarme. Sea como sea. ¡Por mi papá y Raiha!"
 
