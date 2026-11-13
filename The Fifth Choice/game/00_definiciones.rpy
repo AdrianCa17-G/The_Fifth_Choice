@@ -120,6 +120,9 @@ define maruo   = ui_personaje("Maruo",   "#9AA7A8")
 ## --- Identidad del jugador ---------------------------------------------------
 default nombre_jugador = "Futaro"
 
+## Motivo para aceptar el trabajo (menú de sabor del prólogo). No es un punto.
+default mc_motivo = "dinero"
+
 ## --- Puntos de afinidad (INVISIBLES para el jugador) -------------------------
 ## Nunca se muestran en pantalla ni se comentan en el diálogo.
 ## Se acumulan a lo largo del Prólogo y los Capítulos 1 a 3.

@@ -51,7 +51,7 @@ label hub_1:
 # ------------------------------------------------------------
 label hub_2:
 
-    $ tiempo_restante = "tres semanas"
+    $ tiempo_restante = "dos semanas"
 
     call cortinilla_hub(2)
 

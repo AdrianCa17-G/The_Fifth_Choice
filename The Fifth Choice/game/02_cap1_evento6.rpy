@@ -210,9 +210,9 @@ label e6_lunes:
 
     mc_pensamiento "Como dijo Miku, son cinco materias y ellas son cinco."
 
-    mc_pensamiento "Pensé que lo dijo por decir, pero esa frase tenía un gran significado."
-
-    mc_pensamiento "Un significado que ahora descubriré."
+    mc_pensamiento "Entonces me pareció una frase suelta."
+    
+    mc_pensamiento "Esta semana iba a comprobar si lo era."
 
     call expression ("e6_s1_" + e6_estado_entrada)
 
@@ -232,33 +232,21 @@ label e6_lunes:
 
     narrador "Cada una."
 
-    mc_pensamiento "Supongo que esperan una frase motivacional por parte mía."
+    mc_pensamiento "Supongo que esperan una frase de ánimo."
 
-    mc_pensamiento "Nunca he sido bueno en eso, pero…"
+    mc_pensamiento "Nunca he sido bueno en eso. Lo intenté igual."
 
-    mc "¡Hola chicas! ¿Preparadas para los exámenes?"
+    mc "Escuchen."
 
-    mc "Sé que todas tienen dudas o miedos sobre si aprobarán o no."
+    mc "Estudiamos un mes. Las cinco saben más de lo que creen."
 
-    mc "Pero recuerden todo este mes que hemos estudiado."
+    mc "Esta semana se demuestra. Y van a aprobar."
 
-    mc "¡Todos nosotros dimos nuestro mejor esfuerzo!"
+    mc "¡Las cinco! ¡Sin excepción!"
 
-    mc "¡Y ese esfuerzo lo demostraremos toda esta semana!"
+    mc_pensamiento "Lo último me salió bastante más alto de lo que pensaba."
 
-    mc "¡Así que sé que lo lograrán! ¡Lo lograremos!"
-
-    mc "¡Aprobarán los exámenes!"
-
-    mc "¡Confío plenamente en ustedes!"
-
-    mc "¡Sin excepción!"
-
-    mc_pensamiento "Fue una de las mejores frases de aliento que he lanzado en mi vida."
-
-    mc_pensamiento "Di lo mejor de mí."
-
-    mc_pensamiento "Y ellas escucharon lo que dije… Escuché lo que dije."
+    mc_pensamiento "Lo oyó medio pasillo."
 
     narrador "Cada una reaccionó de distinta manera."
 
@@ -499,9 +487,10 @@ label e6_lunes:
 
     if persistent.final_malo_temprano_b_visto:
 
-        narrador "Sentí que ya había dicho esa frase antes. Con otro verbo, y con otro final."
+        narrador "Sentí que ya había dicho esa frase antes." 
+        
+        narrador "Con otro verbo, y con otro final."
 
-        narrador "Siempre me imagino escenarios catastróficos antes de ver mi realidad."
 
     scene bg_aula
     with dissolve
@@ -576,13 +565,9 @@ label e6_s1_bueno:
 
     mc_pensamiento "Eso no garantiza nada. Lo sé. Una nota es una nota."
 
-    mc_pensamiento "Pero esta mañana los cinco nombres suenan distinto:"
-
-    mc_pensamiento "Ya no son una lista más de mi trabajo, son personas."
-
-    mc_pensamiento "O más bien quintillizas, aunque luzcan iguales, cada una es un mundo diferente."
-
-    mc_pensamiento "Y cada una me lo ha demostrado, a su modo."
+    mc_pensamiento "Pero esta mañana los cinco nombres suenan distinto." 
+    
+    mc_pensamiento "Sé cómo estudia cada una. Y qué hace cuando se atasca."
 
     mc_pensamiento "Qué raro. Me da más miedo ahora que antes."
 
@@ -1477,7 +1462,9 @@ label e6_nino_gesto_tibia:
 
 label e6_nino_gesto_fria:
 
-    narrador "Nino terminó. Soltó el lápiz sin ruido, giró la hoja boca abajo y cruzó los brazos, un poco más fuerte."
+    narrador "Nino terminó. Soltó el lápiz sin ruido y giró la hoja boca abajo." 
+    
+    narrador "Cruzó los brazos, un poco más fuerte."
 
     profe "Nakano. Si ya terminó, puede entregar."
 
@@ -2084,7 +2071,9 @@ label e6_miku_gesto_calida:
 
     mc_pensamiento "Hace un mes eso habría sido una noticia."
 
-    narrador "No recogió los audífonos enseguida. Los miró un segundo, como quien comprueba que no se mueven solos."
+    narrador "No recogió los audífonos enseguida." 
+    
+    narrador "Los miró un segundo, como quien comprueba que no se mueven solos."
 
     mc_pensamiento "Plegados, no puestos. Como se dejan las llaves en la entrada."
 
@@ -2285,15 +2274,15 @@ label e6_despues:
 
     mc_pensamiento "Cinco exámenes míos, y no recordaba ni una pregunta."
 
-    mc_pensamiento "Recordaba un nombre escrito antes que nada. Ese uno por ciento que iba progresando."
+    mc_pensamiento "Recordaba un nombre escrito antes que nada, en la hoja de Yotsuba."
 
-    mc_pensamiento "Un guion doblado que no salió del bolsillo. De alguien que ya no se durmió."
+    mc_pensamiento "Un guion doblado asomando del bolsillo de Ichika."
 
-    mc_pensamiento "Unos labios moviéndose en inglés. Y observando a quienes protege."
+    mc_pensamiento "Unos labios moviéndose en inglés, sin sonido."
 
-    mc_pensamiento "Un dedo recorriendo renglones sin tocarlos. Y resolviendolos con confianza."
+    mc_pensamiento "Un dedo recorriendo renglones en busca de un error."
 
-    mc_pensamiento "Y unos audífonos al cuello, apagados. Sin tocarlos."
+    mc_pensamiento "Y unos audífonos al cuello. Apagados."
 
     mc_pensamiento "Cinco personas que saben una cosa cada una."
 
@@ -3072,9 +3061,7 @@ label e6_resultados:
 
     narrador "Sábado a media mañana."
 
-    narrador "Estaba en mi casa, repasando todo lo que sucedió esta semana."
-
-    narrador "Una semana totalmente diferente a las mismas de siempre."
+    narrador "Estaba en casa. Por primera vez en un mes, sin nada que repasar."
 
     mc_pensamiento "No hacía nada más que pensar en los resultados de los exámenes."
 
@@ -3088,7 +3075,7 @@ label e6_resultados:
 
     narrador "Maruo."
 
-    narrador "El mensaje llegó y decía: «Cinco. Departamento.»."
+    narrador "El mensaje decía: «Cinco. Departamento.»"
 
     mc_pensamiento "Cinco: la hora. O la cuenta. Con Maruo, nunca se sabe cuál de las dos."
 
@@ -3157,8 +3144,6 @@ label e6_resultados:
     narrador "Se puso el abrigo y salió. Sin portazo, como siempre. Esta vez, sin que doliera."
 
     mc_pensamiento "Aprobar no es lo mismo que salvarse. Hoy, por hoy, me alcanzaba con aprobar."
-
-    mc_pensamiento "Aunque saldré de este departamento con un pensamiento totalmente nuevo."
 
     return
 
@@ -4027,21 +4012,17 @@ label e6_mesa:
 
     mc "Lo sé. Solo quiero decir una cosa, y corta."
 
-    mc "Hace un mes, esta mesa me daba miedo. Cinco personas iguales mirándome, esperando que yo supiera qué hacer."
+    mc "Hace un mes, esta mesa me daba miedo."
 
-    mc "Los primeros días me botaron rápidamente de su departamento, no querían que sea su tutor."
+    mc "Cinco personas iguales mirándome, esperando que yo supiera qué hacer."
 
-    mc "No porque me odiaran, sino por los temores que cada una tenía."
+    mc "No sabía. Los dos primeros días me echaron de esta casa."
 
-    mc "Cargas que no podían aliviarlas solas y se las guardaban como si no fueran importantes."
+    mc "Y volví. Las dos veces."
 
-    mc "Por eso yo no me rendí. Nunca lo hago."
+    mc "Pensé que volvía por el trabajo."
 
-    mc "A pesar de que me odiaran yo seguía yendo y yendo."
-
-    mc "Creía que era solo por el trabajo y la paga."
-
-    mc "Pero me di cuenta que no es así, hay algo de ustedes que intenté descubrir."
+    mc "Ahora no estoy tan seguro de qué me hacía volver."
 
     mc "Hoy sigo sin saberlo del todo. Pero ya no veo cinco iguales."
 
@@ -4193,9 +4174,9 @@ label e6_mesa:
 
     narrador "Bajaron los brazos todas a la vez, sin contarlo. Igual que habían abierto los boletines."
 
-    mc_pensamiento "No leí ni un solo número. No hacía falta: cinco caras que ya no fingían nada."
-
-    mc_pensamiento "Dijeron «cinco». Y yo, detrás del celular, dije «seis». Bajito, para que no me oyeran."
+    mc_pensamiento "No leí ni un solo número." 
+    
+    mc_pensamiento "No hacía falta: cinco caras que ya no fingían nada."
 
     mc_pensamiento "Ahora formo parte de ellas, y ellas de mí."
 
@@ -4211,9 +4192,9 @@ label e6_casa:
     scene bg_negro
     with fade
 
-    narrador "Me despedí de todas y volví a casa."
-
-    narrador "Con una gran sensación de seguir conservando mi trabajo."
+    narrador "Me despedí de todas y volví a casa." 
+    
+    narrador "Seguía teniendo trabajo. No fue lo primero que pensé al salir."
 
     stop music fadeout 1.5
 
@@ -4486,9 +4467,29 @@ label e6_retrato:
 
     mc_pensamiento "La foto de siempre. La que miro cada noche sin mirarla de verdad."
 
+    mc_pensamiento "Con la lámpara encendida, el reflejo de mi familia."
+
     mc_pensamiento "La deuda sigue donde estaba. Un mes de sueldo no la borra: apenas la reduce."
 
     mc_pensamiento "Raiha sigue mereciendo un futuro mejor que este. Eso no cambió esta semana."
+
+    if mc_motivo == "raiha":
+
+        mc_pensamiento "Acepté este trabajo por Raiha. Sigue siendo por ella."
+
+        mc_pensamiento "Solo que ya no es solo por ella."
+
+    elif mc_motivo == "no_rendirse":
+
+        mc_pensamiento "Acepté porque no sé dejar un problema a medias."
+
+        mc_pensamiento "Ellas nunca fueron un problema. Tardé un mes en verlo."
+
+    else:
+
+        mc_pensamiento "Acepté este trabajo por el dinero. No voy a fingir lo contrario."
+
+        mc_pensamiento "Pero no fue el dinero lo que me hizo volver cada tarde."
 
     mc_pensamiento "Sigo siendo de los que no pueden permitirse equivocarse."
 
@@ -4506,19 +4507,26 @@ label e6_retrato:
 
     mc_pensamiento "Y fue la semana en que más aprendí."
 
-    mc_pensamiento "Si eso no es una vocación, no se que palabra podría definirla."
+    mc_pensamiento "Si eso no es una vocación, no sé qué palabra podría definirla."
 
     ## --- Las dos fotos ----------------------------------------------------------------
 
-    narrador "Tenía el celular en la otra mano. En el grupo, sobre los cinco boletines, estaba la foto de la tarde."
+    narrador "Tenía el celular en la otra mano." 
+    
+    narrador "En el grupo, sobre los cinco boletines, estaba la foto de la tarde."
 
     if e6_estado_entrada == "superado":
+
         scene cg_cinco_aprobadas at e6_tinte_superado
         with dissolve
+
     elif e6_estado_entrada == "bueno":
+
         scene cg_cinco_aprobadas at e6_tinte_bueno
         with dissolve
+
     else:
+
         scene cg_cinco_aprobadas at e6_tinte_mixto
         with dissolve
 
@@ -4746,6 +4754,10 @@ label e6_retrato:
 
     mc_pensamiento "Un mes de «examen sorpresa». Era la primera vez que venía con nota."
 
+    mc_pensamiento "De mi madre recuerdo poco. Cómo daba las gracias no estaba entre eso."
+
+    mc_pensamiento "Resulta que lo llevaba yo. Sin saberlo."
+
     hide isanari
     with dissolve
 
@@ -4760,15 +4772,13 @@ label e6_retrato:
 
     narrador "Apagué la lámpara."
 
-    mc_pensamiento "Hace un mes anoté cinco nombres y escribí que al día siguiente empezaba la verdadera batalla."
+    mc_pensamiento "Hace un mes anoté cinco nombres y pensé que al día siguiente empezaba una batalla."
 
-    mc_pensamiento "Mañana no empieza ninguna."
+    mc_pensamiento "No era una batalla."
 
-    mc_pensamiento "Mañana las cosas van a ser diferentes."
+    mc_pensamiento "Todavía no sé qué era."
 
-    mc_pensamiento "Empieza una nueva etapa."
-
-    mc_pensamiento "Una nueva etapa de mi vida."
+    mc_pensamiento "Pero el lunes vuelvo a tocar esa puerta."
 
     stop music fadeout 4.0
 

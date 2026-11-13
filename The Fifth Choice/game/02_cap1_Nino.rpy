@@ -315,18 +315,19 @@ label hub_Nino:
 
     nino "¿Y bien? ¿Vas a decir algo o te vas a quedar ahí parado?"
 
-    mc_pensamiento "Tiene razón en desconfiar."
-
-    mc_pensamiento "Eso no se lo puedo discutir."
+    mc_pensamiento "Me contó más de lo que quería." 
+    
+    mc_pensamiento "Lo sé por cómo apretó la tarjeta."
 
     mc_pensamiento "Lo que diga ahora decide si me pone en la misma fila que los anteriores, o no."
 
     # Menu de Nino
 
-    $ decision_peso("nino", "¿Qué le dirás a Nino?", "Ya perdió la cuenta de quiénes prometieron quedarse...")
+    $ decision_peso("nino", "¿Qué le dirás a Nino?", "Te contó más de lo que quería. Ahora espera tu respuesta.")
 
     menu:
-        "¿Cómo respondes?"
+
+        mc_pensamiento "Quiere que diga algo. O quiere ver si lo digo."
 
         "Tienes razón en desconfiar. Solo el tiempo lo va a demostrar.":
             jump nino_m4a

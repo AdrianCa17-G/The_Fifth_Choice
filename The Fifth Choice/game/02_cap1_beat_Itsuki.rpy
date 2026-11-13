@@ -145,9 +145,9 @@ label beat_Itsuki:
 
     narrador "No contestó."
 
-    narrador "Cambió el cuaderno de posición sobre las rodillas, "
+    narrador "Cambió el cuaderno de posición sobre las rodillas." 
     
-    narrador " como si reacomodarlo fuera, de algún modo, una respuesta."
+    narrador "Como si reacomodarlo fuera, de algún modo, una respuesta."
 
     mc_pensamiento "Lo trajo por costumbre, no porque pensara usarlo."
 
@@ -225,7 +225,7 @@ label beat_Itsuki:
 
     narrador "Los dos volvimos a mirar al frente, cada uno con su propio libro cerrado sobre las piernas."
 
-    mc_pensamiento "Llevamos pocos días de esto y ya la convivencia se volvió jornada completa para las dos partes."
+    mc_pensamiento "Pocos días, y esto ya es jornada completa. Para los dos."
 
     mc_pensamiento "Ella tampoco tiene dónde bajar la guardia."
     
@@ -233,9 +233,9 @@ label beat_Itsuki:
 
     narrador "Nos quedamos ahí un rato largo, sin abrir ninguno de los dos libros."
 
-    narrador "El viento se llevó una hoja suelta de mi cuaderno hasta la valla, "
-    
-    narrador " y ninguno de los dos se levantó a buscarla."
+    narrador "El viento se llevó una hoja suelta de mi cuaderno hasta la valla." 
+        
+    narrador "Ninguno de los dos se levantó a buscarla."
 
     mc_pensamiento "Antes de este trabajo me habría importado esa hoja."
 
@@ -286,7 +286,7 @@ label beat_Itsuki:
 
     menu:
 
-        "¿Qué piensas decirle a Itsuki mientras el descanso se acaba?"
+        mc_pensamiento "Ninguno de los dos va a romper el silencio. ¿En qué estoy pensando yo?"
 
         "En que a este paso me va a tocar traer los libros hasta el baño.":
 
@@ -361,11 +361,13 @@ label beat_Itsuki:
 
     mc_pensamiento "Y no lo abrió ni una vez."
 
-    mc_pensamiento "Quedan casi tres semanas."
+    mc_pensamiento "Todavía queda casi un mes."
 
-    mc_pensamiento "Ella lo pasará exactamente igual que hoy: " 
-    
-    mc_pensamiento "Sola, con un cuaderno que no necesita, en el único sitio que le quedaba para no estarlo del todo."
+    mc_pensamiento "Y ella va a pasarlo igual que hoy."
+
+    mc_pensamiento "Sola, con un cuaderno que no necesita."
+
+    mc_pensamiento "En el único sitio que le quedaba para no estarlo del todo."
 
     if not itsuki_visitada_cap1:
 

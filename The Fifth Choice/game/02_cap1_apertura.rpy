@@ -98,9 +98,9 @@ label cap1_apertura:
     ## Menú de sabor.
     menu:
 
-        "¿Cómo te tomas su respuesta?"
+        mc_pensamiento "Ni me mira. ¿Y yo qué hago con eso?"
 
-        "Con la misma frialdad":
+        "Pagarle con la misma moneda.":
 
             mc_pensamiento "¡Bien!"
             
@@ -108,7 +108,7 @@ label cap1_apertura:
 
             mc_pensamiento "No es que necesite su compañía para nada."
 
-        "Con algo de curiosidad":
+        "Preguntarme qué cambió desde ayer.":
 
             mc_pensamiento "Es raro." 
             
@@ -116,7 +116,7 @@ label cap1_apertura:
 
             mc_pensamiento "Como si ya hubiera decidido que no valgo ni para enojarse."
 
-        "Con cierto alivio":
+        "Agradecer el silencio.":
 
             mc_pensamiento "Mejor así, la verdad." 
             
@@ -134,9 +134,9 @@ label cap1_apertura:
 
     mc_pensamiento "No era que me odiara."
 
-    mc_pensamiento "Era que iba a odiarme desde las ocho hasta las tres, " 
+    mc_pensamiento "Era que iba a odiarme desde las ocho hasta las tres." 
     
-    mc_pensamiento " y después iba a seguir odiándome desde las cuatro hasta que yo me fuera de su casa."
+    mc_pensamiento "Y después, desde las cuatro hasta que me fuera de su casa."
 
     mc_pensamiento "Sin pausa. Sin cambio de escenario."
 
@@ -525,9 +525,9 @@ label cap1_apertura:
     ## Menú de sabor.
     menu:
 
-        "¿Qué le cuentas de tu segundo día?"
+        mc_pensamiento "¿Cuánto les cuento?"
 
-        "La verdad completa: se coordinaron para hacerlo mal.":
+        "La verdad: se pusieron de acuerdo para fallar.":
 
             mc "Sinceramente... hoy fue peor que ayer."
             
@@ -553,7 +553,7 @@ label cap1_apertura:
 
             mc "No ayudas."
 
-        "Suavizar la situación: 'Va bien, dentro de lo normal.'":
+        "Decir que va bien. Para que no se preocupen.":
 
             mc "Va bien. Dentro de lo que cabe esperar de un segundo día."
 
@@ -567,7 +567,7 @@ label cap1_apertura:
 
             raiha "¡A mí no me engañas! ¡Se te nota en la cara que algo pasó!"
 
-        "Cambiar de tema.":
+        "Pedir que hablemos de otra cosa.":
 
             mc "¿Podemos hablar de otra cosa?" 
             
@@ -707,7 +707,7 @@ label cap1_apertura:
 
         menu:
 
-            "¿De cuál hermana le hablas primero?"
+            mc_pensamiento "¿De cuál le hablo ahora?"
 
             "Ichika" if "ichika" not in hermanas_ubicadas:
 
@@ -871,7 +871,9 @@ label cap1_apertura:
 
     mc_pensamiento "Cinco respuestas idénticas en cuatro minutos."
 
-    mc_pensamiento "Eso requiere ponerse de acuerdo antes, concordar el error y sostenerlo delante de mí sin fallar ninguna."
+    mc_pensamiento "Eso requiere ponerse de acuerdo antes y concordar el error." 
+    
+    mc_pensamiento "Y sostenerlo delante de mí sin que falle ninguna."
 
     mc_pensamiento "Es un trabajo en equipo mejor ejecutado que la mitad de los proyectos de mi clase."
 
@@ -916,11 +918,5 @@ label cap1_apertura:
     with fade
 
     narrador "Treinta días."
-
-    narrador "Se qué puedo lograrlo."
-
-    narrador "Lograr que aprueben sus exámenes."
-
-    narrador "Sí, así será."
 
     jump cap1_interconexion_1

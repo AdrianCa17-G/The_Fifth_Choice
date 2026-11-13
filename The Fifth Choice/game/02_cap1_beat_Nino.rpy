@@ -151,11 +151,11 @@ label beat_Nino:
 
         maruo "No veo ningún cambio."
 
-        mc "He tenido inconvenientes con sus hijas, pero eso no es excusa."
+        mc "No voy a ponerle excusas, señor."
 
-        mc "Por favor, ¡Le suplico que me espere hasta el final de los exámenes!"
+        mc "Solo le pido que me juzgue cuando toca: en los exámenes."
 
-        mc "Los exámenes son en tres semanas, aún tenemos tiempo."
+        mc "Faltan dos semanas."
 
         maruo "No te pedí un cronograma. Te pedí resultados."
 
@@ -222,9 +222,9 @@ label beat_Nino:
 
     mc "Hola..." 
     
-    mc "No me mires así, solo iba de paso." 
-
-    mc "No tengo intenciones de molestarte hoy, así que puedes ahorrarte tus quejas."
+    mc "No me mires así. Vine a dar la clase, como siempre." 
+    
+    mc "Hoy no pienso discutir. Puedes ahorrarte las quejas."
 
     show nino neutral at pj_habla(0.5)
     with disolucion_lenta
@@ -257,7 +257,7 @@ label beat_Nino:
 
     mc "Sé lo que le dijiste a tu padre." 
     
-    mc "Mas no de lo que piensas de mí, no es lo mismo."
+    mc "No lo que piensas de mí. No es lo mismo."
 
     show nino molesta at pj(0.5)
     with disolucion_lenta
@@ -342,9 +342,9 @@ label beat_Nino:
     
     mc_pensamiento "No conmigo, al menos."
 
-    mc_pensamiento "Está describiendo un patrón que ya vio cumplirse varias veces seguidas, "
+    mc_pensamiento "Está describiendo un patrón que ya vio cumplirse varias veces." 
     
-    mc_pensamiento " y la única variable que cambia cada vez es el nombre de quien se va."
+    mc_pensamiento "Lo único que cambia cada vez es el nombre de quien se va."
 
     ############################################################################
     ##  MOVIMIENTO 4 · LA DECISIÓN
@@ -363,19 +363,19 @@ label beat_Nino:
 
     mc_pensamiento "No hay una respuesta que la deje tranquila." 
     
-    mc_pensamiento "Solo hay una que no la deje peor."
+    mc_pensamiento "Y quedarme callado también es responder."
 
     ## Menú del sabor
 
     menu:
 
-        "¿Cómo respondes?"
+        mc_pensamiento "Lo dijo todo. Ahora espera que yo diga algo."
 
         "¿Y quién junta los tuyos?":
 
             jump nino_beat_m4a
 
-        "No decir nada. Recoger la taza que dejó y llevarla al fregadero.":
+        "Callarme. Llevar su taza al fregadero.":
 
             jump nino_beat_m4b
                                                                             

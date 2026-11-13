@@ -125,11 +125,9 @@ label prologo:
 
     mc "Hoy es una noche especial. ¡Raiha preparó curry!"
 
-    mc_pensamiento "Para muchas personas, la cena es una simple reunión; un momento donde la familia come algo y ya."
+    mc_pensamiento "Para mucha gente, la cena es solo la cena."
 
-    mc_pensamiento "Pero para mí, es el instante en el que doy gracias por todo."
-
-    mc_pensamiento "A pesar de la gran deuda que cargamos, tengo una familia maravillosa. Una a la que siempre amaré y protegeré."
+    mc_pensamiento "En esta casa es el único rato del día en que nadie hace cuentas."
 
     narrador "Ya en la mesa, devoré el plato en cuestión de segundos."
 
@@ -202,7 +200,9 @@ label prologo:
 
     isanari "Cinco veces la tarifa normal de un tutor."
 
-    narrador "Hubo un silencio breve. El tipo de silencio que delata a alguien que ya aceptó la propuesta en su mente."
+    narrador "Hubo un silencio breve." 
+    
+    narrador "El tipo de silencio que delata a alguien que ya aceptó la propuesta en su mente."
 
     mc "...Entiendo. ¿Tienes más detalles?"
 
@@ -219,7 +219,9 @@ label prologo:
     show isanari sonriendo at pj_habla(0.73)
     with disolucion_lenta
 
-    narrador "Mi padre sonrió. Aquello significaba que el truco existía y que habría que descubrirlo por las buenas o por las malas."
+    narrador "Mi padre sonrió. Aquello significaba que el truco existía." 
+    
+    narrador "Y que habría que descubrirlo por las buenas o por las malas."
 
     isanari "Detalles menores. Ya los verás."
 
@@ -248,23 +250,37 @@ label prologo:
 
     mc_pensamiento "No es el trabajo de mis sueños, pero..."
 
-    mc_pensamiento "¡Debo aceptarlo a como dé lugar! ¡Esa deuda no se pagará sola!"
+    mc_pensamiento "Voy a decir que sí. Lo que no tengo tan claro es por qué."
 
-    ## Menú de sabor.
+    ## Menú de sabor. Guarda el motivo para su eco en el E6 (N1).
     menu:
-        "¿Qué te empuja a aceptar?"
+
+        mc_pensamiento "¿Qué es lo que me empuja, de verdad?"
 
         "El dinero. Sin adornos.":
+
+            $ mc_motivo = "dinero"
+
             mc_pensamiento "No voy a fingir nobleza. Aceptaré por el dinero, y punto."
+
             mc_pensamiento "Las buenas intenciones no pagan las facturas."
 
         "La cara de Raiha.":
-            mc_pensamiento "¡Raiha merece una vida mejor!"
-            mc_pensamiento "¡Lo haré por ella!"
+
+            $ mc_motivo = "raiha"
+
+            mc_pensamiento "Raiha ya hace cuentas a su edad."
+
+            mc_pensamiento "Si alguien tiene que hacerlas en esta casa, que sea yo."
 
         "La costumbre de no rendirme.":
+
+            $ mc_motivo = "no_rendirse"
+
             mc_pensamiento "Nunca he abandonado un problema a medio resolver."
+
             mc_pensamiento "Y este no será la excepción."
+
 
     mc "Está bien. Lo haré."
 
@@ -294,11 +310,13 @@ label prologo:
 
     play sound audio.sfx_timbre volume 1.5
 
-    mc_pensamiento "A la mañana siguiente llegué al instituto antes que casi nadie."
+    narrador "A la mañana siguiente llegué al instituto antes que casi nadie."
 
     mc_pensamiento "Prefiero esta hora, cuando los pasillos todavía están vacíos."
 
-    mc_pensamiento "Es el único rato del día en que este sitio no me recuerda que los demás sí pueden permitirse estar tranquilos."
+    mc_pensamiento "Es el único rato del día en que este sitio no me echa nada en cara." 
+    
+    mc_pensamiento "Que los demás sí pueden permitirse estar tranquilos."
 
     play music cotidiano fadein 2.5
 
@@ -318,7 +336,7 @@ label prologo:
     scene bg_aula
     with dissolve
 
-    mc_pensamiento "Con mi examen perfecto en mano, fui a buscar mi asiento habitual."
+    narrador "Con mi examen perfecto en mano, fui a buscar mi asiento habitual."
 
     mc_pensamiento "Mi rincón habitual."
 
@@ -339,7 +357,9 @@ label prologo:
 
     mc "Perdona. Estás en mi asiento."
 
-    mc_pensamiento "Tenía una ligera cara de preocupación... como si cargara con un problema encima o los exámenes le hubieran salido pésimo."
+    mc_pensamiento "Tenía una ligera cara de preocupación." 
+    
+    mc_pensamiento "Como si cargara con un problema, o los exámenes le hubieran salido fatal."
 
     itsuki_inicio "*Munch...* ¿Mm? Ah... tú debes ser [mc]."
 
@@ -387,7 +407,9 @@ label prologo:
     $ duck()
     play sound audio.sfx_silla volume 2.5
 
-    narrador "La chica apretó los dientes, masticando el último bocado a la fuerza antes de levantarse en silencio."
+    narrador "La chica apretó los dientes y masticó el último bocado a la fuerza." 
+    
+    narrador "Después se levantó en silencio."
 
     itsuki_inicio "Está bien. No te necesito."
 
@@ -421,7 +443,7 @@ label prologo:
 
     play ambiente amb_viento fadein 2.0 volume 1.0
 
-    mc_pensamiento "Cuando por fin terminaron las clases, subí a la azotea a despejarme un poco."
+    narrador "Cuando por fin terminaron las clases, subí a la azotea a despejarme un poco."
 
     mc_pensamiento "No quería admitirlo."
     
@@ -462,11 +484,11 @@ label prologo:
     ## Menú de sabor.
     menu:
 
-        narrador "¿Cómo manejas esta situación?"
+        mc_pensamiento "Uno de los dos va a tener que romper esto. O ninguno."
         
-        "Ignorarla y ponerme a estudiar.":
+        "Sacar los apuntes. No le debo conversación.":
 
-            mc_pensamiento "Saqué mis apuntes de la mochila y dejé que el silencio hiciera su trabajo."
+            narrador "Saqué mis apuntes de la mochila y dejé que el silencio hiciera su trabajo."
 
             show itsuki molesta at pj(0.5)
             with disolucion_lenta
@@ -481,7 +503,7 @@ label prologo:
 
             itsuki_inicio "No me extraña en lo absoluto."
 
-        "Intentar rebajar la tensión.":
+        "Explicarle por qué fui tan seco.":
 
             narrador "La chica dejó escapar un pequeño suspiro y se cruzó de brazos, mirando al horizonte."
 
@@ -517,13 +539,13 @@ label prologo:
     scene bg_negro
     with fade
 
-    narrador "Ninguno de los dos sospechaba lo mucho que aquello terminaría importando."
+    narrador "Yo no sospechaba lo mucho que aquello terminaría importando."
 
     ############################################################################
     ##  ESCENA 4 · Camino al departamento
     ############################################################################
 
-    mc_pensamiento "Al bajar de la azotea y recoger mi mochila, revisé el teléfono."
+    narrador "Al bajar de la azotea y recoger mi mochila, revisé el teléfono."
 
     mc_pensamiento "Tenía un mensaje de mi padre con una dirección y una instrucción clara:"
     
@@ -538,7 +560,9 @@ label prologo:
 
     narrador "La dirección que me dio correspondía a un edificio que solo había visto de lejos."
 
-    mc_pensamiento "El tipo de zona donde la gente no mira los precios y el conserje te mide de arriba a abajo solo por pasar cerca."
+    mc_pensamiento "El tipo de zona donde la gente no mira los precios."
+    
+    mc_pensamiento "Y donde el conserje te mide de arriba abajo solo por pasar cerca."
 
     mc_pensamiento "(Bien... pongamos orden a esto antes de tocar la puerta)."
 
@@ -559,7 +583,7 @@ label prologo:
 
     play sound audio.sfx_toque_puerta volume 1.5
 
-    mc_pensamiento "Toqué la puerta cuidadosamente y, tras unos segundos, escuché una voz desde dentro."
+    narrador "Toqué la puerta con cuidado y, tras unos segundos, escuché una voz desde dentro."
 
     voz "—¡Adelante! Puedes pasar."
 
@@ -570,9 +594,9 @@ label prologo:
     scene cg_manija_edificio 
     with corte_seco
 
-    mc "(Muy bien... empecemos)."
+    mc_pensamiento "Muy bien... empecemos."
 
-    mc "Cero distracciones. Presentación formal, evaluación rápida y fijar el horario. Diez minutos máximo."
+    mc_pensamiento "Cero distracciones. Presentación, evaluación rápida y horario. Diez minutos máximo."
 
     play sound audio.sfx_manija volume 1.5
 
@@ -682,7 +706,9 @@ label prologo:
 
     miku "...No. Es logística."
 
-    narrador "Lo dijo sin levantar la vista, pero sin pensarlo, como si la respuesta llevara horas esperando su turno."
+    narrador "Lo dijo sin levantar la vista, pero sin pensarlo." 
+    
+    narrador "Como si la respuesta llevara horas esperando su turno."
 
     miku "Las batallas las gana quien mueve el arroz. No quien mueve la espada."
 
@@ -1017,7 +1043,9 @@ label prologo:
 
     mc_pensamiento "Mi papá confía en mí..."
     
-    mc_pensamiento "Me toca aguantarme. Sea como sea. ¡Por mi papá y Raiha!"
+    mc_pensamiento "Entonces me toca aguantar." 
+    
+    mc_pensamiento "Por él, que dio la cara. Y por Raiha."
 
     scene bg_departamento
     show ichika neutral at pj_habla(X_ICHIKA)
@@ -1055,8 +1083,10 @@ label prologo:
 
     play sound audio.sfx_puerta_cierra volume 1.0
 
-    narrador "Se dio la vuelta y se fue, cerrando la puerta con la calma de quien ya dio una orden y no acepta réplicas."
-
+    narrador "Se dio la vuelta y se fue, cerrando la puerta con calma." 
+    
+    narrador "La calma de quien ya dio una orden y no acepta réplicas."
+    
     ############################################################################
     ##  ESCENA 7 · El primer intento
     ############################################################################
@@ -1067,7 +1097,24 @@ label prologo:
     
     narrador "Cinco pares de ojos se clavaron en mí con distintos niveles de desprecio y desinterés."
 
-    mc_pensamiento "Da igual la actitud que tengan. Estoy aquí por el dinero."
+    if mc_motivo == "raiha":
+
+        mc_pensamiento "Da igual la actitud que tengan." 
+        
+        mc_pensamiento "Raiha no va a cenar mejor porque yo les caiga bien."
+
+    elif mc_motivo == "no_rendirse":
+
+        mc_pensamiento "Da igual la actitud que tengan." 
+        
+        mc_pensamiento "Dije que lo haría, y no dejo nada a medias."
+
+    else:
+
+        mc_pensamiento "Da igual la actitud que tengan." 
+        
+        mc_pensamiento "Estoy aquí por el dinero."
+        
 
     narrador "Caminé hasta la mesa del centro, solté la mochila y saqué mi material sin pedir permiso."
 
@@ -1188,7 +1235,8 @@ label prologo:
 
     ## Menú de sabor.
     menu:
-        "¿Qué le respondes?"
+
+        mc_pensamiento "¿Por qué no me rindo?"
 
         "Porque me pagan.":
 
@@ -1204,7 +1252,7 @@ label prologo:
 
             itsuki "...Al menos eres honesto, por horrible que suene."
 
-        "Porque no sé perder.":
+        "Porque no dejo problemas sin resolver.":
 
             mc "Porque nunca he dejado un problema sin resolver."
 
@@ -1216,13 +1264,14 @@ label prologo:
 
             mc "Todavía no sé lo que son."
 
-        "No responder.":
+        "No contestarle. Recoger los cuadernos.":
 
             narrador "No dije nada. Recogí los cuadernos uno por uno."
 
             itsuki "...Entendido. Haz lo que quieras."
 
             narrador "No sé qué fue lo que interpretó, pero no volvió a insistir."
+
 
     ## Silencio hasta que decida seguir adelante. "Despedido." cae en seco.
     stop music fadeout 2.0

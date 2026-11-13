@@ -190,7 +190,7 @@ label hub_Ichika:
 
     ichika "Martes a las cinco y veinte. Nunca antes de eso."
 
-    mc "¿Por qué no a las cinco? Es más preciso."
+    mc "¿Por qué no a las cinco? Es más redondo."
 
     ichika "Salgo del ensayo a las cuatro treinta y cinco. Cuatro minutos para cambiarme."
 
@@ -221,9 +221,9 @@ label hub_Ichika:
 
     mc_pensamiento "Y ahora esto."
 
-    mc_pensamiento "Ninguna de estas cuatro cosas es una casualidad aislada."
-
-    mc_pensamiento "Juntas, forman un patrón evidente."
+    mc_pensamiento "Una sola sería casualidad." 
+    
+    mc_pensamiento "Cuatro ya son un patrón."
 
     stop music fadeout 1.5
 
@@ -262,24 +262,22 @@ label hub_Ichika:
     show ichika agotada at pj_calla(0.5)
     with dissolve
 
-    mc_pensamiento "Tres cosas que acabo de ver y que ella escondió detrás de un chiste."
-
-    mc_pensamiento "Si le sigo la broma, la cuarta también va a quedar oculta."
-
-    mc_pensamiento "Y no va a haber una quinta oportunidad hoy."
+    mc_pensamiento "Tres cosas que acabo de ver, y un chiste encima de cada una." 
+    
+    mc_pensamiento "Ahora espera el siguiente. El mío."
 
     ## Mensaje de decisión
 
-    $ decision_peso("ichika", "¿Qué le dirás a Ichika?", "Detrás de cada broma suya hay alguien muy cansada. Piensa en cómo quieres que se sienta cuando te vea irte.")
+    $ decision_peso("ichika", "¿Qué le dirás a Ichika?", "Se durmió en el suelo del club, y ya está bromeando otra vez.")
 
     menu:
 
-        "¿Cómo respondes?"
+        mc_pensamiento "Tengo un segundo para contestar. Ella ya está sonriendo."
 
-        "No decir nada. Sostenerle la mirada en silencio,\ndándole tiempo.":
+        "No seguirle la broma. Esperar a que hable ella.":
             jump ichika_m4a
 
-        "Ceder. Reírte de la broma y dejar que oculte el tema.":
+        "Seguirle la broma. Por hoy ya tuvo bastante.":
             jump ichika_m4b
 
         "Si tienes energía para hacer chistes, tienes energía\npara estudiar.":

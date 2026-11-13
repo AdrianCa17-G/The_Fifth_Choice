@@ -157,17 +157,17 @@ label hub_Miku:
 
     mc_pensamiento "Repasemos lo que sé de Miku."
 
-    mc_pensamiento "Uno: el primer día me habló de logística del período Sengoku sin que le preguntara, "
-
-    mc_pensamiento "y luego se escondió detrás del libro en cuanto se oyó a sí misma."
+    m	mc_pensamiento "Uno: el primer día me habló de logística del período Sengoku sin que le preguntara." 
+    
+    mc_pensamiento "Y luego se escondió detrás del libro en cuanto se oyó a sí misma."
 
     mc_pensamiento "Dos: en su hoja del segundo día había una marca de goma debajo de la respuesta equivocada." 
 
     mc_pensamiento "Escribió la correcta primero y la borró."
 
-    mc_pensamiento "Tres: lleva unos audífonos apagados colgados del cuello,"
-
-    mc_pensamiento "listos para subírselos en cuanto alguien le hable."
+    mc_pensamiento "Tres: lleva unos audífonos apagados colgados del cuello." 
+    
+    mc_pensamiento "Listos para subírselos en cuanto alguien le hable."
 
     mc_pensamiento "No es que no sepa." 
     
@@ -202,7 +202,7 @@ label hub_Miku:
 
     mc "Y no entendí a qué te referías."
 
-    mc "Sentí intriga por lo que esa frase significaba."
+    mc "Y me quedé con la duda."
 
     narrador "No dijo nada. Pero tampoco volvió al libro."
 
@@ -261,9 +261,9 @@ label hub_Miku:
 
     narrador "Hablaba más rápido."
 
-    narrador "No había subido la voz —seguíamos en una biblioteca—,"
+    narrador "No había subido la voz: seguíamos en una biblioteca." 
     
-    narrador " pero las frases le habían dejado de empezar con una pausa."
+    narrador "Pero las frases le habían dejado de empezar con una pausa."
 
     show miku animada at pj_habla(0.5)
     with disolucion_lenta
@@ -359,21 +359,20 @@ label hub_Miku:
 
     ## Menú de Miku.
 
-    $ decision_peso("miku", "¿Qué le dirás a Miku?", "Se disculpó por hablar de lo que más ama. Lo que respondas le dirá si su voz tiene lugar contigo.")
+    $ decision_peso("miku", "¿Qué le dirás a Miku?", "Habló un minuto entero de lo que ama. Y después pidió perdón.")
 
     menu:
 
-        "¿Qué le dirás a Miku?"
+        mc_pensamiento "Ya subió el libro. Si no digo nada, no vuelve a bajarlo."
 
-        "Mostrar interés. Preguntarle por un detalle del libro.": 
+        "Preguntarle cuánto tardaba la sal en llegar.":
             jump miku_m4a
 
-        "Reconocer su nivel. Hacer una valoración de su esfuerzo.":
+        "Decirle que se le da bien. Es la verdad.":
             jump miku_m4b
 
         "Lo de la sal no entra en el examen.":
             jump miku_m4c
-
 
 ## ---------------------------------------------------------------
 ## Movimiento 4A · Rama cálida
@@ -505,8 +504,6 @@ label miku_m4b:
     mc_pensamiento "Le acabo de poner una nota."
 
     mc_pensamiento "Y una nota es otra forma de decirle que ya puede dejar de hablar."
-
-    mc_pensamiento "Y ella lleva toda la vida escuchando etiquetas comparadas con otras cuatro."
 
     narrador "El libro le subió hasta media cara, y ahí se quedó."
 

@@ -320,7 +320,7 @@ label beat_casa:
 
             menu:
 
-                "¿En qué nombre te fijas más tiempo?"
+                mc_pensamiento "¿En qué nombre me detengo?"
 
                 "Ichika" if "ichika" not in hermanas_pensamiento:
                     jump bcl_ichika
@@ -336,6 +336,11 @@ label beat_casa:
 
                 "Itsuki" if "itsuki" not in hermanas_pensamiento:
                     jump bcl_itsuki
+
+                "Cerrar la libreta." if len(hermanas_pensamiento) >= 2:
+
+                    $ hermanas_pensamiento = set(["ichika", "nino", "miku", "yotsuba", "itsuki"])
+                    jump bcl_fin
 
 
         label bcl_fin:
@@ -1068,7 +1073,7 @@ label beat_casa:
     scene bg_cuarto_mc
     with fade
 
-    mc_pensamiento "Cerré la libreta y apagué la lámpara."
+    narrador "Cerré la libreta y apagué la lámpara."
 
     narrador "Desde el otro cuarto, todavía se oía a Raiha ordenando sus cosas para el día siguiente."
     

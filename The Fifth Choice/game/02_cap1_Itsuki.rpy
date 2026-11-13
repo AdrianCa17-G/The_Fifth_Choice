@@ -193,7 +193,7 @@ label hub_Itsuki:
 
     mc_pensamiento "No es que le vaya mal."
 
-    mc_pensamiento "Es que le va mal *estudiando*."
+    mc_pensamiento "Es que le va mal {i}estudiando{/i}."
 
     mc_pensamiento "Y esa es la única excusa que no tiene guardada."
 
@@ -251,9 +251,9 @@ label hub_Itsuki:
 
     mc_pensamiento "No es que no sepa resolverlo."
 
-    narrador "Es que no está revisando desde el principio."
-
-    narrador "Está corrigiendo el final y arrastrando el error del medio sin tocarlo."
+    mc_pensamiento "Es que no está revisando desde el principio." 
+    
+    mc_pensamiento "Está corrigiendo el final y arrastrando el error del medio sin tocarlo."
 
     scene bg_aula_tarde
     with dissolve
@@ -274,25 +274,25 @@ label hub_Itsuki:
 
     narrador "Pero no se movió del pupitre. Ni cerró el cuaderno."
 
-    mc_pensamiento "Tres formas de hacer esto."
-
-    mc_pensamiento "Y solo una no la deja peor de lo que ya está."
+    mc_pensamiento "Sé dónde está el error. Ella no." 
+    
+    mc_pensamiento "Lo difícil no es el ejercicio. Es cómo decírselo."
 
     ## Menu de Itsuki
-
-    $ decision_peso("itsuki", "¿Qué le dirás a Itsuki?", "Prefiere perderse sola antes que pedir ayuda. Cómo le tiendas la mano decide si se atreve a tomarla.")
+ 
+    $ decision_peso("itsuki", "¿Qué le dirás a Itsuki?", "Tres intentos, el mismo error. No te va a pedir ayuda.")
 
     menu:
 
-        "¿Cómo respondes?"
+        mc_pensamiento "Sigue sin escribir. Y yo sigo aquí de pie."
 
-        "Reconocer su esfuerzo. Quizás el tropiezo esté un poco más atrás, en el segundo paso.":
+        "Señalarle dónde mirar. Solo eso.":
             jump itsuki_m4a
 
         "¿Quieres que lo revisemos desde el principio?":
             jump itsuki_m4b
 
-        "Estás perdiendo el tiempo. Déjame el cuaderno y lo resuelvo.":
+        "Quitarle el cuaderno y resolverlo. Le ahorro la tarde.":
             jump itsuki_m4c
 
 
@@ -352,7 +352,7 @@ label itsuki_m4a:
 
     mc_pensamiento "Tampoco me pidió que me quedara."
 
-    mc_pensamiento "Pero el simple hecho de tolerar mi presencia ya demuestra todo lo que necesito."
+    mc_pensamiento "Que me deje quedarme ya dice bastante."
 
     narrador "Me quedé de pie, sin sentarme, mientras terminaba el paso."
     

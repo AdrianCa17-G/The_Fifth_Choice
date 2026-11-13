@@ -521,7 +521,7 @@ label final_malo_hub3:
 
     narrador "Lo habían abierto tanto estas semanas que ya no servía de nada abrirlo."
 
-    mc "Hola chicas, estamos en semana de examenes."
+    mc "Hola, chicas. Estamos en semana de exámenes."
 
     mc "Espero les vaya bien."
 
@@ -951,15 +951,11 @@ label final_malo_hub3:
 
     narrador "Nadie recogía nada. Ninguna dijo «salió bien»."
 
-    mc "Sé como terminó todo esto."
+    mc "Sé cómo terminó todo esto."
 
-    mc "No se sientan culpables."
-
-    mc "El único culpable aquí soy yo."
-
-    mc "Tuve la oportunidad de mejorar las cosas y no la aproveché."
-
-    mc "Soy un fracaso."
+    mc "No se sientan culpables." 
+    
+    mc "Si alguien tiene la culpa aquí, soy yo."
 
     show ichika neutral at pj_calla(X_ICHIKA)
     show nino neutral at pj_calla(X_NINO)
@@ -1073,7 +1069,7 @@ label final_malo_hub3:
     
     mc_pensamiento "Y ninguna me había enseñado."
 
-    mc_pensamiento "Yo tampoco hice el esfuerzo de haberles preguntado."
+    mc_pensamiento "Y yo no pregunté lo suficiente."
 
     hide ichika 
     hide nino 
@@ -1100,7 +1096,9 @@ label final_malo_hub3:
 
     mc_pensamiento "Repasé todo lo que hice en el mes." 
     
-    mc_pensamiento "Cada vez que pude decir que sí, dije que no."
+    mc_pensamiento "Tres tardes." 
+    
+    mc_pensamiento "En dos dije lo que me pareció correcto. Y lo correcto no alcanzó."
 
     mc_pensamiento "Cada vez que alguien necesitaba que me quedara callado, hablé."
 

@@ -119,7 +119,7 @@ label reaccion_ichika:
 
         ichika "Buenos días, [mc]." 
 
-        mc "Buenos días Ichika."
+        mc "Buenos días, Ichika."
 
         mc_pensamiento "Ichika... Lo que te dije ayer."
 
@@ -333,7 +333,7 @@ label reaccion_miku:
 
         narrador "Entró con los audífonos puestos y sonando."
 
-        mc "Buenos días Miku."
+        mc "Buenos días, Miku."
 
         show miku neutral at pj_habla(0.5)
         with disolucion_lenta
@@ -962,7 +962,7 @@ label cap1_interconexion_1:
 
     mc_pensamiento "Así podría ir por ellas de una en una."
 
-    mc_pensamiento "Cada una sola es apenas una quinta parte de lo que son juntas."
+    mc_pensamiento "Juntas son un muro. Por separado, quizá no."
 
     show ichika neutral at pj(X_ICHIKA)
     show nino neutral at pj(X_NINO)
@@ -1168,7 +1168,7 @@ label cap1_interconexion_1:
 
     mc_pensamiento "Pero en parte es mi culpa: fui yo quien preguntó."
 
-    mc_pensamiento "Pero la parte buena es que cada una sí tiene su sitio."
+    mc_pensamiento "La parte buena es que cada una sí tiene su sitio."
 
     mc_pensamiento "Además, ya tengo la lista de Raiha."
 
@@ -1268,19 +1268,15 @@ label cap1_interconexion_1:
     scene bg_escuela
     with fade
 
-    mc "Terminadas las clases, decidí cumplir con lo prometido."
+    narrador "Terminadas las clases, me quedé un rato en el aula."
 
-    mc "Bien." 
+    mc_pensamiento "Tres tardes libres. Cinco nombres."
     
-    mc "Pasaré la tarde con una de ellas."
+    mc_pensamiento "Y ya sé dónde buscar a cada una."
 
-    mc "Reforzaré sus conocimientos y la conoceré mejor."
+    mc_pensamiento "No voy a llegar a todas. Eso también lo sé."
 
-    mc "No es para otro tipo de intenciones."
-
-    mc "Primera tarde, primera elección."
-
-    mc_pensamiento "Bueno, empecemos."
+    mc_pensamiento "Empiezo hoy."
 
     jump hub_1
 
@@ -1313,31 +1309,26 @@ label cap1_interconexion_2:
 
         mc_pensamiento "Dormí mejor de lo que esperaba."
 
-        mc_pensamiento "Logré mejorar mi relación con [nombre_h]."
+        mc_pensamiento "Con [nombre_h] algo se movió esta tarde. Poco, pero se movió."
 
-        mc_pensamiento "Eso para mi es un gran avance."
+        mc_pensamiento "Por algún lado se empieza."
 
     elif rama_hub == "tibia":
 
         mc_pensamiento "Dormí. No sé si eso es buena o mala señal."
 
-        mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en que pensar"
+        mc_pensamiento "Con [nombre_h] la tarde pasó sin que nada saliera mal."
 
-        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retrocedimos."
-
-        mc_pensamiento "Es como si nada hubiera pasado."
+        mc_pensamiento "Tampoco salió nada que valga la pena anotar."
 
     else:
 
-        mc_pensamiento "Me costó dormir." 
+        mc_pensamiento "Me costó dormir."
 
-        mc_pensamiento "Repasé lo que dije más veces de las que voy a admitir."
+        mc_pensamiento "Repasé lo que le dije a [nombre_h] más veces de las que voy a admitir."
 
-        mc_pensamiento "Se suponía que iba a ver a [nombre_h] para mejorar nuestra relación."
+        mc_pensamiento "Tenía razón. Eso no hacía que sonara mejor."
 
-        mc_pensamiento "Pero parece que solo empeoré las cosas."
-
-        mc_pensamiento "Más de lo que ya estaban."
 
     ############################################################################
     ##  Desayuno · menú de sabor (cosmético, reconverge)
@@ -1363,7 +1354,7 @@ label cap1_interconexion_2:
 
     menu:
 
-        "¿Qué le contestas a Raiha?"
+        mc_pensamiento "¿Qué le pido?"
 
         "Lo que sea, menos curry.":
 
@@ -1674,7 +1665,7 @@ label cap1_interconexion_3:
 
         mc_pensamiento "No sé cuál de las dos cosas me preocupa más."
 
-    mc_pensamiento "Quedan casi tres semanas."
+    mc_pensamiento "Y el mes ya empezó a correr."
 
     play sound audio.sfx_toque_puerta volume 1.0
 
@@ -1732,7 +1723,7 @@ label cap1_interconexion_3:
 
     narrador "Los días siguientes se me fueron entre clases, las tutorías y sueño atrasado."
 
-    narrador "Para cuando levanté la cabeza, habían pasado 10 días."
+    narrador "Para cuando levanté la cabeza, habían pasado diez días."
 
     stop music fadeout 1.0
 
@@ -1898,7 +1889,7 @@ label cap1_interconexion_3:
     hide ichika
     with disolucion_lenta
 
-    mc_pensamiento "Todas se marcharon, esperando que yo de el siguiente paso."
+    mc_pensamiento "Todas se marcharon, esperando que yo dé el siguiente paso."
 
     stop music fadeout 1.5
 
@@ -1912,11 +1903,9 @@ label cap1_interconexion_3:
 
     mc_pensamiento "Dos tardes libres. Cuatro hermanas por alcanzar."
 
-    mc_pensamiento "Hoy es la segunda tarde y mi segunda elección."
+    mc_pensamiento "Cada tarde que le brindo a una es una tarde que no tienen las demás."
 
     mc "Bien. A ver a quién busco hoy."
-
-    mc_pensamiento "Llegó el momento de decidir."
 
     jump hub_2
 
@@ -1946,33 +1935,27 @@ label cap1_interconexion_4:
 
     if rama_hub == "calida":
 
-        mc_pensamiento "Dormí mejor de lo que esperaba."
+        mc_pensamiento "Esta vez no tuve que repasar nada antes de dormirme."
 
-        mc_pensamiento "Logré mejorar mi relación con [nombre_h]."
+        mc_pensamiento "Con [nombre_h] encontré por dónde entrar."
 
-        mc_pensamiento "Eso para mi es un gran avance."
+        mc_pensamiento "No sé si sabré hacerlo otra vez. Con la siguiente, la puerta será otra."
 
     elif rama_hub == "tibia":
 
-        mc_pensamiento "Dormí. No sé si eso es buena o mala señal."
+        mc_pensamiento "Dormí a ratos."
 
-        mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en qué pensar"
+        mc_pensamiento "Con [nombre_h] no gané nada. Tampoco perdí nada."
 
-        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retrocedimos."
-
-        mc_pensamiento "Es como si nada hubiera pasado."
+        mc_pensamiento "Con ellas, eso ya es un resultado. No sé si bueno."
 
     else:
 
-        mc_pensamiento "Me costó dormir." 
+        mc_pensamiento "Otra noche dándole vueltas a lo mismo."
 
-        mc_pensamiento "Repasé lo que dije más veces de las que voy a admitir."
+        mc_pensamiento "A [nombre_h] le dije lo que me pareció correcto."
 
-        mc_pensamiento "Se suponía que iba a ver a [nombre_h] para mejorar nuestra relación."
-
-        mc_pensamiento "Pero parece que solo empeoré las cosas."
-
-        mc_pensamiento "Más de lo que ya estaban."
+        mc_pensamiento "Correcto no es lo mismo que útil. Lo estoy aprendiendo tarde."
 
 
     mc_pensamiento "Dos de cinco. Y el calendario seguía corriendo."
@@ -1994,7 +1977,7 @@ label cap1_interconexion_4:
 
     menu:
 
-        "¿En qué piensas mientras caminas?"
+        mc_pensamiento "Cuatro cuadras hasta el instituto. Y la cabeza que no se calla."
 
         "En que ya me acostumbré a dormir cuatro horas.":
 
@@ -2301,7 +2284,7 @@ label cap1_interconexion_4:
     
     narrador "El hueco entre Ichika y Miku se notaba más que cualquier cosa que dijeran."
 
-    mc "Disculpen chicas."
+    mc "Disculpen, chicas."
 
     mc "¿Alguien sabe dónde está Nino?"
 
@@ -2443,7 +2426,7 @@ label cap1_interconexion_5:
 
     mc_pensamiento "Me quedé pensando en la discusión que hubo entre Nino y su padre."
 
-    mc_pensamiento "También cuando pude interactuar con ella."
+    mc_pensamiento "Y en lo que le dije yo después."
 
     if nino_rama_beat == "calida":
 
@@ -2455,7 +2438,7 @@ label cap1_interconexion_5:
 
     elif nino_rama_beat == "tibia":
 
-        mc_pensamiento "Al final solo Lavé una taza y ya." 
+        mc_pensamiento "Al final solo lavé una taza y ya."
         
         mc_pensamiento "Ninguno dijo nada que valiera la pena."
 
@@ -2679,7 +2662,7 @@ label cap1_interconexion_5:
 
     menu:
 
-        "¿Qué haces frente al cartel?"
+        mc_pensamiento "Cinco fechas en un papel. Y yo aquí parado."
 
         "Leerlo dos veces, por si por arte de magia cambió algo.":
 
@@ -2689,13 +2672,13 @@ label cap1_interconexion_5:
 
             mc_pensamiento "Lo que más me preocupa es cómo saldrán esas cinco."
 
-        "Pelarme los dedos contando los días que quedan.":
+        "Contar con los dedos los días que quedan.":
 
             mc_pensamiento "Contando con los dedos da la sensación de que queda menos."
 
             mc_pensamiento "Mirando el calendario da igual: la cuenta asusta igual."
 
-            mc_pensamiento "No por mi, sino por ellas."
+            mc_pensamiento "No por mí, sino por ellas."
 
         "Fingir que no me importa.":
 
@@ -2714,13 +2697,13 @@ label cap1_interconexion_5:
 
     narrador "Las cinco ya estaban en sus sitios."
 
-    narrador "Raro en ellas, parece que el peso de los exámenes las está haciendose preocupar."
+    narrador "Raro en ellas. El peso de los exámenes ya se les notaba."
 
     stop music fadeout 1.0
 
-    mc_pensamiento "Iré a saludarlas y decirles que saquen sus libros para los examenes."
+    mc_pensamiento "Iré a saludarlas y a decirles que saquen sus libros."
 
-    narrador "Cuando iba a verlas una de ellas se interceptó en mi camino."
+    narrador "Antes de llegar, una de ellas se me cruzó en el camino."
 
     mc_pensamiento "Ya sabía quién era antes de verle la cara. Solo una se me cruza así."
 
@@ -2855,7 +2838,7 @@ label cap1_interconexion_5:
 
     play music cotidiano fadein 1.5
 
-    mc "Muy bien, escuchen: el examen está a punto de empezar." 
+    mc "Muy bien, escuchen: los exámenes están a la vuelta de la esquina."
     
     mc "Hemos estudiado mucho en estas semanas, así que no se atrevan a reprobar." 
     
@@ -2865,7 +2848,7 @@ label cap1_interconexion_5:
 
     mc_pensamiento "Me quedaron viendo con cara de preocupación."
 
-    mc_pensamiento "Parece que estan nerviosas por el inicio de los examenes."
+    mc_pensamiento "Parece que están nerviosas por el inicio de los exámenes."
 
     mc "¿Se encuentran bien todas? ¿No están nerviosas?"
 
@@ -3118,7 +3101,7 @@ label cap1_interconexion_5:
     ##  Cierre · última decisión
     ############################################################################
 
-    mc "Muy bien entonces las espero el día de los examenes."
+    mc "Muy bien. Sigan repasando como hasta ahora."
 
     mc "Todo irá bien, les aseguro."
 
@@ -3148,44 +3131,42 @@ label cap1_interconexion_5:
 
     narrador "Solo quedó el tic-tac del reloj, que hasta ahora nunca había oído."
 
-    narrador "Posteriormente me retiré igual del aula."
+    narrador "Al rato, salí yo también."
 
     stop ambiente fadeout 1.0
 
     scene bg_escuela
     with fade
 
-    mc_pensamiento "Tres."
+    mc_pensamiento "Tres nombres sin visitar. Una sola tarde."
 
-    mc_pensamiento "Tres chicas y una última decisión."
-    
-    mc_pensamiento "Una sola tarde."
+    if ichika_visitada_cap1:
 
-    mc_pensamiento "Ichika tenía razón: después de hoy no hay vuelta atrás."
+        mc_pensamiento "Ichika me pidió que eligiera a quien de verdad lo necesite."
 
-    mc_pensamiento "Lo que elija ahora podrá tener un peso gigante en el examen."
+        mc_pensamiento "No a la que mejor lo disimule."
+
+    else:
+
+        mc_pensamiento "Ichika dijo que ya sabía que no la iba a elegir."
+
+        mc_pensamiento "Lo dijo en broma. Más o menos."
 
     if maruo_ultimatum:
 
-        mc_pensamiento "Además, Maruo no va a darme otra oportunidad."
+        mc_pensamiento "Y Maruo no va a darme otra oportunidad."
 
         mc_pensamiento "Si me equivoco, no habrá segunda vez."
 
     else:
 
-        mc_pensamiento "Maruo sigue confiando en mí." 
-        
+        mc_pensamiento "Maruo sigue confiando en mí."
+
         mc_pensamiento "Pero la confianza también se acaba."
 
-        mc_pensamiento "Pero ya no puedo seguir dudando."
+    mc_pensamiento "Las otras dos se van a quedar esperando."
 
-    mc_pensamiento "Bien."
-
-    mc_pensamiento "Esta es mi decisión final."
-
-    mc_pensamiento "Una decisión que puede cambiar el rumbo de las cosas."
-
-    mc_pensamiento "Empezemos."
+    mc_pensamiento "Eso también lo elijo yo."
 
     jump hub_3
 
@@ -3240,27 +3221,17 @@ label cap1_interconexion_6:
 
     if rama_hub == "calida":
 
-        mc_pensamiento "Esta última tarde fue un total éxito."
+        mc_pensamiento "Con [nombre_h], la última tarde salió mejor de lo que esperaba."
 
-        mc_pensamiento "Incluso creo que dormiré mejor de lo que esperaba."
+        mc_pensamiento "Puede que hoy hasta duerma."
 
-        mc_pensamiento "Logré mejorar mi relación con [nombre_h]."
-
-        mc_pensamiento "Eso para mi es un gran avance."
-
-        mc_pensamiento "Con ellas, eso siempre me asusta un poco."
+        mc_pensamiento "Con ellas, que algo salga bien siempre me asusta un poco."
 
     elif rama_hub == "tibia":
-        
+
         mc_pensamiento "No sé si dormiré."
 
-        mc_pensamiento "Lo que le dije a [nombre_h] aún me sigue dando en que pensar"
-
-        mc_pensamiento "Parece que no avanzamos nada, ni tampoco retrocedimos."
-
-        mc_pensamiento "Es como si nada hubiera pasado."
-
-        mc_pensamiento "Así que, la última tarde no sumó ni restó."
+        mc_pensamiento "Con [nombre_h], la última tarde no sumó ni restó."
 
         mc_pensamiento "Y con el tiempo contado, eso ya es una forma de perder."
 
@@ -3268,15 +3239,9 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Esta última tarde me pesaba."
 
-        mc_pensamiento "Me va costar dormir." 
+        mc_pensamiento "Me va a costar dormir."
 
-        mc_pensamiento "Repasé lo que dije más veces de las que voy a admitir."
-
-        mc_pensamiento "Se suponía que iba a ver a [nombre_h] para mejorar nuestra relación."
-
-        mc_pensamiento "Pero parece que solo empeoré las cosas."
-
-        mc_pensamiento "Más de lo que ya estaban."
+        mc_pensamiento "Tenía una sola tarde, y la usé para decirle eso a [nombre_h]."
 
         mc_pensamiento "Seguía oyendo mi propia voz diciendo lo que dije."
 
@@ -3290,11 +3255,9 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Cuando vea reprobar a sus hijas."
 
-        mc_pensamiento "Y el gran culpable no sea otro que yo."
+        mc_pensamiento "Desde mi pupitre, sin poder decir nada."
 
         mc_pensamiento "No quiero ni imaginar la cara que pondrán Raiha y mi padre."
-
-        mc_pensamiento "Todo por mis pésimas decisiones."
 
     elif maruo_ultimatum:
 
@@ -3302,7 +3265,7 @@ label cap1_interconexion_6:
         
         mc_pensamiento "Pero esta vez, por los pelos, le había ganado."
 
-        mc_pensamiento "Parece que si habrá trabajo para el siguiente mes."
+        mc_pensamiento "Parece que sí habrá trabajo para el siguiente mes."
 
     stop music fadeout 1.5
 
@@ -3332,24 +3295,22 @@ label cap1_interconexion_6:
 
     narrador "Hasta los alumnos que nunca estudian tenían un cuaderno abierto."
 
-    narrador "La tensión se siente hasta en los rincones del instituto."
+    narrador "La tensión se sentía hasta en los rincones del instituto."
 
     narrador "Y yo no podía ser la excepción."
 
     play music cotidiano fadein 2.0
 
-    mc_pensamiento "Bien no hay nada de que preocuparse."
-
-    mc_pensamiento "Los examenes son muy pronto, pero eso no es nada complicado."
-
-    mc_pensamiento "Para mí, obviamente. Ahora hablando de esas chicas..."
-
-    mc_pensamiento "Cierto, tengo que ir al aula."
+    mc_pensamiento "Mis exámenes no me quitan el sueño." 
+    
+    mc_pensamiento "Los suyos, sí." 
+    
+    mc_pensamiento "Mejor voy al aula."
 
     scene bg_aula
     with fade
 
-    narrador "En el aula nadie hablaba de otra cosa más que los examenes." 
+    narrador "En el aula nadie hablaba de otra cosa más que de los exámenes."
     
     narrador "Y las Nakano, menos."
 
@@ -3477,7 +3438,7 @@ label cap1_interconexion_6:
 
         nino "...Hasta ahora no fue el peor tutor que hemos tenido."
 
-        mc "Gracias Nino, por el cumplido."
+        mc "Gracias, Nino, por el cumplido."
 
         mc "Viniendo de ti, es porque en verdad hice un buen trabajo."
 
@@ -3701,7 +3662,9 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Y ni siquiera supe en qué momento dejó de serlo."
 
-        mc_pensamiento "Lo único que se es que en el examen les irá excelente."
+        mc_pensamiento "No sé cómo les irá." 
+        
+        mc_pensamiento "Por primera vez, tengo motivos para pensar que bien."
 
         mc_pensamiento "De eso estoy seguro."
 
@@ -3732,9 +3695,9 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Me hacía falta una tarde más para arreglarlo. Y ya no tenía tardes."
 
-        mc_pensamiento "Ahora lo único que pido es suerte."
-
-        mc_pensamiento "Realmente desconozco si conservaré mi trabajo o no."
+        mc_pensamiento "Ahora solo queda esperar." 
+        
+        mc_pensamiento "Y no sé si después de esa semana seguiré teniendo este trabajo."
 
     else:
 
@@ -3763,9 +3726,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Y esta vez no podía culpar a nadie más que a mí."
 
-        mc_pensamiento "Si despues de la semana de examenes me despiden, será justo."
-
-        mc_pensamiento "Todo lo que me ha llevado hasta aquí ha sido solo mi culpa."
+        mc_pensamiento "Si después de la semana de exámenes me despiden, será justo."
 
     ## --- Maruo ---------------------------------------------------------------
 
@@ -3971,7 +3932,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "O más bien yo no las he hecho cambiar."
 
-        mc_pensamiento "Era un fracaso que ya se venía venir."
+        mc_pensamiento "Era un fracaso que se veía venir."
 
     ############################################################################
     ##  Sábado · mensaje de aliento (menú de sabor, reconverge)
@@ -4001,7 +3962,7 @@ label cap1_interconexion_6:
 
     mc_pensamiento "Les mandaré un mensaje de motivación."
 
-    mc_pensamiento "No sé qué decirles. Me haré un ritual de autohumillación."
+    mc_pensamiento "No sé qué decirles. Cualquier cosa va a sonar a póster motivacional."
 
     menu:
 

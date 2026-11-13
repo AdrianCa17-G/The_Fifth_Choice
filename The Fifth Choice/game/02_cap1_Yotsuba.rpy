@@ -322,13 +322,13 @@ label hub_Yotsuba:
 
     # Menú de Yotsuba.
 
-    $ decision_peso("yotsuba", "¿Qué le dirás a Yotsuba?", "Sonríe tanto que casi nadie nota lo que carga. Tus palabras pueden ser un descanso o un peso más.")
-    
+    $ decision_peso("yotsuba", "¿Qué le dirás a Yotsuba?", "Te ofrece el cronómetro. Lo que acaba de decir sigue ahí.")
+
     menu:
 
-        narrador "¿Qué le dirás a Yotsuba?"
+        mc_pensamiento "Me está dando una salida. Con el cronómetro en la mano."
 
-        "Tú vales tanto como cualquiera de tus hermanas.":
+        "No tomar el cronómetro todavía. Volver a lo que dijo.":
             jump yotsuba_m4a
 
         "Claro, dame el cronómetro.":
