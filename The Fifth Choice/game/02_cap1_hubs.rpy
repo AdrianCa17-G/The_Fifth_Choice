@@ -20,6 +20,9 @@ label hub_1:
 
     $ tiempo_restante = "casi cuatro semanas"
 
+    ## Tarjeta de entrada al hub; la música del mapa empieza después.
+    call cortinilla_hub(1)
+
     play music hub fadein 1.5
 
     scene bg_negro
@@ -29,6 +32,10 @@ label hub_1:
     call screen mapa_hub(1)
     $ quick_menu = True
     $ destino = _return
+
+    ## Tarjeta de salida: color, lugar y nota de la hermana elegida.
+    stop music fadeout 0.8
+    call cortinilla_hermana(destino)
 
     $ ui_escena("hub", destino, HUB_LUGAR[destino])
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
@@ -46,6 +53,8 @@ label hub_2:
 
     $ tiempo_restante = "tres semanas"
 
+    call cortinilla_hub(2)
+
     play music hub fadein 1.5
 
     scene bg_negro
@@ -55,6 +64,9 @@ label hub_2:
     call screen mapa_hub(2)
     $ quick_menu = True
     $ destino = _return
+
+    stop music fadeout 0.8
+    call cortinilla_hermana(destino)
 
     $ ui_escena("hub", destino, HUB_LUGAR[destino])
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
@@ -72,6 +84,8 @@ label hub_3:
 
     $ tiempo_restante = "pocos días"
 
+    call cortinilla_hub(3)
+
     play music hub fadein 1.5
 
     scene bg_negro
@@ -81,6 +95,9 @@ label hub_3:
     call screen mapa_hub(3)
     $ quick_menu = True
     $ destino = _return
+
+    stop music fadeout 0.8
+    call cortinilla_hermana(destino)
 
     $ ui_escena("hub", destino, HUB_LUGAR[destino])
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))

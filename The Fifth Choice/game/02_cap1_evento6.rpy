@@ -192,6 +192,9 @@ label e6_lunes:
     stop music fadeout 1.0
     stop ambiente
 
+    ## La tarjeta del capítulo vuelve y su cinta cambia a «Semana de exámenes».
+    call cortinilla_cap1_examenes
+
     scene bg_escuela
     with fade_dia
 
@@ -4772,12 +4775,13 @@ label e6_retrato:
     scene bg_negro
     with fade
 
-    pause 1.0
+    ## 2.5 s: la música termina de apagarse antes de la tarjeta.
+    pause 2.5
 
     $ persistent.cap1_completado = True
 
-    ## Tarjeta de fin: mismo formato que la del final malo, sobre negro y sin música.
-    narrador "FIN DEL CAPÍTULO 1 · Un estudiante perfecto"
+    ## Tarjeta de fin (13_transiciones.rpy): misma del inicio, sin hermanas.
+    call cortinilla_cap1_fin
 
     return
 

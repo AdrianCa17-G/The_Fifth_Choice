@@ -85,19 +85,19 @@ CORONILLA = {
     "itsuki_neutral": 137,
     "itsuki_feliz": 109,
     "itsuki_triste": 87,
-    "itsuki_esfuerzo": 121,
+    "itsuki_esfuerzo": 131,
     "itsuki_animo": 90,
 
     "nino_neutral": 111,
     "nino_feliz": 87,
     "nino_triste": 42,
-    "nino_esfuerzo": 55,
+    "nino_esfuerzo": 138,
     "nino_animo": 67,
 
     "yotsuba_neutral": 208,
     "yotsuba_feliz": 170,
     "yotsuba_triste": 128,
-    "yotsuba_esfuerzo": 158,
+    "yotsuba_esfuerzo": 178,
     "yotsuba_animo": 183,
 }
 

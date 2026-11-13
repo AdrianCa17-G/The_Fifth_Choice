@@ -21,6 +21,9 @@ label cap1_apertura:
 
     $ ui_prologo = False
 
+    ## Tarjeta de capítulo: las cinco hermanas entran una por una.
+    call cortinilla_cap1_inicio
+
     ############################################################################
     ##  ESCENA 1 · Instituto, mañana.
     ##  Reencuentro de Itsuki y mc, esta vez el mc decidio cambiar

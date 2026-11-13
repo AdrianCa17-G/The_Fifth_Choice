@@ -31,7 +31,7 @@ label final_malo_cierre:
 
     $ persistent.final_malo_temprano_visto = True
 
-    ## Tarjeta de final: texto centrado sobre negro, sin música.
-    narrador "FINAL MALO · Despido temprano"
+    ## Tarjeta de final (13_transiciones.rpy): en gris y sin sonido.
+    call cortinilla_final_malo
 
     return

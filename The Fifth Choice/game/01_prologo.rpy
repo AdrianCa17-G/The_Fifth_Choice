@@ -1312,4 +1312,9 @@ label prologo:
 
     stop music fadeout 3.0
 
+    ## Deja que `hogar` se apague antes de las campanitas de la tarjeta.
+    pause 1.5
+
+    call cortinilla_prologo_fin
+
     jump cap1_apertura
