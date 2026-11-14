@@ -216,7 +216,7 @@ default persistent.e6_mj_ganado_itsuki  = False
 image bg_cuarto_mc     = "bg/cuarto_mc.webp"
 image bg_comedor       = "bg/comedor.webp"
 image bg_escuela     = "bg/escuela.webp"
-image bg_aula          = "bg/aula_mañana.webp"
+image bg_aula          = "bg/aula_manana.webp"
 image bg_azotea_tarde  = "bg/azotea_tarde.webp"
 image bg_edificio      = "bg/edificio.webp" 
 image bg_entrada_edificio      = "bg/entrada_edificio.webp" 
@@ -264,6 +264,7 @@ image nino neutral   = "sprites/nino_sprites/nino_neutral.png"
 image nino pillada   = "sprites/nino_sprites/nino_pillada.png"
 image nino nerviosa   = "sprites/nino_sprites/nino_nerviosa.png"
 image nino molesta   = "sprites/nino_sprites/nino_molesta.png"
+image nino seria   = "sprites/nino_sprites/nino_seria.png"
 
 image miku neutral   = "sprites/miku_sprites/miku_neutral.png"
 image miku animada   = "sprites/miku_sprites/miku_animada.png"
@@ -274,6 +275,7 @@ image yotsuba neutral  = "sprites/yotsuba_sprites/yotsuba_neutral.png"
 image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonriendo.png"
 image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
 image yotsuba sorprendida = "sprites/yotsuba_sprites/yotsuba_sorprendida.png"
+image yotsuba seria       = "sprites/yotsuba_sprites/yotsuba_seria.png"
 
 
 ################################################################################
@@ -632,6 +634,106 @@ label configurar_nombre:
 ################################################################################
 
 label start:
+
+###############################################################################
+##  SHOWCASE · VIDEO 7 · ICHIKA
+##  Solo para grabar pantalla. La voz se añade en edición.
+##  Lanzar desde la consola (Shift+O):  jump showcase_ichika
+################################################################################
+
+label showcase_ichika:
+
+    $ quick_menu = False
+    window hide
+    stop music
+    stop ambiente
+
+    ## --- AUDIO 1 ---
+
+    ## --- 0–6 s · [soft] Ah... ¿me estabas mirando? [chuckling] Tranquilo, no cobro por eso.
+    scene cg_ichika_puerta
+    with dissolve
+    pause 6.0
+
+    ## --- 7–10 s · Soy Ichika, la mayor. Aunque entre nosotras eso no sirva de mucho.
+    scene bg_departamento
+    with dissolve
+
+    show ichika neutral at pj(0.5)
+    with dissolve
+    pause 3.0
+
+    ## --- 11–13 s
+    show ichika sonriendo at pj(0.5)
+    with dissolve
+    pause 3.0
+
+    ## --- 14–22 s · En mi ruta me vas a encontrar en el club de teatro, en la sala de ensayo...
+    scene cg_ichika_mascara
+    with dissolve
+    pause 8.0
+
+    ## --- 22–28 s · Tienes tres tardes y somos cinco. [excited] Yo que tú, empezaba por la mayor.
+    scene bg_negro
+    with fade
+    call screen mapa_hub(1)
+
+    ## --- AUDIO 2 ---
+
+    ## --- 29–40 s · ¿Viniste a verme actuar o a regañarme? ... Siempre tengo un chiste listo. Es mi papel.
+    scene bg_sala_ensayo
+    with dissolve
+
+    show ichika determinada at pj(0.5)
+    with dissolve
+    pause 4.0
+
+    show ichika sonriendo at pj(0.5)
+    with dissolve
+    pause 5.0
+
+    show ichika agotada at pj(0.5)
+    with dissolve
+    pause 3.5
+
+    ## --- 41–48 s · Piensa bien lo que me contestas.
+    $ decision_peso("ichika", "¿Qué le dirás a Ichika?", "Una respuesta")
+
+    menu:
+
+        "Elige"
+
+        "Respuesta Calida":
+            pass
+
+        "Respuesta Tibia":
+            pass
+
+        "Respuesta Fria":
+            pass
+
+    window hide
+
+    ## --- 48–52 s · Capítulo uno, próximamente.
+    scene cg_ichika_mascara
+    with dissolve
+    pause 4.0
+
+
+    ## --- 46–52 s · Ahora dime. [whispering] ¿Viniste a verme actuar... o a verme a mí?
+    scene bg_sala_ensayo
+    with dissolve
+
+    show ichika sonriendo at pj(0.5)
+    with dissolve
+    pause 4.0
+
+    scene bg_negro
+    with fade
+    pause 2.0
+
+    $ quick_menu = True
+    return
 
     stop music fadeout 1.5
 

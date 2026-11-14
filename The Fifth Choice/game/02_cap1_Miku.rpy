@@ -157,7 +157,7 @@ label hub_Miku:
 
     mc_pensamiento "Repasemos lo que sé de Miku."
 
-    m	mc_pensamiento "Uno: el primer día me habló de logística del período Sengoku sin que le preguntara." 
+    mc_pensamiento "Uno: el primer día me habló de logística del período Sengoku sin que le preguntara." 
     
     mc_pensamiento "Y luego se escondió detrás del libro en cuanto se oyó a sí misma."
 
@@ -294,9 +294,6 @@ label hub_Miku:
 
     miku "Se usa para cuando ayudas a alguien que no soportas, porque hay cosas que no se hacen."
 
-    show miku neutral at pj_habla(0.5)
-    with disolucion_lenta
-
     miku "Aunque seguramente no pasó."
 
     mc "...¿Cómo que no pasó?"
@@ -310,9 +307,6 @@ label hub_Miku:
     miku "Y que ahí dentro siguió habiendo sal igual."
 
     miku "Alguien se la vendió."
-
-    show miku animada at pj_habla(0.5)
-    with disolucion_lenta
 
     miku "Y a mí eso me parece mucho más—"
 
@@ -496,7 +490,7 @@ label miku_m4b:
 
     miku "...Eso no es difícil."
 
-    show miku neutral at pj_calla(0.5)
+    show miku at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Lo dijo sin ninguna gracia, como quien cierra una puerta con educación."

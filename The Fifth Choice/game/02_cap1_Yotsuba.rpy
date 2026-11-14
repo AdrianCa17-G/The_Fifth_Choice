@@ -309,7 +309,7 @@ label hub_Yotsuba:
     scene bg_pista_atletismo
     with dissolve
 
-    show yotsuba neutral at pj_calla(0.5)
+    show yotsuba sonriendo at pj_calla(0.5)
     with dissolve
 
     mc_pensamiento "Lo que diga ahora, se lo va a llevar igual: con esa sonrisa puesta."
@@ -399,7 +399,7 @@ label yotsuba_m4a:
 
     mc "Ninguna de tus hermanas lo hace. Yo tampoco. Y lo intento."
 
-    show yotsuba sorprendida at pj_habla(0.5)
+    show yotsuba seria at pj_habla(0.5)
     with disolucion_lenta
 
     yotsuba "…Pero eso no entra en ningún examen."

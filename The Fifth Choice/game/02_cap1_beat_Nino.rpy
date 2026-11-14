@@ -310,13 +310,10 @@ label beat_Nino:
     scene bg_cocina
     with dissolve
 
-    show nino neutral at pj(0.5)
+    show nino pillada at pj(0.5)
     with dissolve
 
     nino "…"
-
-    show nino pillada at pj(0.5)
-    with disolucion_lenta
 
     nino "No dije nada de esto."
 
@@ -442,9 +439,6 @@ label beat_Nino:
 
         mc "Es una orden."
 
-        show nino neutral at pj(0.5)
-        with disolucion_lenta
-
         nino "Exacto."
 
         narrador "Me señaló la tabla con la barbilla, sin mirarme."
@@ -452,9 +446,6 @@ label beat_Nino:
         narrador "Cortamos en silencio. En toda la tarde no volvió a hablar de despedirme."
 
         narrador "Antes de ponerse con la olla, dejó un táper vacío junto a mi mochila."
-
-        show nino molesta at pj(0.5)
-        with disolucion_lenta
 
         nino "Eso es para ti. Lo que sobre."
 
@@ -555,7 +546,7 @@ label beat_Nino:
 
         mc "No dije que te callaras."
 
-        show nino neutral at pj(0.5)
+        show nino molesta at pj(0.5)
         with disolucion_lenta
 
         nino "Dijiste que me ocupara de lo mío. Es la forma elegante de lo mismo."

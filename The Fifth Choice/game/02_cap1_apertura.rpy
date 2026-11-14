@@ -78,7 +78,7 @@ label cap1_apertura:
 
     mc "Buenos días."
 
-    show itsuki molesta at pj(0.5)
+    show itsuki neutral at pj(0.5)
     with disolucion_lenta
 
     itsuki "..."
@@ -414,7 +414,7 @@ label cap1_apertura:
 
     narrador "Se detuvo a mitad del pasillo, de espaldas, con el libro apretado contra el pecho."
 
-    show miku neutral at pj(0.5)
+    show miku encogida at pj(0.5)
     with dissolve
 
     miku "...No fue idea mía."

@@ -99,12 +99,19 @@ init python:
         z = alto / float(max(1, bot - top))
         return d["sprite"], z, int(top * z)
 
+    ## Centro horizontal de cada hermana en las tarjetas.
+    ## CORT_XS_INICIO: centro de la primera (Ichika).
+    ## CORT_XS_ANCHO: distancia entre la primera y la última (Itsuki).
+    ## Si Itsuki vuelve a tapar el número, baja CORT_XS_ANCHO de 20 en 20.
+    CORT_XS_INICIO = 210
+    CORT_XS_ANCHO  = 960
+
     def cort_xs(n):
         """Centro horizontal de cada hermana."""
         if n <= 1:
             return [1400]
         ## Agrupadas a la izquierda: a la derecha tiene que verse el número.
-        return [270 + int(i * 1040.0 / (n - 1)) for i in range(n)]
+        return [CORT_XS_INICIO + int(i * float(CORT_XS_ANCHO) / (n - 1)) for i in range(n)]
 
     def cort_sonar(jingle):
         if jingle is None:

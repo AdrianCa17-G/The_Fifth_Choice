@@ -227,17 +227,18 @@ def extend_bottom_if_cropped(canvas, max_gap=BOTTOM_EXTEND_MAX):
     hasta max_gap px corto del final del lienzo, prolonga la última fila
     (ahí solo hay pierna, el corte es del encuadre, no del personaje).
     """
+    canvas_h = canvas.shape[0]
     alpha = canvas[:, :, 3]
     rows_with_content = np.where(alpha.max(axis=1) > 0)[0]
     if len(rows_with_content) == 0:
         return canvas
 
     last_row = rows_with_content[-1]
-    gap = (CANVAS_H - 1) - last_row
+    gap = (canvas_h - 1) - last_row
     if 0 < gap <= max_gap:
         canvas = canvas.copy()
         fill_row = canvas[last_row, :, :]
-        canvas[last_row + 1:CANVAS_H, :, :] = fill_row
+        canvas[last_row + 1:canvas_h, :, :] = fill_row
     return canvas
 
 
@@ -266,6 +267,12 @@ def main():
         "--ipd", type=float, default=TARGET_IPD, metavar="PX",
         help=f"IPD objetivo en el lienzo (default {TARGET_IPD}). Subirlo agranda el sprite "
              "(p. ej. --ipd 81); la línea de ojos sigue en y=199."
+    )
+    parser.add_argument(
+        "--extra-arriba", type=int, default=0, metavar="PX",
+        help="Añade PX filas transparentes ENCIMA del lienzo (760 x 930+PX, ojos en "
+             "y=199+PX). Como pj() ancla por abajo, en pantalla ojos y tamaño quedan "
+             "igual que las hermanas; solo gana sitio el lazo/ahoge que no cabe."
     )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
@@ -320,8 +327,11 @@ def main():
         except ValueError as e:
             sys.exit(f"Error detectando eje: {e}")
 
+    canvas_h = CANVAS_H + args.extra_arriba
+    eye_row = EYE_ROW + args.extra_arriba
+
     print(f"IPD detectada: {ipd_raw:.1f} px -> escala {scale:.3f}")
-    print(f"Ojos en y={eye_y_raw:.1f} (original) -> se mueve a y={EYE_ROW}")
+    print(f"Ojos en y={eye_y_raw:.1f} (original) -> se mueve a y={eye_row}")
     print(f"Eje del cuerpo en x={axis_x_raw:.1f} (original)")
 
     # --- Escalado ---
@@ -334,10 +344,10 @@ def main():
     axis_x_scaled = axis_x_raw * scale
 
     # --- Composición sobre el lienzo 760x930 ---
-    canvas = np.zeros((CANVAS_H, CANVAS_W, 4), dtype=np.uint8)
+    canvas = np.zeros((canvas_h, CANVAS_W, 4), dtype=np.uint8)
 
     offset_x = round(CANVAS_W / 2 - axis_x_scaled)
-    offset_y = round(EYE_ROW - eye_y_scaled)
+    offset_y = round(eye_row - eye_y_scaled)
 
     src_x0 = max(0, -offset_x)
     src_y0 = max(0, -offset_y)
@@ -345,7 +355,7 @@ def main():
     dst_y0 = max(0, offset_y)
 
     copy_w = min(new_w - src_x0, CANVAS_W - dst_x0)
-    copy_h = min(new_h - src_y0, CANVAS_H - dst_y0)
+    copy_h = min(new_h - src_y0, canvas_h - dst_y0)
 
     if copy_w > 0 and copy_h > 0:
         canvas[dst_y0:dst_y0 + copy_h, dst_x0:dst_x0 + copy_w] = \
@@ -357,7 +367,10 @@ def main():
     canvas = extend_bottom_if_cropped(canvas)
 
     Image.fromarray(canvas, mode="RGBA").save(args.salida)
-    print(f"Guardado: {args.salida} ({CANVAS_W}x{CANVAS_H})")
+    if canvas[0, :, 3].max() > 0:
+        print("AVISO: hay contenido en la fila 0 (lazo/ahoge cortado). "
+              "Sube --extra-arriba.", file=sys.stderr)
+    print(f"Guardado: {args.salida} ({CANVAS_W}x{canvas_h})")
 
 
 if __name__ == "__main__":

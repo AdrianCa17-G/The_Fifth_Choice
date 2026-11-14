@@ -177,7 +177,7 @@ label reaccion_nino:
 
         mc "¿Eso es preocupación?"
 
-        show nino nerviosa at pj_habla(0.5)
+        show nino pillada at pj_habla(0.5)
         with disolucion_lenta
 
         nino "¡No! Es que si te desmayas, nos echan la culpa."
@@ -312,7 +312,7 @@ label reaccion_miku:
 
     elif rama_hub == "tibia":
 
-        show miku neutral at pj_habla(0.5)
+        show miku encogida at pj_habla(0.5)
         with dissolve
 
         miku "...Buenos días."
@@ -335,7 +335,7 @@ label reaccion_miku:
 
         mc "Buenos días, Miku."
 
-        show miku neutral at pj_habla(0.5)
+        show miku at pj_habla(0.5)
         with disolucion_lenta
 
         miku "...Voy a estudiar solo lo que entra en el examen."
@@ -380,7 +380,7 @@ label reaccion_yotsuba:
 
         yotsuba "¡Para mí sí!"
 
-        show yotsuba neutral at pj_habla(0.5)
+        show yotsuba seria at pj_habla(0.5)
         with disolucion_lenta
 
         yotsuba "...Ayer dijiste que mi punto de partida no era cero."
@@ -667,7 +667,7 @@ label queja_ichika:
 
     ichika "Estas cosas se agradecen. Aunque no lo parezca."
 
-    show ichika at pj_calla(0.5)
+    show ichika sonriendo at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Se fue con la sonrisa puesta." 
@@ -699,7 +699,7 @@ label queja_nino:
 
     nino "Me da exactamente igual."
 
-    show nino molesta at pj_habla(0.5)
+    show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
     nino "Además, ya te vi en mi casa más de lo que quería."
@@ -710,7 +710,7 @@ label queja_nino:
 
     nino "¡NO! ¡Fue un «qué alivio»!"
 
-    show nino neutral at pj_habla(0.5)
+    show nino seria at pj_habla(0.5)
     with disolucion_lenta
 
     nino "...Mira. No esperaba nada."
@@ -753,7 +753,7 @@ label queja_miku:
     show miku neutral at pj(0.5)
     with dissolve
 
-    show miku neutral at pj_habla(0.5)
+    show miku at pj_habla(0.5)
     with disolucion_lenta
 
     miku "...No me buscaste."
@@ -985,7 +985,7 @@ label cap1_interconexion_1:
 
     show ichika neutral at pj_calla(X_ICHIKA)
     show nino neutral at pj_habla(X_NINO)
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     show itsuki neutral at pj_calla(X_ITSUKI)
     with disolucion_lenta
@@ -1029,12 +1029,12 @@ label cap1_interconexion_1:
     itsuki "Supongo que consiste en hacernos estudiar de día y de noche."
 
     show itsuki molesta at pj_calla(X_ITSUKI)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "..."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show nino neutral at pj_habla(X_NINO)
     with disolucion_lenta
 
@@ -1093,7 +1093,7 @@ label cap1_interconexion_1:
 
     miku "...Quiere dividirnos."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     with disolucion_lenta
 
     mc_pensamiento "Fue la única que lo entendió. Y fue la que menos habló."
@@ -1144,12 +1144,12 @@ label cap1_interconexion_1:
     yotsuba "¿Estilo quintillizas? ¡Hurra! ¡Yo quiero jugar!"
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Itsuki. Eso es justo lo que él quería."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
@@ -1218,7 +1218,7 @@ label cap1_interconexion_1:
     yotsuba "¿Y elegirás a la que quieras conocer mejor? ¿O no?"
 
     show yotsuba at pj_calla(X_YOTSUBA)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...No te preocupes por mí."
@@ -1231,14 +1231,14 @@ label cap1_interconexion_1:
 
     narrador "Miku se lo volvió a subir. Parecía un juego viejo entre ellas."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show itsuki molesta at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
     itsuki "Yo no pienso esconderme. Estaré donde siempre."
 
     show itsuki molesta at pj_calla(X_ITSUKI)
-    show nino neutral at pj_habla(X_NINO)
+    show nino molesta at pj_habla(X_NINO)
     with disolucion_lenta
 
     nino "Treinta días, tutor. A ver a cuántas logras encontrar."
@@ -1523,14 +1523,14 @@ label cap1_interconexion_2:
 
             nino "Bien. Es lo único que te reconozco: no armas escándalo."
 
-            show nino molesta at pj_habla(0.5)
+            show nino neutral at pj_habla(0.5)
             with disolucion_lenta
 
             nino "No te lo tomes como un halago."
 
             mc "No lo hice."
 
-            show nino neutral at pj_habla(0.5)
+            show nino pillada at pj_habla(0.5)
             with disolucion_lenta
 
             nino "...Pero sí. Me tranquiliza."
@@ -1550,7 +1550,7 @@ label cap1_interconexion_2:
            
         else:
 
-            show nino neutral at pj_habla(0.5)
+            show nino seria at pj_habla(0.5)
             with dissolve
 
             nino "Oye tú."
@@ -1581,7 +1581,7 @@ label cap1_interconexion_2:
             
             nino "No le expliques nada. Déjala."
 
-            show nino neutral at pj_calla(0.5)
+            show nino seria at pj_calla(0.5)
             with disolucion_lenta
 
             narrador "Se fue sin mirarme. No hubo insultos, porque no hacía falta."
@@ -1794,7 +1794,7 @@ label cap1_interconexion_3:
         ichika "Qué tutor más terco."
 
     show ichika sonriendo at pj_calla(X_ICHIKA)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Tienes ojeras."
@@ -1803,7 +1803,7 @@ label cap1_interconexion_3:
 
     miku "...Es verdad igual."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show nino neutral at pj_habla(X_NINO)
     with disolucion_lenta
 
@@ -1869,7 +1869,7 @@ label cap1_interconexion_3:
 
         narrador "Itsuki seguía en su pupitre, con el cuaderno de ciencias cerrado."
 
-    show itsuki molesta at pj_habla(X_ITSUKI)
+    show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
     itsuki "El juego sigue."
@@ -2105,7 +2105,7 @@ label cap1_interconexion_4:
 
         else:
 
-            show yotsuba incomoda at pj_habla(0.5)
+            show yotsuba seria at pj_habla(0.5)
             with disolucion_lenta
 
             if rama_de("yotsuba") == "fria":
@@ -2134,7 +2134,7 @@ label cap1_interconexion_4:
 
             yotsuba "Arréglalo. Por favor."
 
-            show yotsuba incomoda at pj_calla(0.5)
+            show yotsuba seria at pj_calla(0.5)
             with disolucion_lenta
 
         hide yotsuba
@@ -2147,7 +2147,7 @@ label cap1_interconexion_4:
 
         if rama_hub == "calida":
 
-            show miku neutral at pj_habla(0.5)
+            show miku at pj_habla(0.5)
             with disolucion_lenta
 
             if rama_de("miku") == "calida":
@@ -2156,7 +2156,7 @@ label cap1_interconexion_4:
 
                 narrador "Me saludó sin pausa antes de la primera palabra." 
                 
-                miku "Eso ya era un cambio."
+                narrador "Eso ya era un cambio."
 
             else:
 
@@ -2205,7 +2205,7 @@ label cap1_interconexion_4:
 
         elif rama_hub == "tibia":
 
-            show miku neutral at pj_habla(0.5)
+            show miku at pj_habla(0.5)
             with disolucion_lenta
 
             miku "...Buenos días, [mc]."
@@ -2226,14 +2226,14 @@ label cap1_interconexion_4:
 
             miku "...Ayer te tocaba tu juego, ¿no? ...Solo pregunto."
 
-            show miku neutral at pj_calla(0.5)
+            show miku at pj_calla(0.5)
             with disolucion_lenta
 
         else:
 
             narrador "Tenía los audífonos a medias: una oreja libre y la otra no."
 
-            show miku neutral at pj_habla(0.5)
+            show miku at pj_habla(0.5)
             with disolucion_lenta
 
             miku "...Hola."
@@ -2254,7 +2254,7 @@ label cap1_interconexion_4:
 
             miku "...Pero si fuiste tú, no lo dejes así."
 
-            show miku neutral at pj_calla(0.5)
+            show miku at pj_calla(0.5)
             with disolucion_lenta
 
         hide miku
@@ -2288,7 +2288,7 @@ label cap1_interconexion_4:
 
     mc "¿Alguien sabe dónde está Nino?"
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     show itsuki neutral at pj_calla(X_ITSUKI)
     show ichika sonriendo at pj_habla(X_ICHIKA)
@@ -2331,14 +2331,14 @@ label cap1_interconexion_4:
     yotsuba "...Aunque cuando sale así, es porque es un asunto serio."
 
     show yotsuba incomoda at pj_calla(X_YOTSUBA)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Miró el celular y se quedó quieta."
 
     miku "...Nino nunca se queda quieta."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
@@ -2745,14 +2745,14 @@ label cap1_interconexion_5:
 
         nino "Exacto."
 
-        show nino neutral at pj_habla(0.5)
+        show nino nerviosa at pj_habla(0.5)
         with disolucion_lenta
 
         nino "Solo... hoy no me preguntes nada."
 
         nino "Si me preguntas, no voy a saber qué contestar."
 
-        show nino neutral at pj_calla(0.5)
+        show nino at pj_calla(0.5)
         with disolucion_lenta
 
         narrador "No sonó a reproche. Más bien sonó a un ruego disfrazado de orden."
@@ -2781,12 +2781,12 @@ label cap1_interconexion_5:
 
         nino "No lo vuelvas a hacer."
 
-        show nino neutral at pj_habla(0.5)
+        show nino pillada at pj_habla(0.5)
         with disolucion_lenta
 
         nino "...O sea. Haz lo que quieras."
 
-        show nino neutral at pj_calla(0.5)
+        show nino at pj_calla(0.5)
         with disolucion_lenta
 
         narrador "Fue lo más parecido a un «gracias» que iba a sacarle."
@@ -2828,7 +2828,7 @@ label cap1_interconexion_5:
 
     show ichika neutral at pj(X_ICHIKA)
     show miku neutral at pj(X_MIKU)
-    show yotsuba sonriendo at pj(X_YOTSUBA)
+    show yotsuba incomoda at pj(X_YOTSUBA)
     show itsuki neutral at pj(X_ITSUKI)
     with dissolve
 
@@ -2856,7 +2856,7 @@ label cap1_interconexion_5:
 
     show itsuki neutral at pj_calla(X_ITSUKI)
     show ichika neutral at pj_calla(X_ICHIKA)
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show nino neutral at pj_calla(X_NINO)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
     with disolucion_lenta
@@ -2900,7 +2900,7 @@ label cap1_interconexion_5:
 
     ## --- Miku ---
 
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Son cinco materias de examen."
@@ -2911,14 +2911,14 @@ label cap1_interconexion_5:
 
     mc_pensamiento "No sé si lo soltó por soltar, pero la frase se me quedó dando vueltas."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show yotsuba sonriendo at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
     yotsuba "¡Una materia para cada una! ¡Como un equipo de relevos!"
 
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Eso quise decir."
@@ -2976,7 +2976,7 @@ label cap1_interconexion_5:
 
     if itsuki_visitada_cap1:
 
-        show itsuki molesta at pj_habla(X_ITSUKI)
+        show itsuki neutral at pj_habla(X_ITSUKI)
         with disolucion_lenta
 
         itsuki "Los temas ya me los sé. Eso no es lo que me preocupa."
@@ -3359,7 +3359,7 @@ label cap1_interconexion_6:
 
     show ichika neutral at pj_calla(X_ICHIKA)
     show nino neutral at pj_calla(X_NINO)
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show yotsuba sonriendo at pj_calla(X_YOTSUBA)
     show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
@@ -3388,15 +3388,15 @@ label cap1_interconexion_6:
 
     yotsuba "¡Un sesenta es un buen número!"
 
-    show yotsuba sonriendo at pj_calla(X_YOTSUBA)
-    show itsuki molesta at pj_habla(X_ITSUKI)
+    show yotsuba incomoda at pj_calla(X_YOTSUBA)
+    show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
     itsuki "Es un aprobado a medias, Yotsuba."
 
     itsuki "Hay algo de esfuerzo, pero no lo suficiente."
 
-    show itsuki molesta at pj_calla(X_ITSUKI)
+    show itsuki neutral at pj_calla(X_ITSUKI)
     show ichika sonriendo at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
@@ -3422,7 +3422,7 @@ label cap1_interconexion_6:
 
     ichika "Como tú digas."
 
-    show ichika sonriendo at pj_calla(X_ICHIKA)
+    show ichika neutral at pj_calla(X_ICHIKA)
     show nino neutral at pj_habla(X_NINO)
     with disolucion_lenta
 
@@ -3476,7 +3476,7 @@ label cap1_interconexion_6:
         mc_pensamiento "Parece que solo fui a perder el tiempo."
 
     show nino at pj_calla(X_NINO)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Entonces ya no hay dónde esconderse."
@@ -3487,7 +3487,7 @@ label cap1_interconexion_6:
 
     miku "...Pero suena a eso."
 
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
@@ -3557,7 +3557,7 @@ label cap1_interconexion_6:
         itsuki "Aprovecha la tarde. No va a haber otra."
 
         show itsuki neutral at pj_calla(X_ITSUKI)
-        show miku neutral at pj_habla(X_MIKU)
+        show miku at pj_habla(X_MIKU)
         with disolucion_lenta
 
         miku "...Yo me quedo hasta tarde."
@@ -3566,7 +3566,7 @@ label cap1_interconexion_6:
 
         miku "...Si no tengo que hablar mucho."
 
-        show miku neutral at pj_calla(X_MIKU)
+        show miku at pj_calla(X_MIKU)
         with disolucion_lenta
 
     else:

@@ -25,9 +25,6 @@ label hub_1:
 
     play music hub fadein 1.5
 
-    scene bg_negro
-    with fade
-
     $ quick_menu = False
     call screen mapa_hub(1)
     $ quick_menu = True
@@ -57,9 +54,6 @@ label hub_2:
 
     play music hub fadein 1.5
 
-    scene bg_negro
-    with fade
-
     $ quick_menu = False
     call screen mapa_hub(2)
     $ quick_menu = True
@@ -87,9 +81,6 @@ label hub_3:
     call cortinilla_hub(3)
 
     play music hub fadein 1.5
-
-    scene bg_negro
-    with fade
 
     $ quick_menu = False
     call screen mapa_hub(3)

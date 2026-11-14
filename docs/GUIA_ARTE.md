@@ -544,6 +544,16 @@ Cosas abiertas que afectan a todo el arte, no solo al prólogo:
 - **El lazo de Yotsuba viene cortado en el propio render**: hay verde en la fila 0
   del PNG original de PixAI. No es la normalización. Para tenerlo entero hay que
   regenerar con más margen arriba.
+  Aunque el render venga entero, a veces el lazo no cabe en los 199 px que hay
+  sobre los ojos. En ese caso, **no** se baja la IPD, porque Yotsuba quedaría
+  más pequeña que sus hermanas:
+  - Se usa `normalizar_sprite.py --extra-arriba N`, que añade N filas
+    transparentes arriba (lienzo 760 × 930+N, ojos en 199+N). `pj` ancla por
+    abajo, así que los ojos y la cabeza quedan donde las de las hermanas.
+  - El script avisa si queda contenido en la fila 0.
+  - Primer caso: `yotsuba_seria` (N = 50, 760 × 980).
+  - No lo uses con sprites que se recorten con coordenadas fijas: solo
+    `neutral`, en `08_extras.rpy`.
 - **Los sprites vienen con luz de estudio plana y los fondos con luz cálida.** Se
   arregla con un tinte cálido por escena aplicado a los sprites, no al fondo. No
   hay que regenerar nada.

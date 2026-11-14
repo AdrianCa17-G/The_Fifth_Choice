@@ -117,7 +117,7 @@ label hub_Itsuki:
 
     mc "Sí me incumbe."
 
-    show itsuki molesta at pj_habla(0.5)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "Me incumbe a mí. Tú te vas a las cuatro."
@@ -182,7 +182,7 @@ label hub_Itsuki:
 
     narrador "Como quien suelta algo antes de poder impedírselo."
 
-    show itsuki timida at pj_habla(0.5)
+    show itsuki molesta at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "…"
@@ -309,7 +309,7 @@ label itsuki_m4a:
 
     narrador "Sin acercarme más de lo que ya estaba."
 
-    show itsuki molesta at pj_habla(0.5)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "¿Qué tiene el segundo paso?"
@@ -466,7 +466,7 @@ label itsuki_m4c:
 
     narrador "Le devolví el cuaderno con el ejercicio terminado."
 
-    show itsuki molesta at pj_habla(0.5)
+    show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
     itsuki "…"
@@ -475,7 +475,7 @@ label itsuki_m4c:
 
     itsuki "Ya lo veo."
 
-    show itsuki molesta at pj_calla(0.5)
+    show itsuki neutral at pj_calla(0.5)
     with disolucion_lenta
 
     narrador "Lo dijo sin agradecerlo y sin discutirlo."

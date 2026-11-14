@@ -2312,7 +2312,7 @@ label e6_despues:
 
     stop music fadeout 3.0
 
-    call e6_foco("yotsuba", "incomoda")
+    call e6_foco("yotsuba", "seria")
 
     yotsuba "…Es que si salimos por esa puerta, se acaba la semana."
 
@@ -2399,7 +2399,7 @@ label e6_despues:
     hide itsuki
     with disolucion_lenta
 
-    scene bg_aula_atardecer
+    scene bg_aula_tarde
     with dissolve
 
     narrador "Antes de salir miré atrás una sola vez."
@@ -2596,7 +2596,7 @@ label e6_ichika_tarde_calida:
 
     ichika "Al terminar me quedé mirando la hoja como si la hubiera hecho otra persona."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "neutral")
 
     ichika "No era otra persona. Eso es lo que todavía no me creo."
 
@@ -2671,7 +2671,7 @@ label e6_ichika_tarde_no_visitada:
 
 label e6_nino_tarde_calida:
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "seria")
 
     nino "Terminé mi examen a los quince minutos. Y me fui."
 
@@ -2957,7 +2957,7 @@ label e6_tarde_pregunta:
 
 label e6_nino_puerta_calida:
 
-    show nino neutral at pj_habla(X_NINO)
+    show nino molesta at pj_habla(X_NINO)
     with dissolve
 
     narrador "Nino ya estaba en la puerta, sujetándola abierta con la espalda."
@@ -2982,7 +2982,7 @@ label e6_nino_puerta_calida:
 
 label e6_nino_puerta_tibia:
 
-    show nino neutral at pj_habla(X_NINO)
+    show nino pillada at pj_habla(X_NINO)
     with dissolve
 
     narrador "Nino sujetaba la puerta con una mano y miraba al pasillo."
@@ -3001,7 +3001,7 @@ label e6_nino_puerta_tibia:
 
 label e6_nino_puerta_fria:
 
-    show nino molesta at pj_habla(X_NINO)
+    show nino neutral at pj_habla(X_NINO)
     with dissolve
 
     narrador "Nino esperaba en el pasillo, con los brazos cruzados."
@@ -3507,7 +3507,7 @@ label e6_nino_eco_tibia:
 
     narrador "Nino llegó con una bolsa del supermercado en cada mano, como si el boletín fuera lo de menos."
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "pillada")
 
     nino "Pesa. No te estoy pidiendo ayuda."
 
@@ -3542,7 +3542,7 @@ label e6_nino_eco_fria:
 
     narrador "Sabe que voy a seguir con el trabajo."
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "molesta")
 
     call e6_foco("", "")
 
@@ -3553,7 +3553,7 @@ label e6_nino_eco_no_visitada:
 
     narrador "Nino se quedó junto al marco de la puerta, a media sala, como quien no ha decidido si entra."
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "seria")
 
     nino "No me mires como si me debieras algo."
 

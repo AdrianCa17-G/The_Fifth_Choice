@@ -107,7 +107,7 @@ label final_malo_beat:
     scene bg_departamento
     with dissolve
     
-    show nino neutral at pj_habla(0.5)
+    show nino molesta at pj_habla(0.5)
     with dissolve
 
     if rama_de("nino") == "fria":
@@ -248,7 +248,7 @@ label final_malo_beat:
     nino "Yotsuba."
 
     show nino neutral at pj_calla(X_NINO)
-    show yotsuba incomoda at pj_habla(X_YOTSUBA)
+    show yotsuba seria at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
     yotsuba "...No dije nada."
@@ -259,7 +259,7 @@ label final_malo_beat:
 
         narrador "Después, me miró a mí."
 
-        show yotsuba neutral at pj_habla(X_YOTSUBA)
+        show yotsuba seria at pj_habla(X_YOTSUBA)
         with disolucion_lenta
 
         yotsuba "Me dijiste que me concentrara en correr."
@@ -270,7 +270,7 @@ label final_malo_beat:
 
 
     show yotsuba at pj_calla(X_YOTSUBA)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Yo no pedí esto."
@@ -531,7 +531,7 @@ label final_malo_hub3:
 
     show ichika neutral at pj_calla(X_ICHIKA)
     show nino neutral at pj_calla(X_NINO)
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show itsuki neutral at pj_calla(X_ITSUKI)
     show yotsuba at pj_habla(X_YOTSUBA)
     with disolucion_lenta
@@ -551,7 +551,7 @@ label final_malo_hub3:
     yotsuba "Cuando cierro el libro, no recuerdo qué sentía nadie."
 
     show yotsuba at pj_calla(X_YOTSUBA)
-    show ichika neutral at pj_habla(X_ICHIKA)
+    show ichika agotada at pj_habla(X_ICHIKA)
     with disolucion_lenta
 
     ichika "Dormí cuatro horas." 
@@ -561,7 +561,7 @@ label final_malo_hub3:
     ichika "No me mires así. Ya sé que no era lo que tocaba."
 
     show ichika at pj_calla(X_ICHIKA)
-    show miku neutral at pj_habla(X_MIKU)
+    show miku at pj_habla(X_MIKU)
     with disolucion_lenta
 
     miku "...Solo sé la mitad de lo que van a preguntar."
@@ -569,7 +569,7 @@ label final_malo_hub3:
     miku "...Y no sé si esa mitad está bien."
 
     show miku at pj_calla(X_MIKU)
-    show itsuki molesta at pj_habla(X_ITSUKI)
+    show itsuki neutral at pj_habla(X_ITSUKI)
     with disolucion_lenta
 
     itsuki "He estudiado más que nadie en esta aula. Cada noche."
@@ -579,7 +579,7 @@ label final_malo_hub3:
     itsuki "Quisiera poder culparte. Sería más fácil."
 
     show itsuki at pj_calla(X_ITSUKI)
-    show nino neutral at pj_habla(X_NINO)
+    show nino seria at pj_habla(X_NINO)
     with disolucion_lenta
 
     nino "Ya basta de rodeos."
@@ -590,8 +590,8 @@ label final_malo_hub3:
 
     nino "Aunque no sea solo culpa tuya. Eso no cambia que no sirvió."
 
-    show ichika neutral at pj_habla(X_ICHIKA)
-    show miku neutral at pj_habla(X_MIKU)
+    show ichika agotada at pj_habla(X_ICHIKA)
+    show miku at pj_habla(X_MIKU)
     show yotsuba incomoda at pj_habla(X_YOTSUBA)
     show itsuki at pj_habla(X_ITSUKI)
     with disolucion_lenta
@@ -736,7 +736,7 @@ label final_malo_hub3:
     scene bg_aula
     with dissolve
 
-    show ichika sonriendo at pj_habla(0.5)
+    show ichika agotada at pj_habla(0.5)
     with dissolve
 
     ichika "Disculpe profesor."
@@ -942,10 +942,10 @@ label final_malo_hub3:
 
     play music derrota fadein 2.5
 
-    show ichika neutral at pj(X_ICHIKA) 
+    show ichika agotada at pj(X_ICHIKA) 
     show nino neutral at pj(X_NINO)
     show miku neutral at pj(X_MIKU)
-    show yotsuba neutral at pj(X_YOTSUBA)
+    show yotsuba seria at pj(X_YOTSUBA)
     show itsuki neutral at pj(X_ITSUKI)
     with dissolve
 
@@ -957,9 +957,9 @@ label final_malo_hub3:
     
     mc "Si alguien tiene la culpa aquí, soy yo."
 
-    show ichika neutral at pj_calla(X_ICHIKA)
+    show ichika agotada at pj_calla(X_ICHIKA)
     show nino neutral at pj_calla(X_NINO)
-    show miku neutral at pj_calla(X_MIKU)
+    show miku at pj_calla(X_MIKU)
     show itsuki neutral at pj_calla(X_ITSUKI)
     show yotsuba at pj_habla(X_YOTSUBA)
     with disolucion_lenta
@@ -1045,7 +1045,7 @@ label final_malo_hub3:
     mc "Itsuki... Yo..."
 
     show itsuki at pj_calla(X_ITSUKI)
-    show nino neutral at pj_habla(X_NINO)
+    show nino seria at pj_habla(X_NINO)
     with disolucion_lenta
 
     nino "Va a pasar lo que dije que pasaría."
@@ -1058,7 +1058,7 @@ label final_malo_hub3:
 
     nino "No sé de qué hablas."
 
-    show nino neutral at pj_calla(X_NINO)
+    show nino at pj_calla(X_NINO)
     with disolucion_lenta
 
     mc_pensamiento "Un mes." 
@@ -1282,7 +1282,7 @@ label final_malo_hub3:
 
     ## Ichika
 
-    show ichika neutral at pj_habla(0.5)
+    show ichika agotada at pj_habla(0.5)
     with dissolve
 
     ichika "Aquí no hace falta que sonría, ¿verdad?"
@@ -1352,7 +1352,7 @@ label final_malo_hub3:
 
     ## Nino
 
-    show nino neutral at pj_habla(0.5)
+    show nino seria at pj_habla(0.5)
     with dissolve
 
     nino "Mi padre te va a pagar lo del mes. Acéptalo."

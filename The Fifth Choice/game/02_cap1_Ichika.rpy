@@ -259,7 +259,7 @@ label hub_Ichika:
 
     play music descubrimiento fadein 3.5
 
-    show ichika agotada at pj_calla(0.5)
+    show ichika sonriendo at pj_calla(0.5)
     with dissolve
 
     mc_pensamiento "Tres cosas que acabo de ver, y un chiste encima de cada una." 

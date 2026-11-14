@@ -393,7 +393,7 @@ label nino_m4a:
 
     mc "No dije nada de más."
 
-    show nino neutral at pj_habla(0.5)
+    show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
     nino "Tú entendiste. Con eso alcanza."
@@ -438,7 +438,7 @@ label nino_m4b:
 
     narrador "Se quedó un segundo sin saber qué contestar a eso."
 
-    show nino neutral at pj_habla(0.5)
+    show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
     nino "…Esa cesta pesa más de lo que parece."
@@ -451,7 +451,7 @@ label nino_m4b:
 
     nino "Esto no significa nada."
 
-    show nino neutral at pj_calla(0.5)
+    show nino pillada at pj_calla(0.5)
     with disolucion_lenta
 
     mc "No dije que significara algo."

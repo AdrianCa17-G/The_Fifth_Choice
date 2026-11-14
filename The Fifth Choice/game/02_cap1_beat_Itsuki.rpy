@@ -107,7 +107,7 @@ label beat_Itsuki:
 
     mc "Pensé que este sitio era donde no estudiabas."
 
-    show itsuki molesta at pj(0.5)
+    show itsuki neutral at pj(0.5)
     with disolucion_lenta
 
     itsuki "Y lo era."
@@ -185,7 +185,7 @@ label beat_Itsuki:
 
     if itsuki_visitada_cap1 and itsuki_rama_cap1 == "calida":
 
-        show itsuki molesta at pj(0.5)
+        show itsuki neutral at pj(0.5)
         with disolucion_lenta
 
         itsuki "Ya me ayudaste con el ejercicio el otro día."
