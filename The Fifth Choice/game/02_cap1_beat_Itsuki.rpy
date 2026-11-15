@@ -107,9 +107,6 @@ label beat_Itsuki:
 
     mc "Pensé que este sitio era donde no estudiabas."
 
-    show itsuki neutral at pj(0.5)
-    with disolucion_lenta
-
     itsuki "Y lo era."
 
     narrador "Cerró el cuaderno, pero no lo guardó."
@@ -125,9 +122,6 @@ label beat_Itsuki:
     mc_pensamiento "Simplemente no tenía más que decir, y eso es distinto."
 
     narrador "Extendí la mano hacia la mochila y saqué mi propio libro."
-
-    show itsuki neutral at pj(0.5)
-    with disolucion_lenta
 
     itsuki "¿Tú también?"
 

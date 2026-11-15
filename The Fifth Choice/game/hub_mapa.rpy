@@ -56,6 +56,16 @@ init python:
     HUB_UNIFY  = 0.10
     HUB_SOMBRA = 0.78
 
+    # El panel sigue HUB_EXTRA px por debajo de la pantalla, todo franja de
+    # color: al subir en hover no asoma el negro y la franja se ve más gruesa.
+    HUB_EXTRA = 24
+    # Cuánto se oscurecen las bandas SIN foco mientras otra está en hover/teclado.
+    HUB_FOCO_VELO = 0.30
+
+    # --- sello de visitada ---
+    HUB_SELLO   = 128   # lado del PNG; el mismo número en generar_ui.py
+    HUB_SELLO_Y = 690   # y del centro del sello (encima del nombre)
+
     # --- encuadre de sprites ---
     # El canvas ya está normalizado (760x930) pero el CONTENIDO no:
     # cada chica ocupa distinta porción y arranca a distinta altura.
@@ -161,12 +171,14 @@ init python:
         elif borde == "der":
             ancho += extra
             dx = extra // 2
+        # centrada en HUB_H / 2 (no en el alto del panel) para que la
+        # diagonal no se corra con HUB_EXTRA
         return Fixed(
             Transform("#ffffff",
                       xysize=(ancho, int(HUB_H * 2.4)),
                       rotate=HUB_ANG,
-                      xalign=0.5, yalign=0.5, xoffset=dx),
-            xysize=(HUB_CARD_W, HUB_H),
+                      xalign=0.5, ypos=HUB_H // 2, yanchor=0.5, xoffset=dx),
+            xysize=(HUB_CARD_W, HUB_H + HUB_EXTRA),
         )
 
     def hub_degradado(alto, alpha_max=HUB_SOMBRA, pasos=32):
@@ -201,9 +213,56 @@ init python:
             hub_sprite(ruta, escala, xoff, yoff, coronilla),
             Transform(Solid(color), xysize=(HUB_CARD_W, HUB_H), alpha=HUB_UNIFY),
             hub_degradado(520),
-            Transform(Solid(color), xysize=(HUB_CARD_W, 12), yalign=1.0),
+            Transform(Solid(color), xysize=(HUB_CARD_W, 12 + HUB_EXTRA), ypos=HUB_H - 12),
         ]
-        return AlphaMask(Fixed(*capas, xysize=(HUB_CARD_W, HUB_H)), hub_mask(i, borde))
+        return AlphaMask(Fixed(*capas, xysize=(HUB_CARD_W, HUB_H + HUB_EXTRA)), hub_mask(i, borde))
+
+
+    def hub_paneles():
+        """Los paneles de las 5 bandas, en el orden de HUB_DESTINOS.
+        mapa_hub lo llama UNA vez por apertura (default): antes se rehacían
+        las ~190 capas en cada hover."""
+        paneles = []
+        for i, d in enumerate(HUB_DESTINOS):
+            borde = None
+            if i == 0:
+                borde = "izq"
+            elif i == HUB_N - 1:
+                borde = "der"
+            paneles.append(hub_panel(i, d["fondo"], d["sprite"], d["color"],
+                                     d.get("escala", 1.0), d.get("xoff", 0), d.get("yoff", 0),
+                                     borde, d.get("coronilla")))
+        return paneles
+
+
+    def hub_velos():
+        """Velo negro con la forma de cada banda: apaga las que no tienen foco.
+        Va ENCIMA del botón y no lo envuelve, así cambiarlo no le quita el foco."""
+        velos = []
+        for i in range(HUB_N):
+            borde = None
+            if i == 0:
+                borde = "izq"
+            elif i == HUB_N - 1:
+                borde = "der"
+            velos.append(AlphaMask(Solid("#000000", xysize=(HUB_CARD_W, HUB_H + HUB_EXTRA)),
+                                   hub_mask(i, borde)))
+        return velos
+
+
+    def hub_flor_tarde(k, n):
+        """Flor k (1 a 3) del indicador, estando en la tarde n.
+        Devuelve (color, alfa, zoom). Las tardes jugadas llevan el color de la
+        hermana elegida esa tarde (hub_visitadas va en orden de tarde)."""
+        if k < n:
+            color = "#D9D2E6"   # neutro: entrar al hub sin historial (showcase, pruebas)
+            if len(hub_visitadas) >= k:
+                color = PETALO_COLOR.get(hub_visitadas[k - 1], color)
+            return (color, 0.95, 0.62)
+        elif k == n:
+            return ("#FFFFFF", 1.0, 0.80)
+        else:
+            return ("#FFFFFF", 0.28, 0.62)
 
 
 # ------------------------------------------------------------
@@ -262,6 +321,15 @@ screen mapa_hub(hub_actual=1):
     tag menu
     modal True
 
+    ## Se montan UNA vez por apertura, no en cada hover.
+    default paneles = hub_paneles()
+    default velos = hub_velos()
+    default sombra = hub_sombra_superior(270, 0.60)
+
+    ## Hermana con el foco (ratón o teclado). Con tooltip y no con hovered:
+    ## hovered se queda pegado al cambiar de pantalla (GUIA_RENPY).
+    $ foco = GetTooltip("mapa_hub")
+
     add "#07070a"
 
     fixed:
@@ -271,10 +339,10 @@ screen mapa_hub(hub_actual=1):
             fixed:
                 xysize (HUB_W, HUB_H)
                 at hub_entrada(i)
-                use destino_hub(i, d)
+                use destino_hub(i, d, paneles[i], velos[i], foco)
 
     # sombra bajo el titulo
-    add hub_sombra_superior()
+    add sombra
 
     vbox:
         xalign 0.5
@@ -285,12 +353,14 @@ screen mapa_hub(hub_actual=1):
         text "¿Con cuál quintilliza pasarás esta tarde?":
             font HUB_FUENTE
             size 54 color "#ffffff" xalign 0.5
-            outlines [(6, "#000000", 0, 0), (2, "#000000", 0, 3)]
+            outlines [(3, "#000000cc", 0, 0), (0, "#00000080", 0, 4)]
 
         text hub_subtitulo(hub_actual):
             font HUB_FUENTE_FINA
             size 23 color "#e2e2e2" xalign 0.5
-            outlines [(5, "#000000", 0, 0), (2, "#000000", 0, 2)]
+            outlines [(2, "#000000cc", 0, 0), (0, "#00000080", 0, 2)]
+
+        use hub_indicador_tarde(hub_actual)
 
     # reglas de calibracion: pon HUB_GUIA = True para alinear cabezas
     if HUB_GUIA:
@@ -310,54 +380,131 @@ screen mapa_hub(hub_actual=1):
                     size 18 color "#00ff00" outlines [(2, "#000", 0, 0)]
 
 # ------------------------------------------------------------
+# Indicador de tarde: tres flores + "TARDE n DE 3"
+#   jugada  = color de la hermana elegida esa tarde
+#   actual  = blanca y más grande
+#   futura  = blanca apagada
+# ------------------------------------------------------------
+screen hub_indicador_tarde(n):
+    hbox:
+        xalign 0.5
+        spacing 14
+
+        hbox:
+            yalign 0.5
+            spacing 4
+            for k in range(1, 4):
+                $ color, alfa, zoom = hub_flor_tarde(k, n)
+                fixed:
+                    xysize (46, 46)
+                    add "ui/flor.png" matrixcolor TintMatrix(color) alpha alfa zoom zoom align (0.5, 0.5)
+
+        text "TARDE [n] DE 3":
+            font HUD_FUENTE
+            size 18 kerning 4 color "#FFFFFF" yalign 0.5
+            outlines [(2, "#000000aa", 0, 0)]
+
+# ------------------------------------------------------------
 # Una banda
 # ------------------------------------------------------------
-screen destino_hub(indice, d):
+screen destino_hub(indice, d, panel, velo, foco):
     $ visitada = d["hermana"] in hub_visitadas
-    $ borde = "izq" if indice == 0 else ("der" if indice == HUB_N - 1 else None)
     $ card_x = int(hub_slot_cx(indice) - HUB_CARD_W / 2.0)
 
-    button:
+    if visitada:
+        $ estado = hub_visitado
+    else:
+        $ estado = hub_normal
 
-        sensitive not visitada
+    ## Con una banda en foco, las demás se apagan un poco.
+    if foco is not None and foco != d["hermana"]:
+        $ luz = hub_velo_on
+    else:
+        $ luz = hub_velo_off
 
-        hover_sound audio.sfx_hhover
-        activate_sound audio.sfx_hclick
-        
-        xpos card_x
-        ypos 0
-        xysize (HUB_CARD_W, HUB_H)
-        background None
-        focus_mask True
-        action Return(d["hermana"])
-        at (hub_visitado if visitada else hub_normal)
+    fixed:
+        xysize (HUB_W, HUB_H)
 
-        add hub_panel(indice, d["fondo"], d["sprite"], d["color"],
-                      d.get("escala", 1.0), d.get("xoff", 0), d.get("yoff", 0),
-                      borde, d.get("coronilla"))
+        button:
 
-        vbox:
-            xalign 0.5
-            ypos 816
-            xoffset hub_offset(870)
-            spacing 0
+            sensitive not visitada
 
-            text d["nombre"]:
-                font HUB_FUENTE
-                size 44 color hub_claro(d["color"]) xalign 0.5 text_align 0.5
-                outlines [(5, "#000000", 0, 0), (2, "#000000", 0, 2)]
+            hover_sound audio.sfx_hhover
+            activate_sound audio.sfx_hclick
 
-            text d["lugar"]:
-                font HUB_FUENTE_FINA
-                size 23 color "#e0e0e0" xalign 0.5 text_align 0.5
-                outlines [(4, "#000000", 0, 0)]
+            xpos card_x
+            ypos 0
+            xysize (HUB_CARD_W, HUB_H + HUB_EXTRA)
+            background None
+            focus_mask True
+            tooltip d["hermana"]
+            action Return(d["hermana"])
+            at estado
 
-            if visitada:
-                text "ya visitada":
+            add panel
+
+            vbox:
+                xalign 0.5
+                ypos 816
+                xoffset hub_offset(870)
+                spacing 0
+
+                text d["nombre"]:
+                    font HUB_FUENTE
+                    size 44 color hub_claro(d["color"]) xalign 0.5 text_align 0.5
+                    outlines [(5, "#000000", 0, 0), (2, "#000000", 0, 2)]
+
+                text d["lugar"]:
                     font HUB_FUENTE_FINA
-                    size 20 color "#ffffff" xalign 0.5
-                    outlines [(3, "#000000", 0, 0)]
+                    size 23 color "#e0e0e0" xalign 0.5 text_align 0.5
+                    outlines [(4, "#000000", 0, 0)]
 
+        ## Fuera del botón: así no le llega el gris de hub_visitado.
+        if visitada:
+            use hub_sello(d["hermana"], d["color"],
+                          int(hub_slot_cx(indice)) + hub_offset(HUB_SELLO_Y), HUB_SELLO_Y)
+
+        ## Velo de foco: encima de todo lo de la banda, sin foco propio (los clics pasan).
+        add velo:
+            xpos card_x
+            ypos 0
+            at luz
+
+# ------------------------------------------------------------
+# Sello de hermana visitada. Pieza aparte para la animación de
+# "hub completado": pasarle otro transform en `anim` (o cambiar
+# hub_sello_estado) sin tocar la banda.
+#   x, y = centro del disco, en coordenadas de pantalla.
+# ------------------------------------------------------------
+screen hub_sello(hermana, color, x, y, anim=hub_sello_estado):
+    fixed:
+        xysize (HUB_SELLO + 60, HUB_SELLO + 40)
+        xpos x
+        ypos y
+        xanchor 0.5
+        yanchor (HUB_SELLO // 2)
+        at anim
+
+        fixed:
+            xysize (HUB_SELLO, HUB_SELLO)
+            xalign 0.5
+            add "ui/hub_sello_fondo.png" matrixcolor TintMatrix("#1B1026") alpha 0.55
+            add ("ui/hub_sello_" + hermana + ".png"):
+                matrixcolor TintMatrix(hub_claro(color, 0.25))
+                rotate HUB_ANG
+                align (0.5, 0.5)
+
+        ## la etiqueta sigue la diagonal de la banda
+        text "VISITADA":
+            font HUD_FUENTE
+            size 16 kerning 4 color hub_claro(color, 0.55)
+            xalign 0.5 yalign 1.0
+            xoffset (hub_offset(y + 80) - hub_offset(y))
+            outlines [(2, "#000000aa", 0, 0)]
+
+
+transform hub_sello_estado:
+    alpha 1.0
 
 transform hub_normal:
     matrixcolor BrightnessMatrix(-0.06) * SaturationMatrix(0.92)
@@ -366,6 +513,16 @@ transform hub_normal:
         linear 0.12 matrixcolor BrightnessMatrix(0.10) * SaturationMatrix(1.25) yoffset -10
     on idle:
         linear 0.12 matrixcolor BrightnessMatrix(-0.06) * SaturationMatrix(0.92) yoffset 0
+
+## Un botón insensible no recibe hover: la visitada es un estado fijo.
+transform hub_visitado:
+    matrixcolor SaturationMatrix(0.12) * BrightnessMatrix(-0.22)
+
+transform hub_velo_off:
+    linear 0.15 alpha 0.0
+
+transform hub_velo_on:
+    linear 0.15 alpha HUB_FOCO_VELO
 
 transform hub_entrada(indice):
     alpha 0.0
@@ -377,11 +534,3 @@ transform hub_titulo_entrada:
     alpha 0.0
     pause 0.35
     linear 0.5 alpha 1.0
-
-transform hub_visitado:
-    matrixcolor SaturationMatrix(0.32) * BrightnessMatrix(-0.12)
-    yoffset 0
-    on hover:
-        linear 0.12 matrixcolor SaturationMatrix(0.65) * BrightnessMatrix(-0.04) yoffset -6
-    on idle:
-        linear 0.12 matrixcolor SaturationMatrix(0.22) * BrightnessMatrix(-0.18) yoffset 0
