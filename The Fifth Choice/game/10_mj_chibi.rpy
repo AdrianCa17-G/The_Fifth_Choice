@@ -23,6 +23,12 @@ define MJ_CHIBI_RUTA = "images/chibis/"
 ## Duración de un globo en pantalla (segundos).
 define MJ_GLOBO_DURACION = 2.2
 
+## Chibi general (la hermana que acompaña): vive en la columna del marco.
+define MJ_CHIBI_X = 180        ## centro horizontal (la más ancha ocupa x 49–311)
+define MJ_CHIBI_Y = 1090       ## borde inferior del PNG: los pies quedan en y 1074
+define MJ_GLOBO_ANCHO = 300    ## ancho máximo del globo (cabe en la columna)
+define MJ_GLOBO_HUECO = 12     ## px entre la punta del globo y la coronilla más alta (lazo de Yotsuba, fila 10)
+
 ## False (por defecto): la línea de fallo del marco (MJ_FALLOS) la dice el
 ## marco con rcenpy.say, como hasta ahora, y el globo del minijuego usa sus
 ## propias reacciones. True: el globo de la pantalla enseña la línea de
@@ -267,10 +273,28 @@ transform mj_chibi_tiembla:
         pause 0.35
         repeat
 
+## Reacciones de UNA sola pasada para la chibi general (nada en bucle en el marco).
+transform mj_chibi_salto_uno:
+    yoffset 0
+    ease 0.15 yoffset -26
+    ease 0.17 yoffset 0
+
+transform mj_chibi_tiembla_uno:
+    xoffset 0
+    linear 0.05 xoffset -6
+    linear 0.05 xoffset 6
+    linear 0.05 xoffset -4
+    linear 0.05 xoffset 4
+    linear 0.05 xoffset 0
+
+## Entrada y salida del globo (va en el único hijo de un showif).
 transform mj_globo_entra:
-    alpha 0.0
-    zoom 0.92
-    ease 0.12 alpha 1.0 zoom 1.0
+    on appear, show:
+        alpha 0.0
+        yoffset 8
+        ease 0.18 alpha 1.0 yoffset 0
+    on hide:
+        ease 0.2 alpha 0.0
 
 
 ################################################################################
@@ -279,22 +303,24 @@ transform mj_globo_entra:
 
 ## Un chibi con los pies en (x, y). anim: quieto | bob | salto | tiembla.
 ## x e y SIEMPRE enteros (un float se leería como fracción de pantalla).
-screen mj_chibi_vista(hermana, expresion, x, y, zoom=0.34, anim="bob"):
+## alfa: opacidad (el relevo atenúa a las que no llevan el testigo).
+screen mj_chibi_vista(hermana, expresion, x, y, zoom=0.34, anim="bob", alfa=1.0):
 
     $ img = mj_chibi(hermana, expresion, zoom)
 
     if anim == "salto":
-        add img at mj_chibi_salto xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0
+        add img at mj_chibi_salto xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0 alpha alfa
     elif anim == "tiembla":
-        add img at mj_chibi_tiembla xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0
+        add img at mj_chibi_tiembla xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0 alpha alfa
     elif anim == "bob":
-        add img at mj_chibi_bob xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0
+        add img at mj_chibi_bob xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0 alpha alfa
     else:
-        add img xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0
+        add img xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0 alpha alfa
 
 
 ## Globo de texto con el color de la hermana. (x, y) = punta del globo.
-screen mj_globo(texto, hermana, x, y, ancho=520):
+## Se dibuja siempre; quien lo use decide cuándo (mj_retrato lo envuelve en showif).
+screen mj_globo(texto, hermana, x, y, ancho=MJ_GLOBO_ANCHO):
 
     $ color = PETALO_COLOR[hermana]
     $ fondo = ui_mezclar(color, "#FFFFFF", 0.80)
@@ -302,30 +328,42 @@ screen mj_globo(texto, hermana, x, y, ancho=520):
 
     frame:
         xpos int(x)
-        ypos (int(y) - 20)
+        ypos (int(y) - 17)
         xanchor 0.5
         yanchor 1.0
         xmaximum ancho
-        padding (36, 22, 36, 22)
-        at mj_globo_entra
+        padding (28, 18, 28, 18)
         background Fixed(
             Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo)),
             Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
 
         text texto:
-            size 30
+            style "mj_globo_texto"
             color tinta
             text_align 0.5
             xalign 0.5
             substitute False
 
-    add Transform(Solid(fondo, xsize=24, ysize=24), rotate=45) xpos int(x) ypos (int(y) - 20) xanchor 0.5 yanchor 0.5
+    add Transform(Solid(fondo, xsize=24, ysize=24), rotate=45) xpos int(x) ypos (int(y) - 17) xanchor 0.5 yanchor 0.5
 
 
-## Chibi protagonista de un minijuego + su globo encima.
-screen mj_retrato(hermana, expresion, globo, anim="bob", x=250, y=560, zoom=0.6):
+## Chibi general de un minijuego + su globo encima. Por defecto vive en la
+## columna del marco (lo normal es pasarla a mj_marco con chibi=/globo=/anim=).
+## anim: "salto" y "tiembla" = una reacción; cualquier otro valor = quieta.
+screen mj_retrato(hermana, expresion, globo, anim="quieto", x=MJ_CHIBI_X, y=MJ_CHIBI_Y, zoom=1.0):
 
-    use mj_chibi_vista(hermana, expresion, x, y, zoom, anim)
+    $ img = mj_chibi(hermana, expresion, zoom)
+    $ punta = int(y) - int(502 * zoom) - MJ_GLOBO_HUECO
 
-    if globo.visible():
-        use mj_globo(globo.texto, hermana, x + 10, y - int(500 * zoom) + 30)
+    if anim == "salto":
+        add img at mj_chibi_salto_uno xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0
+    elif anim == "tiembla":
+        add img at mj_chibi_tiembla_uno xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0
+    else:
+        add img xpos int(x) ypos int(y) xanchor 0.5 yanchor 1.0
+
+    if globo is not None:
+        showif globo.visible():
+            fixed:
+                at mj_globo_entra
+                use mj_globo(globo.texto, hermana, x, punta)

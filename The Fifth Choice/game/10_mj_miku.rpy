@@ -5,10 +5,13 @@
 ##  Reloj propio (perf_counter), sin get_pos(). Devuelve el dict del marco.
 ################################################################################
 
-## --- CONSTANTES DE REFERENCIA (medir en Audacity: tarea T-02) -----------------
-define MIKU_BPM = 96.0              ## BPM de miku_tema («The calm seaside»)
-define MIKU_OFFSET = 0.0            ## segundos hasta el primer pulso de la pista
+## --- CONSTANTES DE REFERENCIA ------------------------------------------------
+## La fase 1 con tema sigue MIKU_PULSOS (10_mj_miku_pulsos.rpy, generado por
+## herramientas/generar_pulsos_miku.py): la canción no tiene tempo fijo.
+define MIKU_BPM = 76.9              ## tempo del PLAN B (media de miku_tema, para que se sienta igual)
+define MIKU_F2_MEDIA = 8            ## pulsos (dos compases) que promedia el tempo fijo de la fase 2
 define MIKU_USAR_TEMA = True        ## PLAN B: False = metrónomo en las dos fases
+define M3_DEPURAR_TIC = False       ## True = suena el tic en cada nota de la fase 1 (comprobar el pulso)
 define MIKU_PRE_BEATS = 4           ## pulsos de cuenta antes de la primera nota
 define MIKU_GAP_BEATS = 4           ## pulsos de hueco entre fase 1 y fase 2
 define MIKU_PAUSA_GAP = 0.35        ## hueco entre ticks (s) que se trata como pausa
@@ -20,8 +23,11 @@ define M3_CARRILES = {"dificil": 4, "media": 3, "asistida": 3}
 define M3_TECLAS = ["A", "S", "D", "F"]
 define M3_GUIA_INICIAL = 8       ## eventos de la fase 2 que se ven aunque la guía sea "ninguna"
 define M3_ANCHO_CARRIL = 200
-define M3_Y_TOP = 190
-define M3_Y_META = 620
+define M3_Y_TOP = 276            ## arriba de los carriles (la cabecera ocupa y 112–262)
+define M3_Y_META = 700           ## línea de meta; receptores en META + 56 … + 156
+define M3_COLOR_RELOJ = "#C9C3D6"   ## gris del reloj: a él se apaga el color de Miku en la fase 2
+define M3_CAB_X = MJ_AREA_X + 20                              ## cabecera izquierda (fase)
+define M3_DER_X = MJ_AREA_X + MJ_AREA_W - 20 - MJ_HUD_ANCHO   ## cabecera derecha (perfectos, patrón)
 define M3_ALFA_FANTASMA = 0.18   ## opacidad de las notas "sin guía" de la fase 2
 
 default persistent.m3_latencia_ms = 50
@@ -31,6 +37,8 @@ default m3_vol_reloj_prev = None
 init python:
 
     import time
+    import bisect
+    import math
 
     def m3_reloj_bajar():
         if not M3_BAJAR_RELOJ:
@@ -52,7 +60,7 @@ init python:
         sep = 260
         if n >= 4:
             sep = 236
-        return int(round(960 + (i - (n - 1) / 2.0) * sep))
+        return int(round(MJ_AREA_CX + (i - (n - 1) / 2.0) * sep))
 
     def m3_carril(nc, ultimo, repes, forzar_cambio):
         """Elige carril sin repetir más de 2 veces seguidas (o cambia siempre si forzar_cambio)."""
@@ -148,7 +156,6 @@ init python:
             self.p = params
             self.nivel = nivel
             self.nc = M3_CARRILES.get(nivel, 3)
-            self.beat = 60.0 / float(MIKU_BPM)
             self.n1 = int(params["fase1_notas"])
             self.n2 = int(params["fase2_notas"])
             self.total = self.n1 + self.n2
@@ -169,9 +176,21 @@ init python:
             eventos = gen[0]
             beat_cambio = gen[1]
 
+            ## Pulsos de la fase 1 (instantes en la canción); desde el pulso del
+            ## cambio, tempo fijo beat2 = media de los últimos MIKU_F2_MEDIA pulsos.
+            self.bc = beat_cambio
+            if MIKU_USAR_TEMA:
+                self.pulsos = MIKU_PULSOS
+            else:
+                self.pulsos = []
+                for k in range(beat_cambio + 1):
+                    self.pulsos.append(k * 60.0 / float(MIKU_BPM))
+            self.beat2 = (self.t_pulso(beat_cambio) - self.t_pulso(beat_cambio - MIKU_F2_MEDIA)) / float(MIKU_F2_MEDIA)
+            self.c_inicio = eventos[self.inicio][0]
+
             abs_t = []
             for e in eventos:
-                abs_t.append(MIKU_OFFSET + e[0] * 0.5 * self.beat)
+                abs_t.append(self.t_corchea(e[0]))
 
             self.lead = abs_t[0]
             self.pos0 = abs_t[self.inicio] - self.lead
@@ -194,7 +213,7 @@ init python:
             if self.inicio >= self.n1:
                 self.t_cambio = -1.0
             else:
-                self.t_cambio = MIKU_OFFSET + beat_cambio * self.beat - self.pos0
+                self.t_cambio = self.t_pulso(beat_cambio) - self.pos0
 
             ## Tics del metrónomo (hueco y fase 2; o todo, en el plan B).
             self.tics = []
@@ -203,9 +222,14 @@ init python:
                 r_ini = 0
             r_fin = eventos[self.total - 1][0] // 2
             for r in range(r_ini, r_fin + 1):
-                tc = MIKU_OFFSET + r * self.beat - self.pos0
+                tc = self.t_pulso(r) - self.pos0
                 if tc >= 0.0:
                     self.tics.append(tc)
+            ## Depuración: un tic en cada nota de la fase 1 para oír si cae en el pulso.
+            if M3_DEPURAR_TIC:
+                for i in range(self.inicio, self.n1):
+                    self.tics.append(self.t_corchea(eventos[i][0]) - self.pos0)
+                self.tics.sort()
             self.tic_i = 0
 
             self.aciertos = 0
@@ -221,7 +245,7 @@ init python:
             self.aviso_casi = False
             self.aviso_silencio = False
             self.plantilla = gen[2]
-            self.t_f2 = MIKU_OFFSET + (beat_cambio + MIKU_GAP_BEATS) * self.beat - self.pos0
+            self.t_f2 = self.t_pulso(beat_cambio + MIKU_GAP_BEATS) - self.pos0
             self.combo_cada = int(params.get("combo_cada", 10))
             self.regen_combo = float(params.get("regen_combo", 0.10))
             self.regen_acierto = float(params.get("regen_acierto", 0.0))
@@ -242,6 +266,42 @@ init python:
 
         def t_juego(self):
             return self.reloj() - self.latencia
+
+        def t_pulso(self, k):
+            """Instante (s, en la canción) del pulso k. Hasta el pulso del cambio, el
+            mapa; después, pulsos fijos de beat2. Fuera del mapa extrapola."""
+            if k > self.bc:
+                return self.t_pulso(self.bc) + (k - self.bc) * self.beat2
+            p = self.pulsos
+            n = len(p)
+            if k < 0:
+                return p[0] + k * (p[1] - p[0])
+            if k >= n:
+                return p[n - 1] + (k - n + 1) * (p[n - 1] - p[n - 2])
+            return p[k]
+
+        def t_corchea(self, c):
+            """Corchea par: su pulso. Impar: el punto medio entre su pulso y el siguiente."""
+            k = c // 2
+            if c % 2 == 0:
+                return self.t_pulso(k)
+            return (self.t_pulso(k) + self.t_pulso(k + 1)) / 2.0
+
+        def fase_pulso(self, s):
+            """(pulso en curso, fracción recorrida 0–1) en el instante s de la canción."""
+            t_bc = self.t_pulso(self.bc)
+            if s >= t_bc:
+                x = (s - t_bc) / self.beat2
+                k = int(math.floor(x))
+                return (self.bc + k, x - k)
+            p = self.pulsos
+            if s < p[0]:
+                x = (s - p[0]) / (p[1] - p[0])
+                k = int(math.floor(x))
+                return (k, x - k)
+            k = bisect.bisect_right(p, s) - 1
+            ini = self.t_pulso(k)
+            return (k, (s - ini) / (self.t_pulso(k + 1) - ini))
 
         def en_fase2(self):
             if self.estado == "listo":
@@ -351,14 +411,14 @@ init python:
                 if pct < 1:
                     pct = 1
                 self.regen_t = 1.4
-                self.regen_txt = "+" + str(pct) + " % CONCENTRACIÓN"
+                self.regen_txt = "Combo: +" + str(pct) + " % de concentración"
                 self.globo.decir("racha", True)
 
         def slot_actual(self):
             """Corchea (0..7) del compás de la fase 2 que toca ahora; -1 si aún no."""
             if self.estado != "juego":
                 return -1
-            medio = 0.5 * self.beat
+            medio = 0.5 * self.beat2
             t = self.t_juego()
             if t < self.t_f2 - 0.5 * medio:
                 return -1
@@ -537,20 +597,45 @@ init python:
         ## --- Datos para la pantalla --------------------------------------------------
 
         def rotulo_fase(self):
+            """(etiqueta, título) de la cabecera."""
             if self.estado == "listo":
-                return ""
+                return ("", "")
             if self.estado == "fin" and self.resultado["resultado"] == "ganado":
-                return "Compás completo."
+                return ("", "Compás completo.")
             if self.t_cambio < 0.0:
-                return "FASE 2 · Solo el reloj"
+                return ("FASE 2", "Solo el reloj")
             c = self.reloj()
             if c < self.t_cambio:
                 if MIKU_USAR_TEMA:
-                    return "FASE 1 · Con los audífonos"
-                return "FASE 1 · Con el metrónomo"
-            if c < self.t_cambio + MIKU_GAP_BEATS * self.beat:
-                return "Los audífonos se apagan."
-            return "FASE 2 · Solo el reloj"
+                    return ("FASE 1", "Con los audífonos")
+                return ("FASE 1", "Con el metrónomo")
+            if c < self.t_f2:
+                return ("", "Los audífonos se apagan.")
+            return ("FASE 2", "Solo el reloj")
+
+        def en_hueco(self):
+            """Entre el final de la fase 1 y la primera nota de la fase 2."""
+            if self.estado != "juego" or self.t_cambio < 0.0:
+                return False
+            c = self.reloj()
+            return c >= self.t_cambio and c < self.t_f2
+
+        def apagado(self):
+            """0 con los audífonos; sube a 1 durante el hueco; 1 con solo el reloj."""
+            if self.t_cambio < 0.0:
+                return 1.0
+            if self.estado == "listo":
+                return 0.0
+            a = (self.reloj() - self.t_cambio) / (self.t_f2 - self.t_cambio)
+            if a < 0.0:
+                return 0.0
+            if a > 1.0:
+                return 1.0
+            return a
+
+        def color_vivo(self):
+            """Color de Miku, que se apaga hacia el gris del reloj en la fase 2."""
+            return ui_mezclar(PETALO_COLOR["miku"], M3_COLOR_RELOJ, 0.75 * self.apagado())
 
         def rotulo_tecla(self, i):
             if self.en_fase2():
@@ -564,7 +649,10 @@ init python:
             primera = self.ev[self.inicio][0]
             if t >= primera - 0.05:
                 return ""
-            n = int((primera - t) / self.beat) + 1
+            k = self.fase_pulso(t + self.pos0)[0]
+            n = (self.c_inicio + 1) // 2 - k
+            if n < 1:
+                return ""
             if n > MIKU_PRE_BEATS:
                 n = MIKU_PRE_BEATS
             return str(n)
@@ -572,8 +660,7 @@ init python:
         def pulso(self):
             if self.estado == "listo":
                 return 0.5
-            c = self.reloj() - self.latencia + self.pos0 - MIKU_OFFSET
-            frac = (c / self.beat) % 1.0
+            frac = self.fase_pulso(self.reloj() - self.latencia + self.pos0)[1]
             return 0.35 + 0.65 * (1.0 - frac)
 
         def feedback(self):
@@ -604,13 +691,13 @@ init python:
                 if self.resultado["resultado"] == "ganado":
                     return "salto"
                 return "tiembla"
-            return "bob"
+            return "quieto"
 
         def pista(self):
             if self.estado != "juego" or not self.en_fase2():
                 return ""
             if self.guia == "ninguna" and (self.cursor - self.n1) >= M3_GUIA_INICIAL:
-                return "Las notas se desvanecen: guíate por el patrón de la izquierda."
+                return "Las notas se desvanecen: guíate por el patrón del compás."
             return "Vale cualquier tecla. Cuenta los silencios."
 
         def visibles(self):
@@ -619,7 +706,7 @@ init python:
             if self.estado == "listo":
                 return res
             t = self.t_juego()
-            color = PETALO_COLOR["miku"]
+            color = self.color_vivo()
             x_izq = m3_x(0, self.nc)
             x_der = m3_x(self.nc - 1, self.nc)
             i = self.cursor
@@ -675,22 +762,25 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
     key "K_SPACE" action Function(vivo.pulsar, -1)
     key "K_RETURN" action Function(vivo.empezar)
 
-    $ color = PETALO_COLOR[hermana]
+    ## El color de Miku se apaga hacia el gris del reloj durante el hueco entre fases.
+    $ color = vivo.color_vivo()
     $ claro = ui_mezclar(color, "#FFFFFF", 0.35)
+    $ apagado = vivo.apagado()
     $ nc = vivo.nc
     $ xl = m3_x(0, nc)
     $ xr = m3_x(nc - 1, nc)
     $ x_panel = xl - 130
     $ w_panel = (xr - xl) + 260
-    $ h_panel = M3_Y_META + 100 - M3_Y_TOP
+    $ y_panel = M3_Y_TOP - 10
+    $ h_panel = M3_Y_META + 46 - y_panel
+    $ y_rec = M3_Y_META + 56
+    $ x_combo = (x_panel + w_panel + MJ_AREA_X + MJ_AREA_W) // 2
     $ listo = (vivo.estado == "listo")
     $ fase2 = vivo.en_fase2()
     $ cuenta = vivo.cuenta()
     $ fb_texto = vivo.feedback()
-    $ conc = vivo.concentracion()
-    $ col_conc = color
-    if conc <= vivo.fallos_max * 0.3:
-        $ col_conc = "#FF8A8A"
+    $ rotulo = vivo.rotulo_fase()
+    $ pista = vivo.pista()
     $ teclas = "A · S · D"
     if nc == 4:
         $ teclas = "A · S · D · F"
@@ -706,37 +796,55 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ falta_combo = 0
     if vivo.combo_cada > 0:
         $ falta_combo = vivo.combo_cada - (vivo.racha % vivo.combo_cada)
+    ## El motivo late con el pulso mientras suenan los audífonos y se queda quieto al apagarse.
+    $ alfa_motivo = vivo.pulso() * (1.0 - apagado) + 0.35 * apagado
+    ## Aviso del marco solo para lo poco frecuente (recuperación por combo), nunca en el hueco.
+    $ aviso = ""
+    if vivo.regen_t > 0.0 and not vivo.en_hueco():
+        $ aviso = vivo.regen_txt
+    $ boton = MJ_BOTON["primario"]
+    $ peq = MJ_BOTON["pequeno"]
 
     add "bg_biblioteca" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.cursor, vivo.total, None, None, "NOTAS"):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.cursor, vivo.total, vivo.concentracion(), vivo.fallos_max, "NOTAS", recurso_txt="CONCENTRACIÓN", recurso_unidad="", chibi=vivo.expresion(), globo=vivo.globo, anim=vivo.anim(), aviso=aviso, aviso_tipo="bien"):
 
         if not listo:
 
-            ## --- Rótulo de fase y pista (separados del panel) ---
-            text vivo.rotulo_fase():
-                xalign 0.5
-                ypos 100
-                font gui.name_text_font
-                size 30
-                kerning 3
-                color "#FFFFFF"
-                outlines [(4, "#1B1026CC", 0, 0)]
+            ## --- Cabecera izquierda: fase ---
+            if rotulo[0] != "":
+                text rotulo[0] style "mj_etiqueta" xpos M3_CAB_X ypos 128
+            add Transform("ui/hud_icono_" + hermana + ".png", zoom=0.8, matrixcolor=TintMatrix(color)) xpos M3_CAB_X ypos 168 alpha alfa_motivo
+            text rotulo[1] style "mj_titulo" color claro xpos (M3_CAB_X + 46) ypos 152
+            if pista != "":
+                text pista style "mj_nota" color "#FFE3A0" xpos M3_CAB_X ypos 208
 
-            if vivo.pista() != "":
-                text vivo.pista():
-                    xalign 0.5
-                    ypos 142
-                    size 22
-                    color "#FFE3A0"
-                    outlines [(3, "#1B102699", 0, 0)]
+            ## --- Cabecera derecha: patrón del compás (fase 2) ---
+            if fase2 and vivo.estado == "juego":
+                vbox:
+                    xpos M3_DER_X
+                    ypos 128
+                    spacing 8
+                    text "PATRÓN DEL COMPÁS" style "mj_etiqueta"
+                    hbox:
+                        spacing 4
+                        for k in range(8):
+                            fixed:
+                                xysize (36, 62)
+                                if k in vivo.plantilla:
+                                    add Solid(color, xsize=36, ysize=40) xpos 0 ypos 0
+                                else:
+                                    add Solid("#FFFFFF22", xsize=36, ysize=40) xpos 0 ypos 0
+                                if k == slot:
+                                    add Solid("#FFE3A0", xsize=36, ysize=40) xpos 0 ypos 0 alpha 0.65
+                                text etiquetas_compas[k] style "mj_nota" xpos 18 xanchor 0.5 ypos 42
 
             ## --- Panel de carriles ---
-            add Solid("#0B0712B0", xsize=w_panel, ysize=h_panel) xpos x_panel ypos (M3_Y_TOP - 10)
-            add Solid(color, xsize=4, ysize=h_panel) xpos x_panel ypos (M3_Y_TOP - 10) alpha 0.7
-            add Solid(color, xsize=4, ysize=h_panel) xpos (x_panel + w_panel - 4) ypos (M3_Y_TOP - 10) alpha 0.7
+            add Solid("#0B0712B0", xsize=w_panel, ysize=h_panel) xpos x_panel ypos y_panel
+            add Solid(color, xsize=4, ysize=h_panel) xpos x_panel ypos y_panel alpha 0.7
+            add Solid(color, xsize=4, ysize=h_panel) xpos (x_panel + w_panel - 4) ypos y_panel alpha 0.7
             if vivo.flash_fallo > 0.0:
-                add Solid("#FF5A5A", xsize=w_panel, ysize=h_panel) xpos x_panel ypos (M3_Y_TOP - 10) alpha 0.16
+                add Solid("#FF5A5A", xsize=w_panel, ysize=h_panel) xpos x_panel ypos y_panel alpha 0.16
 
             for i in range(nc):
                 $ alfa_c = 0.07
@@ -744,11 +852,11 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                     $ alfa_c = 0.11
                 if fase2:
                     $ alfa_c = 0.04
-                add Solid("#FFFFFF", xsize=M3_ANCHO_CARRIL, ysize=(M3_Y_META + 70 - M3_Y_TOP)) xpos (m3_x(i, nc) - M3_ANCHO_CARRIL // 2) ypos M3_Y_TOP alpha alfa_c
+                add Solid("#FFFFFF", xsize=M3_ANCHO_CARRIL, ysize=(M3_Y_META + 40 - M3_Y_TOP)) xpos (m3_x(i, nc) - M3_ANCHO_CARRIL // 2) ypos M3_Y_TOP alpha alfa_c
                 if vivo.flash[i] > 0.0:
-                    add Solid(color, xsize=M3_ANCHO_CARRIL, ysize=(M3_Y_META + 70 - M3_Y_TOP)) xpos (m3_x(i, nc) - M3_ANCHO_CARRIL // 2) ypos M3_Y_TOP alpha 0.32
+                    add Solid(color, xsize=M3_ANCHO_CARRIL, ysize=(M3_Y_META + 40 - M3_Y_TOP)) xpos (m3_x(i, nc) - M3_ANCHO_CARRIL // 2) ypos M3_Y_TOP alpha 0.32
 
-            ## --- Línea de meta (late con el compás) ---
+            ## --- Línea de meta (late con el pulso: la música en la fase 1, el reloj en la 2) ---
             add Solid(color, xsize=(w_panel - 40), ysize=22) xpos (x_panel + 20) ypos (M3_Y_META - 8) alpha (vivo.pulso() * 0.25)
             add Solid(claro, xsize=(w_panel - 40), ysize=6) xpos (x_panel + 20) ypos M3_Y_META alpha vivo.pulso()
 
@@ -759,25 +867,15 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                 add Solid("#FFFFFF", xsize=n[2], ysize=5) xpos n[0] ypos n[1] alpha (n[4] * 0.6)
 
             if cuenta != "":
-                text cuenta:
-                    xalign 0.5
-                    ypos 330
-                    size 110
-                    font gui.name_text_font
-                    color "#FFFFFF"
-                    outlines [(5, "#1B1026CC", 0, 0)]
+                text cuenta style "mj_cifra_grande" xpos MJ_AREA_CX xanchor 0.5 ypos 400
 
-            ## --- Feedback ---
+            ## --- Feedback de ritmo: excepción al aviso del marco. Sale en cada nota y va
+            ## donde mira el jugador, sobre la línea de meta (ver MJ_MIKU.md). ---
             if fb_texto != "":
-                text fb_texto:
-                    xalign 0.5
-                    ypos 650
-                    font gui.name_text_font
-                    size 34
-                    color vivo.feedback_color()
-                    outlines [(4, "#1B1026CC", 0, 0)]
+                text fb_texto style "mj_cifra" color vivo.feedback_color() xpos MJ_AREA_CX xanchor 0.5 ypos (M3_Y_META - 64)
 
-            ## --- Receptores ---
+            ## --- Receptores. Sin hover_sound/activate_sound a propósito: un clic
+            ## encima del compás ensucia el ritmo. ---
             if fase2:
                 $ fondo_pad = color + "55"
                 if lit_any:
@@ -785,17 +883,14 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                 button:
                     xysize ((w_panel - 40), 100)
                     xpos (x_panel + 20)
-                    ypos 705
+                    ypos y_rec
                     action Function(vivo.pulsar, -1)
                     background Solid(fondo_pad)
                     hover_background Solid(color + "99")
                     text "TOCA  ·  cualquier tecla o Espacio":
+                        style "mj_cifra"
                         xalign 0.5
                         yalign 0.5
-                        font gui.name_text_font
-                        size 34
-                        color "#FFFFFF"
-                        outlines [(3, "#1B102699", 0, 0)]
             else:
                 for i in range(nc):
                     $ lit = vivo.flash[i] > 0.0
@@ -805,164 +900,88 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                     button:
                         xysize (M3_ANCHO_CARRIL, 100)
                         xpos (m3_x(i, nc) - M3_ANCHO_CARRIL // 2)
-                        ypos 705
+                        ypos y_rec
                         action Function(vivo.pulsar, i)
                         background Solid(fondo_btn)
                         hover_background Solid(color + "99")
                         text vivo.rotulo_tecla(i):
-                            xalign 0.5
-                            yalign 0.5
-                            font gui.name_text_font
-                            size 40
+                            style "mj_titulo"
                             color "#FFFFFF"
                             outlines [(3, "#1B102699", 0, 0)]
+                            xalign 0.5
+                            yalign 0.5
 
-            ## --- HUD izquierdo: concentración ---
+            ## --- A la derecha del panel: perfectos y combo ---
             vbox:
-                xpos 70
-                ypos 250
-                spacing 8
-                text "CONCENTRACIÓN":
-                    font gui.name_text_font
-                    size 22
-                    kerning 3
-                    color "#FFFFFF"
-                    outlines [(3, "#1B102699", 0, 0)]
-                use barra_progreso(conc, vivo.fallos_max, col_conc, 340)
-                text ("PERFECTOS  " + str(vivo.perfectos)):
-                    size 22
-                    color "#E8E0F2"
-                    outlines [(3, "#1B102699", 0, 0)]
-                if vivo.regen_t > 0.0:
-                    text vivo.regen_txt:
-                        size 24
-                        color "#9BFFB8"
-                        outlines [(3, "#1B102699", 0, 0)]
-
-            ## --- HUD izquierdo: patrón del compás (fase 2) ---
-            if fase2 and vivo.estado == "juego":
-                vbox:
-                    xpos 70
-                    ypos 410
-                    spacing 6
-                    text "PATRÓN DEL COMPÁS":
-                        font gui.name_text_font
-                        size 22
-                        kerning 3
-                        color "#FFFFFF"
-                        outlines [(3, "#1B102699", 0, 0)]
-                    hbox:
-                        spacing 4
-                        for k in range(8):
-                            fixed:
-                                xysize (38, 44)
-                                if k in vivo.plantilla:
-                                    add Solid(color, xsize=38, ysize=44)
-                                else:
-                                    add Solid("#FFFFFF22", xsize=38, ysize=44)
-                                if k == slot:
-                                    add Solid("#FFE3A0", xsize=38, ysize=44) alpha 0.65
-                    hbox:
-                        spacing 4
-                        for k in range(8):
-                            text etiquetas_compas[k]:
-                                xsize 38
-                                text_align 0.5
-                                size 16
-                                color "#FFFFFFAA"
-
-            ## --- HUD derecho: combo ---
+                xpos x_combo
+                xanchor 0.5
+                ypos 300
+                spacing 0
+                text "PERFECTOS" style "mj_etiqueta" xalign 0.5
+                text str(vivo.perfectos) style "mj_cifra" xalign 0.5
             if vivo.racha >= 2:
                 vbox:
-                    xpos 1500
-                    ypos 300
+                    xpos x_combo
+                    xanchor 0.5
+                    ypos 420
                     spacing 0
-                    text "COMBO":
-                        font gui.name_text_font
-                        size 24
-                        kerning 4
-                        color "#FFFFFF"
-                        outlines [(3, "#1B102699", 0, 0)]
-                    text str(vivo.racha):
-                        font gui.name_text_font
-                        size tam_combo
-                        color claro
-                        outlines [(5, "#1B1026CC", 0, 0)]
+                    text "COMBO" style "mj_etiqueta" xalign 0.5
+                    text str(vivo.racha) style "mj_cifra_grande" size tam_combo color claro xalign 0.5
                     if vivo.combo_cada > 0 and vivo.regen_combo > 0.0:
-                        text ("+" + str(pct_combo) + " % en " + str(falta_combo)):
-                            size 20
-                            color "#9BFFB8"
-                            outlines [(3, "#1B102699", 0, 0)]
-
-        use mj_retrato("miku", vivo.expresion(), vivo.globo, vivo.anim(), 250, 1090, 1.0)
+                        text ("+" + str(pct_combo) + " % en " + str(falta_combo)) style "mj_nota" color "#9BFFB8" xalign 0.5
 
         ## --- Pantalla de inicio ---
         if listo:
-            fixed:
-                xalign 0.5
-                ypos 150
-                xysize (1100, 660)
-
-                add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026"))
-                add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color))
+            frame:
+                xpos MJ_AREA_CX
+                xanchor 0.5
+                ypos (MJ_AREA_Y + 40)
+                xsize 1200
+                padding (60, 32, 60, 36)
+                background Fixed(
+                    Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026")),
+                    Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
 
                 vbox:
-                    xalign 0.5
-                    ypos 28
-                    xsize 980
-                    spacing 12
+                    xfill True
+                    spacing 14
 
-                    text "EL COMPÁS":
-                        xalign 0.5
-                        font gui.name_text_font
-                        size 40
-                        kerning 4
-                        color "#FFF8FC"
+                    text "EL COMPÁS" style "mj_titulo" xalign 0.5
 
-                    text ("Pulsa el carril cuando la nota llegue a la línea. Teclas: " + teclas + ", o toca los carriles (" + str(nc) + " carriles). Pulsar donde no hay nota te cuesta concentración. Cuando se apaguen los audífonos, sigue el reloj: vale cualquier tecla (o Espacio) y hay silencios; el panel de la izquierda te muestra el patrón. Cada " + str(vivo.combo_cada) + " aciertos seguidos recuperas " + str(pct_combo) + " % de concentración."):
+                    text ("Pulsa el carril cuando la nota llegue a la línea. Teclas: " + teclas + ", o toca los carriles (" + str(nc) + " carriles). Pulsar donde no hay nota te cuesta concentración. Cuando se apaguen los audífonos, sigue el reloj: vale cualquier tecla (o Espacio) y hay silencios; arriba a la derecha verás el patrón. Cada " + str(vivo.combo_cada) + " aciertos seguidos recuperas " + str(pct_combo) + " % de concentración."):
+                        style "mj_cuerpo"
                         xalign 0.5
                         text_align 0.5
-                        size 24
-                        color "#E8E0F2"
 
-                    add Solid("#FFFFFF33", xsize=980, ysize=2) xalign 0.5
+                    add Solid("#FFFFFF33", xsize=1080, ysize=2) xalign 0.5
 
-                    text "AJUSTE DE SINCRONÍA DE AUDIO":
-                        xalign 0.5
-                        font gui.name_text_font
-                        size 22
-                        kerning 3
-                        color claro
+                    text "AJUSTE DE SINCRONÍA DE AUDIO" style "mj_etiqueta" color claro xalign 0.5
 
                     text "Algunos equipos (sobre todo con audífonos Bluetooth) reproducen el sonido con un pequeño retraso. Si el juego te marca «Tarde» aunque pulses con la música, sube el valor con el botón +. Si te marca «Pronto», bájalo con −. Si todo se siente bien, no toques nada: se guarda para la próxima vez.":
+                        style "mj_nota"
                         xalign 0.5
                         text_align 0.5
-                        size 21
-                        color "#CFC6E0"
 
                     hbox:
                         xalign 0.5
                         spacing 18
-                        use cinta_boton("−10 ms", Function(vivo.ajustar_latencia, -10), hermana, 190, 56, 24)
+                        use cinta_boton("−10 ms", Function(vivo.ajustar_latencia, -10), hermana, peq[0], peq[1], peq[2])
                         text (str(persistent.m3_latencia_ms) + " ms"):
+                            style "mj_cifra"
                             xsize 150
                             text_align 0.5
                             yalign 0.5
-                            size 34
-                            color "#FFFFFF"
-                        use cinta_boton("+10 ms", Function(vivo.ajustar_latencia, 10), hermana, 190, 56, 24)
-                        use cinta_boton("Restablecer", Function(vivo.fijar_latencia, 50), hermana, 220, 56, 22)
+                        use cinta_boton("+10 ms", Function(vivo.ajustar_latencia, 10), hermana, peq[0], peq[1], peq[2])
+                        use cinta_boton("Restablecer", Function(vivo.fijar_latencia, 50), hermana, peq[0], peq[1], peq[2])
 
-                    text "Pulsa los botones para ajustar. Valor por defecto: 50 ms.":
+                    text "Pulsa los botones para ajustar. Valor por defecto: 50 ms." style "mj_nota" xalign 0.5
+
+                    null height 4
+
+                    fixed:
                         xalign 0.5
-                        size 19
-                        color "#CFC6E0AA"
-
-                fixed:
-                    xalign 0.5
-                    ypos 560
-                    xysize (420, 80)
-                    use cinta_boton("Empezar", Function(vivo.empezar), hermana, 420, 80, 34)
+                        xysize (boton[0], boton[1])
+                        use cinta_boton("Empezar", Function(vivo.empezar), hermana, boton[0], boton[1], boton[2])
 
 ################################################################################
 ##  PRUEBA SUELTA:  jump mj_probar_m3   (consola Shift+O)
