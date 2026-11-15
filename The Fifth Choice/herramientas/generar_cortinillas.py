@@ -11,6 +11,9 @@ Genera, desde cero y sin material ajeno:
   game/audio/sfx/cort_completado_<h>.ogg        hub completado, rama cálida
   game/audio/sfx/cort_completado_<h>_tibia.ogg  hub completado, rama tibia
   game/audio/sfx/cort_completado_fria.ogg       hub completado, rama fría (toc seco)
+  game/audio/sfx/cort_mj_<h>_entrada.ogg   entrada de un minijuego (10_mj_transicion.rpy)
+  game/audio/sfx/cort_mj_<h>_ganado.ogg    salida, minijuego ganado
+  game/audio/sfx/cort_mj_<h>_saltado.ogg   salida, «Que lo haga ella» (una nota suave)
 
 Los sonidos son campanitas sintetizadas (tipo celesta) en Re mayor pentatonico.
 Cada hermana tiene SU nota: Ichika Re, Nino Mi, Miku Fa#, Yotsuba La, Itsuki Si.
@@ -52,10 +55,31 @@ RITMOS_HUBC = {
     "fria":   dict(sello=0.15),
 }
 
+## Entrada y salida de los minijuegos (10_mj_transicion.rpy, MJTR_CUES): segundo
+## de cada golpe. Si cambias uno, cambia el otro y vuelve a generar.
+RITMOS_MJTR = {
+    "entrada": {
+        "yotsuba": dict(pasos=(0.30, 0.50, 0.70), titulo=0.76),
+        "ichika":  dict(telon=0.20, luz=0.80, chispas=(0.90, 0.98, 1.06)),
+        "nino":    dict(vuelo=0.50, titulo=0.65),
+        "itsuki":  dict(caida=0.15, impacto=0.60, regla=1.20),
+        "miku":    dict(tiempos=(0.35, 0.65, 0.95, 1.25)),
+    },
+    "ganado": {
+        "yotsuba": dict(aterriza=0.42, corre=0.62),
+        "ichika":  dict(chispas=(0.30, 0.38, 0.46), destello=0.50, cierre=0.75),
+        "nino":    dict(mariposas=(0.30, 0.42)),
+        "itsuki":  dict(sube=0.12, brilla=0.47),
+        "miku":    dict(tiempos=(0.10, 0.40, 0.70), corte=1.00),
+    },
+    "saltado": {"asiente": 0.25},
+}
+
 RE3, LA3, FAS4 = 146.83, 220.00, 369.99
 RE4, LA4 = 293.66, 440.00
 RE5, MI5, FAS5, LA5, SI5 = 587.33, 659.25, 739.99, 880.00, 987.77
 RE6, MI6, FAS6, LA6, SI6 = 1174.66, 1318.51, 1479.98, 1760.00, 1975.53
+DOS6 = 1108.73
 
 HERMANAS = ["ichika", "nino", "miku", "yotsuba", "itsuki"]
 NOTA = dict(zip(HERMANAS, [RE5, MI5, FAS5, LA5, SI5]))
@@ -231,6 +255,106 @@ def j_completado(h, rama):
     return p
 
 
+def trino(p, a, b, t0, t1, amp=0.07, pan0=0.2, pan1=0.8):
+    """Dos notas alternadas muy cortas (el aleteo de Nino); el pan sigue a la mariposa."""
+    n = max(2, int((t1 - t0) / 0.07))
+    for k in range(n):
+        f = a
+        if k % 2 == 1:
+            f = b
+        p.campana(f, t0 + k * 0.07, amp, cola=0.25, pan=pan0 + (pan1 - pan0) * k / (n - 1))
+
+
+def j_mj_entrada(h):
+    """Entrada de minijuego: el gesto de la hermana y su nota con la quinta."""
+    r = RITMOS_MJTR["entrada"][h]
+    p = Pista(2.6)
+    p.nivel = -6.0
+    p.colchon([RE3, LA3], 0.0, 2.0, 0.05)
+    if h == "yotsuba":
+        for t0, amp in zip(r["pasos"], (0.14, 0.18, 0.22)):        # pisadas
+            p.campana(LA5, t0, amp, cola=0.4, pan=0.25)
+        p.campana(RE4, r["titulo"], 0.25, cola=1.8)
+        p.campana(LA5, r["titulo"], 0.42)
+        p.campana(RE6, r["titulo"] + 0.05, 0.34, cola=1.4)
+    elif h == "ichika":
+        p.campana(RE4, r["telon"], 0.40, cola=2.2)                 # el telón
+        p.campana(RE5, r["luz"], 0.30)
+        p.campana(LA5, r["luz"] + 0.06, 0.30)
+        for t0, f in zip(r["chispas"], (RE6, FAS6, LA6)):
+            p.campana(f, t0, 0.16, cola=0.6, pan=0.7)
+    elif h == "nino":
+        trino(p, MI5, FAS5, r["vuelo"], r["titulo"] + 0.6)          # la mariposa cruza
+        p.campana(MI5, r["titulo"] + 0.6, 0.40)
+        p.campana(SI5, r["titulo"] + 0.63, 0.32)
+    elif h == "itsuki":
+        for k, f in enumerate((SI6, LA6, FAS6)):                    # la estrella cae
+            p.campana(f, r["caida"] + k * 0.15, 0.14, cola=0.5)
+        p.campana(SI5, r["impacto"], 0.45)
+        p.campana(FAS6, r["impacto"] + 0.02, 0.20)
+        p.campana(RE6, r["regla"], 0.20, cola=1.0)                  # el subrayado
+    elif h == "miku":
+        for t0 in r["tiempos"][:3]:                                 # uno, dos, tres...
+            p.campana(FAS5, t0, 0.32, cola=0.5)
+        t4 = r["tiempos"][3]
+        p.campana(RE4, t4, 0.25, cola=1.6)
+        p.campana(FAS5, t4, 0.40)
+        p.campana(DOS6, t4 + 0.02, 0.30)
+    return p
+
+
+def j_mj_ganado(h):
+    """Salida de minijuego ganado: la figura de la entrada, resuelta hacia arriba."""
+    r = RITMOS_MJTR["ganado"][h]
+    p = Pista(2.2)
+    p.nivel = -6.0
+    if h == "yotsuba":
+        p.campana(LA5, r["aterriza"], 0.30, cola=0.5)
+        for k, f in enumerate((RE5, FAS5, LA5, RE6)):
+            p.campana(f, r["aterriza"] + k * 0.06, 0.36, cola=1.4)
+        for k, amp in enumerate((0.12, 0.10, 0.08)):                # se va corriendo
+            p.campana(LA5, r["corre"] + 0.15 * (k + 1), amp, cola=0.3, pan=0.6 + 0.15 * k)
+    elif h == "ichika":
+        for t0, f in zip(r["chispas"], (RE6, FAS6, LA6)):
+            p.campana(f, t0, 0.14, cola=0.6)
+        p.campana(RE5, r["destello"], 0.36, cola=1.8)
+        p.campana(LA5, r["destello"] + 0.04, 0.30, cola=1.6)
+        p.campana(RE6, r["destello"] + 0.08, 0.26, cola=1.4)
+        p.campana(RE4, r["cierre"], 0.25, cola=1.6)                 # se cierra el foco
+    elif h == "nino":
+        m0, m1 = r["mariposas"]
+        trino(p, MI5, FAS5, m0, m0 + 0.28, 0.08, 0.3, 0.6)
+        trino(p, LA5, SI5, m1, m1 + 0.28, 0.08, 0.4, 0.8)
+        p.campana(MI5, m1 + 0.3, 0.38)
+        p.campana(SI5, m1 + 0.33, 0.30)
+        p.campana(RE6, m1 + 0.36, 0.24, cola=1.4)
+    elif h == "itsuki":
+        for k, f in enumerate((FAS6, LA6, SI6)):                    # la estrella sube
+            p.campana(f, r["sube"] + k * 0.1, 0.14, cola=0.5)
+        p.campana(SI5, r["brilla"], 0.42)
+        p.campana(FAS6, r["brilla"] + 0.03, 0.26)
+        p.campana(RE6, r["brilla"] + 0.06, 0.22, cola=1.4)
+    elif h == "miku":
+        p = Pista(r["corte"] + 0.25)                                # termina en seco
+        p.nivel = -6.0
+        p.seco = True
+        for t0 in r["tiempos"]:
+            p.campana(FAS5, t0, 0.32, cola=0.5)
+        for f in (RE5, FAS5, LA5, DOS6):
+            p.campana(f, r["corte"] - 0.06, 0.30, cola=0.2)
+    return p
+
+
+def j_mj_saltado(h):
+    """Salida de «Que lo haga ella»: solo su nota, suave, cuando asiente."""
+    t0 = RITMOS_MJTR["saltado"]["asiente"]
+    p = Pista(1.6)
+    p.nivel = -10.0
+    p.campana(NOTA[h], t0, 0.40, cola=1.0)
+    p.campana(NOTA[h] * 2, t0 + 0.02, 0.10, cola=0.6)
+    return p
+
+
 def guardar(pista, nombre, ffmpeg):
     carpeta = os.path.join(GAME, "audio", "sfx")
     wav = os.path.join(carpeta, nombre + ".wav")
@@ -281,5 +405,9 @@ if __name__ == "__main__":
         guardar(j_completado(h, "calida"), "cort_completado_" + h, ffmpeg)
         guardar(j_completado(h, "tibia"), "cort_completado_" + h + "_tibia", ffmpeg)
     guardar(j_completado("ichika", "fria"), "cort_completado_fria", ffmpeg)
+    for h in HERMANAS:
+        guardar(j_mj_entrada(h), "cort_mj_" + h + "_entrada", ffmpeg)
+        guardar(j_mj_ganado(h), "cort_mj_" + h + "_ganado", ffmpeg)
+        guardar(j_mj_saltado(h), "cort_mj_" + h + "_saltado", ffmpeg)
     if ffmpeg is None:
         sys.exit("ffmpeg no esta en el PATH: convierte los .wav a .ogg a mano.")

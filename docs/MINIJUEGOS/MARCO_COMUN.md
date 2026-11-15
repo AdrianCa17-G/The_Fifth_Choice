@@ -4,6 +4,7 @@ Referencia para las cinco sesiones de minijuego (Yotsuba, Nino, Miku, Ichika, It
 Refleja el código del 14/11/2026. **Si este documento y el código no coinciden, manda el código.**
 
 Archivos del marco:
+- `game/10_mj_transicion.rpy`: entrada y salida animadas (las llama `mj_ejecutar`).
 - `game/10_minijuegos.rpy`: Parte E (zonas, estilos, `mj_marco`, `mj_aviso`, `mj_prueba`) y Parte F (prueba del marco).
 - `game/10_mj_chibi.rpy`: `mj_retrato`, `mj_globo` y las reacciones de la chibi.
 - `game/09_menus_sistema.rpy`: `cinta_boton`.
@@ -136,8 +137,29 @@ Estados:
 | Globo | `mj_globo_entra` | 0,18 s / 0,2 s |
 | Chibi | `mj_chibi_salto_uno` / `mj_chibi_tiembla_uno` | 0,32 s / 0,25 s |
 | Botón | pulsado | 0,14 s |
+| Entrada / salida del minijuego | `mj_transicion` (fuera del marco, ver § 8 bis) | ~2,0 s / ~1,6 s |
 
 Regla para los minijuegos: lo que es **mecánica** (una marca que parpadea para indicar el momento, una nota que cae) puede moverse en bucle. La decoración y el marco, no.
+
+## 8 bis. Entrada y salida (`10_mj_transicion.rpy`)
+
+Las pone `mj_ejecutar`; un minijuego nuevo no tiene que hacer nada. Receta completa en `docs/GUIA_UI.md` («Entrada y salida de un minijuego»).
+
+| Momento | Dónde, en `mj_ejecutar` | Duración |
+|---|---|---|
+| Entrada | después del modo «saltar» y de la pregunta de repetición, antes de `label .intento` (una vez) | ~2,0 s |
+| Salida «ganado» | antes de `mj_cerrar("ganado")` | ~1,25 s + fundido 0,4 |
+| Salida «saltado» | antes de `mj_cerrar("saltado")` («Que lo haga ella» o la screen devuelve "saltado") | ~1,05 s + fundido 0,4 |
+| Modo «saltar» / «Saltarlo» | sin animación | — |
+
+Reglas:
+- **Empalme:** la entrada acaba con velo + columna + chibi `neutral` en `MJ_CHIBI_X/Y` a zoom 1.0, exactamente el primer fotograma de `mj_marco`; el marco entra con `Dissolve(0.25)` y solo se ve aparecer el HUD, la cinta y el panel. Si el panel de inicio de un minijuego dejara de enseñar la chibi `neutral`, el empalme se notaría.
+- **Salidas antes de `mj_cerrar`:** mientras duran, el menú rápido, el rollback y el skip siguen bloqueados por `mj_bloquear`; `mj_cerrar` los restaura después.
+- La salida «saltado» parte de la escena (venimos del menú del narrador): columna y chibi entran con `Dissolve(0.2)`.
+- Un clic corta (pantalla + `renpy.pause`, 0,3 s blindados al principio). Sin `modal`.
+- La columna, el velo y la chibi de la animación usan los mismos PNG y medidas que el marco: si cambia `MJ_COLUMNA`, `MJ_VELO` o `MJ_CHIBI_X/Y`, la animación los sigue sola.
+
+Probar: consola → `jump mj_transicion_prueba`.
 
 ## 9. Cómo probar
 
