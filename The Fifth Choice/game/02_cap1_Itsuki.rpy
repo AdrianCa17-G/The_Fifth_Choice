@@ -117,9 +117,6 @@ label hub_Itsuki:
 
     mc "Sí me incumbe."
 
-    show itsuki neutral at pj_habla(0.5)
-    with disolucion_lenta
-
     itsuki "Me incumbe a mí. Tú te vas a las cuatro."
 
     mc "Son las cuatro y media."
@@ -141,9 +138,6 @@ label hub_Itsuki:
     itsuki "El tiempo que hace falta."
 
     mc "¿Y cuánto es?"
-
-    show itsuki neutral at pj_habla(0.5)
-    with disolucion_lenta
 
     itsuki "El que haga falta, he dicho."
 
@@ -181,9 +175,6 @@ label hub_Itsuki:
     narrador "Lo dijo rápido. Más rápido que el resto de la conversación."
 
     narrador "Como quien suelta algo antes de poder impedírselo."
-
-    show itsuki molesta at pj_habla(0.5)
-    with disolucion_lenta
 
     itsuki "…"
 
@@ -321,9 +312,6 @@ label itsuki_m4a:
     narrador "Se quedó quieta un segundo, decidiendo si eso contaba como ayuda."
 
     narrador "Debió decidir que no del todo, porque volvió a mirar el cuaderno."
-
-    show itsuki neutral at pj_habla(0.5)
-    with disolucion_lenta
 
     itsuki "…"
 

@@ -78,9 +78,6 @@ label cap1_apertura:
 
     mc "Buenos días."
 
-    show itsuki neutral at pj(0.5)
-    with disolucion_lenta
-
     itsuki "..."
 
     mc "Voy a ir esta tarde."

@@ -13,6 +13,8 @@ image cg_itsuki_azotea_manos = "images/cg/cap1_beats/itsuki_azotea_manos.webp"
 
 define audio.sfx_mochila_suelo = "audio/sfx/mochila_suelo.mp3"
 
+define audio.sfx_estomago = "audio/sfx/estomago.mp3" 
+
 define audio.guardia   = "audio/bgm/guardia.ogg"
 
 ################################################################################
@@ -236,6 +238,10 @@ label beat_Itsuki:
     mc_pensamiento "Ahora me importa más no moverme."
 
     narrador "Entonces sonó algo que no era el viento."
+
+    play audio sfx_estomago volume 1.5
+
+    pause 3.5
 
     show itsuki sorprendida at pj(0.5)
     with disolucion_lenta

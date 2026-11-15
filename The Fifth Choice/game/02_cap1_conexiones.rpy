@@ -863,9 +863,6 @@ label queja_yotsuba:
 # ------------------------------------------------------------
 label queja_itsuki:
 
-    show itsuki neutral at pj(0.5)
-    with dissolve
-
     show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
@@ -2975,9 +2972,6 @@ label cap1_interconexion_5:
     itsuki "Estoy repasando con profundidad."
 
     if itsuki_visitada_cap1:
-
-        show itsuki neutral at pj_habla(X_ITSUKI)
-        with disolucion_lenta
 
         itsuki "Los temas ya me los sé. Eso no es lo que me preocupa."
 
