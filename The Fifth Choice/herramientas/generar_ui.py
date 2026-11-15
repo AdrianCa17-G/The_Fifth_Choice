@@ -8,7 +8,7 @@ Requiere: pip install pillow
 import os
 import math
 import random
-from PIL import Image, ImageDraw, ImageChops, ImageOps
+from PIL import Image, ImageDraw, ImageChops, ImageOps, ImageFilter
 
 from PIL import ImageFont
 
@@ -497,6 +497,18 @@ def hub_aro():
     return g.resize((HUB_SELLO, HUB_SELLO), Image.LANCZOS)
 
 
+def mj_foco():
+    """[NUEVO] Óvalo de luz suave (420x640): el foco de escenario de Ichika en
+    la entrada y la salida de su minijuego (10_mj_transicion.rpy). Blanco, se tiñe."""
+    W, H, M = 420, 640, 70
+    a = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(a).ellipse((M, M, W - M, H - M), fill=255)
+    a = a.filter(ImageFilter.GaussianBlur(M / 2))
+    g = Image.new("RGBA", (W, H), BLANCO)
+    g.putalpha(a)
+    return g
+
+
 # --- Menú principal ---------------------------------------------------------
 def menu_cinta():
     g = Image.new("RGBA", (MENU_W * SS, MENU_H * SS), (0, 0, 0, 0))
@@ -728,6 +740,9 @@ if __name__ == "__main__":
         guardar(hub_motivo(motivo), "hub_motivo_" + nombre + ".png")
     guardar(hub_barra(), "hub_barra.png")
     guardar(hub_aro(), "hub_aro.png")
+
+    # Entrada y salida de los minijuegos: foco de Ichika [NUEVO]
+    guardar(mj_foco(), "mj_foco.png")
 
     # Menú principal
     guardar(menu_cinta(), "menu_cinta.png")

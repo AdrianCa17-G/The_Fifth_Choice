@@ -73,6 +73,10 @@ def postprocesar(original_rgb, alpha, desmatte=True):
 
 
 def quitar_con_rembg(img_rgb, modelo, matting):
+    # Python de la Microsoft Store no deja a numba (vía pymatting) escribir su
+    # caché en site-packages: sin esto, "import rembg" falla con FileNotFoundError.
+    os.environ.setdefault("NUMBA_CACHE_DIR",
+                          os.path.join(os.path.expanduser("~"), ".cache", "numba"))
     try:
         from rembg import remove, new_session
     except ImportError:

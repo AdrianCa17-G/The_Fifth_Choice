@@ -106,6 +106,46 @@ def remove_enclosed_holes(rgba_arr):
     return np.dstack([arr[..., :3], alpha])
 
 
+def pelar_borde(rgba_arr, capas, lum_min):
+    """
+    Halo OPACO (alpha 255): el recorte quedó 1-3 px por fuera del lineart, así
+    que desmatte() no lo ve. Se pela el contorno capa a capa: cada píxel claro
+    (luminancia > lum_min) que toca transparencia se borra. El lineart es
+    oscuro, así que el pelado se detiene en él.
+    """
+    arr = rgba_arr.copy()
+    alpha = arr[..., 3]
+    lum = arr[..., :3].astype(np.int16).mean(axis=2)
+    total = 0
+    for _ in range(capas):
+        borde = (alpha > 0) & ndimage.binary_dilation(alpha == 0) & (lum > lum_min)
+        if not borde.any():
+            break
+        alpha[borde] = 0
+        total += int(borde.sum())
+    print(f"Pelado: {total} px de halo opaco borrados.")
+    return arr
+
+
+def borrar_en_puntos(rgba_arr, puntos, tolerancia):
+    """
+    Varita mágica: borra la región blanca conectada a cada punto x,y. Para los
+    huecos de fondo que ningún criterio automático distingue de la camisa
+    blanca (entre las piernas, entre brazo y chaqueta...).
+    """
+    arr = rgba_arr.copy()
+    blanco = arr[..., :3].min(axis=2) >= 255 - tolerancia
+    lab, _ = ndimage.label(blanco)
+    for x, y in puntos:
+        if not blanco[y, x]:
+            print(f"Aviso: ({x},{y}) no es blanco, se ignora.")
+            continue
+        region = lab == lab[y, x]
+        arr[..., 3][region] = 0
+        print(f"Borrado ({x},{y}): {int(region.sum())} px.")
+    return arr
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Limpia el halo de contorno (y opcionalmente los huecos "
@@ -118,6 +158,14 @@ def main():
         help="Solo desmatea el contorno, no toca huecos encerrados "
              "(caso Yotsuba, o cuando ya los limpiaste a mano)."
     )
+    parser.add_argument("--pelar", type=int, default=0, metavar="N",
+                        help="Pela N capas de halo OPACO claro del contorno (prueba 3).")
+    parser.add_argument("--lum-pelar", type=float, default=170,
+                        help="Luminancia mínima para pelar (default 170).")
+    parser.add_argument("--borrar", nargs="+", default=[], metavar="X,Y",
+                        help="Borra la región blanca conectada a cada punto (varita mágica).")
+    parser.add_argument("--tolerancia", type=int, default=12,
+                        help="Tolerancia de blanco para --borrar (default 12 -> >= 243).")
     args = parser.parse_args()
 
     img = Image.open(args.entrada).convert("RGBA")
@@ -126,6 +174,12 @@ def main():
     before_semitransparent = int(
         ((arr[..., 3] > 0) & (arr[..., 3] < 255)).sum()
     )
+
+    if args.borrar:
+        puntos = [tuple(int(v) for v in p.split(",")) for p in args.borrar]
+        arr = borrar_en_puntos(arr, puntos, args.tolerancia)
+    if args.pelar:
+        arr = pelar_borde(arr, args.pelar, args.lum_pelar)
 
     arr = desmatte(arr)
 

@@ -526,17 +526,24 @@ label mj_ejecutar(juego, hermana):
             $ mj_cerrar("saltado")
             return "saltado"
 
+    ## Entrada animada (10_mj_transicion.rpy): una sola vez, no en cada reintento.
+    call mj_transicion("entrada", hermana, mj_estado["titulo"])
+
 label .intento:
 
     $ mj_preparar_intento()
     $ mj_res = renpy.call_screen(mj_estado["pantalla"], **mj_args_pantalla())
     $ mj_registrar_intento(mj_res)
 
+    ## Las salidas van ANTES de mj_cerrar: así el menú rápido, el rollback y el
+    ## skip siguen bloqueados mientras duran.
     if mj_res["resultado"] == "ganado":
+        call mj_transicion("ganado", hermana, mj_estado["titulo"])
         $ mj_cerrar("ganado")
         return "ganado"
 
     if mj_res["resultado"] == "saltado":
+        call mj_transicion("saltado", hermana, mj_estado["titulo"])
         $ mj_cerrar("saltado")
         return "saltado"
 
@@ -545,6 +552,7 @@ label .intento:
     if mj_estado["fallos"] >= MJ_FALLOS_SALTO:
         $ mj_resp = mj_ofrecer_salto()
         if mj_resp == "saltar":
+            call mj_transicion("saltado", hermana, mj_estado["titulo"])
             $ mj_cerrar("saltado")
             return "saltado"
 
