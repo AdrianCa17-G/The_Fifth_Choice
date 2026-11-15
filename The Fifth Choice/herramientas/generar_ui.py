@@ -474,6 +474,29 @@ def hub_sello_fondo():
     return g.resize((HUB_SELLO, HUB_SELLO), Image.LANCZOS)
 
 
+def hub_motivo(motivo):
+    """[NUEVO] Motivo suelto de 96 px para la animación de hub completado
+    (el icono del HUD, de 40 px, se ve borroso ampliado). Blanco, se tiñe."""
+    g = Image.new("RGBA", (96 * SS, 96 * SS), (0, 0, 0, 0))
+    motivo(ImageDraw.Draw(g), 48 * SS, 48 * SS, 36 * SS, BLANCO)
+    return g.resize((96, 96), Image.LANCZOS)
+
+
+def hub_barra():
+    """[NUEVO] Barra redondeada del ecualizador de Miku (hub completado)."""
+    g = Image.new("RGBA", (22 * SS, 150 * SS), (0, 0, 0, 0))
+    ImageDraw.Draw(g).rounded_rectangle((0, 0, 22 * SS - 1, 150 * SS - 1), radius=11 * SS, fill=BLANCO)
+    return g.resize((22, 150), Image.LANCZOS)
+
+
+def hub_aro():
+    """[NUEVO] Aro fino del tamaño del sello: la marca del golpe al estamparse."""
+    t = HUB_SELLO * SS
+    g = Image.new("RGBA", (t, t), (0, 0, 0, 0))
+    ImageDraw.Draw(g).ellipse((4 * SS, 4 * SS, t - 4 * SS, t - 4 * SS), outline=BLANCO, width=3 * SS)
+    return g.resize((HUB_SELLO, HUB_SELLO), Image.LANCZOS)
+
+
 # --- Menú principal ---------------------------------------------------------
 def menu_cinta():
     g = Image.new("RGBA", (MENU_W * SS, MENU_H * SS), (0, 0, 0, 0))
@@ -699,6 +722,12 @@ if __name__ == "__main__":
     guardar(hub_sello_fondo(), "hub_sello_fondo.png")
     for nombre, motivo, semilla in HERMANAS:
         guardar(hub_sello(motivo), "hub_sello_" + nombre + ".png")
+
+    # Hub completado: motivo suelto, barra del ecualizador y aro del golpe [NUEVO]
+    for nombre, motivo, semilla in HERMANAS:
+        guardar(hub_motivo(motivo), "hub_motivo_" + nombre + ".png")
+    guardar(hub_barra(), "hub_barra.png")
+    guardar(hub_aro(), "hub_aro.png")
 
     # Menú principal
     guardar(menu_cinta(), "menu_cinta.png")
