@@ -26,7 +26,7 @@ CAJA_W, CAJA_H = 1340, 240
 ALFA_BORDE = 100                       # franjas de los bordes (0-255)
 ALFA_RELLENO = 34                      # patrón tenue de fondo (0 lo apaga)
 X_ARRIBA_INI = 380                     # la fila de arriba empieza después de la placa
-TARJETA_ALTOS = [220, 270, 320, 370]   # tiene que coincidir con 07_ui.rpy
+TARJETA_ALTOS = [208, 256, 304, 352]   # tiene que coincidir con 07_ui.rpy
 MJ_COLUMNA = (400, 380, 360)           # columna de los minijuegos: ancho, borde arriba, borde abajo (MJ_AREA_X = 440 en 10_minijuegos.rpy)
 
 os.makedirs(SALIDA, exist_ok=True)
@@ -279,6 +279,16 @@ def decoracion_tarjeta(motivo, semilla, alto):
     dibujar_fila(d, motivo, azar, 56, 500, 24, 110, 11, 16, ALFA_BORDE)
     dibujar_fila(d, motivo, azar, 56, 500, alto - 24, 110, 11, 16, ALFA_BORDE)
     return recortar_redondeado(g, 520, alto, 36)
+
+
+def boletin_papel():
+    """Papel crema plano del boletín (Evento 6). Sin tinte: es papel.
+    Se usa como Frame de 9 cortes (12 px) en 12_e6_pantallas.rpy."""
+    lado = 64
+    img = Image.new("RGBA", (lado, lado), (246, 238, 220, 255))
+    img.putalpha(mascara_redondeada(lado, lado, 10))
+    return Image.alpha_composite(
+        img, borde_redondeado(lado, lado, 10, (205, 192, 168, 255), 1))
 
 
 def tarjeta_base(alto):
@@ -706,6 +716,9 @@ if __name__ == "__main__":
         guardar(tarjeta_base(alto), "tarjeta_" + str(alto) + ".png")
         guardar(marco(alto), "tarjeta_marco_" + str(alto) + ".png")
         guardar(halo(alto), "halo_" + str(alto) + ".png")
+
+    # Papel del boletín del Evento 6
+    guardar(boletin_papel(), "boletin_papel.png")
 
     # Iconos del menú rápido
     guardar(icono_base(), "ico_base.png")

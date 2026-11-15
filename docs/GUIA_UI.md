@@ -23,6 +23,7 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 | `09_menus_sistema.rpy` | Guardar, Cargar, Opciones, Historial, Acerca de, Ayuda, confirmaciones |
 | `hub_mapa.rpy` |	Pantalla del mapa de hubs (`HUB_DESTINOS`, el orden de la tabla es el orden en pantalla)
 | `14_progreso_chicas.rpy` | Barra de progreso de las chicas al cerrar un capítulo (`PROG_IMAGEN`, `progreso_chicas`) |
+| `12_e6_pantallas.rpy` | Pantallas del Evento 6: boletín de notas (`boletin_cinco`) y chat del grupo |
 | `screens.rpy` | `say`, `choice`, menú rápido |
 | `herramientas/generar_ui.py` | genera todos los PNG de `game/ui/` |
 | `herramientas/generar_logo.py` | genera el logo con los sprites `neutral` |
@@ -31,13 +32,16 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 
 ## 3. Regenerar los PNG
 
-`cd herramientas` y `python generar_ui.py` → `game/ui/`. Las constantes (opacidad de la decoración, alturas de tarjeta…) están arriba del script. **Si un número está también en un `.rpy`** (por ejemplo `TARJETA_ALTOS`, o `HUB_SELLO` = 128, que vive en `generar_ui.py` y en `hub_mapa.rpy`), cámbialo en los dos sitios.
+`cd herramientas` y `python generar_ui.py` → `game/ui/`. Las constantes (opacidad de la decoración, alturas de tarjeta…) están arriba del script. **Si un número está también en un `.rpy`** (por ejemplo `TARJETA_ALTOS` = `[208, 256, 304, 352]`, que vive en `generar_ui.py` y en `07_ui.rpy`, o `HUB_SELLO` = 128, que vive en `generar_ui.py` y en `hub_mapa.rpy`), cámbialo en los dos sitios.
 
 Los fondos del collage: python `generar_fondos_collage.py`. Importa `generar_ui.py`, así que tienen que estar en la misma carpeta.
 
 ## 4. Recetas
 
 - **Decisión con peso:** `$ decision_peso("hermana", "Pregunta", "Por qué importa")` justo antes del `menu:`. Las opciones van en orden cálida, tibia, fría.
+- **Hora de decidir:** no hay que llamar a nada: vive dentro de `choice_peso` y sale sola en cada decisión con peso. Es un rótulo **radial** (las cortinillas son diagonales, el hub bandas y sello, los minijuegos una columna): velo, la flor de cinco pétalos con el de la hermana en su color, una línea y «HORA DE DECIDIR» en `HUD_FUENTE` con contorno de su tinta; después el rótulo sale y entran la pregunta y las tarjetas escalonadas. Tiempos en `DEC_RITMOS` (todo listo a 1,45 s). Suena `cort_mj_<h>_saltado` por el canal `cortinilla`. Las tarjetas llevan `sensitive listo`: no se pueden pulsar hasta que acaban de entrar, y un clic no adelanta la animación. Sale **directa**, sin rótulo ni sonido, en tres casos (`decision_animar()`): rollback o partida cargada (`renpy.in_rollback()`, para no repetir la presentación al volver atrás), modo saltar (`decision_saltando`, que apunta `decision_peso`, porque el menú corta el modo saltar antes de mostrarse) y «Transiciones» apagado en Opciones. Comprobación: `dec_autocomprobar()`.
+- **Tarjetas de decisión:** el alto sale del texto: 48 px por línea + 2 × 56 (`TARJETA_MARGEN`), redondeado hacia arriba al primer valor de `TARJETA_ALTOS` (208/256/304/352; por encima de cinco líneas usa el último). El texto va centrado en vertical (`tarjeta_texto`, `yalign 0.5`) y la flor, a 0,7 (`tarjeta_flor`), en la esquina inferior derecha. Para cambiar los altos: `TARJETA_ALTOS` en `07_ui.rpy` **y** en `generar_ui.py`, regenerar los PNG y pasar `dec_autocomprobar()`. Los altos de `ui_altura_items` son `int`: un float en `xysize` se lee como fracción de la pantalla.
+- **Boletín del Evento 6:** `$ e6_notas = {...}`, `$ e6_boletin_fase = 1` y `show screen boletin_cinco`; luego `$ e6_boletin_fase = 2` y `3` entre líneas de diálogo, sin pausas: el cambio de fase anima solo. Fase 1: cinco tiras de papel (`ui/boletin_papel.png`, Frame de 12 px, generado por `generar_ui.py`), una por hermana, con todas las notas en tinta. Fase 2: las notas que no son diagonal pasan a lápiz y cada «100» recibe su sello (`bol_sello(h)`: `hub_sello_fondo` + doble `hub_aro` de su color). Fase 3: las tiras se van y cada sello viaja a su hoja: cinco hojas en fila. Regla: cada pieza tiene `on appear` = su estado final, así que al cargar una partida a mitad la fase sale ya puesta (comprobado píxel a píxel, también con clics rápidos). Solo muestra notas, nunca afinidad. `zorder -5`, todo por encima de y 740: la caja de diálogo queda encima. Medidas en `BOL_*`. Prueba: consola → `jump boletin_cinco_prueba`.
 - **Menú cuyas opciones son hermanas:** `$ ligera_hermanas = {"Ichika": "ichika"}` antes del `menu:` y `$ ligera_hermanas = {}` al terminar.
 - **Hub o beat:** `$ ui_escena("hub", destino, lugar)` ... `$ ui_escena("normal")` (los beats usan `"beat"`).
 - **Fondo nuevo:** añadirlo a `BG_LUGAR`; si no debe verse en el prólogo, también a `BG_OCULTOS_PROLOGO`. «Las variantes `_anochecer` se declaran con `Transform` sobre el mismo webp y también van en `BG_LUGAR`»

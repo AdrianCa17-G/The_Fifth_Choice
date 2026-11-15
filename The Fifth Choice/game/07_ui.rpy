@@ -120,10 +120,12 @@ init -5 python:
         personaje("", interact=False)
 
 
-    TARJETA_ALTOS = [220, 270, 320, 370]   # los mismos de generar_ui.py
+    TARJETA_ALTOS = [208, 256, 304, 352]   # los mismos de generar_ui.py (2 a 5 líneas)
+    TARJETA_MARGEN = 56                    # arriba y abajo del texto más largo
 
     def ui_altura_items(items):
-        """Altura de tarjeta que le queda justa al texto más largo del menú."""
+        """Altura de tarjeta que le queda justa al texto más largo del menú.
+        Cada línea mide 48 px: hay un alto por número de líneas."""
         mayor = 0
         for i in items:
             alto_texto = 0
@@ -135,11 +137,60 @@ init -5 python:
                 alto_texto = lineas * 50
             if alto_texto > mayor:
                 mayor = alto_texto
-        necesario = mayor + 52 + 64
+        necesario = mayor + 2 * TARJETA_MARGEN
         for alto in TARJETA_ALTOS:
             if alto >= necesario:
-                return alto
-        return TARJETA_ALTOS[-1]
+                return int(alto)
+        return int(TARJETA_ALTOS[-1])
+
+    class DecItemPrueba(object):
+        """Opción de menú mínima para dec_autocomprobar."""
+        def __init__(self, caption):
+            self.caption = caption
+            self.action = NullAction()
+
+    def dec_autocomprobar():
+        """Asserts de las decisiones con peso. Consola: $ dec_autocomprobar()"""
+        def alto(textos):
+            return ui_altura_items([DecItemPrueba(t) for t in textos])
+        nino = ["Tienes razón en desconfiar. Solo el tiempo lo va a demostrar.",
+                "Cargarle la cesta, sin decir nada.", "Yo sí voy a durar."]
+        miku = ["Preguntarle cuánto tardaba la sal en llegar.",
+                "Decirle que se le da bien. Es la verdad.", "Lo de la sal no entra en el examen."]
+        cortas = ["Sí.", "No.", "Quizá."]
+        larga = ["Una opción muy larga que no termina nunca y sigue y sigue. " * 6]
+        for textos, esperado in ((nino, 256), (miku, 208), (cortas, 208), (larga, 352)):
+            r = alto(textos)
+            assert type(r) is int, "ui_altura_items no devuelve int: " + repr(r)
+            assert r == esperado, "alto " + str(r) + " en vez de " + str(esperado)
+        ## decision_animar: llamar fuera de un rollback (tras una interacción).
+        trans = preferences.transitions
+        saltando = store.decision_saltando
+        try:
+            preferences.transitions = 0
+            store.decision_saltando = False
+            assert decision_animar() is False, "con Transiciones apagado debe salir directo"
+            preferences.transitions = trans
+            store.decision_saltando = True
+            assert decision_animar() is False, "si venía saltando debe salir directo"
+            store.decision_saltando = False
+            if trans != 0:
+                assert decision_animar() is True, "sin rollback ni salto debe animar"
+        finally:
+            preferences.transitions = trans
+            store.decision_saltando = saltando
+        return True
+
+    def decision_animar():
+        """¿Lleva «Hora de decidir»? No en rollback ni al cargar (ya la viste),
+        no si venías saltando (ya la leíste), no con Transiciones apagado."""
+        if renpy.in_rollback():
+            return False
+        if store.decision_saltando:
+            return False
+        if preferences.transitions == 0:
+            return False
+        return True
 
     def decision_peso(hermana, titulo, motivo, pistas=None):
         """Marca la siguiente decisión como 'con peso'.
@@ -148,6 +199,8 @@ init -5 python:
         store.decision_hermana = hermana
         store.decision_titulo = titulo
         store.decision_motivo = motivo
+        ## El menú corta el modo saltar antes de abrir la pantalla: se apunta aquí.
+        store.decision_saltando = renpy.is_skipping()
         if pistas is None:
             store.decision_pistas = ["calida", "tibia", "fria"]
         else:
@@ -315,20 +368,57 @@ define TARJETA_TONO = {
 transform ventana_oculta:
     alpha 0.0
 
-transform decision_velo:
-    alpha 0.0
-    linear 0.4 alpha 0.5
+## «Hora de decidir»: segundos de cada pieza. (inicio, duración) donde hay dos.
+## Radial, desde el centro: las cortinillas son diagonales, el hub bandas y
+## los minijuegos una columna.
+define DEC_RITMOS = dict(
+    velo=0.3, flor=0.30, linea=(0.25, 0.35), texto=(0.35, 0.30), sale=(0.95, 0.25),
+    pregunta=0.95, tarjeta=0.95, paso=0.08, tarjeta_dur=0.30, listo=1.45)
 
-transform pregunta_entrada:
+transform decision_velo(dur):
+    alpha 0.0
+    linear dur alpha 0.5
+
+transform pregunta_entrada(espera):
     alpha 0.0
     yoffset -40
+    pause espera
     linear 0.4 alpha 1.0 yoffset 0
 
-transform tarjeta_entrada(n):
+transform tarjeta_entrada(n, espera):
     alpha 0.0
     yoffset 70
-    pause (0.35 + 0.12 * n)
-    linear 0.35 alpha 1.0 yoffset 0
+    pause (espera + DEC_RITMOS["paso"] * n)
+    linear DEC_RITMOS["tarjeta_dur"] alpha 1.0 yoffset 0
+
+## Sin intro: nada se mueve (mismo dibujo que el último fotograma animado).
+transform dec_quieto:
+    alpha 1.0
+
+transform dec_flor(dur):
+    zoom 0.6 rotate -30 alpha 0.0
+    parallel:
+        ease dur zoom 1.0 rotate 0
+    parallel:
+        linear (dur * 0.5) alpha 1.0
+    rotate None
+
+transform dec_linea(espera, dur):
+    xzoom 0.0
+    pause espera
+    ease dur xzoom 1.0
+
+transform dec_texto(espera, dur):
+    alpha 0.0 yoffset 12
+    pause espera
+    ease dur alpha 1.0 yoffset 0
+
+transform dec_rotulo_sale(espera, dur):
+    pause espera
+    parallel:
+        ease dur yoffset -30 zoom 0.92
+    parallel:
+        linear dur alpha 0.0
 
 transform tarjeta_hover:
     on idle:
@@ -336,11 +426,15 @@ transform tarjeta_hover:
     on hover:
         linear 0.15 yoffset -14
 
+## La flor de la tarjeta, más pequeña: a tamaño completo pisaba el texto.
+transform tarjeta_flor:
+    zoom 0.7
+
 style tarjeta_texto is default:
     size 31
     color "#F3EEFA"
     xpos 44
-    ypos 52
+    yalign 0.5
     xsize 432
     line_spacing 4
 
@@ -357,7 +451,23 @@ screen choice_peso(items):
     $ tono_fondo = TARJETA_TONO[decision_hermana]
     $ alto = ui_altura_items(items)
 
-    add Solid("#000000") at decision_velo
+    ## Una vez por apertura: rollback, carga, modo saltar o Transiciones
+    ## apagado = todo en su estado final y pulsable desde el principio.
+    default intro = decision_animar()
+    default listo = not intro
+
+    python:
+        if intro:
+            anim_pregunta = pregunta_entrada(DEC_RITMOS["pregunta"])
+        else:
+            anim_pregunta = dec_quieto
+
+    if intro:
+        add Solid("#000000") at decision_velo(DEC_RITMOS["velo"])
+        timer 0.01 action Function(cort_sonar, "mj_" + decision_hermana + "_saltado")
+        timer DEC_RITMOS["listo"] action SetLocalVariable("listo", True)
+    else:
+        add Solid("#000000") alpha 0.5
 
     vbox:
         xalign 0.5
@@ -366,7 +476,7 @@ screen choice_peso(items):
 
         ## --- La pregunta: caja propia, centrada y por delante de todo ---
         fixed:
-            at pregunta_entrada
+            at anim_pregunta
             xalign 0.5
             xysize (1340, 240)
 
@@ -407,13 +517,20 @@ screen choice_peso(items):
                     $ tono = "#7FA6E8"
                     $ fuerza = PISTA_FUERZA
 
+                python:
+                    if intro:
+                        anim_tarjeta = tarjeta_entrada(n, DEC_RITMOS["tarjeta"])
+                    else:
+                        anim_tarjeta = dec_quieto
+
                 fixed:
                     xysize (520, alto)
-                    at tarjeta_entrada(n)
+                    at anim_tarjeta
 
                     button:
                         xysize (520, alto)
                         background None
+                        sensitive listo
                         action i.action
                         hover_sound audio.sfx_hover
                         activate_sound audio.sfx_click
@@ -423,8 +540,51 @@ screen choice_peso(items):
                         add ("ui/halo_" + str(alto) + ".png") matrixcolor TintMatrix(tono) alpha fuerza
                         add ("ui/deco_tarjeta_" + decision_hermana + "_" + str(alto) + ".png") matrixcolor TintMatrix(claro)
                         add ("ui/tarjeta_marco_" + str(alto) + ".png") matrixcolor TintMatrix(color)
-                        use flor_sakura(decision_hermana, "hablante", 360, alto - 150, color)
+                        fixed:
+                            at tarjeta_flor
+                            xpos 402
+                            ypos (alto - 118)
+                            xysize (160, 160)
+                            use flor_sakura(decision_hermana, "hablante", 0, 0, color)
                         text i.caption style "tarjeta_texto"
+
+    ## --- «HORA DE DECIDIR»: la flor se abre, la línea crece, el rótulo sube ---
+    if intro:
+        fixed:
+            at dec_rotulo_sale(DEC_RITMOS["sale"][0], DEC_RITMOS["sale"][1])
+            xalign 0.5
+            yalign 0.5
+            xysize (1000, 320)
+
+            fixed:
+                at dec_flor(DEC_RITMOS["flor"])
+                xpos 500
+                ypos 80
+                xanchor 0.5
+                yanchor 0.5
+                xysize (160, 160)
+                for k in range(5):
+                    if PETALO_ORDEN[k] == decision_hermana:
+                        add "ui/petalo.png" at petalo_giro(k, color, 0.95)
+                    else:
+                        add "ui/petalo.png" at petalo_giro(k, "#FFFFFF", 0.25)
+
+            add Solid(color, xsize=900, ysize=2):
+                at dec_linea(DEC_RITMOS["linea"][0], DEC_RITMOS["linea"][1])
+                xpos 500
+                xanchor 0.5
+                ypos 182
+
+            text "HORA DE DECIDIR":
+                at dec_texto(DEC_RITMOS["texto"][0], DEC_RITMOS["texto"][1])
+                xpos 500
+                xanchor 0.5
+                ypos 206
+                font HUD_FUENTE
+                size 46
+                kerning 10
+                color "#FFFFFF"
+                outlines [(4, tinta, 0, 0)]
 
 
 ## --- Iconos del menú rápido -------------------------------------------------

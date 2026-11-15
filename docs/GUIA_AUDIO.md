@@ -184,6 +184,8 @@ que entiende su buscador.
 | `sfx_mochila_suelo` | Freesound |	Tela sobre concreto, un golpe sordo sin eco |
 | `sfx_lapiz_mesa` | 	Freesound |	Madera contra madera, pequeño y seco |
 | `sfx_celular` | Freesound |	Vibración corta |
+| `sfx_estomago` | (origen por confirmar) | Beat de Itsuki, 3,6 s; `play audio`, volumen 1.5 |
+| `sfx_camara` | (origen por confirmar) | Evento 6, foto del grupo, 0,6 s; `play audio`, volumen 1.5 |
 
 **`portazo` y `puerta_cierra` son la misma puerta a propósito.** El portazo se
 fabricó a partir del cierre: amplificar al máximo sin distorsionar y recortar la
