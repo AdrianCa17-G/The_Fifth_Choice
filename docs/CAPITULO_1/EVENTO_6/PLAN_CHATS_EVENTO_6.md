@@ -30,6 +30,7 @@
 | D-10 | **Materias fuertes (verificadas):** Ichika matemáticas, Nino inglés, Miku sociales, Yotsuba japonés, Itsuki ciencias. Orden de exámenes L→V del Final B: Yotsuba, Ichika, Nino, Itsuki, Miku. |
 | D-11 | **Procedimiento:** el análisis y el plan viven en dos `.md`; el trabajo se hace en chats nuevos, independientes y con un prompt autosuficiente. No tocar `README.md` ni `CAP1.md` hasta cerrar todo el Capítulo 1 (se actualizan en bloque al final). |
 | D-12 | **Convenciones de entrega:** respuestas en español; código **completo y copiable**, sin esqueletos parciales ni atajos tipo ternario (estructuras explícitas); todo `show` con su posición; el protagonista nunca muestra rostro. |
+| D-13 | **Afinidad visible solo al cierre:** la afinidad se muestra como % (puntos×10) solo en la barra de cierre de capítulo (`14_progreso_chicas.rpy`); el diálogo y la voz interior siguen sin mencionar puntos. |
 
 ### 1.B Hechos verificados en el repo
 

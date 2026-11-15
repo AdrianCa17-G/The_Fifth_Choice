@@ -4793,6 +4793,9 @@ label e6_retrato:
     ## Tarjeta de fin (13_transiciones.rpy): misma del inicio, sin hermanas.
     call cortinilla_cap1_fin
 
+    ## Barra de progreso de las chicas (14_progreso_chicas.rpy): solo lee puntos.
+    call progreso_chicas
+
     return
 
 

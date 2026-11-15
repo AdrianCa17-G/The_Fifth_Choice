@@ -123,8 +123,10 @@ default nombre_jugador = "Futaro"
 ## Motivo para aceptar el trabajo (menú de sabor del prólogo). No es un punto.
 default mc_motivo = "dinero"
 
-## --- Puntos de afinidad (INVISIBLES para el jugador) -------------------------
-## Nunca se muestran en pantalla ni se comentan en el diálogo.
+## --- Puntos de afinidad ------------------------------------------------------
+## El jugador los ve SOLO en la barra de cierre de capítulo
+## (14_progreso_chicas.rpy), como porcentaje = puntos × 10. El diálogo y la voz
+## interior nunca los mencionan.
 ## Se acumulan a lo largo del Prólogo y los Capítulos 1 a 3.
 default puntos_ichika  = 0
 default puntos_nino    = 0

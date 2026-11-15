@@ -708,7 +708,7 @@ Todo con lenguaje de pantallas de Ren'Py, sin librerías externas.
 | # | No hacer | Por qué |
 |---|---|---|
 | 1 | Que el minijuego decida la nota o el aprobado | Rompe «todas aprueban» y castiga a los menos hábiles. |
-| 2 | Mostrar números de afinidad | El sistema es invisible; la matriz solo muestra notas. |
+| 2 | Mostrar números de afinidad en la escena o en la matriz | La afinidad solo se ve como % en la barra de cierre de capítulo (D-13); la matriz solo muestra notas. |
 | 3 | Gastar la disculpa de Itsuki | Es la carta más fuerte que queda; B ya la gasta en su línea. |
 | 4 | Resolver la confianza de Nino o la tarjeta de receta | Ambos son motor del Cap. 2. |
 | 5 | Kanji (Y3) | Excluye al lector, riesgo de exactitud. |
@@ -716,7 +716,7 @@ Todo con lenguaje de pantallas de Ren'Py, sin librerías externas.
 | 7 | Minijuego en el examen real | Se confunde con calificar; el minijuego es *interior*. |
 | 8 | Game Over / final malo por perder un minijuego | El jugador decide qué hacer con el fracaso, no el motor. |
 | 9 | Veinte escenas paralelas | Costo de ~3× por una diferencia mínima. |
-| 10 | Usar la voz interior para romance o celos | Rompe el cálculo secreto y el misterio de las rutas. |
+| 10 | Usar la voz interior para romance o celos | Rompe el misterio de las rutas; los puntos solo se ven en la barra de cierre de capítulo (D-13). |
 | 11 | Maruo cálido | Su calidez sería cobrada en capítulos siguientes. |
 | 12 | BGM nuevo por inercia | La regla de la guía: una pista solo significa algo si antes hubo silencio. |
 | 13 | Generar CG de variantes (calida) antes de cerrar el guion | Regla del proyecto: arte solo contra guion escrito. |
