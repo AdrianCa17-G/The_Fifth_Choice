@@ -450,6 +450,30 @@ def hud_icono(motivo):
     return g.resize((40, 40), Image.LANCZOS)
 
 
+# --- Mapa del hub -----------------------------------------------------------
+HUB_SELLO = 128   # lado del sello; tiene que coincidir con HUB_SELLO en hub_mapa.rpy
+
+
+def hub_sello(motivo):
+    """[NUEVO] Sello de hermana visitada: doble aro y su motivo, en blanco.
+    Ren'Py lo tiñe con el color de la hermana (y lo gira con las bandas)."""
+    t = HUB_SELLO * SS
+    g = Image.new("RGBA", (t, t), (0, 0, 0, 0))
+    d = ImageDraw.Draw(g)
+    d.ellipse((4 * SS, 4 * SS, t - 4 * SS, t - 4 * SS), outline=BLANCO, width=5 * SS)
+    d.ellipse((14 * SS, 14 * SS, t - 14 * SS, t - 14 * SS), outline=BLANCO, width=2 * SS)
+    motivo(d, t / 2, t / 2, 0.22 * t, BLANCO)
+    return g.resize((HUB_SELLO, HUB_SELLO), Image.LANCZOS)
+
+
+def hub_sello_fondo():
+    """[NUEVO] Disco lleno del tamaño del sello: Ren'Py lo tiñe oscuro por detrás."""
+    t = HUB_SELLO * SS
+    g = Image.new("RGBA", (t, t), (0, 0, 0, 0))
+    ImageDraw.Draw(g).ellipse((2 * SS, 2 * SS, t - 2 * SS, t - 2 * SS), fill=BLANCO)
+    return g.resize((HUB_SELLO, HUB_SELLO), Image.LANCZOS)
+
+
 # --- Menú principal ---------------------------------------------------------
 def menu_cinta():
     g = Image.new("RGBA", (MENU_W * SS, MENU_H * SS), (0, 0, 0, 0))
@@ -670,6 +694,11 @@ if __name__ == "__main__":
     for nombre, motivo, semilla in MOTIVOS_HUD:
         guardar(hud_cinta_deco(motivo, semilla), "hud_cinta_deco_" + nombre + ".png")
         guardar(hud_icono(motivo), "hud_icono_" + nombre + ".png")
+
+    # Mapa del hub: sello de hermana visitada [NUEVO]
+    guardar(hub_sello_fondo(), "hub_sello_fondo.png")
+    for nombre, motivo, semilla in HERMANAS:
+        guardar(hub_sello(motivo), "hub_sello_" + nombre + ".png")
 
     # Menú principal
     guardar(menu_cinta(), "menu_cinta.png")

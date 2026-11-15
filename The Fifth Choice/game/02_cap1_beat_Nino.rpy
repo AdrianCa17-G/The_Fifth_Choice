@@ -546,9 +546,6 @@ label beat_Nino:
 
         mc "No dije que te callaras."
 
-        show nino molesta at pj(0.5)
-        with disolucion_lenta
-
         nino "Dijiste que me ocupara de lo mío. Es la forma elegante de lo mismo."
 
         narrador "Recogió su taza ella misma, sin dejar que me acercara."

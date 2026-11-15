@@ -30,7 +30,7 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 
 ## 3. Regenerar los PNG
 
-`cd herramientas` y `python generar_ui.py` → `game/ui/`. Las constantes (opacidad de la decoración, alturas de tarjeta…) están arriba del script. **Si un número está también en un `.rpy`** (por ejemplo `TARJETA_ALTOS`), cámbialo en los dos sitios.
+`cd herramientas` y `python generar_ui.py` → `game/ui/`. Las constantes (opacidad de la decoración, alturas de tarjeta…) están arriba del script. **Si un número está también en un `.rpy`** (por ejemplo `TARJETA_ALTOS`, o `HUB_SELLO` = 128, que vive en `generar_ui.py` y en `hub_mapa.rpy`), cámbialo en los dos sitios.
 
 Los fondos del collage: python `generar_fondos_collage.py`. Importa `generar_ui.py`, así que tienen que estar en la misma carpeta.
 
@@ -50,6 +50,11 @@ Los fondos del collage: python `generar_fondos_collage.py`. Importa `generar_ui.
 - **Galería:** el contador de cada pestaña es una pastilla de tamaño fijo con el motivo de la hermana de marca de agua. Se rellena cuando la sección está completa. La paginación usa el motivo de la hermana tintado con su color.
 - **Collage de recuerdo:** `call collage_abrir("ichika")` … pensamientos … `call collage_cerrar`. Si la hermana no fue visitada, `collage_abrir` no hace nada y collage_cerrar tampoco.
 - **Mapa de hub:** `$ quick_menu = False`, `call screen mapa_hub(n)`, `$ quick_menu = True`. Las visitadas se bloquean con `hub_visitadas`.
+- **Indicador de tarde (mapa):** `screen hub_indicador_tarde(n)` bajo el subtítulo: tres `ui/flor.png` + «TARDE n DE 3» en `HUD_FUENTE`. La flor de cada tarde jugada lleva el color de la hermana elegida (`hub_visitadas[k-1]`, que va en orden de tarde); la actual, blanca y más grande; las que faltan, blancas apagadas. Colores, alfas y zooms en `hub_flor_tarde(k, n)`.
+- **Sello de visitada (mapa):** `use hub_sello(hermana, color, x, y, anim=hub_sello_estado)`. `x, y` = centro del disco en pantalla (la banda lo coloca en `HUB_SELLO_Y` siguiendo la diagonal con `hub_offset`). Va **fuera** del botón para que no le llegue el gris de `hub_visitado`. PNG: `ui/hub_sello_<hermana>.png` (doble aro y motivo, blanco, se tiñe) + `ui/hub_sello_fondo.png` (disco, se tiñe oscuro). Para animarlo (hub completado): pasarle otro transform en `anim` o cambiar `hub_sello_estado`; la banda no se toca.
+- **Foco del mapa:** la banda con el ratón o el teclado sube y las demás se apagan con un velo negro con su forma (`hub_velos()`, `HUB_FOCO_VELO`). El foco se lee con `GetTooltip("mapa_hub")`. El velo va **encima** del botón y no lo envuelve: envolver el botón en un transform que cambia con el foco puede quitarle el foco.
+- **Rendimiento del mapa:** paneles, velos y sombra se montan una vez por apertura con `default` en `mapa_hub`. No llamar a `hub_panel()` dentro de la pantalla: son 32 capas de degradado por banda y se rehacían en cada hover.
+- **Tipografía del mapa:** los nombres siguen en M PLUS Rounded (es el key visual promocional); las etiquetas pequeñas («TARDE n DE 3», «VISITADA») usan `HUD_FUENTE` en mayúsculas con `kerning 4`, como la cinta del HUD.
 - **Botón nuevo:** `hover_sound` `audio.sfx_hover` y `activate_sound audio.sfx_click`. El mapa usa `sfx_hhover` y `sfx_hclick`.
 
 ## 5. Trampas
