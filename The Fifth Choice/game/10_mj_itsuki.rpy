@@ -73,6 +73,38 @@ define IT1_PLAUS_UMBRAL = 1.9
 define IT1_T_FIN = 1.6
 define IT1_T_PERDER = 1.6
 define IT1_T_MANO = 2.4
+define IT1_T_PISTA = 4.0      ## segundos que la pista del profesor sale en el aviso del marco
+
+## El cuaderno abierto: ocupa el área de juego del marco (x 440–1880, y 112–932).
+define IT1_CUAD_X = MJ_AREA_X + 30                   ## 470
+define IT1_CUAD_Y = MJ_AREA_Y + 16                   ## 128
+define IT1_CUAD_W = MJ_AREA_W - 60                   ## 1380
+define IT1_CUAD_H = 720                              ## hasta y 848
+define IT1_PAG_W = IT1_CUAD_W // 2                   ## 690: cada página
+define IT1_RENGLON = 44
+define IT1_PIE_Y = IT1_CUAD_Y + IT1_CUAD_H + 20      ## 868: «Levantar la mano» (64 de alto → 932)
+define IT1_OPCION = (290, 100)                       ## ficha de opción (rejilla 2×2)
+define IT1_PAPEL = "#F6EEDC"
+define IT1_PAPEL_CLARO = "#FBF6EA"
+define IT1_MARCADOR = "#FFE3A0"
+
+## Tinta del cuaderno (Klee One). Solo dentro del cuaderno y en la nota de la calculadora.
+style it1_tinta is default:
+    font gui.libreta_font
+    size 26
+    color "#2F2A44"
+
+style it1_tinta_grande is it1_tinta:
+    size 44
+
+style it1_tinta_nota is it1_tinta:
+    size 20
+    color "#2F2A4499"
+
+style it1_rotulo is it1_tinta:
+    size 22
+    kerning 3
+    color "#B94A4A"
 
 init python:
 
@@ -84,6 +116,12 @@ init python:
         return Fixed(
             Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo)),
             Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde)))
+
+    def it1_ficha(fondo, borde):
+        """Ficha de papel plana (opaca) con borde de 3 px: opciones del cuaderno."""
+        return Fixed(
+            Solid(borde),
+            Transform(Solid(fondo), xpos=3, ypos=3, xsize=IT1_OPCION[0] - 6, ysize=IT1_OPCION[1] - 6))
 
     def it1_agrupar(n):
         """12345 -> '12.345'."""
@@ -355,6 +393,15 @@ init python:
             self.generar_opciones()
             return None
 
+        def aviso_marco(self):
+            """(texto, tipo) para el aviso del marco. «No cuadra.» manda sobre la
+            pista; la pista sale IT1_T_PISTA s (la fila sigue marcada en la hoja)."""
+            if self.aviso_t > 0.0 and self.aviso != "":
+                return (self.aviso, "mal")
+            if self.msg_pista != "" and self.reloj.t - self.t_mano < IT1_T_PISTA:
+                return (self.msg_pista, "info")
+            return ("", "info")
+
         def primer_error(self):
             for k in range(len(self.elegidas)):
                 if self.elegidas[k]["tipo"] != "correcta":
@@ -478,28 +525,28 @@ screen mj_it1(hermana, params, inicio, intento, fallos, nivel, titulo):
     if vivo.fase != "listo":
         $ t_rest = vivo.restante()
         $ t_tot = vivo.total
+    $ av = vivo.aviso_marco()
 
     add "bg_aula_tarde" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, hechas, vivo.n, t_rest, t_tot, "PASOS"):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, hechas, vivo.n, t_rest, t_tot, "PASOS", chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=av[0], aviso_tipo=av[1]):
 
         if vivo.fase == "listo":
             use it1_intro(vivo, color)
         else:
             use it1_juego(vivo, color)
 
-        ## --- Itsuki chibi y su globo ---
-        use mj_retrato("itsuki", vivo.expresion_star(), vivo.globo, vivo.anim_star(), 250, 1090, 1.0)
-
 
 ## --- Pantalla de explicación ----------------------
 screen it1_intro(vivo, color):
 
     $ reglas = vivo.reglas()
+    $ b = MJ_BOTON["primario"]
 
     fixed:
-        xalign 0.5
-        ypos 138
+        xpos MJ_AREA_CX
+        xanchor 0.5
+        ypos (MJ_AREA_Y + 40)
         xysize (1160, 740)
 
         add it1_caja("#1B1026", color)
@@ -511,15 +558,11 @@ screen it1_intro(vivo, color):
             spacing 26
 
             text "CADENA DE CONVERSIONES":
+                style "mj_titulo"
                 xalign 0.5
-                font gui.name_text_font
-                size 40
-                kerning 4
-                color "#FFF8FC"
 
             text "Itsuki convierte unidades paso a paso. En cada paso aparecen cuatro resultados: elige el correcto a partir del valor que llevas. Si te equivocas en uno, el error se arrastra a los siguientes (el número gris «arrastrado» es el que ella copia sin querer). Al terminar, pulsa «Entregar»; puedes tocar un paso ya hecho para rehacerlo.":
-                size 26
-                color "#E8E0F2"
+                style "mj_cuerpo"
 
             hbox:
                 spacing 40
@@ -529,20 +572,18 @@ screen it1_intro(vivo, color):
                     spacing 10
 
                     text "REGLAS":
-                        font gui.name_text_font
-                        size 22
-                        kerning 5
+                        style "mj_etiqueta"
                         color color
 
                     for r in reglas:
                         text ("· " + r):
-                            size 24
+                            style "mj_cuerpo"
                             color "#CFC6E0"
 
-                ## Nota que rompe la cuarta pared
+                ## Nota que rompe la cuarta pared (papel y Klee One: es la nota)
                 fixed:
                     xysize (480, 250)
-                    add Solid("#F6EEDC", xsize=480, ysize=250)
+                    add Solid(IT1_PAPEL, xsize=480, ysize=250)
                     add Solid("#E8B04A", xsize=480, ysize=10)
 
                     vbox:
@@ -552,282 +593,268 @@ screen it1_intro(vivo, color):
                         spacing 6
 
                         text "NOTA FUERA DEL CUADERNO":
-                            font gui.libreta_font
+                            style "it1_rotulo"
                             size 20
-                            color "#B94A4A"
 
                         text "Sí: aquí hay cuentas largas, de miles y millones. Ten una calculadora a mano (la del móvil o la del PC) y úsala sin culpa. Se evalúa tu método, no tu paciencia.":
-                            font gui.libreta_font
+                            style "it1_tinta"
                             size 24
-                            color "#2F2A44"
 
         fixed:
             xalign 0.5
             ypos 600
-            xysize (420, 80)
-            use cinta_boton("Empezar", Function(vivo.empezar), "itsuki", 420, 80, 34)
+            xysize (b[0], b[1])
+            use cinta_boton("Empezar", Function(vivo.empezar), "itsuki", b[0], b[1], b[2])
 
 
-## --- El juego: solo el paso actual + la hoja de lo ya hecho --------------------
+## --- El cuaderno abierto: papel, renglones, margen y lomo -----------------------
+screen it1_cuaderno():
+
+    fixed:
+        xpos IT1_CUAD_X
+        ypos IT1_CUAD_Y
+        xysize (IT1_CUAD_W, IT1_CUAD_H)
+
+        ## Papel opaco (opcion_neutra.png es translúcido y con degradado: se veía gris).
+        add Solid("#0B071259", xsize=IT1_CUAD_W, ysize=IT1_CUAD_H) xpos 6 ypos 8
+        add Solid("#D9CBB0", xsize=IT1_CUAD_W, ysize=IT1_CUAD_H) xpos 0 ypos 0
+        add Solid(IT1_PAPEL, xsize=IT1_CUAD_W - 4, ysize=IT1_CUAD_H - 4) xpos 2 ypos 2
+
+        ## Renglones en las dos páginas.
+        for k in range(3, IT1_CUAD_H // IT1_RENGLON):
+            add Solid("#8FB3D966", xsize=IT1_CUAD_W - 48, ysize=2) xpos 24 ypos (k * IT1_RENGLON)
+
+        ## Margen rojo de la página izquierda.
+        add Solid("#E07070AA", xsize=2, ysize=IT1_CUAD_H - 40) xpos 84 ypos 20
+
+        ## Lomo: sombra y costura en el centro.
+        add Solid("#2F2A441F", xsize=36, ysize=IT1_CUAD_H - 8) xpos (IT1_PAG_W - 18) ypos 4
+        add Solid("#C9B99A", xsize=2, ysize=IT1_CUAD_H - 8) xpos (IT1_PAG_W - 1) ypos 4
+
+
+## --- El juego: tu hoja (página izquierda) + el paso actual (página derecha) -----
 screen it1_juego(vivo, color):
 
     $ hechas = len(vivo.elegidas)
     $ revision = (hechas >= vivo.n)
     $ unidad_final = vivo.pasos[vivo.n - 1][1]
+    $ izq = IT1_CUAD_X + 110
+    $ der = IT1_CUAD_X + IT1_PAG_W + 50
+    $ centro_der = IT1_CUAD_X + IT1_PAG_W + IT1_PAG_W // 2
 
+    use it1_cuaderno()
+
+    ## --- Página izquierda: tu hoja ---
     text ("CUADERNO DE CIENCIAS · " + vivo.cadena["titulo"].upper()):
-        xpos 320
-        ypos 138
-        font gui.name_text_font
-        size 34
-        kerning 3
-        color color
-        outlines [(4, "#1B1026CC", 0, 0)]
+        style "it1_rotulo"
+        xpos izq
+        ypos (IT1_CUAD_Y + 34)
 
     text ("Parte de " + it1_fmt(vivo.inicial) + " " + vivo.unidad_origen() + " y llega a " + unidad_final + "."):
-        xpos 320
-        ypos 190
-        size 26
-        color "#FFFFFF"
-        outlines [(3, "#1B102699", 0, 0)]
+        style "it1_tinta"
+        xpos izq
+        ypos (IT1_CUAD_Y + 70)
+        xsize 540
 
-    ## --- Tu hoja (pasos ya hechos) ---
     vbox:
-        xpos 320
-        ypos 262
-        spacing 10
+        xpos izq
+        ypos (IT1_CUAD_Y + 140)
+        spacing 8
 
         if hechas == 0:
-            text "Tu hoja irá apareciendo aquí,\npaso a paso.":
-                size 20
-                color "#FFFFFF77"
-                outlines [(3, "#1B102699", 0, 0)]
+            text "Tu hoja irá apareciendo aquí, paso a paso.":
+                style "it1_tinta_nota"
         else:
-            text "TU HOJA · toca un paso para rehacerlo":
-                size 17
-                kerning 3
-                color "#FFFFFFAA"
-                outlines [(3, "#1B102699", 0, 0)]
+            text "Tu hoja · toca un paso para rehacerlo":
+                style "it1_tinta_nota"
 
         for k in range(hechas):
             use it1_fila(vivo, k, color)
 
-    ## --- Tarjeta del paso actual ---
-    fixed:
-        xpos 830
-        ypos 250
-        xysize (860, 490)
+    ## --- Página derecha: el número arrastrado, a lápiz ---
+    vbox:
+        xpos (IT1_CUAD_X + IT1_CUAD_W - 40)
+        xanchor 1.0
+        ypos (IT1_CUAD_Y + 24)
+        text "arrastrado":
+            style "it1_tinta_nota"
+            xalign 1.0
+        text it1_fmt(vivo.fantasma):
+            style "it1_tinta"
+            color "#2F2A4466"
+            xalign 1.0
 
-        add it1_caja("#1B1026", color)
+    if not revision:
+
+        $ paso = vivo.pasos[hechas]
+
+        text ("PASO " + str(hechas + 1) + " DE " + str(vivo.n)):
+            style "it1_rotulo"
+            xpos der
+            ypos (IT1_CUAD_Y + 34)
+
+        text (paso[0] + " → " + paso[1]):
+            style "it1_tinta_grande"
+            xpos der
+            ypos (IT1_CUAD_Y + 66)
+
+        hbox:
+            xpos der
+            ypos (IT1_CUAD_Y + 140)
+            spacing 12
+            text "Equivalencia:":
+                style "it1_tinta_nota"
+                yalign 0.5
+            frame:
+                yalign 0.5
+                background Solid(IT1_MARCADOR + "CC")
+                padding (12, 2, 12, 4)
+                text paso[4] style "it1_tinta"
+
+        text ("Llevas: " + it1_fmt(vivo.valor_actual()) + " " + vivo.unidad_actual()):
+            style "it1_tinta"
+            xpos der
+            ypos (IT1_CUAD_Y + 196)
 
         vbox:
-            xalign 0.96
-            ypos 20
-            text "ARRASTRADO":
-                xalign 1.0
-                size 15
-                kerning 3
-                color "#FFFFFF55"
-            text it1_fmt(vivo.fantasma):
-                xalign 1.0
-                size 26
-                color "#FFFFFF55"
+            xpos der
+            ypos (IT1_CUAD_Y + 268)
+            spacing 20
 
-        if not revision:
+            for fila in range(0, len(vivo.opciones), 2):
+                hbox:
+                    spacing 20
+                    for i in range(fila, min(fila + 2, len(vivo.opciones))):
+                        use it1_opcion(vivo, i, color)
 
-            $ paso = vivo.pasos[hechas]
+    else:
 
-            text ("PASO " + str(hechas + 1) + " DE " + str(vivo.n)):
-                xpos 40
-                ypos 24
-                font gui.name_text_font
-                size 22
-                kerning 5
-                color color
+        text "REVISIÓN":
+            style "it1_rotulo"
+            xpos der
+            ypos (IT1_CUAD_Y + 34)
 
-            text (paso[0] + " → " + paso[1]):
-                xpos 40
-                ypos 58
-                size 46
-                color "#FFFFFF"
+        text "Tu resultado final":
+            style "it1_tinta"
+            xpos der
+            ypos (IT1_CUAD_Y + 80)
 
-            hbox:
-                xpos 40
-                ypos 126
-                spacing 14
-                text "Equivalencia:":
-                    yalign 0.5
-                    size 24
-                    color "#CFC6E0"
-                text paso[4]:
-                    yalign 0.5
-                    size 30
-                    color "#FFE3A0"
+        text (it1_fmt(vivo.valor_actual()) + " " + unidad_final):
+            style "it1_tinta_grande"
+            xpos der
+            ypos (IT1_CUAD_Y + 124)
+            xsize 600
 
-            text ("Llevas: " + it1_fmt(vivo.valor_actual()) + " " + vivo.unidad_actual()):
-                xpos 40
-                ypos 172
-                size 32
-                color "#FFFFFF"
+        text "Si algún paso no te convence, tócalo en tu hoja (a la izquierda) y rehazlo desde ahí.":
+            style "it1_tinta"
+            xpos der
+            ypos (IT1_CUAD_Y + 220)
+            xsize 580
 
-            vbox:
-                xpos 40
-                ypos 236
-                spacing 20
+        if vivo.puede_entregar():
+            $ b = MJ_BOTON["primario"]
+            fixed:
+                xpos centro_der
+                xanchor 0.5
+                ypos (IT1_CUAD_Y + 400)
+                xysize (b[0], b[1])
+                use cinta_boton("Entregar", Function(vivo.entregar), "itsuki", b[0], b[1], b[2])
 
-                for fila in range(0, len(vivo.opciones), 2):
-                    hbox:
-                        spacing 20
-                        for i in range(fila, min(fila + 2, len(vivo.opciones))):
-                            use it1_opcion(vivo, i, color)
-
-        else:
-
-            text "REVISIÓN":
-                xpos 40
-                ypos 24
-                font gui.name_text_font
-                size 22
-                kerning 5
-                color color
-
-            text "Tu resultado final":
-                xpos 40
-                ypos 64
-                size 30
-                color "#CFC6E0"
-
-            text (it1_fmt(vivo.valor_actual()) + " " + unidad_final):
-                xpos 40
-                ypos 108
-                size 64
-                color "#FFFFFF"
-
-            text "Si algún paso no te convence, tócalo en tu hoja (a la izquierda) y rehazlo desde ahí.":
-                xpos 40
-                ypos 210
-                xsize 780
-                size 26
-                color "#E8E0F2"
-
-            if vivo.aviso_t > 0.0:
-                text vivo.aviso:
-                    xpos 40
-                    ypos 300
-                    font gui.name_text_font
-                    size 38
-                    color "#FFC4C4"
-
-            if vivo.puede_entregar():
-                fixed:
-                    xalign 0.5
-                    ypos 370
-                    xysize (420, 84)
-                    use cinta_boton("Entregar", Function(vivo.entregar), "itsuki", 420, 84, 34)
-
-    ## --- Pista del profesor ---
-    if vivo.msg_pista != "":
-        text vivo.msg_pista:
-            xpos 830
-            ypos 752
-            xsize 860
-            size 24
-            color "#FFE3A0"
-            outlines [(3, "#1B102699", 0, 0)]
-
-    ## --- Pie: levantar la mano + consejo de calculadora ---
+    ## --- Pie, fuera del cuaderno: levantar la mano + nota de la calculadora ---
+    $ bs = MJ_BOTON["secundario"]
     fixed:
-        xpos 830
-        ypos 806
-        xysize (340, 66)
+        xpos IT1_CUAD_X
+        ypos IT1_PIE_Y
+        xysize (bs[0], bs[1])
         if vivo.ayuda_disponible():
-            use cinta_boton("Levantar la mano" + vivo.ayudas_restantes_texto(), Function(vivo.levantar), "itsuki", 340, 66, 24)
+            use cinta_boton("Levantar la mano" + vivo.ayudas_restantes_texto(), Function(vivo.levantar), "itsuki", bs[0], bs[1], bs[2])
         else:
-            add Solid("#FFFFFF14", xsize=340, ysize=66)
-            text "Sin ayuda":
-                xalign 0.5
-                yalign 0.5
-                size 24
-                color "#FFFFFF66"
+            use cinta_boton("Sin ayuda", Function(vivo.levantar), "itsuki", bs[0], bs[1], bs[2], False)
 
     text "Consejo fuera del cuaderno: la calculadora está permitida.":
-        xpos 1200
-        ypos 818
-        xsize 480
-        font gui.libreta_font
-        size 20
-        color "#FFE3A0"
+        style "it1_tinta_nota"
+        color IT1_MARCADOR
         outlines [(3, "#1B102699", 0, 0)]
+        xpos (IT1_CUAD_X + bs[0] + 40)
+        ypos (IT1_PIE_Y + 18)
 
 
-## Una fila de "tu hoja" (paso ya hecho, tocable para rehacer)
+## Una fila de «tu hoja»: paso ya hecho, escrito a mano. Se toca para rehacerlo.
+## La que señala el profesor lleva fondo de marcador y «← mira aquí».
 screen it1_fila(vivo, k, color):
 
     $ paso = vivo.pasos[k]
-    $ borde = color
-    if vivo.pista == k:
-        $ borde = "#FFE3A0"
+    $ senalada = (vivo.pista == k)
     $ raro = vivo.p["plausibilidad"] and vivo.raro(k)
+    $ fondo = None
+    if senalada:
+        $ fondo = Solid(IT1_MARCADOR + "CC")
 
     button:
-        xysize (450, 78)
+        xysize (550, 72)
         sensitive (vivo.fase == "juego")
         action Function(vivo.rehacer, k)
         hover_sound audio.sfx_hover
-        background it1_caja("#2B1B3F", borde)
-        hover_background it1_caja(ui_mezclar(color, "#000000", 0.55), "#FFFFFF")
-        insensitive_background it1_caja("#2B1B3F", borde)
+        activate_sound audio.sfx_click
+        background fondo
+        hover_background Solid(color + "33")
+        insensitive_background fondo
 
         text (str(k + 1) + " · " + paso[0] + " → " + paso[1]):
-            xpos 24
-            ypos 9
-            size 19
-            color "#CFC6E0"
+            style "it1_tinta_nota"
+            xpos 12
+            ypos 4
 
         text (it1_fmt(vivo.elegidas[k]["valor"]) + " " + paso[1]):
-            xpos 24
-            ypos 34
-            size 30
-            color "#FFFFFF"
+            style "it1_tinta"
+            xpos 12
+            ypos 30
 
-        if raro:
-            text "(¿raro?)":
-                xalign 0.96
+        if senalada:
+            text "← mira aquí":
+                style "it1_rotulo"
+                xalign 0.97
                 yalign 0.5
-                size 20
-                color "#FFE3A0"
+        elif raro:
+            text "(¿raro?)":
+                style "it1_tinta_nota"
+                xalign 0.97
+                yalign 0.5
 
 
-## Una opción del paso actual (rejilla de 2 columnas)
+## Una opción del paso actual: tarjetita de papel (rejilla de 2 columnas).
 screen it1_opcion(vivo, i, color):
 
     $ op = vivo.opciones[i]
     $ paso = vivo.pasos[len(vivo.elegidas)]
     $ marcada = (vivo.p["trampa_marcada"] and op["tipo"] == "fantasma")
-    $ tinta = ui_mezclar(color, "#000000", 0.75)
 
     button:
-        xysize (390, 104)
+        xysize IT1_OPCION
         sensitive (vivo.fase == "juego")
         action Function(vivo.elegir, i)
         hover_sound audio.sfx_hover
         activate_sound audio.sfx_click
-        background it1_caja("#2B1B3F", color)
-        hover_background it1_caja(ui_mezclar(color, "#000000", 0.55), "#FFFFFF")
-        insensitive_background it1_caja("#2B1B3F", color)
+        background it1_ficha(IT1_PAPEL_CLARO, color)
+        hover_background it1_ficha(color, color)
+        insensitive_background it1_ficha(IT1_PAPEL_CLARO, color)
 
         text (it1_fmt(op["valor"]) + " " + paso[1]):
+            style "it1_tinta"
+            hover_color "#FFFFFF"
             xalign 0.5
-            yalign 0.4
-            size 34
-            color "#FFFFFF"
+            yalign 0.42
+            xsize 262
+            text_align 0.5
 
         if marcada:
             text "(¡ojo!)":
-                xalign 0.5
-                yalign 0.9
+                style "it1_rotulo"
                 size 18
-                color "#FFE3A0"
+                hover_color "#FFFFFF"
+                xalign 0.5
+                yalign 0.94
+
 
 ################################################################################
 ##  PRUEBA — jump mj_probar_it1

@@ -77,8 +77,13 @@ style help_text:
 
 ## --- Cinta genérica (interruptores, confirmaciones…) -------------------------
 ## Se enciende sola cuando su acción está activa (selected).
+## Estados: normal · hover · pulsado · deshabilitado (activo=False).
+## Ren'Py no tiene estado «pulsado» (Button solo emite hover/idle/insensitive):
+## al hacer clic se rellena de su color 0,14 s.
 
-screen cinta_boton(texto, accion, clave, ancho=420, alto=58, tam=26):
+screen cinta_boton(texto, accion, clave, ancho=420, alto=58, tam=26, activo=True):
+
+    default pulsado = False
 
     $ color = "#E8E0F2"
     if clave in PETALO_COLOR:
@@ -86,21 +91,35 @@ screen cinta_boton(texto, accion, clave, ancho=420, alto=58, tam=26):
     $ oscuro = ui_mezclar(color, "#000000", 0.72)
     $ claro = ui_mezclar(color, "#FFFFFF", 0.35)
 
+    $ fondo_lleno = Fixed(
+        Transform("ui/menu_cinta.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix(color)),
+        Transform("ui/menu_cinta_borde.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#FFFFFF")))
+    $ fondo = Fixed(
+        Transform("ui/menu_cinta.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#1B1026"), alpha=0.80),
+        Transform("ui/menu_cinta_borde.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix(color)))
+    $ fondo_hover = Fixed(
+        Transform("ui/menu_cinta.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix(claro)),
+        Transform("ui/menu_cinta_borde.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#FFFFFF")))
+    $ color_texto = "#F2EDF5"
+    if pulsado:
+        $ fondo = fondo_lleno
+        $ fondo_hover = fondo_lleno
+        $ color_texto = oscuro
+
     button:
         xysize (ancho, alto)
-        action accion
+        action [SetLocalVariable("pulsado", True), accion]
+        selected renpy.is_selected(accion)
+        sensitive (activo and renpy.is_sensitive(accion))
         hover_sound audio.sfx_hover
         activate_sound audio.sfx_click
 
-        background Fixed(
-            Transform("ui/menu_cinta.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#1B1026"), alpha=0.80),
-            Transform("ui/menu_cinta_borde.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix(color)))
-        hover_background Fixed(
-            Transform("ui/menu_cinta.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix(claro)),
-            Transform("ui/menu_cinta_borde.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#FFFFFF")))
-        selected_background Fixed(
-            Transform("ui/menu_cinta.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix(color)),
-            Transform("ui/menu_cinta_borde.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#FFFFFF")))
+        background fondo
+        hover_background fondo_hover
+        selected_background fondo_lleno
+        insensitive_background Fixed(
+            Transform("ui/menu_cinta.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#2A2236"), alpha=0.80),
+            Transform("ui/menu_cinta_borde.png", xysize=(ancho, alto), fit="fill", matrixcolor=TintMatrix("#6E6680")))
 
         text texto:
             xalign 0.5
@@ -108,9 +127,14 @@ screen cinta_boton(texto, accion, clave, ancho=420, alto=58, tam=26):
             font gui.name_text_font
             size tam
             kerning 2
-            color "#F2EDF5"
+            color color_texto
             hover_color oscuro
             selected_color oscuro
+            insensitive_color "#8F8AA0"
+
+        ## Dentro del botón: así cinta_boton aporta un solo hijo (vale en grid).
+        if pulsado:
+            timer 0.14 action SetLocalVariable("pulsado", False)
 
 
 ## --- Barra de volumen / velocidad ----------------------------------------------

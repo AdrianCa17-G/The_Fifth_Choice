@@ -28,6 +28,19 @@ define I1_ENERGIA_REINICIO = 60.0
 define I1_ENERGIA_MAX = 100.0
 define I1_PAUSA_RESPUESTA = 0.55
 
+## Distribución dentro del área de juego del marco (x 440–1880, y 112–932).
+define I1_ANCHO = 1360                          ## bloque de juego: x 480–1840
+define I1_X = MJ_AREA_CX - I1_ANCHO // 2        ## 480
+define I1_TARJETA_W = 660                       ## barras y tarjetas: dos columnas de 660 + 40 de hueco
+define I1_TARJETA_H = 330
+define I1_X2 = I1_X + I1_ANCHO - I1_TARJETA_W   ## 1180: columna derecha
+define I1_BARRAS_Y = MJ_AREA_Y + 64             ## MÁSCARA / ENERGÍA
+define I1_BARRA_H = 28
+define I1_RELOJ_Y = MJ_AREA_Y + 216             ## tiempo para elegir
+define I1_TARJETAS_Y = MJ_AREA_Y + 298          ## EL PAPEL / LO QUE SIENTE
+define I1_CONSEJO_Y = I1_TARJETAS_Y + I1_TARJETA_H + 34
+define I1_MASCARA_PELIGRO = 75.0                ## desde aquí la barra se pone roja (zona de «en blanco»)
+
 
 init python:
 
@@ -206,6 +219,9 @@ init python:
                 self.sinceras += 1
                 self.respuesta = "sincera"
                 self.globo.decir("sincera")
+                ## El clic de LO QUE SIENTE suena aquí, al completarse: ni al pulsar
+                ## (adelantaría el resultado) ni al soltar (llegaría tarde o mentiría).
+                renpy.sound.play(audio.sfx_click)
             else:
                 self.mascara += self.sube
                 self.energia += self.e_gana
@@ -320,21 +336,24 @@ init python:
             return 0.0
 
         def mensaje(self):
+            """(texto, tipo) para el aviso del marco. tipo: "bien" | "mal" | "info"."""
             if self.estado == "fin":
                 if self.resultado["resultado"] == "ganado":
-                    return "Esta vez no hubo máscara."
-                return "Se quedó en blanco."
+                    return ("Esta vez no hubo máscara.", "bien")
+                return ("Se quedó en blanco.", "mal")
             if self.estado == "resp":
                 if self.respuesta == "actuada":
-                    return "Aplauso. La sonrisa pesa un poco más."
+                    return ("Aplauso. La sonrisa pesa un poco más.", "info")
                 if self.respuesta == "improviso":
-                    return "Se le acabó el tiempo y actuó sin querer."
+                    return ("Se le acabó el tiempo y actuó sin querer.", "mal")
                 if self.desperdicio:
-                    return "Casi no había máscara que quitar. Energía gastada de más."
-                return "Silencio. Y se oyó."
+                    return ("Casi no había máscara que quitar. Energía gastada de más.", "mal")
+                return ("Silencio. Y se oyó.", "bien")
             if self.aviso_t > 0.0:
-                return self.aviso
-            return ""
+                if self.aviso == "Mantén un poco más.":
+                    return (self.aviso, "info")
+                return (self.aviso, "mal")
+            return ("", "info")
 
         def expresion(self):
             if self.estado == "fin":
@@ -362,6 +381,45 @@ init python:
 ##  «Mantener»: botón sobre la tarjeta + mousedown_1 / mouseup_1 (ratón y toque),
 ##  o la tecla S (keydown_ / keyup_). Actuada: clic o tecla A.
 ################################################################################
+
+## Una barra grande (MÁSCARA o ENERGÍA): etiqueta, cifra, cambio y nota.
+## zona: desde qué valor se tiñe el fondo de rojo (None = sin zona).
+## marca: dónde va la marca blanca del coste (None = sin marca).
+screen i1_medidor(etiqueta, valor, cifra, cambio, color_cambio, color, nota, zona=None, marca=None):
+
+    $ w = I1_TARJETA_W
+    $ lleno = int(w * valor / 100.0)
+    if lleno > w:
+        $ lleno = w
+
+    vbox:
+        xsize w
+        spacing 8
+
+        fixed:
+            xysize (w, 34)
+            text etiqueta style "mj_etiqueta" xpos 0 yalign 0.5
+            hbox:
+                xalign 1.0
+                yalign 0.5
+                spacing 18
+                if cambio != "":
+                    text cambio style "mj_cifra" color color_cambio
+                text cifra style "mj_cifra"
+
+        fixed:
+            xysize (w, I1_BARRA_H)
+            add Solid("#FFFFFF2A", xsize=w, ysize=I1_BARRA_H) xpos 0 ypos 0
+            if zona is not None:
+                $ zx = int(w * zona / 100.0)
+                add Solid("#FF8A8A40", xsize=w - zx, ysize=I1_BARRA_H) xpos zx ypos 0
+            if lleno > 0:
+                add Solid(color, xsize=lleno, ysize=I1_BARRA_H) xpos 0 ypos 0
+            if marca is not None:
+                add Solid("#FFFFFF", xsize=3, ysize=I1_BARRA_H + 12) xpos (int(w * marca / 100.0) - 1) ypos -6
+
+        text nota style "mj_nota"
+
 
 screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
@@ -391,10 +449,11 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ ultima = vivo.es_ultima()
     $ puede_s = vivo.puede_sincera()
     $ costo_s = int(round(vivo.costo_sincera()))
-    $ hold_txt = "{:.1f}".format(vivo.req_hold())
+    $ hold_txt = "{:.1f}".format(vivo.req_hold()).replace(".", ",")
+    $ en_juego = (vivo.estado != "listo")
 
     $ col_masc = color
-    if vivo.mascara >= 75.0:
+    if vivo.mascara >= I1_MASCARA_PELIGRO:
         $ col_masc = "#FF8A8A"
     $ col_ener = "#8FD3FF"
     if not puede_s:
@@ -402,6 +461,27 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ col_tiempo = "#FFE3A0"
     if vivo.restante < 1.0:
         $ col_tiempo = "#FF8A8A"
+
+    ## Marca del coste de una sincera en la barra de energía (la última es gratis).
+    $ marca_e = None
+    $ nota_e = "Ser sincera cuesta energía (la raya blanca). Actuar la recupera."
+    if en_juego and not ultima and costo_s > 0:
+        $ marca_e = costo_s
+    if ultima:
+        $ nota_e = "La última línea sincera no cuesta energía."
+
+    ## Cambio de la última decisión, junto a la cifra de su barra.
+    $ cambio_m = ""
+    $ cambio_e = ""
+    if vivo.estado == "resp" or vivo.estado == "fin":
+        $ cambio_m = i1_signo(vivo.d_mascara)
+        $ cambio_e = i1_signo(vivo.d_energia)
+    $ col_dm = "#FF9A9A"
+    if vivo.d_mascara < 0.0:
+        $ col_dm = "#9AE6B4"
+    $ col_de = "#FFB38A"
+    if vivo.d_energia > 0.0:
+        $ col_de = "#9AE6B4"
 
     $ fondo_s = tono
     $ borde_s = color
@@ -417,92 +497,59 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ chip_e = "ENERGÍA -" + str(costo_s)
     if ultima:
         $ sub_s = "la última  ·  gratis  ·  mantén (S) " + hold_txt + " s"
-        $ chip_e = "ENERGÍA gratis"
+        $ chip_e = "ENERGÍA GRATIS"
 
     $ msg = vivo.mensaje()
-    if msg == "":
-        $ msg = vivo.consejo()
-
-    $ col_dm = "#FF9A9A"
-    if vivo.d_mascara < 0.0:
-        $ col_dm = "#9AE6B4"
-    $ col_de = "#FFB38A"
-    if vivo.d_energia > 0.0:
-        $ col_de = "#9AE6B4"
+    $ consejo = vivo.consejo()
 
     add "bg_sala_ensayo" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.i, vivo.n, None, None, "LÍNEAS"):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.i, vivo.n, None, None, "LÍNEAS", chibi=vivo.expresion(), globo=vivo.globo, anim=vivo.anim(), aviso=msg[0], aviso_tipo=msg[1]):
 
-        ## --- Las dos barras ---
-        hbox:
-            xalign 0.5
-            ypos 112
-            spacing 60
+        ## --- Las dos barras: el corazón del minijuego ---
+        fixed:
+            xpos I1_X
+            ypos I1_BARRAS_Y
+            xysize (I1_ANCHO, 110)
+            fixed:
+                xpos 0
+                ypos 0
+                xysize (I1_TARJETA_W, 110)
+                use i1_medidor("MÁSCARA", vivo.mascara, str(int(round(vivo.mascara))) + " %", cambio_m, col_dm, col_masc, "Al llegar a 100 %, se queda en blanco.", I1_MASCARA_PELIGRO)
+            fixed:
+                xpos (I1_X2 - I1_X)
+                ypos 0
+                xysize (I1_TARJETA_W, 110)
+                use i1_medidor("ENERGÍA", vivo.energia, str(int(round(vivo.energia))), cambio_e, col_de, col_ener, nota_e, None, marca_e)
 
-            vbox:
-                spacing 6
-                text ("MÁSCARA   " + str(int(round(vivo.mascara))) + " %"):
-                    font gui.name_text_font
-                    size 24
-                    kerning 3
-                    color "#FFFFFF"
-                    outlines [(3, "#1B102699", 0, 0)]
-                use barra_progreso(vivo.mascara, 100.0, col_masc, 480)
-                text "Al llegar a 100 %, se queda en blanco.":
-                    size 18
-                    color "#E8E0F2"
-                    outlines [(3, "#1B102699", 0, 0)]
-
-            vbox:
-                spacing 6
-                text ("ENERGÍA   " + str(int(round(vivo.energia)))):
-                    font gui.name_text_font
-                    size 24
-                    kerning 3
-                    color "#FFFFFF"
-                    outlines [(3, "#1B102699", 0, 0)]
-                use barra_progreso(vivo.energia, 100.0, col_ener, 480)
-                text "Ser sincera cuesta energía. Actuar la recupera.":
-                    size 18
-                    color "#E8E0F2"
-                    outlines [(3, "#1B102699", 0, 0)]
-
-        if vivo.estado != "listo":
+        if en_juego:
 
             ## --- Reloj de la línea ---
             if ultima:
-                text "ÚLTIMA LÍNEA  ·  sin prisa  ·  solo puede ser sincera":
-                    xalign 0.5
-                    ypos 214
-                    font gui.name_text_font
-                    size 22
-                    kerning 3
+                text "ÚLTIMA LÍNEA  ·  SIN PRISA  ·  SOLO PUEDE SER SINCERA":
+                    style "mj_etiqueta"
                     color "#FFE3A0"
-                    outlines [(3, "#1B102699", 0, 0)]
+                    xpos MJ_AREA_CX
+                    xanchor 0.5
+                    ypos (I1_RELOJ_Y + 10)
             else:
-                fixed:
-                    xalign 0.5
-                    ypos 224
-                    xysize (1040, 44)
-                    text "TIEMPO PARA ELEGIR":
-                        size 18
-                        kerning 3
-                        color "#FFFFFF"
-                        outlines [(3, "#1B102699", 0, 0)]
-                    fixed:
-                        ypos 35
-                        xysize (1040, 12)
-                        use barra_progreso(vivo.restante, vivo.tlinea, col_tiempo, 1040)
+                vbox:
+                    xpos I1_X
+                    ypos I1_RELOJ_Y
+                    xsize I1_ANCHO
+                    spacing 8
+                    text "TIEMPO PARA ELEGIR" style "mj_etiqueta"
+                    use barra_progreso(vivo.restante, vivo.tlinea, col_tiempo, I1_ANCHO)
 
-            ## --- EL PAPEL (actuada) ---
+            ## --- EL PAPEL (actuada): izquierda ---
             button:
-                xpos 640
-                ypos 300
-                xysize (640, 252)
+                xpos I1_X
+                ypos I1_TARJETAS_Y
+                xysize (I1_TARJETA_W, I1_TARJETA_H)
                 sensitive (hay_actuada and vivo.estado == "linea")
                 action Function(vivo.actuada)
                 hover_sound audio.sfx_hover
+                activate_sound audio.sfx_click
                 background Fixed(
                     Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(tono)),
                     Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
@@ -515,52 +562,51 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
                 vbox:
                     xpos 36
-                    ypos 16
-                    xsize 568
-                    spacing 4
+                    ypos 24
+                    xsize 588
+                    spacing 6
                     text "EL PAPEL":
-                        font gui.name_text_font
-                        size 26
-                        kerning 3
+                        style "mj_etiqueta"
                         color claro
                         hover_color tinta
                         insensitive_color "#8F8AA0"
                     text "lo que pide el guion  ·  toca (A)":
-                        size 20
-                        color "#CFC6E0"
+                        style "mj_nota"
                         hover_color tinta
                         insensitive_color "#8F8AA0"
-                    null height 8
+                    null height 10
                     text txt_actuada:
-                        size 32
-                        color "#F3EEFA"
+                        style "mj_aviso_texto"
                         hover_color tinta
                         insensitive_color "#8F8AA0"
-                        xsize 568
+                        xsize 588
 
                 hbox:
                     xpos 36
-                    ypos 204
+                    ypos (I1_TARJETA_H - 52)
                     spacing 28
                     text ("MÁSCARA +" + str(int(round(vivo.sube)))):
-                        size 22
+                        style "mj_etiqueta"
                         color "#FF9A9A"
                         hover_color tinta
                         insensitive_color "#8F8AA0"
                     text ("ENERGÍA +" + str(int(round(vivo.e_gana)))):
-                        size 22
+                        style "mj_etiqueta"
                         color "#9AE6B4"
                         hover_color tinta
                         insensitive_color "#8F8AA0"
 
-            ## --- LO QUE SIENTE (sincera, mantener) ---
+            ## --- LO QUE SIENTE (sincera, mantener): derecha ---
+            ## Sin activate_sound a propósito: se mantiene pulsada y el clic suena
+            ## en MJI1.resolver() al completarse (ver la nota allí).
             button:
-                xpos 640
-                ypos 600
-                xysize (640, 252)
+                xpos I1_X2
+                ypos I1_TARJETAS_Y
+                xysize (I1_TARJETA_W, I1_TARJETA_H)
                 action NullAction()
                 hovered Function(vivo.set_sobre, "s")
                 unhovered Function(vivo.set_sobre, None)
+                hover_sound audio.sfx_hover
                 background Fixed(
                     Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo_s)),
                     Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde_s)))
@@ -570,154 +616,125 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
                 vbox:
                     xpos 36
-                    ypos 16
-                    xsize 568
-                    spacing 4
+                    ypos 24
+                    xsize 588
+                    spacing 6
                     text "LO QUE SIENTE":
-                        font gui.name_text_font
-                        size 26
-                        kerning 3
+                        style "mj_etiqueta"
                         color claro
                         hover_color tinta
                     text sub_s:
-                        size 20
-                        color "#CFC6E0"
+                        style "mj_nota"
                         hover_color tinta
-                    null height 8
+                    null height 10
                     text linea[1]:
-                        size 32
-                        color "#F3EEFA"
+                        style "mj_aviso_texto"
                         hover_color tinta
-                        xsize 568
+                        xsize 588
 
                 fixed:
                     xpos 36
-                    ypos 174
-                    xysize (568, 14)
-                    use barra_progreso(vivo.fraccion_hold(), 1.0, "#FFFFFF", 568)
+                    ypos (I1_TARJETA_H - 84)
+                    xysize (588, 12)
+                    use barra_progreso(vivo.fraccion_hold(), 1.0, "#FFFFFF", 588)
 
                 hbox:
                     xpos 36
-                    ypos 204
+                    ypos (I1_TARJETA_H - 52)
                     spacing 28
                     text ("MÁSCARA -" + str(int(round(vivo.baja)))):
-                        size 22
+                        style "mj_etiqueta"
                         color "#9AE6B4"
                         hover_color tinta
                     text chip_e:
-                        size 22
+                        style "mj_etiqueta"
                         color "#FFB38A"
                         hover_color tinta
 
                 if not puede_s:
                     text "SIN FUERZAS":
-                        xalign 0.5
-                        yalign 0.55
-                        font gui.name_text_font
-                        size 40
-                        kerning 4
+                        style "mj_cifra"
                         color "#FFB38A"
-                        outlines [(4, "#1B1026CC", 0, 0)]
+                        xalign 0.5
+                        yalign 0.62
 
-            ## --- Mensaje y cambio de la última decisión ---
-            text msg:
-                xalign 0.5
-                ypos 865
-                size 28
-                color "#FFFFFF"
-                outlines [(3, "#1B102699", 0, 0)]
+            ## --- Consejo: instrucción fija bajo las tarjetas ---
+            if consejo != "":
+                text consejo:
+                    style "mj_cuerpo"
+                    xpos MJ_AREA_CX
+                    xanchor 0.5
+                    ypos I1_CONSEJO_Y
 
-            if vivo.estado == "resp":
-                hbox:
-                    xpos 1320
-                    ypos 545
-                    spacing 30
-                    text ("MÁSCARA " + i1_signo(vivo.d_mascara)):
-                        font gui.name_text_font
-                        size 30
-                        kerning 2
-                        color col_dm
-                        outlines [(3, "#1B102699", 0, 0)]
-                    text ("ENERGÍA " + i1_signo(vivo.d_energia)):
-                        font gui.name_text_font
-                        size 30
-                        kerning 2
-                        color col_de
-                        outlines [(3, "#1B102699", 0, 0)]
+        ## --- Pantalla de inicio, dentro del área ---
+        if not en_juego:
+            $ b = MJ_BOTON["primario"]
 
-        use mj_retrato("ichika", vivo.expresion(), vivo.globo, vivo.anim(), 250, 1090, 1.0)
+            add Solid("#0B0712CC", xsize=MJ_AREA_W, ysize=MJ_AREA_H) xpos MJ_AREA_X ypos MJ_AREA_Y
 
-        ## --- Pantalla de inicio ---
-        if vivo.estado == "listo":
-            fixed:
-                xalign 0.5
-                ypos 255
-                xysize (1180, 570)
-
-                add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026"))
-                add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color))
+            frame:
+                xpos MJ_AREA_CX
+                xanchor 0.5
+                ypos (MJ_AREA_Y + MJ_AREA_H // 2)
+                yanchor 0.5
+                xsize I1_ANCHO
+                ymaximum MJ_AREA_H
+                padding (60, 40, 60, 40)
+                background Fixed(
+                    Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026")),
+                    Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
 
                 vbox:
-                    xalign 0.5
-                    ypos 26
-                    xsize 1060
-                    spacing 16
+                    xsize (I1_ANCHO - 120)
+                    spacing 18
 
                     text "LA MÁSCARA SE CANSA":
+                        style "mj_titulo"
                         xalign 0.5
-                        font gui.name_text_font
-                        size 40
-                        kerning 4
-                        color "#FFF8FC"
 
                     text "Ichika repasa su papel. Cada línea tiene dos versiones: lo que el guion pide decir... y lo que de verdad siente.":
+                        style "mj_cuerpo"
                         xalign 0.5
                         text_align 0.5
-                        size 26
-                        color "#E8E0F2"
 
                     hbox:
                         xalign 0.5
-                        spacing 40
+                        spacing 60
 
                         vbox:
-                            xsize 500
-                            spacing 6
-                            text "ACTUADA  ·  toca (A)":
-                                font gui.name_text_font
-                                size 26
-                                kerning 2
+                            xsize 520
+                            spacing 8
+                            text "EL PAPEL  ·  TOCA (A)":
+                                style "mj_etiqueta"
                                 color claro
                             text "{color=#FF9A9A}MÁSCARA sube{/color}  ·  {color=#9AE6B4}ENERGÍA se recupera{/color}":
-                                size 24
+                                style "mj_cuerpo"
                             text "Es rápido y cómodo. Pero la máscara se llena.":
-                                size 22
-                                color "#CFC6E0"
+                                style "mj_nota"
 
                         vbox:
-                            xsize 500
-                            spacing 6
-                            text "SINCERA  ·  mantén (S)":
-                                font gui.name_text_font
-                                size 26
-                                kerning 2
+                            xsize 520
+                            spacing 8
+                            text "LO QUE SIENTE  ·  MANTÉN (S)":
+                                style "mj_etiqueta"
                                 color claro
                             text "{color=#9AE6B4}MÁSCARA baja{/color}  ·  {color=#FFB38A}ENERGÍA se gasta{/color}":
-                                size 24
+                                style "mj_cuerpo"
                             text "Cuesta, y cuesta más cuanta más máscara tengas.":
-                                size 22
-                                color "#CFC6E0"
+                                style "mj_nota"
 
                     text "OBJETIVO: llegar a la última línea sin que la máscara llegue a 100 %. Todo actuada: te quedas en blanco. Todo sincera: te quedas sin energía. Alterna.":
+                        style "mj_cuerpo"
+                        color "#FFE3A0"
                         xalign 0.5
                         text_align 0.5
-                        size 24
-                        color "#FFE3A0"
+
+                    null height 6
 
                     fixed:
                         xalign 0.5
-                        xysize (420, 80)
-                        use cinta_boton("Empezar", Function(vivo.empezar), hermana, 420, 80, 34)
+                        xysize (b[0], b[1])
+                        use cinta_boton("Empezar", Function(vivo.empezar), hermana, b[0], b[1], b[2])
 
 
 ################################################################################
@@ -734,6 +751,7 @@ label mj_probar_i1:
     $ mj_msg = mj_msg + " · intentos " + str(e6_mj["ichika"]["intentos"])
     $ mj_msg = mj_msg + " · fallos " + str(e6_mj["ichika"]["fallos"])
     $ mj_msg = mj_msg + " · nivel " + str(e6_mj["ichika"]["nivel"])
-    $ mj_msg = mj_msg + " · datos " + str(e6_mj["ichika"]["datos"])
+    ## Llaves dobladas: un dict tiene {…} y Ren'Py lo leería como etiqueta de texto.
+    $ mj_msg = mj_msg + " · datos " + str(e6_mj["ichika"]["datos"]).replace("{", "{{")
     $ narrator(mj_msg)
     return

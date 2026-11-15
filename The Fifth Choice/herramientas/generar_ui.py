@@ -27,6 +27,7 @@ ALFA_BORDE = 100                       # franjas de los bordes (0-255)
 ALFA_RELLENO = 34                      # patrón tenue de fondo (0 lo apaga)
 X_ARRIBA_INI = 380                     # la fila de arriba empieza después de la placa
 TARJETA_ALTOS = [220, 270, 320, 370]   # tiene que coincidir con 07_ui.rpy
+MJ_COLUMNA = (400, 380, 360)           # columna de los minijuegos: ancho, borde arriba, borde abajo (MJ_AREA_X = 440 en 10_minijuegos.rpy)
 
 os.makedirs(SALIDA, exist_ok=True)
 
@@ -492,10 +493,25 @@ def opcion_marco():
     return borde_redondeado(400, 100, 28, (255, 255, 255, 255), 3)
 
 
-def menu_panel():
-    """Panel izquierdo del menú principal: borde inclinado y 5 bandas de color."""
-    ancho, alto = 860, 1080
-    sup, inf = 780, 650          # x del borde derecho arriba y abajo
+def menu_panel(ancho=860, sup=780, inf=650, relleno=True, colores=None):
+    """Panel izquierdo del menú principal: borde inclinado y 5 bandas de color.
+    sup/inf: x del borde derecho arriba y abajo. relleno=False dibuja solo las
+    bandas (blancas, para teñirlas en Ren'Py). colores: una banda por color."""
+    alto = 1080
+    if colores is None:
+        colores = COLORES_HERMANAS
+
+    # bandas finas siguiendo el borde, una por color
+    b = Image.new("RGBA", (ancho * SS, alto * SS), (0, 0, 0, 0))
+    db = ImageDraw.Draw(b)
+    for k in range(len(colores)):
+        o = 6 + k * 12
+        c = colores[k] + (235,)
+        db.polygon([E(sup + o, 0), E(sup + o + 7, 0), E(inf + o + 7, alto), E(inf + o, alto)], fill=c)
+    b = b.resize((ancho, alto), Image.LANCZOS)
+    if not relleno:
+        return b
+
     capa = degradado(ancho, alto, (52, 34, 78, 238), (24, 14, 36, 246))
 
     # sakuras tenues (los "lunares" del panel)
@@ -521,14 +537,6 @@ def menu_panel():
     m = m.resize((ancho, alto), Image.LANCZOS)
     capa.putalpha(ImageChops.multiply(capa.getchannel("A"), m))
 
-    # cinco bandas finas siguiendo el borde, una por hermana
-    b = Image.new("RGBA", (ancho * SS, alto * SS), (0, 0, 0, 0))
-    db = ImageDraw.Draw(b)
-    for k in range(5):
-        o = 6 + k * 12
-        c = COLORES_HERMANAS[k] + (235,)
-        db.polygon([E(sup + o, 0), E(sup + o + 7, 0), E(inf + o + 7, alto), E(inf + o, alto)], fill=c)
-    b = b.resize((ancho, alto), Image.LANCZOS)
     return Image.alpha_composite(capa, b)
 
 def colorear(img, rgb, alfa=230):
@@ -674,6 +682,8 @@ if __name__ == "__main__":
     guardar(opcion_marco(), "opcion_marco.png")
 
     guardar(menu_panel(), "menu_panel.png")
+    guardar(menu_panel(*MJ_COLUMNA, True, []), "mj_columna.png")
+    guardar(menu_panel(*MJ_COLUMNA, False, [(255, 255, 255)]), "mj_columna_banda.png")
 
     NOMBRES_H = ["ichika", "nino", "miku", "yotsuba", "itsuki"]
     for k in range(5):

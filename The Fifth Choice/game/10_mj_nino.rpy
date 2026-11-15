@@ -24,13 +24,21 @@
 ##  Devuelve: "ganado" | "perdido" | "saltado".
 ################################################################################
 
-define N1_VENTANA_W = 1210
+## Distribución «lista encima» (docs/MINIJUEGOS/MJ_NINO.md): franja de la lista
+## arriba del área y estantes a todo lo ancho debajo.
+define N1_LISTA_H = 212          ## franja: y 112–324
+define N1_IZQ_X = 472            ## bloque izquierdo de la franja (LISTA n/5, nombre, racha)
+define N1_CELDA_X = 780          ## celdas de producto: desde x 780, 260 cada una
+define N1_CELDA_W = 260
+define N1_ESTANTES_Y = 330       ## los estantes se centran en y 330–932
+define N1_VENTANA_W = 1440       ## = MJ_AREA_W
 define N1_CAJA_W = 272
 define N1_CAJA_H = 112
-define N1_FILA_Y0 = 186
-define N1_FILA_H = 166
+define N1_FILA_ALTO = 144        ## etiqueta (y+0) + cajas (y+32)
+define N1_FILA_H = 150           ## paso entre filas
 define N1_CUENTA_S = 0.7
 define N1_RACHA_N = 3
+define N1_AVISO_S = 1.2
 
 define MJ_N1_ITEMS = {
     "honey": "miel",
@@ -121,8 +129,6 @@ define MJ_N1_SEXTO = [
 
 init python:
 
-    import math
-
     MJ_N1_GRUPO_DE = {}
     for _g in MJ_N1_GRUPOS:
         for _k in _g:
@@ -137,6 +143,27 @@ init python:
             else:
                 res = res + "·"
         return res
+
+    ## Un fondo por par de colores, siempre el mismo objeto: así la screen
+    ## reutiliza las cajas al reevaluarse en vez de volver a maquetarlas.
+    N1_FONDOS = {}
+
+    def n1_fondo(relleno, borde):
+        clave = (relleno, borde)
+        if clave not in N1_FONDOS:
+            N1_FONDOS[clave] = Fixed(
+                Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(relleno)),
+                Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde)))
+        return N1_FONDOS[clave]
+
+    def n1_fila_y0(n_filas):
+        """y de la primera fila: el bloque de estantes, centrado bajo la franja."""
+        alto = (n_filas - 1) * N1_FILA_H + N1_FILA_ALTO
+        return N1_ESTANTES_Y + (MJ_AREA_Y + MJ_AREA_H - N1_ESTANTES_Y - alto) // 2
+
+    def n1_seg(x):
+        """1.5 -> '1,5'."""
+        return "{:g}".format(x).replace(".", ",")
 
     def n1_ritmo(nivel):
         if nivel == "dificil":
@@ -158,10 +185,10 @@ init python:
         if len(partes) == 0:
             partes.append("Cada estante guarda productos parecidos.")
         if p["memoria"] < 99.0:
-            partes.append("La lista se esconde a los " + "{:g}".format(p["memoria"]) + " s: memorízala o mírala de nuevo (-" + "{:g}".format(p["mirar_costo"]) + " s).")
+            partes.append("La lista se esconde a los " + n1_seg(p["memoria"]) + " s: memorízala o mírala de nuevo (−" + n1_seg(p["mirar_costo"]) + " s).")
         reglas.append(("BUSCA RÁPIDO", " ".join(partes)))
 
-        reglas.append(("NO TE EQUIVOQUES", "Cada error resta " + "{:g}".format(p["penalizacion"]) + " s y bloquea esa caja. Cada " + str(N1_RACHA_N) + " aciertos seguidos suman +" + "{:g}".format(p["racha_bonus"]) + " s."))
+        reglas.append(("NO TE EQUIVOQUES", "Cada error resta " + n1_seg(p["penalizacion"]) + " s y bloquea esa caja. Cada " + str(N1_RACHA_N) + " aciertos seguidos suman +" + n1_seg(p["racha_bonus"]) + " s."))
         reglas.append(("EL SEXTO HUECO", "Tras la quinta lista queda un hueco en la cesta. Ahí no hay respuesta correcta: elige tú."))
         return reglas
 
@@ -208,21 +235,21 @@ init python:
 
             self.gastado = 0.0
             self.penal = 0.0
-            self.t_deriva = 0.0
             self.errores = 0
             self.racha = 0
             self.mejor_racha = 0
             self.mirones = 0
             self.sexto = ""
             self.mirada_t = 0.0
-            self.popup_txt = ""
-            self.popup_col = "#FFFFFF"
-            self.popup_t = 0.0
+            self.aviso = ""
+            self.aviso_tipo = "info"
+            self.aviso_t = 0.0
             self.flash_t = 0.0
             self.humor = ""
             self.humor_t = 0.0
             self.avisado_tiempo = False
             self.globo = MJGlobo("nino")
+            self.firma_prev = None
 
             self.t_fase = 0.0
             self.idx = 0
@@ -253,9 +280,6 @@ init python:
         def tension(self):
             return self.fase == "compras" and self.restante() < 15.0
 
-        def pulso(self):
-            return 0.5 + 0.5 * math.sin(self.reloj.t * 6.0)
-
         def cuenta_n(self):
             rest = N1_CUENTA_S * 3 - (self.reloj.t - self.t_fase)
             n = int(rest / N1_CUENTA_S) + 1
@@ -269,10 +293,17 @@ init python:
             self.humor = que
             self.humor_t = seg
 
-        def popup(self, texto, color):
-            self.popup_txt = texto
-            self.popup_col = color
-            self.popup_t = 1.2
+        def avisar(self, texto, tipo):
+            """Píldora del marco durante N1_AVISO_S. tipo: bien | mal | info."""
+            self.aviso = texto
+            self.aviso_tipo = tipo
+            self.aviso_t = N1_AVISO_S
+
+        def aviso_vivo(self):
+            """El aviso que se ve ahora. En el sexto hueco, ninguno."""
+            if self.aviso_t <= 0.0 or self.fase == "sexto" or self.fase == "fin":
+                return ""
+            return self.aviso
 
         # ---- listas y estantes -----------------------------------------------
         def entrar_lista(self, idx):
@@ -317,26 +348,35 @@ init python:
 
             self.g0 = self.gastado
 
-        def cajas_fila(self, fi):
-            """[(clave, x), ...] de la fila fi. Con deriva, la cinta da la vuelta:
-            la caja que sale por la derecha reaparece por la izquierda."""
+        def fila_sentido(self, fi):
+            if fi % 2 == 1:
+                return -1
+            return 1
+
+        def fila_base(self, fi):
+            """[(clave, x), ...] de la fila fi en reposo. Con deriva, cada caja
+            lleva una copia a un periodo de distancia (detrás, según el sentido):
+            así la cinta (n1_cinta) da la vuelta sin corte."""
             cajas = self.estantes[fi]
             n = len(cajas)
             periodo = float(N1_VENTANA_W)
             paso = periodo / n
             centro = (paso - N1_CAJA_W) / 2.0
-            sentido = 1.0
-            if fi % 2 == 1:
-                sentido = -1.0
-            vel = self.deriva * (1.0 + 0.15 * fi)
-            desplazo = sentido * vel * self.t_deriva
             res = []
             for k in range(n):
-                x = (k * paso + centro + desplazo) % periodo
+                x = k * paso + centro
                 res.append((cajas[k], int(x)))
-                if x + N1_CAJA_W > periodo:
-                    res.append((cajas[k], int(x - periodo)))
+                if self.deriva > 0.0:
+                    res.append((cajas[k], int(x - self.fila_sentido(fi) * periodo)))
             return res
+
+        def fila_mov(self, fi):
+            """(dx, dur) del bucle de la fila fi: recorre un periodo entero a
+            deriva * (1 + 0.15 * fi) px/s. Sin deriva, (0, 0.0)."""
+            if self.deriva <= 0.0:
+                return (0, 0.0)
+            vel = self.deriva * (1.0 + 0.15 * fi)
+            return (self.fila_sentido(fi) * N1_VENTANA_W, N1_VENTANA_W / vel)
 
         def estado_caja(self, clave):
             if clave in self.encontrados:
@@ -345,17 +385,13 @@ init python:
                 return "mal"
             return "libre"
 
-        def trad_alpha(self):
+        def trad_visible(self):
+            """La traducción aparece sola `retardo_traduccion` s después de abrir
+            la lista (el fundido de 0,4 s lo hace n1_trad)."""
             ret = float(self.p["retardo_traduccion"])
             if ret <= 0.0:
-                return 1.0
-            t = self.gastado - self.g0 - ret
-            if t <= 0.0:
-                return 0.0
-            a = t / 0.4
-            if a > 1.0:
-                a = 1.0
-            return a
+                return True
+            return (self.gastado - self.g0) > ret
 
         # ---- memoria (la lista se esconde) -----------------------------------
         def lista_visible(self):
@@ -385,7 +421,7 @@ init python:
             self.penal += self.mirar_costo
             self.mirada_t = 1.6
             self.mirones += 1
-            self.popup("-" + "{:g}".format(self.mirar_costo) + " s", "#FFE3A0")
+            self.avisar("Miras la lista · −" + n1_seg(self.mirar_costo) + " s", "info")
             self.globo.decir("mirar", True)
             if self.restante() <= 0.0:
                 return self.perder()
@@ -429,7 +465,7 @@ init python:
                     self.mejor_racha = self.racha
                 if self.racha % N1_RACHA_N == 0 and self.bonus > 0.0:
                     self.total += self.bonus
-                    self.popup("+" + "{:g}".format(self.bonus) + " s", "#CFFFD8")
+                    self.avisar("Racha ×" + str(self.racha) + " · +" + n1_seg(self.bonus) + " s", "bien")
                     self.globo.decir("racha", True)
                 else:
                     self.globo.decir("acierto")
@@ -449,7 +485,7 @@ init python:
             self.racha = 0
             pen = float(self.p["penalizacion"])
             self.penal += pen
-            self.popup("-" + "{:g}".format(pen) + " s", "#FFC4C4")
+            self.avisar("Esa no es · −" + n1_seg(pen) + " s", "mal")
             self.flash_t = 0.35
             self.globo.decir("fallo", True)
             self.poner_humor("triste", 0.9)
@@ -465,11 +501,32 @@ init python:
             self.cambiar("fin")
             return None
 
+        def firma(self):
+            """Todo lo que la screen muestra y cambia con el tiempo. No están ni
+            la cinta (n1_cinta), ni la barra de memoria (n1_vaciar), ni el
+            fundido de la traducción (n1_trad): los anima el motor. El reloj
+            va en segundos enteros, como lo dibuja el marco."""
+            return (self.fase, self.cuenta_n(), int(self.restante() + 0.999), self.racha,
+                    self.lista_visible(), self.mirada_t > 0.0, self.trad_visible(),
+                    self.aviso_vivo(), self.flash_t > 0.0, self.humor,
+                    self.globo.texto, self.globo.visible(), self.tension(),
+                    len(self.encontrados), len(self.malos), self.idx, self.sexto)
+
         def tick(self):
+            """Lo llama el timer sin reiniciar la interacción
+            (_update_screens=False): solo se reinicia si cambia la firma."""
+            rv = self._tick()
+            f = self.firma()
+            if f != self.firma_prev:
+                self.firma_prev = f
+                renpy.restart_interaction()
+            return rv
+
+        def _tick(self):
             dt = self.reloj.avanzar()
             self.globo.avanzar(dt)
-            if self.popup_t > 0.0:
-                self.popup_t -= dt
+            if self.aviso_t > 0.0:
+                self.aviso_t -= dt
             if self.flash_t > 0.0:
                 self.flash_t -= dt
             if self.mirada_t > 0.0:
@@ -491,7 +548,6 @@ init python:
 
             if f == "compras":
                 self.gastado += dt
-                self.t_deriva += dt
                 if self.restante() <= 0.0:
                     return self.perder()
                 if self.restante() < 15.0 and not self.avisado_tiempo:
@@ -537,82 +593,123 @@ init python:
 
 ################################################################################
 ##  SCREENS
+##  Distribución «lista encima» dentro del área del marco (x 440–1880,
+##  y 112–932): franja de la lista arriba y estantes a todo lo ancho debajo.
+##  Medidas y decisiones: docs/MINIJUEGOS/MJ_NINO.md
 ################################################################################
 
-## Una caja de un estante. estado: libre | ok | mal
 transform n1_entrada:
     alpha 0.0
     ease 0.3 alpha 1.0
+
+## La cinta de un estante: recorre un periodo (dx px) en dur s, en bucle.
+## Lo anima el motor en cada fotograma, sin reevaluar la screen.
+transform n1_cinta(dx, dur):
+    xoffset 0
+    linear dur xoffset dx
+    repeat
+
+## Latido rojo de urgencia (mismo periodo que el antiguo sin(t * 6)).
+transform n1_latido:
+    alpha 0.05
+    ease 0.52 alpha 0.15
+    ease 0.52 alpha 0.05
+    repeat
+
+## Destello rojo de un error.
+transform n1_destello:
+    alpha 0.30
+    linear 0.35 alpha 0.0
+
+## La traducción, antes de asomar (ocupa su sitio para que nada salte).
+transform n1_oculto:
+    alpha 0.0
+
+## La traducción asoma: fundido de 0,4 s.
+transform n1_trad:
+    alpha 0.0
+    linear 0.4 alpha 1.0
+
+## Barra de memoria que se vacía sola: de `ancho` a 0 en `dur` s. Si la screen
+## se reevalúa a mitad, vuelve a empezar desde el ancho de ese momento.
+transform n1_vaciar(ancho, dur):
+    xsize ancho
+    linear dur xsize 0
+
+
+init python:
+
+    def n1_trad_at(vivo):
+        """Transform de las traducciones: sin retardo, ninguno."""
+        if float(vivo.p["retardo_traduccion"]) <= 0.0:
+            return []
+        if vivo.trad_visible():
+            return [n1_trad]
+        return [n1_oculto]
 
 
 ## Una pastilla de información (tiempo, productos…).
 screen mj_n1_chip(texto, color):
 
     frame:
-        padding (22, 8, 22, 8)
-        background Fixed(
-            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026")),
-            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
+        padding (22, 10, 22, 10)
+        background n1_fondo("#1B1026", color)
 
         text texto:
-            size 22
-            kerning 2
+            style "mj_etiqueta"
             color "#F3EEFA"
             substitute False
 
 
-## Pantalla de explicación (primer intento).
+## Pantalla de explicación (primer intento), centrada en el área.
 screen mj_n1_intro(vivo, nivel):
 
     $ color = PETALO_COLOR["nino"]
     $ tinta = ui_mezclar(color, "#000000", 0.75)
     $ reglas = n1_reglas(vivo.p)
     $ ritmo = n1_ritmo(nivel)
+    $ b = MJ_BOTON["primario"]
 
-    fixed:
-        xalign 0.5
-        ypos 150
-        xysize (1180, 660)
+    frame:
+        xpos MJ_AREA_CX
+        xanchor 0.5
+        ypos (MJ_AREA_Y + MJ_AREA_H // 2)
+        yanchor 0.5
+        xsize 1180
+        ymaximum MJ_AREA_H
+        padding (60, 34, 60, 30)
+        background n1_fondo("#1B1026", color)
         at n1_entrada
 
-        add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026"))
-        add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color))
-
-        text "COMPRAS PARA SEIS":
-            xalign 0.5
-            ypos 26
-            font gui.name_text_font
-            size 42
-            kerning 4
-            color "#FFF8FC"
-
-        hbox:
-            xalign 0.5
-            ypos 92
+        vbox:
+            xsize 1060
             spacing 16
 
-            use mj_n1_chip(("TIEMPO  " + "{:g}".format(vivo.total) + " s"), color)
-            use mj_n1_chip(("5 LISTAS · " + str(vivo.n_prod) + " PRODUCTOS"), color)
+            text "COMPRAS PARA SEIS":
+                style "mj_titulo"
+                xalign 0.5
 
-            frame:
-                padding (22, 8, 22, 8)
-                background Fixed(
-                    Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026")),
-                    Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
+            hbox:
+                xalign 0.5
+                spacing 16
 
-                hbox:
-                    spacing 8
-                    text "RITMO" size 22 kerning 2 color "#F3EEFA" yalign 0.5
-                    for i in range(3):
-                        $ alfa_f = 0.22
-                        if i < ritmo:
-                            $ alfa_f = 1.0
-                        add Transform("ui/flor.png", matrixcolor=TintMatrix(color), zoom=0.5, alpha=alfa_f) yalign 0.5
+                use mj_n1_chip(("TIEMPO  " + n1_seg(vivo.total) + " s"), color)
+                use mj_n1_chip(("5 LISTAS · " + str(vivo.n_prod) + " PRODUCTOS"), color)
 
-        vbox:
-            xpos 60
-            ypos 170
-            spacing 14
+                frame:
+                    padding (22, 10, 22, 10)
+                    background n1_fondo("#1B1026", color)
+
+                    hbox:
+                        spacing 8
+                        text "RITMO" style "mj_etiqueta" color "#F3EEFA" yalign 0.5
+                        for i in range(3):
+                            $ alfa_f = 0.22
+                            if i < ritmo:
+                                $ alfa_f = 1.0
+                            add Transform("ui/flor.png", matrixcolor=TintMatrix(color), zoom=0.5, alpha=alfa_f) yalign 0.5
+
+            null height 4
 
             for i, r in enumerate(reglas):
                 hbox:
@@ -622,40 +719,32 @@ screen mj_n1_intro(vivo, nivel):
                         xysize (64, 64)
                         add Transform("ui/flor.png", matrixcolor=TintMatrix(color), zoom=1.15) align (0.5, 0.5)
                         text str(i + 1):
+                            style "mj_cifra"
+                            outlines []
                             align (0.5, 0.5)
-                            font gui.name_text_font
-                            size 28
                             color tinta
 
                     vbox:
                         spacing 2
                         xsize 960
-                        text r[0]:
-                            font gui.name_text_font
-                            size 26
-                            kerning 3
-                            color color
-                        text r[1]:
-                            size 23
-                            color "#E8E0F2"
-                            substitute False
+                        text r[0] style "mj_etiqueta" color color
+                        text r[1] style "mj_cuerpo" substitute False
 
-        fixed:
-            xalign 0.5
-            ypos 556
-            xysize (420, 80)
-            use cinta_boton("Empezar", Function(vivo.empezar), "nino", 420, 80, 34)
+            null height 6
 
-        text "Enter o Espacio":
-            xalign 0.5
-            ypos 634
-            size 18
-            kerning 3
-            color "#FFFFFF77"
+            fixed:
+                xalign 0.5
+                xysize (b[0], b[1])
+                use cinta_boton("Empezar", Function(vivo.empezar), "nino", b[0], b[1], b[2])
+
+            text "Enter o Espacio":
+                style "mj_nota"
+                xalign 0.5
 
 
 ## Una caja de un estante. estado: libre | ok | mal
-screen mj_n1_caja(clave, estado, accion, trad_color, color):
+## trad_at: transform de la traducción (n1_trad_at).
+screen mj_n1_caja(clave, estado, accion, trad_at, color):
 
     $ es_txt = MJ_N1_ITEMS[clave]
     $ fondo = "#2B1B3F"
@@ -677,37 +766,203 @@ screen mj_n1_caja(clave, estado, accion, trad_color, color):
         action accion
         hover_sound audio.sfx_hover
         activate_sound audio.sfx_click
-        background Fixed(
-            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo)),
-            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde)))
-        hover_background Fixed(
-            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(hover)),
-            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#FFFFFF")))
+        background n1_fondo(fondo, borde)
+        hover_background n1_fondo(hover, "#FFFFFF")
 
         vbox:
             xalign 0.5
             yalign 0.5
+            yoffset 6
             spacing 2
             text clave:
+                style "mj_cuerpo"
+                color "#FFFFFF"
                 xalign 0.5
                 text_align 0.5
                 xmaximum (N1_CAJA_W - 28)
-                size 25
-                color "#FFFFFF"
                 substitute False
             text es_txt:
+                style "mj_nota"
                 xalign 0.5
                 text_align 0.5
-                size 19
-                color trad_color
+                xmaximum (N1_CAJA_W - 28)
+                at trad_at
 
         if marca != "":
             text marca:
+                style "mj_nota"
                 xpos 14
-                ypos 8
-                size 18
-                kerning 3
+                ypos 4
                 color borde
+
+
+## Franja de la lista (arriba del área): quién la pidió, los productos, la
+## racha, el sexto hueco y la memoria (barra, «Mirar lista» o «MIRANDO…»).
+screen mj_n1_lista(vivo, trad_at):
+
+    $ col_l = PETALO_COLOR[vivo.hermana_lista]
+    $ tono_l = TARJETA_TONO[vivo.hermana_lista]
+    $ lista_ok = vivo.lista_visible()
+    $ mem_r = vivo.memoria_restante()
+    $ izq = N1_IZQ_X - MJ_AREA_X
+    $ cel = N1_CELDA_X - MJ_AREA_X
+    $ ancho_mem = N1_CELDA_W * 4
+    $ sec = MJ_BOTON["secundario"]
+
+    fixed:
+        xpos MJ_AREA_X
+        ypos MJ_AREA_Y
+        xysize (MJ_AREA_W, N1_LISTA_H)
+
+        add n1_fondo(tono_l, col_l)
+
+        ## --- Bloque izquierdo: de quién es la lista y la racha ---
+        text ("LISTA " + str(vivo.idx + 1) + " / 5"):
+            style "mj_etiqueta"
+            xpos izq
+            ypos 20
+
+        text vivo.hermana_lista.capitalize():
+            style "mj_titulo"
+            color col_l
+            xpos izq
+            ypos 46
+
+        if vivo.racha >= 2 and vivo.fase != "sexto" and vivo.fase != "fin":
+            text ("RACHA ×" + str(vivo.racha)):
+                style "mj_cifra"
+                color "#FFE3A0"
+                xpos izq
+                ypos 104
+
+        hbox:
+            xpos izq
+            ypos 160
+            spacing 12
+            if vivo.sexto != "":
+                add Solid("#58D68D", xsize=20, ysize=20) yalign 0.5
+            else:
+                add Solid("#FFFFFF22", xsize=20, ysize=20) yalign 0.5
+            text "6.º hueco de la cesta" style "mj_nota" color "#FFE3A0" yalign 0.5
+
+        ## --- Productos: una celda por producto ---
+        hbox:
+            xpos cel
+            ypos 20
+
+            for k in vivo.claves:
+                $ hecho = k in vivo.encontrados
+                fixed:
+                    xysize (N1_CELDA_W, 112)
+
+                    if hecho:
+                        add Solid("#58D68D", xsize=24, ysize=24) ypos 6
+                    else:
+                        add Solid("#FFFFFF33", xsize=24, ysize=24) ypos 6
+
+                    vbox:
+                        xpos 36
+                        xsize (N1_CELDA_W - 48)
+                        spacing 0
+                        if hecho:
+                            text k style "mj_cuerpo" color "#8EE8B0" substitute False
+                        elif lista_ok:
+                            text k style "mj_cuerpo" color "#FFFFFF" substitute False
+                            text MJ_N1_ITEMS[k] style "mj_nota" at trad_at
+                        else:
+                            text n1_mascara(k) style "mj_cuerpo" color "#B9A8D8" substitute False
+
+        ## --- Memoria: barra que se vacía, «MIRANDO…» o «Mirar lista» ---
+        if mem_r >= 0.0:
+            if vivo.mirada_t > 0.0:
+                text "MIRANDO…":
+                    style "mj_etiqueta"
+                    color "#FFE3A0"
+                    xpos cel
+                    ypos 160
+            elif lista_ok:
+                text "MEMORIZA":
+                    style "mj_etiqueta"
+                    color "#FFE3A0"
+                    xpos cel
+                    ypos 146
+                fixed:
+                    xpos cel
+                    ypos 178
+                    xysize (ancho_mem, 12)
+                    add Solid("#FFFFFF2A")
+                    add Solid("#FFE3A0", ysize=12) at n1_vaciar(int(ancho_mem * mem_r / vivo.memoria), mem_r)
+            else:
+                fixed:
+                    xpos cel
+                    ypos 132
+                    xysize (sec[0], sec[1])
+                    use cinta_boton(("Mirar lista (−" + n1_seg(vivo.mirar_costo) + " s)"), Function(vivo.mirar), vivo.hermana_lista, sec[0], sec[1], sec[2])
+
+
+## Los estantes: una cinta por fila, a todo lo ancho del área.
+screen mj_n1_estantes(vivo, trad_at):
+
+    $ col_l = PETALO_COLOR[vivo.hermana_lista]
+    $ y0 = n1_fila_y0(len(vivo.estantes))
+
+    for fi in range(len(vivo.estantes)):
+
+        $ flecha = ""
+        if vivo.deriva > 0.0:
+            if vivo.fila_sentido(fi) > 0:
+                $ flecha = "   >>>"
+            else:
+                $ flecha = "   <<<"
+
+        $ mov = vivo.fila_mov(fi)
+        $ cinta = []
+        if mov[1] > 0.0:
+            $ cinta = [n1_cinta(mov[0], mov[1])]
+
+        fixed:
+            xpos MJ_AREA_X
+            ypos (y0 + fi * N1_FILA_H)
+            xysize (N1_VENTANA_W, N1_FILA_ALTO)
+            clipping True
+
+            add Solid("#FFFFFF14")
+
+            text ("ESTANTE " + "ABCD"[fi] + flecha):
+                style "mj_etiqueta"
+                xpos 18
+                ypos 0
+
+            fixed:
+                xysize (N1_VENTANA_W, N1_FILA_ALTO)
+                at cinta
+                for c in vivo.fila_base(fi):
+                    fixed:
+                        xpos c[1]
+                        ypos 32
+                        xysize (N1_CAJA_W, N1_CAJA_H)
+                        use mj_n1_caja(c[0], vivo.estado_caja(c[0]), Function(vivo.elegir, c[0]), trad_at, col_l)
+
+
+## El sexto hueco: sin cinta, sin prisa y sin avisos. Debajo de la franja,
+## la frase y las tres opciones, centradas en el área.
+screen mj_n1_sexto(vivo):
+
+    text "Queda sitio para una cosa más en la cesta.":
+        style "mj_aviso_texto"
+        color "#FFF8FC"
+        xpos MJ_AREA_CX
+        xanchor 0.5
+        ypos 392
+
+    vbox:
+        xpos MJ_AREA_CX
+        xanchor 0.5
+        ypos 470
+        spacing 22
+
+        for op in MJ_N1_SEXTO:
+            use mj_n1_sexto_op(op[1], op[2], Function(vivo.elegir_sexto, op[0]), PETALO_COLOR["nino"], (vivo.sexto == op[0]))
 
 
 screen mj_n1(hermana, params, inicio, intento, fallos, nivel, titulo):
@@ -717,30 +972,32 @@ screen mj_n1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     default vivo = MJN1(params, inicio, fallos, intento)
 
-    timer 0.033 repeat True action Function(vivo.tick)
+    ## La lógica, sin reiniciar la interacción: tick() la reinicia solo si
+    ## cambia algo visible (MJN1.firma).
+    timer 0.033 repeat True action Function(vivo.tick, _update_screens=False)
 
     key "K_RETURN" action Function(vivo.empezar)
     key "K_SPACE" action Function(vivo.empezar)
 
-    $ col_l = PETALO_COLOR[vivo.hermana_lista]
-    $ tono_l = TARJETA_TONO[vivo.hermana_lista]
-    $ ta = vivo.trad_alpha()
-    $ trad_color = "#CFC6E0" + "{:02x}".format(int(255 * ta))
+    $ trad_at = n1_trad_at(vivo)
     $ en_sexto = (vivo.fase == "sexto" or vivo.fase == "fin")
-    $ urgente = vivo.tension()
-    $ lista_ok = vivo.lista_visible()
-    $ mem_r = vivo.memoria_restante()
+    ## En el sexto hueco no hay prisa: el reloj desaparece del HUD.
+    $ t_rest = vivo.restante()
+    $ t_tot = vivo.total
+    if en_sexto:
+        $ t_rest = None
+        $ t_tot = None
 
     add "bg_centro_comercial" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.lista, 5, vivo.restante(), vivo.total, "LISTAS"):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.lista, 5, t_rest, t_tot, "LISTAS", chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=vivo.aviso_vivo(), aviso_tipo=vivo.aviso_tipo):
 
-        ## --- Efectos de tensión (encima del velo del marco) ---
-        if urgente:
-            add Solid("#FF2D2D") alpha (0.05 + 0.10 * vivo.pulso())
+        ## --- Tensión: solo sobre el área, nunca sobre la columna ---
+        if vivo.tension():
+            add Solid("#FF2D2D", xsize=MJ_AREA_W, ysize=MJ_AREA_H) xpos MJ_AREA_X ypos MJ_AREA_Y at n1_latido
 
         if vivo.flash_t > 0.0:
-            add Solid("#FF3B3B") alpha (0.30 * vivo.flash_t / 0.35)
+            add Solid("#FF3B3B", xsize=MJ_AREA_W, ysize=MJ_AREA_H) xpos MJ_AREA_X ypos MJ_AREA_Y at n1_destello
 
         if vivo.fase == "listo":
 
@@ -748,193 +1005,28 @@ screen mj_n1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
         else:
 
-            ## --- Cronómetro grande, racha y popups ---
-            $ col_t = "#FFFFFF"
-            if urgente:
-                $ col_t = "#FF8A8A"
+            use mj_n1_lista(vivo, trad_at)
 
-            text ("%.1f" % vivo.restante()):
-                xalign 0.5
-                ypos 56
-                font gui.name_text_font
-                size 62
-                color col_t
-                outlines [(5, "#1B1026CC", 0, 0)]
-
-            text "SEGUNDOS":
-                xalign 0.5
-                ypos 138
-                size 18
-                kerning 4
-                color "#FFFFFFAA"
-
-            if vivo.racha >= 2:
-                text ("RACHA x" + str(vivo.racha)):
-                    xpos 800
-                    xanchor 1.0
-                    ypos 84
-                    font gui.name_text_font
-                    size 30
-                    color "#FFE3A0"
-                    outlines [(4, "#1B1026CC", 0, 0)]
-
-            if vivo.popup_t > 0.0:
-                $ pa = vivo.popup_t / 0.4
-                if pa > 1.0:
-                    $ pa = 1.0
-                $ col_p = vivo.popup_col + "{:02x}".format(int(255 * pa))
-                text vivo.popup_txt:
-                    xpos 1130
-                    ypos 80
-                    font gui.name_text_font
-                    size 40
-                    color col_p
-                    outlines [(4, "#1B1026CC", 0, 0)]
-
-            ## --- La lista de la hermana ---
-            fixed:
-                xpos 60
-                ypos 170
-                xysize (540, 400)
-
-                add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(tono_l))
-                add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(col_l))
-
-                text ("LISTA " + str(vivo.idx + 1) + "/5 · " + vivo.hermana_lista.capitalize()):
-                    xpos 36
-                    ypos 22
-                    font gui.name_text_font
-                    size 30
-                    kerning 2
-                    color col_l
-
-                vbox:
-                    xpos 36
-                    ypos 78
-                    spacing 10
-
-                    for k in vivo.claves:
-                        $ hecho = k in vivo.encontrados
-                        hbox:
-                            spacing 16
-                            if hecho:
-                                add Solid("#58D68D", xsize=24, ysize=24) yalign 0.5
-                            else:
-                                add Solid("#FFFFFF33", xsize=24, ysize=24) yalign 0.5
-                            vbox:
-                                spacing 0
-                                if hecho:
-                                    text k size 29 color "#8EE8B0" substitute False
-                                elif lista_ok:
-                                    text k size 29 color "#FFFFFF" substitute False
-                                    text MJ_N1_ITEMS[k] size 19 color trad_color
-                                else:
-                                    text n1_mascara(k) size 29 color "#B9A8D8" substitute False
-
-                    hbox:
-                        spacing 16
-                        if vivo.sexto != "":
-                            add Solid("#58D68D", xsize=24, ysize=24) yalign 0.5
-                        else:
-                            add Solid("#FFFFFF22", xsize=24, ysize=24) yalign 0.5
-                        text "6.º hueco de la cesta" size 24 color "#FFE3A0"
-
-                if mem_r >= 0.0:
-                    if vivo.mirada_t > 0.0:
-                        text "MIRANDO...":
-                            xpos 36
-                            ypos 356
-                            size 20
-                            kerning 3
-                            color "#FFE3A0"
-                    elif lista_ok:
-                        vbox:
-                            xpos 36
-                            ypos 344
-                            spacing 4
-                            text "MEMORIZA" size 18 kerning 3 color "#FFE3A0"
-                            use barra_progreso(mem_r, vivo.memoria, "#FFE3A0", 468)
-                    else:
-                        fixed:
-                            xpos 36
-                            ypos 340
-                            xysize (468, 48)
-                            use cinta_boton(("Mirar lista (-" + "{:g}".format(vivo.mirar_costo) + " s)"), Function(vivo.mirar), vivo.hermana_lista, 468, 48, 22)
-
-            ## --- Estantes (cinta) ---
-            if not en_sexto:
-
-                for fi in range(len(vivo.estantes)):
-
-                    $ flecha = ""
-                    if vivo.deriva > 0.0:
-                        if fi % 2 == 0:
-                            $ flecha = "   >>>"
-                        else:
-                            $ flecha = "   <<<"
-
-                    fixed:
-                        xpos 650
-                        ypos (N1_FILA_Y0 + fi * N1_FILA_H)
-                        xysize (N1_VENTANA_W, 150)
-                        clipping True
-
-                        add Solid("#FFFFFF14")
-
-                        text ("ESTANTE " + "ABCD"[fi] + flecha):
-                            xpos 18
-                            ypos 6
-                            size 18
-                            kerning 4
-                            color "#FFFFFF88"
-
-                        for c in vivo.cajas_fila(fi):
-                            fixed:
-                                xpos c[1]
-                                ypos 34
-                                xysize (N1_CAJA_W, N1_CAJA_H)
-                                use mj_n1_caja(c[0], vivo.estado_caja(c[0]), Function(vivo.elegir, c[0]), trad_color, col_l)
-
-            ## --- Sexto hueco ---
+            if en_sexto:
+                use mj_n1_sexto(vivo)
             else:
+                use mj_n1_estantes(vivo, trad_at)
 
-                text "Queda sitio para una cosa más en la cesta.":
-                    xpos 1180
-                    xanchor 0.5
-                    ypos 250
-                    size 36
-                    color "#FFFFFF"
-                    outlines [(4, "#1B1026CC", 0, 0)]
-
-                vbox:
-                    xpos 1180
-                    xanchor 0.5
-                    ypos 330
-                    spacing 22
-
-                    for op in MJ_N1_SEXTO:
-                        use mj_n1_sexto_op(op[1], op[2], Function(vivo.elegir_sexto, op[0]), PETALO_COLOR["nino"], (vivo.sexto == op[0]))
-
-            ## --- Nino chibi y su globo ---
-            use mj_retrato("nino", vivo.expresion_star(), vivo.globo, vivo.anim_star(), 250, 1090, 1.0)
-            
-            ## --- Cuenta atrás ---
+            ## --- Cuenta atrás, sobre el área ---
             if vivo.fase == "cuenta":
-                add Solid("#0B0712A0")
+                add Solid("#0B0712A0", xsize=MJ_AREA_W, ysize=MJ_AREA_H) xpos MJ_AREA_X ypos MJ_AREA_Y
                 text str(vivo.cuenta_n()):
-                    xalign 0.5
-                    yalign 0.42
-                    font gui.name_text_font
-                    size 220
-                    color "#FFFFFF"
-                    outlines [(8, "#1B1026CC", 0, 0)]
+                    style "mj_cifra_grande"
+                    xpos MJ_AREA_CX
+                    xanchor 0.5
+                    ypos (MJ_AREA_Y + MJ_AREA_H // 2)
+                    yanchor 0.5
                 text "PREPÁRATE":
-                    xalign 0.5
-                    yalign 0.66
-                    font gui.name_text_font
-                    size 36
-                    kerning 6
+                    style "mj_etiqueta"
                     color "#FFE3A0"
+                    xpos MJ_AREA_CX
+                    xanchor 0.5
+                    ypos (MJ_AREA_Y + MJ_AREA_H // 2 + 90)
 
 
 ## Una opción del sexto hueco.
@@ -952,28 +1044,23 @@ screen mj_n1_sexto_op(titulo, sub, accion, color, elegido):
         action accion
         hover_sound audio.sfx_hover
         activate_sound audio.sfx_click
-        background Fixed(
-            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo)),
-            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde)))
-        hover_background Fixed(
-            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(hover)),
-            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#FFFFFF")))
+        background n1_fondo(fondo, borde)
+        hover_background n1_fondo(hover, "#FFFFFF")
 
         vbox:
             xalign 0.5
             yalign 0.5
             spacing 4
             text titulo:
-                xalign 0.5
-                text_align 0.5
-                size 32
+                style "mj_aviso_texto"
                 color "#FFFFFF"
-            text sub:
                 xalign 0.5
                 text_align 0.5
-                size 22
+            text sub:
+                style "mj_cuerpo"
                 color "#CFC6E0"
-
+                xalign 0.5
+                text_align 0.5
 
 ################################################################################
 ##  PRUEBA — jump mj_probar_n1

@@ -552,11 +552,147 @@ label .intento:
 
 ################################################################################
 ##  PARTE E · SCREENS
+##  Marco común (dirección «columna de la hermana»). Medidas y reglas:
+##  docs/MINIJUEGOS/MARCO_COMUN.md
 ################################################################################
 
-## HUD común. Uso:  use mj_marco(...):  <contenido>   (la screen llamadora debe
-## declarar `modal True` y `zorder 95`; los `key` se tragan rollback y skip).
-screen mj_marco(hermana, titulo, intento=1, fallos=0, nivel="dificil", progreso=0, total=1, tiempo=None, tiempo_total=None, unidad="ACIERTOS"):
+## --- Zonas de la pantalla (1920×1080) -------------------------------------------
+## Columna: x 0–400 (ui/mj_columna.png; MJ_COLUMNA en generar_ui.py).
+define MJ_AREA_X = 440         ## área de juego: x 440–1880
+define MJ_AREA_Y = 112         ##                y 112–932
+define MJ_AREA_W = 1440
+define MJ_AREA_H = 820
+define MJ_AREA_CX = 1160       ## centro horizontal del área (xpos + xanchor 0.5)
+define MJ_AVISO_Y = 1000       ## centro vertical de la franja de avisos
+define MJ_AVISO_ANCHO = 1200
+define MJ_HUD_X = 40           ## bloque del HUD dentro de la columna
+define MJ_HUD_Y = 116
+define MJ_HUD_ANCHO = 320
+define MJ_VELO = "#0B0712A6"   ## velo sobre el fondo del minijuego
+
+## Botones: (ancho, alto, tamaño de letra) para cinta_boton.
+define MJ_BOTON = {
+    "primario":   (420, 80, 34),
+    "secundario": (340, 64, 26),
+    "pequeno":    (220, 56, 24),
+}
+
+## Acento de la píldora de aviso. "info" usa el color de la hermana.
+define MJ_AVISO_ACENTO = {"bien": "#9AE6B4", "mal": "#FF8A8A"}
+
+## --- Tipografía: dos familias, un tamaño por nivel ---------------------------
+## Shippori (gui.name_text_font): mayúsculas, cifras y botones.
+## M PLUS Rounded (fuente por defecto): frases.
+
+style mj_titulo is default:
+    font gui.name_text_font
+    size 40
+    kerning 4
+    color "#FFF8FC"
+
+style mj_cifra_grande is default:
+    font gui.name_text_font
+    size 120
+    color "#FFFFFF"
+    outlines [(5, "#1B1026CC", 0, 0)]
+
+style mj_cifra is default:
+    font gui.name_text_font
+    size 30
+    color "#FFFFFF"
+    outlines [(3, "#1B102699", 0, 0)]
+
+style mj_etiqueta is default:
+    font gui.name_text_font
+    size 20
+    kerning 3
+    color "#E8E0F2"
+    outlines [(3, "#1B102699", 0, 0)]
+
+style mj_aviso_texto is default:
+    size 34
+    color "#F3EEFA"
+
+style mj_globo_texto is default:
+    size 28
+
+style mj_cuerpo is default:
+    size 24
+    color "#E8E0F2"
+    outlines [(3, "#1B102699", 0, 0)]
+
+style mj_nota is default:
+    size 18
+    color "#CFC6E0"
+    outlines [(3, "#1B102699", 0, 0)]
+
+## --- Movimiento ------------------------------------------------------------------
+
+transform mj_cinta_entrada:
+    xoffset -800
+    ease 0.35 xoffset 0
+
+transform mj_aviso_anim:
+    on appear, show:
+        alpha 0.0
+        yoffset 14
+        ease 0.2 alpha 1.0 yoffset 0
+    on hide:
+        ease 0.25 alpha 0.0 yoffset 8
+
+
+## Píldora de aviso, centrada en la franja fija bajo el área de juego.
+## tipo: "bien" | "mal" | "info".
+screen mj_aviso(texto, tipo, hermana):
+
+    $ acento = PETALO_COLOR[hermana]
+    if tipo in MJ_AVISO_ACENTO:
+        $ acento = MJ_AVISO_ACENTO[tipo]
+
+    frame:
+        xpos MJ_AREA_CX
+        ypos MJ_AVISO_Y
+        xanchor 0.5
+        yanchor 0.5
+        xmaximum MJ_AVISO_ANCHO
+        padding (40, 14, 40, 14)
+        background Fixed(
+            Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026")),
+            Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(acento)))
+
+        text texto:
+            style "mj_aviso_texto"
+            text_align 0.5
+            xalign 0.5
+            substitute False
+
+
+## Una fila del HUD: etiqueta a la izquierda, cifra a la derecha.
+screen mj_hud_fila(etiqueta, cifra, color_etiqueta="#E8E0F2"):
+
+    fixed:
+        xysize (MJ_HUD_ANCHO, 34)
+        text etiqueta style "mj_etiqueta" color color_etiqueta xpos 0 yalign 0.5 substitute False
+        if cifra != "":
+            text cifra style "mj_cifra" xalign 1.0 yalign 0.5 substitute False
+
+
+## MARCO COMÚN. Uso:  use mj_marco(...):  <contenido del área de juego>
+## La screen llamadora declara `modal True` y `zorder 95`; los `key` se tragan
+## rollback y skip. Los argumentos posicionales son los de siempre; `fallos`
+## se acepta por compatibilidad y no se dibuja (vale intento - 1).
+##   tiempo/tiempo_total  → barra de recurso (recurso_txt, recurso_unidad)
+##   vidas/vidas_max      → iconos de su motivo (vidas_txt encima)
+##   chibi/globo/anim     → chibi general a 1.0 en la columna (mj_retrato)
+##   aviso/aviso_tipo     → píldora en la franja fija ("" = sin aviso; al
+##                          vaciarse, sale con el último texto)
+screen mj_marco(hermana, titulo, intento=1, fallos=0, nivel="dificil", progreso=0, total=1, tiempo=None, tiempo_total=None, unidad="ACIERTOS", recurso_txt="TIEMPO", recurso_unidad=" s", vidas=None, vidas_max=0, vidas_txt="", chibi=None, globo=None, anim="quieto", aviso="", aviso_tipo="info"):
+
+    default aviso_ultimo = ""
+    default tipo_ultimo = "info"
+    if aviso != "":
+        $ aviso_ultimo = aviso
+        $ tipo_ultimo = aviso_tipo
 
     $ color = PETALO_COLOR[hermana]
     $ cinta = ui_mezclar(color, "#FFFFFF", 0.35)
@@ -568,57 +704,66 @@ screen mj_marco(hermana, titulo, intento=1, fallos=0, nivel="dificil", progreso=
     key "toggle_skip" action NullAction()
     key "fast_skip" action NullAction()
 
-    add Solid("#0B0712B8")
+    add Solid(MJ_VELO)
 
-    use flor_sakura(hermana, "narrador", 1690, 800, color)
+    ## --- La columna de la hermana ---
+    add "ui/mj_columna.png" xpos 0 ypos 0
+    add "ui/mj_columna_banda.png" xpos 0 ypos 0 matrixcolor TintMatrix(color)
 
-    use hud_cinta_vista(titulo, "MINIJUEGO", hermana, cinta, tinta, hud_cinta_entrada)
+    $ etiqueta = "MINIJUEGO"
+    if nivel == "asistida":
+        $ etiqueta = "MINIJUEGO · ASISTENCIA"
+    use hud_cinta_vista(titulo, etiqueta, hermana, cinta, tinta, mj_cinta_entrada)
 
+    ## --- HUD: intento → vidas → recurso → progreso ---
     vbox:
-        xalign 1.0
-        xoffset -44
-        ypos 30
-        spacing 6
-        text ("INTENTO " + str(intento)):
-            xalign 1.0
-            font gui.name_text_font
-            size 24
-            kerning 3
-            color "#FFFFFF"
-            outlines [(3, "#1B102699", 0, 0)]
-        if fallos > 0:
-            text ("FALLIDOS " + str(fallos)):
-                xalign 1.0
-                font gui.name_text_font
-                size 20
-                kerning 3
-                color "#E8E0F2"
-                outlines [(3, "#1B102699", 0, 0)]
-        if nivel == "asistida":
-            text "ASISTENCIA":
-                xalign 1.0
-                font gui.name_text_font
-                size 20
-                kerning 3
-                color "#FFE3A0"
-                outlines [(3, "#1B102699", 0, 0)]
+        xpos MJ_HUD_X
+        ypos MJ_HUD_Y
+        xsize MJ_HUD_ANCHO
+        spacing 12
 
-    vbox:
-        xalign 0.5
-        ypos 920
-        spacing 10
-        text (unidad + "   " + str(progreso) + " / " + str(total)):
-            xalign 0.5
-            font gui.name_text_font
-            size 22
-            kerning 3
-            color "#FFFFFF"
-            outlines [(3, "#1B102699", 0, 0)]
-        use barra_progreso(progreso, total, color, 900)
+        use mj_hud_fila("INTENTO", str(intento))
+
+        if vidas is not None:
+            vbox:
+                spacing 6
+                if vidas_txt != "":
+                    text vidas_txt style "mj_etiqueta" substitute False
+                hbox:
+                    spacing 4
+                    for k in range(vidas_max):
+                        if k < vidas:
+                            add Transform("ui/hud_icono_" + hermana + ".png", zoom=0.8, matrixcolor=TintMatrix(color))
+                        else:
+                            add Transform("ui/hud_icono_" + hermana + ".png", zoom=0.8, matrixcolor=TintMatrix("#FFFFFF"), alpha=0.2)
+
         if tiempo is not None and tiempo_total is not None:
-            use barra_progreso(tiempo, tiempo_total, "#FFE3A0", 900)
+            $ col_recurso = "#FFE3A0"
+            if tiempo < 0.25 * tiempo_total:
+                $ col_recurso = "#FF8A8A"
+            $ cifra_recurso = str(int(tiempo + 0.999)) + recurso_unidad
+            vbox:
+                spacing 6
+                use mj_hud_fila(recurso_txt, cifra_recurso)
+                use barra_progreso(tiempo, tiempo_total, col_recurso, MJ_HUD_ANCHO)
 
+        vbox:
+            spacing 6
+            use mj_hud_fila(unidad, str(progreso) + " / " + str(total))
+            use barra_progreso(progreso, total, color, MJ_HUD_ANCHO)
+
+    ## --- Área de juego ---
     transclude
+
+    ## --- Chibi general y su globo (encima del área, dentro de la columna) ---
+    if chibi is not None:
+        use mj_retrato(hermana, chibi, globo, anim)
+
+    ## --- Aviso: franja fija bajo el área de juego ---
+    showif aviso != "":
+        fixed:
+            at mj_aviso_anim
+            use mj_aviso(aviso_ultimo, tipo_ultimo, hermana)
 
 
 ## Minijuego de prueba: un botón (clic, toque o Espacio/Intro).
@@ -639,38 +784,202 @@ screen mj_prueba(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ marcador = int(vivo.posicion() * ancho)
     $ zona_x = int((vivo.zona - params["ventana"] / 2.0) * ancho)
     $ zona_w = int(params["ventana"] * ancho)
+    $ margen = int(params["fallos_max"]) + 1
+    $ quedan = margen - vivo.fallos
+    $ aviso = ""
+    $ aviso_tipo = "info"
+    if vivo.ultimo == "acierto":
+        $ aviso = "¡Bien!"
+        $ aviso_tipo = "bien"
+    elif vivo.ultimo == "fallo":
+        $ aviso = "Fallo"
+        $ aviso_tipo = "mal"
+    $ boton = MJ_BOTON["primario"]
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.aciertos, vivo.necesarios):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.aciertos, vivo.necesarios, vidas=quedan, vidas_max=margen, vidas_txt="OPORTUNIDADES", aviso=aviso, aviso_tipo=aviso_tipo):
 
         text "Pulsa cuando la barra pase por la zona.":
-            xalign 0.5
+            style "mj_cuerpo"
+            xpos MJ_AREA_CX
+            xanchor 0.5
             ypos 330
-            size 30
-            color "#FFFFFF"
-            outlines [(3, "#1B102699", 0, 0)]
 
         fixed:
-            xalign 0.5
+            xpos MJ_AREA_CX
+            xanchor 0.5
             ypos 430
             xysize (ancho, 60)
             add Solid("#FFFFFF2A", xsize=ancho, ysize=40) yalign 0.5
             add Solid(color + "B0", xsize=zona_w, ysize=40) xpos zona_x yalign 0.5
             add Solid("#FFFFFF", xsize=8, ysize=60) xpos (marcador - 4)
 
-        if vivo.ultimo == "acierto":
-            text "¡Bien!" xalign 0.5 ypos 520 size 32 color "#CFFFD8" outlines [(3, "#1B102699", 0, 0)]
-        elif vivo.ultimo == "fallo":
-            text "Fallo" xalign 0.5 ypos 520 size 32 color "#FFC4C4" outlines [(3, "#1B102699", 0, 0)]
-
-        text ("ERRORES  " + str(vivo.fallos) + " / " + str(params["fallos_max"])):
-            xalign 0.5
-            ypos 580
-            size 24
-            color "#E8E0F2"
-            outlines [(3, "#1B102699", 0, 0)]
-
         fixed:
-            xalign 0.5
-            ypos 650
-            xysize (420, 96)
-            use cinta_boton("¡Ahora!", Function(vivo.pulsar), hermana, 420, 96, 40)
+            xpos MJ_AREA_CX
+            xanchor 0.5
+            ypos 600
+            xysize (boton[0], boton[1])
+            use cinta_boton("¡Ahora!", Function(vivo.pulsar), hermana, boton[0], boton[1], boton[2])
+
+
+################################################################################
+##  PARTE F · PRUEBA DEL MARCO
+##  jump mj_probar_marco   (consola Shift+O). Abre el marco con cada hermana:
+##  HUD completo, área de juego marcada, avisos, globo, reacciones y botones.
+################################################################################
+
+define MJ_PRUEBA_FONDO = {
+    "ichika": "bg_sala_ensayo", "nino": "bg_centro_comercial", "miku": "bg_biblioteca",
+    "yotsuba": "bg_pista_atletismo", "itsuki": "bg_aula_tarde",
+}
+define MJ_PRUEBA_UNIDAD = {
+    "ichika": "LÍNEAS", "nino": "LISTAS", "miku": "NOTAS", "yotsuba": "TRAMOS", "itsuki": "PASOS",
+}
+## La línea de globo más larga de MJ_GLOBOS (la de Ichika): debe caber sobre la chibi sin pisar el HUD.
+define MJ_PRUEBA_GLOBO_LARGO = "Me sé el guion. Falta saber cuál es el mío."
+define MJ_PRUEBA_AVISO_LARGO = "Se cayó el testigo: Yotsuba vuelve a por él y el relevo sigue desde el último punto de control, sin perder los tramos ya corridos."
+
+default mj_prueba_cola = []
+default mj_prueba_h = "yotsuba"
+default mj_prueba_quick = True
+
+init python:
+
+    class MJMarcoPrueba(object):
+        """Estado de la pantalla de prueba del marco (no se guarda)."""
+        def __init__(self, hermana):
+            self.reloj = MJReloj()
+            self.globo = MJGlobo(hermana)
+            self.aviso = ""
+            self.tipo = "info"
+            self.aviso_t = 0.0
+            self.anim = "quieto"
+            self.anim_t = 0.0
+            self.vidas = 3
+
+        def tick(self):
+            dt = self.reloj.avanzar()
+            self.globo.avanzar(dt)
+            if self.aviso_t > 0.0:
+                self.aviso_t -= dt
+                if self.aviso_t <= 0.0:
+                    self.aviso = ""
+            if self.anim_t > 0.0:
+                self.anim_t -= dt
+                if self.anim_t <= 0.0:
+                    self.anim = "quieto"
+
+        def avisar(self, texto, tipo, duracion=1.6):
+            self.aviso = texto
+            self.tipo = tipo
+            self.aviso_t = duracion
+
+        def reaccion(self, anim):
+            self.anim = anim
+            self.anim_t = 0.45
+
+        def globo_largo(self, duracion=3.0):
+            self.globo.poner(MJ_PRUEBA_GLOBO_LARGO, duracion)
+
+        def vida(self, d):
+            self.vidas += d
+            if self.vidas < 0:
+                self.vidas = 9
+            if self.vidas > 9:
+                self.vidas = 0
+
+
+## fijo=True: globo largo y aviso largo sin caducar (para las capturas).
+screen mj_marco_prueba(hermana, fijo=False):
+
+    modal True
+    zorder 95
+
+    default p = MJMarcoPrueba(hermana)
+
+    if fijo:
+        on "show" action [Function(p.globo_largo, 999.0), Function(p.avisar, MJ_PRUEBA_AVISO_LARGO, "mal", 999.0)]
+
+    timer 0.05 repeat True action Function(p.tick)
+
+    $ juego = E6_MJ_JUEGO[hermana]
+    $ titulo = MJ_REGISTRO[juego]["titulo"]
+    $ sec = MJ_BOTON["secundario"]
+    $ pri = MJ_BOTON["primario"]
+
+    add MJ_PRUEBA_FONDO[hermana] fit "cover"
+
+    use mj_marco(hermana, titulo, 2, 1, "asistida", 7, 28, 20.0, 80.0, MJ_PRUEBA_UNIDAD[hermana], vidas=p.vidas, vidas_max=9, vidas_txt="TESTIGOS", chibi="animo", globo=p.globo, anim=p.anim, aviso=p.aviso, aviso_tipo=p.tipo):
+
+        ## Borde del área de juego (solo en la prueba).
+        add Solid("#FFFFFF40", xsize=MJ_AREA_W, ysize=2) xpos MJ_AREA_X ypos MJ_AREA_Y
+        add Solid("#FFFFFF40", xsize=MJ_AREA_W, ysize=2) xpos MJ_AREA_X ypos (MJ_AREA_Y + MJ_AREA_H - 2)
+        add Solid("#FFFFFF40", xsize=2, ysize=MJ_AREA_H) xpos MJ_AREA_X ypos MJ_AREA_Y
+        add Solid("#FFFFFF40", xsize=2, ysize=MJ_AREA_H) xpos (MJ_AREA_X + MJ_AREA_W - 2) ypos MJ_AREA_Y
+
+        vbox:
+            xpos MJ_AREA_CX
+            xanchor 0.5
+            ypos 160
+            spacing 26
+
+            text ("PRUEBA DEL MARCO · " + hermana.upper()):
+                style "mj_titulo"
+                xalign 0.5
+
+            text "Cada botón dispara una pieza del marco. El rectángulo es el área de juego.":
+                style "mj_cuerpo"
+                xalign 0.5
+
+            null height 10
+
+            grid 3 3:
+                xalign 0.5
+                spacing 24
+                use cinta_boton("Aviso: bien", Function(p.avisar, "¡Testigo recibido!", "bien"), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Aviso: fallo", Function(p.avisar, "Se cayó el testigo", "mal"), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Aviso: info", Function(p.avisar, "Mitad de la carrera", "info"), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Aviso largo", Function(p.avisar, MJ_PRUEBA_AVISO_LARGO, "mal", 3.0), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Globo largo", Function(p.globo_largo), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Globo corto", Function(p.globo.decir, "inicio", True), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Salto", Function(p.reaccion, "salto"), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Tiembla", Function(p.reaccion, "tiembla"), hermana, sec[0], sec[1], sec[2])
+                use cinta_boton("Quitar vida", Function(p.vida, -1), hermana, sec[0], sec[1], sec[2])
+
+            hbox:
+                xalign 0.5
+                spacing 24
+                use cinta_boton("Deshabilitado", NullAction(), hermana, sec[0], sec[1], sec[2], False)
+                use cinta_boton("Siguiente", Return(True), hermana, pri[0], pri[1], pri[2])
+
+
+label mj_probar_marco:
+
+    scene bg_negro
+    $ mj_prueba_quick = quick_menu
+    $ quick_menu = False
+
+    menu:
+        "Probar el marco común · ¿con qué hermana?"
+
+        "Ichika":
+            $ mj_prueba_cola = ["ichika"]
+        "Nino":
+            $ mj_prueba_cola = ["nino"]
+        "Miku":
+            $ mj_prueba_cola = ["miku"]
+        "Yotsuba":
+            $ mj_prueba_cola = ["yotsuba"]
+        "Itsuki":
+            $ mj_prueba_cola = ["itsuki"]
+        "Las cinco seguidas":
+            $ mj_prueba_cola = list(E6_ORDEN_CANON)
+        "Volver":
+            $ quick_menu = mj_prueba_quick
+            return
+
+    while len(mj_prueba_cola) > 0:
+        $ mj_prueba_h = mj_prueba_cola.pop(0)
+        call screen mj_marco_prueba(mj_prueba_h)
+
+    $ quick_menu = mj_prueba_quick
+    jump mj_probar_marco
