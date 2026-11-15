@@ -161,7 +161,8 @@ porque va por debajo del diálogo.
 ## 4. Los efectos
 
 Los del prólogo son de 効果音ラボ. Los nuevos del Capítulo 1 
-(`pisadas_pista`, `taza_mesa`, `mochila_suelo`, `lapiz_mesa`, `celular`) 
+(`pisadas_pista`, `taza_mesa`, `mochila_suelo`, `lapiz_mesa`, `celular`,
+`estomago`, `camara`) 
 salen de Freesound  porque 効果音ラボ no tenía: confirma la licencia de cada
 uno. Los términos de búsqueda de 効果音ラボ son en japonés, que es lo único
 que entiende su buscador.
@@ -184,8 +185,8 @@ que entiende su buscador.
 | `sfx_mochila_suelo` | Freesound |	Tela sobre concreto, un golpe sordo sin eco |
 | `sfx_lapiz_mesa` | 	Freesound |	Madera contra madera, pequeño y seco |
 | `sfx_celular` | Freesound |	Vibración corta |
-| `sfx_estomago` | (origen por confirmar) | Beat de Itsuki, 3,6 s; `play audio`, volumen 1.5 |
-| `sfx_camara` | (origen por confirmar) | Evento 6, foto del grupo, 0,6 s; `play audio`, volumen 1.5 |
+| `sfx_estomago` | Freesound | Beat de Itsuki, 3,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
+| `sfx_camara` | Freesound | Evento 6, foto del grupo, 0,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
 
 **`portazo` y `puerta_cierra` son la misma puerta a propósito.** El portazo se
 fabricó a partir del cierre: amplificar al máximo sin distorsionar y recortar la
