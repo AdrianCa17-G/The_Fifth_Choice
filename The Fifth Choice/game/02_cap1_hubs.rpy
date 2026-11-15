@@ -38,6 +38,7 @@ label hub_1:
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ ui_escena("normal")
     $ hub_visitadas.append(destino)
+    call hub_completado(destino, 1)
 
     stop music fadeout 1.0
 
@@ -66,6 +67,7 @@ label hub_2:
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ ui_escena("normal")
     $ hub_visitadas.append(destino)
+    call hub_completado(destino, 2)
 
     stop music fadeout 1.0
 
@@ -94,6 +96,7 @@ label hub_3:
     call expression (LABEL_EVENTO.get(destino, "evento_" + destino))
     $ ui_escena("normal")
     $ hub_visitadas.append(destino)
+    call hub_completado(destino, 3)
 
     stop music fadeout 1.0
 

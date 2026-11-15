@@ -8,6 +8,9 @@ Genera, desde cero y sin material ajeno:
   game/audio/sfx/cort_fin.ogg            fin de prologo / fin de capitulo
   game/audio/sfx/cort_hub.ogg            entrada al hub
   game/audio/sfx/cort_hermana_<h>.ogg    salida del hub hacia cada hermana
+  game/audio/sfx/cort_completado_<h>.ogg        hub completado, rama cálida
+  game/audio/sfx/cort_completado_<h>_tibia.ogg  hub completado, rama tibia
+  game/audio/sfx/cort_completado_fria.ogg       hub completado, rama fría (toc seco)
 
 Los sonidos son campanitas sintetizadas (tipo celesta) en Re mayor pentatonico.
 Cada hermana tiene SU nota: Ichika Re, Nino Mi, Miku Fa#, Yotsuba La, Itsuki Si.
@@ -41,6 +44,14 @@ RITMOS = {
                   cinta=1.50, flores=1.70, paso_flor=0.07),
 }
 
+## Hub completado (hub_mapa.rpy, HUBC_RITMOS): segundo del estampado y de la flor.
+## Si cambias uno, cambia el otro y vuelve a generar.
+RITMOS_HUBC = {
+    "calida": dict(motivo=0.40, sello=1.20, flor=1.55),
+    "tibia":  dict(motivo=0.25, sello=0.70, flor=0.95),
+    "fria":   dict(sello=0.15),
+}
+
 RE3, LA3, FAS4 = 146.83, 220.00, 369.99
 RE4, LA4 = 293.66, 440.00
 RE5, MI5, FAS5, LA5, SI5 = 587.33, 659.25, 739.99, 880.00, 987.77
@@ -57,6 +68,8 @@ class Pista:
     def __init__(self, dur):
         self.n = int(dur * SR)
         self.x = np.zeros((self.n, 2))
+        self.seco = False     # True = sin la sala (reverberación)
+        self.nivel = -3.0     # pico final en dB
 
     def _suma(self, t0, onda, pan):
         i = int(t0 * SR)
@@ -88,17 +101,27 @@ class Pista:
         for i, f in enumerate(BRILLO):
             self.campana(f, t0 + i * paso, amp, cola=0.9, pan=0.25 + 0.125 * i)
 
+    def golpe(self, f, t0, amp=0.6):
+        """Toc grave y seco: seno que muere en milisegundos y un chasquido."""
+        t = np.arange(int(0.25 * SR)) / SR
+        rng = np.random.default_rng(9)
+        onda = np.sin(2 * np.pi * f * t) * np.exp(-t / 0.035)
+        onda += 0.25 * rng.standard_normal(len(t)) * np.exp(-t / 0.004)
+        self._suma(t0, onda * amp, 0.5)
+
     def render(self):
-        rng = np.random.default_rng(5)
-        t = np.arange(int(1.8 * SR)) / SR
-        sala = rng.standard_normal((len(t), 2)) * np.exp(-t / 0.42)[:, None]
-        sala[: int(0.012 * SR)] = 0
-        humedo = np.stack([fftconvolve(self.x[:, c], sala[:, c])[: self.n] for c in (0, 1)], axis=1)
-        humedo /= (np.abs(humedo).max() + 1e-9)
-        y = self.x / (np.abs(self.x).max() + 1e-9) * 0.80 + humedo * 0.22
+        y = self.x / (np.abs(self.x).max() + 1e-9)
+        if not self.seco:
+            rng = np.random.default_rng(5)
+            t = np.arange(int(1.8 * SR)) / SR
+            sala = rng.standard_normal((len(t), 2)) * np.exp(-t / 0.42)[:, None]
+            sala[: int(0.012 * SR)] = 0
+            humedo = np.stack([fftconvolve(self.x[:, c], sala[:, c])[: self.n] for c in (0, 1)], axis=1)
+            humedo /= (np.abs(humedo).max() + 1e-9)
+            y = y * 0.80 + humedo * 0.22
         fin = np.minimum(1.0, (self.n - np.arange(self.n)) / (0.35 * SR))
         y *= fin[:, None]
-        return y / np.abs(y).max() * 10 ** (-3.0 / 20.0)
+        return y / np.abs(y).max() * 10 ** (self.nivel / 20.0)
 
 
 def j_capitulo(examen=False):
@@ -168,6 +191,46 @@ def j_hermana(h):
     return p
 
 
+## Detalles del motivo de cada hermana (solo cálida): (segundo, nota, volumen).
+## Siguen los gestos de hub_completado: destellos, barras, botes, estrella.
+MOTIVO_HUBC = {
+    "ichika":  [(0.45, RE6, 0.12), (0.53, FAS6, 0.12), (0.61, LA6, 0.12)],
+    "nino":    [],
+    "miku":    [(0.56, RE5, 0.14), (0.84, FAS5, 0.14), (1.12, LA5, 0.14)],
+    "yotsuba": [(0.62, LA5, 0.18), (0.88, LA5, 0.13), (1.06, LA5, 0.09)],
+    "itsuki":  [(0.75, SI6, 0.08), (0.85, LA6, 0.08), (0.95, FAS6, 0.08)],
+}
+
+
+def j_completado(h, rama):
+    """Hub completado: la nota de la hermana al estamparse el sello y la
+    nota aguda de su flor al teñirse. Tibia: corta y suave. Fría: un toc seco."""
+    r = RITMOS_HUBC[rama]
+    if rama == "fria":
+        p = Pista(0.8)
+        p.seco = True
+        p.nivel = -12.0
+        p.golpe(110.0, r["sello"])
+        return p
+    f = NOTA[h]
+    i = HERMANAS.index(h)
+    if rama == "tibia":
+        p = Pista(1.9)
+        p.nivel = -6.0
+        p.campana(f, r["sello"], 0.40, cola=1.0)
+        p.campana(BRILLO[i], r["flor"], 0.12, cola=0.6)
+        return p
+    p = Pista(3.2)
+    p.colchon([RE3, LA3], 0.0, 2.6, 0.06)
+    for t0, nota, amp in MOTIVO_HUBC[h]:
+        p.campana(nota, t0, amp, cola=0.5)
+    p.campana(RE4, r["sello"], 0.30, cola=2.0)
+    p.campana(f, r["sello"], 0.50, cola=1.8)
+    p.campana(f * 1.5, r["sello"] + 0.03, 0.36, cola=1.6)
+    p.campana(BRILLO[i], r["flor"], 0.26, cola=1.2)
+    return p
+
+
 def guardar(pista, nombre, ffmpeg):
     carpeta = os.path.join(GAME, "audio", "sfx")
     wav = os.path.join(carpeta, nombre + ".wav")
@@ -214,5 +277,9 @@ if __name__ == "__main__":
     guardar(j_hub(), "cort_hub", ffmpeg)
     for h in HERMANAS:
         guardar(j_hermana(h), "cort_hermana_" + h, ffmpeg)
+    for h in HERMANAS:
+        guardar(j_completado(h, "calida"), "cort_completado_" + h, ffmpeg)
+        guardar(j_completado(h, "tibia"), "cort_completado_" + h + "_tibia", ffmpeg)
+    guardar(j_completado("ichika", "fria"), "cort_completado_fria", ffmpeg)
     if ffmpeg is None:
         sys.exit("ffmpeg no esta en el PATH: convierte los .wav a .ogg a mano.")
