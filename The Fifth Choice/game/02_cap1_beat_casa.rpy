@@ -350,7 +350,7 @@ label beat_casa:
 
             $ ligera_hermanas = {}
 
-            return
+            jump beat_casa_cierre
 
 
         ################################################################################
@@ -1070,20 +1070,21 @@ label beat_casa:
     ##  final del capitulo 1
     ############################################################################
 
-    scene bg_cuarto_mc
-    with fade
+    label beat_casa_cierre:
 
-    narrador "Cerré la libreta y apagué la lámpara."
+        scene bg_cuarto_mc
+        with fade
+        narrador "Cerré la libreta y apagué la lámpara."
 
-    narrador "Desde el otro cuarto, todavía se oía a Raiha ordenando sus cosas para el día siguiente."
-    
-    narrador "Como si mañana fuera un día cualquiera."
-
-    mc_pensamiento "Para ella lo es."
-
-    mc_pensamiento "Ojalá pudiera decir lo mismo."
-
-    narrador "Mañana será el examen."                     
+        narrador "Desde el otro cuarto, todavía se oía a Raiha ordenando sus cosas para el día siguiente."
         
-    return 
+        narrador "Como si mañana fuera un día cualquiera."
+
+        mc_pensamiento "Para ella lo es."
+
+        mc_pensamiento "Ojalá pudiera decir lo mismo."
+
+        narrador "Mañana será el examen."                     
+        
+        return 
     

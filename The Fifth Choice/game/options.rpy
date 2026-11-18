@@ -65,6 +65,10 @@ define config.has_voice = True
 # define config.sample_sound = "sample-sound.ogg"
 # define config.sample_voice = "sample-voice.ogg"
 
+## Sin rollback: las decisiones pesan. Para releer está el Historial y para
+## variar, Extras → Repetir. Los minijuegos leen este valor en init 999.
+define config.rollback_enabled = False
+
 
 ## Descomenta la línea siguiente para ajustar un archivo de audio que sonará en
 ## el menú principal. Este archivo seguirá sonando en el juego hasta que sea

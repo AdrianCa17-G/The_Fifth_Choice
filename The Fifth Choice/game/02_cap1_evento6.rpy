@@ -833,8 +833,7 @@ label e6_yotsuba_gesto_no_visitada:
 
 label e6_ichika_nucleo:
 
-    $ ui_escena("beat", "ichika", "Aula · Matemáticas")
-    $ tiempo_restante = "cuatro exámenes"
+    $ ui_escena("normal")
     $ e6_limpiar()
 
     scene bg_negro
@@ -845,6 +844,9 @@ label e6_ichika_nucleo:
     narrador "La segunda prueba de cinco."
 
     play sound audio.sfx_hoja volume 2.0
+
+    $ ui_escena("beat", "ichika", "Aula · Matemáticas")
+    $ tiempo_restante = "cuatro exámenes"
 
     scene cg_ichika_examen
     with fade
@@ -1091,8 +1093,7 @@ label e6_ichika_gesto_no_visitada:
 
 label e6_nino_nucleo:
 
-    $ ui_escena("beat", "nino", "Aula · Inglés")
-    $ tiempo_restante = "tres exámenes"
+    $ ui_escena("normal")
     $ e6_limpiar()
 
     scene bg_negro
@@ -1105,6 +1106,9 @@ label e6_nino_nucleo:
     narrador "La tercera prueba de cinco."
 
     play sound audio.sfx_hoja volume 2.0
+
+    $ ui_escena("beat", "nino", "Aula · Inglés")
+    $ tiempo_restante = "tres exámenes"
 
     scene cg_nino_examen
     with fade
@@ -1510,8 +1514,7 @@ label e6_nino_gesto_no_visitada:
 
 label e6_itsuki_nucleo:
 
-    $ ui_escena("beat", "itsuki", "Aula · Ciencias")
-    $ tiempo_restante = "dos exámenes"
+    $ ui_escena("normal")
     $ e6_limpiar()
 
     scene bg_negro
@@ -1522,6 +1525,9 @@ label e6_itsuki_nucleo:
     narrador "La penúltima prueba de cinco."
 
     play sound audio.sfx_hoja volume 2.0
+
+    $ ui_escena("beat", "itsuki", "Aula · Ciencias")
+    $ tiempo_restante = "dos exámenes"
 
     scene cg_itsuki_examen
     with fade
@@ -1867,8 +1873,7 @@ label e6_itsuki_gesto_no_visitada:
 
 label e6_miku_nucleo:
 
-    $ ui_escena("beat", "miku", "Aula · Sociales")
-    $ tiempo_restante = "un examen"
+    $ ui_escena("normal")
     $ e6_limpiar()
 
     scene bg_negro
@@ -1883,6 +1888,9 @@ label e6_miku_nucleo:
     narrador "La última prueba."
 
     play sound audio.sfx_hoja volume 2.0
+
+    $ ui_escena("beat", "miku", "Aula · Sociales")
+    $ tiempo_restante = "un examen"
 
     scene cg_miku_examen
     with fade
@@ -2157,10 +2165,9 @@ label e6_miku_gesto_no_visitada:
 ##  Variantes (S-tarde, tardes por hermana, pregunta, puerta): debajo de e6_despues.
 ################################################################################
 
-
 label e6_despues:
 
-    $ ui_escena("beat", None, "Aula · Viernes por la tarde")
+    $ ui_escena("normal")
     $ e6_limpiar()
 
     stop ambiente fadeout 1.0
@@ -2175,6 +2182,8 @@ label e6_despues:
     narrador "Todos los estudiantes se retiraban a sus hogares."
 
     narrador "Ellas se quedaron."
+
+    $ ui_escena("beat", None, "Aula · Viernes por la tarde")
 
     scene bg_aula_tarde
     with fade

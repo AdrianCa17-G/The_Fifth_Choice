@@ -58,7 +58,7 @@ label prologo:
     stop ambiente
 
     scene bg_negro
-    with fade
+    with Dissolve(1.0)
 
     narrador "Hay dos clases de personas en este mundo."
 

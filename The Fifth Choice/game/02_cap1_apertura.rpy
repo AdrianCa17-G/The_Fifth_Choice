@@ -710,16 +710,16 @@ label cap1_apertura:
 
                 $ hermanas_ubicadas.add("ichika")
 
-                mc "Hay una que se llama {color=#FFB7C5}{b}Ichika{/b}{/color}."
+                mc "Hay una que se llama {color=#C2185B}{b}Ichika{/b}{/color}."
 
                 mc "Es la primera hermana o hermana mayor de las cinco."
                 
                 mc "Duerme en cualquier parte y dice que tiene audiciones."
 
                 raiha "¡Ah, esa es fácil!" 
-                
+
                 raiha "Si anda con audiciones, seguro se pasa las horas ensayando en la 
-                {color=#F2879B}{b}sala de ensayo{/b}{/color} del colegio."
+                {color=#AD1457}{b}sala de ensayo{/b}{/color} del colegio."
 
                 raiha "O simplemente durmiendo la siesta en el sofá más cercano."
 

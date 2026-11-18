@@ -206,6 +206,16 @@ init -5 python:
             store.decision_pistas = ["calida", "tibia", "fria"]
         else:
             store.decision_pistas = pistas
+        ## Orden de las tarjetas, al azar: la posición no delata la temperatura.
+        orden = list(range(len(store.decision_pistas)))
+        renpy.random.shuffle(orden)
+        store.decision_orden = orden
+
+    def decision_ordenar(cantidad):
+        """Orden de pantalla de las opciones. Si no cuadra con el menú, el original."""
+        if len(store.decision_orden) != cantidad:
+            return list(range(cantidad))
+        return store.decision_orden
 
 
     config.empty_window = ui_ventana_vacia
@@ -351,7 +361,7 @@ image ctc_libreta:
 ## --- Decisiones con peso ----------------------------------------------------
 
 ## Qué tan visible es la pista de temperatura (0.0 = apagada, 0.5 = muy clara).
-define PISTA_FUERZA = 0.30
+define PISTA_FUERZA = 0.00
 
 ## Altura del conjunto (pregunta + tarjetas): 0.0 arriba, 1.0 abajo.
 ## Si lo quieres más abajo, sube el número (máx. ~0.75, o chocará con el borde).
@@ -506,8 +516,9 @@ screen choice_peso(items):
             xalign 0.5
             spacing 40
 
-            for n, i in enumerate(items):
+            for k, n in enumerate(decision_ordenar(len(items))):
 
+                $ i = items[n]
                 $ pista = decision_pistas[n]
                 $ tono = "#FFFFFF"
                 $ fuerza = 0.0
@@ -520,7 +531,7 @@ screen choice_peso(items):
 
                 python:
                     if intro:
-                        anim_tarjeta = tarjeta_entrada(n, DEC_RITMOS["tarjeta"])
+                        anim_tarjeta = tarjeta_entrada(k, DEC_RITMOS["tarjeta"])
                     else:
                         anim_tarjeta = dec_quieto
 
@@ -591,12 +602,11 @@ screen choice_peso(items):
 ## --- Iconos del menú rápido -------------------------------------------------
 ## Los mismos colores y el mismo orden que los botones del menú principal.
 define ICONO_COLOR = {
-    "atras":     C_ICHIKA,
-    "historial": C_NINO,
-    "auto":      C_MIKU,
-    "saltar":    C_YOTSUBA,
-    "guardar":   C_ITSUKI,
-    "menu":      "#FFFFFF",
+    "historial": C_ICHIKA,
+    "auto":      C_NINO,
+    "saltar":    C_MIKU,
+    "guardar":   C_YOTSUBA,
+    "menu":      C_ITSUKI,
     "info":      "#FFFFFF",
     "ayuda":     "#FFFFFF",
     "salir":     "#FFFFFF",
@@ -702,10 +712,12 @@ screen marco_juego():
 
         add "ui/hud_sombra.png"
 
-        for i in range(5):
-            $ c, a = ui_raya(i, ui_modo, ui_hermana)
-            add ("ui/hud_raya_" + str(i) + ".png") matrixcolor TintMatrix(c) alpha a xalign 0.0 yalign 1.0
-            add ("ui/hud_rayad_" + str(i) + ".png") matrixcolor TintMatrix(c) alpha a xalign 1.0 yalign 1.0
+        ## En el prólogo no hay rayas: aparecen con el Capítulo 1.
+        if not ui_prologo:
+            for i in range(5):
+                $ c, a = ui_raya(i, ui_modo, ui_hermana)
+                add ("ui/hud_raya_" + str(i) + ".png") matrixcolor TintMatrix(c) alpha a xalign 0.0 yalign 1.0
+                add ("ui/hud_rayad_" + str(i) + ".png") matrixcolor TintMatrix(c) alpha a xalign 1.0 yalign 1.0
 
         if ui_modo == "beat":
             add Solid(base, xsize=1920, ysize=5) alpha 0.9 ypos 0

@@ -25,6 +25,7 @@ define C_ITSUKI  = "#EC7063"
 
 default decision_hermana = None
 default decision_pistas = ["calida", "tibia", "fria"]
+default decision_orden = []          # posición de cada opción en pantalla (lo sortea decision_peso)
 default decision_titulo = ""
 default decision_motivo = ""
 default decision_saltando = False   # lo apunta decision_peso(): el menú corta el modo saltar antes
@@ -252,8 +253,8 @@ image raiha preocupada      = "sprites/raiha_sprites/raiha_preocupada.png"
 image isanari neutral      = "sprites/isanari_sprites/isanari_neutral.png"
 image isanari sonriendo    = "sprites/isanari_sprites/isanari_sonrisa.png"
 
-image itsuki neutral   = "sprites/itsuki_sprites/itsuki_neutral.png"
-image itsuki sonriendo   = "sprites/itsuki_sprites/itsuki_sonriendo.png"
+image itsuki neutral   = Transform("sprites/itsuki_sprites/itsuki_neutral.png", zoom=1.01)
+image itsuki sonriendo   = Transform("sprites/itsuki_sprites/itsuki_sonriendo.png", zoom=1.02)
 image itsuki molesta   = "sprites/itsuki_sprites/itsuki_molesta.png"
 image itsuki sorprendida   = "sprites/itsuki_sprites/itsuki_sorprendida.png"
 image itsuki timida   = "sprites/itsuki_sprites/itsuki_timida.png"
@@ -276,9 +277,9 @@ image miku encogida   = "sprites/miku_sprites/miku_encogida.png"
 
 image yotsuba neutral  = "sprites/yotsuba_sprites/yotsuba_neutral.png"
 image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonriendo.png"
-image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
+image yotsuba incomoda   = Transform("sprites/yotsuba_sprites/yotsuba_incomoda.png", zoom=0.99)
 image yotsuba sorprendida = "sprites/yotsuba_sprites/yotsuba_sorprendida.png"
-image yotsuba seria       = "sprites/yotsuba_sprites/yotsuba_seria.png"
+image yotsuba seria       = Transform("sprites/yotsuba_sprites/yotsuba_seria.png", zoom=0.98)
 
 
 ################################################################################
@@ -642,107 +643,19 @@ label configurar_nombre:
 
 label start:
 
-###############################################################################
-##  SHOWCASE · VIDEO 7 · ICHIKA
-##  Solo para grabar pantalla. La voz se añade en edición.
-##  Lanzar desde la consola (Shift+O):  jump showcase_ichika
-################################################################################
-
-label showcase_ichika:
-
-    $ quick_menu = False
-    window hide
-    stop music
-    stop ambiente
-
-    ## --- AUDIO 1 ---
-
-    ## --- 0–6 s · [soft] Ah... ¿me estabas mirando? [chuckling] Tranquilo, no cobro por eso.
-    scene cg_ichika_puerta
-    with dissolve
-    pause 6.0
-
-    ## --- 7–10 s · Soy Ichika, la mayor. Aunque entre nosotras eso no sirva de mucho.
-    scene bg_departamento
-    with dissolve
-
-    show ichika neutral at pj(0.5)
-    with dissolve
-    pause 3.0
-
-    ## --- 11–13 s
-    show ichika sonriendo at pj(0.5)
-    with dissolve
-    pause 3.0
-
-    ## --- 14–22 s · En mi ruta me vas a encontrar en el club de teatro, en la sala de ensayo...
-    scene cg_ichika_mascara
-    with dissolve
-    pause 8.0
-
-    ## --- 22–28 s · Tienes tres tardes y somos cinco. [excited] Yo que tú, empezaba por la mayor.
     scene bg_negro
     with fade
-    call screen mapa_hub(1)
+    show yotsuba_incomoda at pj_habla(X_ICHIKA)
 
-    ## --- AUDIO 2 ---
-
-    ## --- 29–40 s · ¿Viniste a verme actuar o a regañarme? ... Siempre tengo un chiste listo. Es mi papel.
-    scene bg_sala_ensayo
-    with dissolve
-
-    show ichika determinada at pj(0.5)
-    with dissolve
-    pause 4.0
-
-    show ichika sonriendo at pj(0.5)
-    with dissolve
-    pause 5.0
-
-    show ichika agotada at pj(0.5)
-    with dissolve
-    pause 3.5
-
-    ## --- 41–48 s · Piensa bien lo que me contestas.
-    $ decision_peso("ichika", "¿Qué le dirás a Ichika?", "Una respuesta")
-
-    menu:
-
-        "Elige"
-
-        "Respuesta Calida":
-            pass
-
-        "Respuesta Tibia":
-            pass
-
-        "Respuesta Fria":
-            pass
-
-    window hide
-
-    ## --- 48–52 s · Capítulo uno, próximamente.
-    scene cg_ichika_mascara
-    with dissolve
-    pause 4.0
-
-
-    ## --- 46–52 s · Ahora dime. [whispering] ¿Viniste a verme actuar... o a verme a mí?
-    scene bg_sala_ensayo
-    with dissolve
-
-    show ichika sonriendo at pj(0.5)
-    with dissolve
-    pause 4.0
-
-    scene bg_negro
-    with fade
-    pause 2.0
-
-    $ quick_menu = True
-    return
+    show yotsuba_seria at pj_habla(X_MIKU)
+    show yotsuba_sorprendida at pj_habla(X_YOTSUBA)
+    show yotsuba_sonriendo at pj_habla(X_ITSUKI)
+    with disolucion_lenta
+    nino "Hola"
 
     stop music fadeout 1.5
+
+    scene bg_negro
 
     call configurar_nombre
 

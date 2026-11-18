@@ -366,14 +366,6 @@ screen quick_menu():
 
             button:
                 xysize (68, 68)
-                background ui_icono("atras", False)
-                hover_background ui_icono("atras", True)
-                action Rollback()
-                tooltip "Atrás"
-                at icono_hover
-
-            button:
-                xysize (68, 68)
                 background ui_icono("historial", False)
                 hover_background ui_icono("historial", True)
                 action ShowMenu("history")
@@ -1714,7 +1706,6 @@ screen quick_menu():
             style "quick_menu"
             style_prefix "quick"
 
-            textbutton _("Atrás") action Rollback()
             textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Menú") action ShowMenu()
