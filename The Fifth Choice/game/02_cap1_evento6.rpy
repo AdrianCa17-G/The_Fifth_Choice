@@ -4298,11 +4298,10 @@ label e6_cuarto:
 
     narrador "El celular empezó a vibrar antes de que terminara de sentarme."
 
-    $ duck()
-    play sound audio.sfx_celular volume 1.5
-
     $ quick_menu = False
-    show screen chat_grupo
+
+    ## La foto de la tarde ya estaba (desde = 1); suena con los boletines.
+    call chat_ver(chat_e6(rama_de("miku") == "calida"), 1)
 
     narrador "El grupo seguía llamándose «¡Equipo Quintillizas + Tutor!». Yotsuba nunca lo cambió."
 

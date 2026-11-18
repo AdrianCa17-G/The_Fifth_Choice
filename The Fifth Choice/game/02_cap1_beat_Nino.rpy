@@ -94,11 +94,19 @@ label beat_Nino:
 
     nino "Yotsuba ya le hizo un grupo de chat. Le puso «tutor» en el nombre."
 
+    nino "Me salí. Me volvió a meter antes de que llegara a casa."
+
+    nino "Con tres signos de exclamación. Como si fuera una fiesta."
+
     nino "Va a durar lo mismo que los anteriores."
 
     nino "Y ellas van a volver a creer que esta vez sí va a ser diferente."
 
+    nino "Ya empezaron. Ninguna se salió conmigo."
+
     maruo "Eso ya lo decidiré yo, cuando corresponda."
+
+    nino "¿Cuando corresponda? ¿Cuando ya estén ilusionadas las cuatro?"
 
     nino "¡Tú nunca estás aquí para verlo!"
 

@@ -184,7 +184,7 @@ que entiende su buscador.
 | `sfx_taza_mesa` | Freesound |	Golpe seco de cerámica, sin rebote |
 | `sfx_mochila_suelo` | Freesound |	Tela sobre concreto, un golpe sordo sin eco |
 | `sfx_lapiz_mesa` | 	Freesound |	Madera contra madera, pequeño y seco |
-| `sfx_celular` | Freesound |	Vibración corta |
+| `sfx_celular` | Freesound |	Vibración corta. En el chat del grupo lo lanza `chat_reproducir`: una vez por ráfaga, la primera a 1.5 con duck y las demás a 0.75 sin duck |
 | `sfx_estomago` | Freesound | Beat de Itsuki, 3,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
 | `sfx_camara` | Freesound | Evento 6, foto del grupo, 0,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
 

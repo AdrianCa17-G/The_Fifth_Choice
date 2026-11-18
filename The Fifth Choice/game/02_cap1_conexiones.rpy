@@ -2347,13 +2347,18 @@ label cap1_interconexion_4:
     
     yotsuba "Nino lo leyó y se fue."
 
-    narrador "Saqué el celular. Era verdad."
-    
-    narrador "Ahí estaba: un grupo nuevo, y mi número al final."
+    narrador "Saqué el celular."
 
-    mc_pensamiento "No era un grupo para burlarse de mí." 
-    
+    call chat_ver(CHAT_DEBUT)
+
+    narrador "Era verdad. Ahí estaba: un grupo nuevo, y mi número al final."
+
+    mc_pensamiento "No era un grupo para burlarse de mí."
+
     mc_pensamiento "Era peor: me incluía."
+
+    hide screen chat_grupo
+    with dissolve
 
     show yotsuba incomoda at pj_calla(X_YOTSUBA)
     show itsuki molesta at pj_habla(X_ITSUKI)
@@ -3948,70 +3953,56 @@ label cap1_interconexion_6:
 
     narrador "Pasé el día mirando el chat del grupo."
 
-    narrador "El de Yotsuba. Seguía con sus tres signos de exclamación de más."
-
-    narrador "Nino lo había silenciado. Y se había salido tres veces." 
-    
-    narrador "Y Yotsuba la había vuelto a meter tres veces."
+    call chat_ver(CHAT_SEMANA, len(CHAT_SEMANA))
 
     mc_pensamiento "Les mandaré un mensaje de motivación."
 
     mc_pensamiento "No sé qué decirles. Cualquier cosa va a sonar a póster motivacional."
 
+    ## Menú de sabor: no suma puntos. chat_opcion solo elige qué se ve en el chat.
     menu:
 
         "Bien, les pondré..."
 
         "«Duerman bien. Recuerden que no es el fin del mundo.»":
 
+            $ chat_opcion = 0
+
             mc_pensamiento "Lo escribí, lo borré y lo volví a escribir." 
             
             mc_pensamiento "Sigo sintiendo que escribí un mensaje humillante."
 
-            $ duck()
-            play sound audio.sfx_celular 
-
-            narrador "Yotsuba respondió en cuatro segundos con una foto de su almohada. Con cara dibujada."
-
         "«Confío en las cinco. Pase lo que pase el lunes.»":
+
+            $ chat_opcion = 1
 
             mc_pensamiento "Lo mandé antes de arrepentirme."
 
             mc_pensamiento "Acabo de firmar mi sentencia de humillación."
 
-            $ duck()    
-            play sound audio.sfx_celular 
-
-            narrador "Yotsuba respondió con once signos de exclamación. Los conté."
-
         "«Si algo sale mal, la culpa es mía. Para eso me pagan.»":
+
+            $ chat_opcion = 2
 
             mc_pensamiento "Mitad broma, mitad cierto."
 
-            $ duck()
-            play sound audio.sfx_celular 
+    call chat_ver(chat_sabado(chat_opcion, clima_cap1), len(CHAT_SEMANA))
 
-            narrador "Yotsuba respondió: «¡La culpa no se paga, se comparte!»"
+    if chat_opcion == 0:
 
-            mc_pensamiento "Lo escribió la que siempre se queda con la culpa de las cinco."
+        mc_pensamiento "Cuatro segundos. Ni había soltado el celular."
 
-            mc_pensamiento "A ella nadie se lo dice."
+    elif chat_opcion == 1:
+
+        mc_pensamiento "Once signos de exclamación. Los conté."
+
+    else:
+
+        mc_pensamiento "Lo escribió la que siempre se queda con la culpa de las cinco."
+
+        mc_pensamiento "A ella nadie se lo dice."
 
     if clima_cap1 == "buena":
-
-        $ duck()
-        play sound audio.sfx_celular 
-
-        narrador "Ichika me mandó un corazón y escribió «jajaja»."
-
-        narrador "Nino escribió «Qué dramático.» Un minuto después: «Descansen.»"
-
-        $ duck()
-        play sound audio.sfx_celular 
-
-        narrador "Miku mandó tres puntos. Y después, sorprendentemente, una palabra completa: «Gracias.»"
-
-        narrador "Itsuki respondió «Recibido.» Con punto."
 
         mc_pensamiento "Cuatro respuestas en un minuto. Hace un mes ni abrían el chat."
 
@@ -4020,13 +4011,6 @@ label cap1_interconexion_6:
         mc_pensamiento "Me agradecieron y todo."
 
     elif clima_cap1 == "mixta":
-
-        $ duck()
-        play sound audio.sfx_celular 
-
-        narrador "Ichika mandó un corazón, lo borró y escribió «jajaja»."
-
-        narrador "Nino escribió «Qué dramático.» Y nada más."
 
         narrador "Miku e Itsuki lo dejaron en visto."
 
@@ -4043,6 +4027,9 @@ label cap1_interconexion_6:
         mc_pensamiento "Ni siquiera se tomaron la molestia en contestarme"
 
         mc_pensamiento "Bueno, no es que me sorprenda, están completamente decepcionadas de mí."
+
+    hide screen chat_grupo
+    with dissolve
 
     ############################################################################
     ##  Domingo · cierre
