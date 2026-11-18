@@ -165,7 +165,8 @@ label evento_6:
     ## Extras → Repetir → Semana de exámenes acaba aquí (fuera de un Replay no hace nada).
     $ renpy.end_replay()
 
-    jump cap2_inicio
+    ## Rol de créditos + «Continuará» (16_creditos.rpy). Vuelve al menú principal.
+    jump cap1_continuara
 
 
 ## --- Despachador de bloque (Mov. 2–6) -----------------------------------------
@@ -298,7 +299,7 @@ label e6_lunes:
 
         yotsuba "¡Repasé las fechas con Miku y las fórmulas con Ichika!"
 
-        yotsuba "…Mis lecturas, para después. Siempre se quedan para después."
+        yotsuba "...Mis lecturas, para después. Siempre se quedan para después."
 
         yotsuba "Quería terminar a tiempo para que nadie se desmayara de los nervios."
 
@@ -314,7 +315,7 @@ label e6_lunes:
 
         ichika "Dormí cuatro horas. Esta vez por las fórmulas, no por el papel de la obra."
 
-        ichika "Yo, que me sé el guion entero. Las fórmulas, a medias. …Bueno, a tres cuartos."
+        ichika "Yo, que me sé el guion entero. Las fórmulas, a medias. ...Bueno, a tres cuartos."
 
         ichika "El guion va en el bolsillo, doblado, y de ahí no sale hasta el último timbre."
 
@@ -350,7 +351,7 @@ label e6_lunes:
 
         ichika "Supongo que me distraje pensando en si de verdad lograríamos aprobarlo todo."
 
-        ichika "Aunque… compañía alguna de esas tardes no me habría venido mal, ¿sabes?"
+        ichika "Aunque... compañía alguna de esas tardes no me habría venido mal, ¿sabes?"
 
         ichika "Las hermanas mayores también necesitamos que nos echen una mano."
 
@@ -362,55 +363,55 @@ label e6_lunes:
 
         call e6_foco("miku", "animada")
 
-        miku "…Sé más de lo que van a preguntar. …Lo comprobé tres veces."
+        miku "...Sé más de lo que van a preguntar. ...Lo comprobé tres veces."
 
-        miku "…Repasé las batallas, los clanes, las fechas."
+        miku "...Repasé las batallas, los clanes, las fechas."
 
-        miku "…Hasta lo que no sale en el libro."
+        miku "...Hasta lo que no sale en el libro."
 
-        miku "…La silla de enfrente ya no se siente vacía."
+        miku "...La silla de enfrente ya no se siente vacía."
 
-        miku "…Por si acaso, lo comprobaré una cuarta vez."
+        miku "...Por si acaso, lo comprobaré una cuarta vez."
 
-        miku "…Ya sé que es demasiado."
+        miku "...Ya sé que es demasiado."
 
     elif e6_estado_de("miku") == "tibia":
 
         call e6_foco("miku", "neutral")
 
-        miku "…Repasé las batallas, los clanes, las fechas."
+        miku "...Repasé las batallas, los clanes, las fechas."
 
-        miku "…Todo, dos veces."
+        miku "...Todo, dos veces."
 
-        miku "…Creo que lo sé."
+        miku "...Creo que lo sé."
 
-        miku "…No me digas si se me da bien."
+        miku "...No me digas si se me da bien."
 
     elif e6_estado_de("miku") == "fria":
 
         call e6_foco("miku", "neutral")
 
-        miku "…Estudié lo que entra. …Tres temas."
+        miku "...Estudié lo que entra. ...Tres temas."
 
-        miku "…Como me dijeron."
+        miku "...Como me dijeron."
 
-        miku "…El libro de la biblioteca lo devolví."
+        miku "...El libro de la biblioteca lo devolví."
 
-        miku "…Bueno. …Lo renové."
+        miku "...Bueno. ...Lo renové."
 
-        miku "…No sé por qué."
+        miku "...No sé por qué."
 
     else:
 
         call e6_foco("miku", "neutral")
 
-        miku "…Repasé sola, como siempre."
+        miku "...Repasé sola, como siempre."
 
-        miku "…Las batallas, los clanes, las fechas. …Todo, dos veces."
+        miku "...Las batallas, los clanes, las fechas. ...Todo, dos veces."
 
-        miku "…Dejé libre la silla de enfrente. …Por costumbre."
+        miku "...Dejé libre la silla de enfrente. ...Por costumbre."
 
-        miku "…No esperaba a nadie. …Eso quiero pensar."
+        miku "...No esperaba a nadie. ...Eso quiero pensar."
 
 
     ## Itsuki
@@ -435,7 +436,7 @@ label e6_lunes:
 
         itsuki "He estudiado cada noche. Si un problema no sale, lo repito hasta que salga."
 
-        itsuki "Lo repito, lo reviso, lo repito otra vez. …Siempre llego a la misma cifra."
+        itsuki "Lo repito, lo reviso, lo repito otra vez. ...Siempre llego a la misma cifra."
 
         itsuki "No pedí ayuda a nadie. Prefiero equivocarme sola que acertar con ayuda."
 
@@ -448,13 +449,13 @@ label e6_lunes:
 
         call e6_foco("nino", "pillada")
 
-        nino "Treinta días. Y sigues viniendo. …No digo nada más."
+        nino "Treinta días. Y sigues viniendo. ...No digo nada más."
 
         nino "Y no pongas esa cara. Yo no dije nada. Los números hablan solos."
 
         nino "Repasé inglés leyendo etiquetas en voz baja."
 
-        nino "…Si me viste mover los labios en el súper, no viste nada."
+        nino "...Si me viste mover los labios en el súper, no viste nada."
 
         nino "Y la próxima vez que quieras dar un discurso, baja la voz. Se oyó hasta el pasillo."
 
@@ -462,11 +463,11 @@ label e6_lunes:
 
         call e6_foco("nino", "neutral")
 
-        nino "No viniste a buscarme y tampoco te fuiste. …No es un cumplido. No lo repitas."
+        nino "No viniste a buscarme y tampoco te fuiste. ...No es un cumplido. No lo repitas."
 
-        nino "Repasé inglés sola, con las etiquetas de la cocina, en voz baja. …Nadie me escuchó. Mejor para mí."
+        nino "Repasé inglés sola, con las etiquetas de la cocina, en voz baja. ...Nadie me escuchó. Mejor para mí."
 
-        nino "Y no, no te estaba esperando. …Contaba los días. Es distinto."
+        nino "Y no, no te estaba esperando. ...Contaba los días. Es distinto."
 
         nino "Ahora cállate un momento y déjame repasar la última página."
 
@@ -738,7 +739,7 @@ label e6_yotsuba_mj:
 
     yotsuba_int "De cuando alguien llega para ayudarte y no te deja correr sola."
 
-    yotsuba_int "Alguien llegó. Y esta vez… supe recibir el testigo."
+    yotsuba_int "Alguien llegó. Y esta vez... supe recibir el testigo."
 
     if e6_res == "saltado":
 
@@ -968,7 +969,7 @@ label e6_ichika_mono_no_visitada:
 
     ichika_int "Eran tres. Ninguna era mía. No sé si tengo una cuarta."
 
-    ichika_int "Si no sé qué hacer, actúo. …Siempre."
+    ichika_int "Si no sé qué hacer, actúo. ...Siempre."
 
     return
 
@@ -1230,7 +1231,7 @@ label e6_nino_mono_calida:
 
     nino_int "Cinco listas, una por hermana. La mía la escribo la última, y es la más corta."
 
-    nino_int "Y una sexta línea que todavía no sé cómo llenar. …Primero las cinco."
+    nino_int "Y una sexta línea que todavía no sé cómo llenar. ...Primero las cinco."
 
     return
 
@@ -1257,7 +1258,7 @@ label e6_nino_mono_tibia:
 
     nino_int "El chat sigue silenciado. Esta semana no me salí. No sé por qué no me salí."
 
-    nino_int "Si aprobamos las cinco… quizás esta vez no—"
+    nino_int "Si aprobamos las cinco... quizás esta vez no—"
 
     nino_int "Revisa la ocho. Hay un «has» que debería ser «have»."
 
@@ -1363,7 +1364,7 @@ label e6_nino_mj:
 
         nino_int "Se compra igual aunque nadie la pida. De repuesto."
 
-        nino_int "…No es por nadie."
+        nino_int "...No es por nadie."
 
     elif e6_sexto_valor() == "cuando":
 
@@ -1600,7 +1601,7 @@ label e6_itsuki_mono_calida:
 
     itsuki_int "Lo hice sola una vez. Salió. Eso ya lo sé. Lo que no sé es qué hago cuando no sale."
 
-    itsuki_int "Preguntarle a mis hermanas sería admitir…"
+    itsuki_int "Preguntarle a mis hermanas sería admitir..."
 
     itsuki_int "Preguntarle a él sería—"
 
@@ -1635,7 +1636,7 @@ label e6_itsuki_mono_tibia:
 
     itsuki_int "No era una promesa."
 
-    itsuki_int "…¿O sí lo era?"
+    itsuki_int "...¿O sí lo era?"
 
     itsuki_int "Podría levantar la mano. Preguntarle al profesor. Preguntar sería—"
 
@@ -1690,7 +1691,7 @@ label e6_itsuki_mono_no_visitada:
 
     itsuki_int "Dije que gané el juego. Una victoria que no vino a cobrar nadie."
 
-    itsuki_int "Pedirlo habría sido…"
+    itsuki_int "Pedirlo habría sido..."
 
     itsuki_int "No. Termino la oración. Pedirlo habría sido empezar. Y no sé dónde se para uno después."
 
@@ -1698,7 +1699,7 @@ label e6_itsuki_mono_no_visitada:
 
     itsuki_int "Lo resuelvo sola. Como siempre."
 
-    itsuki_int "…Tarde, pero sola."
+    itsuki_int "...Tarde, pero sola."
 
     return
 
@@ -1730,7 +1731,7 @@ label e6_itsuki_mj:
 
         itsuki "¿Podría repetir el enunciado de la cuatro? Entero."
 
-        profe "Cómo no. «…durante una hora y media de funcionamiento continuo…»"
+        profe "Cómo no. «...durante una hora y media de funcionamiento continuo...»"
 
         narrador "Itsuki no esperó a que terminara. Ya había bajado la vista a su hoja."
 
@@ -1911,108 +1912,108 @@ label e6_miku_mono_calida:
 
     play music descubrimiento fadein 2.0
 
-    miku_int "…Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
+    miku_int "...Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
 
-    miku_int "…Sal."
+    miku_int "...Sal."
 
-    miku_int "…No dice «sal». Pero la respuesta es la sal."
+    miku_int "...No dice «sal». Pero la respuesta es la sal."
 
-    miku_int "…Él me preguntó cuánto tardaba en llegar. …Diez días. Doce si llovía."
+    miku_int "...Él me preguntó cuánto tardaba en llegar. ...Diez días. Doce si llovía."
 
-    miku_int "…Contesté sin pensar. Iba a pedir perdón."
+    miku_int "...Contesté sin pensar. Iba a pedir perdón."
 
-    miku_int "…No me dejó. Dijo que eso no se disculpa."
+    miku_int "...No me dejó. Dijo que eso no se disculpa."
 
-    miku_int "…Estaba contestando una pregunta que me hizo él."
+    miku_int "...Estaba contestando una pregunta que me hizo él."
 
-    miku_int "…Todavía no sé si le creo."
+    miku_int "...Todavía no sé si le creo."
 
-    miku_int "…Dijo que no me faltaba la materia."
+    miku_int "...Dijo que no me faltaba la materia."
 
-    miku_int "…Que me faltaba creer que lo que sé cuenta como saber."
+    miku_int "...Que me faltaba creer que lo que sé cuenta como saber."
 
-    miku_int "…Dijo que lo iba a comprobar. Hoy es el día."
+    miku_int "...Dijo que lo iba a comprobar. Hoy es el día."
 
-    miku_int "…Esta pregunta es lo que sé, y el examen la pide."
+    miku_int "...Esta pregunta es lo que sé, y el examen la pide."
 
-    miku_int "…Hablar cuesta. Escribir también, si es de algo que quiero. Cuesta igual."
+    miku_int "...Hablar cuesta. Escribir también, si es de algo que quiero. Cuesta igual."
 
-    miku_int "…Tengo una canción en la cabeza. Es la que pongo para que nadie se acerque."
+    miku_int "...Tengo una canción en la cabeza. Es la que pongo para que nadie se acerque."
 
-    miku_int "…Voy a escribir pensando en ella."
+    miku_int "...Voy a escribir pensando en ella."
 
-    miku_int "…Cuando acabe de pensar en esa canción, quedará el sonido del reloj del aula."
+    miku_int "...Cuando acabe de pensar en esa canción, quedará el sonido del reloj del aula."
 
-    miku_int "…El reloj nunca ha pedido perdón."
+    miku_int "...El reloj nunca ha pedido perdón."
 
-    miku_int "…Vamos."
+    miku_int "...Vamos."
 
     return
 
 
 label e6_miku_mono_tibia:
 
-    miku_int "…Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
+    miku_int "...Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
 
-    miku_int "…Dijo que se me daba bien. Yo dije que solo lo había leído."
+    miku_int "...Dijo que se me daba bien. Yo dije que solo lo había leído."
 
-    miku_int "…Dijo que era más de lo que había hecho nadie en mi casa."
+    miku_int "...Dijo que era más de lo que había hecho nadie en mi casa."
 
-    miku_int "…Era un elogio con una comparación dentro."
+    miku_int "...Era un elogio con una comparación dentro."
 
-    miku_int "…¿Me lo dijo a mí o me puso al lado de las demás?"
+    miku_int "...¿Me lo dijo a mí o me puso al lado de las demás?"
 
-    miku_int "…Mis hermanas también leen. …No tanto, pero leen."
+    miku_int "...Mis hermanas también leen. ...No tanto, pero leen."
 
-    miku_int "…La sal entra por las rutas. Podría contarla."
+    miku_int "...La sal entra por las rutas. Podría contarla."
 
-    miku_int "…Si la cuento y no suma, me habré pasado de hablar."
+    miku_int "...Si la cuento y no suma, me habré pasado de hablar."
 
-    miku_int "…Si no la cuento, nadie va a saber que la sé."
+    miku_int "...Si no la cuento, nadie va a saber que la sé."
 
-    miku_int "…Lo que amo no—"
+    miku_int "...Lo que amo no—"
 
-    miku_int "…Pregunta cuatro."
+    miku_int "...Pregunta cuatro."
 
     return
 
 
 label e6_miku_mono_fria:
 
-    miku_int "…Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
+    miku_int "...Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
 
-    miku_int "…«Sin costa». …Eso es Shingen. …Eso es la sal."
+    miku_int "...«Sin costa». ...Eso es Shingen. ...Eso es la sal."
 
-    miku_int "…Dijo que lo de la sal no entraba. Tres temas, y ninguno pregunta por ella."
+    miku_int "...Dijo que lo de la sal no entraba. Tres temas, y ninguno pregunta por ella."
 
-    miku_int "…La pregunta no dice «sal». …Entonces tenía razón."
+    miku_int "...La pregunta no dice «sal». ...Entonces tenía razón."
 
-    miku_int "…Cuatro renglones del libro de texto: rutas, mercados, impuestos. Está todo."
+    miku_int "...Cuatro renglones del libro de texto: rutas, mercados, impuestos. Está todo."
 
-    miku_int "…Escribo eso. Lo que me van a preguntar."
+    miku_int "...Escribo eso. Lo que me van a preguntar."
 
-    miku_int "…La otra respuesta también la sé. Entera."
+    miku_int "...La otra respuesta también la sé. Entera."
 
-    miku_int "…Hoy no."
+    miku_int "...Hoy no."
 
     return
 
 
 label e6_miku_mono_no_visitada:
 
-    miku_int "…Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
+    miku_int "...Pregunta tres. Rutas de comercio y sostén de una provincia sin costa."
 
-    miku_int "…Sal. La respuesta empezó a escribirse sola. Ya llevo cuatro renglones."
+    miku_int "...Sal. La respuesta empezó a escribirse sola. Ya llevo cuatro renglones."
 
-    miku_int "…No debería. Es un examen. …Borro."
+    miku_int "...No debería. Es un examen. ...Borro."
 
-    miku_int "…Cuando hablo de esto, la gente pone una cara. La de esperar a que termine."
+    miku_int "...Cuando hablo de esto, la gente pone una cara. La de esperar a que termine."
 
-    miku_int "…El papel no pone caras. …Igual borro."
+    miku_int "...El papel no pone caras. ...Igual borro."
 
-    miku_int "…La silla de enfrente sigue vacía. …Eso ya lo dije una vez."
+    miku_int "...La silla de enfrente sigue vacía. ...Eso ya lo dije una vez."
 
-    miku_int "…Escribo tres líneas de rutas. La sal, otro día."
+    miku_int "...Escribo tres líneas de rutas. La sal, otro día."
 
     return
 
@@ -2249,7 +2250,7 @@ label e6_despues:
 
     narrador "Intenté recordar una sola pregunta de mis cinco exámenes. No me vino ninguna."
 
-    mc "…La verdad es que no me acuerdo."
+    mc "...La verdad es que no me acuerdo."
 
     call e6_foco("nino", "molesta")
 
@@ -2257,7 +2258,7 @@ label e6_despues:
 
     nino "Hiciste cinco exámenes. Igual que nosotras."
 
-    mc "Terminaba antes de la mitad. Y luego…"
+    mc "Terminaba antes de la mitad. Y luego..."
 
     mc "Luego las miraba a ustedes."
 
@@ -2309,7 +2310,7 @@ label e6_despues:
 
     call e6_foco("nino", "pillada")
 
-    nino "…Pues espero a que se vacíe más."
+    nino "...Pues espero a que se vacíe más."
 
     call e6_foco("", "")
 
@@ -2317,7 +2318,7 @@ label e6_despues:
 
     call e6_foco("yotsuba", "seria")
 
-    yotsuba "…Es que si salimos por esa puerta, se acaba la semana."
+    yotsuba "...Es que si salimos por esa puerta, se acaba la semana."
 
     narrador "Lo dijo bajito. Yotsuba, que no dice nada bajito."
 
@@ -2369,9 +2370,9 @@ label e6_despues:
 
         call e6_foco("miku", "neutral")
 
-        miku "…Entonces salgamos todas a la vez."
+        miku "...Entonces salgamos todas a la vez."
 
-        miku "…Así nadie se queda de última."
+        miku "...Así nadie se queda de última."
 
     call e6_foco("itsuki", "sonriendo")
 
@@ -2505,7 +2506,7 @@ label e6_yotsuba_tarde_calida:
 
     call e6_foco("yotsuba", "neutral")
 
-    yotsuba "[mc]…"
+    yotsuba "[mc]..."
 
     yotsuba "Yo sí sé una cosa."
 
@@ -2530,7 +2531,7 @@ label e6_yotsuba_tarde_tibia:
 
     call e6_foco("yotsuba", "neutral")
 
-    yotsuba "Bueno… casi entera. Hubo una frase que empecé y no terminé."
+    yotsuba "Bueno... casi entera. Hubo una frase que empecé y no terminé."
 
     mc "¿Cuál?"
 
@@ -2551,7 +2552,7 @@ label e6_yotsuba_tarde_fria:
 
     yotsuba "Me concentré en lo mío. Como dijiste."
 
-    mc "Yotsuba…"
+    mc "Yotsuba..."
 
     yotsuba "¡Es lo que tenía que hacer!"
 
@@ -2572,7 +2573,7 @@ label e6_yotsuba_tarde_no_visitada:
 
     call e6_foco("yotsuba", "neutral")
 
-    yotsuba "…¿Tú me viste? Desde la segunda fila."
+    yotsuba "...¿Tú me viste? Desde la segunda fila."
 
     mc "Te vi."
 
@@ -2605,7 +2606,7 @@ label e6_ichika_tarde_calida:
 
     ichika "Tú lo viste antes que yo, [mc]. En la sala de ensayo."
 
-    ichika "…Eso tampoco me lo creo."
+    ichika "...Eso tampoco me lo creo."
 
     narrador "Ni un chiste. Ni una máscara. Solo lo que había pasado."
 
@@ -2622,7 +2623,7 @@ label e6_ichika_tarde_tibia:
 
     ichika "Lo resolví rápido, eso sí."
 
-    ichika "Lo que no sé es si… No tengo que po—"
+    ichika "Lo que no sé es si... No tengo que po—"
 
     call e6_foco("ichika", "sonriendo")
 
@@ -2658,11 +2659,11 @@ label e6_ichika_tarde_no_visitada:
 
     call e6_foco("ichika", "neutral")
 
-    ichika "…Salieron las dos bien, creo. No sé cuál de las dos era yo."
+    ichika "...Salieron las dos bien, creo. No sé cuál de las dos era yo."
 
     mc "Yo vi a alguien resolviendo problemas de trenes."
 
-    ichika "…Ah. Esa."
+    ichika "...Ah. Esa."
 
     narrador "No sonrió para nadie. Fue una sonrisa pequeña, de las que no se ensayan."
 
@@ -2686,7 +2687,7 @@ label e6_nino_tarde_calida:
 
     call e6_foco("nino", "pillada")
 
-    nino "…No sé de qué hablas."
+    nino "...No sé de qué hablas."
 
     narrador "Lo dijo como siempre. Esta vez no le salió la mentira, y no intentó arreglarla."
 
@@ -2703,7 +2704,7 @@ label e6_nino_tarde_tibia:
 
     nino "Había un «has» que tenía que ser «have». Hay que revisar."
 
-    nino "Si aprobamos las cinco… quizás esta vez no—"
+    nino "Si aprobamos las cinco... quizás esta vez no—"
 
     call e6_foco("nino", "molesta")
 
@@ -2793,7 +2794,7 @@ label e6_itsuki_tarde_tibia:
 
     narrador "Se detuvo. La oración se quedó a medio camino."
 
-    itsuki "…Lo revisé sola. Y salió."
+    itsuki "...Lo revisé sola. Y salió."
 
     return
 
@@ -2819,9 +2820,9 @@ label e6_itsuki_tarde_no_visitada:
 
     itsuki "Tarde. Pero todo lo hice yo."
 
-    itsuki "…Si alguien me hubiera dicho dónde mirar, habría llegado a tiempo."
+    itsuki "...Si alguien me hubiera dicho dónde mirar, habría llegado a tiempo."
 
-    mc "Itsuki…"
+    mc "Itsuki..."
 
     itsuki "No lo digo por ti. Lo digo porque es verdad."
 
@@ -2829,7 +2830,7 @@ label e6_itsuki_tarde_no_visitada:
 
 
 ##  Espejo B4: «Sabía las respuestas. Las escribí. Las borré. Perdón.»
-##  Cálida: primera vez que habla EN VOZ ALTA sin «…» ni «perdón» (su cambio es de hoy).
+##  Cálida: primera vez que habla EN VOZ ALTA sin «...» ni «perdón» (su cambio es de hoy).
 
 label e6_miku_tarde_calida:
 
@@ -2855,7 +2856,7 @@ label e6_miku_tarde_calida:
 
     call e6_foco("miku", "encogida")
 
-    miku "…Eso fue raro. …Pero no retiro lo que dije."
+    miku "...Eso fue raro. ...Pero no retiro lo que dije."
 
     return
 
@@ -2864,17 +2865,17 @@ label e6_miku_tarde_tibia:
 
     call e6_foco("miku", "neutral")
 
-    miku "…Escribí lo de las rutas. …Sin la sal."
+    miku "...Escribí lo de las rutas. ...Sin la sal."
 
-    miku "…Se me daba bien. …Eso me dijeron."
+    miku "...Se me daba bien. ...Eso me dijeron."
 
-    miku "…No borré nada. …Solo paré antes."
+    miku "...No borré nada. ...Solo paré antes."
 
-    miku "…Lo que amo no—"
+    miku "...Lo que amo no—"
 
     call e6_foco("miku", "encogida")
 
-    miku "…Nada. …Perdón."
+    miku "...Nada. ...Perdón."
 
     return
 
@@ -2885,9 +2886,9 @@ label e6_miku_tarde_fria:
 
     call e6_foco("miku", "neutral")
 
-    miku "…Cuatro renglones. …Lo que preguntaban."
+    miku "...Cuatro renglones. ...Lo que preguntaban."
 
-    miku "…Correcto. …Lo comprobé."
+    miku "...Correcto. ...Lo comprobé."
 
     narrador "No dijo nada más. La mano siguió donde estaba."
 
@@ -2898,19 +2899,19 @@ label e6_miku_tarde_no_visitada:
 
     call e6_foco("miku", "neutral")
 
-    miku "…Escribí largo. …Después borré un poco."
+    miku "...Escribí largo. ...Después borré un poco."
 
-    miku "…Quedaron tres líneas. …Las de no molestar."
+    miku "...Quedaron tres líneas. ...Las de no molestar."
 
     call e6_foco("miku", "encogida")
 
-    miku "…Perdón. …No quería que sonara triste."
+    miku "...Perdón. ...No quería que sonara triste."
 
     mc "No sonó triste."
 
-    miku "…Mientes un poco."
+    miku "...Mientes un poco."
 
-    miku "…Gracias igual."
+    miku "...Gracias igual."
 
     return
 
@@ -3134,7 +3135,7 @@ label e6_resultados:
 
     narrador "Lo dijo mirando hacia el pasillo de sus habitaciones. No a mí."
 
-    mc "…Sí, señor."
+    mc "...Sí, señor."
 
     maruo "Eso espero."
 
@@ -3159,7 +3160,7 @@ label e6_s2_superado:
 
     maruo "No la repetí. Tampoco la cobré."
 
-    mc "¿La condición…?"
+    mc "¿La condición...?"
 
     maruo "Se cumplió. Cinco aprobadas. La más baja llegó a sesenta."
 
@@ -3243,7 +3244,7 @@ label e6_s2_bueno:
 
     maruo "Esto no fue una casualidad. No lo repito."
 
-    mc "…Gracias, señor."
+    mc "...Gracias, señor."
 
     maruo "Aún no hay nada que agradecer."
 
@@ -3325,7 +3326,7 @@ label e6_yotsuba_eco_calida:
 
     call e6_foco("yotsuba", "incomoda")
 
-    yotsuba "…Todavía no me sale recto. Lo estoy practicando."
+    yotsuba "...Todavía no me sale recto. Lo estoy practicando."
 
     narrador "No dijo para cuándo. Tapó el rotulador y se fue a su sitio."
 
@@ -3365,7 +3366,7 @@ label e6_yotsuba_eco_fria:
 
     yotsuba "¡Terminé primera! ¡Eso es bueno! Lo mío es terminar."
 
-    mc "Yotsuba…"
+    mc "Yotsuba..."
 
     yotsuba "¡Está bien! ¡De verdad! Hoy no hace falta contar nada."
 
@@ -3430,7 +3431,7 @@ label e6_ichika_eco_tibia:
 
     call e6_foco("ichika", "neutral")
 
-    ichika "Era un chiste. …Era un chiste, ¿verdad?"
+    ichika "Era un chiste. ...Era un chiste, ¿verdad?"
 
     mc "Era un chiste."
 
@@ -3474,7 +3475,7 @@ label e6_ichika_eco_no_visitada:
 
     call e6_foco("ichika", "sonriendo")
 
-    ichika "¡Qué amable! …Esa fue la graciosa. Perdona el reflejo."
+    ichika "¡Qué amable! ...Esa fue la graciosa. Perdona el reflejo."
 
     call e6_foco("", "")
 
@@ -3491,7 +3492,7 @@ label e6_nino_eco_calida:
 
     nino "El último duró cuatro días. Tú llevas treinta y cinco."
 
-    mc "…"
+    mc "..."
 
     nino "No me mires así. Son cálculos."
 
@@ -3516,7 +3517,7 @@ label e6_nino_eco_tibia:
 
     mc "Entendido."
 
-    nino "…Esta pesa más de lo que parece."
+    nino "...Esta pesa más de lo que parece."
 
     narrador "Dejó la bolsa más pesada en mi brazo sin mirarme, y se llevó la otra."
 
@@ -3566,7 +3567,7 @@ label e6_nino_eco_no_visitada:
 
     nino "Y fui yo. La que siempre ve venir el golpe antes que nadie."
 
-    nino "…Eso sonó mejor en mi cabeza."
+    nino "...Eso sonó mejor en mi cabeza."
 
     mc "Sonó bien."
 
@@ -3618,13 +3619,13 @@ label e6_itsuki_eco_tibia:
 
     call e6_foco("itsuki", "neutral")
 
-    itsuki "Aquel día dijiste «revisarlo desde el principio». …¿Qué ibas a—"
+    itsuki "Aquel día dijiste «revisarlo desde el principio». ...¿Qué ibas a—"
 
     narrador "Se detuvo. La oración se quedó abierta, sin sujeto. En ella, eso es casi un grito."
 
     mc "Cuando quieras."
 
-    itsuki "…No dije que quisiera."
+    itsuki "...No dije que quisiera."
 
     call e6_foco("", "")
 
@@ -3641,7 +3642,7 @@ label e6_itsuki_eco_fria:
 
     mc "Lo sé."
 
-    itsuki "No tienes que saberlo. …Es solo que cuenta."
+    itsuki "No tienes que saberlo. ...Es solo que cuenta."
 
     call e6_foco("itsuki", "neutral")
 
@@ -3662,7 +3663,7 @@ label e6_itsuki_eco_no_visitada:
 
     mc "No sabía que había premio."
 
-    itsuki "No lo hay. …Por eso es lo único que me sale."
+    itsuki "No lo hay. ...Por eso es lo único que me sale."
 
     narrador "Lo dijo con la oración cerrada y terminada."
 
@@ -3704,13 +3705,13 @@ label e6_miku_eco_tibia:
 
     call e6_foco("miku", "encogida")
 
-    miku "…Dijiste que se me daba bien."
+    miku "...Dijiste que se me daba bien."
 
-    miku "…Todavía estoy pensando qué querías decir con eso."
+    miku "...Todavía estoy pensando qué querías decir con eso."
 
     mc "Lo que dije."
 
-    miku "…Puede ser. …Lo sigo pensando."
+    miku "...Puede ser. ...Lo sigo pensando."
 
     call e6_foco("", "")
 
@@ -3725,9 +3726,9 @@ label e6_miku_eco_fria:
 
     call e6_foco("miku", "neutral")
 
-    miku "…Contesté lo que entraba. …Estuvo bien."
+    miku "...Contesté lo que entraba. ...Estuvo bien."
 
-    miku "…Hoy no."
+    miku "...Hoy no."
 
     narrador "No dijo a qué. No hizo falta."
 
@@ -3742,13 +3743,13 @@ label e6_miku_eco_no_visitada:
 
     call e6_foco("miku", "neutral")
 
-    miku "…La silla sigue vacía. …No es un reproche. …Solo está ahí."
+    miku "...La silla sigue vacía. ...No es un reproche. ...Solo está ahí."
 
     mc "Lo sé."
 
-    miku "…Dejaré el libro abierto otra vez. …Por si acaso."
+    miku "...Dejaré el libro abierto otra vez. ...Por si acaso."
 
-    miku "…Alguien viene."
+    miku "...Alguien viene."
 
     call e6_foco("", "")
 
@@ -3784,7 +3785,7 @@ label e6_intento:
 
     mc "Además, las damas primero."
 
-    itsuki "…Ese argumento es válido."
+    itsuki "...Ese argumento es válido."
 
     call e6_foco("yotsuba", "sonriendo")
 
@@ -3796,7 +3797,7 @@ label e6_intento:
 
     call e6_foco("itsuki", "timida")
 
-    itsuki "…Queda pendiente."
+    itsuki "...Queda pendiente."
 
     itsuki "Esta vez sí lo anoto."
 
@@ -3832,7 +3833,7 @@ label e6_mesa:
 
     call e6_foco("itsuki", "timida")
 
-    itsuki "…Es para que no se vuele."
+    itsuki "...Es para que no se vuele."
 
     call e6_foco("nino", "neutral")
 
@@ -3840,29 +3841,29 @@ label e6_mesa:
 
     call e6_foco("itsuki", "timida")
 
-    itsuki "…Es por si acaso."
+    itsuki "...Es por si acaso."
 
     call e6_foco("ichika", "neutral")
 
     ichika "Hablando por todas, debería decir que todo va a salir bien."
 
-    ichika "…¡Corazonada de hermana mayor!"
+    ichika "...¡Corazonada de hermana mayor!"
 
     call e6_foco("yotsuba", "incomoda")
 
     yotsuba "¡A todas les habrá ido genial! ¡Seguro!"
 
-    yotsuba "Y si a alguna no… ¡no pasa nada! ¡Cenaremos un plato hecho por Nino y se nos pasa!"
+    yotsuba "Y si a alguna no... ¡no pasa nada! ¡Cenaremos un plato hecho por Nino y se nos pasa!"
 
-    yotsuba "…Pero si a mí no me fue bien, ¡que nadie ponga cara de puchero, eh!"
+    yotsuba "...Pero si a mí no me fue bien, ¡que nadie ponga cara de puchero, eh!"
 
     call e6_foco("nino", "nerviosa")
 
-    nino "Seis sillas ocupadas. …Seis personas en esta mesa."
+    nino "Seis sillas ocupadas. ...Seis personas en esta mesa."
 
     nino "Hace un mes no habría apostado a vernos a los seis en esta mesa."
 
-    nino "…Es una observación. No le des importancia."
+    nino "...Es una observación. No le des importancia."
 
     call e6_foco("miku", "encogida")
 
@@ -3870,21 +3871,21 @@ label e6_mesa:
 
         narrador "Miku se bajó los audífonos al cuello antes de sentarse. La música se cortó a medio compás."
 
-        miku "…Hoy me los quito."
+        miku "...Hoy me los quito."
 
     else:
 
         narrador "Miku tenía las manos juntas delante del cuerpo y los audífonos colgados al cuello. Sin tocarlos."
 
-        miku "…Hoy no me los puse."
+        miku "...Hoy no me los puse."
 
-    miku "…Quiero oír lo que diremos todas."
+    miku "...Quiero oír lo que diremos todas."
 
-    miku "…Todas a la vez."
+    miku "...Todas a la vez."
 
     call e6_foco("nino", "molesta")
 
-    nino "Tú estuviste con él antes de que saliéramos. …Sabes algo."
+    nino "Tú estuviste con él antes de que saliéramos. ...Sabes algo."
 
     mc_pensamiento "Sabía que ninguna se quedaba fuera. No sabía nada más: ni cuánto, ni de quién."
 
@@ -3900,7 +3901,7 @@ label e6_mesa:
 
     call e6_foco("itsuki", "neutral")
 
-    itsuki "Tu expresión no es la de quien trae malas noticias. …Aunque no es una garantía."
+    itsuki "Tu expresión no es la de quien trae malas noticias. ...Aunque no es una garantía."
 
     call e6_foco("yotsuba", "sonriendo")
 
@@ -3910,7 +3911,7 @@ label e6_mesa:
 
     nino "A la de tres. Y que nadie mire de reojo."
 
-    nino "Una. Dos. Y…"
+    nino "Una. Dos. Y..."
 
     ## Cinco hojas, un solo sonido: UN solo play (el canal sound es único).
     play sound audio.sfx_hoja volume 2.0
@@ -3925,19 +3926,19 @@ label e6_mesa:
 
     call e6_foco("miku", "encogida")
 
-    miku "…Sonaron juntas. …Como si fuera una sola hoja."
+    miku "...Sonaron juntas. ...Como si fuera una sola hoja."
 
     narrador "Le corrió una lágrima por la cara. No se la secó."
 
-    miku "…No es tristeza. …Es que no sé dónde poner esto."
+    miku "...No es tristeza. ...Es que no sé dónde poner esto."
 
     call e6_foco("ichika", "sonriendo")
 
     narrador "Ichika soltó una risa corta, de las que se escapan solas."
 
-    ichika "Ja. …Ja, ja. …Me quedé sin chiste. A mí, que siempre tengo uno."
+    ichika "Ja. ...Ja, ja. ...Me quedé sin chiste. A mí, que siempre tengo uno."
 
-    ichika "Tantas noches cortas. …Y valieron cada minuto."
+    ichika "Tantas noches cortas. ...Y valieron cada minuto."
 
     ichika "Eso no venía en el guion."
 
@@ -3947,11 +3948,11 @@ label e6_mesa:
 
     narrador "Movía los labios sin sonido."
 
-    nino "Uno. Dos. Tres. Cuatro. …Cinco."
+    nino "Uno. Dos. Tres. Cuatro. ...Cinco."
 
     nino "Cinco. Los conté dos veces."
 
-    nino "…Que nadie diga nada. Si alguien dice algo, me voy."
+    nino "...Que nadie diga nada. Si alguien dice algo, me voy."
 
     narrador "Se le quebró la voz en la última palabra. Nadie dijo nada. Nino se quedó."
 
@@ -3965,13 +3966,13 @@ label e6_mesa:
 
     ichika "Yotsuba. El tuyo."
 
-    yotsuba "¿Eh? …¡Ah, el mío!"
+    yotsuba "¿Eh? ...¡Ah, el mío!"
 
     call e6_foco("yotsuba", "neutral")
 
     narrador "Bajó la vista. Y, por primera vez en todo el mes, Yotsuba se quedó callada."
 
-    yotsuba "…Este es mi boletín. …Esta soy yo. …Esto lo hice yo."
+    yotsuba "...Este es mi boletín. ...Esta soy yo. ...Esto lo hice yo."
 
     call e6_foco("yotsuba", "sonriendo")
 
@@ -3987,13 +3988,13 @@ label e6_mesa:
 
     narrador "Itsuki lo leyó línea por línea, como se lee un contrato. Dos veces, tal como había propuesto."
 
-    itsuki "Lo leí dos veces. …El resultado no cambió."
+    itsuki "Lo leí dos veces. ...El resultado no cambió."
 
     itsuki "Debería decir algo acorde al momento. Algo con sujeto, verbo y—"
 
     narrador "No le salió el punto. Por una vez, no pareció importarle."
 
-    itsuki "…Anótenlo, provisionalmente, como «algo bueno»."
+    itsuki "...Anótenlo, provisionalmente, como «algo bueno»."
 
     narrador "Entonces levantó la vista y me miró. Quiso decirme algo. Pero nuevamente se calló."
 
@@ -4043,7 +4044,7 @@ label e6_mesa:
 
     call e6_foco("nino", "molesta")
 
-    nino "…Eso fue un discurso."
+    nino "...Eso fue un discurso."
 
     mc "Dije que no tenía mucho que decir."
 
@@ -4051,11 +4052,11 @@ label e6_mesa:
 
     call e6_foco("miku", "encogida")
 
-    miku "…Fue lindo."
+    miku "...Fue lindo."
 
-    miku "…A tu manera… Fue lindo."
+    miku "...A tu manera... Fue lindo."
 
-    miku "…Gracias por tus palabras, [mc]."
+    miku "...Gracias por tus palabras, [mc]."
 
     call e6_foco("itsuki", "neutral")
 
@@ -4093,7 +4094,7 @@ label e6_mesa:
 
     call e6_foco("miku", "encogida")
 
-    miku "…¿Dónde pongo las manos? …Mejor delante."
+    miku "...¿Dónde pongo las manos? ...Mejor delante."
 
     call e6_foco("itsuki", "neutral")
 
@@ -4125,9 +4126,9 @@ label e6_mesa:
 
     narrador "Tomé la foto. Ninguna bajó el boletín."
 
-    ichika "¿Ya está? …Me tiembla el brazo y no pienso ser la primera en bajarlo."
+    ichika "¿Ya está? ...Me tiembla el brazo y no pienso ser la primera en bajarlo."
 
-    nino "Yo tampoco. …Que baje primero Yotsuba."
+    nino "Yo tampoco. ...Que baje primero Yotsuba."
 
     yotsuba "¡Yo no bajo nada! ¡Puedo quedarme así hasta mañana!"
 
@@ -4135,7 +4136,7 @@ label e6_mesa:
 
     yotsuba "¡Pues que se cansen tarde!"
 
-    miku "…Yo tampoco quiero bajar las manos todavía. …Mientras sigamos así, …esto sigue pasando."
+    miku "...Yo tampoco quiero bajar las manos todavía. ...Mientras sigamos así, ...esto sigue pasando."
 
     narrador "Nadie se rio. Se quedaron un momento en silencio, juntas, cada una en su sitio, con la hoja en alto."
 
@@ -4143,9 +4144,9 @@ label e6_mesa:
 
     ichika "Oigan. ¿Les confieso algo?"
 
-    ichika "…Esta mañana tenía miedo de abrirlo sola. Y no estaba sola."
+    ichika "...Esta mañana tenía miedo de abrirlo sola. Y no estaba sola."
 
-    nino "…Nunca había estado tan cansada. …Y tan bien. …Que no se repita esa frase."
+    nino "...Nunca había estado tan cansada. ...Y tan bien. ...Que no se repita esa frase."
 
     itsuki "Lo anoto. «Nino dijo: tan bien.»"
 
@@ -4157,23 +4158,23 @@ label e6_mesa:
 
     yotsuba "¡Y cuando salga mal, también! ¡Igual de juntas!"
 
-    itsuki "…Moción aceptada. Con una condición: el boletín, recto."
+    itsuki "...Moción aceptada. Con una condición: el boletín, recto."
 
-    miku "…Yo también. …Aunque salga mal. …Sobre todo si sale mal."
+    miku "...Yo también. ...Aunque salga mal. ...Sobre todo si sale mal."
 
     nino "No hablemos de que salga mal el día en que salió bien."
 
     mc "Si sale mal, la foto la saco yo. Y la guardo igual que esta."
 
-    ichika "Qué tutor más cursi. …Me gusta."
+    ichika "Qué tutor más cursi. ...Me gusta."
 
     mc "Pues yo no bajo el celular hasta que baje el último brazo."
 
-    itsuki "Entonces será larga la espera. …Bajo en tres."
+    itsuki "Entonces será larga la espera. ...Bajo en tres."
 
     yotsuba "¡Una! ¡Dos!"
 
-    nino "…Y."
+    nino "...Y."
 
     narrador "Bajaron los brazos todas a la vez, sin contarlo. Igual que habían abierto los boletines."
 
@@ -4226,7 +4227,7 @@ label e6_casa:
 
     mc "¡¡Aprobaron las cinco!!"
 
-    raiha "…¿Las cinco?"
+    raiha "...¿Las cinco?"
 
     mc "Las cinco."
 
@@ -4561,7 +4562,7 @@ label e6_retrato:
 
     raiha "Hermanito, ¿sigues despierto? Tienes la luz encendida."
 
-    raiha "¿Qué miras? …¿Esas son las quintillizas?"
+    raiha "¿Qué miras? ...¿Esas son las quintillizas?"
 
     raiha "¡Son iguales! ¿Cómo las distingues?"
 
@@ -4619,7 +4620,7 @@ label e6_retrato:
 
             mc "A cualquiera que cueste menos de lo que estás pensando."
 
-            raiha "¡Al acuario! …No, al parque."
+            raiha "¡Al acuario! ...No, al parque."
 
             mc_pensamiento "El parque es gratis. Lo pensó antes que yo."
 
@@ -4691,20 +4692,20 @@ label e6_retrato:
             show raiha preocupada at pj_habla(0.5)
             with disolucion_lenta
 
-            raiha "…¿Estás enfermo?"
+            raiha "...¿Estás enfermo?"
 
             mc "Estoy cansado. Es distinto."
 
-            raiha "Hermanito… Nunca te había oído decir eso."
+            raiha "Hermanito... Nunca te había oído decir eso."
 
-            raiha "…Dormir también es importante."
+            raiha "...Dormir también es importante."
 
             mc "Lo sé. Me lo dijiste tú."
 
             show raiha hablando at pj_habla(0.5)
             with disolucion_lenta
 
-            raiha "¡Pues mañana no te despierto! …Salvo que haya curry."
+            raiha "¡Pues mañana no te despierto! ...Salvo que haya curry."
 
     show raiha hablando at pj_habla(0.5)
     with disolucion_lenta
@@ -4798,11 +4799,4 @@ label e6_retrato:
     ## Barra de progreso de las chicas (14_progreso_chicas.rpy): solo lee puntos.
     call progreso_chicas
 
-    return
-
-
-## ============================= CAPÍTULO 2 ======================================
-## Stub de salida. BORRAR cuando exista 03_capitulo2.rpy (label duplicado).
-label cap2_inicio:
-    narrador "[[STUB cap2_inicio · Capítulo 2 pendiente]"
     return

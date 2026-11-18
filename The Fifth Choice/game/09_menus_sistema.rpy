@@ -552,8 +552,12 @@ screen about():
 
         text _("Versión [config.version!t]") xalign 0.5 size 22 color "#CFC6E0"
 
-        if gui.about:
-            text "[gui.about!t]" xsize 960 size 24 color "#EDE7F6"
+        ## Texto de créditos: fuente única en 16_creditos.rpy.
+        use creditos_parrafos(CREDITOS_AVISO, 960, 24)
+        use creditos_parrafos(CREDITOS_GRATIS, 960, 22, "#CFC6E0")
+        null height 30
+        use creditos_cuerpo(True, 960)
+        null height 30
 
         text _("Hecho con {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]") xsize 960 size 20 color "#BDB3D1"
 

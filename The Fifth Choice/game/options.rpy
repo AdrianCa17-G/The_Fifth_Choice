@@ -31,66 +31,15 @@ define gui.show_name = True
 define config.version = "1.0"
 
 
-## Texto situado en la pantalla 'Acerca de' del juego. Sitúa el texto entre
-## comillas triples y deja una línea en blanco entre párrafos.
-
-## CREDITOS — ver CREDITOS.md en la raiz del proyecto.
+## CRÉDITOS — fuente única en 16_creditos.rpy (CREDITOS_AVISO, CREDITOS_GRATIS,
+## CREDITOS). Los usan el aviso inicial, «Acerca de» y el rol final; CREDITOS.md
+## (raíz del proyecto) dice lo mismo.
 ##
-## El credito 音楽：魔王魂 es OBLIGATORIO por licencia CC BY 4.0 y tiene que
-## estar DENTRO del juego, no solo en el repositorio: la licencia obliga a
-## atribuir a quien recibe la obra, y quien recibe la obra es el jugador.
+## El crédito 音楽：魔王魂 es OBLIGATORIO por licencia CC BY 4.0 y tiene que
+## estar DENTRO del juego, no solo en el repositorio.
 ##
-## DOS COSAS QUE NO SON OBVIAS Y ROMPEN ESTE BLOQUE SI SE TOCAN:
-##
-## 1) _p() junta en una sola linea todo lo que no este separado por una linea
-##    EN BLANCO. Por eso cada entrada va como parrafo propio: sin la linea en
-##    blanco, el titulo en negrita se pega al texto de la entrada siguiente.
-##
-## 2) DejaVuSans, la fuente por defecto de Ren'Py, no tiene caracteres
-##    japoneses: salen como cuadraditos. Por eso los trozos en japones van
-##    envueltos en {font=fonts/NotoSansJP-Regular.ttf}. Esa fuente TIENE que
-##    existir en game/fonts/ o el juego falla al abrir esta pantalla.
-##    Descarga: fonts.google.com/noto/specimen/Noto+Sans+JP -> static/
-
-define gui.about = _p("""
-The Fifth Choice es un proyecto de fan gratuito y sin ánimo de lucro. No está afiliado, autorizado ni patrocinado por los titulares de la obra original.
-
-Este juego nunca será monetizado.
-
-{b}Obra original{/b}
-
-Quintessential Quintuplets ({font=fonts/NotoSansJP-Regular.ttf}五等分の花嫁{/font}) es una obra de Negi Haruba, publicada por Kodansha. Los personajes y elementos de la historia pertenecen a sus respectivos titulares.
-
-{b}Música{/b}
-
-{font=fonts/NotoSansJP-Regular.ttf}音楽：魔王魂{/font} — bajo licencia CC BY 4.0
-
-DOVA-SYNDROME / OpenTracks — Kobat, KK, {font=fonts/NotoSansJP-Regular.ttf}ハモおた{/font}, shimtone, {font=fonts/NotoSansJP-Regular.ttf}蒲鉾さちこ{/font}, FLASH BEAT, KHAIM, Hayato Sadohara
-
-{b}Efectos de sonido{/b}
-
-Freesound
-
-{font=fonts/NotoSansJP-Regular.ttf}効果音ラボ{/font}
-
-Springin' Sound Stock
-
-{b}Imágenes{/b}
-
-Generadas con PixAI (Tsubaki.2) y Gemini. LoRA de personaje por creadores de la comunidad de PixAI.
-
-{b}Tipografías{/b}
-
-M PLUS Rounded 1c, Shippori Mincho B1 y Klee One — SIL Open Font License 1.1
-
-{b}Motor{/b}
-
-Ren'Py 8.5.3
-
-{b}Desarrollo{/b}
-
-Guion, dirección, arte y montaje: Adrian (AdrianKiller17)
-""")
+## Los caracteres japoneses necesitan fonts/NotoSansJP-Regular.ttf (la envuelve
+## cred_jp): si falta, el juego falla al abrir los créditos.
 
 
 ## Nombre breve del juego para ejecutables y directorios en la distribución.

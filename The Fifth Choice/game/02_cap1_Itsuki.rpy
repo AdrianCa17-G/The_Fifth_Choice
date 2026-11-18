@@ -176,7 +176,7 @@ label hub_Itsuki:
 
     narrador "Como quien suelta algo antes de poder impedírselo."
 
-    itsuki "…"
+    itsuki "..."
 
     itsuki "Olvida lo que dije."
 
@@ -313,7 +313,7 @@ label itsuki_m4a:
 
     narrador "Debió decidir que no del todo, porque volvió a mirar el cuaderno."
 
-    itsuki "…"
+    itsuki "..."
 
     narrador "Repasó la línea. Una vez. Dos veces."
 
@@ -347,11 +347,11 @@ label itsuki_m4a:
     show itsuki timida at pj_habla(0.5)
     with disolucion_lenta
 
-    itsuki "…El resultado me da distinto ahora."
+    itsuki "...El resultado me da distinto ahora."
 
     mc "¿Y?"
 
-    itsuki "…Es el que tenía que dar."
+    itsuki "...Es el que tenía que dar."
 
     narrador "No lo dijo como un triunfo."
 
@@ -364,7 +364,7 @@ label itsuki_m4a:
 
     mc "Ya lo sé. No me voy a ir todavía."
 
-    itsuki "…Como quieras, [mc]."
+    itsuki "...Como quieras, [mc]."
 
     narrador "Era la primera vez que decía mi nombre desde el día del asiento."
 
@@ -457,7 +457,7 @@ label itsuki_m4c:
     show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    itsuki "…"
+    itsuki "..."
 
     mc "Listo. El resultado es ese."
 

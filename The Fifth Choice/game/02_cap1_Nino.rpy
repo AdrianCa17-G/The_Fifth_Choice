@@ -209,7 +209,7 @@ label hub_Nino:
         show nino nerviosa at pj_habla(0.5)
         with disolucion_lenta
 
-        nino "…"
+        nino "..."
 
         nino "Los que entraron antes también sonreían el primer día."
 
@@ -228,7 +228,7 @@ label hub_Nino:
         show nino nerviosa at pj_habla(0.5)
         with disolucion_lenta
 
-        nino "…"
+        nino "..."
 
         nino "Porque los que entraron antes también sonreían el primer día."
 
@@ -283,7 +283,7 @@ label hub_Nino:
     show nino neutral at pj(0.5) 
     with dissolve
 
-    nino "…"
+    nino "..."
 
     nino "Olvida lo que dije."
 
@@ -350,7 +350,7 @@ label nino_m4a:
 
     mc "Tienes razón en desconfiar."
 
-    nino "…¿Qué?"
+    nino "...¿Qué?"
 
     mc "No te voy a decir que esta vez es distinto."
 
@@ -365,7 +365,7 @@ label nino_m4a:
     show nino nerviosa at pj_habla(0.5)
     with disolucion_lenta
 
-    nino "…"
+    nino "..."
 
     nino "Esa es la primera vez que alguien no me promete nada."
 
@@ -389,7 +389,7 @@ label nino_m4a:
     show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
-    nino "…No le digas a mis hermanas que hablé de más."
+    nino "...No le digas a mis hermanas que hablé de más."
 
     mc "No dije nada de más."
 
@@ -441,7 +441,7 @@ label nino_m4b:
     show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
-    nino "…Esa cesta pesa más de lo que parece."
+    nino "...Esa cesta pesa más de lo que parece."
 
     mc "Ya lo noté."
 
@@ -484,7 +484,7 @@ label nino_m4c:
 
     narrador "No funcionó."
 
-    nino "…"
+    nino "..."
 
     narrador "Se rió, pero no de gracia."
 

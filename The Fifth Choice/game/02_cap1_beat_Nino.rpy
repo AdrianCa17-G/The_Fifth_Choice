@@ -76,7 +76,7 @@ label beat_Nino:
     scene cg_nino_confrontacion_cocina
     with dissolve
 
-    nino "…y no me importa lo que hayas firmado con él. Debes despedirlo."
+    nino "...y no me importa lo que hayas firmado con él. Debes despedirlo."
 
     maruo "No."
 
@@ -297,7 +297,7 @@ label beat_Nino:
     
     nino "Miku se encierra en su propia burbuja todavía más, y ya estaba bastante encerrada."
 
-    nino "E Itsuki… Itsuki se lo toma como si fuera personal, porque para ella todo lo es."
+    nino "E Itsuki... Itsuki se lo toma como si fuera personal, porque para ella todo lo es."
 
     narrador "Hablaba rápido, sin las pausas que suele dejar entre frase y frase."
 
@@ -321,7 +321,7 @@ label beat_Nino:
     show nino pillada at pj(0.5)
     with dissolve
 
-    nino "…"
+    nino "..."
 
     nino "No dije nada de esto."
 
@@ -400,7 +400,7 @@ label beat_Nino:
 
         mc "¿Y quién junta los tuyos?"
 
-        nino "…¿Qué?"
+        nino "...¿Qué?"
 
         mc "Dijiste que te toca juntar los pedazos de las cuatro."
 
@@ -548,7 +548,7 @@ label beat_Nino:
         show nino molesta at pj(0.5)
         with disolucion_lenta
 
-        nino "…"
+        nino "..."
 
         nino "Genial."
 

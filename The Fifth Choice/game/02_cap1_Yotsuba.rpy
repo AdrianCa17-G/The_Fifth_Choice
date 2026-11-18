@@ -105,7 +105,7 @@ label hub_Yotsuba:
     
     narrador "Murmuró algo entre dientes, sin aire."
 
-    yotsuba "…"
+    yotsuba "..."
 
     mc "Llevas veintitrés vueltas, Yotsuba."
 
@@ -129,11 +129,11 @@ label hub_Yotsuba:
     show yotsuba neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    yotsuba "…¿Cuánto llevas tú, [mc]?"
+    yotsuba "...¿Cuánto llevas tú, [mc]?"
 
     mc "Tus últimas ocho vueltas."
 
-    yotsuba "…"
+    yotsuba "..."
 
     yotsuba "Eso es mucho tiempo."
 
@@ -172,7 +172,7 @@ label hub_Yotsuba:
 
     narrador "La pregunta la pilló sin la exclamación preparada."
 
-    yotsuba "…Quería terminar las series."
+    yotsuba "...Quería terminar las series."
 
     mc "¿Cuántas series?"
 
@@ -180,7 +180,7 @@ label hub_Yotsuba:
 
     mc "¿Cuántas te faltaban?"
 
-    yotsuba "…Treinta."
+    yotsuba "...Treinta."
 
     narrador "Treinta vueltas después de que el club cerró."
 
@@ -194,7 +194,7 @@ label hub_Yotsuba:
 
     yotsuba "¡Solo cuando quiero mejorar!"
 
-    yotsuba "…O sea, todos los días."
+    yotsuba "...O sea, todos los días."
 
     mc "¿Y el club no se queda?"
 
@@ -222,7 +222,7 @@ label hub_Yotsuba:
 
     yotsuba "Ichika actúa. Nino cocina. Miku sabe de historia. Itsuki estudia."
 
-    yotsuba "Y yo…"
+    yotsuba "Y yo..."
 
     narrador "Señaló la pista con la mano abierta."
 
@@ -368,7 +368,7 @@ label yotsuba_m4a:
     
     narrador "Pero tardó un poco más en llegar."
 
-    yotsuba "…¿Qué me salté?"
+    yotsuba "...¿Qué me salté?"
 
     mc "Esta mañana. Supiste que Nino no había dormido bien antes de que ella dijera nada."
 
@@ -389,7 +389,7 @@ label yotsuba_m4a:
     show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
 
-    yotsuba "Oye, [mc]… ¿Me estabas observando?"
+    yotsuba "Oye, [mc]... ¿Me estabas observando?"
 
     mc "Soy tu tutor. Observar es parte del trabajo."
 
@@ -402,7 +402,7 @@ label yotsuba_m4a:
     show yotsuba seria at pj_habla(0.5)
     with disolucion_lenta
 
-    yotsuba "…Pero eso no entra en ningún examen."
+    yotsuba "...Pero eso no entra en ningún examen."
 
     mc "En Japonés entra algo que se llama comprensión lectora."
 
@@ -418,7 +418,7 @@ label yotsuba_m4a:
 
     mc "Te digo que tu punto de partida no es cero. Nunca lo fue."
 
-    yotsuba "…"
+    yotsuba "..."
 
     narrador "Pasó un momento largo."
 
@@ -434,7 +434,7 @@ label yotsuba_m4a:
     show yotsuba sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
-    yotsuba "…Eso también es verdad."
+    yotsuba "...Eso también es verdad."
 
     mc "Dame el cronómetro."
 

@@ -137,7 +137,7 @@ label beat_Itsuki:
 
     mc "Pero no lo tienes abierto para leerlo."
 
-    itsuki "…"
+    itsuki "..."
 
     narrador "No contestó."
 
@@ -170,7 +170,7 @@ label beat_Itsuki:
 
     mc "No."
 
-    itsuki "…¿Por qué no?"
+    itsuki "...¿Por qué no?"
 
     mc "Porque ya lo sé."
 

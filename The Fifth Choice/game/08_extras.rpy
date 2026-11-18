@@ -882,7 +882,7 @@ define ANIM_GRUPOS = [
     ("tarde", "Tardes", "Tarde completada, según cómo acabó"),
     ("mj", "Minijuegos", "Entrada y salidas de cada minijuego"),
     ("decidir", "Decidir", "«Hora de decidir» antes de cada decisión"),
-    ("cierre", "Cierre", "La barra de las chicas al cerrar el capítulo"),
+    ("cierre", "Cierre", "La barra de las chicas y los créditos al cerrar el capítulo"),
 ]
 
 define ANIM_RAMA_TXT = {"calida": "Cálida", "tibia": "Tibia", "fria": "Fría"}
@@ -1026,6 +1026,8 @@ init 1 python:
                           {"ea_tipo": "decidir", "ea_h": h}))
         lista.append(("cierre", "cierre", "Cinco nombres", "Cierre del Capítulo 1", CORT_ROSA, "flor",
                       "Termina el Capítulo 1.", {"ea_tipo": "cierre"}))
+        lista.append(("creditos", "cierre", "Créditos", "Rol del Capítulo 1", CORT_LILA, "flor",
+                      "Termina el Capítulo 1.", {"ea_tipo": "creditos"}))
         return lista
 
     ANIM_LISTA = anim_catalogo()
@@ -1039,6 +1041,8 @@ init 1 python:
             anim_marcar(_k)
         if persistent.prog_ultimo is not None:
             anim_marcar("cierre")
+        ## El rol llegó después: quien ya cerró el capítulo no tiene otra forma de verlo.
+        anim_marcar("creditos")
     if persistent.final_malo_temprano_visto:
         anim_marcar("cort_final_malo")
 
@@ -1313,6 +1317,8 @@ label extra_anim:
         call extra_anim_decidir
     elif ea_tipo == "cierre":
         call progreso_chicas(extra_prog_valores())
+    elif ea_tipo == "creditos":
+        call creditos_rol
 
     return
 

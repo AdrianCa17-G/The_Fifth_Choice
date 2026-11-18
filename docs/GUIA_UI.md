@@ -25,6 +25,7 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 | `14_progreso_chicas.rpy` | Barra de progreso de las chicas al cerrar un capítulo (`PROG_IMAGEN`, `progreso_chicas`) |
 | `12_e6_pantallas.rpy` | Pantallas del Evento 6: boletín de notas (`boletin_cinco`) |
 | `15_chat_grupo.rpy` | Chat del grupo «¡Equipo Quintillizas + Tutor!» (`chat_grupo`, `chat_ver`) y los mensajes de sus tres apariciones (`CHAT_DEBUT`, `CHAT_SEMANA`, `chat_sabado`, `chat_e6`) |
+| `16_creditos.rpy` | Créditos (fuente única: `CREDITOS_AVISO`, `CREDITOS_GRATIS`, `CREDITOS`), aviso inicial (`splashscreen`), rol (`creditos_rol`) y «Continuará» (`continuara`, `cap1_continuara`) |
 | `screens.rpy` | `say`, `choice`, menú rápido |
 | `herramientas/generar_ui.py` | genera todos los PNG de `game/ui/` |
 | `herramientas/generar_logo.py` | genera el logo con los sprites `neutral` |
@@ -67,6 +68,9 @@ Los fondos del collage: python `generar_fondos_collage.py`. Importa `generar_ui.
 - **Nombre de banda:** `use hub_banda_nombre(d)` dentro de un contenedor de `HUB_CARD_W` de ancho. Lo comparten el botón del mapa y `hub_completado`.
 - **Rendimiento del mapa:** paneles, velos y sombra se montan una vez por apertura con `default` en `mapa_hub` (y en `hub_completado`). No llamar a `hub_panel()` dentro de la pantalla: son 32 capas de degradado por banda y se rehacían en cada hover.
 - **Tipografía del mapa:** los nombres siguen en M PLUS Rounded (es el key visual promocional); las etiquetas pequeñas («TARDE n DE 3», «VISITADA») usan `HUD_FUENTE` en mayúsculas con `kerning 4`, como la cinta del HUD.
+- **Créditos:** el texto vive SOLO en `16_creditos.rpy` y lo leen el aviso inicial, «Acerca de» y el rol; `CREDITOS.md` lo repite a mano (si cambias uno, cambia el otro). Cada sección es `(título, líneas)` y cada línea `("sub" | "linea" | "nota", texto)` o `("enlace", texto, url)` (clicable solo en «Acerca de»). El japonés se envuelve solo en Noto Sans JP (`cred_jp`): no hace falta `{font}`. Las cintas de sección se tiñen por turnos con `PETALO_ORDEN`. Comprobación: `cred_autocomprobar()`.
+- **Aviso inicial:** `label splashscreen`. Primera vez `AVISO_BLOQUEO` s (5) con pausa `hard` (las cinco flores brotan como cuenta atrás) y marca `persistent.aviso_visto`; después, un clic. Prueba: consola → `$ persistent.aviso_visto = False` + `jump splashscreen`.
+- **Rol y «Continuará»:** `evento_6` salta a `cap1_continuara` tras `end_replay` (Repetir no llega al rol): `creditos_rol` → `call screen continuara` → `renpy.full_restart()`. El rol sube con `cred_sube` (interpola `ypos` y `yanchor` a la vez, así acaba con el bloque del logo centrado sea cual sea el alto real); la duración sale de `creditos_duracion()`, que solo estima el alto para fijar la velocidad (`CRED_VELOCIDAD`). Saltable (clic o cinta «Saltar») solo con `persistent.creditos_vistos`. Música `main_theme`, que sigue hasta el menú. El botón de apoyo abre `CREDITOS_DONAR` con `OpenURL`. Está también en Extras → Animaciones → Cierre. Prueba: consola → `$ persistent.creditos_vistos = False` + `jump cap1_continuara`. Cuando exista el Capítulo 2, saltar a `cap2_inicio` después del rol.
 - **Botón nuevo:** `hover_sound` `audio.sfx_hover` y `activate_sound audio.sfx_click`. El mapa usa `sfx_hhover` y `sfx_hclick`.
 
 ## 5. Trampas
@@ -79,4 +83,5 @@ Los fondos del collage: python `generar_fondos_collage.py`. Importa `generar_ui.
 - FINALES_TEMPRANO es un define: se evalúa en init y no puede leer persistent. Lo que dependa del jugador (el nombre) se añade en final_scope().
 - **Pantalla + `renpy.pause` nunca con `modal True`.** El modal se traga el temporizador y el clic de la pausa (también con `hard=True`): la pausa no termina y el juego se queda colgado sin error. Por eso `cortinilla` y `hub_completado` no son modales. `modal` solo sirve con `call screen` (como `mapa_hub`).
 - **Animación que debe empalmar con una pantalla:** el último fotograma tiene que dibujar lo mismo, en el mismo sitio y con los mismos valores finales (offset 0, alfa 1, zoom 1, `rotate None` al acabar un giro con `rotate_pad False`). El título con barrido usa `fixed: fit_first True` con una copia invisible del texto: el `crop` cambia el tamaño y, centrado, el texto se desplazaría.
+- **Shippori Mincho dibuja «…» centrado, a la japonesa** (···). En títulos con `gui.name_text_font`, escribir tres puntos.
 - El collage apaga `quick_menu`, y de eso cuelga todo el HUD. Si se sale de un collage sin `call collage_cerrar`, la interfaz no vuelve.

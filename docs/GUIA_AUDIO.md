@@ -106,9 +106,9 @@ volver a exportarlo comprime dos veces.
 | `extraneza` | 日曜の午後 (KK) | DOVA |
 | `guardia` | Blue Moon | DOVA |
 | `hogar` | ピアノ34「静寂の世界へ」 | 魔王魂 |
-| `hub` | Dailyfountain | DOVA |
+| `hub` | Dailyfountain (かずち) | DOVA |
 | `incomodo` | Zany Escape (Kobat) | DOVA |
-| `main_theme` | Gotoubun no Kimochi piano cover | Youtube |
+| `main_theme` | Gotoubun no Kimochi piano cover | TheChiporpoise (con permiso) |
 | `silencio_exterior` | 風 孤独感 | Springin' Sound Stock  |
 | `tregua` | Lonely Town | DOVA |
 | `ichika_tema` | Fancy Pop | DOVA |
@@ -412,3 +412,4 @@ primera.
 | Quejas de la interconexión 6	| `incomodo` |
 | Después de las quejas y domingo	| `cotidiano` en clima buena o mixta, silencio en mala |
 | Exámenes | Sin música, `amb_reloj` bajo |
+| Rol de créditos y «Continuará» (`16_creditos.rpy`) | `main_theme`, sigue sin cortes hasta el menú principal |
