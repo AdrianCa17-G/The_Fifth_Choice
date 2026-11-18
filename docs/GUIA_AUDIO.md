@@ -96,7 +96,7 @@ volver a exportarlo comprime dos veces.
 | Cue | Pista | Fuente |
 |---|---|---|
 | `amb_viento` | 風 孤独感 | Springin' Sound Stock |
-| `amb_reloj` |  | |
+| `amb_reloj` | 振り子時計 | 効果音ラボ |
 | `caos` | Busy As A Bee (ハモおた) | DOVA |
 | `cena` | アコースティック04 | 魔王魂 |
 | `contrato` | Night Shade Story (shimtone) | DOVA |
@@ -106,9 +106,9 @@ volver a exportarlo comprime dos veces.
 | `extraneza` | 日曜の午後 (KK) | DOVA |
 | `guardia` | Blue Moon | DOVA |
 | `hogar` | ピアノ34「静寂の世界へ」 | 魔王魂 |
-| `hub` |  | |
+| `hub` | Dailyfountain | DOVA |
 | `incomodo` | Zany Escape (Kobat) | DOVA |
-| `main_theme` |  |  |
+| `main_theme` | Gotoubun no Kimochi piano cover | Youtube |
 | `silencio_exterior` | 風 孤独感 | Springin' Sound Stock  |
 | `tregua` | Lonely Town | DOVA |
 | `ichika_tema` | Fancy Pop | DOVA |
