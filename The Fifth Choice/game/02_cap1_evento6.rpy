@@ -220,6 +220,7 @@ label e6_lunes:
 
     call expression ("e6_s1_" + e6_estado_entrada)
 
+    play music cotidiano fadein 1.5
 
     ## --- Aula: el discurso de MC (POV de las cinco) ----------------------------
     scene bg_aula
@@ -495,6 +496,7 @@ label e6_lunes:
         
         narrador "Con otro verbo, y con otro final."
 
+    stop music fadeout 1.5
 
     scene bg_aula
     with dissolve
@@ -2188,6 +2190,8 @@ label e6_despues:
     scene bg_aula_tarde
     with fade
 
+    play music derrota fadein 2.5
+
     call e6_formacion_neutral
 
     if persistent.final_malo_temprano_b_visto:
@@ -2412,6 +2416,8 @@ label e6_despues:
     hide itsuki
     with disolucion_lenta
 
+    stop music fadeout 1.5
+
     scene bg_aula_tarde
     with dissolve
 
@@ -2437,7 +2443,7 @@ label e6_despues:
     scene bg_escuela_atardecer
     with fade
 
-    play music cotidiano fadein 3.0 volume 0.5
+    play music cotidiano fadein 2.0 volume 1.0
 
     narrador "Bajamos la cuesta del instituto sin prisa. Nadie propuso a dónde ir."
 
@@ -3150,7 +3156,7 @@ label e6_resultados:
 
     narrador "Miró el reloj. Era sábado, y aun así lo esperaban en el hospital."
 
-    play sound audio.sfx_puerta_cierra volume 1.0
+    play sound audio.sfx_puerta_cierra volume 1.5
 
     stop music fadeout 2.0
 
