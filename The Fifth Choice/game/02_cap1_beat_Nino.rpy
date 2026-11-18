@@ -395,6 +395,8 @@ label beat_Nino:
     label nino_beat_m4a:
 
         $ nino_rama_beat = "calida"
+        ## Extras → Minijuegos: desbloquea el selector de dificultad.
+        $ persistent.nino_beat_calido = True
 
         mc "¿Y quién junta los tuyos?"
 

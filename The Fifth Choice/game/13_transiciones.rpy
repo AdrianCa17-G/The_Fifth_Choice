@@ -379,6 +379,7 @@ label cortinilla(rotulo="", titulo="", cinta="", numero="", color=CORT_ROSA, fon
 ## Entrada al hub n (1, 2 o 3).
 label cortinilla_hub(n=1):
 
+    $ anim_marcar("cort_hub")
     call cortinilla(rotulo="TARDE " + str(n) + " DE 3", numero=str(n), titulo="Tarde libre", cinta="Quedan " + tiempo_restante, color=CORT_LILA, fondo="bg_escuela", ritmo="corto", jingle="hub")
 
     return
@@ -387,6 +388,7 @@ label cortinilla_hub(n=1):
 ## Salida del hub: la tarjeta toma el color, el lugar y el número de la hermana.
 label cortinilla_hermana(hermana="ichika"):
 
+    $ anim_marcar("encuentro_" + hermana)
     $ cort_d = [x for x in HUB_DESTINOS if x["hermana"] == hermana][0]
 
     call cortinilla(rotulo="ENCUENTRO", numero=str(PETALO_ORDEN.index(hermana) + 1), titulo=cort_d["nombre"], cinta=cort_d["lugar"], color=cort_d["color"], fondo=cort_d["fondo"], hermanas=[hermana], ritmo="corto", jingle="hermana_" + hermana, solo=hermana)
@@ -396,24 +398,29 @@ label cortinilla_hermana(hermana="ichika"):
 
 ## Las tarjetas de capítulo, con nombre propio para no repetir argumentos.
 label cortinilla_prologo_fin:
-    call cortinilla(rotulo="PRÓLOGO", titulo="Cinco alumnas, cero interés", cinta="Fin del prólogo", color=CORT_LILA, fondo="bg_cuarto_mc", ritmo="medio", jingle="fin")
+    $ anim_marcar("cort_prologo_fin")
+    call cortinilla(rotulo="PRÓLOGO", titulo="Cinco alumnas, cero interés", cinta="Fin del prólogo", color=CORT_LILA, fondo="cg_hermanas_estudiando", ritmo="medio", jingle="fin")
     return
 
 label cortinilla_cap1_inicio:
-    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Días de tutoría", color=CORT_ROSA, fondo="bg_escuela", hermanas=PETALO_ORDEN, ritmo="largo", jingle="capitulo")
+    $ anim_marcar("cort_cap1_inicio")
+    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Días de tutoría", color=CORT_ROSA, fondo="bg_departamento", hermanas=PETALO_ORDEN, ritmo="largo", jingle="capitulo")
     return
 
 label cortinilla_cap1_examenes:
+    $ anim_marcar("cort_cap1_examenes")
     call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Días de tutoría", cinta_b="Semana de exámenes", color=CORT_ROSA, color_b=CORT_ORO, fondo="bg_aula", hermanas=PETALO_ORDEN, ritmo="largo", jingle="examen")
     return
 
 label cortinilla_cap1_fin:
+    $ anim_marcar("cort_cap1_fin")
     call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Fin del capítulo", color=CORT_ROSA, fondo="cg_familia", ritmo="medio", jingle="fin", sosten=4.0)
     return
 
 ## Sin sonido y en gris a propósito: el final malo se queda en silencio.
 label cortinilla_final_malo:
-    call cortinilla(rotulo="FINAL MALO", titulo="Despido temprano", cinta="Fin", color="#9AA7A8", fondo="bg_cuarto_mc", ritmo="medio", gris=True, sosten=4.0)
+    $ anim_marcar("cort_final_malo")
+    call cortinilla(rotulo="FINAL MALO", titulo="Despido temprano", cinta="Fin", color="#9AA7A8", fondo="cg_maruo_espaldas", ritmo="medio", gris=True, sosten=4.0)
     return
 
 

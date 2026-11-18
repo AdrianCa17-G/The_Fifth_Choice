@@ -14,6 +14,8 @@ Genera, desde cero y sin material ajeno:
   game/audio/sfx/cort_mj_<h>_entrada.ogg   entrada de un minijuego (10_mj_transicion.rpy)
   game/audio/sfx/cort_mj_<h>_ganado.ogg    salida, minijuego ganado
   game/audio/sfx/cort_mj_<h>_saltado.ogg   salida, «Que lo haga ella» (una nota suave)
+  game/audio/sfx/acierto.mp3 / fallo.mp3   acierto y fallo dentro de los minijuegos
+                                           (solo estos dos: «python generar_cortinillas.py mj»)
 
 Los sonidos son campanitas sintetizadas (tipo celesta) en Re mayor pentatonico.
 Cada hermana tiene SU nota: Ichika Re, Nino Mi, Miku Fa#, Yotsuba La, Itsuki Si.
@@ -94,6 +96,7 @@ class Pista:
         self.x = np.zeros((self.n, 2))
         self.seco = False     # True = sin la sala (reverberación)
         self.nivel = -3.0     # pico final en dB
+        self.fundido = 0.35   # segundos del fundido de salida
 
     def _suma(self, t0, onda, pan):
         i = int(t0 * SR)
@@ -101,14 +104,17 @@ class Pista:
         self.x[i:i + len(onda), 0] += onda * (1.0 - pan) ** 0.5
         self.x[i:i + len(onda), 1] += onda * pan ** 0.5
 
-    def campana(self, f, t0, amp=0.5, cola=1.6, pan=0.5):
-        """Campanita tipo celesta: parciales que se apagan a distinto ritmo."""
+    def campana(self, f, t0, amp=0.5, cola=1.6, pan=0.5, ataque_s=0.004, brillo=1.0):
+        """Campanita tipo celesta: parciales que se apagan a distinto ritmo.
+        brillo < 1 apaga los parciales altos (más redonda); ataque_s más largo = más suave."""
         t = np.arange(int(cola * 3 * SR)) / SR
         onda = np.zeros_like(t)
         for mult, peso, vida in [(1.0, 1.0, 1.0), (2.0, 0.32, 0.55),
                                  (3.0, 0.10, 0.30), (4.02, 0.05, 0.18)]:
+            if mult > 1.0:
+                peso = peso * brillo
             onda += peso * np.sin(2 * np.pi * f * mult * t) * np.exp(-t / (cola * vida / 3.0))
-        ataque = np.minimum(1.0, t / 0.004)
+        ataque = np.minimum(1.0, t / ataque_s)
         self._suma(t0, onda * ataque * amp, pan)
 
     def colchon(self, notas, t0, dur, amp=0.10):
@@ -143,7 +149,7 @@ class Pista:
             humedo = np.stack([fftconvolve(self.x[:, c], sala[:, c])[: self.n] for c in (0, 1)], axis=1)
             humedo /= (np.abs(humedo).max() + 1e-9)
             y = y * 0.80 + humedo * 0.22
-        fin = np.minimum(1.0, (self.n - np.arange(self.n)) / (0.35 * SR))
+        fin = np.minimum(1.0, (self.n - np.arange(self.n)) / (self.fundido * SR))
         y *= fin[:, None]
         return y / np.abs(y).max() * 10 ** (self.nivel / 20.0)
 
@@ -355,6 +361,45 @@ def j_mj_saltado(h):
     return p
 
 
+def j_mj_acierto():
+    """Acierto de minijuego: Re6 → La6 (quinta hacia arriba) y un destello en Re7. Seco, 0,36 s."""
+    p = Pista(0.36)
+    p.seco = True
+    p.nivel = -0.9
+    p.fundido = 0.12
+    p.campana(RE6, 0.00, 0.42, cola=0.35, pan=0.42)
+    p.campana(LA6, 0.06, 0.50, cola=0.40, pan=0.58)
+    p.campana(RE6 * 2, 0.07, 0.08, cola=0.20, pan=0.60)
+    return p
+
+
+def j_mj_fallo():
+    """Fallo de minijuego: La5 → Fa#5 (tercera menor hacia abajo), ataque blando y
+    sin parciales altos. Un «oh» con gracia, no un castigo. Seco, 0,38 s."""
+    p = Pista(0.38)
+    p.seco = True
+    p.nivel = -0.9
+    p.fundido = 0.15
+    p.campana(LA5, 0.00, 0.45, cola=0.35, pan=0.45, ataque_s=0.012, brillo=0.35)
+    p.campana(FAS5, 0.09, 0.40, cola=0.40, pan=0.55, ataque_s=0.015, brillo=0.30)
+    return p
+
+
+def guardar_mp3(pista, nombre, ffmpeg):
+    """Efecto puntual de interfaz: .mp3 (GUIA_AUDIO §1), sin prefijo en el archivo."""
+    carpeta = os.path.join(GAME, "audio", "sfx")
+    wav = os.path.join(carpeta, nombre + ".wav")
+    mp3 = os.path.join(carpeta, nombre + ".mp3")
+    wavfile.write(wav, SR, (pista.render() * 32767).astype(np.int16))
+    if ffmpeg is None:
+        print("  (sin ffmpeg: queda en .wav)", wav)
+        return
+    subprocess.run([ffmpeg, "-v", "error", "-y", "-i", wav, "-c:a", "libmp3lame", "-b:a", "192k", mp3],
+                   check=True)
+    os.remove(wav)
+    print("  ", os.path.relpath(mp3, GAME))
+
+
 def guardar(pista, nombre, ffmpeg):
     carpeta = os.path.join(GAME, "audio", "sfx")
     wav = os.path.join(carpeta, nombre + ".wav")
@@ -392,6 +437,13 @@ def cinta():
 
 if __name__ == "__main__":
     ffmpeg = shutil.which("ffmpeg")
+    ## «python generar_cortinillas.py mj»: solo los dos efectos de minijuego
+    ## (así no se reescriben los .ogg de las cortinillas).
+    if "mj" in sys.argv[1:]:
+        print("Minijuegos:")
+        guardar_mp3(j_mj_acierto(), "acierto", ffmpeg)
+        guardar_mp3(j_mj_fallo(), "fallo", ffmpeg)
+        sys.exit(0)
     print("Cinta:")
     cinta()
     print("Sonidos:")

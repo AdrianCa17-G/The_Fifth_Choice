@@ -219,9 +219,6 @@ init python:
                 self.sinceras += 1
                 self.respuesta = "sincera"
                 self.globo.decir("sincera")
-                ## El clic de LO QUE SIENTE suena aquí, al completarse: ni al pulsar
-                ## (adelantaría el resultado) ni al soltar (llegaría tarde o mentiría).
-                renpy.sound.play(audio.sfx_click)
             else:
                 self.mascara += self.sube
                 self.energia += self.e_gana
@@ -239,6 +236,13 @@ init python:
             self.estado = "resp"
             self.pausa = I1_PAUSA_RESPUESTA
             self.flash = 0.5
+            ## Suena al completarse la respuesta: ni al pulsar (adelantaría el resultado)
+            ## ni al soltar. Acierto: sincera que sirvió. Fallo: sincera desperdiciada,
+            ## improvisar por tiempo o quedarse en blanco. Actuar no suena: no es fallo.
+            if self.mascara >= 100.0 or modo == "auto" or self.desperdicio:
+                mj_sfx("fallo")
+            elif modo == "sincera":
+                mj_sfx("acierto")
             if self.mascara >= 100.0:
                 self.mascara = 100.0
                 self.terminar("perdido")

@@ -574,6 +574,7 @@ transform mjtr_cae(x, y0, y1, espera):
 
 label mj_transicion(tipo="entrada", h="ichika", titulo=""):
 
+    $ anim_marcar("mj_" + h + "_" + tipo)
     window hide
 
     ## Las salidas parten del marco (o del menú de «Que lo haga ella»): fundido corto.

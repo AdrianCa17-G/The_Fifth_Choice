@@ -55,11 +55,11 @@ init 10 python:
     def e6_galeria_agregar():
         extra = {
             "cap1":    [("cg_cinco_aula", "Cinco miradas antes del examen"), ("cg_cinco_aprobadas", "Un final feliz")],
-            "yotsuba": [("cg_yotsuba_examen", "Examen · Japonés")],
-            "ichika":  [("cg_ichika_examen", "Examen · Matemáticas")],
-            "nino":    [("cg_nino_examen", "Examen · Inglés")],
-            "itsuki":  [("cg_itsuki_examen", "Examen · Ciencias")],
-            "miku":    [("cg_miku_examen", "Examen · Sociales")],
+            "yotsuba": [("cg_yotsuba_examen", "Esta vez no me rendí")],
+            "ichika":  [("cg_ichika_examen", "Las cuentas sí salieron")],
+            "nino":    [("cg_nino_examen", "No te lo diré dos veces")],
+            "itsuki":  [("cg_itsuki_examen", "Una hipótesis comprobada")],
+            "miku":    [("cg_miku_examen", "Mi propia historia")],
         }
         for s in GALERIA:
             if s[0] in extra:

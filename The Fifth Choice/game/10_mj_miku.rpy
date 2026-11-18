@@ -425,6 +425,7 @@ init python:
             return int((t - self.t_f2) / medio + 0.5) % 8
 
         def registrar_fallo(self, peso, fb):
+            mj_sfx("fallo")
             self.fallos += peso
             self.racha = 0
             self.flash_fallo = 0.5
@@ -498,6 +499,7 @@ init python:
 
             e = self.ev[mejor_i]
             e[2][mejor_j] = "ok"
+            mj_sfx("acierto")
             self.aciertos += 1
             self.racha += 1
             if self.regen_acierto > 0.0:

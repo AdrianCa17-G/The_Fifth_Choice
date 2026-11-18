@@ -160,6 +160,44 @@ screen control_barra(etiqueta, valor, hermana):
 
 ## --- MARCO COMÚN ---------------------------------------------------------------
 
+## Una cinta de la columna izquierda. clave: hermana (color + motivo) o
+## EXTRA_COLOR (color, sin icono).
+screen nav_cinta(nombre, pantalla, clave, activa):
+
+    $ col = "#E8E0F2"
+    $ ico = clave
+    if clave in PETALO_COLOR:
+        $ col = PETALO_COLOR[clave]
+    elif clave in EXTRA_COLOR:
+        $ col = EXTRA_COLOR[clave]
+        $ ico = None
+    $ osc = ui_mezclar(col, "#000000", 0.72)
+    $ x_texto = 112
+    if ico is None:
+        $ x_texto = 74
+
+    button:
+        xysize (440, 68)
+        action ShowMenu(pantalla)
+        selected activa
+        hover_sound audio.sfx_hover
+        activate_sound audio.sfx_click
+        background ui_cinta_menu(col, ico, False)
+        hover_background ui_cinta_menu(col, ico, True)
+        selected_background ui_cinta_menu(col, ico, True)
+        at boton_slide
+
+        text nombre:
+            xpos x_texto
+            yalign 0.5
+            font gui.name_text_font
+            size 30
+            kerning 2
+            color "#F2EDF5"
+            hover_color osc
+            selected_color osc
+
+
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     add "main_menu_bg" fit "cover"
@@ -185,38 +223,20 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
             if mostrar:
 
-                $ col = "#E8E0F2"
-                $ ico = clave
-                if clave in PETALO_COLOR:
-                    $ col = PETALO_COLOR[clave]
-                elif clave in EXTRA_COLOR:
-                    $ col = EXTRA_COLOR[clave]
-                    $ ico = None
-                $ osc = ui_mezclar(col, "#000000", 0.72)
-                $ x_texto = 112
-                if ico is None:
-                    $ x_texto = 74
+                use nav_cinta(nombre, pantalla, clave, title == nombre)
 
-                button:
-                    xysize (440, 68)
-                    action ShowMenu(pantalla)
-                    selected (title == nombre)
-                    hover_sound audio.sfx_hover
-                    activate_sound audio.sfx_click
-                    background ui_cinta_menu(col, ico, False)
-                    hover_background ui_cinta_menu(col, ico, True)
-                    selected_background ui_cinta_menu(col, ico, True)
-                    at boton_slide
+        ## --- EXTRAS: solo en el menú principal, nunca durante una partida ---
+        if main_menu:
 
-                    text nombre:
-                        xpos x_texto
-                        yalign 0.5
-                        font gui.name_text_font
-                        size 30
-                        kerning 2
-                        color "#F2EDF5"
-                        hover_color osc
-                        selected_color osc
+            null height 6
+
+            fixed:
+                xysize (440, 34)
+                text "EXTRAS" style "etiqueta_opcion" color EXTRA_COLOR["raiha"] yalign 0.5
+                add Solid(EXTRA_COLOR["raiha"], xsize=300, ysize=2) xpos 140 yalign 0.5 alpha 0.6
+
+            for nombre, pantalla in EXTRAS_NAV:
+                use nav_cinta(nombre, pantalla, "raiha", title == nombre)
 
         if not main_menu:
 

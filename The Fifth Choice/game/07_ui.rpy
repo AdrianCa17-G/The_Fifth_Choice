@@ -196,6 +196,7 @@ init -5 python:
         """Marca la siguiente decisión como 'con peso'.
         titulo: la pregunta. motivo: por qué importa esta decisión.
         pistas: temperatura de cada opción, en el orden en que aparecen."""
+        anim_marcar("decidir_" + hermana)
         store.decision_hermana = hermana
         store.decision_titulo = titulo
         store.decision_motivo = motivo

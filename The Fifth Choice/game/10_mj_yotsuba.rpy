@@ -379,6 +379,7 @@ init python:
 
         def error(self, clave_texto, evento):
             """Consume un testigo, corta la racha y arranca la animación de error."""
+            mj_sfx("fallo")
             self.caidos += 1
             self.racha = 0
             self.poner_aviso(self.texto(clave_texto), "mal")
@@ -421,6 +422,7 @@ init python:
         def acierto(self, dif):
             perfecto = (abs(dif) <= self.ventana * 0.5)
             cura = int(self.p["cura"])
+            mj_sfx("acierto")
             if perfecto:
                 self.perfectos += 1
                 self.racha += 1

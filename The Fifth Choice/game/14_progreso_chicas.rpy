@@ -492,6 +492,10 @@ label progreso_chicas(valores=None):
 
     if valores is None:
         $ valores = prog_valores()
+        ## Extras → Animaciones la repite con los valores de la última vez
+        ## (las pruebas y el propio teatro pasan `valores` y no la pisan).
+        $ persistent.prog_ultimo = dict(valores)
+        $ anim_marcar("cierre")
 
     $ prog_qm_previo = quick_menu
     $ quick_menu = False

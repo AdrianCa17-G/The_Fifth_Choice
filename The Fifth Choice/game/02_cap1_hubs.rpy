@@ -106,4 +106,9 @@ label hub_3:
     else:
         $ despido_cap1 = False
 
+    ## Foto para Extras → Repetir → Semana de exámenes (08_extras.rpy).
+    $ extra_foto_hub3()
+    ## Extras → Repetir → Días de tutoría acaba aquí (fuera de un Replay no hace nada).
+    $ renpy.end_replay()
+
     jump cap1_interconexion_6

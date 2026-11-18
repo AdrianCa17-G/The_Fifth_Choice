@@ -834,3 +834,526 @@ label extra_itsuki:
     scene bg_negro
     narrador "Extra de Itsuki: próximamente."
     return
+
+
+################################################################################
+## EXTRAS DEL MENÚ: Minijuegos · Animaciones · Repetir
+## Solo en el menú principal (cintas rosa Raiha bajo «Ayuda», 09_menus_sistema).
+## Todo se reproduce con Replay: la partida y sus variables no se tocan.
+################################################################################
+
+## Foto de la última partida al cerrar el hub 3 (Repetir → Semana de exámenes).
+default persistent.foto_hub3 = None
+## Valores de la última barra de progreso vista (Animaciones → Cierre).
+default persistent.prog_ultimo = None
+
+## Variables que llegan por el scope del Replay.
+default mj_extra_h = "yotsuba"
+default ea_tipo = ""
+default ea_h = "ichika"
+default ea_v = ""
+default extra_titulo = ""
+
+## (texto, pantalla) de las cintas de EXTRAS.
+define EXTRAS_NAV = [
+    ("Minijuegos", "extra_minijuegos"),
+    ("Animaciones", "extra_animaciones"),
+    ("Repetir", "extra_repetir"),
+]
+
+## Lo que la foto del hub 3 guarda: todo lo que la interconexión 6 y el Evento 6 leen.
+define EXTRA_FOTO_VARS = [
+    "nombre_jugador", "mc_motivo",
+    "puntos_ichika", "puntos_nino", "puntos_miku", "puntos_yotsuba", "puntos_itsuki",
+    "primera_conexion", "primera_decision_hecha",
+    "ichika_visitada_cap1", "nino_visitada_cap1", "miku_visitada_cap1",
+    "yotsuba_visitada_cap1", "itsuki_visitada_cap1",
+    "ichika_rama_cap1", "nino_rama_cap1", "miku_rama_cap1",
+    "yotsuba_rama_cap1", "itsuki_rama_cap1",
+    "tiempo_restante", "maruo_ultimatum", "despido_cap1", "nino_rama_beat",
+    "despido_en_beat", "desaires_cap1", "hub_visitadas", "destino",
+    "ui_prologo", "save_name",
+]
+
+## (clave, pestaña, descripción) de los grupos del teatro.
+define ANIM_GRUPOS = [
+    ("cort", "Cortinillas", "Tarjetas de capítulo y de tarde libre"),
+    ("encuentro", "Encuentros", "La salida del hub hacia cada hermana"),
+    ("tarde", "Tardes", "Tarde completada, según cómo acabó"),
+    ("mj", "Minijuegos", "Entrada y salidas de cada minijuego"),
+    ("decidir", "Decidir", "«Hora de decidir» antes de cada decisión"),
+    ("cierre", "Cierre", "La barra de las chicas al cerrar el capítulo"),
+]
+
+define ANIM_RAMA_TXT = {"calida": "Cálida", "tibia": "Tibia", "fria": "Fría"}
+define ANIM_MJ_TXT = {"entrada": "Entrada", "ganado": "Ganado", "saltado": "Que lo haga ella"}
+
+## Las cinco decisiones con peso, copiadas de 02_cap1_<Hermana>.rpy (pregunta,
+## motivo, opciones en orden cálida, tibia, fría). Si cambian allí, cámbialas aquí.
+define EXTRA_DECIDIR = {
+    "ichika": ("¿Qué le dirás a Ichika?",
+               "Se durmió en el suelo del club, y ya está bromeando otra vez.",
+               ["No seguirle la broma. Esperar a que hable ella.",
+                "Seguirle la broma. Por hoy ya tuvo bastante.",
+                "Si tienes energía para hacer chistes, tienes energía\npara estudiar."]),
+    "nino": ("¿Qué le dirás a Nino?",
+             "Te contó más de lo que quería. Ahora espera tu respuesta.",
+             ["Tienes razón en desconfiar. Solo el tiempo lo va a demostrar.",
+              "Cargarle la cesta, sin decir nada.",
+              "Yo sí voy a durar."]),
+    "miku": ("¿Qué le dirás a Miku?",
+             "Habló un minuto entero de lo que ama. Y después pidió perdón.",
+             ["Preguntarle cuánto tardaba la sal en llegar.",
+              "Decirle que se le da bien. Es la verdad.",
+              "Lo de la sal no entra en el examen."]),
+    "yotsuba": ("¿Qué le dirás a Yotsuba?",
+                "Te ofrece el cronómetro. Lo que acaba de decir sigue ahí.",
+                ["No tomar el cronómetro todavía. Volver a lo que dijo.",
+                 "Claro, dame el cronómetro.",
+                 "Si correr es lo tuyo, concéntrate en eso."]),
+    "itsuki": ("¿Qué le dirás a Itsuki?",
+               "Tres intentos, el mismo error. No te va a pedir ayuda.",
+               ["Señalarle dónde mirar. Solo eso.",
+                "¿Quieres que lo revisemos desde el principio?",
+                "Quitarle el cuaderno y resolverlo. Le ahorro la tarde."]),
+}
+
+
+init python:
+
+    import copy
+
+    def anim_marcar(clave):
+        """Primera vez que se ve una animación: la desbloquea en Extras → Animaciones."""
+        setattr(persistent, "anim_" + clave, True)
+
+    def anim_visto(clave):
+        return bool(getattr(persistent, "anim_" + clave, False))
+
+    def mj_jugado(juego):
+        return bool(getattr(persistent, "mj_jugado_" + juego, False))
+
+    def extra_foto_hub3():
+        """Al cerrar el hub 3: guarda el estado para Repetir → Semana de exámenes."""
+        foto = {}
+        for v in EXTRA_FOTO_VARS:
+            foto[v] = copy.deepcopy(getattr(store, v, None))
+        persistent.foto_hub3 = foto
+
+    def extra_foto_scope():
+        """Copia de la foto para el Replay (una copia: el Replay no debe tocar la foto)."""
+        return final_scope(copy.deepcopy(persistent.foto_hub3))
+
+    def extra_prog_valores():
+        if persistent.prog_ultimo is None:
+            return {"ichika": 0, "nino": 0, "miku": 0, "yotsuba": 0, "itsuki": 0}
+        return dict(persistent.prog_ultimo)
+
+    def extra_decidir_items(h):
+        items = []
+        opciones = EXTRA_DECIDIR[h][2]
+        for k in range(len(opciones)):
+            items.append((opciones[k], k))
+        return items
+
+    def extra_tras_cargar():
+        """Partidas de antes de Extras: lo que ya pasó en la partida cargada desbloquea."""
+        if store.nino_rama_beat == "calida":
+            persistent.nino_beat_calido = True
+        for h in store.e6_mj:
+            r = store.e6_mj[h]
+            if r.get("intentos", 0) > 0:
+                setattr(persistent, "mj_jugado_" + r["juego"], True)
+                anim_marcar("mj_" + h + "_entrada")
+                anim_marcar("mj_" + h + "_" + r["resultado"])
+        if not store.ui_prologo:
+            anim_marcar("cort_prologo_fin")
+            anim_marcar("cort_cap1_inicio")
+        for h in store.hub_visitadas:
+            anim_marcar("cort_hub")
+            anim_marcar("encuentro_" + h)
+            rama = rama_de(h)
+            if rama in ANIM_RAMA_TXT:
+                anim_marcar("tarde_" + h + "_" + rama)
+                anim_marcar("decidir_" + h)
+
+    config.after_load_callbacks.append(extra_tras_cargar)
+
+
+## init 1: el catálogo lee hub_tono (hub_mapa.rpy) y CORT_* (13_transiciones.rpy).
+init 1 python:
+
+    def anim_catalogo():
+        """[(clave, grupo, título, subtítulo, color, icono, pista, scope)], en orden."""
+        lista = []
+        cort = [
+            ("prologo_fin", "Fin del prólogo", "Cinco alumnas, cero interés", CORT_LILA, "Termina el prólogo."),
+            ("cap1_inicio", "Capítulo 1", "Días de tutoría", CORT_ROSA, "Empieza el Capítulo 1."),
+            ("hub", "Tarde libre", "Empieza tu decisión", CORT_LILA, "Llega a la primera tarde libre."),
+            ("cap1_examenes", "Semana de exámenes", "El climax", CORT_ORO, "Llega a la semana de exámenes."),
+            ("cap1_fin", "Fin del Capítulo 1", "Un estudiante perfecto", CORT_ROSA, "Termina el Capítulo 1."),
+            ("final_malo", "Final malo", "Despido temprano", "#9AA7A8", "Pierde el trabajo antes de tiempo."),
+        ]
+        for c in cort:
+            lista.append(("cort_" + c[0], "cort", c[1], c[2], c[3], "flor", c[4],
+                          {"ea_tipo": "cort", "ea_v": c[0]}))
+        for h in PETALO_ORDEN:
+            nombre = h.capitalize()
+            lista.append(("encuentro_" + h, "encuentro", nombre, HUB_LUGAR[h], PETALO_COLOR[h], h,
+                          "Pasa una tarde libre con " + nombre + ".",
+                          {"ea_tipo": "encuentro", "ea_h": h}))
+        for h in PETALO_ORDEN:
+            nombre = h.capitalize()
+            for rama in ["calida", "tibia", "fria"]:
+                lista.append(("tarde_" + h + "_" + rama, "tarde", nombre, ANIM_RAMA_TXT[rama],
+                              hub_tono(h, rama), h,
+                              "Cierra una tarde con " + nombre + " (" + ANIM_RAMA_TXT[rama].lower() + ").",
+                              {"ea_tipo": "tarde", "ea_h": h, "ea_v": rama}))
+        pistas_mj = {
+            "entrada": "Juega su minijuego.",
+            "ganado": "Gana su minijuego.",
+            "saltado": "Deja que lo haga ella.",
+        }
+        for h in E6_ORDEN_EXAMEN:
+            for tipo in ["entrada", "ganado", "saltado"]:
+                lista.append(("mj_" + h + "_" + tipo, "mj", h.capitalize(), ANIM_MJ_TXT[tipo],
+                              PETALO_COLOR[h], h, pistas_mj[tipo],
+                              {"ea_tipo": "mj", "ea_h": h, "ea_v": tipo}))
+        for h in PETALO_ORDEN:
+            nombre = h.capitalize()
+            lista.append(("decidir_" + h, "decidir", nombre, "Hora de decidir", PETALO_COLOR[h], h,
+                          "Llega a la decisión de " + nombre + ".",
+                          {"ea_tipo": "decidir", "ea_h": h}))
+        lista.append(("cierre", "cierre", "Cinco nombres", "Cierre del Capítulo 1", CORT_ROSA, "flor",
+                      "Termina el Capítulo 1.", {"ea_tipo": "cierre"}))
+        return lista
+
+    ANIM_LISTA = anim_catalogo()
+
+    ## Puente de una vez para partidas de antes de Extras (persistent ya cargado).
+    for _h in E6_ORDEN_CANON:
+        if getattr(persistent, "e6_mj_ganado_" + _h, False):
+            setattr(persistent, "mj_jugado_" + E6_MJ_JUEGO[_h], True)
+    if persistent.cap1_completado:
+        for _k in ["cort_prologo_fin", "cort_cap1_inicio", "cort_hub", "cort_cap1_examenes", "cort_cap1_fin"]:
+            anim_marcar(_k)
+        if persistent.prog_ultimo is not None:
+            anim_marcar("cierre")
+    if persistent.final_malo_temprano_visto:
+        anim_marcar("cort_final_malo")
+
+
+## --- Piezas ------------------------------------------------------------------
+
+## Tarjeta de las de Finales: fondo y borde teñidos (Frame de 9 cortes).
+screen extra_fondo(fondo, borde):
+    add Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo))
+    add Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(borde))
+
+
+screen extra_mj_tarjeta(h, nivel):
+
+    $ juego = E6_MJ_JUEGO[h]
+    $ jugado = mj_jugado(juego)
+    $ color = PETALO_COLOR[h]
+    $ fondo = "#2A2236"
+    $ borde = "#6E6680"
+    $ titulo = "???"
+    $ chibi = Transform(mj_chibi(h, "neutral", 0.34), matrixcolor=TintMatrix("#0B0712"), alpha=0.85)
+    if jugado:
+        $ fondo = TARJETA_TONO[h]
+        $ borde = color
+        $ titulo = MJ_REGISTRO[juego]["titulo"]
+        $ chibi = mj_chibi(h, "neutral", 0.34)
+
+    button:
+        xysize (190, 390)
+        background None
+        sensitive jugado
+        action Replay("extra_mj", scope=final_scope({"mj_extra": True, "mj_extra_h": h, "mj_extra_nivel": nivel}), locked=False)
+        hover_sound audio.sfx_hover
+        activate_sound audio.sfx_click
+        at tarjeta_hover
+
+        use extra_fondo(fondo, borde)
+        add chibi xalign 0.5 ypos 14
+
+        vbox:
+            xalign 0.5
+            ypos 200
+            xsize 166
+            spacing 8
+
+            text titulo xalign 0.5 text_align 0.5 xsize 166 font gui.name_text_font size 22 color "#FFF8FC"
+            text (h.capitalize() + " · " + E6_MATERIA[h]) xalign 0.5 text_align 0.5 size 16 color borde
+            if not jugado:
+                text "Juégalo en la semana de exámenes." xalign 0.5 text_align 0.5 xsize 166 size 16 color "#8F8AA0"
+
+
+screen extra_anim_tarjeta(a):
+
+    $ visto = anim_visto(a[0])
+    $ fondo = "#2A2236"
+    $ borde = "#6E6680"
+    $ titulo = "???"
+    $ sub = a[6]
+    $ color_sub = "#8F8AA0"
+    if visto:
+        $ fondo = ui_mezclar(a[4], "#000000", 0.72)
+        $ borde = a[4]
+        $ titulo = a[2]
+        $ sub = a[3]
+        $ color_sub = "#CFC6E0"
+
+    button:
+        xysize (330, 118)
+        background None
+        sensitive visto
+        action Replay("extra_anim", scope=final_scope(a[7]), locked=False)
+        hover_sound audio.sfx_hover
+        activate_sound audio.sfx_click
+        at tarjeta_hover
+
+        use extra_fondo(fondo, borde)
+        add ("ui/hud_icono_" + a[5] + ".png") matrixcolor TintMatrix(borde) xpos 26 yalign 0.5
+
+        vbox:
+            xpos 82
+            yalign 0.5
+            xsize 226
+            spacing 4
+
+            text titulo font gui.name_text_font size 25 color "#FFF8FC"
+            text sub xsize 226 size 17 color color_sub
+
+
+screen extra_repetir_tarjeta(rotulo, titulo, texto, color, abierta, pista, accion):
+
+    $ fondo = "#2A2236"
+    $ borde = "#6E6680"
+    $ t = "???"
+    $ d = pista
+    $ color_d = "#8F8AA0"
+    if abierta:
+        $ fondo = ui_mezclar(color, "#000000", 0.72)
+        $ borde = color
+        $ t = titulo
+        $ d = texto
+        $ color_d = "#CFC6E0"
+
+    button:
+        xysize (1006, 190)
+        background None
+        sensitive abierta
+        action accion
+        hover_sound audio.sfx_hover
+        activate_sound audio.sfx_click
+        at tarjeta_hover
+
+        use extra_fondo(fondo, borde)
+        add "ui/flor.png" matrixcolor TintMatrix(borde) alpha 0.85 xpos 44 yalign 0.5
+
+        vbox:
+            xpos 130
+            yalign 0.5
+            xsize 820
+            spacing 8
+
+            text rotulo size 17 kerning 5 color borde
+            text t font gui.name_text_font size 38 color "#FFF8FC"
+            text d xsize 820 size 21 color color_d
+
+
+## --- MINIJUEGOS ---------------------------------------------------------------
+
+screen extra_minijuegos():
+    tag menu
+
+    default nivel = "media"
+
+    ## Sin el selector, nivel None = la dificultad por defecto del juego.
+    $ nivel_replay = None
+    if persistent.nino_beat_calido:
+        $ nivel_replay = nivel
+
+    use game_menu(_("Minijuegos")):
+
+        vbox:
+            ypos 70
+            spacing 40
+
+            text "Los cinco minijuegos de la semana de exámenes. Diviértete jugandolos." size 24 color "#CFC6E0"
+
+            hbox:
+                spacing 13
+                for h in E6_ORDEN_EXAMEN:
+                    use extra_mj_tarjeta(h, nivel_replay)
+
+            if persistent.nino_beat_calido:
+                vbox:
+                    spacing 16
+                    text "DIFICULTAD" style "etiqueta_opcion"
+                    hbox:
+                        spacing 14
+                        use cinta_boton("Difícil", SetScreenVariable("nivel", "dificil"), "", 240, 58, 24)
+                        use cinta_boton("Media", SetScreenVariable("nivel", "media"), "", 240, 58, 24)
+                        use cinta_boton("Asistida", SetScreenVariable("nivel", "asistida"), "", 240, 58, 24)
+
+
+## --- ANIMACIONES --------------------------------------------------------------
+
+screen extra_animaciones():
+    tag menu
+
+    default grupo = "cort"
+
+    $ items = []
+    $ vistas = 0
+    for a in ANIM_LISTA:
+        if a[1] == grupo:
+            $ items.append(a)
+            if anim_visto(a[0]):
+                $ vistas = vistas + 1
+    $ desc = ""
+    for g in ANIM_GRUPOS:
+        if g[0] == grupo:
+            $ desc = g[2]
+    $ filas = (len(items) + 2) // 3
+
+    use game_menu(_("Animaciones")):
+
+        vbox:
+            ypos 70
+            spacing 24
+
+            hbox:
+                spacing 12
+                for g in ANIM_GRUPOS:
+                    use cinta_boton(g[1], SetScreenVariable("grupo", g[0]), "", 160, 56, 21)
+
+            text (desc + "   ·   " + str(vistas) + " / " + str(len(items))) size 24 color "#CFC6E0"
+
+            vbox:
+                spacing 16
+                for fila in range(filas):
+                    hbox:
+                        spacing 16
+                        for k in range(3):
+                            $ idx = fila * 3 + k
+                            if idx < len(items):
+                                use extra_anim_tarjeta(items[idx])
+
+
+## --- REPETIR ------------------------------------------------------------------
+
+screen extra_repetir():
+    tag menu
+
+    $ abierto = bool(persistent.cap1_completado)
+    $ hay_foto = persistent.foto_hub3 is not None
+    $ pista_semana = "Termina el Capítulo 1."
+    if abierto and not hay_foto:
+        $ pista_semana = "Juega otra vez hasta cerrar la tercera tarde."
+
+    $ accion_semana = NullAction()
+    if hay_foto:
+        $ accion_semana = Replay("cap1_interconexion_6", scope=extra_foto_scope(), locked=False)
+
+    use game_menu(_("Repetir")):
+
+        vbox:
+            ypos 70
+            spacing 26
+
+            text "Vuelve a jugar un tramo. Tus partidas guardadas no cambian." size 24 color "#CFC6E0"
+
+            use extra_repetir_tarjeta("PRÓLOGO", "Prólogo", "Desde el primer día. Al terminar, vuelves al menú.", CORT_LILA, abierto, "Termina el Capítulo 1.", Replay("prologo", scope=final_scope({}), locked=False))
+            use extra_repetir_tarjeta("CAPÍTULO 01", "Días de tutoría", "Desde la apertura hasta cerrar la tercera tarde, como en una partida nueva.", CORT_ROSA, abierto, "Termina el Capítulo 1.", Replay("cap1_apertura", scope=final_scope({}), locked=False))
+            use extra_repetir_tarjeta("CAPÍTULO 01", "Semana de exámenes", "Desde el final de la tercera tarde, con lo que elegiste la última vez.", CORT_ORO, abierto and hay_foto, pista_semana, accion_semana)
+
+
+## --- REPRODUCCIÓN (siempre dentro de un Replay) --------------------------------
+
+label extra_mj:
+
+    scene expression MJ_PRUEBA_FONDO[mj_extra_h]
+    with Dissolve(0.4)
+
+    ## Como en el Evento 6: el tema de la hermana. M3 (Miku) arranca su propia música.
+    if mj_extra_h != "miku":
+        $ renpy.music.play(getattr(audio, mj_extra_h), channel="music", fadein=1.0)
+
+    call mj_ejecutar(E6_MJ_JUEGO[mj_extra_h], mj_extra_h)
+
+    stop music fadeout 1.5
+    scene bg_negro
+    with Dissolve(0.6)
+
+    return
+
+
+label extra_anim:
+
+    $ quick_menu = False
+    scene bg_negro
+    with Dissolve(0.3)
+
+    if ea_tipo == "cort":
+        if ea_v == "hub":
+            call cortinilla_hub(1)
+        else:
+            call expression ("cortinilla_" + ea_v)
+    elif ea_tipo == "encuentro":
+        call cortinilla_hermana(ea_h)
+    elif ea_tipo == "tarde":
+        call hub_completado(ea_h, 1, ea_v)
+    elif ea_tipo == "mj":
+        call extra_anim_mj
+    elif ea_tipo == "decidir":
+        call extra_anim_decidir
+    elif ea_tipo == "cierre":
+        call progreso_chicas(extra_prog_valores())
+
+    return
+
+
+label extra_anim_mj:
+
+    scene expression MJ_PRUEBA_FONDO[ea_h]
+    with Dissolve(0.4)
+    $ renpy.music.play(getattr(audio, ea_h), channel="music", fadein=0.5)
+    $ extra_titulo = MJ_REGISTRO[E6_MJ_JUEGO[ea_h]]["titulo"]
+
+    if ea_v == "entrada":
+        call mj_transicion("entrada", ea_h, extra_titulo)
+        show screen mj_transicion_prueba_marco(ea_h, "neutral")
+        $ renpy.pause(1.2, hard=True)
+        hide screen mj_transicion_prueba_marco
+        with Dissolve(0.4)
+    else:
+        ## Las salidas parten del marco, como en el juego.
+        if ea_v == "ganado":
+            show screen mj_transicion_prueba_marco(ea_h, "feliz")
+        else:
+            show screen mj_transicion_prueba_marco(ea_h, "neutral")
+        with Dissolve(0.4)
+        $ renpy.pause(0.8, hard=True)
+        hide screen mj_transicion_prueba_marco
+        call mj_transicion(ea_v, ea_h, extra_titulo)
+        $ renpy.pause(0.6, hard=True)
+
+    stop music fadeout 1.0
+    return
+
+
+label extra_anim_decidir:
+
+    scene expression MJ_PRUEBA_FONDO[ea_h]
+    with Dissolve(0.4)
+    $ renpy.show(ea_h + " neutral", at_list=[pj(0.5)])
+    with dissolve
+
+    $ decision_peso(ea_h, EXTRA_DECIDIR[ea_h][0], EXTRA_DECIDIR[ea_h][1])
+    $ renpy.display_menu(extra_decidir_items(ea_h))
+
+    return

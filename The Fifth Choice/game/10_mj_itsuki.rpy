@@ -433,10 +433,12 @@ init python:
                 if e["tipo"] != "correcta":
                     todo_bien = False
             if todo_bien:
+                mj_sfx("acierto")
                 self.humor = "feliz"
                 self.globo.decir("final", True)
                 self.cambiar("fin")
                 return None
+            mj_sfx("fallo")
             self.entregas_malas += 1
             self.aviso = "No cuadra."
             self.aviso_t = 1.1
@@ -450,6 +452,7 @@ init python:
             return None
 
         def perder(self):
+            mj_sfx("fallo")
             if MJ_FALLO_EN_GLOBO:
                 self.globo.poner(mj_texto_fallo("itsuki", self.fallos_prev), 1.5)
             else:

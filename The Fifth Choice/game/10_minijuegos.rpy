@@ -9,6 +9,13 @@ default mj_res = {}
 default mj_resp = ""
 default persistent.mj_modo = "normal"      ## "normal" | "asistido" | "saltar"
 
+## Extras → Minijuegos (08_extras.rpy). Solo dentro de su Replay: sin repetición,
+## sin modo «saltar» y sin marcar e6_mj_ganado_*. mj_extra_nivel = nivel base elegido.
+default mj_extra = False
+default mj_extra_nivel = None
+## Fue cálido con Nino en su beat alguna vez: Extras deja elegir la dificultad.
+default persistent.nino_beat_calido = False
+
 ################################################################################
 ##  PARTE A · CONSTANTES Y DATOS
 ################################################################################
@@ -257,7 +264,10 @@ init python:
         MJ_REGISTRO[clave] = {"pantalla": pantalla, "titulo": titulo, "persistente": persistente}
 
     def mj_nivel():
-        """Nivel base: «media» si MC fue cálido con Nino en su beat; si no, «dificil»."""
+        """Nivel base: «media» si MC fue cálido con Nino en su beat; si no, «dificil».
+        En Extras manda el nivel que se eligió en el selector."""
+        if store.mj_extra_nivel in MJ_NIVELES:
+            return store.mj_extra_nivel
         if store.nino_rama_beat == "calida":
             return "media"
         return "dificil"
@@ -347,6 +357,12 @@ init python:
             modo = "normal"
         if modo == "normal" and renpy.variant("touch"):
             modo = MJ_MODO_TACTIL
+        ## En Extras se viene a jugar: ni se salta solo ni pregunta si repetir.
+        repeticion = bool(getattr(persistent, "e6_mj_ganado_" + hermana, False))
+        if store.mj_extra:
+            repeticion = False
+            if modo == "saltar":
+                modo = "normal"
 
         store.mj_estado = {
             "juego": juego,
@@ -356,7 +372,7 @@ init python:
             "persistente": reg["persistente"],
             "boost": (store.nino_rama_beat == "calida"),
             "modo": modo,
-            "repeticion": bool(getattr(persistent, "e6_mj_ganado_" + hermana, False)),
+            "repeticion": repeticion,
             "intentos": 0,
             "fallos": 0,
             "checkpoint": 0,
@@ -370,6 +386,20 @@ init python:
     def mj_preparar_intento():
         mj_bloquear(True)
         renpy.block_rollback()
+        ## Jugado al menos una vez: lo desbloquea en Extras → Minijuegos.
+        setattr(persistent, "mj_jugado_" + store.mj_estado["juego"], True)
+
+    _mj_sfx_ultimo = {"acierto": 0.0, "fallo": 0.0}
+
+    def mj_sfx(tipo):
+        """Sonido de acierto o fallo ("acierto" | "fallo"). Canal «audio» (el mezclador
+        de efectos, como sound), porque sound es único y cortaría el metrónomo de M3
+        o el acierto anterior. Sin ducking. Dos del mismo tipo en 0,08 s suenan una vez."""
+        ahora = time.perf_counter()
+        if ahora - _mj_sfx_ultimo[tipo] < 0.08:
+            return
+        _mj_sfx_ultimo[tipo] = ahora
+        renpy.play(getattr(audio, "sfx_" + tipo), channel="audio")
 
     def mj_args_pantalla():
         e = store.mj_estado
@@ -436,7 +466,7 @@ init python:
             "boost": e["boost"],
             "datos": dict(e["datos"]),
         }
-        if resultado == "ganado" and e["persistente"]:
+        if resultado == "ganado" and e["persistente"] and not store.mj_extra:
             setattr(persistent, "e6_mj_ganado_" + h, True)
         renpy.block_rollback()
 
@@ -491,6 +521,7 @@ init python:
             if abs(self.posicion() - self.zona) <= self.p["ventana"] / 2.0:
                 self.aciertos += 1
                 self.ultimo = "acierto"
+                mj_sfx("acierto")
                 self.flash = 0.35
                 self.zona = 0.15 + renpy.random.random() * 0.70
                 if self.aciertos >= self.necesarios:
@@ -498,12 +529,23 @@ init python:
             else:
                 self.fallos += 1
                 self.ultimo = "fallo"
+                mj_sfx("fallo")
                 self.flash = 0.35
                 if self.fallos > self.p["fallos_max"]:
                     return {"resultado": "perdido", "progreso": self.aciertos, "datos": {}}
             return None
 
     mj_registrar("prueba", "mj_prueba", "Prueba de un botón", True)
+
+init 999 python:
+    _mj_cfg_inicial = (config.rollback_enabled, config.allow_skipping)
+
+## Salir al menú a mitad de un minijuego (Esc → Menú principal, también desde
+## Extras) se salta mj_cerrar: el menú devuelve rollback y skip a como estaban.
+label before_main_menu:
+    $ config.rollback_enabled = _mj_cfg_inicial[0]
+    $ config.allow_skipping = _mj_cfg_inicial[1]
+    return
 
 ################################################################################
 ##  PARTE D · LABEL mj_ejecutar

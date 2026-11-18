@@ -443,6 +443,7 @@ init python:
             }
 
         def perder(self):
+            mj_sfx("fallo")
             self.poner_humor("triste", 5.0)
             if MJ_FALLO_EN_GLOBO:
                 self.globo.poner(mj_texto_fallo("nino", self.fallos_prev), 1.6)
@@ -459,6 +460,7 @@ init python:
                 return None
 
             if clave in self.claves:
+                mj_sfx("acierto")
                 self.encontrados.append(clave)
                 self.racha += 1
                 if self.racha > self.mejor_racha:
@@ -480,6 +482,7 @@ init python:
                     self.cambiar("ok")
                 return None
 
+            mj_sfx("fallo")
             self.malos.append(clave)
             self.errores += 1
             self.racha = 0

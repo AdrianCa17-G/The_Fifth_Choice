@@ -162,6 +162,9 @@ label evento_6:
 
     $ e6_cerrar()
 
+    ## Extras → Repetir → Semana de exámenes acaba aquí (fuera de un Replay no hace nada).
+    $ renpy.end_replay()
+
     jump cap2_inicio
 
 

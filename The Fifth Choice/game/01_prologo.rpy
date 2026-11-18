@@ -1366,4 +1366,7 @@ label prologo:
 
     call cortinilla_prologo_fin
 
+    ## Extras → Repetir → Prólogo acaba aquí y vuelve al menú (fuera de un Replay no hace nada).
+    $ renpy.end_replay()
+
     jump cap1_apertura

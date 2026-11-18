@@ -975,6 +975,7 @@ label hub_completado(hermana="ichika", n=1, rama=None):
         $ rama = rama_de(hermana)
     if rama not in HUBC_RITMOS:
         $ rama = "calida"
+    $ anim_marcar("tarde_" + hermana + "_" + rama)
 
     $ hubc_qm_previo = quick_menu
     $ quick_menu = False

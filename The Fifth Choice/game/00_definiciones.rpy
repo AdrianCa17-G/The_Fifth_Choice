@@ -438,6 +438,10 @@ define audio.sfx_hclick = "audio/sfx/hub_click.mp3"
 define audio.sfx_hover = "audio/sfx/hover.mp3"
 define audio.sfx_click = "audio/sfx/click.mp3"
 
+## Acierto y fallo dentro de los minijuegos (generar_cortinillas.py mj). Los lanza mj_sfx().
+define audio.sfx_acierto = "audio/sfx/acierto.mp3"
+define audio.sfx_fallo = "audio/sfx/fallo.mp3"
+
 ################################################################################
 ##  8. LÓGICA DEL CÁLCULO SECRETO  (documentación — se implementa en FASE 5)
 ################################################################################
