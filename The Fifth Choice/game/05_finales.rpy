@@ -32,6 +32,6 @@ label final_malo_cierre:
     $ persistent.final_malo_temprano_visto = True
 
     ## Tarjeta de final (13_transiciones.rpy): en gris y sin sonido.
-    call cortinilla_final_malo
+    call cortinilla_final_malo from _call_cortinilla_final_malo
 
     return

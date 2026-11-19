@@ -538,14 +538,14 @@ label progreso_chicas_prueba:
     $ prog_autocomprobar()
 
     ## 1 · Todo en 0
-    call progreso_chicas({"ichika": 0, "nino": 0, "miku": 0, "yotsuba": 0, "itsuki": 0})
+    call progreso_chicas({"ichika": 0, "nino": 0, "miku": 0, "yotsuba": 0, "itsuki": 0}) from _call_progreso_chicas_2
     ## 2 · Tres cálidas
-    call progreso_chicas({"ichika": 30, "nino": 0, "miku": 30, "yotsuba": 30, "itsuki": 0})
+    call progreso_chicas({"ichika": 30, "nino": 0, "miku": 30, "yotsuba": 30, "itsuki": 0}) from _call_progreso_chicas_3
     ## 3 · Dos cálidas + una tibia
-    call progreso_chicas({"ichika": 30, "nino": 30, "miku": 10, "yotsuba": 0, "itsuki": 0})
+    call progreso_chicas({"ichika": 30, "nino": 30, "miku": 10, "yotsuba": 0, "itsuki": 0}) from _call_progreso_chicas_4
     ## 4 · Una de cada tipo (cálida, tibia, fría, no visitadas)
-    call progreso_chicas({"ichika": 30, "nino": 10, "miku": 0, "yotsuba": 0, "itsuki": 0})
+    call progreso_chicas({"ichika": 30, "nino": 10, "miku": 0, "yotsuba": 0, "itsuki": 0}) from _call_progreso_chicas_5
     ## 5 · Umbrales futuros: comprueba el respaldo de imágenes
-    call progreso_chicas({"ichika": 60, "nino": 90, "miku": 100, "yotsuba": 30, "itsuki": 10})
+    call progreso_chicas({"ichika": 60, "nino": 90, "miku": 100, "yotsuba": 30, "itsuki": 10}) from _call_progreso_chicas_6
 
     return

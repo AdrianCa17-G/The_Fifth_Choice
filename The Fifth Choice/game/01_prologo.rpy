@@ -1364,7 +1364,7 @@ label prologo:
     ## Deja que `hogar` se apague antes de las campanitas de la tarjeta.
     pause 1.5
 
-    call cortinilla_prologo_fin
+    call cortinilla_prologo_fin from _call_cortinilla_prologo_fin
 
     ## Extras → Repetir → Prólogo acaba aquí y vuelve al menú (fuera de un Replay no hace nada).
     $ renpy.end_replay()

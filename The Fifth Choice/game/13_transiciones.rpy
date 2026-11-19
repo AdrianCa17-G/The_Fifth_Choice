@@ -380,7 +380,7 @@ label cortinilla(rotulo="", titulo="", cinta="", numero="", color=CORT_ROSA, fon
 label cortinilla_hub(n=1):
 
     $ anim_marcar("cort_hub")
-    call cortinilla(rotulo="TARDE " + str(n) + " DE 3", numero=str(n), titulo="Tarde libre", cinta="Quedan " + tiempo_restante, color=CORT_LILA, fondo="bg_escuela", ritmo="corto", jingle="hub")
+    call cortinilla(rotulo="TARDE " + str(n) + " DE 3", numero=str(n), titulo="Tarde libre", cinta="Quedan " + tiempo_restante, color=CORT_LILA, fondo="bg_escuela", ritmo="corto", jingle="hub") from _call_cortinilla
 
     return
 
@@ -391,7 +391,7 @@ label cortinilla_hermana(hermana="ichika"):
     $ anim_marcar("encuentro_" + hermana)
     $ cort_d = [x for x in HUB_DESTINOS if x["hermana"] == hermana][0]
 
-    call cortinilla(rotulo="ENCUENTRO", numero=str(PETALO_ORDEN.index(hermana) + 1), titulo=cort_d["nombre"], cinta=cort_d["lugar"], color=cort_d["color"], fondo=cort_d["fondo"], hermanas=[hermana], ritmo="corto", jingle="hermana_" + hermana, solo=hermana)
+    call cortinilla(rotulo="ENCUENTRO", numero=str(PETALO_ORDEN.index(hermana) + 1), titulo=cort_d["nombre"], cinta=cort_d["lugar"], color=cort_d["color"], fondo=cort_d["fondo"], hermanas=[hermana], ritmo="corto", jingle="hermana_" + hermana, solo=hermana) from _call_cortinilla_1
 
     return
 
@@ -399,28 +399,28 @@ label cortinilla_hermana(hermana="ichika"):
 ## Las tarjetas de capítulo, con nombre propio para no repetir argumentos.
 label cortinilla_prologo_fin:
     $ anim_marcar("cort_prologo_fin")
-    call cortinilla(rotulo="PRÓLOGO", titulo="Cinco alumnas, cero interés", cinta="Fin del prólogo", color=CORT_LILA, fondo="cg_hermanas_estudiando", ritmo="medio", jingle="fin")
+    call cortinilla(rotulo="PRÓLOGO", titulo="Cinco alumnas, cero interés", cinta="Fin del prólogo", color=CORT_LILA, fondo="cg_hermanas_estudiando", ritmo="medio", jingle="fin") from _call_cortinilla_2
     return
 
 label cortinilla_cap1_inicio:
     $ anim_marcar("cort_cap1_inicio")
-    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Días de tutoría", color=CORT_ROSA, fondo="bg_departamento", hermanas=PETALO_ORDEN, ritmo="largo", jingle="capitulo")
+    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Días de tutoría", color=CORT_ROSA, fondo="bg_departamento", hermanas=PETALO_ORDEN, ritmo="largo", jingle="capitulo") from _call_cortinilla_3
     return
 
 label cortinilla_cap1_examenes:
     $ anim_marcar("cort_cap1_examenes")
-    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Días de tutoría", cinta_b="Semana de exámenes", color=CORT_ROSA, color_b=CORT_ORO, fondo="bg_aula", hermanas=PETALO_ORDEN, ritmo="largo", jingle="examen")
+    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Días de tutoría", cinta_b="Semana de exámenes", color=CORT_ROSA, color_b=CORT_ORO, fondo="bg_aula", hermanas=PETALO_ORDEN, ritmo="largo", jingle="examen") from _call_cortinilla_4
     return
 
 label cortinilla_cap1_fin:
     $ anim_marcar("cort_cap1_fin")
-    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Fin del capítulo", color=CORT_ROSA, fondo="cg_familia", ritmo="medio", jingle="fin", sosten=4.0)
+    call cortinilla(rotulo="CAPÍTULO 01", numero="01", titulo="Un estudiante perfecto", cinta="Fin del capítulo", color=CORT_ROSA, fondo="cg_familia", ritmo="medio", jingle="fin", sosten=4.0) from _call_cortinilla_5
     return
 
 ## Sin sonido y en gris a propósito: el final malo se queda en silencio.
 label cortinilla_final_malo:
     $ anim_marcar("cort_final_malo")
-    call cortinilla(rotulo="FINAL MALO", titulo="Despido temprano", cinta="Fin", color="#9AA7A8", fondo="cg_maruo_espaldas", ritmo="medio", gris=True, sosten=4.0)
+    call cortinilla(rotulo="FINAL MALO", titulo="Despido temprano", cinta="Fin", color="#9AA7A8", fondo="cg_maruo_espaldas", ritmo="medio", gris=True, sosten=4.0) from _call_cortinilla_6
     return
 
 
@@ -430,18 +430,18 @@ label cortinilla_prueba:
     stop music fadeout 0.5
     stop ambiente
 
-    call cortinilla_prologo_fin
-    call cortinilla_cap1_inicio
-    call cortinilla_hub(1)
+    call cortinilla_prologo_fin from _call_cortinilla_prologo_fin_1
+    call cortinilla_cap1_inicio from _call_cortinilla_cap1_inicio_1
+    call cortinilla_hub(1) from _call_cortinilla_hub_4
 
-    call cortinilla_hermana("ichika")
-    call cortinilla_hermana("nino")
-    call cortinilla_hermana("miku")
-    call cortinilla_hermana("yotsuba")
-    call cortinilla_hermana("itsuki")
+    call cortinilla_hermana("ichika") from _call_cortinilla_hermana_4
+    call cortinilla_hermana("nino") from _call_cortinilla_hermana_5
+    call cortinilla_hermana("miku") from _call_cortinilla_hermana_6
+    call cortinilla_hermana("yotsuba") from _call_cortinilla_hermana_7
+    call cortinilla_hermana("itsuki") from _call_cortinilla_hermana_8
 
-    call cortinilla_cap1_examenes
-    call cortinilla_cap1_fin
-    call cortinilla_final_malo
+    call cortinilla_cap1_examenes from _call_cortinilla_cap1_examenes_1
+    call cortinilla_cap1_fin from _call_cortinilla_cap1_fin_1
+    call cortinilla_final_malo from _call_cortinilla_final_malo_1
 
     return

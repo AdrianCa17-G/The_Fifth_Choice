@@ -557,7 +557,7 @@ label chat_grupo_prueba:
 
     narrador "Prueba del chat · 1 · Debut (interconexión 4)."
 
-    call chat_ver(CHAT_DEBUT)
+    call chat_ver(CHAT_DEBUT) from _call_chat_ver_4
     narrador "Debut: Nino fuera, 5 miembros."
     hide screen chat_grupo
     with dissolve
@@ -568,9 +568,9 @@ label chat_grupo_prueba:
         while chat_prueba_cl < 3:
             $ chat_prueba_clima = ["buena", "mixta", "mala"][chat_prueba_cl]
             narrador "Sábado · mensaje [chat_prueba_op] · clima [chat_prueba_clima]."
-            call chat_ver(CHAT_SEMANA, len(CHAT_SEMANA))
+            call chat_ver(CHAT_SEMANA, len(CHAT_SEMANA)) from _call_chat_ver_5
             narrador "Historial: tres salidas, tres vueltas."
-            call chat_ver(chat_sabado(chat_prueba_op, chat_prueba_clima), len(CHAT_SEMANA))
+            call chat_ver(chat_sabado(chat_prueba_op, chat_prueba_clima), len(CHAT_SEMANA)) from _call_chat_ver_6
             narrador "Fin del sábado [chat_prueba_op] / [chat_prueba_clima]."
             hide screen chat_grupo
             with dissolve
@@ -578,13 +578,13 @@ label chat_grupo_prueba:
         $ chat_prueba_op += 1
 
     narrador "Evento 6 · Miku cálida."
-    call chat_ver(chat_e6(True), 1)
+    call chat_ver(chat_e6(True), 1) from _call_chat_ver_7
     narrador "Nino no se había salido. Ni una vez en toda la semana de exámenes."
     hide screen chat_grupo
     with dissolve
 
     narrador "Evento 6 · Miku tibia, fría o no visitada."
-    call chat_ver(chat_e6(False), 1)
+    call chat_ver(chat_e6(False), 1) from _call_chat_ver_8
     narrador "Fin de la prueba."
     hide screen chat_grupo
     with dissolve

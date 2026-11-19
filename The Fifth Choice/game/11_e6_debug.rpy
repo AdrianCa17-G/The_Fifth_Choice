@@ -230,19 +230,19 @@ label e6_debug_menu:
         jump e6_debug_menu
 
     if e6_dbg_op == "preset":
-        call e6_debug_preset
+        call e6_debug_preset from _call_e6_debug_preset
         jump e6_debug_menu
 
     if e6_dbg_op == "manual":
-        call e6_debug_manual
+        call e6_debug_manual from _call_e6_debug_manual
         jump e6_debug_menu
 
     if e6_dbg_op == "ajustes":
-        call e6_debug_ajustes
+        call e6_debug_ajustes from _call_e6_debug_ajustes
         jump e6_debug_menu
 
     if e6_dbg_op == "probar":
-        call e6_debug_probar
+        call e6_debug_probar from _call_e6_debug_probar
         jump e6_debug_menu
 
     if e6_dbg_op == "jugar":
@@ -330,7 +330,7 @@ label e6_debug_probar:
     $ nino_rama_beat = e6_dbg_beat
     $ e6_dbg_h = e6_dbg_op
 
-    call mj_ejecutar("prueba", e6_dbg_h)
+    call mj_ejecutar("prueba", e6_dbg_h) from _call_mj_ejecutar_11
 
     $ e6_dbg_msg = e6_dbg_texto_resultado(e6_dbg_h, _return)
     $ narrator(e6_dbg_msg)

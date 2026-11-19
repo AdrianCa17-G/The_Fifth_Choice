@@ -740,7 +740,7 @@ label mj_probar_y2:
         "Con boost (media)":
             $ nino_rama_beat = "calida"
 
-    call mj_ejecutar("y2", "yotsuba")
+    call mj_ejecutar("y2", "yotsuba") from _call_mj_ejecutar_10
 
     $ y2_res = _return
     $ y2_info = e6_mj["yotsuba"]

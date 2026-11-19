@@ -617,11 +617,11 @@ label mj_transicion_prueba:
     $ quick_menu = False
     stop ambiente
 
-    call mj_transicion_prueba_una("ichika")
-    call mj_transicion_prueba_una("nino")
-    call mj_transicion_prueba_una("miku")
-    call mj_transicion_prueba_una("yotsuba")
-    call mj_transicion_prueba_una("itsuki")
+    call mj_transicion_prueba_una("ichika") from _call_mj_transicion_prueba_una
+    call mj_transicion_prueba_una("nino") from _call_mj_transicion_prueba_una_1
+    call mj_transicion_prueba_una("miku") from _call_mj_transicion_prueba_una_2
+    call mj_transicion_prueba_una("yotsuba") from _call_mj_transicion_prueba_una_3
+    call mj_transicion_prueba_una("itsuki") from _call_mj_transicion_prueba_una_4
 
     stop music fadeout 1.0
     $ quick_menu = mjtr_qm_previo
@@ -635,16 +635,16 @@ label mj_transicion_prueba_una(h="ichika"):
     with Dissolve(0.4)
     $ renpy.music.play(getattr(audio, h), channel="music", fadein=0.5)
 
-    call mj_transicion("entrada", h, MJ_REGISTRO[E6_MJ_JUEGO[h]]["titulo"])
+    call mj_transicion("entrada", h, MJ_REGISTRO[E6_MJ_JUEGO[h]]["titulo"]) from _call_mj_transicion_6
     show screen mj_transicion_prueba_marco(h, "neutral")
     $ renpy.pause(1.2, hard=True)
     show screen mj_transicion_prueba_marco(h, "feliz")
     $ renpy.pause(0.4, hard=True)
     hide screen mj_transicion_prueba_marco
 
-    call mj_transicion("ganado", h, MJ_REGISTRO[E6_MJ_JUEGO[h]]["titulo"])
+    call mj_transicion("ganado", h, MJ_REGISTRO[E6_MJ_JUEGO[h]]["titulo"]) from _call_mj_transicion_7
     $ renpy.pause(0.8, hard=True)
-    call mj_transicion("saltado", h, MJ_REGISTRO[E6_MJ_JUEGO[h]]["titulo"])
+    call mj_transicion("saltado", h, MJ_REGISTRO[E6_MJ_JUEGO[h]]["titulo"]) from _call_mj_transicion_8
     $ renpy.pause(0.8, hard=True)
 
     return

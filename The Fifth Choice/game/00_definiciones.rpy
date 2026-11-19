@@ -643,20 +643,10 @@ label configurar_nombre:
 
 label start:
 
-    scene bg_negro
-    with fade
-    show yotsuba_incomoda at pj_habla(X_ICHIKA)
-
-    show yotsuba_seria at pj_habla(X_MIKU)
-    show yotsuba_sorprendida at pj_habla(X_YOTSUBA)
-    show yotsuba_sonriendo at pj_habla(X_ITSUKI)
-    with disolucion_lenta
-    nino "Hola"
-
     stop music fadeout 1.5
 
     scene bg_negro
 
-    call configurar_nombre
+    call configurar_nombre from _call_configurar_nombre
 
     jump prologo

@@ -433,7 +433,7 @@ screen continuara():
 label cap1_continuara:
     $ quick_menu = False
 
-    call creditos_rol
+    call creditos_rol from _call_creditos_rol_1
 
     $ renpy.block_rollback()
     call screen continuara with Dissolve(0.8)

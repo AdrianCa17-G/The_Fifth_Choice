@@ -1,14 +1,12 @@
 {
   "build_update": false,
   "packages": [
-    "pc",
     "mac",
-    "market",
-    "win",
-    "linux"
+    "linux",
+    "win"
   ],
   "add_from": true,
-  "force_recompile": true,
+  "force_recompile": false,
   "android_build": "Release",
   "tutorial": false,
   "renamed_all": true,

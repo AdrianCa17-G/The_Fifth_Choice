@@ -20,23 +20,23 @@ label reaccion_hermana_visitada:
 
     if destino == "ichika":
 
-        call reaccion_ichika
+        call reaccion_ichika from _call_reaccion_ichika
 
     elif destino == "nino":
 
-        call reaccion_nino
+        call reaccion_nino from _call_reaccion_nino
 
     elif destino == "miku":
 
-        call reaccion_miku
+        call reaccion_miku from _call_reaccion_miku
 
     elif destino == "yotsuba":
 
-        call reaccion_yotsuba
+        call reaccion_yotsuba from _call_reaccion_yotsuba
 
     else:
 
-        call reaccion_itsuki
+        call reaccion_itsuki from _call_reaccion_itsuki
 
     return
 
@@ -1427,7 +1427,7 @@ label cap1_interconexion_2:
     ##  Aula · reacción de la hermana visitada
     ############################################################################
 
-    call reaccion_hermana_visitada
+    call reaccion_hermana_visitada from _call_reaccion_hermana_visitada
     
     ############################################################################
     ##  Chisme de Nino (solo si la visitada no fue ella ni Itsuki)
@@ -1608,7 +1608,7 @@ label cap1_interconexion_2:
 
     $ ui_escena("beat", "itsuki", "Azotea")
 
-    call beat_Itsuki
+    call beat_Itsuki from _call_beat_Itsuki
 
     $ ui_escena("normal")
 
@@ -2009,7 +2009,7 @@ label cap1_interconexion_4:
 
     narrador "De repente, [nombre_h] se me cruzó en el camino."
 
-    call reaccion_hermana_visitada
+    call reaccion_hermana_visitada from _call_reaccion_hermana_visitada_1
 
     ############################################################################
     ##  Quien lee a las demás cuenta lo que notó
@@ -2343,7 +2343,7 @@ label cap1_interconexion_4:
 
     narrador "Saqué el celular."
 
-    call chat_ver(CHAT_DEBUT)
+    call chat_ver(CHAT_DEBUT) from _call_chat_ver
 
     narrador "Era verdad. Ahí estaba: un grupo nuevo, y mi número al final."
 
@@ -2394,7 +2394,7 @@ label cap1_interconexion_4:
 
     $ ui_escena("beat", "nino", "Departamento")
 
-    call beat_Nino
+    call beat_Nino from _call_beat_Nino
 
     $ ui_escena("normal")
 
@@ -3310,7 +3310,7 @@ label cap1_interconexion_6:
     narrador "De repente, [nombre_h] se me cruzó en el camino."
 
     ## Reacción de la hermana del hub 3 (labels reutilizables).
-    call reaccion_hermana_visitada
+    call reaccion_hermana_visitada from _call_reaccion_hermana_visitada_2
 
     ## Las dos que se quedaron fuera.
 
@@ -3321,19 +3321,19 @@ label cap1_interconexion_6:
     play music derrota fadein 2.0
 
     if "ichika" not in hub_visitadas:
-        call queja_ichika
+        call queja_ichika from _call_queja_ichika
 
     if "nino" not in hub_visitadas:
-        call queja_nino
+        call queja_nino from _call_queja_nino
 
     if "miku" not in hub_visitadas:
-        call queja_miku
+        call queja_miku from _call_queja_miku
 
     if "yotsuba" not in hub_visitadas:
-        call queja_yotsuba
+        call queja_yotsuba from _call_queja_yotsuba
 
     if "itsuki" not in hub_visitadas:
-        call queja_itsuki
+        call queja_itsuki from _call_queja_itsuki
 
     stop music fadeout 1.5
 
@@ -3947,7 +3947,7 @@ label cap1_interconexion_6:
 
     narrador "Pasé el día mirando el chat del grupo."
 
-    call chat_ver(CHAT_SEMANA, len(CHAT_SEMANA))
+    call chat_ver(CHAT_SEMANA, len(CHAT_SEMANA)) from _call_chat_ver_1
 
     mc_pensamiento "Les mandaré un mensaje de motivación."
 
@@ -3980,7 +3980,7 @@ label cap1_interconexion_6:
 
             mc_pensamiento "Mitad broma, mitad cierto."
 
-    call chat_ver(chat_sabado(chat_opcion, clima_cap1), len(CHAT_SEMANA))
+    call chat_ver(chat_sabado(chat_opcion, clima_cap1), len(CHAT_SEMANA)) from _call_chat_ver_2
 
     if chat_opcion == 0:
 
@@ -4090,7 +4090,7 @@ label cap1_interconexion_6:
        
     $ ui_escena("beat", None, "Casa de Futaro")
 
-    call beat_casa
+    call beat_casa from _call_beat_casa
 
     $ ui_escena("normal")
 

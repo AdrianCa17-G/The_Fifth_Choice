@@ -749,7 +749,7 @@ label mj_probar_i1:
 
     scene bg_negro
 
-    call mj_ejecutar("i1", "ichika")
+    call mj_ejecutar("i1", "ichika") from _call_mj_ejecutar_6
 
     $ mj_msg = "Resultado: " + str(_return)
     $ mj_msg = mj_msg + " · intentos " + str(e6_mj["ichika"]["intentos"])

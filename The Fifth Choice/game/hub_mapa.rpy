@@ -1009,22 +1009,22 @@ label hub_completado_prueba:
     stop music fadeout 0.5
     stop ambiente
 
-    call hub_completado("ichika", 1, "calida")
-    call hub_completado("nino", 1, "calida")
-    call hub_completado("miku", 1, "calida")
-    call hub_completado("yotsuba", 1, "calida")
-    call hub_completado("itsuki", 1, "calida")
+    call hub_completado("ichika", 1, "calida") from _call_hub_completado_4
+    call hub_completado("nino", 1, "calida") from _call_hub_completado_5
+    call hub_completado("miku", 1, "calida") from _call_hub_completado_6
+    call hub_completado("yotsuba", 1, "calida") from _call_hub_completado_7
+    call hub_completado("itsuki", 1, "calida") from _call_hub_completado_8
 
-    call hub_completado("ichika", 2, "tibia")
-    call hub_completado("nino", 2, "tibia")
-    call hub_completado("miku", 2, "tibia")
-    call hub_completado("yotsuba", 2, "tibia")
-    call hub_completado("itsuki", 2, "tibia")
+    call hub_completado("ichika", 2, "tibia") from _call_hub_completado_9
+    call hub_completado("nino", 2, "tibia") from _call_hub_completado_10
+    call hub_completado("miku", 2, "tibia") from _call_hub_completado_11
+    call hub_completado("yotsuba", 2, "tibia") from _call_hub_completado_12
+    call hub_completado("itsuki", 2, "tibia") from _call_hub_completado_13
 
-    call hub_completado("ichika", 3, "fria")
-    call hub_completado("nino", 3, "fria")
-    call hub_completado("miku", 3, "fria")
-    call hub_completado("yotsuba", 3, "fria")
-    call hub_completado("itsuki", 3, "fria")
+    call hub_completado("ichika", 3, "fria") from _call_hub_completado_14
+    call hub_completado("nino", 3, "fria") from _call_hub_completado_15
+    call hub_completado("miku", 3, "fria") from _call_hub_completado_16
+    call hub_completado("yotsuba", 3, "fria") from _call_hub_completado_17
+    call hub_completado("itsuki", 3, "fria") from _call_hub_completado_18
 
     return

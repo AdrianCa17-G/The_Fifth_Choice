@@ -194,6 +194,18 @@ init python:
 
     ## Clasifica archivos como 'None' para excluirlos de la distribución.
 
+    build.archive("scripts", "all")
+    build.archive("images", "all")
+    build.archive("audio", "all")
+
+    build.classify("herramientas/**", None)
+    build.classify("**.patch", None)
+
+    build.classify("game/**.rpy", "scripts")
+    build.classify("game/**.rpyc", "scripts")
+    build.classify("game/images/**", "images")
+    build.classify("game/audio/**", "audio")
+
     build.classify('**~', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)

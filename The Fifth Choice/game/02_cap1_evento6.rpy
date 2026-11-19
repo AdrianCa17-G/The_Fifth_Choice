@@ -147,18 +147,18 @@ label evento_6:
 
     $ e6_iniciar()
 
-    call e6_lunes
-    call e6_bloque("yotsuba")
-    call e6_bloque("ichika")
-    call e6_bloque("nino")
-    call e6_bloque("itsuki")
-    call e6_bloque("miku")
-    call e6_despues
-    call e6_resultados
-    call e6_cinco
-    call e6_casa
-    call e6_cuarto
-    call e6_retrato
+    call e6_lunes from _call_e6_lunes
+    call e6_bloque("yotsuba") from _call_e6_bloque
+    call e6_bloque("ichika") from _call_e6_bloque_1
+    call e6_bloque("nino") from _call_e6_bloque_2
+    call e6_bloque("itsuki") from _call_e6_bloque_3
+    call e6_bloque("miku") from _call_e6_bloque_4
+    call e6_despues from _call_e6_despues
+    call e6_resultados from _call_e6_resultados
+    call e6_cinco from _call_e6_cinco
+    call e6_casa from _call_e6_casa
+    call e6_cuarto from _call_e6_cuarto
+    call e6_retrato from _call_e6_retrato
 
     $ e6_cerrar()
 
@@ -172,14 +172,14 @@ label evento_6:
 ## --- Despachador de bloque (Mov. 2–6) -----------------------------------------
 label e6_bloque(h):
 
-    call expression ("e6_" + h + "_nucleo")
-    call expression ("e6_" + h + "_mono_" + e6_estado_de(h))
+    call expression ("e6_" + h + "_nucleo") from _call_expression
+    call expression ("e6_" + h + "_mono_" + e6_estado_de(h)) from _call_expression_1
     if e6_estado_de(h) == "calida":
-        call expression ("e6_" + h + "_mj")
+        call expression ("e6_" + h + "_mj") from _call_expression_2
     if e6_estado_de(h) == "no_visitada":
-        call expression ("e6_" + h + "_promesa")
+        call expression ("e6_" + h + "_promesa") from _call_expression_3
     $ e6_marcar_ganchos(h)
-    call expression ("e6_" + h + "_gesto_" + e6_estado_de(h))
+    call expression ("e6_" + h + "_gesto_" + e6_estado_de(h)) from _call_expression_4
     return
 
 
@@ -197,7 +197,7 @@ label e6_lunes:
     stop ambiente
 
     ## La tarjeta del capítulo vuelve y su cinta cambia a «Semana de exámenes».
-    call cortinilla_cap1_examenes
+    call cortinilla_cap1_examenes from _call_cortinilla_cap1_examenes
 
     scene bg_escuela
     with fade_dia
@@ -218,7 +218,7 @@ label e6_lunes:
     
     mc_pensamiento "Esta semana iba a comprobar si lo era."
 
-    call expression ("e6_s1_" + e6_estado_entrada)
+    call expression ("e6_s1_" + e6_estado_entrada) from _call_expression_5
 
     play music cotidiano fadein 1.5
 
@@ -261,12 +261,12 @@ label e6_lunes:
     scene bg_aula
     with dissolve
 
-    call e6_formacion_neutral
+    call e6_formacion_neutral from _call_e6_formacion_neutral
 
     ## Yotsuba
     if e6_estado_de("yotsuba") == "calida" or e6_estado_de("yotsuba") == "tibia":
 
-        call e6_foco("yotsuba", "sonriendo")
+        call e6_foco("yotsuba", "sonriendo") from _call_e6_foco
 
         yotsuba "¡Estudié las lecturas dos veces!"
 
@@ -284,7 +284,7 @@ label e6_lunes:
 
     elif e6_estado_de("yotsuba") == "fria":
 
-        call e6_foco("yotsuba", "sonriendo")
+        call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_1
 
         yotsuba "¡Estudié las lecturas dos veces!"
 
@@ -296,7 +296,7 @@ label e6_lunes:
 
     else:
 
-        call e6_foco("yotsuba", "neutral")
+        call e6_foco("yotsuba", "neutral") from _call_e6_foco_2
 
         yotsuba "¡Repasé las fechas con Miku y las fórmulas con Ichika!"
 
@@ -312,7 +312,7 @@ label e6_lunes:
     ## Ichika
     if e6_estado_de("ichika") == "calida":
 
-        call e6_foco("ichika", "sonriendo")
+        call e6_foco("ichika", "sonriendo") from _call_e6_foco_3
 
         ichika "Dormí cuatro horas. Esta vez por las fórmulas, no por el papel de la obra."
 
@@ -324,7 +324,7 @@ label e6_lunes:
 
     elif e6_estado_de("ichika") == "tibia":
 
-        call e6_foco("ichika", "sonriendo")
+        call e6_foco("ichika", "sonriendo") from _call_e6_foco_4
 
         ichika "¡Dormí cuatro horas! Mitad fórmulas, mitad guion."
 
@@ -336,7 +336,7 @@ label e6_lunes:
 
     elif e6_estado_de("ichika") == "fria":
 
-        call e6_foco("ichika", "sonriendo")
+        call e6_foco("ichika", "sonriendo") from _call_e6_foco_5
 
         ichika "Dormí lo justo y repasé lo justo. Todo cronometrado."
 
@@ -346,7 +346,7 @@ label e6_lunes:
 
     else:
 
-        call e6_foco("ichika", "neutral")
+        call e6_foco("ichika", "neutral") from _call_e6_foco_6
 
         ichika "Dormí cuatro horas. Con el guion en una mano y las fórmulas en la otra."
 
@@ -362,7 +362,7 @@ label e6_lunes:
 
     if e6_estado_de("miku") == "calida":
 
-        call e6_foco("miku", "animada")
+        call e6_foco("miku", "animada") from _call_e6_foco_7
 
         miku "...Sé más de lo que van a preguntar. ...Lo comprobé tres veces."
 
@@ -378,7 +378,7 @@ label e6_lunes:
 
     elif e6_estado_de("miku") == "tibia":
 
-        call e6_foco("miku", "neutral")
+        call e6_foco("miku", "neutral") from _call_e6_foco_8
 
         miku "...Repasé las batallas, los clanes, las fechas."
 
@@ -390,7 +390,7 @@ label e6_lunes:
 
     elif e6_estado_de("miku") == "fria":
 
-        call e6_foco("miku", "neutral")
+        call e6_foco("miku", "neutral") from _call_e6_foco_9
 
         miku "...Estudié lo que entra. ...Tres temas."
 
@@ -404,7 +404,7 @@ label e6_lunes:
 
     else:
 
-        call e6_foco("miku", "neutral")
+        call e6_foco("miku", "neutral") from _call_e6_foco_10
 
         miku "...Repasé sola, como siempre."
 
@@ -419,7 +419,7 @@ label e6_lunes:
 
     if e6_estado_de("itsuki") == "calida" or e6_estado_de("itsuki") == "fria":
 
-        call e6_foco("itsuki", "sonriendo")
+        call e6_foco("itsuki", "sonriendo") from _call_e6_foco_11
 
         itsuki "He estudiado cada noche. Y por primera vez sé lo que hago."
 
@@ -433,7 +433,7 @@ label e6_lunes:
 
     else:
 
-        call e6_foco("itsuki", "neutral")
+        call e6_foco("itsuki", "neutral") from _call_e6_foco_12
 
         itsuki "He estudiado cada noche. Si un problema no sale, lo repito hasta que salga."
 
@@ -448,7 +448,7 @@ label e6_lunes:
 
     if e6_estado_de("nino") != "no_visitada":
 
-        call e6_foco("nino", "pillada")
+        call e6_foco("nino", "pillada") from _call_e6_foco_13
 
         nino "Treinta días. Y sigues viniendo. ...No digo nada más."
 
@@ -462,7 +462,7 @@ label e6_lunes:
 
     else:
 
-        call e6_foco("nino", "neutral")
+        call e6_foco("nino", "neutral") from _call_e6_foco_14
 
         nino "No viniste a buscarme y tampoco te fuiste. ...No es un cumplido. No lo repitas."
 
@@ -724,7 +724,7 @@ label e6_yotsuba_mj:
 
     play music yotsuba fadein 1.0 fadeout 1.5
 
-    call mj_ejecutar(E6_MJ_JUEGO["yotsuba"], "yotsuba")
+    call mj_ejecutar(E6_MJ_JUEGO["yotsuba"], "yotsuba") from _call_mj_ejecutar
     $ e6_res = _return
 
     stop music fadeout 3.0
@@ -982,7 +982,7 @@ label e6_ichika_mj:
 
     play music ichika fadein 1.0 fadeout 1.5
 
-    call mj_ejecutar(E6_MJ_JUEGO["ichika"], "ichika")
+    call mj_ejecutar(E6_MJ_JUEGO["ichika"], "ichika") from _call_mj_ejecutar_1
     $ e6_res = _return
 
     stop music fadeout 3.0
@@ -1215,7 +1215,7 @@ label e6_nino_mono_calida:
 
     nino_int "Es distinto."
 
-    call expression ("e6_nino_beat_" + nino_rama_beat)
+    call expression ("e6_nino_beat_" + nino_rama_beat) from _call_expression_6
 
     nino_int "Siempre veo venir el golpe. Me adelanto: me cierro antes, pido que se vayan antes."
 
@@ -1254,7 +1254,7 @@ label e6_nino_mono_tibia:
 
     nino_int "Dije «esto no significa nada». Lo dije yo, en voz alta, para que quedara dicho."
 
-    call expression ("e6_nino_beat_" + nino_rama_beat)
+    call expression ("e6_nino_beat_" + nino_rama_beat) from _call_expression_7
 
     nino_int "¿Fue amable o fue su famoso método? Las dos cosas me cansan igual."
 
@@ -1287,7 +1287,7 @@ label e6_nino_mono_fria:
 
     nino_int "No lo reconozco. Lo anoto. Son cosas distintas."
 
-    call expression ("e6_nino_beat_" + nino_rama_beat)
+    call expression ("e6_nino_beat_" + nino_rama_beat) from _call_expression_8
 
     nino_int "Aún queda el resultado. Y tras el resultado, el siguiente. Siempre queda el siguiente."
 
@@ -1316,7 +1316,7 @@ label e6_nino_mono_no_visitada:
 
     nino_int "Llevo treinta y dos días sin esperar nada. Y los llevo contados."
 
-    call expression ("e6_nino_beat_" + nino_rama_beat)
+    call expression ("e6_nino_beat_" + nino_rama_beat) from _call_expression_9
 
     nino_int "Las que fue a ver llegaron distintas a casa."
 
@@ -1351,7 +1351,7 @@ label e6_nino_mj:
 
     play music nino fadein 1.0 fadeout 1.5
 
-    call mj_ejecutar(E6_MJ_JUEGO["nino"], "nino")
+    call mj_ejecutar(E6_MJ_JUEGO["nino"], "nino") from _call_mj_ejecutar_2
     $ e6_res = _return
 
     stop music fadeout 3.0
@@ -1595,9 +1595,9 @@ label e6_itsuki_mono_calida:
     itsuki_int "Es el mismo error de siempre: en un sitio que no encuentro, con un número que reconozco."
 
     if hub_visitadas[0] == "itsuki":
-        call e6_itsuki_beat_ayudada
+        call e6_itsuki_beat_ayudada from _call_e6_itsuki_beat_ayudada
     else:
-        call e6_itsuki_beat_sola
+        call e6_itsuki_beat_sola from _call_e6_itsuki_beat_sola
 
     itsuki_int "Me dijo: «Solo te digo dónde mirar»."
 
@@ -1632,7 +1632,7 @@ label e6_itsuki_mono_tibia:
 
     itsuki_int "Hay un error. No sé dónde. Lo noto como una piedra en el zapato."
 
-    call e6_itsuki_beat_sola
+    call e6_itsuki_beat_sola from _call_e6_itsuki_beat_sola_1
 
     itsuki_int "Me ofreció revisarlo desde el principio."
 
@@ -1662,9 +1662,9 @@ label e6_itsuki_mono_fria:
     itsuki_int "Revisaré cada paso, uno por uno, desde el primero. Sin ayuda."
 
     if hub_visitadas[0] == "itsuki":
-        call e6_itsuki_beat_ayudada
+        call e6_itsuki_beat_ayudada from _call_e6_itsuki_beat_ayudada_1
     else:
-        call e6_itsuki_beat_sola
+        call e6_itsuki_beat_sola from _call_e6_itsuki_beat_sola_2
 
     itsuki_int "Me quitó el cuaderno de las manos. Lo resolvió de pie, con mi propio lápiz."
 
@@ -1693,7 +1693,7 @@ label e6_itsuki_mono_no_visitada:
 
     itsuki_int "Planteé bien. Convertí el caudal. Pasé al tiempo. Y el resultado no cuadra."
 
-    call e6_itsuki_beat_sola
+    call e6_itsuki_beat_sola from _call_e6_itsuki_beat_sola_3
 
     itsuki_int "Repasé aquel ejercicio hasta hundir el papel. Y me atasco en el mismo punto."
 
@@ -1718,7 +1718,7 @@ label e6_itsuki_mj:
 
     play music itsuki fadein 1.0 fadeout 1.5
 
-    call mj_ejecutar(E6_MJ_JUEGO["itsuki"], "itsuki")
+    call mj_ejecutar(E6_MJ_JUEGO["itsuki"], "itsuki") from _call_mj_ejecutar_3
     $ e6_res = _return
 
     stop music fadeout 3.0
@@ -2031,7 +2031,7 @@ label e6_miku_mono_no_visitada:
 ## --- Minijuego M3 (solo cálida). Su tema SOLO suena aquí, y lo arranca M3 --------
 label e6_miku_mj:
 
-    call mj_ejecutar(E6_MJ_JUEGO["miku"], "miku")
+    call mj_ejecutar(E6_MJ_JUEGO["miku"], "miku") from _call_mj_ejecutar_4
     $ e6_res = _return
 
     ## M3 corta su tema al terminar. Si se saltó, aún suena descubrimiento.
@@ -2192,7 +2192,7 @@ label e6_despues:
 
     play music derrota fadein 2.5
 
-    call e6_formacion_neutral
+    call e6_formacion_neutral from _call_e6_formacion_neutral_1
 
     if persistent.final_malo_temprano_b_visto:
 
@@ -2216,7 +2216,7 @@ label e6_despues:
 
     mc "Pero la verdad es que no sé cómo terminó esto."
 
-    call expression ("e6_s_tarde_" + e6_estado_entrada)
+    call expression ("e6_s_tarde_" + e6_estado_entrada) from _call_expression_10
 
 
     mc "No sé si salió bien. Hasta mañana, nadie lo sabe."
@@ -2229,32 +2229,32 @@ label e6_despues:
 
     ## --- YOTSUBA · japonés (lunes) -----------------------------------------------------
 
-    call expression ("e6_yotsuba_tarde_" + e6_estado_de("yotsuba"))
+    call expression ("e6_yotsuba_tarde_" + e6_estado_de("yotsuba")) from _call_expression_11
 
 
     ## --- ICHIKA · matemáticas (martes) ------------------------------------------------
 
-    call expression ("e6_ichika_tarde_" + e6_estado_de("ichika"))
+    call expression ("e6_ichika_tarde_" + e6_estado_de("ichika")) from _call_expression_12
 
 
     ## --- NINO · inglés (miércoles) -----------------------------------------------------
 
-    call expression ("e6_nino_tarde_" + e6_estado_de("nino"))
+    call expression ("e6_nino_tarde_" + e6_estado_de("nino")) from _call_expression_13
 
 
     ## --- ITSUKI · ciencias (jueves) ----------------------------------------------------
 
-    call expression ("e6_itsuki_tarde_" + e6_estado_de("itsuki"))
+    call expression ("e6_itsuki_tarde_" + e6_estado_de("itsuki")) from _call_expression_14
 
 
     ## --- MIKU · sociales (viernes) ------------------------------------------------------
 
-    call expression ("e6_miku_tarde_" + e6_estado_de("miku"))
+    call expression ("e6_miku_tarde_" + e6_estado_de("miku")) from _call_expression_15
 
 
     ## --- «¿Y a ti cómo te fue?» ------------------------------------------------------
 
-    call e6_tarde_pregunta
+    call e6_tarde_pregunta from _call_e6_tarde_pregunta
 
 
     mc "¿A mí?"
@@ -2265,7 +2265,7 @@ label e6_despues:
 
     mc "...La verdad es que no me acuerdo."
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_15
 
     nino "¿Cómo que no te acuerdas?"
 
@@ -2275,7 +2275,7 @@ label e6_despues:
 
     mc "Luego las miraba a ustedes."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_16
 
     narrador "Hubo un silencio corto. De los que se llenan solos."
 
@@ -2283,11 +2283,11 @@ label e6_despues:
 
     play music cotidiano fadein 2.5 volume 0.6
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_17
 
     ichika "Qué tutor más raro."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_18
 
     mc_pensamiento "Cinco exámenes míos, y no recordaba ni una pregunta."
 
@@ -2307,39 +2307,39 @@ label e6_despues:
 
     ## --- Nadie se ha ido -------------------------------------------------------------
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_19
 
     ichika "Oigan. ¿Se han dado cuenta?"
 
     ichika "La campana sonó hace un buen rato. Y ninguna se ha ido."
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_20
 
     nino "Estoy esperando a que se vacíe el pasillo."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_21
 
     ichika "El pasillo está vacío desde hace diez minutos, Nino."
 
-    call e6_foco("nino", "pillada")
+    call e6_foco("nino", "pillada") from _call_e6_foco_22
 
     nino "...Pues espero a que se vacíe más."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_23
 
     stop music fadeout 3.0
 
-    call e6_foco("yotsuba", "seria")
+    call e6_foco("yotsuba", "seria") from _call_e6_foco_24
 
     yotsuba "...Es que si salimos por esa puerta, se acaba la semana."
 
     narrador "Lo dijo bajito. Yotsuba, que no dice nada bajito."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_25
 
     itsuki "Y el mes. El plazo era de un mes."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_26
 
     narrador "Nadie dijo lo que venía después. No hacía falta."
 
@@ -2349,7 +2349,7 @@ label e6_despues:
 
     narrador "Me miraron las cinco. Cinco preguntas iguales, y ninguna en voz alta."
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "neutral") from _call_e6_foco_27
 
     nino "Nadie le va a preguntar nada."
 
@@ -2357,7 +2357,7 @@ label e6_despues:
 
     nino "Mañana se sabe. Y ya."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_28
 
     mc_pensamiento "Podía decirles que el lunes estaría con ellas. Sonaría bien."
 
@@ -2371,7 +2371,7 @@ label e6_despues:
 
     if e6_estado_de("miku") == "calida":
 
-        call e6_foco("miku", "relajada")
+        call e6_foco("miku", "relajada") from _call_e6_foco_29
 
         miku "Entonces salgamos todas a la vez."
 
@@ -2381,25 +2381,25 @@ label e6_despues:
 
     else:
 
-        call e6_foco("miku", "neutral")
+        call e6_foco("miku", "neutral") from _call_e6_foco_30
 
         miku "...Entonces salgamos todas a la vez."
 
         miku "...Así nadie se queda de última."
 
-    call e6_foco("itsuki", "sonriendo")
+    call e6_foco("itsuki", "sonriendo") from _call_e6_foco_31
 
     itsuki "Apoyo la idea."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_32
 
     ichika "Aprobada por todas. Es la primera votación del mes que no gana Nino."
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_33
 
     nino "No hubo votación."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_34
 
     narrador "No contó nadie. Se levantaron las cinco a la vez, como si lo hubieran ensayado."
 
@@ -2435,7 +2435,7 @@ label e6_despues:
 
     mc_pensamiento "Las aulas vacías se vuelven a llenar."
 
-    call expression ("e6_nino_puerta_" + e6_estado_de("nino"))
+    call expression ("e6_nino_puerta_" + e6_estado_de("nino")) from _call_expression_16
 
 
     ## --- Fuera ------------------------------------------------------------------------
@@ -2519,7 +2519,7 @@ label e6_s_tarde_bueno:
 
 label e6_yotsuba_tarde_calida:
 
-    call e6_foco("yotsuba", "neutral")
+    call e6_foco("yotsuba", "neutral") from _call_e6_foco_35
 
     yotsuba "[mc]..."
 
@@ -2529,7 +2529,7 @@ label e6_yotsuba_tarde_calida:
 
     yotsuba "Llené la hoja. Y miré a mis hermanas igual, pero para saludarlas."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_36
 
     yotsuba "No sé si está bien. Pero esta vez la hoja también era mía."
 
@@ -2540,17 +2540,17 @@ label e6_yotsuba_tarde_calida:
 
 label e6_yotsuba_tarde_tibia:
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_37
 
     yotsuba "¡[mc]! ¡Yo sí sé una cosa! ¡Terminé la hoja entera!"
 
-    call e6_foco("yotsuba", "neutral")
+    call e6_foco("yotsuba", "neutral") from _call_e6_foco_38
 
     yotsuba "Bueno... casi entera. Hubo una frase que empecé y no terminé."
 
     mc "¿Cuál?"
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_39
 
     yotsuba "¡Una que no venía en el examen!"
 
@@ -2561,7 +2561,7 @@ label e6_yotsuba_tarde_tibia:
 
 label e6_yotsuba_tarde_fria:
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_40
 
     yotsuba "¡Tutor! ¡Hoja llena! ¡Sin mirar a nadie ni una sola vez!"
 
@@ -2580,19 +2580,19 @@ label e6_yotsuba_tarde_fria:
 
 label e6_yotsuba_tarde_no_visitada:
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_41
 
     yotsuba "¡[mc]! ¡Le pasé un lápiz a Ichika antes de que lo pidiera!"
 
     yotsuba "Eso no sale en el examen, ¡pero cuenta!"
 
-    call e6_foco("yotsuba", "neutral")
+    call e6_foco("yotsuba", "neutral") from _call_e6_foco_42
 
     yotsuba "...¿Tú me viste? Desde la segunda fila."
 
     mc "Te vi."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_43
 
     yotsuba "¡Entonces ya está!"
 
@@ -2605,7 +2605,7 @@ label e6_yotsuba_tarde_no_visitada:
 
 label e6_ichika_tarde_calida:
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_44
 
     ichika "No me dormí en ningún examen."
 
@@ -2615,7 +2615,7 @@ label e6_ichika_tarde_calida:
 
     ichika "Al terminar me quedé mirando la hoja como si la hubiera hecho otra persona."
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_45
 
     ichika "No era otra persona. Eso es lo que todavía no me creo."
 
@@ -2630,17 +2630,17 @@ label e6_ichika_tarde_calida:
 
 label e6_ichika_tarde_tibia:
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_46
 
     ichika "¡El profesor me pilló sonriéndole a la hoja! Le dije que era una técnica."
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_47
 
     ichika "Lo resolví rápido, eso sí."
 
     ichika "Lo que no sé es si... No tengo que po—"
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_48
 
     ichika "¡Olvídalo! Una línea de ensayo. Se me cuelan."
 
@@ -2651,7 +2651,7 @@ label e6_ichika_tarde_tibia:
 
 label e6_ichika_tarde_fria:
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_49
 
     ichika "Resolví todo sin un tachón. Aproveché el tiempo, tal cual."
 
@@ -2664,15 +2664,15 @@ label e6_ichika_tarde_fria:
 
 label e6_ichika_tarde_no_visitada:
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_50
 
     ichika "Hice el examen con una mano y ensayé con la otra. Debajo del pupitre."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_51
 
     ichika "Una pregunta, una línea. ¡Multitarea de actriz!"
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_52
 
     ichika "...Salieron las dos bien, creo. No sé cuál de las dos era yo."
 
@@ -2690,7 +2690,7 @@ label e6_ichika_tarde_no_visitada:
 
 label e6_nino_tarde_calida:
 
-    call e6_foco("nino", "seria")
+    call e6_foco("nino", "seria") from _call_e6_foco_53
 
     nino "Terminé mi examen a los quince minutos. Y me fui."
 
@@ -2700,7 +2700,7 @@ label e6_nino_tarde_calida:
 
     mc "Te vi salir."
 
-    call e6_foco("nino", "pillada")
+    call e6_foco("nino", "pillada") from _call_e6_foco_54
 
     nino "...No sé de qué hablas."
 
@@ -2711,7 +2711,7 @@ label e6_nino_tarde_calida:
 
 label e6_nino_tarde_tibia:
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "neutral") from _call_e6_foco_55
 
     nino "El miércoles terminé antes que casi todas. Me quedé revisando."
 
@@ -2721,7 +2721,7 @@ label e6_nino_tarde_tibia:
 
     nino "Si aprobamos las cinco... quizás esta vez no—"
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_56
 
     nino "Olvídalo. Da igual."
 
@@ -2730,7 +2730,7 @@ label e6_nino_tarde_tibia:
 
 label e6_nino_tarde_fria:
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_57
 
     nino "Revisé hasta la campana. Hoja por hoja."
 
@@ -2747,7 +2747,7 @@ label e6_nino_tarde_fria:
 
 label e6_nino_tarde_no_visitada:
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "neutral") from _call_e6_foco_58
 
     nino "Revisé cuarenta minutos mi examen."
 
@@ -2757,7 +2757,7 @@ label e6_nino_tarde_no_visitada:
 
     mc "Seguía."
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_59
 
     nino "No te lo estoy agradeciendo. Solo te lo estoy recalcando."
 
@@ -2768,7 +2768,7 @@ label e6_nino_tarde_no_visitada:
 
 label e6_itsuki_tarde_calida:
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_60
 
     if it1_frase() == "A":
 
@@ -2788,7 +2788,7 @@ label e6_itsuki_tarde_calida:
 
         itsuki "Lo pensé. Eso es nuevo. Me ganó mi orgullo."
 
-    call e6_foco("itsuki", "timida")
+    call e6_foco("itsuki", "timida") from _call_e6_foco_61
 
     itsuki "Que conste: no fue un favor. Fue un procedimiento."
 
@@ -2801,7 +2801,7 @@ label e6_itsuki_tarde_calida:
 
 label e6_itsuki_tarde_tibia:
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_62
 
     itsuki "La cuarta la reescribí dos veces. Entregué casi terminando la hora."
 
@@ -2816,7 +2816,7 @@ label e6_itsuki_tarde_tibia:
 
 label e6_itsuki_tarde_fria:
 
-    call e6_foco("itsuki", "molesta")
+    call e6_foco("itsuki", "molesta") from _call_e6_foco_63
 
     itsuki "Resolví sola. Cada paso. Sin preguntar a nadie."
 
@@ -2829,7 +2829,7 @@ label e6_itsuki_tarde_fria:
 
 label e6_itsuki_tarde_no_visitada:
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_64
 
     itsuki "Entregué pasada la hora. La cuarta, recién resuelta."
 
@@ -2851,7 +2851,7 @@ label e6_miku_tarde_calida:
 
     narrador "Miku se tocó los audífonos una vez, sin subirlos."
 
-    call e6_foco("miku", "animada")
+    call e6_foco("miku", "animada") from _call_e6_foco_65
 
     miku "Escribí todo lo que sabía."
 
@@ -2869,7 +2869,7 @@ label e6_miku_tarde_calida:
 
     narrador "La sacó del estuche y la dejó sobre el pupitre. Las cuatro esquinas, sin usar."
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_66
 
     miku "...Eso fue raro. ...Pero no retiro lo que dije."
 
@@ -2878,7 +2878,7 @@ label e6_miku_tarde_calida:
 
 label e6_miku_tarde_tibia:
 
-    call e6_foco("miku", "neutral")
+    call e6_foco("miku", "neutral") from _call_e6_foco_67
 
     miku "...Escribí lo de las rutas. ...Sin la sal."
 
@@ -2888,7 +2888,7 @@ label e6_miku_tarde_tibia:
 
     miku "...Lo que amo no—"
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_68
 
     miku "...Nada. ...Perdón."
 
@@ -2899,7 +2899,7 @@ label e6_miku_tarde_fria:
 
     narrador "Miku tenía la mano en los audífonos. No la había bajado desde la mitad del examen."
 
-    call e6_foco("miku", "neutral")
+    call e6_foco("miku", "neutral") from _call_e6_foco_69
 
     miku "...Cuatro renglones. ...Lo que preguntaban."
 
@@ -2912,13 +2912,13 @@ label e6_miku_tarde_fria:
 
 label e6_miku_tarde_no_visitada:
 
-    call e6_foco("miku", "neutral")
+    call e6_foco("miku", "neutral") from _call_e6_foco_70
 
     miku "...Escribí largo. ...Después borré un poco."
 
     miku "...Quedaron tres líneas. ...Las de no molestar."
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_71
 
     miku "...Perdón. ...No quería que sonara triste."
 
@@ -2939,7 +2939,7 @@ label e6_tarde_pregunta:
 
     if e6_estado_de("itsuki") == "calida":
 
-        call e6_foco("itsuki", "neutral")
+        call e6_foco("itsuki", "neutral") from _call_e6_foco_72
 
         itsuki "Falta un resultado. ¿Y a ti cómo te fue?"
 
@@ -2949,7 +2949,7 @@ label e6_tarde_pregunta:
 
     elif e6_estado_de("yotsuba") != "fria":
 
-        call e6_foco("yotsuba", "sorprendida")
+        call e6_foco("yotsuba", "sorprendida") from _call_e6_foco_73
 
         yotsuba "¡Espera! ¡Falta uno! ¿Y a ti cómo te fue, [mc]?"
 
@@ -2959,7 +2959,7 @@ label e6_tarde_pregunta:
 
     else:
 
-        call e6_foco("ichika", "neutral")
+        call e6_foco("ichika", "neutral") from _call_e6_foco_74
 
         ichika "Falta alguien, ¿no?"
 
@@ -2967,7 +2967,7 @@ label e6_tarde_pregunta:
 
         narrador "Lo preguntó como hermana mayor. Por costumbre de contar a todos."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_75
 
     return
 
@@ -3136,7 +3136,7 @@ label e6_resultados:
 
     mc_pensamiento "Era la cuenta. Era la hora. Y no dijo nada más."
 
-    call expression ("e6_s2_" + e6_estado_entrada)
+    call expression ("e6_s2_" + e6_estado_entrada) from _call_expression_17
 
     maruo "Los exámenes no terminan aquí."
 
@@ -3302,7 +3302,7 @@ label e6_cinco:
 
         play sound audio.sfx_puerta_abre volume 1.2
 
-        call e6_entrar(e6_h)
+        call e6_entrar(e6_h) from _call_e6_entrar
 
         if e6_i == 0:
 
@@ -3310,13 +3310,13 @@ label e6_cinco:
 
             narrador "Como se lleva algo que todavía no es de uno."
 
-        call expression ("e6_" + e6_h + "_eco_" + e6_estado_de(e6_h))
+        call expression ("e6_" + e6_h + "_eco_" + e6_estado_de(e6_h)) from _call_expression_18
 
 
         $ e6_i += 1
 
-    call e6_intento
-    call e6_mesa
+    call e6_intento from _call_e6_intento
+    call e6_mesa from _call_e6_mesa
 
     return
 
@@ -3327,7 +3327,7 @@ label e6_yotsuba_eco_calida:
 
     narrador "Yotsuba llevaba el boletín boca abajo en una mano y el rotulador destapado en la otra."
 
-    call e6_foco("yotsuba", "neutral")
+    call e6_foco("yotsuba", "neutral") from _call_e6_foco_76
 
     yotsuba "Dame la muñeca. El uno se borró hace días."
 
@@ -3335,17 +3335,17 @@ label e6_yotsuba_eco_calida:
 
     yotsuba "Empecé en el uno por ciento. Todavía no sé dónde estoy. Pero ya cabe."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_77
 
     yotsuba "¡Esta vez sin corazón torcido!"
 
-    call e6_foco("yotsuba", "incomoda")
+    call e6_foco("yotsuba", "incomoda") from _call_e6_foco_78
 
     yotsuba "...Todavía no me sale recto. Lo estoy practicando."
 
     narrador "No dijo para cuándo. Tapó el rotulador y se fue a su sitio."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_79
 
     return
 
@@ -3354,7 +3354,7 @@ label e6_yotsuba_eco_tibia:
 
     narrador "Yotsuba sostenía el boletín con las dos manos, sin darle la vuelta."
 
-    call e6_foco("yotsuba", "neutral")
+    call e6_foco("yotsuba", "neutral") from _call_e6_foco_80
 
     yotsuba "Un minuto con catorce. Eso lo sé. Lo demás, no tanto."
 
@@ -3362,13 +3362,13 @@ label e6_yotsuba_eco_tibia:
 
     mc "Corriste tú."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_81
 
     yotsuba "¡Equipo completo! ¡Piernas y cabeza!"
 
     narrador "Esta vez no sonó a chiste."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_82
 
     return
 
@@ -3377,7 +3377,7 @@ label e6_yotsuba_eco_fria:
 
     narrador "Yotsuba guardó el boletín sin mirarlo, con la sonrisa ya puesta."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_83
 
     yotsuba "¡Terminé primera! ¡Eso es bueno! Lo mío es terminar."
 
@@ -3387,7 +3387,7 @@ label e6_yotsuba_eco_fria:
 
     narrador "Lo dijo igual de fuerte las dos veces. Una de las dos sobraba."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_84
 
     return
 
@@ -3396,7 +3396,7 @@ label e6_yotsuba_eco_no_visitada:
 
     narrador "Yotsuba miró su boletín con la cara con la que se mira una pista vacía."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_85
 
     yotsuba "¡Hola, [mc]! ¡No hace falta que digas nada! Tengo tres vueltas de ventaja."
 
@@ -3408,7 +3408,7 @@ label e6_yotsuba_eco_no_visitada:
 
     yotsuba "¡Entonces las guardo!"
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_86
 
     return
 
@@ -3419,17 +3419,17 @@ label e6_ichika_eco_calida:
 
     narrador "Ichika salió con el guion cerrado bajo el brazo y la cara recién lavada."
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_87
 
     ichika "Anoche dormí once horas. Esta vez no redondeé."
 
     ichika "Pensé antes de decir que sí a algo. Una sola vez. Me pareció una cosa nueva."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_88
 
     narrador "La sonrisa le llegó medio segundo tarde. Esta vez la dejó llegar."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_89
 
     return
 
@@ -3438,13 +3438,13 @@ label e6_ichika_eco_tibia:
 
     narrador "Ichika salió contando algo del dragón «Contrato», que ahora también leía exámenes."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_90
 
     ichika "¡Pidió prórroga! ¡Los dragones siempre piden prórroga!"
 
     narrador "Se rió sola. Se calló un segundo de más."
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_91
 
     ichika "Era un chiste. ...Era un chiste, ¿verdad?"
 
@@ -3452,7 +3452,7 @@ label e6_ichika_eco_tibia:
 
     ichika "Eso pensaba yo."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_92
 
     return
 
@@ -3461,17 +3461,17 @@ label e6_ichika_eco_fria:
 
     narrador "Ichika salió a la hora exacta, con la sonrisa puesta, como todo lo demás."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_93
 
     ichika "¿Todo bien? Yo estoy bien. Que conste."
 
     mc "No te lo había preguntado."
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_94
 
     ichika "Ya. Lo dije por si acaso."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_95
 
     return
 
@@ -3480,7 +3480,7 @@ label e6_ichika_eco_no_visitada:
 
     narrador "Ichika salió probándose una expresión. Se la quitó. Se puso otra."
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_96
 
     ichika "Ensayé cómo salir y no me sale ninguna."
 
@@ -3488,11 +3488,11 @@ label e6_ichika_eco_no_visitada:
 
     mc "Hoy no necesitas ninguna."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_97
 
     ichika "¡Qué amable! ...Esa fue la graciosa. Perdona el reflejo."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_98
 
     return
 
@@ -3503,7 +3503,7 @@ label e6_nino_eco_calida:
 
     narrador "Nino llegó con el boletín doblado en cuatro y con su cara en alto. Casi toda."
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "neutral") from _call_e6_foco_99
 
     nino "El último duró cuatro días. Tú llevas treinta y cinco."
 
@@ -3511,13 +3511,13 @@ label e6_nino_eco_calida:
 
     nino "No me mires así. Son cálculos."
 
-    call e6_foco("nino", "pillada")
+    call e6_foco("nino", "pillada") from _call_e6_foco_100
 
     nino "Y que no se entere Yotsuba de que llevaba la cuenta."
 
     nino "Haría un cartel."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_101
 
     return
 
@@ -3526,7 +3526,7 @@ label e6_nino_eco_tibia:
 
     narrador "Nino llegó con una bolsa del supermercado en cada mano, como si el boletín fuera lo de menos."
 
-    call e6_foco("nino", "pillada")
+    call e6_foco("nino", "pillada") from _call_e6_foco_102
 
     nino "Pesa. No te estoy pidiendo ayuda."
 
@@ -3538,7 +3538,7 @@ label e6_nino_eco_tibia:
 
     narrador "Ninguno dijo nada más."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_103
 
     return
 
@@ -3549,7 +3549,7 @@ label e6_nino_eco_fria:
 
     narrador "Ni cerca ni lejos."
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_104
 
     nino "Sigues aquí."
 
@@ -3561,9 +3561,9 @@ label e6_nino_eco_fria:
 
     narrador "Sabe que voy a seguir con el trabajo."
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_105
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_106
 
     return
 
@@ -3572,7 +3572,7 @@ label e6_nino_eco_no_visitada:
 
     narrador "Nino se quedó junto al marco de la puerta, a media sala, como quien no ha decidido si entra."
 
-    call e6_foco("nino", "seria")
+    call e6_foco("nino", "seria") from _call_e6_foco_107
 
     nino "No me mires como si me debieras algo."
 
@@ -3590,7 +3590,7 @@ label e6_nino_eco_no_visitada:
 
     nino "Treinta y cinco días no hacen un avance."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_108
 
     return
 
@@ -3603,7 +3603,7 @@ label e6_itsuki_eco_calida:
 
     narrador "Se le había olvidado soltarlo."
 
-    call e6_foco("itsuki", "sonriendo")
+    call e6_foco("itsuki", "sonriendo") from _call_e6_foco_109
 
     itsuki "Dije que el juego se acabó. No dije quién ganó."
 
@@ -3623,7 +3623,7 @@ label e6_itsuki_eco_calida:
 
     narrador "Y aun así tardó en soltar el bolígrafo."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_110
 
     return
 
@@ -3632,7 +3632,7 @@ label e6_itsuki_eco_tibia:
 
     narrador "Itsuki llegó con el boletín doblado por la mitad y el gesto de quien ya revisó dos veces."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_111
 
     itsuki "Aquel día dijiste «revisarlo desde el principio». ...¿Qué ibas a—"
 
@@ -3642,7 +3642,7 @@ label e6_itsuki_eco_tibia:
 
     itsuki "...No dije que quisiera."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_112
 
     return
 
@@ -3651,7 +3651,7 @@ label e6_itsuki_eco_fria:
 
     narrador "Itsuki llegó con el boletín en una mano y el puño cerrado sobre el bolígrafo del examen."
 
-    call e6_foco("itsuki", "molesta")
+    call e6_foco("itsuki", "molesta") from _call_e6_foco_113
 
     itsuki "Revisé desde el principio. Sola. Sale igual que si me lo hubieran resuelto. La diferencia es mía."
 
@@ -3659,9 +3659,9 @@ label e6_itsuki_eco_fria:
 
     itsuki "No tienes que saberlo. ...Es solo que cuenta."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_114
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_115
 
     return
 
@@ -3670,7 +3670,7 @@ label e6_itsuki_eco_no_visitada:
 
     narrador "Itsuki esperaba de pie junto a su sitio, con el cuaderno de ciencias cerrado bajo la mano."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_116
 
     itsuki "Dije que el juego se acabó, y gané."
 
@@ -3684,7 +3684,7 @@ label e6_itsuki_eco_no_visitada:
 
     narrador "Pero no sonó a victoria."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_117
 
     return
 
@@ -3695,13 +3695,13 @@ label e6_miku_eco_calida:
 
     narrador "Miku llegó con los audífonos al cuello, sin tocarlos, y el boletín en las dos manos."
 
-    call e6_foco("miku", "neutral")
+    call e6_foco("miku", "neutral") from _call_e6_foco_118
 
     miku "La página ciento veinte. ¿Llegaste?"
 
     mc "Ciento veintidós."
 
-    call e6_foco("miku", "relajada")
+    call e6_foco("miku", "relajada") from _call_e6_foco_119
 
     narrador "Se rió. Una sola nota, corta, como un acorde."
 
@@ -3709,7 +3709,7 @@ label e6_miku_eco_calida:
 
     miku "Gracias, [mc]."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_120
 
     return
 
@@ -3718,7 +3718,7 @@ label e6_miku_eco_tibia:
 
     narrador "Miku tomó su boletín con el cuadernillo de preguntas todavía doblado bajo el brazo."
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_121
 
     miku "...Dijiste que se me daba bien."
 
@@ -3728,7 +3728,7 @@ label e6_miku_eco_tibia:
 
     miku "...Puede ser. ...Lo sigo pensando."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_122
 
     return
 
@@ -3739,7 +3739,7 @@ label e6_miku_eco_fria:
 
     narrador "Esta vez sonaban: se oían desde la puerta."
 
-    call e6_foco("miku", "neutral")
+    call e6_foco("miku", "neutral") from _call_e6_foco_123
 
     miku "...Contesté lo que entraba. ...Estuvo bien."
 
@@ -3747,7 +3747,7 @@ label e6_miku_eco_fria:
 
     narrador "No dijo a qué. No hizo falta."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_124
 
     return
 
@@ -3756,7 +3756,7 @@ label e6_miku_eco_no_visitada:
 
     narrador "Miku se detuvo en la puerta con el boletín contra el pecho, como se lleva un libro."
 
-    call e6_foco("miku", "neutral")
+    call e6_foco("miku", "neutral") from _call_e6_foco_125
 
     miku "...La silla sigue vacía. ...No es un reproche. ...Solo está ahí."
 
@@ -3766,7 +3766,7 @@ label e6_miku_eco_no_visitada:
 
     miku "...Alguien viene."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_126
 
     return
 
@@ -3782,7 +3782,7 @@ label e6_intento:
 
     narrador "Aún había cosas pendientes que teníamos que resolver."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_127
 
     itsuki "Sobre lo del primer día—"
 
@@ -3802,7 +3802,7 @@ label e6_intento:
 
     itsuki "...Ese argumento es válido."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_128
 
     yotsuba "¡¡Esperen!! ¡Antes de que se arruguen! ¡Los boletines! ¡Ya están en la mesa!"
 
@@ -3810,7 +3810,7 @@ label e6_intento:
 
     mc_pensamiento "La disculpa seguía entre nosotros. Y esta vez no me pareció tarde: me pareció pendiente."
 
-    call e6_foco("itsuki", "timida")
+    call e6_foco("itsuki", "timida") from _call_e6_foco_129
 
     itsuki "...Queda pendiente."
 
@@ -3818,7 +3818,7 @@ label e6_intento:
 
     narrador "Lo dijo sin mirarme. Pero se le habían puesto rojas las orejas."
 
-    call e6_foco("", "")
+    call e6_foco("", "") from _call_e6_foco_130
 
     $ e6_disculpa_pendiente = True
 
@@ -3834,37 +3834,37 @@ label e6_mesa:
 
     narrador "Ninguna lo tocó. Ninguna quería ser la primera en darle la vuelta."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_131
 
     itsuki "Propongo lo siguiente."
 
     itsuki "Cada una lo abre en silencio, lo lee dos veces y solo después comparamos."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_132
 
     ichika "Qué plan tan ordenado, Itsuki."
 
     ichika "Hablas con mucha confianza para alguien que lleva un minuto con la mano encima del papel."
 
-    call e6_foco("itsuki", "timida")
+    call e6_foco("itsuki", "timida") from _call_e6_foco_133
 
     itsuki "...Es para que no se vuele."
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "neutral") from _call_e6_foco_134
 
     nino "No hay ninguna ventana abierta."
 
-    call e6_foco("itsuki", "timida")
+    call e6_foco("itsuki", "timida") from _call_e6_foco_135
 
     itsuki "...Es por si acaso."
 
-    call e6_foco("ichika", "neutral")
+    call e6_foco("ichika", "neutral") from _call_e6_foco_136
 
     ichika "Hablando por todas, debería decir que todo va a salir bien."
 
     ichika "...¡Corazonada de hermana mayor!"
 
-    call e6_foco("yotsuba", "incomoda")
+    call e6_foco("yotsuba", "incomoda") from _call_e6_foco_137
 
     yotsuba "¡A todas les habrá ido genial! ¡Seguro!"
 
@@ -3872,7 +3872,7 @@ label e6_mesa:
 
     yotsuba "...Pero si a mí no me fue bien, ¡que nadie ponga cara de puchero, eh!"
 
-    call e6_foco("nino", "nerviosa")
+    call e6_foco("nino", "nerviosa") from _call_e6_foco_138
 
     nino "Seis sillas ocupadas. ...Seis personas en esta mesa."
 
@@ -3880,7 +3880,7 @@ label e6_mesa:
 
     nino "...Es una observación. No le des importancia."
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_139
 
     if e6_estado_de("miku") == "fria":
 
@@ -3898,7 +3898,7 @@ label e6_mesa:
 
     miku "...Todas a la vez."
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_140
 
     nino "Tú estuviste con él antes de que saliéramos. ...Sabes algo."
 
@@ -3908,21 +3908,21 @@ label e6_mesa:
 
     mc "Sé lo que Maruo me dijo a mí. Lo que dicen esos papeles es de ustedes."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_141
 
     ichika "Qué tutor más cruel."
 
     mc "Lo sé."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_142
 
     itsuki "Tu expresión no es la de quien trae malas noticias. ...Aunque no es una garantía."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_143
 
     yotsuba "¡¡Entonces abrámoslos ya!!"
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "neutral") from _call_e6_foco_144
 
     nino "A la de tres. Y que nadie mire de reojo."
 
@@ -3939,7 +3939,7 @@ label e6_mesa:
 
     play music main_theme fadein 1.5
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_145
 
     miku "...Sonaron juntas. ...Como si fuera una sola hoja."
 
@@ -3947,7 +3947,7 @@ label e6_mesa:
 
     miku "...No es tristeza. ...Es que no sé dónde poner esto."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_146
 
     narrador "Ichika soltó una risa corta, de las que se escapan solas."
 
@@ -3957,7 +3957,7 @@ label e6_mesa:
 
     ichika "Eso no venía en el guion."
 
-    call e6_foco("nino", "nerviosa")
+    call e6_foco("nino", "nerviosa") from _call_e6_foco_147
 
     narrador "Nino leyó el suyo. Luego, uno por uno, los de las demás."
 
@@ -3971,7 +3971,7 @@ label e6_mesa:
 
     narrador "Se le quebró la voz en la última palabra. Nadie dijo nada. Nino se quedó."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_148
 
     narrador "Yotsuba ni miró el suyo. Miraba los de las demás, uno por uno, con los ojos muy abiertos."
 
@@ -3983,13 +3983,13 @@ label e6_mesa:
 
     yotsuba "¿Eh? ...¡Ah, el mío!"
 
-    call e6_foco("yotsuba", "neutral")
+    call e6_foco("yotsuba", "neutral") from _call_e6_foco_149
 
     narrador "Bajó la vista. Y, por primera vez en todo el mes, Yotsuba se quedó callada."
 
     yotsuba "...Este es mi boletín. ...Esta soy yo. ...Esto lo hice yo."
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_150
 
     yotsuba "¡¡Y lo hicimos todas!! ¡¡Y tú también, [mc]!!"
 
@@ -3999,7 +3999,7 @@ label e6_mesa:
 
     yotsuba "¡Tú te quedaste hasta el último momento! ¡Eso también cuenta!"
 
-    call e6_foco("itsuki", "sonriendo")
+    call e6_foco("itsuki", "sonriendo") from _call_e6_foco_151
 
     narrador "Itsuki lo leyó línea por línea, como se lee un contrato. Dos veces, tal como había propuesto."
 
@@ -4015,17 +4015,17 @@ label e6_mesa:
 
     narrador "Yo asentí, apenas. Lo de antes seguía ahí, entre los dos, y esta vez ninguno intentó sacarlo."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_152
 
     ichika "Y tú, tutor. Tienes cara de querer decirnos algo."
 
     mc "No tengo nada que decirles. Esta vez no."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_153
 
     itsuki "Es un alivio. Eres malo dando discursos."
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_154
 
     ichika "La última vez fue «sin excepción». A gritos."
 
@@ -4057,7 +4057,7 @@ label e6_mesa:
 
     stop music fadeout 0.5
 
-    call e6_foco("nino", "molesta")
+    call e6_foco("nino", "molesta") from _call_e6_foco_155
 
     nino "...Eso fue un discurso."
 
@@ -4065,7 +4065,7 @@ label e6_mesa:
 
     nino "Fue un resumen. Pocas frases. Las conté."
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_156
 
     miku "...Fue lindo."
 
@@ -4073,7 +4073,7 @@ label e6_mesa:
 
     miku "...Gracias por tus palabras, [mc]."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_157
 
     itsuki "Breve. Aceptable. Bien dicho."
 
@@ -4083,7 +4083,7 @@ label e6_mesa:
 
     play music main_theme fadein 2.0
 
-    call e6_foco("yotsuba", "sonriendo")
+    call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_158
 
     yotsuba "¡Cada una, muestre su examen! ¡Y nos tomaremos una foto!"
 
@@ -4099,19 +4099,19 @@ label e6_mesa:
 
     yotsuba "¡Más arriba! ¡El mío más arriba!"
 
-    call e6_foco("ichika", "sonriendo")
+    call e6_foco("ichika", "sonriendo") from _call_e6_foco_159
 
     ichika "Que se me vea la cara, no el flequillo."
 
-    call e6_foco("nino", "neutral")
+    call e6_foco("nino", "neutral") from _call_e6_foco_160
 
     nino "Un solo brazo. Es mi mejor ángulo."
 
-    call e6_foco("miku", "encogida")
+    call e6_foco("miku", "encogida") from _call_e6_foco_161
 
     miku "...¿Dónde pongo las manos? ...Mejor delante."
 
-    call e6_foco("itsuki", "neutral")
+    call e6_foco("itsuki", "neutral") from _call_e6_foco_162
 
     itsuki "Debo salir recta. Con el boletín recto."
 
@@ -4320,7 +4320,7 @@ label e6_cuarto:
     $ quick_menu = False
 
     ## La foto de la tarde ya estaba (desde = 1); suena con los boletines.
-    call chat_ver(chat_e6(rama_de("miku") == "calida"), 1)
+    call chat_ver(chat_e6(rama_de("miku") == "calida"), 1) from _call_chat_ver_3
 
     narrador "El grupo seguía llamándose «¡Equipo Quintillizas + Tutor!». Yotsuba nunca lo cambió."
 
@@ -4402,7 +4402,7 @@ label e6_cuarto:
 
     mc_pensamiento "Esas no caducan. Se cumplen."
 
-    call expression ("e6_s3_" + e6_estado_entrada)
+    call expression ("e6_s3_" + e6_estado_entrada) from _call_expression_19
 
 
     stop music fadeout 3.0
@@ -4809,9 +4809,9 @@ label e6_retrato:
     $ persistent.cap1_completado = True
 
     ## Tarjeta de fin (13_transiciones.rpy): misma del inicio, sin hermanas.
-    call cortinilla_cap1_fin
+    call cortinilla_cap1_fin from _call_cortinilla_cap1_fin
 
     ## Barra de progreso de las chicas (14_progreso_chicas.rpy): solo lee puntos.
-    call progreso_chicas
+    call progreso_chicas from _call_progreso_chicas
 
     return

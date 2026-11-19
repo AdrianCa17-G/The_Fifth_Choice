@@ -1085,7 +1085,7 @@ label mj_probar_n1:
         "Con boost (media)":
             $ nino_rama_beat = "calida"
 
-    call mj_ejecutar("n1", "nino")
+    call mj_ejecutar("n1", "nino") from _call_mj_ejecutar_9
 
     $ n1_res = _return
     $ n1_info = e6_mj["nino"]

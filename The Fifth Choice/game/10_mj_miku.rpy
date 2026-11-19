@@ -995,7 +995,7 @@ label mj_probar_m3:
 
     scene bg_negro
 
-    call mj_ejecutar("m3", "miku")
+    call mj_ejecutar("m3", "miku") from _call_mj_ejecutar_8
 
     $ mj_msg = "Resultado: " + str(_return)
     $ mj_msg = mj_msg + " · intentos " + str(e6_mj["miku"]["intentos"])

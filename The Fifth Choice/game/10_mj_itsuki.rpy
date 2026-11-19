@@ -879,7 +879,7 @@ label mj_probar_it1:
         "Con boost (media)":
             $ nino_rama_beat = "calida"
 
-    call mj_ejecutar("it1", "itsuki")
+    call mj_ejecutar("it1", "itsuki") from _call_mj_ejecutar_7
 
     $ it1_res = _return
     $ it1_info = e6_mj["itsuki"]

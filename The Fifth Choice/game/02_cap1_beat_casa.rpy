@@ -361,7 +361,7 @@ label beat_casa:
 
             $ hermanas_pensamiento.add("ichika")
 
-            call collage_abrir("ichika")
+            call collage_abrir("ichika") from _call_collage_abrir
 
             if ichika_visitada_cap1:
 
@@ -457,7 +457,7 @@ label beat_casa:
 
                 mc_pensamiento "Una cabeza así no se improvisa. Y ella ni siquiera lo considera un talento."
 
-                call collage_cerrar
+                call collage_cerrar from _call_collage_cerrar
 
                 play music hogar fadeout 1.5 fadein 2.0 volume 0.7
 
@@ -494,7 +494,7 @@ label beat_casa:
 
             $ hermanas_pensamiento.add("nino")
 
-            call collage_abrir("nino")
+            call collage_abrir("nino") from _call_collage_abrir_1
 
             if nino_visitada_cap1:
 
@@ -650,7 +650,7 @@ label beat_casa:
 
                 mc_pensamiento "Ahí dentro hay mucho más de lo que deja ver."
 
-                call collage_cerrar
+                call collage_cerrar from _call_collage_cerrar_1
 
                 play music hogar fadeout 1.5 fadein 2.0 volume 0.7
 
@@ -669,7 +669,7 @@ label beat_casa:
 
             $ hermanas_pensamiento.add("miku")
 
-            call collage_abrir("miku")
+            call collage_abrir("miku") from _call_collage_abrir_2
 
             if miku_visitada_cap1:
 
@@ -763,7 +763,7 @@ label beat_casa:
 
                 mc_pensamiento "Y después borra la respuesta antes de que alguien la lea."
 
-                call collage_cerrar
+                call collage_cerrar from _call_collage_cerrar_2
 
                 play music hogar fadeout 1.5 fadein 2.0 volume 0.7
 
@@ -802,7 +802,7 @@ label beat_casa:
 
             $ hermanas_pensamiento.add("yotsuba")
 
-            call collage_abrir("yotsuba")
+            call collage_abrir("yotsuba") from _call_collage_abrir_3
 
             if yotsuba_visitada_cap1:
 
@@ -884,7 +884,7 @@ label beat_casa:
 
                 mc_pensamiento "Lo hace con cinco personas a la vez, y ni siquiera lo cuenta como un mérito."
 
-                call collage_cerrar
+                call collage_cerrar from _call_collage_cerrar_3
 
                 play music hogar fadeout 1.5 fadein 2.0 volume 0.7
 
@@ -921,7 +921,7 @@ label beat_casa:
 
             $ hermanas_pensamiento.add("itsuki")
 
-            call collage_abrir("itsuki")
+            call collage_abrir("itsuki") from _call_collage_abrir_4
 
             if itsuki_visitada_cap1:
 
@@ -1051,7 +1051,7 @@ label beat_casa:
 
                 mc_pensamiento "Lo que le falta no es método. Tampoco es esfuerzo."
 
-                call collage_cerrar
+                call collage_cerrar from _call_collage_cerrar_4
 
                 play music hogar fadeout 1.5 fadein 2.0 volume 0.7
 

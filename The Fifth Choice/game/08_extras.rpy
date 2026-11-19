@@ -1287,7 +1287,7 @@ label extra_mj:
     if mj_extra_h != "miku":
         $ renpy.music.play(getattr(audio, mj_extra_h), channel="music", fadein=1.0)
 
-    call mj_ejecutar(E6_MJ_JUEGO[mj_extra_h], mj_extra_h)
+    call mj_ejecutar(E6_MJ_JUEGO[mj_extra_h], mj_extra_h) from _call_mj_ejecutar_5
 
     stop music fadeout 1.5
     scene bg_negro
@@ -1304,21 +1304,21 @@ label extra_anim:
 
     if ea_tipo == "cort":
         if ea_v == "hub":
-            call cortinilla_hub(1)
+            call cortinilla_hub(1) from _call_cortinilla_hub_3
         else:
-            call expression ("cortinilla_" + ea_v)
+            call expression ("cortinilla_" + ea_v) from _call_expression_23
     elif ea_tipo == "encuentro":
-        call cortinilla_hermana(ea_h)
+        call cortinilla_hermana(ea_h) from _call_cortinilla_hermana_3
     elif ea_tipo == "tarde":
-        call hub_completado(ea_h, 1, ea_v)
+        call hub_completado(ea_h, 1, ea_v) from _call_hub_completado_3
     elif ea_tipo == "mj":
-        call extra_anim_mj
+        call extra_anim_mj from _call_extra_anim_mj
     elif ea_tipo == "decidir":
-        call extra_anim_decidir
+        call extra_anim_decidir from _call_extra_anim_decidir
     elif ea_tipo == "cierre":
-        call progreso_chicas(extra_prog_valores())
+        call progreso_chicas(extra_prog_valores()) from _call_progreso_chicas_1
     elif ea_tipo == "creditos":
-        call creditos_rol
+        call creditos_rol from _call_creditos_rol
 
     return
 
@@ -1331,7 +1331,7 @@ label extra_anim_mj:
     $ extra_titulo = MJ_REGISTRO[E6_MJ_JUEGO[ea_h]]["titulo"]
 
     if ea_v == "entrada":
-        call mj_transicion("entrada", ea_h, extra_titulo)
+        call mj_transicion("entrada", ea_h, extra_titulo) from _call_mj_transicion
         show screen mj_transicion_prueba_marco(ea_h, "neutral")
         $ renpy.pause(1.2, hard=True)
         hide screen mj_transicion_prueba_marco
@@ -1345,7 +1345,7 @@ label extra_anim_mj:
         with Dissolve(0.4)
         $ renpy.pause(0.8, hard=True)
         hide screen mj_transicion_prueba_marco
-        call mj_transicion(ea_v, ea_h, extra_titulo)
+        call mj_transicion(ea_v, ea_h, extra_titulo) from _call_mj_transicion_1
         $ renpy.pause(0.6, hard=True)
 
     stop music fadeout 1.0
