@@ -390,6 +390,11 @@ screen mapa_hub(hub_actual=1):
     ## hovered se queda pegado al cambiar de pantalla (GUIA_RENPY).
     $ foco = GetTooltip("mapa_hub")
 
+    ## En táctil no hay hover: el foco es la hermana tocada una vez.
+    on "show" action SetVariable("hub_toque", None)
+    if renpy.variant("touch") and hub_toque is not None:
+        $ foco = hub_toque
+
     add "#07070a"
 
     fixed:
@@ -421,6 +426,12 @@ screen mapa_hub(hub_actual=1):
             outlines [(2, "#000000cc", 0, 0), (0, "#00000080", 0, 2)]
 
         use hub_indicador_tarde(hub_actual)
+
+        if renpy.variant("touch") and hub_toque is not None:
+            text "Vuelve a tocar para confirmar":
+                font HUB_FUENTE_FINA
+                size 23 color "#ffffff" xalign 0.5
+                outlines [(2, "#000000cc", 0, 0), (0, "#00000080", 0, 2)]
 
     # reglas de calibracion: pon HUB_GUIA = True para alinear cabezas
     if HUB_GUIA:
@@ -482,6 +493,11 @@ screen destino_hub(indice, d, panel, velo, foco):
     else:
         $ estado = hub_normal
 
+    ## Táctil: el primer toque solo selecciona; el segundo elige.
+    $ accion = Return(d["hermana"])
+    if renpy.variant("touch") and hub_toque != d["hermana"]:
+        $ accion = SetVariable("hub_toque", d["hermana"])
+
     ## Con una banda en foco, las demás se apagan un poco.
     if foco is not None and foco != d["hermana"]:
         $ luz = hub_velo_on
@@ -504,7 +520,7 @@ screen destino_hub(indice, d, panel, velo, foco):
             background None
             focus_mask True
             tooltip d["hermana"]
-            action Return(d["hermana"])
+            action accion
             at estado
 
             add panel
@@ -967,6 +983,9 @@ transform hubc_halo(x, y, espera):
 ## --- Etiquetas ---------------------------------------------------------------
 
 default hubc_qm_previo = True
+
+## Táctil: hermana tocada una vez en el mapa (el segundo toque confirma).
+default hub_toque = None
 
 ## rama: None = la lee de rama_de(hermana). Sin rama (showcase) = cálida.
 label hub_completado(hermana="ichika", n=1, rama=None):

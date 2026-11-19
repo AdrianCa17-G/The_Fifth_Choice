@@ -54,6 +54,15 @@ define gui.interface_text_font = "fonts/MPLUSRounded1c-Medium.ttf"
 ## elegirla en la sección de tipografía.
 define gui.libreta_font = "fonts/KleeOne-SemiBold.ttf"
 
+## Tamaño del texto de la libreta (pensamientos). En teléfonos lo sube small().
+define gui.libreta_text_size = 36
+
+## Escala de los iconos del menú rápido. En teléfonos la sube small().
+define gui.quick_zoom = 1.0
+
+## Texto de las opciones ligeras (menu:). En teléfonos lo sube small().
+define gui.opcion_text_size = 33
+
 define gui.text_size = 34
 define gui.name_text_size = 36
 
@@ -423,12 +432,15 @@ init python:
     def small():
 
         ## Tamaños de letra.
-        gui.text_size = 45
+        gui.text_size = 42    ## 45 desbordaba la caja (3 líneas); 42 cabe siempre en 2
         gui.name_text_size = 54
         gui.notify_text_size = 38
         gui.interface_text_size = 45
         gui.button_text_size = 45
         gui.label_text_size = 51
+        gui.libreta_text_size = 40
+        gui.quick_zoom = 1.4
+        gui.opcion_text_size = 38
 
         ## Ajusta la colocación de la caja de texto.
         gui.textbox_height = 360

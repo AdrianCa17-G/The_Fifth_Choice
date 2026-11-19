@@ -571,16 +571,6 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.tramo, vivo.n, None, None, "TRAMOS", vidas=vivos_t, vidas_max=vivo.p["testigos"], vidas_txt="TESTIGOS", chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=aviso, aviso_tipo=vivo.aviso_tipo):
 
-        ## Toda la pantalla es un botón (sirve el toque en móvil). Inactivo en la explicación.
-        ## Sin hover_sound a propósito: sonaría cada vez que el ratón entra en la pantalla.
-        button:
-            xpos 0
-            ypos 0
-            xysize (1920, 1080)
-            background None
-            sensitive (not en_intro)
-            action Function(vivo.pulsar)
-
         ## --- Cabecera: quién corre (izquierda) · ritmo y racha (derecha) ---
         vbox:
             xpos (MJ_AREA_X + 20)
@@ -718,6 +708,11 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
                         xalign 0.5
                         xysize (b[0], b[1])
                         use cinta_boton("Empezar", Function(vivo.empezar), "yotsuba", b[0], b[1], b[2])
+
+    ## Toda la pantalla cuenta como botón, pero al PULSAR (no al soltar): así el
+    ## toque en móvil no llega tarde. pulsar() ignora todo fuera de la fase
+    ## "corre", así que la explicación y «Empezar» no cuentan.
+    key "mousedown_1" action Function(vivo.pulsar) capture False
 
 
 ################################################################################

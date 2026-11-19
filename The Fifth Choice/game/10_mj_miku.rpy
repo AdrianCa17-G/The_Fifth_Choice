@@ -450,6 +450,18 @@ init python:
                 self.fb_t = 0.3
             return None
 
+        ## Toque / ratón: el receptor bajo el dedo se apunta con hovered y la
+        ## pulsación se cuenta en mousedown (pulsar_toque), no al soltar.
+        def set_sobre(self, carril):
+            self.sobre = carril
+            return None
+
+        def pulsar_toque(self):
+            carril = getattr(self, "sobre", None)
+            if carril is None:
+                return None
+            return self.pulsar(carril)
+
         def pulsar(self, carril):
             """carril 0..3. carril -1 = Espacio: solo vale en la fase 2."""
             if self.estado == "listo":
@@ -886,7 +898,9 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xysize ((w_panel - 40), 100)
                     xpos (x_panel + 20)
                     ypos y_rec
-                    action Function(vivo.pulsar, -1)
+                    action NullAction()
+                    hovered Function(vivo.set_sobre, -1)
+                    unhovered Function(vivo.set_sobre, None)
                     background Solid(fondo_pad)
                     hover_background Solid(color + "99")
                     text "TOCA  ·  cualquier tecla o Espacio":
@@ -903,7 +917,9 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                         xysize (M3_ANCHO_CARRIL, 100)
                         xpos (m3_x(i, nc) - M3_ANCHO_CARRIL // 2)
                         ypos y_rec
-                        action Function(vivo.pulsar, i)
+                        action NullAction()
+                        hovered Function(vivo.set_sobre, i)
+                        unhovered Function(vivo.set_sobre, None)
                         background Solid(fondo_btn)
                         hover_background Solid(color + "99")
                         text vivo.rotulo_tecla(i):
@@ -984,6 +1000,11 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                         xalign 0.5
                         xysize (boton[0], boton[1])
                         use cinta_boton("Empezar", Function(vivo.empezar), hermana, boton[0], boton[1], boton[2])
+
+    ## Receptores: la nota se cuenta al PULSAR (ratón o dedo), igual que las
+    ## teclas A S D F. Va al final para procesarse antes que los botones;
+    ## capture False deja pasar el clic a «Empezar» y al ajuste de latencia.
+    key "mousedown_1" action Function(vivo.pulsar_toque) capture False
 
 ################################################################################
 ##  PRUEBA SUELTA:  jump mj_probar_m3   (consola Shift+O)

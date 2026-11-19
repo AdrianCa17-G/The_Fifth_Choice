@@ -266,13 +266,15 @@ screen main_menu():
                 tooltip "Ayuda"
                 at icono_hover
 
-        button:
-            xysize (68, 68)
-            background ui_icono("salir", False)
-            hover_background ui_icono("salir", True)
-            action Quit(confirm=True)
-            tooltip "Salir"
-            at icono_hover
+        ## iOS no permite botón de salir (norma de Apple).
+        if not renpy.variant("ios"):
+            button:
+                xysize (68, 68)
+                background ui_icono("salir", False)
+                hover_background ui_icono("salir", True)
+                action Quit(confirm=True)
+                tooltip "Salir"
+                at icono_hover
 
     ## El letrero de los iconos no debe mostrar el nombre de una hermana.
     $ rotulo = quien

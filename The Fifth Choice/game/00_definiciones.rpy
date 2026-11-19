@@ -37,7 +37,7 @@ define mc_pensamiento = Character(
     None,
     what_color="#2F2A44",
     what_font=gui.libreta_font,
-    what_size=36,
+    what_size=gui.libreta_text_size,
     what_xpos=150,
     what_xsize=1100,
     window_style="caja",

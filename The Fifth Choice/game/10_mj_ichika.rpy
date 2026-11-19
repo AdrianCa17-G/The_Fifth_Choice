@@ -437,8 +437,6 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
     key "K_a" action Function(vivo.actuada)
     key "keydown_K_s" action Function(vivo.sincera_inicio)
     key "keyup_K_s" action Function(vivo.sincera_fin)
-    key "mousedown_1" action Function(vivo.mouse_down)
-    key "mouseup_1" action Function(vivo.mouse_up)
     key "K_RETURN" action Function(vivo.empezar)
 
     $ color = PETALO_COLOR[hermana]
@@ -739,6 +737,12 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                         xalign 0.5
                         xysize (b[0], b[1])
                         use cinta_boton("Empezar", Function(vivo.empezar), hermana, b[0], b[1], b[2])
+
+    ## Ratón y toque para «mantener». Van AL FINAL para que Ren'Py los procese
+    ## antes que la tarjeta: el botón enfocado descarta mousedown_1
+    ## (button_ignore). capture False deja pasar el clic a los demás botones.
+    key "mousedown_1" action Function(vivo.mouse_down) capture False
+    key "mouseup_1" action Function(vivo.mouse_up) capture False
 
 
 ################################################################################

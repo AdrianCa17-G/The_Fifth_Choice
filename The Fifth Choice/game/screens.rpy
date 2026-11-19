@@ -313,7 +313,7 @@ style opcion_boton is button:
     hover_background Frame("ui/opcion_hover.png", 40, 40, 40, 40)
 
 style opcion_texto is default:
-    size 33
+    size gui.opcion_text_size
     color "#D9D2E6"
     hover_color "#FFFFFF"
     xmaximum 960
@@ -363,6 +363,7 @@ screen quick_menu():
             xoffset -36
             yoffset 20
             spacing 10
+            at Transform(zoom=gui.quick_zoom)
 
             button:
                 xysize (68, 68)
@@ -1693,22 +1694,9 @@ style pref_vbox:
     variant "medium"
     xsize 675
 
-## Ya que puede carecer de ratón, se reempleza el menú rápido con una versión
-## con menos botones y más grandes, más fáciles de tocar.
-screen quick_menu():
-    variant "touch"
-
-    zorder 100
-
-    if quick_menu:
-
-        hbox:
-            style "quick_menu"
-            style_prefix "quick"
-
-            textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menú") action ShowMenu()
+## El menú rápido táctil de la plantilla se eliminó: tapaba la versión con
+## iconos (variant "touch" siempre gana). En teléfonos los iconos se agrandan
+## con gui.quick_zoom (gui.rpy).
 
 
 style window:
