@@ -1,268 +1,203 @@
-# Capítulo 1 — estado
+# Capítulo 1 — resumen del capítulo cerrado
 
-**En escritura.** Estructura cerrada, apertura terminada y los evento de Miku,
-Yotsuba e Itsuki escrito (§8). Quedan dos eventos de hub, los tres beats fijos 
-y el evento final.
+**Terminado y lanzado** en la versión 1.0 (21/11/2026). Este documento resume qué
+es el capítulo y qué deja preparado para el Capítulo 2. **No es el guion:** el
+guion vive en los `.rpy` y en los borradores de esta carpeta. Si este resumen y el
+código no coinciden, manda el código.
 
-Lo transversal —cómo se genera el arte, cómo se monta el audio, las trampas del
-motor— está en las guías de `docs/`. Aquí solo vive lo propio de esta fase.
+Lo transversal (arte, audio, motor, interfaz) está en las guías de `docs/`.
 
 ---
 
-## 1. Decisiones de diseño cerradas
+## 1. Esqueleto
 
-Las tres que bloqueaban el capítulo quedaron resueltas. No volver atrás sobre
-ellas sin revisar lo que cuelga de cada una.
+```
+APERTURA → HUB 1 → evento → BEAT Itsuki → HUB 2 → evento
+→ BEAT crisis de Nino → HUB 3 → evento → BEAT casa → EVENTO 6
+```
 
-**Modelo de interacción: hubs, no calendario.** El capítulo avanza por beats
-fijos; entre beat y beat se abre el mapa y el jugador elige destino. El tiempo lo
-narra el texto. Se descartó simular 60 días por capítulo: dejaba 162 días vacíos
-y pedía unos 70 fondos contando franjas horarias.
+Las interconexiones entre bloques viven en `02_cap1_conexiones.rpy`.
 
-**Primera decisión puntuada: la elección de destino del hub 1.** El jugador no
-elige una respuesta de diálogo, elige a quién va a buscar. Eso escribe
-`primera_conexion` y con ella el desempate de toda la partida. Es más limpio que
-un menú porque el desempate queda fijado por a quién buscó, no por lo que
-contestó.
+| Bloque | Archivo |
+|---|---|
+| Apertura | `02_cap1_apertura.rpy` |
+| Hubs (mapa, evento, control de desaires) | `02_cap1_hubs.rpy` + `hub_mapa.rpy` |
+| Eventos de hermana | `02_cap1_Ichika.rpy`, `_Nino`, `_Miku`, `_Yotsuba`, `_Itsuki` |
+| Beats fijos | `02_cap1_beat_Itsuki.rpy`, `_beat_Nino`, `_beat_casa` (con `07b_collage.rpy`) |
+| Evento 6 | `02_cap1_evento6.rpy` + `10_*.rpy`, `12_e6_pantallas.rpy`, `15_chat_grupo.rpy` |
+| Despido temprano | `02_cap1_final_malo.rpy` (entrada en `05_finales.rpy`) |
+| Cierre | `14_progreso_chicas.rpy`, `16_creditos.rpy` |
 
-**Maruo: dos finales malos.** La afinidad representa «logró llegar a ellas y por
-eso estudian». El despido temprano del Capítulo 1 se dispara por desaires, no por
-puntos. Detalle completo en el README.
+---
+
+## 2. Decisiones de diseño cerradas
+
+**Hubs, no calendario.** El capítulo avanza por beats fijos; entre uno y otro se
+abre el mapa y el jugador elige a quién buscar. El tiempo lo narra el texto.
+
+**Cinco eventos, tres por partida.** Dos hermanas se quedan sin evento cada vez, y
+eso es lo que hace que elegir pese. **Cada evento funciona en cualquiera de los
+tres huecos**: ninguno depende de otro ni de que un beat haya pasado.
+
+**Itsuki y Nino empujan el conflicto.** Son las únicas con beat propio. En el
+Capítulo 2 conviene invertirlo y darles los beats fijos a Miku y Yotsuba.
 
 **Reparto canónico de materias.** Ichika matemáticas, Nino inglés, Miku sociales,
-Yotsuba literatura, Itsuki ciencias. Cierra sobre las cinco asignaturas del examen
-sin sobras ni huecos, y de ahí sale la tesis del capítulo.
+Yotsuba japonés (Japonés y Literatura son la misma materia), Itsuki ciencias.
+Cierra sobre las cinco asignaturas del examen sin sobras ni huecos.
 
----
+**La tesis:** no son cinco alumnas malas, son un estudiante completo repartido en
+cinco personas. El Evento 6 lo vuelve imagen con el boletín.
 
-## 2. Esqueleto
-
-```
-APERTURA (fija) → HUB 1 → evento → BEAT Itsuki → HUB 2 → evento
-→ BEAT crisis de Nino → HUB 3 → evento → BEAT casa → EVENTO 6 (fijo)
-```
-
-Se escriben **cinco** eventos de hermana y el jugador consume **tres** por
-partida. Dos se quedan fuera cada vez: eso es lo que hace que elegir pese.
-
-Los tres beats fijos —Itsuki en el instituto, la crisis de Nino, la noche en casa
-con Raiha— no dan puntos. Su función es que las cinco tengan presencia aunque
-nadie las busque.
-
-Entre beats y eventos, Itsuki y Nino aparecen más que las otras tres en este
-capítulo. Es deliberado: son las que empujan el conflicto. En el Capítulo 2
-conviene invertirlo y darles los beats fijos a Miku y Yotsuba.
-
-### Restricción que condiciona los cinco eventos
-
-**Cada evento tiene que funcionar en cualquiera de los tres huecos.** El jugador
-puede visitar a Miku en el hub 1 o en el hub 3, antes o después de la crisis de
-Nino. Ninguno puede depender de que otro haya ocurrido ni de que un beat fijo haya
-pasado. Si un evento necesita saber qué pasó antes, o se reescribe o se convierte
-en beat fijo.
-
-Caso concreto: el evento de Nino tiene que leerse como «todavía no confía» tanto
-antes como después de su crisis.
+**Linealidad.** Ninguna hermana conocía antes al protagonista. Nada de la niña de
+Kioto.
 
 ---
 
 ## 3. Los cinco eventos de hermana
 
-Anatomía común: llegada, la hermana haciendo algo que la define, la grieta, la
-decisión, cierre corto. Ocho a doce minutos de lectura.
+Anatomía común: **Llegada → Grieta → Decisión → Cierre.** La decisión usa
+`decision_peso` (rótulo «Hora de decidir» y tarjetas) y siempre tiene tres ramas:
 
-### Yotsuba · Pista de atletismo
-
-Entrenando sola con el club ya vacío. **Grieta:** cree que si deja de ser útil
-deja de tener lugar; dice con naturalidad que sus hermanas son mejores en todo y
-que lo suyo es correr y animar. **Cálida:** Futaro le señala que ella nota cosas
-de sus hermanas que él no ve, y que eso tiene nombre y se califica. **Fría:**
-darle la razón y decirle que se concentre en correr. Suena amable y es lo peor
-que le puede decir nadie.
-
-**Escrito en §8.** Lo de arriba es el resumen; el guion cerrado, con sus tres
-ramas y sus assets, está al final de este documento.
-
-### Ichika · Sala de ensayo
-
-Repasando un guion, sola, con tres horas de sueño. **Grieta:** no es floja, está
-agotada y usa la simpatía como blindaje; se le cae la máscara medio segundo y la
-vuelve a poner con un chiste. **Cálida:** que Futaro no le siga el chiste, se
-quede callado y espere. **Fría:** decirle que si tiene tiempo para audiciones
-tiene tiempo para estudiar. Es el reproche que espera de todo el mundo.
-
-### Nino · Centro comercial
-
-Comprando ingredientes de una receta extranjera que lee en el idioma original, y
-traduciendo sin darse cuenta. **Grieta:** no desconfía de Futaro, desconfía del
-puesto; ya vio a varios entrar prometiendo y salir cobrando. Su hostilidad es
-protección de las otras cuatro. **Cálida:** concederle que tiene razón y que solo
-el tiempo lo demostrará. **Fría:** prometerle que él sí va a durar. Ya escuchó esa
-frase y viene con fecha de caducidad.
-
-### Miku · Biblioteca
-
-Con el libro de Sengoku, auriculares puestos sin música. **Grieta:** se entusiasma
-explicando algo, se corta sola a mitad de frase y pide perdón por hablar. Ese
-«perdón» es el corazón del personaje. **Cálida:** que Futaro le haga una pregunta
-concreta que la obligue a seguir — no elogiarla, preguntarle. **Fría:** cortarla
-él primero y decirle que el Sengoku no entra en el examen. Es cierto, y le enseña
-que hablar tiene costo.
-
-Recordar la exclusividad: buscar a Miku y preparar material son la misma visita y
-no se pueden hacer las dos. Sin eso, la biblioteca es siempre el destino óptimo.
-
-**Escrito en §8.** Lo de arriba es el resumen; el guion cerrado, con sus tres
-ramas y sus assets, está al final de este documento.
-
-### Itsuki · Aula, después de clases
-
-Sola y atascada. Eco directo del prólogo. **Grieta:** es la única que sí estudia y
-aun así va mal, y eso le da más vergüenza que a las otras ir mal sin esforzarse;
-no tiene a quién preguntarle porque preguntarle a él sería darle la razón.
-**Cálida:** señalarle dónde está el error y callarse. Respeta literalmente lo que
-ella exigió en el prólogo y a la vez la ayuda. **Fría:** resolvérselo delante de
-ella y devolvérselo hecho. Rápido, correcto, y le quita lo único que defendía.
-
-**No gastar aquí la disculpa de Futaro.** Sigue guardada desde el prólogo y es la
-carta más fuerte que queda. Aquí él la ayuda sin admitir nada y ella lo acepta sin
-agradecer.
-
-Candidato de sprite: `itsuki_timida`, huérfano desde el prólogo, encaja en el
-momento en que pide ayuda sin pedir la respuesta.
-
-**Escrito en §8.** Lo de arriba es el resumen; el guion cerrado, con sus tres
-ramas y sus assets, está al final de este documento.
-
----
-
-## 4. Evento 6 — el cierre
-
-Mesa del centro del departamento, el mismo encuadre del prólogo. La escena que
-cerró el prólogo en fracaso cierra el capítulo en victoria raspada.
-
-**Movimiento 1 · Entrada.** Futaro hace lo contrario que en el prólogo: allí sacó
-cinco cuadernos idénticos y una hoja igual para todas; aquí saca cinco hojas
-distintas, una por materia, y las reparte por sitio. La tesis del capítulo hecha
-imagen, sin explicarla.
-
-Reparte cuatro y a Nino no le da ninguna. Ella se sienta sola, ofendida por la
-exclusión, exigiendo la suya. Es la única forma de que se siente sin que Futaro le
-pida nada. **Este detalle es del evento 6, no de la apertura.**
-
-Todo el movimiento va en silencio; la música entra cuando las cinco están
-sentadas.
-
-**Movimiento 2 · Los cinco bloques.** Durante la sesión, no en los resultados.
-Orden fijo: el del examen japonés, que no coincide con el orden canónico de las
-hermanas y así no se lee como lista. Cada bloque, cuatro o cinco líneas, con dos
-variantes según si fue visitada.
-
-| Bloque | Visitada | No visitada |
+| Rama | Efecto | Qué es |
 |---|---|---|
-| Yotsuba · literatura | dice qué siente el personaje antes de que se lo pregunten | se ofrece a ayudar a las otras y no toca su hoja |
-| Ichika · matemáticas | resuelve rápido y se sorprende de sí misma | avanza mientras repasa el guion, las dos cosas a medias |
-| Nino · inglés | traduce sin darse cuenta; cuando se lo señalan, lo niega | lo hace bien en silencio y no lo admite |
-| Itsuki · ciencias | se atasca y pide — no la respuesta, si el planteamiento está bien | se atasca en el mismo problema del prólogo y calla |
-| Miku · sociales | habla sin cortarse y sin pedir perdón después | acierta todo y no levanta la vista |
+| Cálida | `sumar_punto(h, 3)` | Entender lo que la hermana no dijo |
+| Tibia | `sumar_punto(h, 1)` | Amable, pero se queda en la superficie |
+| Fría | `desaires_cap1 += 1` | El protagonista del día 1. Nunca crueldad |
 
-Si se preparó material para alguna, **una sola línea** dentro de su variante de
-visitada donde se nota que la hoja está hecha a su medida. No un tercer bloque.
+Cada evento guarda su rama en `<h>_rama_cap1` (se lee con `rama_de(h)`) y marca
+`<h>_visitada_cap1`. El sello del mapa, la animación de tarde completada y el
+Evento 6 leen esa rama.
 
-**Movimiento 3 · El examen.** Tres o cuatro líneas en negro, sin sprites. Futaro
-no está ahí y eso es lo que hay que transmitir. También separa la sesión del
-resultado.
+| Hermana · lugar | La grieta | Cálida | Tibia | Fría |
+|---|---|---|---|---|
+| **Ichika** · Sala de ensayo | Se durmió en el suelo del club de puro agotamiento y lo tapa con bromas | No seguirle la broma; esperar a que hable | Seguirle la broma | «Si tienes energía para chistes, tienes energía para estudiar» |
+| **Nino** · Centro comercial | No desconfía de él, desconfía del puesto: los tutores anteriores no duraban | Darle la razón: solo el tiempo lo demostrará | Cargarle la cesta sin decir nada | «Yo sí voy a durar» |
+| **Miku** · Biblioteca | Habla un minuto entero de lo que ama y después pide perdón | Hacerle una pregunta concreta para que siga | Decirle que se le da bien | «Lo de la sal no entra en el examen» |
+| **Yotsuba** · Pista de atletismo | Cree que solo sirve para correr y animar a sus hermanas | No tomar el cronómetro; volver a lo que dijo | Tomar el cronómetro | «Si correr es lo tuyo, concéntrate en eso» |
+| **Itsuki** · Aula, después de clases | La única que estudia y aun así va mal; no pedirá ayuda | Señalarle dónde mirar, solo eso | Revisarlo juntos desde el principio | Quitarle el cuaderno y resolverlo |
 
-**Movimiento 4 · Resultados.** Aprueban raspando **todas**, pase lo que pase, y
-cada una destaca solo en la suya. El capítulo no se corta aquí por afinidad. Lo
-que cambia con las visitas es el margen y el tono, no si se salva el trabajo.
-Ninguna reprobó, así que Futaro conserva el empleo: la promesa del prólogo se
-cumple literalmente por primera vez.
-
-**Movimiento 5 · El boletín.** Solo, después de que se van, Futaro pone las cinco
-hojas en fila y hace lo que hace siempre: calcular. Toma la nota más alta de cada
-una y las suma. Le sale un boletín perfecto. Cinco asignaturas, cinco máximos,
-cero huecos: un alumno completo que no existe, repartido en cinco personas que no
-se hablan durante el estudio.
-
-La última línea es suya, en pensamiento, y no resuelve nada.
-
-CG opcional: las cinco hojas alineadas sobre la mesa, plano cenital. Si no se
-genera, la narración lo sostiene.
+El romance en este capítulo es solo una reacción ambigua en las ramas cálidas.
 
 ---
 
-## 5. Assets del capítulo
+## 4. Los beats fijos
 
-**Fondos nuevos para la apertura: ninguno.** Todo se resuelve con los ocho que ya
-existen.
+No dan puntos. Dan presencia a las cinco aunque nadie las busque.
 
-| Asset | Tipo | Dónde | Estado |
-|---|---|---|---|
-| `cg_pupitre_manana` | CG | apertura, escena 1 | pendiente |
-| `cg_cinco_sentadas` | CG | apertura, escena 2 | pendiente |
-| `cg_libreta` | CG | apertura, escena 4 | pendiente |
-| `yotsuba incomoda` | sprite | apertura, escena 2 | pendiente |
-| `nino pillada` | sprite | apertura, escena 2 | pendiente |
-| `bg_biblioteca` | BG | evento Miku + preparar material | pendiente |
-| `cg_miku_biblioteca` | CG | evento Miku, mov. 1 | pendiente |
-| `cg_estudio_biblioteca` | CG | evento Miku, mov. 2 | pendiente |
-| `cg_miku_sorpresa` | CG | evento Miku, mov. 3 | pendiente |
-| `miku animada` | sprite | evento Miku | pendiente |
-| `miku encogida` | sprite | evento Miku | pendiente |
-| `descubrimiento` | BGM | los cinco eventos | pendiente |
-| pista de atletismo | BG | evento Yotsuba | pendiente |
-| sala de ensayo | BG | evento Ichika | pendiente |
-| centro comercial | BG | evento Nino | pendiente |
-
-Los sprites nuevos se declaran **como atributo, con espacio** —`image nino
-pillada`, no `image nino_pillada`—, o Ren'Py los trata como un tag distinto del
-personaje. El `.png` sí lleva guion bajo.
-
-Reutilizados sin tocar: `cg_hermanas_estudiando`, `cg_maruo_reunion`,
-`cg_calificacion`, y los sprites del prólogo.
-
-### Notas de generación
-
-**`cg_pupitre_manana`** — POV desde el pupitre de Futaro. Primer término inferior,
-su mesa y su cuaderno, desenfocados y cortados por el borde. Al lado, Itsuki de
-tres cuartos, estudiando, sin devolver la mirada. Aula vacía al fondo, luz fría de
-primera hora. **Un solo personaje en el frame:** dos figuras con un LoRA
-inexistente es donde se rompen las generaciones. El lenguaje ya está validado en
-`manija_edificio`.
-
-**`cg_cinco_sentadas`** — cinco personajes en un frame, lo más caro del capítulo.
-La semilla y el encuadre de `estudio_hermanas` sirven de punto de partida: es el
-mismo plano con la actitud invertida. Nadie duerme, nadie mira a otro lado, nadie
-disimula.
-
-**`yotsuba_incomoda`** — la diferencia tiene que estar en la **silueta**, no solo
-en la cara: manos abajo y juntas delante, hombros encogidos, brazos pegados al
-cuerpo, que ocupe menos ancho que `yotsuba_sonrisa`. Sonrisa pequeña y forzada,
-sin dientes; cejas hacia arriba por dentro; mirada abajo y a un lado. **No hacerla
-triste:** está incómoda mientras intenta que no se note.
-
-**`nino_pillada`** — **descruzar los brazos.** Es la silueta más cerrada de las
-cinco y descruzarla se lee a cualquier tamaño; es el único sprite del juego donde
-Nino no está defendida. Ojos abiertos, boca pequeña entreabierta y rubor. El rubor
-es lo que separa sorpresa de vergüenza, y aquí es vergüenza: no la sorprendieron,
-se delató sola. Nombre `nino_pillada` y no `nino_sorprendida`, para dejar libre
-una sorpresa real más adelante.
-
-Los sprites nuevos, con **el mismo atuendo, encuadre y canvas** que los
-existentes, o al normalizar quedan a distinta altura y el cambio de expresión se
-ve como un salto. `normalizar_sprite.py` corrige tamaño, no pose.
+- **Beat Itsuki** (azotea): tregua a medias; Itsuki no admite que la nueva rutina
+  también la afecta a ella.
+- **Beat crisis de Nino** (cocina): Nino quiere el despido del tutor y Maruo
+  decide. Aquí se lee `desaires_cap1` (ver §5). Guarda su propia rama en
+  `nino_rama_beat`, que no toca los desaires.
+- **Beat casa:** la noche antes del examen con Raiha e Isanari, con el collage de
+  pensamientos de las hermanas visitadas.
 
 ---
 
-## 6. Pendiente de escribir
+## 5. Desaires, despido y clima
 
-- Cuatro eventos de hermana a nivel de escena: Yotsuba, Ichika, Nino e Itsuki
-- Los tres beats fijos
-- El evento 6, con sus diez bloques condicionales
-- La escena de despido temprano y el aviso condicional de Maruo
-- La variante del evento 6 para la ruta de tres desaires
-- La pantalla del mapa y sus trampas de motor (documentar en `GUIA_RENPY.md`)
+Dos frías en el capítulo son el despido. Lo que cambia es cuándo:
+
+| Situación | Resultado |
+|---|---|
+| 2 frías en los hubs 1 y 2 | **Variante A:** despido en el beat de Nino (`despido_en_beat`) |
+| 1 fría antes del beat | Ultimátum de Maruo (`maruo_ultimatum`) |
+| Ultimátum + otra fría en el hub 3 | **Variante B:** despido al cierre del hub 3 (`despido_cap1`) |
+| 0 o 1 fría en total | Sigue al Evento 6 |
+
+El **clima** del capítulo (`clima_cap1`) se decide una vez, en las
+interconexiones: **buena** sin frías y con al menos dos cálidas, **mala** con
+despido, **mixta** en todo lo demás. Colorea las interconexiones finales y, con el
+ultimátum, fija el **estado de entrada** del Evento 6:
+
+| Estado de entrada | Cuándo |
+|---|---|
+| `superado` | Sobrevivió al ultimátum |
+| `bueno` | Clima buena |
+| `mixto` | Clima mixta sin ultimátum |
 
 ---
 
+## 6. Evento 6 — semana de exámenes
+
+El cierre del capítulo. Un solo archivo, doce movimientos; cada uno es un `label`
+de nivel superior que termina en `return`.
+
+| Mov. | Contenido |
+|---|---|
+| 1 | Lunes en el aula, según el estado de entrada |
+| 2–6 | Un día por hermana, en orden de examen: Yotsuba (japonés), Ichika (matemáticas), Nino (inglés), Itsuki (ciencias), Miku (sociales) |
+| 7 | Después del examen: las cinco cuentan lo que hicieron distinto, sin saber las notas |
+| 8 | Resultados y Maruo |
+| 9 | Las cinco: ecos de cada hermana, la mesa y la foto del grupo |
+| 10 | Casa |
+| 11 | Cuarto, chat del grupo y libreta |
+| 12 | El retrato: epílogo que responde a la escena 1 del prólogo |
+
+**Cada día de hermana** (`e6_bloque`) se arma con piezas según su estado (cálida,
+tibia, fría o no visitada): núcleo común, monólogo, **minijuego solo si fue
+cálida**, promesa si no fue visitada y gesto final.
+
+**Notas.** Todas aprueban, siempre. Cada una saca 100 en su materia y entre 60 y
+89 en las demás, según su estado y el estado de entrada. El boletín
+(`12_e6_pantallas.rpy`) solo muestra notas, nunca afinidad.
+
+**Minijuegos** (detalle en `docs/MINIJUEGOS/`):
+
+| Hermana | Minijuego |
+|---|---|
+| Yotsuba | Relevo de las cinco |
+| Ichika | La máscara se cansa |
+| Nino | Compras para seis |
+| Itsuki | Cadena de conversiones |
+| Miku | El compás (sincronizado con `miku_tema`) |
+
+La dificultad base es media si el jugador fue cálido con Nino en su beat y difícil
+si no. Se pueden saltar. En Extras se repiten, y el selector de dificultad aparece
+solo si alguna vez fue cálido con Nino en su beat.
+
+**Chat del grupo** (`15_chat_grupo.rpy`): debuta cuando Yotsuba crea el grupo,
+reaparece con una decisión de qué escribir y cierra completo en el Evento 6. Miku
+escribe sin «...» solo si fue cálida.
+
+**Cierre:** cortinilla de fin → barra de progreso de las chicas (% = puntos × 10)
+→ rol de créditos → «Continuará» → menú principal. Marca
+`persistent.cap1_completado`.
+
+---
+
+## 7. Lo que el Capítulo 1 deja para el 2
+
+Variables que el Capítulo 2 puede leer:
+
+| Variable | Qué guarda |
+|---|---|
+| `puntos_*`, `primera_conexion` | Afinidad acumulada y desempate |
+| `<h>_rama_cap1`, `<h>_visitada_cap1` | Cómo terminó cada evento de hermana |
+| `nino_rama_beat` | Cómo terminó el beat de Nino |
+| `clima_cap1`, `e6_estado_entrada` | Cómo salió el capítulo en conjunto |
+| `e6_promesas` | Hermanas no visitadas a las que el protagonista les prometió algo |
+| `e6_disculpa_pendiente` | La disculpa con Itsuki queda pendiente y anotada |
+| `e6_domingo`, `e6_domingo_hermana` | El único menú del epílogo: qué hace con su primer domingo libre (`raiha`, `grupo`, `promesa` con una hermana, `dormir`). Sin puntos |
+
+Ganchos narrativos sembrados a propósito:
+
+- La tarjeta de receta de Nino es de su madre (aquí solo se insinúa).
+- El vínculo de Raiha con Yotsuba; Raiha conoce a las quintillizas en la apertura del Capítulo 2.
+- Maruo empieza a volver a casa.
+- La disculpa del protagonista con Itsuki.
+- Pendientes de cada hermana para el Capítulo 2: el talento matemático y la obra de Ichika, la moda de Nino, el club de atletismo de Yotsuba y el lado glotón de Itsuki.
+
+**Dirección del Capítulo 2:** vida cotidiana, no exámenes. Los hubs son citas con
+las hermanas. Cuando exista, el rol de créditos del Capítulo 1 debe saltar a
+`cap2_inicio`.
+
+---
+
+## 8. Arte del capítulo
+
+Cerrado: no se añaden CG. Los CG están en `images/cg/` (`cap1_apertura/`,
+`cap1_hubs/`, `cap1_beats/`, `cap1_mov6/`, `cap1_final_malo/`) y la Galería
+(`GALERIA` en `08_extras.rpy`) los agrupa por capítulo y por hermana. Los fondos
+nuevos del capítulo están en `bg/cap1_hubs/` y `bg/cap1_beats/`.
