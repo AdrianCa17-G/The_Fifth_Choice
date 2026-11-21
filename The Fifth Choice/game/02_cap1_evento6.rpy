@@ -12,7 +12,7 @@
 ##  _bueno) van justo debajo, también de nivel superior y con su propio return.
 ##  Ningún label va dentro de otro: tras un `call`, Ren'Py sigue en la línea
 ##  siguiente, y un label incrustado ahí se ejecutaría y cortaría la escena.
-##  Ayudas y estado: 10_minijuegos.rpy · Pantallas: 12_e6_pantallas.rpy
+##  Ayudas y estado: 10_minijuegos.rpy · Boletín: 12_e6_boletin.rpy
 ##  Pruebas: 11_e6_debug.rpy
 ################################################################################
 

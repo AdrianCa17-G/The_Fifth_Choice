@@ -1,6 +1,8 @@
 ################################################################################
-##  12_e6_pantallas.rpy — Evento 6: pantallas, CG declarados, tintes, galería
-##  boletin_cinco · image cg_* (con sustituto) · GALERIA · audio
+##  12_e6_boletin.rpy — Evento 6: boletín de notas, tintes y audio
+##  boletin_cinco · tintes del CG de las cinco · audio
+##  Los CG del Evento 6 se declaran en 02_cap1_evento6.rpy.
+##  La Galería vive entera en 08_extras.rpy (GALERIA).
 ################################################################################
 
 ## --- Audio que el guion usa y 00_definiciones no declara ------------------------
@@ -16,59 +18,6 @@ transform e6_tinte_mixto:
 
 transform e6_tinte_bueno:
     matrixcolor BrightnessMatrix(0.04) * SaturationMatrix(1.08) * TintMatrix("#fff0d8")
-
-
-################################################################################
-##  CG DEL EVENTO 6 — con sustituto visible si el archivo no existe
-################################################################################
-
-define E6_CG_CARPETA = "images/cg/cap1_mov6"
-
-init python:
-
-    def e6_cg_declarar(nombre, archivo):
-        ruta = E6_CG_CARPETA + archivo
-        if renpy.loadable(ruta):
-            renpy.image(nombre, ruta)
-        else:
-            renpy.image(nombre, Fixed(
-                Solid("#1B1026"),
-                Text("CG PENDIENTE · " + nombre, size=48, color="#FFB7C5", xalign=0.5, yalign=0.5, substitute=False),
-                xysize=(1920, 1080)))
-
-    e6_cg_declarar("cg_cinco_aula", "cinco_aula.webp")
-    e6_cg_declarar("cg_cinco_aprobadas", "cinco_aprobadas.webp")
-    e6_cg_declarar("cg_yotsuba_examen", "yotsuba_examen.webp")
-    e6_cg_declarar("cg_ichika_examen", "ichika_examen.webp")
-    e6_cg_declarar("cg_nino_examen", "nino_examen.webp")
-    e6_cg_declarar("cg_itsuki_examen", "itsuki_examen.webp")
-    e6_cg_declarar("cg_miku_examen", "miku_examen.webp")
-
-
-################################################################################
-##  GALERÍA — se añaden sin tocar 08_extras.rpy (no duplica si luego descomentas)
-##  Alternativa: descomentar en 08_extras las líneas "Examen · …" y "Cinco aprobadas".
-################################################################################
-
-init 10 python:
-
-    def e6_galeria_agregar():
-        extra = {
-            "cap1":    [("cg_cinco_aula", "Cinco miradas antes del examen"), ("cg_cinco_aprobadas", "Un final feliz")],
-            "yotsuba": [("cg_yotsuba_examen", "Esta vez no me rendí")],
-            "ichika":  [("cg_ichika_examen", "Las cuentas sí salieron")],
-            "nino":    [("cg_nino_examen", "No te lo diré dos veces")],
-            "itsuki":  [("cg_itsuki_examen", "Una hipótesis comprobada")],
-            "miku":    [("cg_miku_examen", "Mi propia historia")],
-        }
-        for s in GALERIA:
-            if s[0] in extra:
-                for item in extra[s[0]]:
-                    if item not in s[3]:
-                        s[3].append(item)
-
-    e6_galeria_agregar()
-
 
 ################################################################################
 ##  TRANSFORM COMÚN (showif): aparece y desaparece con fundido
