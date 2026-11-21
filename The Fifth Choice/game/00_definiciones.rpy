@@ -641,6 +641,81 @@ label configurar_nombre:
 ##  `label start`, Ren'Py lanzará un error de etiqueta duplicada.
 ################################################################################
 
+################################################################################
+##  Video #8: lanzamiento del Capítulo 1.
+##  Cómo lanzarlo: partida nueva, en el primer diálogo Shift+O (consola) y:
+##      jump grabacion_lanzamiento
+##  Sin música a propósito: la voz y la música van en la edición.
+##  Las cortinillas y animaciones sí traen su propio jingle.
+################################################################################
+
+label grabacion_lanzamiento:
+
+    ## --- Preparación ---------------------------------------------------------
+    $ hub_visitadas = []
+    $ tiempo_restante = "casi cuatro semanas"
+    $ quick_menu = False
+    $ ui_escena("normal")
+    window hide
+    stop music
+    stop ambiente
+
+    ## --- 1 · GANCHO: «Hoy sale The Fifth Choice» (0-3 s) ----------------------
+    ## El logo y «YA DISPONIBLE» se ponen encima en CapCut.
+    scene cg_familia
+    with fade
+    pause 4.5
+
+    ## --- 2 · PREMISA: deuda + tutor de cinco hermanas (3-12 s) -----------------
+    scene cg_hermanas_estudiando
+    with dissolve
+    pause 4.5
+
+    ## --- 3 · LAS QUINTILLIZAS: una línea cada una (12-27 s) --------------------
+    ## Orden del guion: Ichika, Nino, Miku, Yotsuba, Itsuki. 3 s por hermana.
+    scene cg_ichika_puerta
+    with dissolve
+    pause 3.8
+
+    scene cg_nino_pasillo
+    with dissolve
+    pause 3.8
+
+    scene cg_miku_sofa
+    with dissolve
+    pause 3.8
+
+    scene cg_yotsuba_corriendo
+    with dissolve
+    pause 4.5
+
+    scene cg_itsuki_sentada
+    with dissolve
+    pause 4.0
+
+    ## --- 4 · ACLARACIÓN: «Capítulo 1 de 3» (34-34 s) ---------------------------
+    ## El mapa: entra por la izquierda, cruza despacio y haz clic en Ichika
+    ## (la primera banda, la rosa).
+    scene bg_negro
+    with fade
+    pause 0.8
+    call screen mapa_hub(1)
+
+    ## --- 5 · «Capítulo uno… ya disponible» (34-37 s) ---------------------------
+    ## La tarjeta de inicio del capítulo: CAPÍTULO 01 · Un estudiante perfecto.
+    ## Dura más de 3 s; quédate con el tramo en que el título ya está completo.
+    call cortinilla_cap1_inicio
+
+    scene bg_negro
+    with fade
+    pause 1.5
+    stop cortinilla fadeout 0.5
+
+    scene bg_negro
+    with fade
+
+    return
+
 label start:
 
     stop music fadeout 1.5
