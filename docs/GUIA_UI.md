@@ -23,7 +23,7 @@ Todo lo aprendido montando la interfaz. **Transversal**: vale para los tres cap�
 | `09_menus_sistema.rpy` | Guardar, Cargar, Opciones, Historial, Acerca de, Ayuda, confirmaciones |
 | `hub_mapa.rpy` |	Pantalla del mapa de hubs (`HUB_DESTINOS`, el orden de la tabla es el orden en pantalla)
 | `14_progreso_chicas.rpy` | Barra de progreso de las chicas al cerrar un capítulo (`PROG_IMAGEN`, `progreso_chicas`) |
-| `12_e6_pantallas.rpy` | Pantallas del Evento 6: boletín de notas (`boletin_cinco`) |
+| `12_e6_boletin.rpy` | Evento 6: boletín de notas (`boletin_cinco`), tintes del CG de las cinco y su audio. La Galería vive en `08_extras.rpy` |
 | `15_chat_grupo.rpy` | Chat del grupo «¡Equipo Quintillizas + Tutor!» (`chat_grupo`, `chat_ver`) y los mensajes de sus tres apariciones (`CHAT_DEBUT`, `CHAT_SEMANA`, `chat_sabado`, `chat_e6`) |
 | `16_creditos.rpy` | Créditos (fuente única: `CREDITOS_AVISO`, `CREDITOS_GRATIS`, `CREDITOS`), aviso inicial (`splashscreen`), rol (`creditos_rol`) y «Continuará» (`continuara`, `cap1_continuara`) |
 | `screens.rpy` | `say`, `choice`, menú rápido |

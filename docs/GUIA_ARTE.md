@@ -1,7 +1,7 @@
 # Guía de arte — The Fifth Choice
 
-Todo lo aprendido generando el arte del prólogo. **Es transversal**: aplica a los
-tres capítulos que quedan. Leer antes de generar cualquier imagen nueva.
+Todo lo aprendido generando el arte del Prólogo y del Capítulo 1. **Es transversal**:
+aplica a los capítulos que quedan. Leer antes de generar cualquier imagen nueva.
 
 ---
 
@@ -536,14 +536,16 @@ desde cero.
 
 ---
 
-## 9. Pendientes del set
+## 9. Estado del set
 
-Cosas abiertas que afectan a todo el arte, no solo al prólogo:
+**El arte del Capítulo 1 está cerrado**: sprites, expresiones, CG (Evento 6
+incluido), chibis y sprites de menú y hub. No queda nada pendiente. Lo que sigue
+son las lecciones que valen para todo lo que venga:
 
 - **El pelo de Miku está resuelto.** Ganó el pelo castaño.
-- **El lazo de Yotsuba viene cortado en el propio render**: hay verde en la fila 0
-  del PNG original de PixAI. No es la normalización. Para tenerlo entero hay que
-  regenerar con más margen arriba.
+- **El lazo de Yotsuba puede venir cortado en el propio render** (verde en la
+  fila 0 del PNG original de PixAI; no es la normalización): hay que regenerar
+  con más margen arriba.
   Aunque el render venga entero, a veces el lazo no cabe en los 199 px que hay
   sobre los ojos. En ese caso, **no** se baja la IPD, porque Yotsuba quedaría
   más pequeña que sus hermanas:
@@ -560,16 +562,16 @@ Cosas abiertas que afectan a todo el arte, no solo al prólogo:
 - **Las gafas de Isanari cambian de sitio entre sus dos sprites**: caladas en el
   neutral, en la frente en la sonrisa. Decisión tomada: se asume. Lo único que
   conviene evitar es alternarlos en réplicas consecutivas.
-- **Expresiones del Capítulo 1: hechas.** Ichika `agotada` y `determinada`; Nino
-  `pillada`, `nerviosa` y `molesta`; Miku `animada`, `relajada` y `encogida`;
-  Yotsuba `neutral`, `incomoda` y `sorprendida`; Itsuki `timida` y `sorprendida`;
-  Raiha `preocupada`. Para las que no tengan escena escrita sigue valiendo la
-  lección de itsuki_timida.
 - **La diferencia entre expresiones tiene que estar en la silueta.** Es la regla
   que sale de las cuatro fichas nuevas y vale para todas las que vengan: a un 30 %
   de tamaño la cara no se lee. `nino pillada` descruza los brazos, `yotsuba
   incomoda` ocupa menos ancho, `miku animada` se queda sin nada delante del
   cuerpo. Si dos expresiones tienen la misma silueta, en pantalla son la misma.
+
+Expresiones que se añadieron en el Capítulo 1: Ichika `agotada` y `determinada`;
+Nino `pillada`, `nerviosa` y `molesta`; Miku `animada`, `relajada` y `encogida`;
+Yotsuba `neutral`, `incomoda` y `sorprendida`; Itsuki `timida` y `sorprendida`;
+Raiha `preocupada`.
 
 ## 10. Sprites del menú principal
 
@@ -597,3 +599,17 @@ Exclusivos del mapa de hubs (game/images/hubs/<hermana>_hub.png). Una pose propi
 cintura para arriba, 768×1280, fondo blanco, solo LoRA de personaje a 0.8. Fondo quitado en 
 Photoshop. No usan el estándar de 760×930: hub_sprite los escala por la altura real del contenido. 
 Si un lazo o el ahoge sobresale, se pasa coronilla en HUB_DESTINOS (Yotsuba 57, Itsuki 84).
+
+## 12. Chibis
+
+Exclusivos de los minijuegos del Evento 6: `game/images/chibis/<hermana>_<expresion>.png`,
+cinco expresiones por hermana (`neutral`, `feliz`, `animo`, `esfuerzo`, `triste`).
+Los carga `mj_chibi()` en `10_mj_chibi.rpy` (`MJ_CHIBI_RUTA`); si falta un PNG,
+pone de repuesto la flor de su color con la inicial.
+
+- **La chibi general de la hermana va a zoom 1.0** (`mj_retrato`, en la columna
+  del marco, pies en `MJ_CHIBI_X`/`MJ_CHIBI_Y`). Es también el último fotograma de
+  la entrada del minijuego (`10_mj_transicion.rpy`): si cambia su tamaño o su
+  sitio, deja de empalmar.
+- **Las demás van más pequeñas** (`mj_chibi_vista`, zoom 0.34 por defecto), como
+  las corredoras del relevo de Yotsuba.

@@ -1,7 +1,7 @@
 # Guía de audio — The Fifth Choice
 
-Fuentes, licencias y todo lo aprendido montando la capa de audio del prólogo.
-**Es transversal**: aplica a los tres capítulos que quedan.
+Fuentes, licencias y todo lo aprendido montando el audio del Prólogo y del
+Capítulo 1. **Es transversal**: aplica a los capítulos que quedan.
 
 ---
 
@@ -20,8 +20,16 @@ game/audio/sfx/    papel_mesa, timbre, silla, toque_puerta,
                    manija, puerta_abre, correr, portazo,
                    bolsa, hoja, puerta_cierra, taza_mesa,
                    mochila_suelo, lapiz_mesa, celular,
-                   hover, click, hub_hover, hub_click      (.mp3)
+                   hover, click, hub_hover, hub_click,
+                   estomago, camara, acierto, fallo        (.mp3)
                    pisadas_pista                           (.ogg, cicla)
+
+                   cortinillas, sintetizadas               (.ogg):
+                   cort_capitulo, cort_examen, cort_fin, cort_hub
+                   cort_hermana_<h>
+                   cort_completado_<h>, cort_completado_<h>_tibia,
+                   cort_completado_fria
+                   cort_mj_<h>_<entrada|ganado|saltado>
 
 game/audio/        amb_viento.ogg, silencio_exterior.ogg, amb_reloj.ogg
 
@@ -187,6 +195,28 @@ que entiende su buscador.
 | `sfx_celular` | Freesound |	Vibración corta. En el chat del grupo lo lanza `chat_reproducir`: una vez por ráfaga, la primera a 1.5 con duck y las demás a 0.75 sin duck |
 | `sfx_estomago` | Freesound | Beat de Itsuki, 3,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
 | `sfx_camara` | Freesound | Evento 6, foto del grupo, 0,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
+| `sfx_acierto` | Síntesis (`generar_cortinillas.py mj`) | Acierto dentro de los minijuegos. Lo lanza `mj_sfx("acierto")` por el canal `audio`, sin duck; dos iguales en 0,08 s suenan una vez |
+| `sfx_fallo` | Síntesis (`generar_cortinillas.py mj`) | Fallo dentro de los minijuegos, con `mj_sfx("fallo")`. Mismas reglas que el acierto |
+
+### Cortinillas
+
+Los jingles de las animaciones de interfaz: campanitas tipo celesta en Re mayor
+pentatónico, una nota por hermana (Ichika Re, Nino Mi, Miku Fa#, Yotsuba La,
+Itsuki Si). **No vienen de ninguna web**: los genera desde cero
+`herramientas/generar_cortinillas.py` (numpy, scipy y ffmpeg), que también saca
+`acierto` y `fallo`. Sus tiempos están copiados de los `.rpy` que los usan: si
+cambia uno, cambia el otro y se regenera.
+
+Suenan por el canal `cortinilla` (ver §7). `cort_sonar(jingle)` reproduce
+`audio/sfx/cort_<jingle>.ogg` y, si el archivo falta, la animación sale muda.
+
+| Familia | Pantalla |
+|---|---|
+| `cort_capitulo`, `cort_examen`, `cort_fin`, `cort_hub`, `cort_hermana_<h>` | Tarjetas de capítulo y de sección, `label cortinilla` (`13_transiciones.rpy`) |
+| `cort_completado_<h>[_tibia]`, `cort_completado_fria` | Hub completado, `hub_completado` (`hub_mapa.rpy`) |
+| `cort_mj_<h>_<entrada\|ganado\|saltado>` | Entrada y salida de los minijuegos (`10_mj_transicion.rpy`) |
+| `cort_mj_<h>_saltado` | Rótulo «Hora de decidir» de las decisiones con peso (`07_ui.rpy`) |
+| `cort_completado_<h>[_tibia]` | Barra de progreso de las chicas (`14_progreso_chicas.rpy`, con su propio `prog_sonar`, que funde el sting anterior) |
 
 **`portazo` y `puerta_cierra` son la misma puerta a propósito.** El portazo se
 fabricó a partir del cierre: amplificar al máximo sin distorsionar y recortar la
@@ -338,6 +368,19 @@ otro play sound lo corta. ambiente cicla solo (no hace falta loop) y es donde
 van amb_viento, amb_silencio_exterior y amb_reloj: play ambiente amb_reloj fadein
 2.0 volume 0.4 y stop ambiente fadeout 1.0. El reloj solo marca cuenta atrás: 
 interconexión 5, exámenes del final malo B y examen del evento 6.
+
+```renpy
+renpy.music.register_channel("cortinilla", "music", loop=False)
+```
+
+En el `init python` de `13_transiciones.rpy`. Es para los jingles de las
+cortinillas (§4): **también va al mezclador de música**, porque es un motivo
+musical y no un golpe, y así no pisa ni `sound` ni la pista que esté sonando. No
+cicla. Las pantallas lo cierran con `stop cortinilla fadeout …` al terminar.
+
+Los efectos que no pueden cortarse entre sí van por `audio`, el canal de efectos
+de Ren'Py que admite varios sonidos a la vez: `play audio sfx_estomago`,
+`sfx_camara` y los `mj_sfx` de los minijuegos.
 
 ---
 

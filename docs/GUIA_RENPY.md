@@ -14,7 +14,23 @@ variables, fondos, sprites, transforms, audio, funciones, la pantalla de nombre 
 `label start`.
 
 La interfaz vive aparte: `06_main_menu.rpy`, `07_ui.rpy`, `08_extras.rpy` y
-`09_menus_sistema.rpy` (ver `GUIA_UI.md`).
+`09_menus_sistema.rpy` (ver `GUIA_UI.md`). El resto de archivos que no son guion:
+
+| Archivo | Qué contiene |
+|---|---|
+| `07b_collage.rpy` | Collage de pensamientos del beat casa |
+| `hub_mapa.rpy` | Mapa de hubs (`mapa_hub`) y la animación de hub completado (`hub_completado`) |
+| `10_minijuegos.rpy` | Núcleo del Evento 6 y marco común de los minijuegos (`mj_ejecutar`, `mj_marco`) |
+| `10_mj_chibi.rpy` | Chibis y globos de texto que comparten los minijuegos |
+| `10_mj_yotsuba.rpy`, `10_mj_ichika.rpy`, `10_mj_nino.rpy`, `10_mj_itsuki.rpy`, `10_mj_miku.rpy` | Un minijuego por hermana (Y2, I1′, N1′, It1, M3) |
+| `10_mj_miku_pulsos.rpy` | Pulsos de `miku_tema` para M3. Generado por `generar_pulsos_miku.py`: no editar a mano |
+| `10_mj_transicion.rpy` | Entrada y salida de los minijuegos |
+| `11_e6_debug.rpy` | Menú de depuración del Evento 6 (`jump e6_debug`, solo desarrollo) |
+| `12_e6_boletin.rpy` | Evento 6: boletín de notas, tintes del CG de las cinco y su audio |
+| `13_transiciones.rpy` | Tarjetas de capítulo y de sección (cortinillas) y su canal de audio |
+| `14_progreso_chicas.rpy` | Barra de progreso de las chicas al cerrar un capítulo |
+| `15_chat_grupo.rpy` | Chat del grupo y los mensajes de sus tres apariciones |
+| `16_creditos.rpy` | Créditos (fuente única), aviso inicial, rol final y «Continuará» |
 
 Los archivos de capítulo contienen su label y lo que solo ese evento usa: 
 sus CG, sus fondos (con su variante _anochecer) y sus audios propios. Si otro 
@@ -44,6 +60,11 @@ En los eventos de hermana: cálida `sumar_punto("x", 3)`, tibia `sumar_punto("x"
 fría `$ desaires_cap1 += 1` (sin puntos). Cada evento guarda su rama en `<h>_rama_cap1`
 ("calida", "tibia", "fria"; se lee con `rama_de("x")`) y marca `<h>_visitada_cap1 = True` 
 antes del return. El beat de Nino usa `nino_rama_beat` y no `toca desaires_cap1`.
+
+**Dos frías en el Capítulo 1 son el despido.** Si llegan antes del beat de Nino
+(hubs 1 y 2), Maruo despide ahí: variante A (`despido_en_beat`, `final_malo_beat`).
+Con una sola fría, Maruo da un ultimátum (`maruo_ultimatum`); si después cae otra
+fría en el hub 3, es la variante B (`despido_cap1`, `final_malo_hub3`).
 
 Nunca tocar `puntos_*` a mano. El helper es lo único que garantiza que
 `primera_conexion` se escriba una sola vez, y de eso depende el desempate de toda
@@ -226,6 +247,9 @@ o el Replay empieza sin fondo.
 
 **play sound ... loop ocupa el canal sound hasta el stop sound:** cualquier otro play 
 sound en medio lo corta.
+
+**Pantalla + `renpy.pause` nunca con `modal True`**: la pausa no termina y el
+juego se cuelga sin error. Ver `GUIA_UI.md` §5.
 
 **Salir de un call sin volver (un final malo desde un beat):** $ renpy.pop_call() y luego 
 jump. Sin el pop_call, la pila queda con un return pendiente.
