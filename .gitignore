@@ -7,10 +7,10 @@
 *.rpymc
 *.pyc
 
-game/cache/
-game/saves/
-game/tl/
-game/libs/
+**/game/cache/
+**/game/saves/
+**/game/tl/
+**/game/libs/
 
 # Compilaciones y logs
 /dist/
