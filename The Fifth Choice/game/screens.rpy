@@ -370,7 +370,7 @@ screen quick_menu():
                 background ui_icono("historial", False)
                 hover_background ui_icono("historial", True)
                 action ShowMenu("history")
-                tooltip "Historial"
+                tooltip _("Historial")
                 at icono_hover
 
             button:
@@ -379,7 +379,7 @@ screen quick_menu():
                 hover_background ui_icono("auto", True)
                 selected_background ui_icono("auto", True)
                 action Preference("auto-forward", "toggle")
-                tooltip "Auto"
+                tooltip _("Auto")
                 at icono_hover
 
             button:
@@ -388,7 +388,7 @@ screen quick_menu():
                 hover_background ui_icono("saltar", True)
                 selected_background ui_icono("saltar", True)
                 action Skip() alternate Skip(fast=True, confirm=True)
-                tooltip "Saltar"
+                tooltip _("Saltar")
                 at icono_hover
 
 
@@ -397,7 +397,7 @@ screen quick_menu():
                 background ui_icono("guardar", False)
                 hover_background ui_icono("guardar", True)
                 action ShowMenu("save")
-                tooltip "Guardar"
+                tooltip _("Guardar")
                 at icono_hover
 
             button:
@@ -405,7 +405,7 @@ screen quick_menu():
                 background ui_icono("menu", False)
                 hover_background ui_icono("menu", True)
                 action ShowMenu()
-                tooltip "Menú"
+                tooltip _("Menú")
                 at icono_hover
 
         $ nombre_icono = GetTooltip()

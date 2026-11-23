@@ -44,7 +44,7 @@ image cg_yotsuba_corriendo  = "cg/yotsuba_corriendo.webp"
 
 label prologo:
 
-    $ save_name = "Prólogo"
+    $ save_name = _("Prólogo")
 
     ############################################################################
     ##  ESCENA 1 · Casa de los Uesugi

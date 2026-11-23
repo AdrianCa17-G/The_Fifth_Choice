@@ -184,7 +184,7 @@ screen boletin_cinco():
 
     add Solid("#0B0712E8")
 
-    text "LA CUENTA":
+    text _("LA CUENTA"):
         xalign 0.5
         ypos 56
         font gui.name_text_font

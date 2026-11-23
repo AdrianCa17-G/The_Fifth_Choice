@@ -10,12 +10,12 @@ default save_name = ""
 
 ## (texto, pantalla, motivo de la hermana, solo dentro de la partida)
 define NAV_SISTEMA = [
-    ("Historial", "history", "nino", True),
-    ("Guardar", "save", "itsuki", True),
-    ("Cargar", "load", "yotsuba", False),
-    ("Opciones", "preferences", "miku", False),
-    ("Acerca de", "about", "ichika", False),
-    ("Ayuda", "help", "isanari", False),
+    (_("Historial"), "history", "nino", True),
+    (_("Guardar"), "save", "itsuki", True),
+    (_("Cargar"), "load", "yotsuba", False),
+    (_("Opciones"), "preferences", "miku", False),
+    (_("Acerca de"), "about", "ichika", False),
+    (_("Ayuda"), "help", "isanari", False),
 ]
 
 define EXTRA_COLOR = {
@@ -24,6 +24,16 @@ define EXTRA_COLOR = {
     "blanco": "#FFFFFF",
 }
 
+## Idiomas del selector de Opciones: (nombre en su propio idioma, carpeta en game/tl/).
+## None = el español del guion. Para añadir uno (p. ej. ("Русский", "russian")):
+## generar game/tl/<carpeta>/ con Generate Translations y sumar su fila aquí.
+## Una fila sin carpeta en tl/ no se muestra. Si el idioma usa otro alfabeto,
+## su fuente va en un bloque «translate <carpeta> python» (ver GUIA_RENPY.md).
+define IDIOMAS = [
+    ("Español", None),
+    ("English", "english"),
+]
+
 ## Valores por defecto de los ajustes.
 define AJUSTE_MUSICA = 0.7
 define AJUSTE_EFECTOS = 1.0
@@ -31,6 +41,20 @@ define AJUSTE_TEXTO = 40
 define AJUSTE_AUTOAVANCE = 15
 
 init python:
+
+    def idiomas_disponibles():
+        """Filas de IDIOMAS cuya carpeta tl/ existe (el español siempre)."""
+        conocidos = renpy.known_languages()
+        return [i for i in IDIOMAS if i[1] is None or i[1] in conocidos]
+
+    def idiomas_autocomprobar():
+        """Consola: $ idiomas_autocomprobar()"""
+        lista = idiomas_disponibles()
+        assert lista[0] == ("Español", None), lista
+        assert ("English", "english") in lista, "falta game/tl/english/"
+        assert all(i in IDIOMAS for i in lista)
+        renpy.notify("Idiomas: " + ", ".join(i[0] for i in lista))
+        return True
 
     def hist_estilo(h):
         """Estilo de una línea del historial, tomado de los show_ del personaje."""
@@ -204,7 +228,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     add Solid("#120A1CD2")
     add "ui/menu_panel.png"
 
-    $ titulo_mayus = title.upper()
+    $ titulo_mayus = __(title).upper()
     text titulo_mayus xpos 70 ypos 48 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)] substitute False
 
         ## --- Cintas de navegación ---
@@ -232,7 +256,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
             fixed:
                 xysize (440, 34)
-                text "EXTRAS" style "etiqueta_opcion" color EXTRA_COLOR["raiha"] yalign 0.5
+                text _("EXTRAS") style "etiqueta_opcion" color EXTRA_COLOR["raiha"] yalign 0.5
                 add Solid(EXTRA_COLOR["raiha"], xsize=300, ysize=2) xpos 140 yalign 0.5 alpha 0.6
 
             for nombre, pantalla in EXTRAS_NAV:
@@ -252,7 +276,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                 hover_background ui_cinta_menu(col_r, None, True)
                 at boton_slide
 
-                text "Menú principal":
+                text _("Menú principal"):
                     xpos 74
                     yalign 0.5
                     font gui.name_text_font
@@ -348,7 +372,7 @@ screen slot_tarjeta(slot):
 
         fixed:
             xysize (322, 26)
-            text FileTime(slot, format="{#file_time}%d/%m/%Y  ·  %H:%M", empty="Vacío") xalign 0.0 yalign 0.5 size 19 color "#CFC6E0"
+            text FileTime(slot, format="{#file_time}%d/%m/%Y  ·  %H:%M", empty=_("Vacío")) xalign 0.0 yalign 0.5 size 19 color "#CFC6E0"
             text FileSaveName(slot) xalign 1.0 yalign 0.5 size 19 color color
 
 
@@ -357,11 +381,11 @@ screen file_slots(title):
     use game_menu(title):
 
         $ pagina = str(FileCurrentPage())
-        $ encabezado = "PÁGINA " + pagina
+        $ encabezado = __("PÁGINA") + " " + pagina
         if pagina == "auto":
-            $ encabezado = "GUARDADO AUTOMÁTICO"
+            $ encabezado = _("GUARDADO AUTOMÁTICO")
         elif pagina == "quick":
-            $ encabezado = "GUARDADO RÁPIDO"
+            $ encabezado = _("GUARDADO RÁPIDO")
 
         fixed:
             xysize (1022, 960)
@@ -416,14 +440,14 @@ screen file_slots(title):
 
             if config.has_sync:
                 if CurrentScreenName() == "save":
-                    textbutton "Subir Sync":
+                    textbutton _("Subir Sync"):
                         xalign 0.5
                         ypos 912
                         action UploadSync()
                         text_idle_color "#BDB3D1"
                         text_hover_color "#D9D2E6"
                 else:
-                    textbutton "Descargar Sync":
+                    textbutton _("Descargar Sync"):
                         xalign 0.5
                         ypos 912
                         action DownloadSync()
@@ -448,25 +472,25 @@ screen preferences():
                 xsize 440
 
                 if renpy.variant("pc") or renpy.variant("web"):
-                    text "PANTALLA" style "etiqueta_opcion"
-                    use cinta_boton("Ventana", Preference("display", "window"), "ichika")
-                    use cinta_boton("Pantalla completa", Preference("display", "fullscreen"), "ichika")
+                    text _("PANTALLA") style "etiqueta_opcion"
+                    use cinta_boton(_("Ventana"), Preference("display", "window"), "ichika")
+                    use cinta_boton(_("Pantalla completa"), Preference("display", "fullscreen"), "ichika")
                     null height 34
 
-                text "SALTAR" style "etiqueta_opcion"
-                use cinta_boton("Texto no visto", Preference("skip", "toggle"), "nino")
-                use cinta_boton("Tras elecciones", Preference("after choices", "toggle"), "nino")
-                use cinta_boton("Transiciones", InvertSelected(Preference("transitions", "toggle")), "nino")
+                text _("SALTAR") style "etiqueta_opcion"
+                use cinta_boton(_("Texto no visto"), Preference("skip", "toggle"), "nino")
+                use cinta_boton(_("Tras elecciones"), Preference("after choices", "toggle"), "nino")
+                use cinta_boton(_("Transiciones"), InvertSelected(Preference("transitions", "toggle")), "nino")
                 null height 34
 
-                text "SONIDO" style "etiqueta_opcion"
+                text _("SONIDO") style "etiqueta_opcion"
                 hbox:
                     spacing 10
-                    use cinta_boton("Silenciar todo", Preference("all mute", "toggle"), "itsuki", 215, 58, 22)
+                    use cinta_boton(_("Silenciar todo"), Preference("all mute", "toggle"), "itsuki", 215, 58, 22)
                     
                     button:
                         xysize (215, 58)
-                        action [Preference("music volume", AJUSTE_MUSICA), Preference("sound volume", AJUSTE_EFECTOS), Preference("text speed", AJUSTE_TEXTO), Preference("auto-forward time", AJUSTE_AUTOAVANCE), Preference("all mute", "disable"), Notify("Valores restablecidos")]
+                        action [Preference("music volume", AJUSTE_MUSICA), Preference("sound volume", AJUSTE_EFECTOS), Preference("text speed", AJUSTE_TEXTO), Preference("auto-forward time", AJUSTE_AUTOAVANCE), Preference("all mute", "disable"), Notify(_("Valores restablecidos"))]
                         hover_sound audio.sfx_hover
                         activate_sound audio.sfx_click
 
@@ -478,7 +502,7 @@ screen preferences():
                             Transform("ui/menu_cinta.png", xysize=(215, 58), fit="fill", matrixcolor=TintMatrix("#E8E0F2")),
                             Transform("ui/menu_cinta_borde.png", xysize=(215, 58), fit="fill", matrixcolor=TintMatrix("#FFFFFF")))
 
-                        text "Restablecer":
+                        text _("Restablecer"):
                             xalign 0.5
                             yalign 0.5
                             font gui.name_text_font
@@ -491,10 +515,21 @@ screen preferences():
                 spacing 74
                 xsize 480
 
-                use control_barra("MÚSICA", Preference("music volume"), "miku")
-                use control_barra("EFECTOS DE SONIDO", Preference("sound volume"), "yotsuba")
-                use control_barra("VELOCIDAD DEL TEXTO", Preference("text speed"), "ichika")
-                use control_barra("AUTOAVANCE", Preference("auto-forward time"), "nino")
+                use control_barra(_("MÚSICA"), Preference("music volume"), "miku")
+                use control_barra(_("EFECTOS DE SONIDO"), Preference("sound volume"), "yotsuba")
+                use control_barra(_("VELOCIDAD DEL TEXTO"), Preference("text speed"), "ichika")
+                use control_barra(_("AUTOAVANCE"), Preference("auto-forward time"), "nino")
+
+                ## Idioma: cintas neutras (no es de ninguna hermana), repartidas en 480 px.
+                $ idiomas = idiomas_disponibles()
+                $ ancho_idioma = (480 - 10 * (len(idiomas) - 1)) // len(idiomas)
+                vbox:
+                    spacing 18
+                    text _("IDIOMA") style "etiqueta_opcion"
+                    hbox:
+                        spacing 10
+                        for nombre_idioma, carpeta in idiomas:
+                            use cinta_boton(nombre_idioma, Language(carpeta), "", ancho_idioma, 58, 22)
 
 
 ## --- HISTORIAL -----------------------------------------------------------------
@@ -537,7 +572,7 @@ screen history():
                 text texto_h font fuente_h size tam_h color color_h xsize 940 substitute False
 
         if not _history_list:
-            text "El historial está vacío." size 28 color "#BDB3D1"
+            text _("El historial está vacío.") size 28 color "#BDB3D1"
 
 
 ## --- ACERCA DE -----------------------------------------------------------------
@@ -593,7 +628,7 @@ screen confirm(message, yes_action, no_action):
             ypos 250
             spacing 40
 
-            use cinta_boton("Sí", yes_action, "itsuki", 360, 64, 30)
-            use cinta_boton("No", no_action, "miku", 360, 64, 30)
+            use cinta_boton(_("Sí"), yes_action, "itsuki", 360, 64, 30)
+            use cinta_boton(_("No"), no_action, "miku", 360, 64, 30)
 
     key "game_menu" action no_action

@@ -353,7 +353,7 @@ label hub_Miku:
 
     ## Menú de Miku.
 
-    $ decision_peso("miku", "¿Qué le dirás a Miku?", "Habló un minuto entero de lo que ama. Y después pidió perdón.")
+    $ decision_peso("miku", _("¿Qué le dirás a Miku?"), _("Habló un minuto entero de lo que ama. Y después pidió perdón."))
 
     menu:
 
@@ -578,7 +578,7 @@ label miku_m5:
 
     mc_pensamiento "Una de cinco. Y esta sabía mucho de lo que yo no."
 
-    mc_pensamiento "Quedan [tiempo_restante]."
+    mc_pensamiento "Quedan [tiempo_restante!t]."
 
     
     if miku_rama_cap1 == "calida":

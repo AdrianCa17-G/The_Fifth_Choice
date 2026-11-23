@@ -35,36 +35,36 @@
 ## (unidad_origen, unidad_destino, "mult"|"div", factor, equivalencia)
 define MJ_IT1_CADENAS = [
     {
-        "titulo": "Velocidad",
+        "titulo": _("Velocidad"),
         "inicios": [36, 54, 72, 90, 108],
         "pasos": [
-            ("km/h", "m/h", "mult", 1000, "1 km = 1.000 m"),
-            ("m/h", "m/min", "div", 60, "1 h = 60 min"),
-            ("m/min", "m/s", "div", 60, "1 min = 60 s"),
-            ("m/s", "cm/s", "mult", 100, "1 m = 100 cm"),
-            ("cm/s", "mm/s", "mult", 10, "1 cm = 10 mm"),
+            ("km/h", "m/h", "mult", 1000, _("1 km = 1.000 m")),
+            ("m/h", "m/min", "div", 60, _("1 h = 60 min")),
+            ("m/min", "m/s", "div", 60, _("1 min = 60 s")),
+            ("m/s", "cm/s", "mult", 100, _("1 m = 100 cm")),
+            ("cm/s", "mm/s", "mult", 10, _("1 cm = 10 mm")),
         ],
     },
     {
-        "titulo": "Caudal",
+        "titulo": _("Caudal"),
         "inicios": [3600, 7200, 10800],
         "pasos": [
-            ("L/h", "mL/h", "mult", 1000, "1 L = 1.000 mL"),
-            ("mL/h", "mL/min", "div", 60, "1 h = 60 min"),
-            ("mL/min", "mL/s", "div", 60, "1 min = 60 s"),
-            ("mL/s", "L/s", "div", 1000, "1 L = 1.000 mL"),
-            ("L/s", "dL/s", "mult", 10, "1 L = 10 dL"),
+            ("L/h", "mL/h", "mult", 1000, _("1 L = 1.000 mL")),
+            ("mL/h", "mL/min", "div", 60, _("1 h = 60 min")),
+            ("mL/min", "mL/s", "div", 60, _("1 min = 60 s")),
+            ("mL/s", "L/s", "div", 1000, _("1 L = 1.000 mL")),
+            ("L/s", "dL/s", "mult", 10, _("1 L = 10 dL")),
         ],
     },
     {
-        "titulo": "Densidad",
+        "titulo": _("Densidad"),
         "inicios": [2, 3, 5, 8],
         "pasos": [
-            ("g/cm³", "kg/cm³", "div", 1000, "1 kg = 1.000 g"),
-            ("kg/cm³", "kg/m³", "mult", 1000000, "1 m³ = 1.000.000 cm³"),
-            ("kg/m³", "g/m³", "mult", 1000, "1 kg = 1.000 g"),
-            ("g/m³", "g/L", "div", 1000, "1 m³ = 1.000 L"),
-            ("g/L", "mg/L", "mult", 1000, "1 g = 1.000 mg"),
+            ("g/cm³", "kg/cm³", "div", 1000, _("1 kg = 1.000 g")),
+            ("kg/cm³", "kg/m³", "mult", 1000000, _("1 m³ = 1.000.000 cm³")),
+            ("kg/m³", "g/m³", "mult", 1000, _("1 kg = 1.000 g")),
+            ("g/m³", "g/L", "div", 1000, _("1 m³ = 1.000 L")),
+            ("g/L", "mg/L", "mult", 1000, _("1 g = 1.000 mg")),
         ],
     },
 ]
@@ -278,17 +278,17 @@ init python:
         def reglas(self):
             """Líneas de reglas para la pantalla de intro, según el nivel vigente."""
             lineas = []
-            lineas.append(str(self.n) + " pasos · " + str(int(self.total)) + " segundos.")
+            lineas.append(__("{} pasos · {} segundos.").format(self.n, int(self.total)))
             ent = self.p["intentos"]
             if ent is None:
-                lineas.append("Puedes entregar las veces que quieras.")
+                lineas.append(__("Puedes entregar las veces que quieras."))
             else:
-                lineas.append("Entregas erróneas permitidas: " + str(int(ent)) + ".")
+                lineas.append(__("Entregas erróneas permitidas: {}.").format(int(ent)))
             usos = self.p["ayuda_usos"]
             if usos is None:
-                lineas.append("«Levantar la mano»: ilimitada y gratis. El profesor te señala el paso que falla.")
+                lineas.append(__("«Levantar la mano»: ilimitada y gratis. El profesor te señala el paso que falla."))
             else:
-                lineas.append("«Levantar la mano»: " + str(int(usos)) + " por intento, cuesta " + str(int(self.p["ayuda_costo"])) + " s. El profesor te señala el paso que falla.")
+                lineas.append(__("«Levantar la mano»: {} por intento, cuesta {} s. El profesor te señala el paso que falla.").format(int(usos), int(self.p["ayuda_costo"])))
             return lineas
 
         def raro(self, k):
@@ -417,9 +417,9 @@ init python:
             k = self.primer_error()
             self.pista = k
             if k >= 0:
-                self.msg_pista = "El profesor se acerca y señala el paso " + str(k + 1) + "."
+                self.msg_pista = __("El profesor se acerca y señala el paso {}.").format(k + 1)
             else:
-                self.msg_pista = "El profesor mira el cuaderno: lo que llevas hasta aquí cuadra."
+                self.msg_pista = _("El profesor mira el cuaderno: lo que llevas hasta aquí cuadra.")
             self.globo.decir("ayuda", True)
             if self.restante() <= 0.0:
                 return self.perder()
@@ -440,7 +440,7 @@ init python:
                 return None
             mj_sfx("fallo")
             self.entregas_malas += 1
-            self.aviso = "No cuadra."
+            self.aviso = _("No cuadra.")
             self.aviso_t = 1.1
             intentos = self.p["intentos"]
             if intentos is not None and self.entregas_malas >= int(intentos):
@@ -503,7 +503,7 @@ init python:
                     return self.resultado("ganado")
             return None
 
-    mj_registrar("it1", "mj_it1", "Cadena de conversiones", True)
+    mj_registrar("it1", "mj_it1", _("Cadena de conversiones"), True)
 
 
 ################################################################################
@@ -532,7 +532,7 @@ screen mj_it1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     add "bg_aula_tarde" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, hechas, vivo.n, t_rest, t_tot, "PASOS", chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=av[0], aviso_tipo=av[1]):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, hechas, vivo.n, t_rest, t_tot, _("PASOS"), chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=av[0], aviso_tipo=av[1]):
 
         if vivo.fase == "listo":
             use it1_intro(vivo, color)
@@ -560,11 +560,11 @@ screen it1_intro(vivo, color):
             xsize 1060
             spacing 26
 
-            text "CADENA DE CONVERSIONES":
+            text _("CADENA DE CONVERSIONES"):
                 style "mj_titulo"
                 xalign 0.5
 
-            text "Itsuki convierte unidades paso a paso. En cada paso aparecen cuatro resultados: elige el correcto a partir del valor que llevas. Si te equivocas en uno, el error se arrastra a los siguientes (el número gris «arrastrado» es el que ella copia sin querer). Al terminar, pulsa «Entregar»; puedes tocar un paso ya hecho para rehacerlo.":
+            text _("Itsuki convierte unidades paso a paso. En cada paso aparecen cuatro resultados: elige el correcto a partir del valor que llevas. Si te equivocas en uno, el error se arrastra a los siguientes (el número gris «arrastrado» es el que ella copia sin querer). Al terminar, pulsa «Entregar»; puedes tocar un paso ya hecho para rehacerlo."):
                 style "mj_cuerpo"
 
             hbox:
@@ -574,7 +574,7 @@ screen it1_intro(vivo, color):
                     xsize 540
                     spacing 10
 
-                    text "REGLAS":
+                    text _("REGLAS"):
                         style "mj_etiqueta"
                         color color
 
@@ -595,11 +595,11 @@ screen it1_intro(vivo, color):
                         xsize 432
                         spacing 6
 
-                        text "NOTA FUERA DEL CUADERNO":
+                        text _("NOTA FUERA DEL CUADERNO"):
                             style "it1_rotulo"
                             size 20
 
-                        text "Sí: aquí hay cuentas largas, de miles y millones. Ten una calculadora a mano (la del móvil o la del PC) y úsala sin culpa. Se evalúa tu método, no tu paciencia.":
+                        text _("Sí: aquí hay cuentas largas, de miles y millones. Ten una calculadora a mano (la del móvil o la del PC) y úsala sin culpa. Se evalúa tu método, no tu paciencia."):
                             style "it1_tinta"
                             size 24
 
@@ -607,7 +607,7 @@ screen it1_intro(vivo, color):
             xalign 0.5
             ypos 600
             xysize (b[0], b[1])
-            use cinta_boton("Empezar", Function(vivo.empezar), "itsuki", b[0], b[1], b[2])
+            use cinta_boton(_("Empezar"), Function(vivo.empezar), "itsuki", b[0], b[1], b[2])
 
 
 ## --- El cuaderno abierto: papel, renglones, margen y lomo -----------------------
@@ -648,12 +648,12 @@ screen it1_juego(vivo, color):
     use it1_cuaderno()
 
     ## --- Página izquierda: tu hoja ---
-    text ("CUADERNO DE CIENCIAS · " + vivo.cadena["titulo"].upper()):
+    text (__("CUADERNO DE CIENCIAS") + " · " + __(vivo.cadena["titulo"]).upper()):
         style "it1_rotulo"
         xpos izq
         ypos (IT1_CUAD_Y + 34)
 
-    text ("Parte de " + it1_fmt(vivo.inicial) + " " + vivo.unidad_origen() + " y llega a " + unidad_final + "."):
+    text __("Parte de {} {} y llega a {}.").format(it1_fmt(vivo.inicial), vivo.unidad_origen(), unidad_final):
         style "it1_tinta"
         xpos izq
         ypos (IT1_CUAD_Y + 70)
@@ -665,10 +665,10 @@ screen it1_juego(vivo, color):
         spacing 8
 
         if hechas == 0:
-            text "Tu hoja irá apareciendo aquí, paso a paso.":
+            text _("Tu hoja irá apareciendo aquí, paso a paso."):
                 style "it1_tinta_nota"
         else:
-            text "Tu hoja · toca un paso para rehacerlo":
+            text _("Tu hoja · toca un paso para rehacerlo"):
                 style "it1_tinta_nota"
 
         for k in range(hechas):
@@ -691,7 +691,7 @@ screen it1_juego(vivo, color):
 
         $ paso = vivo.pasos[hechas]
 
-        text ("PASO " + str(hechas + 1) + " DE " + str(vivo.n)):
+        text __("PASO {} DE {}").format(hechas + 1, vivo.n):
             style "it1_rotulo"
             xpos der
             ypos (IT1_CUAD_Y + 34)
@@ -705,7 +705,7 @@ screen it1_juego(vivo, color):
             xpos der
             ypos (IT1_CUAD_Y + 140)
             spacing 12
-            text "Equivalencia:":
+            text _("Equivalencia:"):
                 style "it1_tinta_nota"
                 yalign 0.5
             frame:
@@ -714,7 +714,7 @@ screen it1_juego(vivo, color):
                 padding (12, 2, 12, 4)
                 text paso[4] style "it1_tinta"
 
-        text ("Llevas: " + it1_fmt(vivo.valor_actual()) + " " + vivo.unidad_actual()):
+        text __("Llevas: {} {}").format(it1_fmt(vivo.valor_actual()), vivo.unidad_actual()):
             style "it1_tinta"
             xpos der
             ypos (IT1_CUAD_Y + 196)
@@ -732,12 +732,12 @@ screen it1_juego(vivo, color):
 
     else:
 
-        text "REVISIÓN":
+        text _("REVISIÓN"):
             style "it1_rotulo"
             xpos der
             ypos (IT1_CUAD_Y + 34)
 
-        text "Tu resultado final":
+        text _("Tu resultado final"):
             style "it1_tinta"
             xpos der
             ypos (IT1_CUAD_Y + 80)
@@ -748,7 +748,7 @@ screen it1_juego(vivo, color):
             ypos (IT1_CUAD_Y + 124)
             xsize 600
 
-        text "Si algún paso no te convence, tócalo en tu hoja (a la izquierda) y rehazlo desde ahí.":
+        text _("Si algún paso no te convence, tócalo en tu hoja (a la izquierda) y rehazlo desde ahí."):
             style "it1_tinta"
             xpos der
             ypos (IT1_CUAD_Y + 220)
@@ -761,7 +761,7 @@ screen it1_juego(vivo, color):
                 xanchor 0.5
                 ypos (IT1_CUAD_Y + 400)
                 xysize (b[0], b[1])
-                use cinta_boton("Entregar", Function(vivo.entregar), "itsuki", b[0], b[1], b[2])
+                use cinta_boton(_("Entregar"), Function(vivo.entregar), "itsuki", b[0], b[1], b[2])
 
     ## --- Pie, fuera del cuaderno: levantar la mano + nota de la calculadora ---
     $ bs = MJ_BOTON["secundario"]
@@ -770,11 +770,11 @@ screen it1_juego(vivo, color):
         ypos IT1_PIE_Y
         xysize (bs[0], bs[1])
         if vivo.ayuda_disponible():
-            use cinta_boton("Levantar la mano" + vivo.ayudas_restantes_texto(), Function(vivo.levantar), "itsuki", bs[0], bs[1], bs[2])
+            use cinta_boton(__("Levantar la mano") + vivo.ayudas_restantes_texto(), Function(vivo.levantar), "itsuki", bs[0], bs[1], bs[2])
         else:
-            use cinta_boton("Sin ayuda", Function(vivo.levantar), "itsuki", bs[0], bs[1], bs[2], False)
+            use cinta_boton(_("Sin ayuda"), Function(vivo.levantar), "itsuki", bs[0], bs[1], bs[2], False)
 
-    text "Consejo fuera del cuaderno: la calculadora está permitida.":
+    text _("Consejo fuera del cuaderno: la calculadora está permitida."):
         style "it1_tinta_nota"
         color IT1_MARCADOR
         outlines [(3, "#1B102699", 0, 0)]
@@ -814,12 +814,12 @@ screen it1_fila(vivo, k, color):
             ypos 30
 
         if senalada:
-            text "← mira aquí":
+            text _("← mira aquí"):
                 style "it1_rotulo"
                 xalign 0.97
                 yalign 0.5
         elif raro:
-            text "(¿raro?)":
+            text _("(¿raro?)"):
                 style "it1_tinta_nota"
                 xalign 0.97
                 yalign 0.5
@@ -851,7 +851,7 @@ screen it1_opcion(vivo, i, color):
             text_align 0.5
 
         if marcada:
-            text "(¡ojo!)":
+            text _("(¡ojo!)"):
                 style "it1_rotulo"
                 size 18
                 hover_color "#FFFFFF"

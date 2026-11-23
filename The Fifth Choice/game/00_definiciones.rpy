@@ -72,7 +72,7 @@ define narrator = Character(
 
 ## El profesor reutiliza la caja del narrador, pero con placa de nombre.
 define profe = Character(
-    "Profesor",
+    _("Profesor"),
     what_color="#E6E0F0",
     window_style="caja",
     window_background="ui/caja_narrador.png",
@@ -84,17 +84,17 @@ define profe = Character(
 )
 
 ## --- Las quintillizas -----------------------------------------------------
-define ichika  = ui_personaje("Ichika",  C_ICHIKA,  "ichika",  "ui/deco_ichika.png")
-define nino    = ui_personaje("Nino",    C_NINO,    "nino",    "ui/deco_nino.png")
-define miku    = ui_personaje("Miku",    C_MIKU,    "miku",    "ui/deco_miku.png")
-define yotsuba = ui_personaje("Yotsuba", C_YOTSUBA, "yotsuba", "ui/deco_yotsuba.png")
-define itsuki  = ui_personaje("Itsuki",  C_ITSUKI,  "itsuki",  "ui/deco_itsuki.png")
+define ichika  = ui_personaje(_("Ichika"),  C_ICHIKA,  "ichika",  "ui/deco_ichika.png")
+define nino    = ui_personaje(_("Nino"),    C_NINO,    "nino",    "ui/deco_nino.png")
+define miku    = ui_personaje(_("Miku"),    C_MIKU,    "miku",    "ui/deco_miku.png")
+define yotsuba = ui_personaje(_("Yotsuba"), C_YOTSUBA, "yotsuba", "ui/deco_yotsuba.png")
+define itsuki  = ui_personaje(_("Itsuki"),  C_ITSUKI,  "itsuki",  "ui/deco_itsuki.png")
 
 ## Sin pétalo a propósito: el jugador todavía no sabe que son cinco.
-define itsuki_inicio = ui_personaje("Estudiante Nueva", C_ITSUKI)
+define itsuki_inicio = ui_personaje(_("Estudiante Nueva"), C_ITSUKI)
 
 ## Las cinco a la vez: se encienden los cinco pétalos, cada uno con su color.
-define quintillizas = ui_personaje("Las quintillizas", "#F4D03F", "todas")
+define quintillizas = ui_personaje(_("Las quintillizas"), "#F4D03F", "todas")
 define voz          = ui_personaje("???", "#95A5A6")
 
 ## Voz interior de cada hermana (Evento 6): caja de su color, sin placa.
@@ -105,9 +105,9 @@ define yotsuba_int = ui_interior(C_YOTSUBA, "yotsuba")
 define itsuki_int  = ui_interior(C_ITSUKI,  "itsuki")
 
 ## --- Secundarios ----------------------------------------------------------
-define isanari = ui_personaje("Isanari", "#A9925C")
-define raiha   = ui_personaje("Raiha",   "#F5B7B1")
-define maruo   = ui_personaje("Maruo",   "#9AA7A8")
+define isanari = ui_personaje(_("Isanari"), "#A9925C")
+define raiha   = ui_personaje(_("Raiha"),   "#F5B7B1")
+define maruo   = ui_personaje(_("Maruo"),   "#9AA7A8")
 
 ## NOTA DE ASSETS:
 ## En escenas grupales el protagonista aparece como silueta oscura.
@@ -153,7 +153,7 @@ default yotsuba_visitada_cap1 = False
 default itsuki_visitada_cap1  = False
 
 
-default tiempo_restante = "casi cuatro semanas"
+default tiempo_restante = _("casi cuatro semanas")
 default maruo_ultimatum = False
 default despido_cap1 = False
 default nino_rama_beat = None
@@ -587,12 +587,12 @@ screen pantalla_nombre():
             spacing 26
             xalign 0.5
 
-            text "Antes de empezar...":
+            text _("Antes de empezar..."):
                 size 24
                 color "#8E9AAF"
                 xalign 0.5
 
-            text "¿Cuál es tu nombre?":
+            text _("¿Cuál es tu nombre?"):
                 size 44
                 color "#FFFFFF"
                 xalign 0.5
@@ -605,13 +605,13 @@ screen pantalla_nombre():
                 color "#FFB7C5"
                 xalign 0.5
 
-            text "Deja «Futaro» si prefieres vivir la historia tal como fue.":
+            text _("Deja «Futaro» si prefieres vivir la historia tal como fue."):
                 size 19
                 color "#6C7A89"
                 italic True
                 xalign 0.5
 
-            textbutton "Continuar":
+            textbutton _("Continuar"):
                 xalign 0.5
                 text_size 26
                 action Return(True)
@@ -653,7 +653,7 @@ label grabacion_lanzamiento:
 
     ## --- Preparación ---------------------------------------------------------
     $ hub_visitadas = []
-    $ tiempo_restante = "casi cuatro semanas"
+    $ tiempo_restante = _("casi cuatro semanas")
     $ quick_menu = False
     $ ui_escena("normal")
     window hide

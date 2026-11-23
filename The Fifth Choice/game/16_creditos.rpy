@@ -28,31 +28,31 @@ define CREDITOS_WEB = "https://adriankiller17.itch.io/"
 define CREDITOS_DONAR = CREDITOS_WEB
 
 define CREDITOS_AVISO = [
-    "The Fifth Choice es un fangame no oficial y gratuito basado en Quintessential Quintuplets (五等分の花嫁), obra de Negi Haruba publicada por Kodansha. El anime es de Tezuka Productions y Bibury Animation Studios.",
-    "No tiene ninguna afiliación con los titulares de la obra original, ni su autorización ni su patrocinio. Los personajes, nombres y elementos de la historia pertenecen a sus respectivos titulares.",
-    "Página oficial, la única de descarga: adriankiller17.itch.io",
+    _("The Fifth Choice es un fangame no oficial y gratuito basado en Quintessential Quintuplets (五等分の花嫁), obra de Negi Haruba publicada por Kodansha. El anime es de Tezuka Productions y Bibury Animation Studios."),
+    _("No tiene ninguna afiliación con los titulares de la obra original, ni su autorización ni su patrocinio. Los personajes, nombres y elementos de la historia pertenecen a sus respectivos titulares."),
+    _("Página oficial, la única de descarga: adriankiller17.itch.io"),
 ]
 
 define CREDITOS_GRATIS = [
-    "The Fifth Choice es y será gratuito y completo para todos. Se aceptan donaciones voluntarias para apoyar al desarrollador, pero ningún contenido, ventaja ni acceso anticipado depende de donar.",
-    "Si un titular de derechos solicita su retirada, se retirará.",
+    _("The Fifth Choice es y será gratuito y completo para todos. Se aceptan donaciones voluntarias para apoyar al desarrollador, pero ningún contenido, ventaja ni acceso anticipado depende de donar."),
+    _("Si un titular de derechos solicita su retirada, se retirará."),
 ]
 
 define CREDITOS = [
-    ("Desarrollo", [
-        ("sub", "Guion, dirección, arte y montaje"),
+    (_("Desarrollo"), [
+        ("sub", _("Guion, dirección, arte y montaje")),
         ("linea", "Adrian (AdrianKiller17)"),
     ]),
-    ("Obra original", [
+    (_("Obra original"), [
         ("linea", "Quintessential Quintuplets (五等分の花嫁)"),
-        ("nota", "Manga de Negi Haruba, publicado por Kodansha"),
-        ("nota", "Anime de Tezuka Productions y Bibury Animation Studios"),
+        ("nota", _("Manga de Negi Haruba, publicado por Kodansha")),
+        ("nota", _("Anime de Tezuka Productions y Bibury Animation Studios")),
     ]),
-    ("Música", [
-        ("sub", "Tema principal"),
-        ("linea", "«Gotoubun no Kimochi»"),
-        ("nota", "Canción original del anime, interpretada por Nakano-ke no Itsutsugo"),
-        ("nota", "Cover de piano: TheChiporpoise (YouTube), usado con permiso del autor"),
+    (_("Música"), [
+        ("sub", _("Tema principal")),
+        ("linea", _("«Gotoubun no Kimochi»")),
+        ("nota", _("Canción original del anime, interpretada por Nakano-ke no Itsutsugo")),
+        ("nota", _("Cover de piano: TheChiporpoise (YouTube), usado con permiso del autor")),
         ("sub", "音楽：魔王魂 — CC BY 4.0"),
         ("linea", "ピアノ34「静寂の世界へ」"),
         ("linea", "アコースティック04"),
@@ -73,34 +73,34 @@ define CREDITOS = [
         ("linea", "Blue Moon — Hayato Sadohara"),
         ("linea", "Dailyfountain — かずち"),
     ]),
-    ("Efectos de sonido", [
-        ("linea", "効果音ラボ (incluido 振り子時計)"),
+    (_("Efectos de sonido"), [
+        ("linea", _("効果音ラボ (incluido 振り子時計)")),
         ("linea", "Freesound (CC0)"),
         ("linea", "Springin' Sound Stock"),
-        ("nota", "Efectos adicionales generados por síntesis con scripts propios"),
+        ("nota", _("Efectos adicionales generados por síntesis con scripts propios")),
     ]),
-    ("Imágenes", [
-        ("linea", "Ilustraciones generadas con PixAI (modelo base Tsubaki.2)"),
-        ("nota", "LoRA de personaje por creadores de la comunidad de PixAI"),
-        ("nota", "Composición y postproducción con herramientas propias en Python (Pillow, NumPy, SciPy) y GIMP"),
-        ("linea", "Menú principal: diseño propio (Adrian)"),
-        ("nota", "Logo compuesto con scripts propios a partir de los sprites del juego"),
+    (_("Imágenes"), [
+        ("linea", _("Ilustraciones generadas con PixAI (modelo base Tsubaki.2)")),
+        ("nota", _("LoRA de personaje por creadores de la comunidad de PixAI")),
+        ("nota", _("Composición y postproducción con herramientas propias en Python (Pillow, NumPy, SciPy) y GIMP")),
+        ("linea", _("Menú principal: diseño propio (Adrian)")),
+        ("nota", _("Logo compuesto con scripts propios a partir de los sprites del juego")),
     ]),
-    ("Tipografías", [
+    (_("Tipografías"), [
         ("linea", "M PLUS Rounded 1c · Shippori Mincho B1 · Klee One · Noto Sans JP"),
-        ("nota", "SIL Open Font License 1.1 — cada licencia va con el juego en game/fonts/"),
+        ("nota", _("SIL Open Font License 1.1 — cada licencia va con el juego en game/fonts/")),
     ]),
-    ("Motor", [
-        ("linea", "Ren'Py 8.5.3 — licencia MIT"),
-        ("nota", "Interfaz propia generada con scripts en Python (Pillow); algunos elementos parten de las plantillas del motor (MIT)"),
+    (_("Motor"), [
+        ("linea", _("Ren'Py 8.5.3 — licencia MIT")),
+        ("nota", _("Interfaz propia generada con scripts en Python (Pillow); algunos elementos parten de las plantillas del motor (MIT)")),
     ]),
-    ("Contacto", [
-        ("sub", "Página oficial (descarga solo desde aquí)"),
+    (_("Contacto"), [
+        ("sub", _("Página oficial (descarga solo desde aquí)")),
         ("enlace", "adriankiller17.itch.io", "https://adriankiller17.itch.io/"),
-        ("sub", "Redes"),
+        ("sub", _("Redes")),
         ("enlace", "Instagram — @thefifthchoice", "https://www.instagram.com/thefifthchoice/"),
         ("enlace", "TikTok — @thefifthchoiceo_o", "https://www.tiktok.com/@thefifthchoiceo_o"),
-        ("nota", "Consultas sobre derechos o solicitudes de retirada: por cualquiera de estas vías"),
+        ("nota", _("Consultas sobre derechos o solicitudes de retirada: por cualquiera de estas vías")),
     ]),
 ]
 
@@ -135,7 +135,7 @@ init python:
     def cred_linea(l, enlaces, claro):
         """(texto, fuente, tamaño, color) de una línea de CREDITOS."""
         tipo = l[0]
-        texto = cred_jp(l[1])
+        texto = cred_jp(__(l[1]))
         if tipo == "enlace" and enlaces:
             texto = "{a=" + l[2] + "}" + texto + "{/a}"
         if tipo == "sub":
@@ -208,7 +208,7 @@ screen creditos_parrafos(lista, ancho=1200, tam=28, color="#EDE7F6"):
         xalign 0.5
         spacing 18
         for p in lista:
-            text cred_jp(p) xsize ancho xalign 0.5 text_align 0.5 size tam color color
+            text cred_jp(__(p)) xsize ancho xalign 0.5 text_align 0.5 size tam color color
 
 ## Todas las secciones: cinta teñida por turnos con una hermana + sus líneas.
 screen creditos_cuerpo(enlaces=False, ancho=1200):
@@ -255,14 +255,14 @@ screen aviso_inicial(espera):
             fit_first True
             xalign 0.5
             at cort_entra(0.2, -140)
-            use cort_cinta_vista("Fangame no oficial", CORT_ROSA, 0.0, paso)
+            use cort_cinta_vista(_("Fangame no oficial"), CORT_ROSA, 0.0, paso)
 
         vbox:
             xalign 0.5
             at cort_aparece(0.5, 0.6)
             use creditos_parrafos(CREDITOS_AVISO, 1240, 30)
 
-    text "Haz clic para continuar":
+    text _("Haz clic para continuar"):
         xalign 0.5
         ypos 960
         font HUD_FUENTE
@@ -315,7 +315,7 @@ screen creditos_rol(saltable=False):
         fixed:
             xysize (1200, CRED_FIN_ALTO)
             add "main_menu_logo" xalign 0.5 ypos 0
-            text "Gracias por jugar el Capítulo 1":
+            text _("Gracias por jugar el Capítulo 1"):
                 xalign 0.5
                 ypos 500
                 font gui.name_text_font
@@ -327,7 +327,7 @@ screen creditos_rol(saltable=False):
         vbox:
             xalign 0.97
             yalign 0.95
-            use cinta_boton("Saltar", Return(True), "", 220, 54, 22)
+            use cinta_boton(_("Saltar"), Return(True), "", 220, 54, 22)
 
 
 label creditos_rol:
@@ -364,7 +364,7 @@ screen continuara():
     use cred_flor_agua
 
     ## Tres puntos, no «…»: Shippori dibuja la elipsis centrada, a la japonesa.
-    text "Continuará...":
+    text _("Continuará..."):
         xalign 0.5
         ypos 80
         font gui.name_text_font
@@ -382,15 +382,15 @@ screen continuara():
         fixed:
             fit_first True
             at cort_entra(0.5, -140)
-            use cort_cinta_vista("Capítulo 1 · Un estudiante perfecto", CORT_ROSA, 1.0)
+            use cort_cinta_vista(_("Capítulo 1 · Un estudiante perfecto"), CORT_ROSA, 1.0)
         fixed:
             fit_first True
             at cort_entra(0.7, -140)
-            use cort_cinta_vista("Capítulo 2 · En desarrollo", CONT_APAGADO)
+            use cort_cinta_vista(_("Capítulo 2 · En desarrollo"), CONT_APAGADO)
         fixed:
             fit_first True
             at cort_entra(0.9, -140)
-            use cort_cinta_vista("Capítulo 3 · En desarrollo", CONT_APAGADO)
+            use cort_cinta_vista(_("Capítulo 3 · En desarrollo"), CONT_APAGADO)
 
     vbox:
         xalign 0.5
@@ -398,19 +398,19 @@ screen continuara():
         spacing 16
         at cort_aparece(1.4, 0.6)
 
-        text "The Fifth Choice sigue en desarrollo: faltan el Capítulo 2 y el Capítulo 3.":
+        text _("The Fifth Choice sigue en desarrollo: faltan el Capítulo 2 y el Capítulo 3."):
             xalign 0.5
             text_align 0.5
             xsize 1400
             size 30
             color "#FFF8FC"
-        text "Si te ha gustado y te apetece, puedes apoyar el desarrollo con una donación voluntaria. No hace falta: no desbloquea ni adelanta nada.":
+        text _("Si te ha gustado y te apetece, puedes apoyar el desarrollo con una donación voluntaria. No hace falta: no desbloquea ni adelanta nada."):
             xalign 0.5
             text_align 0.5
             xsize 1300
             size 26
             color "#CFC6E0"
-        text "El juego seguirá siendo gratis y completo para todos.":
+        text _("El juego seguirá siendo gratis y completo para todos."):
             xalign 0.5
             text_align 0.5
             xsize 1300
@@ -423,8 +423,8 @@ screen continuara():
         spacing 40
         at cort_aparece(1.8, 0.6)
 
-        use cinta_boton("Apoyar el desarrollo", OpenURL(CREDITOS_DONAR), "", 480, 64, 28)
-        use cinta_boton("Volver al menú", Return(), "", 380, 64, 28)
+        use cinta_boton(_("Apoyar el desarrollo"), OpenURL(CREDITOS_DONAR), "", 480, 64, 28)
+        use cinta_boton(_("Volver al menú"), Return(), "", 380, 64, 28)
 
 
 ## Final del Capítulo 1 fuera de un Replay (evento_6 salta aquí tras end_replay).

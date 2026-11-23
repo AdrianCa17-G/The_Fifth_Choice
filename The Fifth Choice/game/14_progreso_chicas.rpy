@@ -441,7 +441,7 @@ screen progreso_chicas(valores, anim=True):
     add cort_rect(5, PROG_LINEA_ARRIBA, linea_color) at tr_linea_a
     add cort_rect(5, PROG_LINEA_ABAJO, linea_color) at tr_linea_b
 
-    text "CAPÍTULO 01":
+    text _("CAPÍTULO 01"):
         at tr_rotulo
         font HUB_FUENTE
         size 40
@@ -449,7 +449,7 @@ screen progreso_chicas(valores, anim=True):
         color "#FFFFFF"
         outlines [(4, "#1B1026CC", 0, 0)]
 
-    text "Cinco nombres":
+    text _("Cinco nombres"):
         at tr_titulo
         font gui.name_text_font
         size 84
@@ -469,7 +469,7 @@ screen progreso_chicas(valores, anim=True):
             xysize (PROG_TARJ_W, PROG_TARJ_H)
             use prog_tarjeta(h, valores[h], L[h], anim)
 
-    text "CLIC PARA CONTINUAR":
+    text _("CLIC PARA CONTINUAR"):
         at tr_aviso
         xpos 1840
         xanchor 1.0

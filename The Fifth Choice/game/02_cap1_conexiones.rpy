@@ -1303,7 +1303,7 @@ label cap1_interconexion_2:
 
         mc_pensamiento "Dormí mejor de lo que esperaba."
 
-        mc_pensamiento "Con [nombre_h] algo se movió esta tarde. Poco, pero se movió."
+        mc_pensamiento "Con [nombre_h!t] algo se movió esta tarde. Poco, pero se movió."
 
         mc_pensamiento "Por algún lado se empieza."
 
@@ -1311,7 +1311,7 @@ label cap1_interconexion_2:
 
         mc_pensamiento "Dormí. No sé si eso es buena o mala señal."
 
-        mc_pensamiento "Con [nombre_h] la tarde pasó sin que nada saliera mal."
+        mc_pensamiento "Con [nombre_h!t] la tarde pasó sin que nada saliera mal."
 
         mc_pensamiento "Tampoco salió nada que valga la pena anotar."
 
@@ -1319,7 +1319,7 @@ label cap1_interconexion_2:
 
         mc_pensamiento "Me costó dormir."
 
-        mc_pensamiento "Repasé lo que le dije a [nombre_h] más veces de las que voy a admitir."
+        mc_pensamiento "Repasé lo que le dije a [nombre_h!t] más veces de las que voy a admitir."
 
         mc_pensamiento "Tenía razón. Eso no hacía que sonara mejor."
 
@@ -1421,7 +1421,7 @@ label cap1_interconexion_2:
 
     narrador "Itsuki ya estaba en su pupitre, con el cuaderno de ciencias abierto."
 
-    narrador "De repente, [nombre_h] se me cruzó en el camino."
+    narrador "De repente, [nombre_h!t] se me cruzó en el camino."
 
     ############################################################################
     ##  Aula · reacción de la hermana visitada
@@ -1442,13 +1442,13 @@ label cap1_interconexion_2:
             show nino neutral at pj_habla(0.5)
             with dissolve
 
-            nino "¿Qué le hiciste a [nombre_h]?"
+            nino "¿Qué le hiciste a [nombre_h!t]?"
 
             nino "No paró de decir tu nombre anoche."
 
             nino "Tu nombre, lo genial que la pasaron, como la hiciste sentir."
 
-            nino "¿Qué es lo que pretendes con [nombre_h]?"
+            nino "¿Qué es lo que pretendes con [nombre_h!t]?"
 
             mc "No es lo que piensas, Nino."
 
@@ -1483,7 +1483,7 @@ label cap1_interconexion_2:
             show nino molesta at pj_habla(0.5)
             with disolucion_lenta
 
-            nino "[nombre_h] es mi hermana." 
+            nino "[nombre_h!t] es mi hermana." 
             
             nino "Si le haces daño, te las vas a ver conmigo."
 
@@ -1509,7 +1509,7 @@ label cap1_interconexion_2:
 
             nino "Oye, tú."
 
-            nino "Anoche [nombre_h] llegó igual que se fue."
+            nino "Anoche [nombre_h!t] llegó igual que se fue."
 
             nino "Ni contenta ni dolida. Como si no hubiera pasado nada."
 
@@ -1548,7 +1548,7 @@ label cap1_interconexion_2:
 
             narrador "Nino no gritó. Eso fue lo primero que me asustó."
 
-            nino "Anoche vi a [nombre_h] muy mal, como si alguien la hubiera humillado."
+            nino "Anoche vi a [nombre_h!t] muy mal, como si alguien la hubiera humillado."
 
             nino "Se encerró en su cuarto con una mirada perdida."
 
@@ -1606,7 +1606,7 @@ label cap1_interconexion_2:
 
     mc_pensamiento "Solo hay un sitio al que se sube por esas escaleras."
 
-    $ ui_escena("beat", "itsuki", "Azotea")
+    $ ui_escena("beat", "itsuki", _("Azotea"))
 
     call beat_Itsuki from _call_beat_Itsuki
 
@@ -1838,15 +1838,15 @@ label cap1_interconexion_3:
 
             else:
 
-                narrador "[nombre_h] me buscó con la mirada desde su sitio y sonrió, apenas."
+                narrador "[nombre_h!t] me buscó con la mirada desde su sitio y sonrió, apenas."
 
         elif rama_hub == "tibia":
 
-            narrador "[nombre_h] me saludó con un gesto corto. Nada más, nada menos."
+            narrador "[nombre_h!t] me saludó con un gesto corto. Nada más, nada menos."
 
         else:
 
-            narrador "[nombre_h] se puso a ordenar su mochila cuando pasé por su lado."
+            narrador "[nombre_h!t] se puso a ordenar su mochila cuando pasé por su lado."
 
     ############################################################################
     ##  Itsuki cierra y empuja al hub 2
@@ -1928,7 +1928,7 @@ label cap1_interconexion_4:
 
         mc_pensamiento "Esta vez no tuve que repasar nada antes de dormirme."
 
-        mc_pensamiento "Con [nombre_h] encontré por dónde entrar."
+        mc_pensamiento "Con [nombre_h!t] encontré por dónde entrar."
 
         mc_pensamiento "No sé si sabré hacerlo otra vez. Con la siguiente, la puerta será otra."
 
@@ -1936,7 +1936,7 @@ label cap1_interconexion_4:
 
         mc_pensamiento "Dormí a ratos."
 
-        mc_pensamiento "Con [nombre_h] no gané nada. Tampoco perdí nada."
+        mc_pensamiento "Con [nombre_h!t] no gané nada. Tampoco perdí nada."
 
         mc_pensamiento "Con ellas, eso ya es un resultado. No sé si bueno."
 
@@ -1944,7 +1944,7 @@ label cap1_interconexion_4:
 
         mc_pensamiento "Otra noche dándole vueltas a lo mismo."
 
-        mc_pensamiento "A [nombre_h] le dije lo que me pareció correcto."
+        mc_pensamiento "A [nombre_h!t] le dije lo que me pareció correcto."
 
         mc_pensamiento "Correcto no es lo mismo que útil. Lo estoy aprendiendo tarde."
 
@@ -2007,7 +2007,7 @@ label cap1_interconexion_4:
 
     narrador "En el aula, algunas ya estaban en sus pupitres y otras entraban de a una."
 
-    narrador "De repente, [nombre_h] se me cruzó en el camino."
+    narrador "De repente, [nombre_h!t] se me cruzó en el camino."
 
     call reaccion_hermana_visitada from _call_reaccion_hermana_visitada_1
 
@@ -2038,7 +2038,7 @@ label cap1_interconexion_4:
             
             yotsuba "¡Es un secreto! ¡Rápido!"
 
-            yotsuba "[nombre_h] se quedó despierta hasta tarde."
+            yotsuba "[nombre_h!t] se quedó despierta hasta tarde."
 
             yotsuba "No estaba estudiando. Estaba como... pensando con una sonrisa."
 
@@ -2072,11 +2072,11 @@ label cap1_interconexion_4:
 
             if rama_de("yotsuba") == "fria":
 
-                yotsuba "¡Tutor! [nombre_h] está igual que siempre."
+                yotsuba "¡Tutor! [nombre_h!t] está igual que siempre."
 
             else:
 
-                yotsuba "¡[mc]! [nombre_h] está igual que siempre."
+                yotsuba "¡[mc]! [nombre_h!t] está igual que siempre."
 
             yotsuba "¡Y eso está bien! ¡A veces igual es lo mejor que se puede pedir!"
 
@@ -2111,7 +2111,7 @@ label cap1_interconexion_4:
 
             narrador "En el aula, delante de todas, era la primera vez que la veía así."
 
-            yotsuba "[nombre_h] no durmió bien. Se le nota en cómo sostiene el lápiz."
+            yotsuba "[nombre_h!t] no durmió bien. Se le nota en cómo sostiene el lápiz."
 
             yotsuba "Yo la conozco, y tal vez lo que le dijiste... le dolió."
 
@@ -2392,7 +2392,7 @@ label cap1_interconexion_4:
     scene bg_negro
     with fade
 
-    $ ui_escena("beat", "nino", "Departamento")
+    $ ui_escena("beat", "nino", _("Departamento"))
 
     call beat_Nino from _call_beat_Nino
 
@@ -3214,7 +3214,7 @@ label cap1_interconexion_6:
 
     if rama_hub == "calida":
 
-        mc_pensamiento "Con [nombre_h], la última tarde salió mejor de lo que esperaba."
+        mc_pensamiento "Con [nombre_h!t], la última tarde salió mejor de lo que esperaba."
 
         mc_pensamiento "Puede que hoy hasta duerma."
 
@@ -3224,7 +3224,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "No sé si dormiré."
 
-        mc_pensamiento "Con [nombre_h], la última tarde no sumó ni restó."
+        mc_pensamiento "Con [nombre_h!t], la última tarde no sumó ni restó."
 
         mc_pensamiento "Y con el tiempo contado, eso ya es una forma de perder."
 
@@ -3234,7 +3234,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Me va a costar dormir."
 
-        mc_pensamiento "Tenía una sola tarde, y la usé para decirle eso a [nombre_h]."
+        mc_pensamiento "Tenía una sola tarde, y la usé para decirle eso a [nombre_h!t]."
 
         mc_pensamiento "Seguía oyendo mi propia voz diciendo lo que dije."
 
@@ -3307,7 +3307,7 @@ label cap1_interconexion_6:
     
     narrador "Y las Nakano, menos."
 
-    narrador "De repente, [nombre_h] se me cruzó en el camino."
+    narrador "De repente, [nombre_h!t] se me cruzó en el camino."
 
     ## Reacción de la hermana del hub 3 (labels reutilizables).
     call reaccion_hermana_visitada from _call_reaccion_hermana_visitada_2
@@ -4088,7 +4088,7 @@ label cap1_interconexion_6:
 
     ## beat_casa lee despido_cap1 para mostrar la duda de Futaro.
        
-    $ ui_escena("beat", None, "Casa de Futaro")
+    $ ui_escena("beat", None, _("Casa de Futaro"))
 
     call beat_casa from _call_beat_casa
 

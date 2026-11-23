@@ -189,8 +189,8 @@ label e6_bloque(h):
 
 label e6_lunes:
 
-    $ ui_escena("beat", None, "Semana de exámenes")
-    $ tiempo_restante = "cinco exámenes"
+    $ ui_escena("beat", None, _("Semana de exámenes"))
+    $ tiempo_restante = _("cinco exámenes")
     $ e6_limpiar()
 
     stop music fadeout 1.0
@@ -588,8 +588,8 @@ label e6_s1_bueno:
 
 label e6_yotsuba_nucleo:
 
-    $ ui_escena("beat", "yotsuba", "Aula · Japonés")
-    $ tiempo_restante = "cinco exámenes"
+    $ ui_escena("beat", "yotsuba", _("Aula · Japonés"))
+    $ tiempo_restante = _("cinco exámenes")
     $ e6_limpiar()
 
     scene cg_yotsuba_examen
@@ -847,8 +847,8 @@ label e6_ichika_nucleo:
 
     play sound audio.sfx_hoja volume 2.0
 
-    $ ui_escena("beat", "ichika", "Aula · Matemáticas")
-    $ tiempo_restante = "cuatro exámenes"
+    $ ui_escena("beat", "ichika", _("Aula · Matemáticas"))
+    $ tiempo_restante = _("cuatro exámenes")
 
     scene cg_ichika_examen
     with fade
@@ -1109,8 +1109,8 @@ label e6_nino_nucleo:
 
     play sound audio.sfx_hoja volume 2.0
 
-    $ ui_escena("beat", "nino", "Aula · Inglés")
-    $ tiempo_restante = "tres exámenes"
+    $ ui_escena("beat", "nino", _("Aula · Inglés"))
+    $ tiempo_restante = _("tres exámenes")
 
     scene cg_nino_examen
     with fade
@@ -1528,8 +1528,8 @@ label e6_itsuki_nucleo:
 
     play sound audio.sfx_hoja volume 2.0
 
-    $ ui_escena("beat", "itsuki", "Aula · Ciencias")
-    $ tiempo_restante = "dos exámenes"
+    $ ui_escena("beat", "itsuki", _("Aula · Ciencias"))
+    $ tiempo_restante = _("dos exámenes")
 
     scene cg_itsuki_examen
     with fade
@@ -1891,8 +1891,8 @@ label e6_miku_nucleo:
 
     play sound audio.sfx_hoja volume 2.0
 
-    $ ui_escena("beat", "miku", "Aula · Sociales")
-    $ tiempo_restante = "un examen"
+    $ ui_escena("beat", "miku", _("Aula · Sociales"))
+    $ tiempo_restante = _("un examen")
 
     scene cg_miku_examen
     with fade
@@ -2185,7 +2185,7 @@ label e6_despues:
 
     narrador "Ellas se quedaron."
 
-    $ ui_escena("beat", None, "Aula · Viernes por la tarde")
+    $ ui_escena("beat", None, _("Aula · Viernes por la tarde"))
 
     scene bg_aula_tarde
     with fade
@@ -4396,7 +4396,7 @@ label e6_cuarto:
         if len(e6_promesas) > 1:
             e6_p2 = e6_promesas[1].capitalize()
 
-    narrador "Y debajo, más chico, dos nombres: [e6_p1] y [e6_p2]."
+    narrador "Y debajo, más chico, dos nombres: [e6_p1!t] y [e6_p2!t]."
 
     mc_pensamiento "Dos promesas hechas sin que nadie me las pidiera."
 
@@ -4681,10 +4681,10 @@ label e6_retrato:
 
                 mc_pensamiento "¿Por cuál empiezo?"
 
-                "[e6_p1]":
+                "[e6_p1!t]":
                     $ e6_domingo_hermana = e6_promesas[0]
 
-                "[e6_p2]":
+                "[e6_p2!t]":
                     $ e6_domingo_hermana = e6_promesas[1]
 
             raiha "¿Pendiente? ¿Con quién?"

@@ -22,56 +22,56 @@
 define CHAT_CORAZON = "{font=DejaVuSans.ttf}{size=+8}♥{/size}{/font}"
 
 define CHAT_DEBUT = [
-    ("aviso", "Yotsuba creó el grupo «¡Equipo Quintillizas + Tutor!»"),
-    ("aviso", "Yotsuba te añadió"),
-    ("yotsuba", "¡¡¡Buenos días, equipo!!!"),
-    ("yotsuba", "¡Las cinco y nuestro sexto integrante! ¡¡Equipo completo!!"),
-    ("yotsuba", "¡Todo lo de estudiar, aquí! ¡¡Sin excepciones!!"),
+    ("aviso", _("Yotsuba creó el grupo «¡Equipo Quintillizas + Tutor!»")),
+    ("aviso", _("Yotsuba te añadió")),
+    ("yotsuba", _("¡¡¡Buenos días, equipo!!!")),
+    ("yotsuba", _("¡Las cinco y nuestro sexto integrante! ¡¡Equipo completo!!")),
+    ("yotsuba", _("¡Todo lo de estudiar, aquí! ¡¡Sin excepciones!!")),
     ("sale", "nino"),
-    ("yotsuba", "¿¿Nino??"),
+    ("yotsuba", _("¿¿Nino??")),
 ]
 
 ## La semana hasta el sábado: Nino se sale tres veces y Yotsuba la mete tres veces
 ## (la primera salida es la del debut; la primera vuelta, la del beat de Nino).
 define CHAT_SEMANA = CHAT_DEBUT + [
     ("vuelve", "nino"),
-    ("yotsuba", "¡¡Bienvenida de vuelta!!"),
+    ("yotsuba", _("¡¡Bienvenida de vuelta!!")),
     ("sale", "nino"),
     ("vuelve", "nino"),
-    ("yotsuba", "¡Ese botón no es para eso!"),
+    ("yotsuba", _("¡Ese botón no es para eso!")),
     ("sale", "nino"),
     ("vuelve", "nino"),
-    ("yotsuba", "¡Ya sé que lo silenciaste! ¡¡Igual cuenta!!"),
+    ("yotsuba", _("¡Ya sé que lo silenciaste! ¡¡Igual cuenta!!")),
 ]
 
 ## Sábado: el mensaje del MC (mismos textos que el menú) y la respuesta de Yotsuba.
 define CHAT_SABADO_OPCION = [
-    [("mc", "Duerman bien. Recuerden que no es el fin del mundo."),
-     ("yotsuba", "¡¡Ella ya está lista!!", "almohada")],
-    [("mc", "Confío en las cinco. Pase lo que pase el lunes."),
-     ("yotsuba", "¡¡¡¡¡GRACIAS!!!!!!")],
-    [("mc", "Si algo sale mal, la culpa es mía. Para eso me pagan."),
-     ("yotsuba", "¡La culpa no se paga, se comparte!")],
+    [("mc", _("Duerman bien. Recuerden que no es el fin del mundo.")),
+     ("yotsuba", _("¡¡Ella ya está lista!!"), "almohada")],
+    [("mc", _("Confío en las cinco. Pase lo que pase el lunes.")),
+     ("yotsuba", _("¡¡¡¡¡GRACIAS!!!!!!"))],
+    [("mc", _("Si algo sale mal, la culpa es mía. Para eso me pagan.")),
+     ("yotsuba", _("¡La culpa no se paga, se comparte!"))],
 ]
 
 ## Sábado: las demás, según clima_cap1. Cualquier otro clima: nadie más contesta.
 define CHAT_SABADO_CLIMA = {
     "buena": [
         ("ichika", CHAT_CORAZON),
-        ("ichika", "jajaja"),
-        ("nino", "Qué dramático."),
+        ("ichika", _("jajaja")),
+        ("nino", _("Qué dramático.")),
         ("pausa", 1.8),
-        ("nino", "Descansen."),
+        ("nino", _("Descansen.")),
         ("miku", "..."),
-        ("miku", "Gracias."),
-        ("itsuki", "Recibido."),
+        ("miku", _("Gracias.")),
+        ("itsuki", _("Recibido.")),
     ],
     "mixta": [
         ("ichika", CHAT_CORAZON),
         ("pausa", 0.9),
         ("borra", "ichika"),
-        ("ichika", "jajaja"),
-        ("nino", "Qué dramático."),
+        ("ichika", _("jajaja")),
+        ("nino", _("Qué dramático.")),
     ],
 }
 
@@ -90,19 +90,19 @@ init python:
         """Noche del Evento 6. El primero (la foto de la tarde) ya estaba: desde = 1.
         Miku pierde el «...» solo en la cálida (REVISION_MIKU_CAP1, P4)."""
         if miku_calida:
-            miku = "Sociales: cien."
+            miku = _("Sociales: cien.")
         else:
-            miku = "...Sociales: cien."
+            miku = _("...Sociales: cien.")
         return [
-            ("yotsuba", "¡¡La foto de hoy!! ¡¡La próxima, con fotógrafo incluido!!", "grupo"),
-            ("yotsuba", "¡¡¡CIEN EN JAPONÉS!!! ¡¡¡MIREN!!!", "boletin"),
-            ("yotsuba", "¡¡Manden el suyo!! ¡¡Sin trampas!!"),
-            ("ichika", "Cien en matemáticas. Pueden aplaudir. Con moderación.", "boletin"),
+            ("yotsuba", _("¡¡La foto de hoy!! ¡¡La próxima, con fotógrafo incluido!!"), "grupo"),
+            ("yotsuba", _("¡¡¡CIEN EN JAPONÉS!!! ¡¡¡MIREN!!!"), "boletin"),
+            ("yotsuba", _("¡¡Manden el suyo!! ¡¡Sin trampas!!")),
+            ("ichika", _("Cien en matemáticas. Pueden aplaudir. Con moderación."), "boletin"),
             ("miku", miku, "boletin"),
-            ("nino", "Que conste que no me salí.", "boletin"),
-            ("itsuki", "Ciencias: cien. Es un dato, no una celebración.", "boletin"),
-            ("yotsuba", "¡¡¡ES UNA CELEBRACIÓN!!!"),
-            ("itsuki", "Está bien. Una celebración pequeña."),
+            ("nino", _("Que conste que no me salí."), "boletin"),
+            ("itsuki", _("Ciencias: cien. Es un dato, no una celebración."), "boletin"),
+            ("yotsuba", _("¡¡¡ES UNA CELEBRACIÓN!!!")),
+            ("itsuki", _("Está bien. Una celebración pequeña.")),
         ]
 
     def chat_nombre(quien):
@@ -121,11 +121,11 @@ init python:
                 continue
             if tipo == "sale":
                 fuera.add(item[1])
-                filas.append(("aviso", chat_nombre(item[1]) + " salió del grupo"))
+                filas.append(("aviso", __("{} salió del grupo").format(__(chat_nombre(item[1])))))
                 continue
             if tipo == "vuelve":
                 fuera.discard(item[1])
-                filas.append(("aviso", "Yotsuba añadió a " + chat_nombre(item[1])))
+                filas.append(("aviso", __("Yotsuba añadió a {}").format(__(chat_nombre(item[1])))))
                 continue
             if tipo == "aviso":
                 filas.append(("aviso", item[1]))
@@ -133,7 +133,7 @@ init python:
             if tipo == "borra":
                 for fila in reversed(filas):
                     if fila[0] == item[1]:
-                        fila[1][-1] = ("Se eliminó este mensaje", "borrado")
+                        fila[1][-1] = (_("Se eliminó este mensaje"), "borrado")
                         break
                 continue
             foto = None
@@ -447,7 +447,7 @@ screen chat_grupo():
                 xpos 92
                 yalign 0.5
                 spacing 6
-                text "¡Equipo Quintillizas + Tutor!":
+                text _("¡Equipo Quintillizas + Tutor!"):
                     font gui.name_text_font
                     size 24
                     color "#FFF8FC"
@@ -460,7 +460,7 @@ screen chat_grupo():
                             add Transform("ui/flor.png", matrixcolor=TintMatrix(PETALO_COLOR[h]), xysize=(22, 22)) yalign 0.5
                     use chat_avatar("mc", 22)
                     null width 8
-                    text (str(miembros) + " miembros"):
+                    text __("{} miembros").format(miembros):
                         yalign 0.5
                         size 16
                         color "#CFC6E0"
@@ -503,7 +503,7 @@ screen chat_grupo():
             ypos (CHAT_H - CHAT_BORDE - CHAT_BARRA)
             xysize (CHAT_LISTA_W, CHAT_BARRA - 12)
             add chat_redondo(ui_mezclar(CORT_FONDO, "#FFFFFF", 0.08), 24) xysize (CHAT_LISTA_W - 64, CHAT_BARRA - 12)
-            text "Mensaje":
+            text _("Mensaje"):
                 xpos 22
                 yalign 0.5
                 size 19

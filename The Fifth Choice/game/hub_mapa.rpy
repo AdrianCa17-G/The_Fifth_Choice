@@ -155,11 +155,11 @@ init python:
     
     def hub_subtitulo(n):
         if n == 1:
-            return "Tres tardes por delante. Empieza por quien más ganas tengas de ver."
+            return _("Tres tardes por delante. Empieza por quien más ganas tengas de ver.")
         elif n == 2:
-            return "Quedan dos tardes. Que cada una sea especial a su manera."
+            return _("Quedan dos tardes. Que cada una sea especial a su manera.")
         else:
-            return "La última tarde. Que sea una que quieras recordar."
+            return _("La última tarde. Que sea una que quieras recordar.")
 
     def hub_mask(i, borde=None):
         ancho = int((hub_slot_w(i) - HUB_GAP) * math.cos(math.radians(HUB_ANG)))
@@ -347,27 +347,27 @@ image ph_bg_pista      = "bg/cap1_hubs/pista_atletismo.webp"
 # ------------------------------------------------------------
 init 2 python:
     HUB_DESTINOS = [
-        dict(hermana="ichika",  nombre="Ichika",  lugar="Sala de ensayo",
+        dict(hermana="ichika",  nombre=_("Ichika"),  lugar=_("Sala de ensayo"),
              fondo="ph_bg_ensayo",
              sprite="hubs/ichika_hub.png",
              color="#FFB7C5", escala=1.00, xoff=0, yoff=0),
 
-        dict(hermana="nino",    nombre="Nino",    lugar="Centro comercial",
+        dict(hermana="nino",    nombre=_("Nino"),    lugar=_("Centro comercial"),
              fondo="ph_bg_comercial",
              sprite="hubs/nino_hub.png",
              color="#C39BD3", escala=1.00, xoff=0, yoff=0),
 
-        dict(hermana="miku",    nombre="Miku",    lugar="Biblioteca",
+        dict(hermana="miku",    nombre=_("Miku"),    lugar=_("Biblioteca"),
              fondo="ph_bg_biblioteca",
              sprite="hubs/miku_hub.png",
              color="#5DADE2", escala=1.00, xoff=0, yoff=0),
 
-        dict(hermana="yotsuba", nombre="Yotsuba", lugar="Pista de atletismo",
+        dict(hermana="yotsuba", nombre=_("Yotsuba"), lugar=_("Pista de atletismo"),
              fondo="ph_bg_pista",
              sprite="hubs/yotsuba_hub.png",
              color="#58D68D", escala=1.00, xoff=0, yoff=0, coronilla=124),
 
-        dict(hermana="itsuki",  nombre="Itsuki",  lugar="Aula vacía",
+        dict(hermana="itsuki",  nombre=_("Itsuki"),  lugar=_("Aula vacía"),
              fondo="ph_bg_aula",
              sprite="hubs/itsuki_hub.png",
              color=C_ITSUKI, escala=1.00, xoff=0, yoff=0, coronilla=90),
@@ -415,7 +415,7 @@ screen mapa_hub(hub_actual=1):
         spacing 6
         at hub_titulo_entrada
 
-        text "¿Con cuál quintilliza pasarás esta tarde?":
+        text _("¿Con cuál quintilliza pasarás esta tarde?"):
             font HUB_FUENTE
             size 54 color "#ffffff" xalign 0.5
             outlines [(3, "#000000cc", 0, 0), (0, "#00000080", 0, 4)]
@@ -428,7 +428,7 @@ screen mapa_hub(hub_actual=1):
         use hub_indicador_tarde(hub_actual)
 
         if renpy.variant("touch") and hub_toque is not None:
-            text "Vuelve a tocar para confirmar":
+            text _("Vuelve a tocar para confirmar"):
                 font HUB_FUENTE_FINA
                 size 23 color "#ffffff" xalign 0.5
                 outlines [(2, "#000000cc", 0, 0), (0, "#00000080", 0, 2)]
@@ -476,7 +476,7 @@ screen hub_indicador_tarde(n, marca=None, marca_color="#FFFFFF", marca_pico=1.3)
                     else:
                         add "ui/flor.png" matrixcolor TintMatrix(color) alpha alfa zoom zoom align (0.5, 0.5)
 
-        text "TARDE [n] DE 3":
+        text _("TARDE [n] DE 3"):
             font HUD_FUENTE
             size 18 kerning 4 color "#FFFFFF" yalign 0.5
             outlines [(2, "#000000aa", 0, 0)]
@@ -583,7 +583,7 @@ screen hub_sello(hermana, color, x, y, anim=hub_sello_estado):
                 align (0.5, 0.5)
 
         ## la etiqueta sigue la diagonal de la banda
-        text "VISITADA":
+        text _("VISITADA"):
             font HUD_FUENTE
             size 16 kerning 4 color hub_claro(color, 0.55)
             xalign 0.5 yalign 1.0

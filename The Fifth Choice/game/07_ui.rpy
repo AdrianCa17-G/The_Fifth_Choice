@@ -19,27 +19,27 @@ init -5 python:
     ## Fondo -> nombre de lugar. "" = ignorar ese fondo.
     BG_LUGAR = {
 
-        "bg_cuarto_mc": "Habitación de [nombre_jugador]",
-        "bg_comedor": "Casa de los Uesugi",
-        "bg_escuela": "Instituto Asaba",
-        "bg_aula": "Aula · Día",
-        "bg_aula_tarde": "Aula Vacía",
-        "bg_aula_anochecer": "Aula Vacía · Anochecer",
-        "bg_azotea": "Azotea · Día",
-        "bg_azotea_tarde": "Azotea · Atardecer",
-        "bg_edificio": "Edificio de las Nakano",
-        "bg_entrada_edificio": "Entrada · Edificio de las Nakano",
-        "bg_departamento": "Departamento Nakano",
-        "bg_departamento_anochecer": "Departamento Nakano · Anochecer",
-        "bg_cocina": "Cocina de las Nakano",
-        "bg_sala_ensayo": "Sala de ensayo",
-        "bg_sala_ensayo_anochecer": "Sala de ensayo · Anochecer",
-        "bg_centro_comercial": "Centro comercial",
-        "bg_centro_comercial_anochecer": "Centro comercial · Anochecer",
-        "bg_biblioteca": "Biblioteca",
-        "bg_biblioteca_anochecer": "Biblioteca · Anochecer",
-        "bg_pista_atletismo": "Pista de atletismo",
-        "bg_pista_atletismo_anochecer": "Pista de atletismo · Anochecer",
+        "bg_cuarto_mc": _("Habitación de [nombre_jugador]"),
+        "bg_comedor": _("Casa de los Uesugi"),
+        "bg_escuela": _("Instituto Asaba"),
+        "bg_aula": _("Aula · Día"),
+        "bg_aula_tarde": _("Aula Vacía"),
+        "bg_aula_anochecer": _("Aula Vacía · Anochecer"),
+        "bg_azotea": _("Azotea · Día"),
+        "bg_azotea_tarde": _("Azotea · Atardecer"),
+        "bg_edificio": _("Edificio de las Nakano"),
+        "bg_entrada_edificio": _("Entrada · Edificio de las Nakano"),
+        "bg_departamento": _("Departamento Nakano"),
+        "bg_departamento_anochecer": _("Departamento Nakano · Anochecer"),
+        "bg_cocina": _("Cocina de las Nakano"),
+        "bg_sala_ensayo": _("Sala de ensayo"),
+        "bg_sala_ensayo_anochecer": _("Sala de ensayo · Anochecer"),
+        "bg_centro_comercial": _("Centro comercial"),
+        "bg_centro_comercial_anochecer": _("Centro comercial · Anochecer"),
+        "bg_biblioteca": _("Biblioteca"),
+        "bg_biblioteca_anochecer": _("Biblioteca · Anochecer"),
+        "bg_pista_atletismo": _("Pista de atletismo"),
+        "bg_pista_atletismo_anochecer": _("Pista de atletismo · Anochecer"),
         "bg_negro": "",
     }
 
@@ -498,7 +498,7 @@ screen choice_peso(items):
                 style "placa_centro"
                 background Transform(Frame("ui/placa.png", 40, 0, 40, 0),
                                      matrixcolor=TintMatrix(placa_color))
-                text "DECISIÓN" style "say_label" color tinta
+                text _("DECISIÓN") style "say_label" color tinta
 
             vbox:
                 xalign 0.5
@@ -587,7 +587,7 @@ screen choice_peso(items):
                 xanchor 0.5
                 ypos 182
 
-            text "HORA DE DECIDIR":
+            text _("HORA DE DECIDIR"):
                 at dec_texto(DEC_RITMOS["texto"][0], DEC_RITMOS["texto"][1])
                 xpos 500
                 xanchor 0.5
@@ -625,11 +625,11 @@ transform icono_hover:
 define HUD_FUENTE = gui.name_text_font
 
 define HUB_LUGAR = {
-    "ichika":  "Sala de ensayo",
-    "nino":    "Centro comercial",
-    "miku":    "Biblioteca",
-    "yotsuba": "Pista de atletismo",
-    "itsuki":  "Aula vacía",
+    "ichika":  _("Sala de ensayo"),
+    "nino":    _("Centro comercial"),
+    "miku":    _("Biblioteca"),
+    "yotsuba": _("Pista de atletismo"),
+    "itsuki":  _("Aula vacía"),
 }
 
 default ui_modo = "normal"
@@ -683,7 +683,7 @@ screen hud_cinta_vista(lugar, etiqueta, clave, cinta, tinta, anim, deco=True):
                 spacing 0
 
                 if etiqueta != "":
-                    text etiqueta font HUD_FUENTE size 14 kerning 4 color tinta_suave substitute False
+                    text __(etiqueta) font HUD_FUENTE size 14 kerning 4 color tinta_suave substitute False
 
                 text lugar_mayus font HUD_FUENTE size 27 kerning 2 color tinta substitute False
 
@@ -731,11 +731,11 @@ screen marco_juego():
 
             $ etiqueta = ""
             if ui_modo == "hub":
-                $ etiqueta = "ENCUENTRO"
+                $ etiqueta = _("ENCUENTRO")
             elif ui_modo == "beat":
-                $ etiqueta = "ESCENA CLAVE"
+                $ etiqueta = _("ESCENA CLAVE")
 
             use hud_cinta_vista(ui_lugar, etiqueta, clave, cinta, tinta_hud, hud_cinta_entrada)
 
             if ui_modo != "normal":
-                text ("Quedan " + tiempo_restante) xpos 44 ypos 94 size 22 color "#FFFFFF" outlines [(3, "#1B102699", 0, 0)]
+                text _("Quedan [tiempo_restante!t]") xpos 44 ypos 94 size 22 color "#FFFFFF" outlines [(3, "#1B102699", 0, 0)]

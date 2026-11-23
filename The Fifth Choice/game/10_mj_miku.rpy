@@ -411,7 +411,7 @@ init python:
                 if pct < 1:
                     pct = 1
                 self.regen_t = 1.4
-                self.regen_txt = "Combo: +" + str(pct) + " % de concentración"
+                self.regen_txt = __("Combo: +{} % de concentración").format(pct)
                 self.globo.decir("racha", True)
 
         def slot_actual(self):
@@ -615,17 +615,17 @@ init python:
             if self.estado == "listo":
                 return ("", "")
             if self.estado == "fin" and self.resultado["resultado"] == "ganado":
-                return ("", "Compás completo.")
+                return ("", _("Compás completo."))
             if self.t_cambio < 0.0:
-                return ("FASE 2", "Solo el reloj")
+                return (_("FASE 2"), _("Solo el reloj"))
             c = self.reloj()
             if c < self.t_cambio:
                 if MIKU_USAR_TEMA:
-                    return ("FASE 1", "Con los audífonos")
-                return ("FASE 1", "Con el metrónomo")
+                    return (_("FASE 1"), _("Con los audífonos"))
+                return (_("FASE 1"), _("Con el metrónomo"))
             if c < self.t_f2:
-                return ("", "Los audífonos se apagan.")
-            return ("FASE 2", "Solo el reloj")
+                return ("", _("Los audífonos se apagan."))
+            return (_("FASE 2"), _("Solo el reloj"))
 
         def en_hueco(self):
             """Entre el final de la fase 1 y la primera nota de la fase 2."""
@@ -653,7 +653,7 @@ init python:
 
         def rotulo_tecla(self, i):
             if self.en_fase2():
-                return "TOCA"
+                return _("TOCA")
             return M3_TECLAS[i]
 
         def cuenta(self):
@@ -678,8 +678,8 @@ init python:
             return 0.35 + 0.65 * (1.0 - frac)
 
         def feedback(self):
-            tabla = {"perfecto": "Perfecto", "bien": "Bien", "fallo": "Fallo",
-                     "pronto": "Pronto", "tarde": "Tarde", "suelta": "¡Sin nota!"}
+            tabla = {"perfecto": _("Perfecto"), "bien": _("Bien"), "fallo": _("Fallo"),
+                     "pronto": _("Pronto"), "tarde": _("Tarde"), "suelta": _("¡Sin nota!")}
             return tabla.get(self.fb, "")
 
         def feedback_color(self):
@@ -711,8 +711,8 @@ init python:
             if self.estado != "juego" or not self.en_fase2():
                 return ""
             if self.guia == "ninguna" and (self.cursor - self.n1) >= M3_GUIA_INICIAL:
-                return "Las notas se desvanecen: guíate por el patrón del compás."
-            return "Vale cualquier tecla. Cuenta los silencios."
+                return _("Las notas se desvanecen: guíate por el patrón del compás.")
+            return _("Vale cualquier tecla. Cuenta los silencios.")
 
         def visibles(self):
             """Notas a dibujar: (x, y, ancho, alto, alfa, color)."""
@@ -753,7 +753,7 @@ init python:
                 i += 1
             return res
 
-        mj_registrar("m3", "mj_m3", "El compás", True)
+        mj_registrar("m3", "mj_m3", _("El compás"), True)
 
 
 ################################################################################
@@ -821,7 +821,7 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     add "bg_biblioteca" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.cursor, vivo.total, vivo.concentracion(), vivo.fallos_max, "NOTAS", recurso_txt="CONCENTRACIÓN", recurso_unidad="", chibi=vivo.expresion(), globo=vivo.globo, anim=vivo.anim(), aviso=aviso, aviso_tipo="bien"):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.cursor, vivo.total, vivo.concentracion(), vivo.fallos_max, _("NOTAS"), recurso_txt=_("CONCENTRACIÓN"), recurso_unidad="", chibi=vivo.expresion(), globo=vivo.globo, anim=vivo.anim(), aviso=aviso, aviso_tipo="bien"):
 
         if not listo:
 
@@ -839,7 +839,7 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xpos M3_DER_X
                     ypos 128
                     spacing 8
-                    text "PATRÓN DEL COMPÁS" style "mj_etiqueta"
+                    text _("PATRÓN DEL COMPÁS") style "mj_etiqueta"
                     hbox:
                         spacing 4
                         for k in range(8):
@@ -903,7 +903,7 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                     unhovered Function(vivo.set_sobre, None)
                     background Solid(fondo_pad)
                     hover_background Solid(color + "99")
-                    text "TOCA  ·  cualquier tecla o Espacio":
+                    text _("TOCA  ·  cualquier tecla o Espacio"):
                         style "mj_cifra"
                         xalign 0.5
                         yalign 0.5
@@ -935,7 +935,7 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                 xanchor 0.5
                 ypos 300
                 spacing 0
-                text "PERFECTOS" style "mj_etiqueta" xalign 0.5
+                text _("PERFECTOS") style "mj_etiqueta" xalign 0.5
                 text str(vivo.perfectos) style "mj_cifra" xalign 0.5
             if vivo.racha >= 2:
                 vbox:
@@ -943,10 +943,10 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xanchor 0.5
                     ypos 420
                     spacing 0
-                    text "COMBO" style "mj_etiqueta" xalign 0.5
+                    text _("COMBO") style "mj_etiqueta" xalign 0.5
                     text str(vivo.racha) style "mj_cifra_grande" size tam_combo color claro xalign 0.5
                     if vivo.combo_cada > 0 and vivo.regen_combo > 0.0:
-                        text ("+" + str(pct_combo) + " % en " + str(falta_combo)) style "mj_nota" color "#9BFFB8" xalign 0.5
+                        text __("+{} % en {}").format(pct_combo, falta_combo) style "mj_nota" color "#9BFFB8" xalign 0.5
 
         ## --- Pantalla de inicio ---
         if listo:
@@ -964,18 +964,18 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xfill True
                     spacing 14
 
-                    text "EL COMPÁS" style "mj_titulo" xalign 0.5
+                    text _("EL COMPÁS") style "mj_titulo" xalign 0.5
 
-                    text ("Pulsa el carril cuando la nota llegue a la línea. Teclas: " + teclas + ", o toca los carriles (" + str(nc) + " carriles). Pulsar donde no hay nota te cuesta concentración. Cuando se apaguen los audífonos, sigue el reloj: vale cualquier tecla (o Espacio) y hay silencios; arriba a la derecha verás el patrón. Cada " + str(vivo.combo_cada) + " aciertos seguidos recuperas " + str(pct_combo) + " % de concentración."):
+                    text __("Pulsa el carril cuando la nota llegue a la línea. Teclas: {}, o toca los carriles ({} carriles). Pulsar donde no hay nota te cuesta concentración. Cuando se apaguen los audífonos, sigue el reloj: vale cualquier tecla (o Espacio) y hay silencios; arriba a la derecha verás el patrón. Cada {} aciertos seguidos recuperas {} % de concentración.").format(teclas, nc, vivo.combo_cada, pct_combo):
                         style "mj_cuerpo"
                         xalign 0.5
                         text_align 0.5
 
                     add Solid("#FFFFFF33", xsize=1080, ysize=2) xalign 0.5
 
-                    text "AJUSTE DE SINCRONÍA DE AUDIO" style "mj_etiqueta" color claro xalign 0.5
+                    text _("AJUSTE DE SINCRONÍA DE AUDIO") style "mj_etiqueta" color claro xalign 0.5
 
-                    text "Algunos equipos (sobre todo con audífonos Bluetooth) reproducen el sonido con un pequeño retraso. Si el juego te marca «Tarde» aunque pulses con la música, sube el valor con el botón +. Si te marca «Pronto», bájalo con −. Si todo se siente bien, no toques nada: se guarda para la próxima vez.":
+                    text _("Algunos equipos (sobre todo con audífonos Bluetooth) reproducen el sonido con un pequeño retraso. Si el juego te marca «Tarde» aunque pulses con la música, sube el valor con el botón +. Si te marca «Pronto», bájalo con −. Si todo se siente bien, no toques nada: se guarda para la próxima vez."):
                         style "mj_nota"
                         xalign 0.5
                         text_align 0.5
@@ -990,16 +990,16 @@ screen mj_m3(hermana, params, inicio, intento, fallos, nivel, titulo):
                             text_align 0.5
                             yalign 0.5
                         use cinta_boton("+10 ms", Function(vivo.ajustar_latencia, 10), hermana, peq[0], peq[1], peq[2])
-                        use cinta_boton("Restablecer", Function(vivo.fijar_latencia, 50), hermana, peq[0], peq[1], peq[2])
+                        use cinta_boton(_("Restablecer"), Function(vivo.fijar_latencia, 50), hermana, peq[0], peq[1], peq[2])
 
-                    text "Pulsa los botones para ajustar. Valor por defecto: 50 ms." style "mj_nota" xalign 0.5
+                    text _("Pulsa los botones para ajustar. Valor por defecto: 50 ms.") style "mj_nota" xalign 0.5
 
                     null height 4
 
                     fixed:
                         xalign 0.5
                         xysize (boton[0], boton[1])
-                        use cinta_boton("Empezar", Function(vivo.empezar), hermana, boton[0], boton[1], boton[2])
+                        use cinta_boton(_("Empezar"), Function(vivo.empezar), hermana, boton[0], boton[1], boton[2])
 
     ## Receptores: la nota se cuenta al PULSAR (ratón o dedo), igual que las
     ## teclas A S D F. Va al final para procesarse antes que los botones;

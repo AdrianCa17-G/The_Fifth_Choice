@@ -271,7 +271,7 @@ label hub_Itsuki:
 
     ## Menu de Itsuki
  
-    $ decision_peso("itsuki", "¿Qué le dirás a Itsuki?", "Tres intentos, el mismo error. No te va a pedir ayuda.")
+    $ decision_peso("itsuki", _("¿Qué le dirás a Itsuki?"), _("Tres intentos, el mismo error. No te va a pedir ayuda."))
 
     menu:
 
@@ -515,7 +515,7 @@ label itsuki_m5:
 
     mc_pensamiento "Una de las cinco. Y esta no pidió nada."
 
-    mc_pensamiento "Quedan [tiempo_restante]."
+    mc_pensamiento "Quedan [tiempo_restante!t]."
 
     if itsuki_rama_cap1 == "calida":
 

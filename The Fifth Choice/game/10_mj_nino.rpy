@@ -41,57 +41,57 @@ define N1_RACHA_N = 3
 define N1_AVISO_S = 1.2
 
 define MJ_N1_ITEMS = {
-    "honey": "miel",
-    "maple syrup": "sirope de arce",
-    "golden syrup": "sirope dorado",
-    "corn syrup": "jarabe de maíz",
-    "chamomile tea": "té de manzanilla",
-    "green tea": "té verde",
-    "matcha powder": "matcha en polvo",
-    "jasmine tea": "té de jazmín",
-    "black tea": "té negro",
-    "instant oats": "avena instantánea",
-    "rolled oats": "copos de avena",
-    "oat bran": "salvado de avena",
-    "oat flour": "harina de avena",
-    "energy bars": "barritas energéticas",
-    "granola bars": "barritas de granola",
-    "protein bars": "barritas de proteína",
-    "cereal bars": "barritas de cereales",
-    "peanut butter": "mantequilla de cacahuete",
-    "unsalted butter": "mantequilla sin sal",
-    "salted butter": "mantequilla con sal",
-    "clarified butter": "mantequilla clarificada",
-    "whole milk": "leche entera",
-    "skimmed milk": "leche desnatada",
-    "evaporated milk": "leche evaporada",
-    "condensed milk": "leche condensada",
-    "sea salt": "sal marina",
-    "table salt": "sal de mesa",
-    "rock salt": "sal gruesa",
-    "pink salt": "sal rosa",
-    "sesame seeds": "semillas de sésamo",
-    "poppy seeds": "semillas de amapola",
-    "chia seeds": "semillas de chía",
-    "flax seeds": "semillas de lino",
-    "bread flour": "harina de fuerza",
-    "plain flour": "harina común",
-    "self-raising flour": "harina con levadura",
-    "cake flour": "harina para repostería",
-    "whole wheat flour": "harina integral",
-    "vanilla extract": "extracto de vainilla",
-    "vanilla essence": "esencia de vainilla",
-    "vanilla pods": "vainas de vainilla",
-    "vanilla paste": "pasta de vainilla",
-    "confectioners' sugar": "azúcar glas",
-    "caster sugar": "azúcar extrafino",
-    "brown sugar": "azúcar moreno",
-    "granulated sugar": "azúcar granulado",
-    "vanilla sugar": "azúcar avainillado",
-    "baking powder": "levadura química",
-    "baking soda": "bicarbonato",
-    "instant yeast": "levadura instantánea",
-    "cream of tartar": "crémor tártaro",
+    "honey": _("miel"),
+    "maple syrup": _("sirope de arce"),
+    "golden syrup": _("sirope dorado"),
+    "corn syrup": _("jarabe de maíz"),
+    "chamomile tea": _("té de manzanilla"),
+    "green tea": _("té verde"),
+    "matcha powder": _("matcha en polvo"),
+    "jasmine tea": _("té de jazmín"),
+    "black tea": _("té negro"),
+    "instant oats": _("avena instantánea"),
+    "rolled oats": _("copos de avena"),
+    "oat bran": _("salvado de avena"),
+    "oat flour": _("harina de avena"),
+    "energy bars": _("barritas energéticas"),
+    "granola bars": _("barritas de granola"),
+    "protein bars": _("barritas de proteína"),
+    "cereal bars": _("barritas de cereales"),
+    "peanut butter": _("mantequilla de cacahuete"),
+    "unsalted butter": _("mantequilla sin sal"),
+    "salted butter": _("mantequilla con sal"),
+    "clarified butter": _("mantequilla clarificada"),
+    "whole milk": _("leche entera"),
+    "skimmed milk": _("leche desnatada"),
+    "evaporated milk": _("leche evaporada"),
+    "condensed milk": _("leche condensada"),
+    "sea salt": _("sal marina"),
+    "table salt": _("sal de mesa"),
+    "rock salt": _("sal gruesa"),
+    "pink salt": _("sal rosa"),
+    "sesame seeds": _("semillas de sésamo"),
+    "poppy seeds": _("semillas de amapola"),
+    "chia seeds": _("semillas de chía"),
+    "flax seeds": _("semillas de lino"),
+    "bread flour": _("harina de fuerza"),
+    "plain flour": _("harina común"),
+    "self-raising flour": _("harina con levadura"),
+    "cake flour": _("harina para repostería"),
+    "whole wheat flour": _("harina integral"),
+    "vanilla extract": _("extracto de vainilla"),
+    "vanilla essence": _("esencia de vainilla"),
+    "vanilla pods": _("vainas de vainilla"),
+    "vanilla paste": _("pasta de vainilla"),
+    "confectioners' sugar": _("azúcar glas"),
+    "caster sugar": _("azúcar extrafino"),
+    "brown sugar": _("azúcar moreno"),
+    "granulated sugar": _("azúcar granulado"),
+    "vanilla sugar": _("azúcar avainillado"),
+    "baking powder": _("levadura química"),
+    "baking soda": _("bicarbonato"),
+    "instant yeast": _("levadura instantánea"),
+    "cream of tartar": _("crémor tártaro"),
 }
 
 ## Grupos de productos que se confunden entre sí. Los distractores de un
@@ -122,9 +122,9 @@ define MJ_N1_LISTAS = [
 
 ## (clave, título, subtítulo)
 define MJ_N1_SEXTO = [
-    ("taza",   "Escribir «una taza más»", "Se compra igual aunque nadie la pida."),
-    ("blanco", "Dejarlo en blanco",       "Sin tachar."),
-    ("cuando", "Anotar «cuando se sepa»", "Con el resultado en la mano."),
+    ("taza",   _("Escribir «una taza más»"), _("Se compra igual aunque nadie la pida.")),
+    ("blanco", _("Dejarlo en blanco"),       _("Sin tachar.")),
+    ("cuando", _("Anotar «cuando se sepa»"), _("Con el resultado en la mano.")),
 ]
 
 init python:
@@ -175,21 +175,21 @@ init python:
     def n1_reglas(p):
         """Reglas de la pantalla de explicación, según los parámetros vigentes."""
         reglas = []
-        reglas.append(("LEE LA LISTA", "Cada pedido está en inglés y las cajas se parecen mucho. Busca la que dice EXACTAMENTE lo mismo."))
+        reglas.append((_("LEE LA LISTA"), _("Cada pedido está en inglés y las cajas se parecen mucho. Busca la que dice EXACTAMENTE lo mismo.")))
 
         partes = []
         if p["deriva"] > 0:
-            partes.append("Los estantes se deslizan como una cinta.")
+            partes.append(__("Los estantes se deslizan como una cinta."))
         if p["mezclado"]:
-            partes.append("Las cajas están revueltas entre estantes.")
+            partes.append(__("Las cajas están revueltas entre estantes."))
         if len(partes) == 0:
-            partes.append("Cada estante guarda productos parecidos.")
+            partes.append(__("Cada estante guarda productos parecidos."))
         if p["memoria"] < 99.0:
-            partes.append("La lista se esconde a los " + n1_seg(p["memoria"]) + " s: memorízala o mírala de nuevo (−" + n1_seg(p["mirar_costo"]) + " s).")
-        reglas.append(("BUSCA RÁPIDO", " ".join(partes)))
+            partes.append(__("La lista se esconde a los {} s: memorízala o mírala de nuevo (−{} s).").format(n1_seg(p["memoria"]), n1_seg(p["mirar_costo"])))
+        reglas.append((_("BUSCA RÁPIDO"), " ".join(partes)))
 
-        reglas.append(("NO TE EQUIVOQUES", "Cada error resta " + n1_seg(p["penalizacion"]) + " s y bloquea esa caja. Cada " + str(N1_RACHA_N) + " aciertos seguidos suman +" + n1_seg(p["racha_bonus"]) + " s."))
-        reglas.append(("EL SEXTO HUECO", "Tras la quinta lista queda un hueco en la cesta. Ahí no hay respuesta correcta: elige tú."))
+        reglas.append((_("NO TE EQUIVOQUES"), __("Cada error resta {} s y bloquea esa caja. Cada {} aciertos seguidos suman +{} s.").format(n1_seg(p["penalizacion"]), N1_RACHA_N, n1_seg(p["racha_bonus"]))))
+        reglas.append((_("EL SEXTO HUECO"), _("Tras la quinta lista queda un hueco en la cesta. Ahí no hay respuesta correcta: elige tú.")))
         return reglas
 
     class MJN1(object):
@@ -421,7 +421,7 @@ init python:
             self.penal += self.mirar_costo
             self.mirada_t = 1.6
             self.mirones += 1
-            self.avisar("Miras la lista · −" + n1_seg(self.mirar_costo) + " s", "info")
+            self.avisar(__("Miras la lista · −{} s").format(n1_seg(self.mirar_costo)), "info")
             self.globo.decir("mirar", True)
             if self.restante() <= 0.0:
                 return self.perder()
@@ -467,7 +467,7 @@ init python:
                     self.mejor_racha = self.racha
                 if self.racha % N1_RACHA_N == 0 and self.bonus > 0.0:
                     self.total += self.bonus
-                    self.avisar("Racha ×" + str(self.racha) + " · +" + n1_seg(self.bonus) + " s", "bien")
+                    self.avisar(__("Racha ×{} · +{} s").format(self.racha, n1_seg(self.bonus)), "bien")
                     self.globo.decir("racha", True)
                 else:
                     self.globo.decir("acierto")
@@ -488,7 +488,7 @@ init python:
             self.racha = 0
             pen = float(self.p["penalizacion"])
             self.penal += pen
-            self.avisar("Esa no es · −" + n1_seg(pen) + " s", "mal")
+            self.avisar(__("Esa no es · −{} s").format(n1_seg(pen)), "mal")
             self.flash_t = 0.35
             self.globo.decir("fallo", True)
             self.poner_humor("triste", 0.9)
@@ -591,7 +591,7 @@ init python:
                 return "tiembla"
             return "bob"
 
-    mj_registrar("n1", "mj_n1", "Compras para seis", True)
+    mj_registrar("n1", "mj_n1", _("Compras para seis"), True)
 
 
 ################################################################################
@@ -688,7 +688,7 @@ screen mj_n1_intro(vivo, nivel):
             xsize 1060
             spacing 16
 
-            text "COMPRAS PARA SEIS":
+            text _("COMPRAS PARA SEIS"):
                 style "mj_titulo"
                 xalign 0.5
 
@@ -696,8 +696,8 @@ screen mj_n1_intro(vivo, nivel):
                 xalign 0.5
                 spacing 16
 
-                use mj_n1_chip(("TIEMPO  " + n1_seg(vivo.total) + " s"), color)
-                use mj_n1_chip(("5 LISTAS · " + str(vivo.n_prod) + " PRODUCTOS"), color)
+                use mj_n1_chip(__("TIEMPO  {} s").format(n1_seg(vivo.total)), color)
+                use mj_n1_chip(__("5 LISTAS · {} PRODUCTOS").format(vivo.n_prod), color)
 
                 frame:
                     padding (22, 10, 22, 10)
@@ -705,7 +705,7 @@ screen mj_n1_intro(vivo, nivel):
 
                     hbox:
                         spacing 8
-                        text "RITMO" style "mj_etiqueta" color "#F3EEFA" yalign 0.5
+                        text _("RITMO") style "mj_etiqueta" color "#F3EEFA" yalign 0.5
                         for i in range(3):
                             $ alfa_f = 0.22
                             if i < ritmo:
@@ -738,9 +738,9 @@ screen mj_n1_intro(vivo, nivel):
             fixed:
                 xalign 0.5
                 xysize (b[0], b[1])
-                use cinta_boton("Empezar", Function(vivo.empezar), "nino", b[0], b[1], b[2])
+                use cinta_boton(_("Empezar"), Function(vivo.empezar), "nino", b[0], b[1], b[2])
 
-            text "Enter o Espacio":
+            text _("Enter o Espacio"):
                 style "mj_nota"
                 xalign 0.5
 
@@ -820,7 +820,7 @@ screen mj_n1_lista(vivo, trad_at):
         add n1_fondo(tono_l, col_l)
 
         ## --- Bloque izquierdo: de quién es la lista y la racha ---
-        text ("LISTA " + str(vivo.idx + 1) + " / 5"):
+        text __("LISTA {} / 5").format(vivo.idx + 1):
             style "mj_etiqueta"
             xpos izq
             ypos 20
@@ -832,7 +832,7 @@ screen mj_n1_lista(vivo, trad_at):
             ypos 46
 
         if vivo.racha >= 2 and vivo.fase != "sexto" and vivo.fase != "fin":
-            text ("RACHA ×" + str(vivo.racha)):
+            text __("RACHA ×{}").format(vivo.racha):
                 style "mj_cifra"
                 color "#FFE3A0"
                 xpos izq
@@ -846,7 +846,7 @@ screen mj_n1_lista(vivo, trad_at):
                 add Solid("#58D68D", xsize=20, ysize=20) yalign 0.5
             else:
                 add Solid("#FFFFFF22", xsize=20, ysize=20) yalign 0.5
-            text "6.º hueco de la cesta" style "mj_nota" color "#FFE3A0" yalign 0.5
+            text _("6.º hueco de la cesta") style "mj_nota" color "#FFE3A0" yalign 0.5
 
         ## --- Productos: una celda por producto ---
         hbox:
@@ -878,13 +878,13 @@ screen mj_n1_lista(vivo, trad_at):
         ## --- Memoria: barra que se vacía, «MIRANDO…» o «Mirar lista» ---
         if mem_r >= 0.0:
             if vivo.mirada_t > 0.0:
-                text "MIRANDO…":
+                text _("MIRANDO…"):
                     style "mj_etiqueta"
                     color "#FFE3A0"
                     xpos cel
                     ypos 160
             elif lista_ok:
-                text "MEMORIZA":
+                text _("MEMORIZA"):
                     style "mj_etiqueta"
                     color "#FFE3A0"
                     xpos cel
@@ -900,7 +900,7 @@ screen mj_n1_lista(vivo, trad_at):
                     xpos cel
                     ypos 132
                     xysize (sec[0], sec[1])
-                    use cinta_boton(("Mirar lista (−" + n1_seg(vivo.mirar_costo) + " s)"), Function(vivo.mirar), vivo.hermana_lista, sec[0], sec[1], sec[2])
+                    use cinta_boton(__("Mirar lista (−{} s)").format(n1_seg(vivo.mirar_costo)), Function(vivo.mirar), vivo.hermana_lista, sec[0], sec[1], sec[2])
 
 
 ## Los estantes: una cinta por fila, a todo lo ancho del área.
@@ -931,7 +931,7 @@ screen mj_n1_estantes(vivo, trad_at):
 
             add Solid("#FFFFFF14")
 
-            text ("ESTANTE " + "ABCD"[fi] + flecha):
+            text (__("ESTANTE") + " " + "ABCD"[fi] + flecha):
                 style "mj_etiqueta"
                 xpos 18
                 ypos 0
@@ -951,7 +951,7 @@ screen mj_n1_estantes(vivo, trad_at):
 ## la frase y las tres opciones, centradas en el área.
 screen mj_n1_sexto(vivo):
 
-    text "Queda sitio para una cosa más en la cesta.":
+    text _("Queda sitio para una cosa más en la cesta."):
         style "mj_aviso_texto"
         color "#FFF8FC"
         xpos MJ_AREA_CX
@@ -993,7 +993,7 @@ screen mj_n1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     add "bg_centro_comercial" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.lista, 5, t_rest, t_tot, "LISTAS", chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=vivo.aviso_vivo(), aviso_tipo=vivo.aviso_tipo):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.lista, 5, t_rest, t_tot, _("LISTAS"), chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=vivo.aviso_vivo(), aviso_tipo=vivo.aviso_tipo):
 
         ## --- Tensión: solo sobre el área, nunca sobre la columna ---
         if vivo.tension():
@@ -1024,7 +1024,7 @@ screen mj_n1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xanchor 0.5
                     ypos (MJ_AREA_Y + MJ_AREA_H // 2)
                     yanchor 0.5
-                text "PREPÁRATE":
+                text _("PREPÁRATE"):
                     style "mj_etiqueta"
                     color "#FFE3A0"
                     xpos MJ_AREA_CX

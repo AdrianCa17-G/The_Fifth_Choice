@@ -323,7 +323,7 @@ label hub_Nino:
 
     # Menu de Nino
 
-    $ decision_peso("nino", "¿Qué le dirás a Nino?", "Te contó más de lo que quería. Ahora espera tu respuesta.")
+    $ decision_peso("nino", _("¿Qué le dirás a Nino?"), _("Te contó más de lo que quería. Ahora espera tu respuesta."))
 
     menu:
 
@@ -580,7 +580,7 @@ label nino_m5:
 
     mc_pensamiento "Una de las cinco. Y esta solo bajó la guardia un minuto."
     
-    mc_pensamiento "Quedan [tiempo_restante]."
+    mc_pensamiento "Quedan [tiempo_restante!t]."
 
     if nino_rama_cap1 == "calida":
 

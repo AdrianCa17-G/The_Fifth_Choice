@@ -9,86 +9,86 @@ default persistent.final_malo_temprano_b_visto = False
 ## --- DATOS: al añadir CG nuevos, agrégalos aquí (el % se recalcula solo) ---
 ## (clave, título de la pestaña, hermana o None, [(imagen, nombre), ...])
 define GALERIA = [
-    ("prologo", "Prólogo", None, [
-        ("cg_familia", "Retrato familiar"),
-        ("cg_calificacion", "Mi lugar de pensamientos"),
-        ("cg_examen", "Examen perfecto"),
-        ("cg_itsuki_sentada", "¿Por qué estás en mi asiento?"),
-        ("cg_itsuki_azotea", "Un encuentro incomodo"),
-        ("cg_manija_edificio", "Abriendo mi sentencia"),
-        ("cg_maruo_reunion", "El contrato"),
-        ("cg_hermanas_estudiando", "La primera clase"),
+    ("prologo", _("Prólogo"), None, [
+        ("cg_familia", _("Retrato familiar")),
+        ("cg_calificacion", _("Mi lugar de pensamientos")),
+        ("cg_examen", _("Examen perfecto")),
+        ("cg_itsuki_sentada", _("¿Por qué estás en mi asiento?")),
+        ("cg_itsuki_azotea", _("Un encuentro incomodo")),
+        ("cg_manija_edificio", _("Abriendo mi sentencia")),
+        ("cg_maruo_reunion", _("El contrato")),
+        ("cg_hermanas_estudiando", _("La primera clase")),
     ]),
-    ("cap1", "Capítulo 1", None, [
-        ("cg_itsuki_apertura", "No me interesa tu asiento"),
-        ("cg_cinco_sentadas", "¿Están tramando algo?"),
-        ("cg_libreta", "La libreta"),
-        ("cg_cinco_repasando", "Un avance no tan esperado"),
-        ("cg_cinco_estudiando", "Resultados perfectos de un mes"),
-        ("cg_maruo_espaldas", "Se terminó"),
-        ("cg_raiha_correccion", "Corrigiendo a Raiha"),
-        ("cg_cinco_aula", "Cinco miradas antes del examen"),
-        ("cg_cinco_aprobadas", "Un final feliz"),
+    ("cap1", _("Capítulo 1"), None, [
+        ("cg_itsuki_apertura", _("No me interesa tu asiento")),
+        ("cg_cinco_sentadas", _("¿Están tramando algo?")),
+        ("cg_libreta", _("La libreta")),
+        ("cg_cinco_repasando", _("Un avance no tan esperado")),
+        ("cg_cinco_estudiando", _("Resultados perfectos de un mes")),
+        ("cg_maruo_espaldas", _("Se terminó")),
+        ("cg_raiha_correccion", _("Corrigiendo a Raiha")),
+        ("cg_cinco_aula", _("Cinco miradas antes del examen")),
+        ("cg_cinco_aprobadas", _("Un final feliz")),
     ]),
-    ("ichika", "Ichika", "ichika", [
-        ("cg_ichika_puerta", "Bienvenido"),
-        ("cg_ichika_ensayo", "Sala de ensayo"),
-        ("cg_ichika_desarmada", "Sin máscara"),
-        ("cg_ichika_mascara", "La máscara"),
-        ("cg_ichika_fracaso", "No puedo mas"),
-        ("cg_ichika_examen", "Las cuentas sí salieron"),
+    ("ichika", _("Ichika"), "ichika", [
+        ("cg_ichika_puerta", _("Bienvenido")),
+        ("cg_ichika_ensayo", _("Sala de ensayo")),
+        ("cg_ichika_desarmada", _("Sin máscara")),
+        ("cg_ichika_mascara", _("La máscara")),
+        ("cg_ichika_fracaso", _("No puedo mas")),
+        ("cg_ichika_examen", _("Las cuentas sí salieron")),
     ]),
-    ("nino", "Nino", "nino", [
-        ("cg_nino_pasillo", "Ni una semana"),
-        ("cg_nino_centro_comercial", "Traduciendo"),
-        ("cg_nino_receta", "Una receta con transfondo"),
-        ("cg_nino_llamada", "¿Está hablando de mí?"),
-        ("cg_nino_confrontacion_cocina", "Una discusión intensa"),
-        ("cg_nino_grieta_cocina", "La crisis de Nino"),
-        ("cg_nino_fracaso", "Se los dije"),
-        ("cg_nino_examen", "No te lo diré dos veces"),
+    ("nino", _("Nino"), "nino", [
+        ("cg_nino_pasillo", _("Ni una semana")),
+        ("cg_nino_centro_comercial", _("Traduciendo")),
+        ("cg_nino_receta", _("Una receta con transfondo")),
+        ("cg_nino_llamada", _("¿Está hablando de mí?")),
+        ("cg_nino_confrontacion_cocina", _("Una discusión intensa")),
+        ("cg_nino_grieta_cocina", _("La crisis de Nino")),
+        ("cg_nino_fracaso", _("Se los dije")),
+        ("cg_nino_examen", _("No te lo diré dos veces")),
     ]),
-    ("miku", "Miku", "miku", [
-        ("cg_miku_sofa", "¿Hablando de Sengoku?"),
-        ("cg_miku_biblioteca", "Biblioteca"),
-        ("cg_miku_estudio", "El temario"),
-        ("cg_miku_sorpresa", "Sorpresa"),
-        ("cg_miku_fracaso", "Quiero usar mis audifonos"),
-        ("cg_miku_examen", "Mi propia historia"),
+    ("miku", _("Miku"), "miku", [
+        ("cg_miku_sofa", _("¿Hablando de Sengoku?")),
+        ("cg_miku_biblioteca", _("Biblioteca")),
+        ("cg_miku_estudio", _("El temario")),
+        ("cg_miku_sorpresa", _("Sorpresa")),
+        ("cg_miku_fracaso", _("Quiero usar mis audifonos")),
+        ("cg_miku_examen", _("Mi propia historia")),
     ]),
-    ("yotsuba", "Yotsuba", "yotsuba", [
-        ("cg_yotsuba_corriendo", "Bienvenido"),
-        ("cg_yotsuba_pista", "Vuelta veinte"),
-        ("cg_yotsuba_rotulador", "El rotulador"),
-        ("cg_yotsuba_cronometro", "Una vuelta más"),
-        ("cg_yotsuba_fracaso", "Solo me preocupan las demás"),
-        ("cg_yotsuba_examen", "Esta vez no me rendí"),
+    ("yotsuba", _("Yotsuba"), "yotsuba", [
+        ("cg_yotsuba_corriendo", _("Bienvenido")),
+        ("cg_yotsuba_pista", _("Vuelta veinte")),
+        ("cg_yotsuba_rotulador", _("El rotulador")),
+        ("cg_yotsuba_cronometro", _("Una vuelta más")),
+        ("cg_yotsuba_fracaso", _("Solo me preocupan las demás")),
+        ("cg_yotsuba_examen", _("Esta vez no me rendí")),
     ]),
-    ("itsuki", "Itsuki", "itsuki", [
-        ("cg_itsuki_discusion", "¿Otra vez tú?"),
-        ("cg_itsuki_atascada", "Estoy atascada"),
-        ("cg_itsuki_contraida", "No pienso admitir mi error"),
-        ("cg_itsuki_reto", "¿Qué pasa?"),
-        ("cg_itsuki_azotea_cuaderno", "Mi rincón habitual"),
-        ("cg_itsuki_azotea_manos", "Manos quietas"),
-        ("cg_itsuki_fracaso", "El mismo error"),
-        ("cg_itsuki_examen", "Una hipótesis comprobada"),
+    ("itsuki", _("Itsuki"), "itsuki", [
+        ("cg_itsuki_discusion", _("¿Otra vez tú?")),
+        ("cg_itsuki_atascada", _("Estoy atascada")),
+        ("cg_itsuki_contraida", _("No pienso admitir mi error")),
+        ("cg_itsuki_reto", _("¿Qué pasa?")),
+        ("cg_itsuki_azotea_cuaderno", _("Mi rincón habitual")),
+        ("cg_itsuki_azotea_manos", _("Manos quietas")),
+        ("cg_itsuki_fracaso", _("El mismo error")),
+        ("cg_itsuki_examen", _("Una hipótesis comprobada")),
     ]),
 ]
 
 define FINALES_PISTAS = {
-    "ichika":  "A veces, quien más sonríe es quien más necesita que te quedes a su lado.",
-    "nino":    "Quien más distancia pone, en el fondo solo espera a alguien que no se rinda con ella.",
-    "miku":    "Aprende a escuchar sus silencios... es ahí donde guarda lo que de verdad siente.",
-    "yotsuba": "Hazle recordar la luz tan hermosa que tiene, incluso cuando ella no pueda verla.",
-    "itsuki":  "Sostén su mano cuando lo necesite, pero déjala sentir que camina por sí misma.",
+    "ichika":  _("A veces, quien más sonríe es quien más necesita que te quedes a su lado."),
+    "nino":    _("Quien más distancia pone, en el fondo solo espera a alguien que no se rinda con ella."),
+    "miku":    _("Aprende a escuchar sus silencios... es ahí donde guarda lo que de verdad siente."),
+    "yotsuba": _("Hazle recordar la luz tan hermosa que tiene, incluso cuando ella no pueda verla."),
+    "itsuki":  _("Sostén su mano cuando lo necesite, pero déjala sentir que camina por sí misma."),
 }
 
 ## (clave, título, pista, color)
 define FINALES_ESPECIALES = [
-    ("temprano", "Despido temprano", "Decir que no cada vez que pudiste decir que sí.", "#9AA7A8"),
-    ("malo", "Despedida", "Estar cerca de todas, y no llegar a ninguna.", "#C0504D"),
-    ("secreto", "Final secreto", "Cinco caminos, un solo estudiante completo.", "#F4D03F"),
+    ("temprano", _("Despido temprano"), _("Decir que no cada vez que pudiste decir que sí."), "#9AA7A8"),
+    ("malo", _("Despedida"), _("Estar cerca de todas, y no llegar a ninguna."), "#C0504D"),
+    ("secreto", _("Final secreto"), _("Cinco caminos, un solo estudiante completo."), "#F4D03F"),
 ]
 
 ## Pon True cuando existan los extras "Después de la boda".
@@ -98,9 +98,9 @@ define EXTRAS_DISPONIBLES = False
 define FINALES_TEMPRANO = [
     {
         "clave": "a",
-        "titulo": "El portazo",
-        "resumen": "En la cocina. Maruo corta el contrato antes de que nadie pueda despedirse.",
-        "pista": "Cuando la paciencia de Maruo se acaba pronto.",
+        "titulo": _("El portazo"),
+        "resumen": _("En la cocina. Maruo corta el contrato antes de que nadie pueda despedirse."),
+        "pista": _("Cuando la paciencia de Maruo se acaba pronto."),
         "label": "final_malo_beat",
         "scope": {
             "despido_en_beat": True,
@@ -112,9 +112,9 @@ define FINALES_TEMPRANO = [
     },
     {
         "clave": "b",
-        "titulo": "La despedida",
-        "resumen": "Tras la semana de exámenes. Cuatro reprueban y cada una dice lo que le faltaba decir.",
-        "pista": "Cuando la última oportunidad tampoco alcanza.",
+        "titulo": _("La despedida"),
+        "resumen": _("Tras la semana de exámenes. Cuatro reprueban y cada una dice lo que le faltaba decir."),
+        "pista": _("Cuando la última oportunidad tampoco alcanza."),
         "label": "final_malo_hub3",
         "scope": {
             "despido_en_beat": False,
@@ -301,7 +301,7 @@ screen cinta_volver():
         hover_background ui_cinta_menu("#E8E0F2", "flor", True)
         at boton_slide
 
-        text "Volver":
+        text _("Volver"):
             xpos 112
             yalign 0.5
             font gui.name_text_font
@@ -334,7 +334,7 @@ screen galeria():
     $ total = galeria_total()
     $ paginas = (len(items) + 8) // 9
     $ visibles = items[pagina * 9:pagina * 9 + 9]
-    $ titulo_sec = sec[1].upper()
+    $ titulo_sec = __(sec[1]).upper()
     $ pct_total = 0
     if total[1] > 0:
         $ pct_total = int(round(100.0 * total[0] / total[1]))
@@ -346,7 +346,7 @@ screen galeria():
     add Solid("#120A1CCC")
     add "ui/menu_panel.png"
 
-    text "GALERÍA" xpos 70 ypos 48 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)]
+    text _("GALERÍA") xpos 70 ypos 48 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)]
 
     ## --- Pestañas ---
     vbox:
@@ -398,7 +398,7 @@ screen galeria():
         xpos 862
         ypos 56
         spacing 10
-        text ("CG DESBLOQUEADOS   " + str(total[0]) + " / " + str(total[1]) + "   ·   " + str(pct_total) + " %") font gui.name_text_font size 26 kerning 3 color "#FFF8FC"
+        text (__("CG DESBLOQUEADOS") + "   " + str(total[0]) + " / " + str(total[1]) + "   ·   " + str(pct_total) + " %") font gui.name_text_font size 26 kerning 3 color "#FFF8FC"
         use barra_arcoiris(total[0], total[1], 1006)
 
     ## --- Sección actual ---
@@ -541,13 +541,13 @@ screen finales():
     add Solid("#120A1CD8")
     add "sakura_petals"
 
-    text "FINALES" xpos 88 ypos 20 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)]
+    text _("FINALES") xpos 88 ypos 20 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)]
 
     vbox:
         xpos 980
         ypos 56
         spacing 10
-        text ("FINALES DESCUBIERTOS   " + str(hechos) + " / 8   ·   " + str(pct) + " %") font gui.name_text_font size 26 kerning 3 color "#FFF8FC"
+        text (__("FINALES DESCUBIERTOS") + "   " + str(hechos) + " / 8   ·   " + str(pct) + " %") font gui.name_text_font size 26 kerning 3 color "#FFF8FC"
         use barra_arcoiris(hechos, 8, 860)
 
 
@@ -573,18 +573,18 @@ screen finales():
             $ sub_f = FINALES_PISTAS[h]
             if logrado:
                 $ borde_h = color_h
-                $ titulo_f = "Final de " + nombre
-                $ sub_f = "Final romántico conseguido"
+                $ titulo_f = __("Final de {}").format(__(nombre))
+                $ sub_f = _("Final romántico conseguido")
                 if jugable:
-                    $ sub_f = "Final romántico conseguido\nClic para revivirlo"
+                    $ sub_f = _("Final romántico conseguido\nClic para revivirlo")
 
             $ chip_fondo = "#2A2236"
             $ chip_borde = "#6E6680"
-            $ chip_texto = "EXTRA  ·  Galería " + str(cg[0]) + "/" + str(cg[1])
+            $ chip_texto = __("EXTRA  ·  Galería {}/{}").format(cg[0], cg[1])
             if extra_ok:
                 $ chip_fondo = tono_h
                 $ chip_borde = color_h
-                $ chip_texto = "EXTRA  ·  Próximamente"
+                $ chip_texto = _("EXTRA  ·  Próximamente")
 
             $ chip_activo = extra_ok and EXTRAS_DISPONIBLES
 
@@ -644,18 +644,18 @@ screen finales():
             $ tono_f = ui_mezclar(color_f, "#000000", 0.72)
             $ borde_f = "#6E6680"
             $ titulo_e = "???"
-            $ estado_e = "BLOQUEADO"
+            $ estado_e = _("BLOQUEADO")
             if ok:
                 $ borde_f = color_f
                 $ titulo_e = f[1]
-                $ estado_e = "CONSEGUIDO"
+                $ estado_e = _("CONSEGUIDO")
                 if f[0] == "temprano":
-                    $ estado_e = "CONSEGUIDO  ·  " + str(temprano_versiones()) + "/2 VERSIONES"
+                    $ estado_e = __("CONSEGUIDO  ·  {}/2 VERSIONES").format(temprano_versiones())
                 elif jugable_f:
-                    $ estado_e = "CONSEGUIDO  ·  REVIVIR"
+                    $ estado_e = _("CONSEGUIDO  ·  REVIVIR")
             $ pista_e = f[2]
             if f[0] == "secreto" and not ok:
-                $ pista_e = f[2] + "  (" + str(rutas_completadas()) + "/5 rutas)"
+                $ pista_e = __(f[2]) + "  " + __("({}/5 rutas)").format(rutas_completadas())
 
             $ accion_f = None
             if jugable_f:
@@ -717,8 +717,8 @@ screen final_versiones():
         ## Título con una flor a cada lado
         add "ui/flor.png" matrixcolor TintMatrix(color_f) alpha 0.7 zoom 0.7 xpos 300 ypos 40
         add "ui/flor.png" matrixcolor TintMatrix(color_f) alpha 0.7 zoom 0.7 xpos 840 ypos 40
-        text "DESPIDO TEMPRANO" xalign 0.5 ypos 40 font gui.name_text_font size 38 kerning 4 color "#FFF8FC"
-        text "¿Qué versión quieres revivir?" xalign 0.5 ypos 102 size 24 color "#CFC6E0"
+        text _("DESPIDO TEMPRANO") xalign 0.5 ypos 40 font gui.name_text_font size 38 kerning 4 color "#FFF8FC"
+        text _("¿Qué versión quieres revivir?") xalign 0.5 ypos 102 size 24 color "#CFC6E0"
 
         hbox:
             xalign 0.5
@@ -732,14 +732,14 @@ screen final_versiones():
                 $ letra_v = "?"
                 $ titulo_v = "???"
                 $ desc_v = v["pista"]
-                $ estado_v = "BLOQUEADA"
+                $ estado_v = _("BLOQUEADA")
                 $ color_texto = "#8F8AA0"
                 if visto:
                     $ borde_v = color_f
                     $ letra_v = v["clave"].upper()
                     $ titulo_v = v["titulo"]
                     $ desc_v = v["resumen"]
-                    $ estado_v = "REVIVIR"
+                    $ estado_v = _("REVIVIR")
                     $ color_texto = "#CFC6E0"
 
                 button:
@@ -766,7 +766,7 @@ screen final_versiones():
                         color borde_v
                         at Transform(alpha=0.10)
 
-                    text ("VERSIÓN " + v["clave"].upper()):
+                    text (__("VERSIÓN") + " " + v["clave"].upper()):
                         xpos 40
                         ypos 32
                         size 18
@@ -797,7 +797,7 @@ screen final_versiones():
                         kerning 5
                         color borde_v
 
-        textbutton "Cerrar":
+        textbutton _("Cerrar"):
             xalign 0.5
             ypos 556
             action Hide("final_versiones")
@@ -857,9 +857,9 @@ default extra_titulo = ""
 
 ## (texto, pantalla) de las cintas de EXTRAS.
 define EXTRAS_NAV = [
-    ("Minijuegos", "extra_minijuegos"),
-    ("Animaciones", "extra_animaciones"),
-    ("Repetir", "extra_repetir"),
+    (_("Minijuegos"), "extra_minijuegos"),
+    (_("Animaciones"), "extra_animaciones"),
+    (_("Repetir"), "extra_repetir"),
 ]
 
 ## Lo que la foto del hub 3 guarda: todo lo que la interconexión 6 y el Evento 6 leen.
@@ -878,45 +878,47 @@ define EXTRA_FOTO_VARS = [
 
 ## (clave, pestaña, descripción) de los grupos del teatro.
 define ANIM_GRUPOS = [
-    ("cort", "Cortinillas", "Tarjetas de capítulo y de tarde libre"),
-    ("encuentro", "Encuentros", "La salida del hub hacia cada hermana"),
-    ("tarde", "Tardes", "Tarde completada, según cómo acabó"),
-    ("mj", "Minijuegos", "Entrada y salidas de cada minijuego"),
-    ("decidir", "Decidir", "«Hora de decidir» antes de cada decisión"),
-    ("cierre", "Cierre", "La barra de las chicas y los créditos al cerrar el capítulo"),
+    ("cort", _("Cortinillas"), _("Tarjetas de capítulo y de tarde libre")),
+    ("encuentro", _("Encuentros"), _("La salida del hub hacia cada hermana")),
+    ("tarde", _("Tardes"), _("Tarde completada, según cómo acabó")),
+    ("mj", _("Minijuegos"), _("Entrada y salidas de cada minijuego")),
+    ("decidir", _("Decidir"), _("«Hora de decidir» antes de cada decisión")),
+    ("cierre", _("Cierre"), _("La barra de las chicas y los créditos al cerrar el capítulo")),
 ]
 
-define ANIM_RAMA_TXT = {"calida": "Cálida", "tibia": "Tibia", "fria": "Fría"}
-define ANIM_MJ_TXT = {"entrada": "Entrada", "ganado": "Ganado", "saltado": "Que lo haga ella"}
+define ANIM_RAMA_TXT = {"calida": _("Cálida"), "tibia": _("Tibia"), "fria": _("Fría")}
+define ANIM_MJ_TXT = {"entrada": _("Entrada"), "ganado": _("Ganado"), "saltado": _("Que lo haga ella")}
+## En minúscula para la pista «Cierra una tarde con X (cálida)».
+define ANIM_RAMA_MIN = {"calida": _("cálida"), "tibia": _("tibia"), "fria": _("fría")}
 
 ## Las cinco decisiones con peso, copiadas de 02_cap1_<Hermana>.rpy (pregunta,
 ## motivo, opciones en orden cálida, tibia, fría). Si cambian allí, cámbialas aquí.
 define EXTRA_DECIDIR = {
-    "ichika": ("¿Qué le dirás a Ichika?",
-               "Se durmió en el suelo del club, y ya está bromeando otra vez.",
-               ["No seguirle la broma. Esperar a que hable ella.",
-                "Seguirle la broma. Por hoy ya tuvo bastante.",
-                "Si tienes energía para hacer chistes, tienes energía\npara estudiar."]),
-    "nino": ("¿Qué le dirás a Nino?",
-             "Te contó más de lo que quería. Ahora espera tu respuesta.",
-             ["Tienes razón en desconfiar. Solo el tiempo lo va a demostrar.",
-              "Cargarle la cesta, sin decir nada.",
-              "Yo sí voy a durar."]),
-    "miku": ("¿Qué le dirás a Miku?",
-             "Habló un minuto entero de lo que ama. Y después pidió perdón.",
-             ["Preguntarle cuánto tardaba la sal en llegar.",
-              "Decirle que se le da bien. Es la verdad.",
-              "Lo de la sal no entra en el examen."]),
-    "yotsuba": ("¿Qué le dirás a Yotsuba?",
-                "Te ofrece el cronómetro. Lo que acaba de decir sigue ahí.",
-                ["No tomar el cronómetro todavía. Volver a lo que dijo.",
-                 "Claro, dame el cronómetro.",
-                 "Si correr es lo tuyo, concéntrate en eso."]),
-    "itsuki": ("¿Qué le dirás a Itsuki?",
-               "Tres intentos, el mismo error. No te va a pedir ayuda.",
-               ["Señalarle dónde mirar. Solo eso.",
-                "¿Quieres que lo revisemos desde el principio?",
-                "Quitarle el cuaderno y resolverlo. Le ahorro la tarde."]),
+    "ichika": (_("¿Qué le dirás a Ichika?"),
+               _("Se durmió en el suelo del club, y ya está bromeando otra vez."),
+               [_("No seguirle la broma. Esperar a que hable ella."),
+                _("Seguirle la broma. Por hoy ya tuvo bastante."),
+                _("Si tienes energía para hacer chistes, tienes energía\npara estudiar.")]),
+    "nino": (_("¿Qué le dirás a Nino?"),
+             _("Te contó más de lo que quería. Ahora espera tu respuesta."),
+             [_("Tienes razón en desconfiar. Solo el tiempo lo va a demostrar."),
+              _("Cargarle la cesta, sin decir nada."),
+              _("Yo sí voy a durar.")]),
+    "miku": (_("¿Qué le dirás a Miku?"),
+             _("Habló un minuto entero de lo que ama. Y después pidió perdón."),
+             [_("Preguntarle cuánto tardaba la sal en llegar."),
+              _("Decirle que se le da bien. Es la verdad."),
+              _("Lo de la sal no entra en el examen.")]),
+    "yotsuba": (_("¿Qué le dirás a Yotsuba?"),
+                _("Te ofrece el cronómetro. Lo que acaba de decir sigue ahí."),
+                [_("No tomar el cronómetro todavía. Volver a lo que dijo."),
+                 _("Claro, dame el cronómetro."),
+                 _("Si correr es lo tuyo, concéntrate en eso.")]),
+    "itsuki": (_("¿Qué le dirás a Itsuki?"),
+               _("Tres intentos, el mismo error. No te va a pedir ayuda."),
+               [_("Señalarle dónde mirar. Solo eso."),
+                _("¿Quieres que lo revisemos desde el principio?"),
+                _("Quitarle el cuaderno y resolverlo. Le ahorro la tarde.")]),
 }
 
 
@@ -984,16 +986,22 @@ init python:
 ## init 1: el catálogo lee hub_tono (hub_mapa.rpy) y CORT_* (13_transiciones.rpy).
 init 1 python:
 
+    def anim_texto(p):
+        """Pista del catálogo: texto, o (plantilla con {}, nombres...) que se traduce al mostrarla."""
+        if isinstance(p, tuple):
+            return __(p[0]).format(*[__(x) for x in p[1:]])
+        return p
+
     def anim_catalogo():
         """[(clave, grupo, título, subtítulo, color, icono, pista, scope)], en orden."""
         lista = []
         cort = [
-            ("prologo_fin", "Fin del prólogo", "Cinco alumnas, cero interés", CORT_LILA, "Termina el prólogo."),
-            ("cap1_inicio", "Capítulo 1", "Días de tutoría", CORT_ROSA, "Empieza el Capítulo 1."),
-            ("hub", "Tarde libre", "Empieza tu decisión", CORT_LILA, "Llega a la primera tarde libre."),
-            ("cap1_examenes", "Semana de exámenes", "El climax", CORT_ORO, "Llega a la semana de exámenes."),
-            ("cap1_fin", "Fin del Capítulo 1", "Un estudiante perfecto", CORT_ROSA, "Termina el Capítulo 1."),
-            ("final_malo", "Final malo", "Despido temprano", "#9AA7A8", "Pierde el trabajo antes de tiempo."),
+            ("prologo_fin", _("Fin del prólogo"), _("Cinco alumnas, cero interés"), CORT_LILA, _("Termina el prólogo.")),
+            ("cap1_inicio", _("Capítulo 1"), _("Días de tutoría"), CORT_ROSA, _("Empieza el Capítulo 1.")),
+            ("hub", _("Tarde libre"), _("Empieza tu decisión"), CORT_LILA, _("Llega a la primera tarde libre.")),
+            ("cap1_examenes", _("Semana de exámenes"), _("El climax"), CORT_ORO, _("Llega a la semana de exámenes.")),
+            ("cap1_fin", _("Fin del Capítulo 1"), _("Un estudiante perfecto"), CORT_ROSA, _("Termina el Capítulo 1.")),
+            ("final_malo", _("Final malo"), _("Despido temprano"), "#9AA7A8", _("Pierde el trabajo antes de tiempo.")),
         ]
         for c in cort:
             lista.append(("cort_" + c[0], "cort", c[1], c[2], c[3], "flor", c[4],
@@ -1001,19 +1009,19 @@ init 1 python:
         for h in PETALO_ORDEN:
             nombre = h.capitalize()
             lista.append(("encuentro_" + h, "encuentro", nombre, HUB_LUGAR[h], PETALO_COLOR[h], h,
-                          "Pasa una tarde libre con " + nombre + ".",
+                          (_("Pasa una tarde libre con {}."), nombre),
                           {"ea_tipo": "encuentro", "ea_h": h}))
         for h in PETALO_ORDEN:
             nombre = h.capitalize()
             for rama in ["calida", "tibia", "fria"]:
                 lista.append(("tarde_" + h + "_" + rama, "tarde", nombre, ANIM_RAMA_TXT[rama],
                               hub_tono(h, rama), h,
-                              "Cierra una tarde con " + nombre + " (" + ANIM_RAMA_TXT[rama].lower() + ").",
+                              (_("Cierra una tarde con {} ({})."), nombre, ANIM_RAMA_MIN[rama]),
                               {"ea_tipo": "tarde", "ea_h": h, "ea_v": rama}))
         pistas_mj = {
-            "entrada": "Juega su minijuego.",
-            "ganado": "Gana su minijuego.",
-            "saltado": "Deja que lo haga ella.",
+            "entrada": _("Juega su minijuego."),
+            "ganado": _("Gana su minijuego."),
+            "saltado": _("Deja que lo haga ella."),
         }
         for h in E6_ORDEN_EXAMEN:
             for tipo in ["entrada", "ganado", "saltado"]:
@@ -1022,13 +1030,13 @@ init 1 python:
                               {"ea_tipo": "mj", "ea_h": h, "ea_v": tipo}))
         for h in PETALO_ORDEN:
             nombre = h.capitalize()
-            lista.append(("decidir_" + h, "decidir", nombre, "Hora de decidir", PETALO_COLOR[h], h,
-                          "Llega a la decisión de " + nombre + ".",
+            lista.append(("decidir_" + h, "decidir", nombre, _("Hora de decidir"), PETALO_COLOR[h], h,
+                          (_("Llega a la decisión de {}."), nombre),
                           {"ea_tipo": "decidir", "ea_h": h}))
-        lista.append(("cierre", "cierre", "Cinco nombres", "Cierre del Capítulo 1", CORT_ROSA, "flor",
-                      "Termina el Capítulo 1.", {"ea_tipo": "cierre"}))
-        lista.append(("creditos", "cierre", "Créditos", "Rol del Capítulo 1", CORT_LILA, "flor",
-                      "Termina el Capítulo 1.", {"ea_tipo": "creditos"}))
+        lista.append(("cierre", "cierre", _("Cinco nombres"), _("Cierre del Capítulo 1"), CORT_ROSA, "flor",
+                      _("Termina el Capítulo 1."), {"ea_tipo": "cierre"}))
+        lista.append(("creditos", "cierre", _("Créditos"), _("Rol del Capítulo 1"), CORT_LILA, "flor",
+                      _("Termina el Capítulo 1."), {"ea_tipo": "creditos"}))
         return lista
 
     ANIM_LISTA = anim_catalogo()
@@ -1090,9 +1098,9 @@ screen extra_mj_tarjeta(h, nivel):
             spacing 8
 
             text titulo xalign 0.5 text_align 0.5 xsize 166 font gui.name_text_font size 22 color "#FFF8FC"
-            text (h.capitalize() + " · " + E6_MATERIA[h]) xalign 0.5 text_align 0.5 size 16 color borde
+            text (__(h.capitalize()) + " · " + __(E6_MATERIA[h])) xalign 0.5 text_align 0.5 size 16 color borde
             if not jugado:
-                text "Juégalo en la semana de exámenes." xalign 0.5 text_align 0.5 xsize 166 size 16 color "#8F8AA0"
+                text _("Juégalo en la semana de exámenes.") xalign 0.5 text_align 0.5 xsize 166 size 16 color "#8F8AA0"
 
 
 screen extra_anim_tarjeta(a):
@@ -1101,7 +1109,7 @@ screen extra_anim_tarjeta(a):
     $ fondo = "#2A2236"
     $ borde = "#6E6680"
     $ titulo = "???"
-    $ sub = a[6]
+    $ sub = anim_texto(a[6])
     $ color_sub = "#8F8AA0"
     if visto:
         $ fondo = ui_mezclar(a[4], "#000000", 0.72)
@@ -1187,7 +1195,7 @@ screen extra_minijuegos():
             ypos 70
             spacing 40
 
-            text "Los cinco minijuegos de la semana de exámenes. Diviértete jugandolos." size 24 color "#CFC6E0"
+            text _("Los cinco minijuegos de la semana de exámenes. Diviértete jugandolos.") size 24 color "#CFC6E0"
 
             hbox:
                 spacing 13
@@ -1197,12 +1205,12 @@ screen extra_minijuegos():
             if persistent.nino_beat_calido:
                 vbox:
                     spacing 16
-                    text "DIFICULTAD" style "etiqueta_opcion"
+                    text _("DIFICULTAD") style "etiqueta_opcion"
                     hbox:
                         spacing 14
-                        use cinta_boton("Difícil", SetScreenVariable("nivel", "dificil"), "", 240, 58, 24)
-                        use cinta_boton("Media", SetScreenVariable("nivel", "media"), "", 240, 58, 24)
-                        use cinta_boton("Asistida", SetScreenVariable("nivel", "asistida"), "", 240, 58, 24)
+                        use cinta_boton(_("Difícil"), SetScreenVariable("nivel", "dificil"), "", 240, 58, 24)
+                        use cinta_boton(_("Media"), SetScreenVariable("nivel", "media"), "", 240, 58, 24)
+                        use cinta_boton(_("Asistida"), SetScreenVariable("nivel", "asistida"), "", 240, 58, 24)
 
 
 ## --- ANIMACIONES --------------------------------------------------------------
@@ -1236,7 +1244,7 @@ screen extra_animaciones():
                 for g in ANIM_GRUPOS:
                     use cinta_boton(g[1], SetScreenVariable("grupo", g[0]), "", 160, 56, 21)
 
-            text (desc + "   ·   " + str(vistas) + " / " + str(len(items))) size 24 color "#CFC6E0"
+            text (__(desc) + "   ·   " + str(vistas) + " / " + str(len(items))) size 24 color "#CFC6E0"
 
             vbox:
                 spacing 16
@@ -1256,9 +1264,9 @@ screen extra_repetir():
 
     $ abierto = bool(persistent.cap1_completado)
     $ hay_foto = persistent.foto_hub3 is not None
-    $ pista_semana = "Termina el Capítulo 1."
+    $ pista_semana = _("Termina el Capítulo 1.")
     if abierto and not hay_foto:
-        $ pista_semana = "Juega otra vez hasta cerrar la tercera tarde."
+        $ pista_semana = _("Juega otra vez hasta cerrar la tercera tarde.")
 
     $ accion_semana = NullAction()
     if hay_foto:
@@ -1270,11 +1278,11 @@ screen extra_repetir():
             ypos 70
             spacing 26
 
-            text "Vuelve a jugar un tramo. Tus partidas guardadas no cambian." size 24 color "#CFC6E0"
+            text _("Vuelve a jugar un tramo. Tus partidas guardadas no cambian.") size 24 color "#CFC6E0"
 
-            use extra_repetir_tarjeta("PRÓLOGO", "Prólogo", "Desde el primer día. Al terminar, vuelves al menú.", CORT_LILA, abierto, "Termina el Capítulo 1.", Replay("prologo", scope=final_scope({}), locked=False))
-            use extra_repetir_tarjeta("CAPÍTULO 01", "Días de tutoría", "Desde la apertura hasta cerrar la tercera tarde, como en una partida nueva.", CORT_ROSA, abierto, "Termina el Capítulo 1.", Replay("cap1_apertura", scope=final_scope({}), locked=False))
-            use extra_repetir_tarjeta("CAPÍTULO 01", "Semana de exámenes", "Desde el final de la tercera tarde, con lo que elegiste la última vez.", CORT_ORO, abierto and hay_foto, pista_semana, accion_semana)
+            use extra_repetir_tarjeta(_("PRÓLOGO"), _("Prólogo"), _("Desde el primer día. Al terminar, vuelves al menú."), CORT_LILA, abierto, _("Termina el Capítulo 1."), Replay("prologo", scope=final_scope({}), locked=False))
+            use extra_repetir_tarjeta(_("CAPÍTULO 01"), _("Días de tutoría"), _("Desde la apertura hasta cerrar la tercera tarde, como en una partida nueva."), CORT_ROSA, abierto, _("Termina el Capítulo 1."), Replay("cap1_apertura", scope=final_scope({}), locked=False))
+            use extra_repetir_tarjeta(_("CAPÍTULO 01"), _("Semana de exámenes"), _("Desde el final de la tercera tarde, con lo que elegiste la última vez."), CORT_ORO, abierto and hay_foto, pista_semana, accion_semana)
 
 
 ## --- REPRODUCCIÓN (siempre dentro de un Replay) --------------------------------

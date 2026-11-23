@@ -17,7 +17,7 @@ image cg_libreta             = "cg/cap1_apertura/libreta.webp"
 
 label cap1_apertura:
 
-    $ save_name = "Capítulo 1"
+    $ save_name = _("Capítulo 1")
 
     $ ui_prologo = False
 

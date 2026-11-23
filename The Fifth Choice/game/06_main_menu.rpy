@@ -203,7 +203,7 @@ screen main_menu():
         at t_logo
 
     ## --- TAGLINE ---
-    text "¿A quién elegirás?":
+    text _("¿A quién elegirás?"):
         xpos 1350
         xanchor 0.5
         ypos 36
@@ -217,7 +217,7 @@ screen main_menu():
         ]
         at t_tag
 
-    text "Todas saben algo que no te quieren enseñar. Tú decides a quién escuchas.":
+    text _("Todas saben algo que no te quieren enseñar. Tú decides a quién escuchas."):
         xpos 1350
         xanchor 0.5
         ypos 104
@@ -235,11 +235,11 @@ screen main_menu():
         yalign 0.88
         spacing 25
 
-        use boton_menu("Comenzar", Start(), "ichika")
-        use boton_menu("Cargar", ShowMenu("load"), "nino")
-        use boton_menu("Galería", ShowMenu("galeria"), "miku")
-        use boton_menu("Finales", ShowMenu("finales"), "yotsuba")
-        use boton_menu("Opciones", ShowMenu("preferences"), "itsuki")
+        use boton_menu(_("Comenzar"), Start(), "ichika")
+        use boton_menu(_("Cargar"), ShowMenu("load"), "nino")
+        use boton_menu(_("Galería"), ShowMenu("galeria"), "miku")
+        use boton_menu(_("Finales"), ShowMenu("finales"), "yotsuba")
+        use boton_menu(_("Opciones"), ShowMenu("preferences"), "itsuki")
 
     ## --- ICONOS DE UTILIDAD, arriba a la derecha ---
     hbox:
@@ -254,7 +254,7 @@ screen main_menu():
             background ui_icono("info", False)
             hover_background ui_icono("info", True)
             action ShowMenu("about")
-            tooltip "Acerca de"
+            tooltip _("Acerca de")
             at icono_hover
 
         if renpy.variant("pc"):
@@ -263,7 +263,7 @@ screen main_menu():
                 background ui_icono("ayuda", False)
                 hover_background ui_icono("ayuda", True)
                 action ShowMenu("help")
-                tooltip "Ayuda"
+                tooltip _("Ayuda")
                 at icono_hover
 
         ## iOS no permite botón de salir (norma de Apple).
@@ -273,7 +273,7 @@ screen main_menu():
                 background ui_icono("salir", False)
                 hover_background ui_icono("salir", True)
                 action Quit(confirm=True)
-                tooltip "Salir"
+                tooltip _("Salir")
                 at icono_hover
 
     ## El letrero de los iconos no debe mostrar el nombre de una hermana.

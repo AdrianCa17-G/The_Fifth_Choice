@@ -18,7 +18,7 @@ default LABEL_EVENTO = {
 # ------------------------------------------------------------
 label hub_1:
 
-    $ tiempo_restante = "casi cuatro semanas"
+    $ tiempo_restante = _("casi cuatro semanas")
 
     ## Tarjeta de entrada al hub; la música del mapa empieza después.
     call cortinilla_hub(1) from _call_cortinilla_hub
@@ -49,7 +49,7 @@ label hub_1:
 # ------------------------------------------------------------
 label hub_2:
 
-    $ tiempo_restante = "dos semanas"
+    $ tiempo_restante = _("dos semanas")
 
     call cortinilla_hub(2) from _call_cortinilla_hub_1
 
@@ -78,7 +78,7 @@ label hub_2:
 # ------------------------------------------------------------
 label hub_3:
 
-    $ tiempo_restante = "pocos días"
+    $ tiempo_restante = _("pocos días")
 
     call cortinilla_hub(3) from _call_cortinilla_hub_2
 

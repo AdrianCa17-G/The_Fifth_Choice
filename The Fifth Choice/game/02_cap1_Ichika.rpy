@@ -268,7 +268,7 @@ label hub_Ichika:
 
     ## Mensaje de decisión
 
-    $ decision_peso("ichika", "¿Qué le dirás a Ichika?", "Se durmió en el suelo del club, y ya está bromeando otra vez.")
+    $ decision_peso("ichika", _("¿Qué le dirás a Ichika?"), _("Se durmió en el suelo del club, y ya está bromeando otra vez."))
 
     menu:
 
@@ -593,7 +593,7 @@ label ichika_m6:
     
     mc_pensamiento "Y esta se durmió antes de que yo dijera nada."
 
-    mc_pensamiento "Quedan [tiempo_restante]."
+    mc_pensamiento "Quedan [tiempo_restante!t]."
 
     
     if ichika_rama_cap1 == "calida":

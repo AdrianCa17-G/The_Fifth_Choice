@@ -50,7 +50,7 @@ define Y2_T_ERROR_LARGO = 1.9
 define Y2_T_LIBRE = 0.8
 define Y2_T_FIN = 1.8
 
-define Y2_NIVEL_TXT = {"dificil": "DIFÍCIL", "media": "MEDIA", "asistida": "ASISTIDA"}
+define Y2_NIVEL_TXT = {"dificil": _("DIFÍCIL"), "media": _("MEDIA"), "asistida": _("ASISTIDA")}
 
 transform y2_pulso:
     alpha 1.0
@@ -112,26 +112,26 @@ init python:
                 self.fase = "intro"
             else:
                 if self.tramo > 0:
-                    self.poner_aviso("Punto de control · tramo " + str(self.tramo + 1), "info")
+                    self.poner_aviso(__("Punto de control · tramo {}").format(self.tramo + 1), "info")
                 self.globo.decir("inicio", True)
 
         # ---- reglas (para la pantalla de explicación) -----------------------
         def reglas(self):
             p = self.p
             r = []
-            r.append("Es un relevo de " + str(self.n) + " tramos: las cinco corren por turnos y el testigo no puede caerse.")
-            r.append("Pulsa ¡AHORA! (clic, toque o Espacio) justo cuando la corredora cruce la MARCA dorada.")
-            r.append("Pronto es salida en falso; tarde, se cae el testigo. Cada error gasta uno de tus " + str(p["testigos"]) + " testigos. Sin testigos, pierdes el intento.")
-            r.append("Encadena " + str(p["cura"]) + " aciertos «Perfectos» seguidos y recuperas un testigo.")
-            r.append("Cada tramo es más rápido y la ventana de acierto se estrecha.")
+            r.append(__("Es un relevo de {} tramos: las cinco corren por turnos y el testigo no puede caerse.").format(self.n))
+            r.append(_("Pulsa ¡AHORA! (clic, toque o Espacio) justo cuando la corredora cruce la MARCA dorada."))
+            r.append(__("Pronto es salida en falso; tarde, se cae el testigo. Cada error gasta uno de tus {} testigos. Sin testigos, pierdes el intento.").format(p["testigos"]))
+            r.append(__("Encadena {} aciertos «Perfectos» seguidos y recuperas un testigo.").format(p["cura"]))
+            r.append(_("Cada tramo es más rápido y la ventana de acierto se estrecha."))
             if not p["zona"]:
-                r.append("Aquí no hay zona sombreada: confía en el ritmo.")
+                r.append(_("Aquí no hay zona sombreada: confía en el ritmo."))
             if p["ocultar"] < 1.0:
-                r.append("La marca se esconde antes de que llegue la corredora.")
+                r.append(_("La marca se esconde antes de que llegue la corredora."))
             if p["senuelo"] > 0.0:
-                r.append("Ojo con los señuelos rojos (×): no son la marca.")
+                r.append(_("Ojo con los señuelos rojos (×): no son la marca."))
             if p["salida_falsa"] == "ignora":
-                r.append("En asistencia, salir antes de tiempo no cuenta como error.")
+                r.append(_("En asistencia, salir antes de tiempo no cuenta como error."))
             return r
 
         # ---- tiempos ---------------------------------------------------------
@@ -197,16 +197,16 @@ init python:
             final = self.es_final()
             if clave == "ok":
                 if final:
-                    return "Cruzó la meta."
-                return "Testigo recibido."
+                    return _("Cruzó la meta.")
+                return _("Testigo recibido.")
             if clave == "falsa":
                 if final:
-                    return "Se lanzó antes de tiempo."
-                return "Salió antes de tiempo."
+                    return _("Se lanzó antes de tiempo.")
+                return _("Salió antes de tiempo.")
             if clave == "tarde":
                 if final:
-                    return "Se le pasó la cinta."
-                return "Se cayó el testigo."
+                    return _("Se le pasó la cinta.")
+                return _("Se cayó el testigo.")
             return ""
 
         def poner_aviso(self, texto, tipo):
@@ -428,7 +428,7 @@ init python:
                 self.racha += 1
                 if self.racha > self.mejor_racha:
                     self.mejor_racha = self.racha
-                self.poner_aviso("¡Perfecto!", "bien")
+                self.poner_aviso(_("¡Perfecto!"), "bien")
             else:
                 self.racha = 0
                 self.poner_aviso(self.texto("ok"), "bien")
@@ -440,7 +440,7 @@ init python:
                     self.curados += 1
                     self.racha = 0
                     curo = True
-                    self.poner_aviso("¡Testigo recuperado!", "bien")
+                    self.poner_aviso(_("¡Testigo recuperado!"), "bien")
                 else:
                     self.racha = cura
 
@@ -462,7 +462,7 @@ init python:
             modo = self.p["salida_falsa"]
             self.falsas += 1
             if modo == "ignora":
-                self.poner_aviso("Todavía no.", "info")
+                self.poner_aviso(_("Todavía no."), "info")
                 return None
             if modo == "avisa" and not self.gratis.get(self.tramo, False):
                 self.gratis[self.tramo] = True
@@ -507,7 +507,7 @@ init python:
                         prep = Y2_PREP
                         if self.slot() == 0:
                             prep = Y2_PREP_VUELTA
-                            self.poner_aviso("Vuelta " + str(self.tramo // 5 + 1), "info")
+                            self.poner_aviso(__("Vuelta {}").format(self.tramo // 5 + 1), "info")
                         self.nuevo_tramo(prep)
                 return None
 
@@ -528,7 +528,7 @@ init python:
                     return self.resultado("ganado")
             return None
 
-    mj_registrar("y2", "mj_y2", "Relevo de las cinco", True)
+    mj_registrar("y2", "mj_y2", _("Relevo de las cinco"), True)
 
 
 ################################################################################
@@ -569,14 +569,14 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     add "bg_pista_atletismo" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.tramo, vivo.n, None, None, "TRAMOS", vidas=vivos_t, vidas_max=vivo.p["testigos"], vidas_txt="TESTIGOS", chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=aviso, aviso_tipo=vivo.aviso_tipo):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.tramo, vivo.n, None, None, _("TRAMOS"), vidas=vivos_t, vidas_max=vivo.p["testigos"], vidas_txt=_("TESTIGOS"), chibi=vivo.expresion_star(), globo=vivo.globo, anim=vivo.anim_star(), aviso=aviso, aviso_tipo=vivo.aviso_tipo):
 
         ## --- Cabecera: quién corre (izquierda) · ritmo y racha (derecha) ---
         vbox:
             xpos (MJ_AREA_X + 20)
             ypos (MJ_AREA_Y + 16)
             spacing 2
-            text "CORRE" style "mj_etiqueta"
+            text _("CORRE") style "mj_etiqueta"
             text quien.capitalize() style "mj_titulo" color color_q
 
         vbox:
@@ -584,10 +584,10 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
             ypos (MJ_AREA_Y + 16)
             xsize MJ_HUD_ANCHO
             spacing 6
-            use mj_hud_fila("RITMO", "×" + ritmo_txt)
+            use mj_hud_fila(_("RITMO"), "×" + ritmo_txt)
             use barra_progreso(ritmo, 2.2, "#FF9F6B", MJ_HUD_ANCHO)
             null height 6
-            use mj_hud_fila("RACHA", str(vivo.racha) + " / " + str(vivo.p["cura"]), "#FFF0A8")
+            use mj_hud_fila(_("RACHA"), str(vivo.racha) + " / " + str(vivo.p["cura"]), "#FFF0A8")
             use barra_progreso(vivo.racha, vivo.p["cura"], "#FFE3A0", MJ_HUD_ANCHO)
 
         ## --- La pista (todo el ancho del área) ---
@@ -630,7 +630,7 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
             if geo["marca_visible"]:
                 add Solid("#FFE3A0", xsize=6, ysize=ph) xpos (geo["marca_x"] - 3) ypos py at y2_pulso
                 add Transform(Solid("#FFE3A0", xsize=20, ysize=20), rotate=45) xpos geo["marca_x"] xanchor 0.5 yanchor 0.5 ypos (py - 12) at y2_pulso
-                text "MARCA":
+                text _("MARCA"):
                     style "mj_etiqueta"
                     color "#FFE3A0"
                     xpos geo["marca_x"]
@@ -659,7 +659,7 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
                 xanchor 0.5
                 ypos 790
                 xysize (b[0], b[1])
-                use cinta_boton("¡Ahora!", Function(vivo.pulsar), quien, b[0], b[1], b[2])
+                use cinta_boton(_("¡Ahora!"), Function(vivo.pulsar), quien, b[0], b[1], b[2])
 
         ## --- Pantalla de explicación (solo al empezar), dentro del área ---
         if en_intro:
@@ -683,11 +683,11 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xsize 1240
                     spacing 14
 
-                    text "EL RELEVO DE LAS CINCO":
+                    text _("EL RELEVO DE LAS CINCO"):
                         style "mj_titulo"
                         xalign 0.5
 
-                    text (Y2_NIVEL_TXT[nivel] + "  ·  " + str(vivo.n) + " TRAMOS"):
+                    text (__(Y2_NIVEL_TXT[nivel]) + "  ·  " + __("{} TRAMOS").format(vivo.n)):
                         style "mj_etiqueta"
                         color PETALO_COLOR["yotsuba"]
                         xalign 0.5
@@ -707,7 +707,7 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
                     fixed:
                         xalign 0.5
                         xysize (b[0], b[1])
-                        use cinta_boton("Empezar", Function(vivo.empezar), "yotsuba", b[0], b[1], b[2])
+                        use cinta_boton(_("Empezar"), Function(vivo.empezar), "yotsuba", b[0], b[1], b[2])
 
     ## Toda la pantalla cuenta como botón, pero al PULSAR (no al soltar): así el
     ## toque en móvil no llega tarde. pulsar() ignora todo fuera de la fase

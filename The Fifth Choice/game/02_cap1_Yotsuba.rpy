@@ -322,7 +322,7 @@ label hub_Yotsuba:
 
     # Menú de Yotsuba.
 
-    $ decision_peso("yotsuba", "¿Qué le dirás a Yotsuba?", "Te ofrece el cronómetro. Lo que acaba de decir sigue ahí.")
+    $ decision_peso("yotsuba", _("¿Qué le dirás a Yotsuba?"), _("Te ofrece el cronómetro. Lo que acaba de decir sigue ahí."))
 
     menu:
 
@@ -613,7 +613,7 @@ label yotsuba_m6:
 
     mc_pensamiento "Una de cinco. Y esta no paraba de correr."
 
-    mc_pensamiento "Solo quedan [tiempo_restante]."
+    mc_pensamiento "Solo quedan [tiempo_restante!t]."
 
     if yotsuba_rama_cap1 == "calida":
 

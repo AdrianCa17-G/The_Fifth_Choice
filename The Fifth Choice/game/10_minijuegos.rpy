@@ -24,8 +24,8 @@ define E6_ORDEN_CANON  = ["ichika", "nino", "miku", "yotsuba", "itsuki"]
 define E6_ORDEN_EXAMEN = ["yotsuba", "ichika", "nino", "itsuki", "miku"]
 
 define E6_MATERIA = {
-    "ichika": "Matemáticas", "nino": "Inglés", "miku": "Sociales",
-    "yotsuba": "Japonés", "itsuki": "Ciencias",
+    "ichika": _("Matemáticas"), "nino": _("Inglés"), "miku": _("Sociales"),
+    "yotsuba": _("Japonés"), "itsuki": _("Ciencias"),
 }
 
 define E6_FRASE_DE_ESTADO = {
@@ -110,11 +110,11 @@ define MJ_PARAMS = {
 ## (quién, texto): "int" = voz interior de la hermana, "narrador" = narrador.
 ## RELLENO tomado de §5.5: lo sustituyen los guiones de los chats 3 y 4.
 define MJ_FALLOS = {
-    "yotsuba": [("int", "¡Otra vez!"), ("int", "¡Otra vez! ¡Esta sí!"), ("int", "...Otra vez. Despacio.")],
-    "ichika":  [("narrador", "Se quedó en blanco. Sonrió para que no se notara."), ("narrador", "La sonrisa tardó un poco más en volver."), ("narrador", "Esta vez no sonrió. Respiró, y empezó otra vez.")],
-    "nino":    [("int", "Tsk."), ("int", "...Otra vez. No mires."), ("int", "Otra vez.")],
-    "itsuki":  [("int", "Revisaré desde el principio."), ("int", "Revisaré desde el principio."), ("int", "Revisaré desde el principio.")],
-    "miku":    [("int", "...Perdón."), ("int", "...Perd—"), ("int", "...Otra vez.")],
+    "yotsuba": [("int", _("¡Otra vez!")), ("int", _("¡Otra vez! ¡Esta sí!")), ("int", _("...Otra vez. Despacio."))],
+    "ichika":  [("narrador", _("Se quedó en blanco. Sonrió para que no se notara.")), ("narrador", _("La sonrisa tardó un poco más en volver.")), ("narrador", _("Esta vez no sonrió. Respiró, y empezó otra vez."))],
+    "nino":    [("int", _("Tsk.")), ("int", _("...Otra vez. No mires.")), ("int", _("Otra vez."))],
+    "itsuki":  [("int", _("Revisaré desde el principio.")), ("int", _("Revisaré desde el principio.")), ("int", _("Revisaré desde el principio."))],
+    "miku":    [("int", _("...Perdón.")), ("int", _("...Perd—")), ("int", _("...Otra vez."))],
 }
 
 ################################################################################
@@ -445,12 +445,12 @@ init python:
         renpy.say(hablante, texto)
 
     def mj_ofrecer_salto():
-        narrator("Varios intentos fallidos.", interact=False)
-        return renpy.display_menu([("Intentarlo otra vez", "otra"), ("Que lo haga ella", "saltar")])
+        narrator(_("Varios intentos fallidos."), interact=False)
+        return renpy.display_menu([(_("Intentarlo otra vez"), "otra"), (_("Que lo haga ella"), "saltar")])
 
     def mj_preguntar_repeticion():
-        narrator("Ya superaste este minijuego.", interact=False)
-        return renpy.display_menu([("Jugarlo otra vez", "jugar"), ("Saltarlo", "saltar")])
+        narrator(_("Ya superaste este minijuego."), interact=False)
+        return renpy.display_menu([(_("Jugarlo otra vez"), "jugar"), (_("Saltarlo"), "saltar")])
 
     def mj_cerrar(resultado):
         """Restaura la interfaz, anota e6_mj[hermana] (sin puntos: P-09) y cierra el rollback."""
@@ -710,7 +710,7 @@ screen mj_aviso(texto, tipo, hermana):
             Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix("#1B1026")),
             Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(acento)))
 
-        text texto:
+        text __(texto):
             style "mj_aviso_texto"
             text_align 0.5
             xalign 0.5
@@ -722,7 +722,7 @@ screen mj_hud_fila(etiqueta, cifra, color_etiqueta="#E8E0F2"):
 
     fixed:
         xysize (MJ_HUD_ANCHO, 34)
-        text etiqueta style "mj_etiqueta" color color_etiqueta xpos 0 yalign 0.5 substitute False
+        text __(etiqueta) style "mj_etiqueta" color color_etiqueta xpos 0 yalign 0.5 substitute False
         if cifra != "":
             text cifra style "mj_cifra" xalign 1.0 yalign 0.5 substitute False
 
@@ -736,7 +736,7 @@ screen mj_hud_fila(etiqueta, cifra, color_etiqueta="#E8E0F2"):
 ##   chibi/globo/anim     → chibi general a 1.0 en la columna (mj_retrato)
 ##   aviso/aviso_tipo     → píldora en la franja fija ("" = sin aviso; al
 ##                          vaciarse, sale con el último texto)
-screen mj_marco(hermana, titulo, intento=1, fallos=0, nivel="dificil", progreso=0, total=1, tiempo=None, tiempo_total=None, unidad="ACIERTOS", recurso_txt="TIEMPO", recurso_unidad=" s", vidas=None, vidas_max=0, vidas_txt="", chibi=None, globo=None, anim="quieto", aviso="", aviso_tipo="info"):
+screen mj_marco(hermana, titulo, intento=1, fallos=0, nivel="dificil", progreso=0, total=1, tiempo=None, tiempo_total=None, unidad=_("ACIERTOS"), recurso_txt=_("TIEMPO"), recurso_unidad=" s", vidas=None, vidas_max=0, vidas_txt="", chibi=None, globo=None, anim="quieto", aviso="", aviso_tipo="info"):
 
     default aviso_ultimo = ""
     default tipo_ultimo = "info"
@@ -760,9 +760,9 @@ screen mj_marco(hermana, titulo, intento=1, fallos=0, nivel="dificil", progreso=
     add "ui/mj_columna.png" xpos 0 ypos 0
     add "ui/mj_columna_banda.png" xpos 0 ypos 0 matrixcolor TintMatrix(color)
 
-    $ etiqueta = "MINIJUEGO"
+    $ etiqueta = _("MINIJUEGO")
     if nivel == "asistida":
-        $ etiqueta = "MINIJUEGO · ASISTENCIA"
+        $ etiqueta = _("MINIJUEGO · ASISTENCIA")
     use hud_cinta_vista(titulo, etiqueta, hermana, cinta, tinta, mj_cinta_entrada)
 
     ## --- HUD: intento → vidas → recurso → progreso ---
@@ -772,13 +772,13 @@ screen mj_marco(hermana, titulo, intento=1, fallos=0, nivel="dificil", progreso=
         xsize MJ_HUD_ANCHO
         spacing 12
 
-        use mj_hud_fila("INTENTO", str(intento))
+        use mj_hud_fila(_("INTENTO"), str(intento))
 
         if vidas is not None:
             vbox:
                 spacing 6
                 if vidas_txt != "":
-                    text vidas_txt style "mj_etiqueta" substitute False
+                    text __(vidas_txt) style "mj_etiqueta" substitute False
                 hbox:
                     spacing 4
                     for k in range(vidas_max):

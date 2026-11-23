@@ -7,18 +7,18 @@
 
 ## (actuada, sincera). None = esa línea no se puede actuar. Del anexo de bloques A.
 define I1_LINEAS = [
-    ("¡Llegué justo a tiempo! ¡Siempre llego justo a tiempo!", "Llevo toda la semana llegando justa."),
-    ("Estoy bien. Que conste.", "Estoy cansada."),
-    ("¡Dormir es para los débiles!", "Necesito dormir."),
-    ("¡Una audición más, y otra, y otra!", "Me da miedo que no salga ninguna."),
-    ("¡El público me adora, aunque esté vacío!", "A veces actúo para una sala vacía."),
-    ("Tengo tres formas de decir que sí.", "Digo que sí antes de pensarlo."),
-    ("¡Los dragones no se cansan!", "Yo sí."),
-    ("¡Mi risa es mi mejor entrada!", "A veces me río para no contestar."),
-    ("Pregúntame lo que quieras. Contestaré con un chiste.", "Pregúntame dos veces."),
-    ("¡Hoy no me cuesta nada!", "Hoy me cuesta mucho."),
-    ("¡Puedo con todo!", "No sé hasta cuándo."),
-    (None, "No tengo que poder con todo."),
+    (_("¡Llegué justo a tiempo! ¡Siempre llego justo a tiempo!"), _("Llevo toda la semana llegando justa.")),
+    (_("Estoy bien. Que conste."), _("Estoy cansada.")),
+    (_("¡Dormir es para los débiles!"), _("Necesito dormir.")),
+    (_("¡Una audición más, y otra, y otra!"), _("Me da miedo que no salga ninguna.")),
+    (_("¡El público me adora, aunque esté vacío!"), _("A veces actúo para una sala vacía.")),
+    (_("Tengo tres formas de decir que sí."), _("Digo que sí antes de pensarlo.")),
+    (_("¡Los dragones no se cansan!"), _("Yo sí.")),
+    (_("¡Mi risa es mi mejor entrada!"), _("A veces me río para no contestar.")),
+    (_("Pregúntame lo que quieras. Contestaré con un chiste."), _("Pregúntame dos veces.")),
+    (_("¡Hoy no me cuesta nada!"), _("Hoy me cuesta mucho.")),
+    (_("¡Puedo con todo!"), _("No sé hasta cuándo.")),
+    (None, _("No tengo que poder con todo.")),
 ]
 
 ## Líneas (1-based) que se quitan al bajar de nivel. La 12 nunca.
@@ -138,11 +138,11 @@ init python:
             if self.estado != "linea" or self.es_ultima():
                 return ""
             if not self.puede_sincera():
-                return "Sin energía: solo puedes actuar. Actuar la recupera."
+                return _("Sin energía: solo puedes actuar. Actuar la recupera.")
             if self.mascara >= 70.0:
-                return "La máscara pesa. Una sincera la baja."
+                return _("La máscara pesa. Una sincera la baja.")
             if self.mascara <= 20.0:
-                return "Poca máscara: actuar sale barato y recupera energía."
+                return _("Poca máscara: actuar sale barato y recupera energía.")
             return ""
 
         def empezar(self):
@@ -170,7 +170,7 @@ init python:
             if self.sosteniendo:
                 return None
             if not self.puede_sincera():
-                self.aviso = "Sin fuerzas. Actúa para recuperar energía."
+                self.aviso = _("Sin fuerzas. Actúa para recuperar energía.")
                 self.aviso_t = 1.2
                 self.globo.decir("sinfuerzas")
                 return None
@@ -182,7 +182,7 @@ init python:
             if self.sosteniendo and self.estado == "linea":
                 self.sosteniendo = False
                 self.sostenido = 0.0
-                self.aviso = "Mantén un poco más."
+                self.aviso = _("Mantén un poco más.")
                 self.aviso_t = 0.8
             return None
 
@@ -343,18 +343,18 @@ init python:
             """(texto, tipo) para el aviso del marco. tipo: "bien" | "mal" | "info"."""
             if self.estado == "fin":
                 if self.resultado["resultado"] == "ganado":
-                    return ("Esta vez no hubo máscara.", "bien")
-                return ("Se quedó en blanco.", "mal")
+                    return (_("Esta vez no hubo máscara."), "bien")
+                return (_("Se quedó en blanco."), "mal")
             if self.estado == "resp":
                 if self.respuesta == "actuada":
-                    return ("Aplauso. La sonrisa pesa un poco más.", "info")
+                    return (_("Aplauso. La sonrisa pesa un poco más."), "info")
                 if self.respuesta == "improviso":
-                    return ("Se le acabó el tiempo y actuó sin querer.", "mal")
+                    return (_("Se le acabó el tiempo y actuó sin querer."), "mal")
                 if self.desperdicio:
-                    return ("Casi no había máscara que quitar. Energía gastada de más.", "mal")
-                return ("Silencio. Y se oyó.", "bien")
+                    return (_("Casi no había máscara que quitar. Energía gastada de más."), "mal")
+                return (_("Silencio. Y se oyó."), "bien")
             if self.aviso_t > 0.0:
-                if self.aviso == "Mantén un poco más.":
+                if self.aviso == _("Mantén un poco más."):
                     return (self.aviso, "info")
                 return (self.aviso, "mal")
             return ("", "info")
@@ -377,7 +377,7 @@ init python:
                 return "tiembla"
             return "bob"
 
-    mj_registrar("i1", "mj_i1", "La máscara se cansa", True)
+    mj_registrar("i1", "mj_i1", _("La máscara se cansa"), True)
 
 
 ################################################################################
@@ -447,7 +447,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ hay_actuada = (linea[0] is not None)
     $ txt_actuada = linea[0]
     if txt_actuada is None:
-        $ txt_actuada = "Esta línea no se puede actuar."
+        $ txt_actuada = _("Esta línea no se puede actuar.")
     $ ultima = vivo.es_ultima()
     $ puede_s = vivo.puede_sincera()
     $ costo_s = int(round(vivo.costo_sincera()))
@@ -466,11 +466,11 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
 
     ## Marca del coste de una sincera en la barra de energía (la última es gratis).
     $ marca_e = None
-    $ nota_e = "Ser sincera cuesta energía (la raya blanca). Actuar la recupera."
+    $ nota_e = _("Ser sincera cuesta energía (la raya blanca). Actuar la recupera.")
     if en_juego and not ultima and costo_s > 0:
         $ marca_e = costo_s
     if ultima:
-        $ nota_e = "La última línea sincera no cuesta energía."
+        $ nota_e = _("La última línea sincera no cuesta energía.")
 
     ## Cambio de la última decisión, junto a la cifra de su barra.
     $ cambio_m = ""
@@ -495,18 +495,18 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
         $ hover_fondo_s = "#2A2236"
         $ hover_borde_s = "#6E6680"
 
-    $ sub_s = "lo que no dice  ·  mantén (S) " + hold_txt + " s"
-    $ chip_e = "ENERGÍA -" + str(costo_s)
+    $ sub_s = __("lo que no dice  ·  mantén (S) {} s").format(hold_txt)
+    $ chip_e = __("ENERGÍA") + " -" + str(costo_s)
     if ultima:
-        $ sub_s = "la última  ·  gratis  ·  mantén (S) " + hold_txt + " s"
-        $ chip_e = "ENERGÍA GRATIS"
+        $ sub_s = __("la última  ·  gratis  ·  mantén (S) {} s").format(hold_txt)
+        $ chip_e = _("ENERGÍA GRATIS")
 
     $ msg = vivo.mensaje()
     $ consejo = vivo.consejo()
 
     add "bg_sala_ensayo" fit "cover"
 
-    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.i, vivo.n, None, None, "LÍNEAS", chibi=vivo.expresion(), globo=vivo.globo, anim=vivo.anim(), aviso=msg[0], aviso_tipo=msg[1]):
+    use mj_marco(hermana, titulo, intento, fallos, nivel, vivo.i, vivo.n, None, None, _("LÍNEAS"), chibi=vivo.expresion(), globo=vivo.globo, anim=vivo.anim(), aviso=msg[0], aviso_tipo=msg[1]):
 
         ## --- Las dos barras: el corazón del minijuego ---
         fixed:
@@ -517,18 +517,18 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                 xpos 0
                 ypos 0
                 xysize (I1_TARJETA_W, 110)
-                use i1_medidor("MÁSCARA", vivo.mascara, str(int(round(vivo.mascara))) + " %", cambio_m, col_dm, col_masc, "Al llegar a 100 %, se queda en blanco.", I1_MASCARA_PELIGRO)
+                use i1_medidor(_("MÁSCARA"), vivo.mascara, str(int(round(vivo.mascara))) + " %", cambio_m, col_dm, col_masc, _("Al llegar a 100 %, se queda en blanco."), I1_MASCARA_PELIGRO)
             fixed:
                 xpos (I1_X2 - I1_X)
                 ypos 0
                 xysize (I1_TARJETA_W, 110)
-                use i1_medidor("ENERGÍA", vivo.energia, str(int(round(vivo.energia))), cambio_e, col_de, col_ener, nota_e, None, marca_e)
+                use i1_medidor(_("ENERGÍA"), vivo.energia, str(int(round(vivo.energia))), cambio_e, col_de, col_ener, nota_e, None, marca_e)
 
         if en_juego:
 
             ## --- Reloj de la línea ---
             if ultima:
-                text "ÚLTIMA LÍNEA  ·  SIN PRISA  ·  SOLO PUEDE SER SINCERA":
+                text _("ÚLTIMA LÍNEA  ·  SIN PRISA  ·  SOLO PUEDE SER SINCERA"):
                     style "mj_etiqueta"
                     color "#FFE3A0"
                     xpos MJ_AREA_CX
@@ -540,7 +540,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     ypos I1_RELOJ_Y
                     xsize I1_ANCHO
                     spacing 8
-                    text "TIEMPO PARA ELEGIR" style "mj_etiqueta"
+                    text _("TIEMPO PARA ELEGIR") style "mj_etiqueta"
                     use barra_progreso(vivo.restante, vivo.tlinea, col_tiempo, I1_ANCHO)
 
             ## --- EL PAPEL (actuada): izquierda ---
@@ -567,12 +567,12 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     ypos 24
                     xsize 588
                     spacing 6
-                    text "EL PAPEL":
+                    text _("EL PAPEL"):
                         style "mj_etiqueta"
                         color claro
                         hover_color tinta
                         insensitive_color "#8F8AA0"
-                    text "lo que pide el guion  ·  toca (A)":
+                    text _("lo que pide el guion  ·  toca (A)"):
                         style "mj_nota"
                         hover_color tinta
                         insensitive_color "#8F8AA0"
@@ -587,12 +587,12 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xpos 36
                     ypos (I1_TARJETA_H - 52)
                     spacing 28
-                    text ("MÁSCARA +" + str(int(round(vivo.sube)))):
+                    text (__("MÁSCARA") + " +" + str(int(round(vivo.sube)))):
                         style "mj_etiqueta"
                         color "#FF9A9A"
                         hover_color tinta
                         insensitive_color "#8F8AA0"
-                    text ("ENERGÍA +" + str(int(round(vivo.e_gana)))):
+                    text (__("ENERGÍA") + " +" + str(int(round(vivo.e_gana)))):
                         style "mj_etiqueta"
                         color "#9AE6B4"
                         hover_color tinta
@@ -621,7 +621,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     ypos 24
                     xsize 588
                     spacing 6
-                    text "LO QUE SIENTE":
+                    text _("LO QUE SIENTE"):
                         style "mj_etiqueta"
                         color claro
                         hover_color tinta
@@ -644,7 +644,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xpos 36
                     ypos (I1_TARJETA_H - 52)
                     spacing 28
-                    text ("MÁSCARA -" + str(int(round(vivo.baja)))):
+                    text (__("MÁSCARA") + " -" + str(int(round(vivo.baja)))):
                         style "mj_etiqueta"
                         color "#9AE6B4"
                         hover_color tinta
@@ -654,7 +654,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                         hover_color tinta
 
                 if not puede_s:
-                    text "SIN FUERZAS":
+                    text _("SIN FUERZAS"):
                         style "mj_cifra"
                         color "#FFB38A"
                         xalign 0.5
@@ -690,11 +690,11 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     xsize (I1_ANCHO - 120)
                     spacing 18
 
-                    text "LA MÁSCARA SE CANSA":
+                    text _("LA MÁSCARA SE CANSA"):
                         style "mj_titulo"
                         xalign 0.5
 
-                    text "Ichika repasa su papel. Cada línea tiene dos versiones: lo que el guion pide decir... y lo que de verdad siente.":
+                    text _("Ichika repasa su papel. Cada línea tiene dos versiones: lo que el guion pide decir... y lo que de verdad siente."):
                         style "mj_cuerpo"
                         xalign 0.5
                         text_align 0.5
@@ -706,26 +706,26 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                         vbox:
                             xsize 520
                             spacing 8
-                            text "EL PAPEL  ·  TOCA (A)":
+                            text _("EL PAPEL  ·  TOCA (A)"):
                                 style "mj_etiqueta"
                                 color claro
-                            text "{color=#FF9A9A}MÁSCARA sube{/color}  ·  {color=#9AE6B4}ENERGÍA se recupera{/color}":
+                            text _("{color=#FF9A9A}MÁSCARA sube{/color}  ·  {color=#9AE6B4}ENERGÍA se recupera{/color}"):
                                 style "mj_cuerpo"
-                            text "Es rápido y cómodo. Pero la máscara se llena.":
+                            text _("Es rápido y cómodo. Pero la máscara se llena."):
                                 style "mj_nota"
 
                         vbox:
                             xsize 520
                             spacing 8
-                            text "LO QUE SIENTE  ·  MANTÉN (S)":
+                            text _("LO QUE SIENTE  ·  MANTÉN (S)"):
                                 style "mj_etiqueta"
                                 color claro
-                            text "{color=#9AE6B4}MÁSCARA baja{/color}  ·  {color=#FFB38A}ENERGÍA se gasta{/color}":
+                            text _("{color=#9AE6B4}MÁSCARA baja{/color}  ·  {color=#FFB38A}ENERGÍA se gasta{/color}"):
                                 style "mj_cuerpo"
-                            text "Cuesta, y cuesta más cuanta más máscara tengas.":
+                            text _("Cuesta, y cuesta más cuanta más máscara tengas."):
                                 style "mj_nota"
 
-                    text "OBJETIVO: llegar a la última línea sin que la máscara llegue a 100 %. Todo actuada: te quedas en blanco. Todo sincera: te quedas sin energía. Alterna.":
+                    text _("OBJETIVO: llegar a la última línea sin que la máscara llegue a 100 %. Todo actuada: te quedas en blanco. Todo sincera: te quedas sin energía. Alterna."):
                         style "mj_cuerpo"
                         color "#FFE3A0"
                         xalign 0.5
@@ -736,7 +736,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
                     fixed:
                         xalign 0.5
                         xysize (b[0], b[1])
-                        use cinta_boton("Empezar", Function(vivo.empezar), hermana, b[0], b[1], b[2])
+                        use cinta_boton(_("Empezar"), Function(vivo.empezar), hermana, b[0], b[1], b[2])
 
     ## Ratón y toque para «mantener». Van AL FINAL para que Ren'Py los procese
     ## antes que la tarjeta: el botón enfocado descarta mousedown_1

@@ -46,10 +46,10 @@ define MJ_FALLO_EN_GLOBO = False
 ################################################################################
 
 define MJ_GLOBOS_GENERICO = {
-    "inicio":  ["...Vamos."],
-    "acierto": ["...Bien."],
-    "fallo":   ["...Otra vez."],
-    "final":   ["...Listo."],
+    "inicio":  [_("...Vamos.")],
+    "acierto": [_("...Bien.")],
+    "fallo":   [_("...Otra vez.")],
+    "final":   [_("...Listo.")],
 }
 
 define MJ_GLOBOS = {
@@ -57,70 +57,70 @@ define MJ_GLOBOS = {
     ## Yotsuba: exclamaciones durante el juego (la armadura); en el final
     ## desaparecen, porque ahí dice la verdad.
     "yotsuba": {
-        "inicio":  ["¡Vamos, equipo!", "¡Todas juntas!", "¡Listas! ¡Preparadas!"],
-        "acierto": ["¡Testigo recibido!", "¡Bien! ¡Siguiente!", "¡Eso! ¡Así se pasa!"],
-        "mitad":   ["¡Ya vamos por la mitad!", "¡Mitad de la carrera!"],
-        "casi":    ["¡Falta poco! ¡Poquísimo!", "¡Última vuelta! ¡Última, última!"],
-        "falsa":   ["¡Ups! ¡Muy pronto!", "¡Esperen! ¡Salí antes!"],
-        "caida":   ["¡Ay! ¡El testigo!", "¡Se cayó! ¡Lo recojo!"],
-        "fallo":   ["¡Otra vez! ¡Con ganas!", "¡No pasa nada! ¡Otra!"],
-        "final":   ["Llegamos. Todas.", "Llegamos todas."],
-        "racha":   ["¡Vamos en racha!", "¡No paramos!", "¡Así, así!"],
-        "cura":    ["¡Testigo nuevo! ¡Gracias, equipo!", "¡Recuperado!"],
+        "inicio":  [_("¡Vamos, equipo!"), _("¡Todas juntas!"), _("¡Listas! ¡Preparadas!")],
+        "acierto": [_("¡Testigo recibido!"), _("¡Bien! ¡Siguiente!"), _("¡Eso! ¡Así se pasa!")],
+        "mitad":   [_("¡Ya vamos por la mitad!"), _("¡Mitad de la carrera!")],
+        "casi":    [_("¡Falta poco! ¡Poquísimo!"), _("¡Última vuelta! ¡Última, última!")],
+        "falsa":   [_("¡Ups! ¡Muy pronto!"), _("¡Esperen! ¡Salí antes!")],
+        "caida":   [_("¡Ay! ¡El testigo!"), _("¡Se cayó! ¡Lo recojo!")],
+        "fallo":   [_("¡Otra vez! ¡Con ganas!"), _("¡No pasa nada! ¡Otra!")],
+        "final":   [_("Llegamos. Todas."), _("Llegamos todas.")],
+        "racha":   [_("¡Vamos en racha!"), _("¡No paramos!"), _("¡Así, así!")],
+        "cura":    [_("¡Testigo nuevo! ¡Gracias, equipo!"), _("¡Recuperado!")],
     },
 
     ## Nino: corta, seca, sin dejar contestar.
     "nino": {
-        "inicio":  ["Tres cosas por lista. Sin perder el tiempo.", "Lee bien. No adivines.", "Lee las etiquetas. Todas."],
-        "acierto": ["Esa.", "Bien. Siguiente.", "...Correcto."],
-        "lista":   ["Una lista menos.", "Ahí va otra.", "Siguiente. Rápido."],
-        "mitad":   ["Vamos bien. No lo celebres."],
-        "casi":    ["Falta una. Una."],
-        "fallo":   ["Esa no. Lee la etiqueta.", "Tsk. Casi igual no es igual.", "Otra vez. No mires tanto."],
-        "tiempo":  ["Se nos acaba el tiempo.", "Rápido. Pero no a lo loco."],
-        "sexto":   ["...Queda un hueco. Elige tú.", "Sitio para una cosa más. No me mires."],
-        "final":   ["Hecho. Y no lo comentes.", "...Ya está. Vámonos."],
-        "racha":   ["Bien. Sigue así.", "Tres seguidas. No te confíes.", "Eso. Sin pausas."],
-        "mirar":   ["Tsk. ¿Ya se te olvidó la lista?", "Mírala. Pero eso cuesta tiempo."],
+        "inicio":  [_("Tres cosas por lista. Sin perder el tiempo."), _("Lee bien. No adivines."), _("Lee las etiquetas. Todas.")],
+        "acierto": [_("Esa."), _("Bien. Siguiente."), _("...Correcto.")],
+        "lista":   [_("Una lista menos."), _("Ahí va otra."), _("Siguiente. Rápido.")],
+        "mitad":   [_("Vamos bien. No lo celebres.")],
+        "casi":    [_("Falta una. Una.")],
+        "fallo":   [_("Esa no. Lee la etiqueta."), _("Tsk. Casi igual no es igual."), _("Otra vez. No mires tanto.")],
+        "tiempo":  [_("Se nos acaba el tiempo."), _("Rápido. Pero no a lo loco.")],
+        "sexto":   [_("...Queda un hueco. Elige tú."), _("Sitio para una cosa más. No me mires.")],
+        "final":   [_("Hecho. Y no lo comentes."), _("...Ya está. Vámonos.")],
+        "racha":   [_("Bien. Sigue así."), _("Tres seguidas. No te confíes."), _("Eso. Sin pausas.")],
+        "mirar":   [_("Tsk. ¿Ya se te olvidó la lista?"), _("Mírala. Pero eso cuesta tiempo.")],
     },
 
     ## Itsuki: oración cerrada, sujeto-verbo-punto.
     "itsuki": {
-        "inicio":     ["Despacio. Paso a paso.", "Revisaré cada paso.", "Empiezo por el principio."],
-        "paso":       ["Siguiente paso.", "Anotado.", "Ese paso está hecho."],
-        "fallo":      ["El resultado no cuadra.", "Hay un error en alguna parte.", "No cuadra. Otra vez."],
-        "tiempo":     ["Queda poco tiempo.", "El tiempo corre."],
-        "ayuda":      ["...Profesor. ¿Puede mirar esto?", "Una duda. Solo una."],
-        "tras_ayuda": ["Entendido. Lo reviso.", "Ahí. Ahora lo veo."],
-        "final":      ["Cuadra. Esta vez cuadra.", "Salió. Lo hice yo."],
+        "inicio":     [_("Despacio. Paso a paso."), _("Revisaré cada paso."), _("Empiezo por el principio.")],
+        "paso":       [_("Siguiente paso."), _("Anotado."), _("Ese paso está hecho.")],
+        "fallo":      [_("El resultado no cuadra."), _("Hay un error en alguna parte."), _("No cuadra. Otra vez.")],
+        "tiempo":     [_("Queda poco tiempo."), _("El tiempo corre.")],
+        "ayuda":      [_("...Profesor. ¿Puede mirar esto?"), _("Una duda. Solo una.")],
+        "tras_ayuda": [_("Entendido. Lo reviso."), _("Ahí. Ahora lo veo.")],
+        "final":      [_("Cuadra. Esta vez cuadra."), _("Salió. Lo hice yo.")],
     },
 
     ## Miku: «...» al inicio mientras se esconde; cuando se suelta (final) desaparece.
     "miku": {
-        "inicio":   ["...Vale. Empiezo.", "...Cuento hasta cuatro.", "...Con los audífonos puestos, sí.", "...Esto es solo compás."],
-        "acierto":  ["...Ahí.", "...Eso.", "...Sí.", "...Encaja."],
-        "racha":    ["...Se oye bien.", "...Ya casi no pienso.", "...Sigo, sigo.", "...Va solo."],
-        "fallo":    ["...Uy.", "...Sigo.", "...Otra nota."],
-        "caida":    ["...Aguanta.", "...No te escondas ahora.", "...Despacio. ...Despacio."],
-        "mitad":    ["...Se apagaron.", "...Solo queda el reloj.", "...Sin música. ...Sigo."],
-        "silencio": ["...Lo oigo. ...Es el reloj.", "...El reloj no pide perdón.", "...Sin audífonos suena igual."],
-        "casi":     ["...Ya queda poco.", "...Casi. ...Casi.", "...No pares ahora."],
-        "final":    ["Esto sí lo sé.", "Lo tenía.", "No me escondí."],
-        "perdida":  ["...Se me fue el compás.", "...Perdí el hilo."],
+        "inicio":   [_("...Vale. Empiezo."), _("...Cuento hasta cuatro."), _("...Con los audífonos puestos, sí."), _("...Esto es solo compás.")],
+        "acierto":  [_("...Ahí."), _("...Eso."), _("...Sí."), _("...Encaja.")],
+        "racha":    [_("...Se oye bien."), _("...Ya casi no pienso."), _("...Sigo, sigo."), _("...Va solo.")],
+        "fallo":    [_("...Uy."), _("...Sigo."), _("...Otra nota.")],
+        "caida":    [_("...Aguanta."), _("...No te escondas ahora."), _("...Despacio. ...Despacio.")],
+        "mitad":    [_("...Se apagaron."), _("...Solo queda el reloj."), _("...Sin música. ...Sigo.")],
+        "silencio": [_("...Lo oigo. ...Es el reloj."), _("...El reloj no pide perdón."), _("...Sin audífonos suena igual.")],
+        "casi":     [_("...Ya queda poco."), _("...Casi. ...Casi."), _("...No pares ahora.")],
+        "final":    [_("Esto sí lo sé."), _("Lo tenía."), _("No me escondí.")],
+        "perdida":  [_("...Se me fue el compás."), _("...Perdí el hilo.")],
     },
 
     ## Ichika: exclamación = máscara; sin exclamación = sincera.
     "ichika": {
-        "inicio":    ["¡Telón! ...Las líneas, una a una.", "Respira, Ichika. Tú puedes.", "Me sé el guion. Falta saber cuál es el mío.", "¡Luces, cámara...!"],
-        "actuada":   ["¡Ta-chán!", "¡Qué entrada!", "¡Aplausos, por favor!", "¡Sonríe, Ichika!"],
-        "sincera":   ["...Eso era mío.", "Eso salió sin guion.", "Pesó menos de lo que pensaba.", "Ya. Lo dije."],
-        "improviso": ["¡Improviso! ...Me sale solo.", "Ay. Actué sin querer.", "Actué sin querer. Otra vez."],
-        "mitad":     ["Mitad de función. La sonrisa pesa.", "Ya van varias. ...Sigo.", "Tres cuartos de sonrisa."],
-        "caida":     ["La sonrisa se me cae...", "Me pesa la cara.", "Casi me quedo en blanco."],
-        "casi":      ["La última. Esta no se actúa.", "Una más. Solo mía.", "Ya llega la última."],
-        "blanco":    ["...Me quedé en blanco.", "Se apagaron las luces.", "No me sale nada. Ni el chiste."],
-        "final":     ["Respira. Ya está.", "Sonreí despacio. ...Mejor.", "Eso no lo ensayé."],
-        "sinfuerzas": ["Me quedé sin pilas...", "Sin energía. Actúo por inercia.", "No me da la voz.", "Necesito un respiro."],
+        "inicio":    [_("¡Telón! ...Las líneas, una a una."), _("Respira, Ichika. Tú puedes."), _("Me sé el guion. Falta saber cuál es el mío."), _("¡Luces, cámara...!")],
+        "actuada":   [_("¡Ta-chán!"), _("¡Qué entrada!"), _("¡Aplausos, por favor!"), _("¡Sonríe, Ichika!")],
+        "sincera":   [_("...Eso era mío."), _("Eso salió sin guion."), _("Pesó menos de lo que pensaba."), _("Ya. Lo dije.")],
+        "improviso": [_("¡Improviso! ...Me sale solo."), _("Ay. Actué sin querer."), _("Actué sin querer. Otra vez.")],
+        "mitad":     [_("Mitad de función. La sonrisa pesa."), _("Ya van varias. ...Sigo."), _("Tres cuartos de sonrisa.")],
+        "caida":     [_("La sonrisa se me cae..."), _("Me pesa la cara."), _("Casi me quedo en blanco.")],
+        "casi":      [_("La última. Esta no se actúa."), _("Una más. Solo mía."), _("Ya llega la última.")],
+        "blanco":    [_("...Me quedé en blanco."), _("Se apagaron las luces."), _("No me sale nada. Ni el chiste.")],
+        "final":     [_("Respira. Ya está."), _("Sonreí despacio. ...Mejor."), _("Eso no lo ensayé.")],
+        "sinfuerzas": [_("Me quedé sin pilas..."), _("Sin energía. Actúo por inercia."), _("No me da la voz."), _("Necesito un respiro.")],
     },
 }
 
@@ -337,7 +337,7 @@ screen mj_globo(texto, hermana, x, y, ancho=MJ_GLOBO_ANCHO):
             Transform(Frame("ui/opcion_neutra.png", 40, 40, 40, 40), matrixcolor=TintMatrix(fondo)),
             Transform(Frame("ui/opcion_marco.png", 40, 40, 40, 40), matrixcolor=TintMatrix(color)))
 
-        text texto:
+        text __(texto):
             style "mj_globo_texto"
             color tinta
             text_align 0.5
