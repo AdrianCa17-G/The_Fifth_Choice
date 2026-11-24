@@ -12,3 +12,9 @@ Formato: una fila por errata. «Archivo:línea» tal como está en el momento de
 
 | Archivo:línea | Texto actual | Corrección | Anotada por / fecha |
 |---|---|---|---|
+| `08_extras.rpy:17` | «Un encuentro incomodo» | «Un encuentro incómodo» | Claude, 23/11/2026 |
+| `08_extras.rpy:38` | «No puedo mas» | «No puedo más» | Claude, 23/11/2026 |
+| `08_extras.rpy:44` | «Una receta con transfondo» | «Una receta con trasfondo» | Claude, 23/11/2026 |
+| `08_extras.rpy:56` | «Quiero usar mis audifonos» | «Quiero usar mis audífonos» | Claude, 23/11/2026 |
+| `08_extras.rpy:1198` | «Diviértete jugandolos.» | «Diviértete jugándolos.» | Claude, 23/11/2026 |
+| `02_cap1_evento6.rpy:1895` + `07_ui.rpy` / `13_transiciones.rpy` | HUD «Quedan [tiempo_restante!t]» con «un examen» → «Quedan un examen» | «Queda un examen». Arreglo propuesto: la plantilla del HUD distingue singular, o el valor pasa a «solo un examen» con «Queda». En inglés no afecta ("one exam left"). | Claude, 23/11/2026 |

@@ -3,8 +3,8 @@
 Referencia obligatoria para cada sesión de traducción (tareas C1–C5, E1) y base para el ruso (sección 6 del plan).
 Si aparece un término que no está aquí: se decide, se añade a este archivo y se avisa a Adrian.
 
-Las dudas pendientes están marcadas con **[DECIDIR]**. Cada una trae una recomendación; mientras Adrian no
-diga otra cosa, se traduce con la recomendación.
+Las dudas del día 1 ya están resueltas por Adrian (23/11/2026, §10). Si surge una nueva, se marca **[DECIDIR]**
+con una recomendación, y se traduce con la recomendación hasta que Adrian decida.
 
 ---
 
@@ -47,23 +47,23 @@ En el juego casi siempre se usa solo el nombre de pila.
 
 ---
 
-## 3. Honoríficos  [DECIDIR]
+## 3. Honoríficos: sin honoríficos (decidido)
 
 **Dato del texto:** el español **no usa ningún honorífico** (0 apariciones de -kun, -san, -chan, -sama, senpai, sensei).
 Las chicas llaman a Futaro por su nombre (`[mc]`) o «tutor»; Raiha le dice «hermanito»; el profesor dice «Nakano».
 
 | Opción | Cómo queda | A favor | En contra |
 |---|---|---|---|
-| **A. Sin honoríficos (recomendada)** | "Thanks, [mc]." · "Big bro!" | Fiel al español, que ya los quitó. Lectura fluida. `[mc]` puede ser cualquier nombre del jugador, y «Pedro-kun» queda raro. | Pierde algo de sabor japonés. |
+| **A. Sin honoríficos (recomendada)** | "Thanks, [mc]." · "Morning, [mc]!" | Fiel al español, que ya los quitó. Lectura fluida. `[mc]` puede ser cualquier nombre del jugador, y «Pedro-kun» queda raro. | Pierde algo de sabor japonés. |
 | B. Añadir -kun/-san/-chan | "Thanks, [mc]-kun." | Le gusta a parte del público del anime. | Hay que inventar el registro de cada pareja de personajes (el español no lo marca). Choca con nombres de jugador occidentales. Más trabajo y más errores en E1. |
 
-**Recomendación: A.** Se aplica desde C1 salvo que Adrian diga lo contrario.
+**Decisión (Adrian, 23/11): A, sin honoríficos.** Nunca -kun, -san, -chan, -sama, senpai ni sensei.
 
 Términos de trato que sí existen en el español:
 
 | Español | Inglés | Quién lo dice |
 |---|---|---|
-| hermanito | **big bro** (cariñoso; "Big bro!" a principio de frase) · [DECIDIR] alternativa: "Onii-chan" | Raiha |
+| hermanito | **[mc]** por defecto; **big brother** en momentos de cercanía o broma | Raiha. Según la escena: "[mc]! Dinner!" pero "...You okay, big brother?". Nunca "Onii-chan" ni el nombre «Futaro» escrito: siempre `[mc]`. |
 | tutor | **tutor** ("Thirty days, tutor.") | Nino, Yotsuba, Itsuki |
 | papá / mi padre | **Dad** / **my father** | «papá» → Dad (Raiha, Futaro, Nino al teléfono, Ichika: "our dad"). «mi padre» → my father. |
 
@@ -119,7 +119,7 @@ En el juego hay **cinco materias**, una por hermana (Evento 6, de lunes a vierne
 | soda de matcha | **matcha soda** | |
 | audífonos (de Miku) | **headphones** | |
 | cronómetro (de Yotsuba) | **stopwatch** | |
-| «jajaja» (chat) | **"lol"** · [DECIDIR] o "hahaha" | Recomendado "hahaha": más neutro para la voz de cada chica. |
+| «jajaja» (chat) | **"hahaha"** | Decidido. Se adapta al momento y a quien escribe (p. ej. "haha" más seco, "HAHAHA" si es Yotsuba eufórica). |
 
 ---
 
@@ -179,8 +179,8 @@ Entre paréntesis, cuántas líneas tiene cada uno en el Prólogo + Cap. 1.
 
 ### Raiha (129)
 - Hermana pequeña de Futaro. Alegre, mandona en casa, cariñosa. Exclamaciones, preguntas encadenadas.
-- Siempre «hermanito» → **big bro** (ver §3). Cita a «la maestra» → "Teacher said so!"
-- Muestra: «¡Hermanito! Hice curry.» → "Big bro! I made curry."
+- «hermanito» → `[mc]` por defecto, **big brother** en momentos de cercanía o broma (ver §3). Cita a «la maestra» → "Teacher said so!"
+- Muestra: «¡Hermanito! Hice curry.» → "[mc]! I made curry." · «Hermanito... ¿Te encuentras bien?» → "Big brother... are you okay?"
 
 ### Isanari (82)
 - Padre de Futaro. Relajado, bromista, un poco irresponsable; habla de dinero sin pudor. Cuando se pone serio,
@@ -219,16 +219,14 @@ Entre paréntesis, cuántas líneas tiene cada uno en el Prólogo + Cap. 1.
 | Itsuki (Ciencias) | Enunciados, reglas, botones | Normal. |
 | Miku (Sociales, ritmo) | Valoraciones del golpe | «Perfecto / Bien / Pronto / Tarde / Fallo» → **Perfect / Good / Early / Late / Miss**. |
 | Yotsuba (Japonés) | Texto de comprensión lectora y preguntas | Normal. |
-| Nino (Inglés) | Ver abajo | **[DECIDIR]** |
+| Nino (Inglés) | Ver abajo | Notas en romaji (decidido) |
 
-**Minijuego de Nino [DECIDIR].** En el código (`10_mj_nino.rpy`, `MJ_N1_ITEMS`) los productos están **en inglés**
+**Minijuego de Nino (decidido: romaji).** En el código (`10_mj_nino.rpy`, `MJ_N1_ITEMS`) los productos están **en inglés**
 ("honey", "maple syrup"…) y la nota de cada uno está **en español** («miel», «sirope de arce»). Es un examen de
 inglés para un jugador hispano. En la versión inglesa, si la nota se traduce al inglés, queda "honey" = "honey"
 y el reto desaparece.
-- **Recomendado:** en `tl/english`, las notas pasan a **japonés en romaji** ("hachimitsu", "mēpuru shiroppu"…).
+- **Decisión (Adrian, 23/11):** en `tl/english`, las notas pasan a **japonés en romaji** ("hachimitsu", "mēpuru shiroppu"…).
   Encaja con la historia (instituto japonés, clase de inglés) y mantiene el reto de emparejar.
-- Alternativa: dejar las notas en español (más fácil, pero raro para un jugador inglés).
-- Alternativa: describirlas ("made by bees") — más trabajo y cambia la dificultad.
 
 ---
 
@@ -249,11 +247,10 @@ Son globales: cada una se traduce una vez. Contexto comprobado en el código:
 
 ---
 
-## 10. Dudas abiertas para Adrian
+## 10. Decisiones del día 1 (Adrian, 23/11/2026)
 
-1. **[DECIDIR] Honoríficos:** A (sin honoríficos, recomendada) o B (-kun/-san/-chan). Ver §3.
-2. **[DECIDIR] «hermanito»:** "big bro" (recomendado) u "Onii-chan".
-3. **[DECIDIR] Minijuego de Nino:** notas en romaji (recomendado), en español, o descripciones. Ver §8.
-4. **[DECIDIR] «jajaja» en el chat:** "hahaha" (recomendado) o "lol".
-5. **[DECIDIR] Formato de números en la interfaz:** el español usa coma decimal y punto de miles; en inglés es al
-   revés. Si algún texto de pantalla construye números con formato, se revisa en la tarea D.
+1. **Honoríficos:** ninguno. Ver §3.
+2. **«hermanito»:** `[mc]` por defecto, **big brother** en momentos de cercanía o broma. Ver §3.
+3. **Minijuego de Nino:** notas en japonés en romaji. Ver §8.
+4. **«jajaja» en el chat:** "hahaha", adaptado al momento y a quien escribe.
+5. **Formato de números en la interfaz:** se revisa en la tarea D.
