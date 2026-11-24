@@ -158,7 +158,7 @@ Cómo trabajar:
   Lee el .rpy original al lado para tener contexto (quién habla, qué pasa en la escena, qué rama es).
 - Inglés natural, no literal. Respeta la ficha de voz de cada personaje del glosario. Adapta los chistes
   en vez de traducirlos palabra por palabra.
-- Máximo ~100 caracteres por línea. Conserva [mc] y todas las etiquetas {…} exactamente igual.
+- Máximo ~100 caracteres por línea. Conserva [mc] y todas las etiquetas {...} exactamente igual.
 - Las opciones de menú también se traducen y deben caber en sus botones.
 - Avanza por bloques de escena. Al terminar cada archivo, muéstrame una muestra de 10-15 líneas
   representativas (incluye humor y momentos emotivos) para que yo revise el tono antes de seguir.
@@ -243,7 +243,7 @@ Cap. 2, sin cambiar su estructura.
 |---|---|---|---|
 | A · Encuesta ES | ⬜ | | |
 | B · Montaje tl / selector / glosario | ✅ | 23/11 | `tl/english` generado por CLI (36 archivos, `new` = copia del español). Texto de interfaz y Python marcado con `_()`/`__()`. Selector en Opciones (tabla `IDIOMAS`). GLOSARIO_EN, IMAGENES_CON_TEXTO (ninguna imagen con texto en español), ERRATAS_ES. 5 [DECIDIR] en el glosario. Las etiquetas de prueba (`prueba`, debug del E6) no se marcaron: no hace falta traducirlas. |
-| C1 · Prólogo + apertura | ⬜ | | |
+| C1 · Prólogo + apertura | ✅ | 24/11 | 733 bloques + 16 cadenas traducidas; lint sin errores en los archivos de hoy; tono aprobado por Adrian. La placa «Estudiante Nueva» se traduce en la tarea D (`tl/english/00_definiciones.rpy`). Líneas idénticas al español a propósito: nombres y «...». Chiste de «jad tu» adaptado (glosario §11). 1 errata anotada. |
 | C2 · 5 eventos | ⬜ | | |
 | C3 · Beats + final malo | ⬜ | | |
 | C4 · Conexiones | ⬜ | | |

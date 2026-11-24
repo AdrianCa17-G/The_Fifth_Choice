@@ -254,3 +254,23 @@ Son globales: cada una se traduce una vez. Contexto comprobado en el código:
 3. **Minijuego de Nino:** notas en japonés en romaji. Ver §8.
 4. **«jajaja» en el chat:** "hahaha", adaptado al momento y a quien escribe.
 5. **Formato de números en la interfaz:** se revisa en la tarea D.
+
+---
+
+## 11. Decisiones de traducción del día C1 (24/11/2026)
+
+1. **Chiste de la pronunciación (apertura, Nino):** en español, Futaro lee «He didn't want to go, but he had to.» con
+   mal acento y Nino corrige «jad tu» → «had to» (se pega, no se separa). En inglés la corrección pasa a la
+   pronunciación «a trozos»: Nino: *Had to. Not "hah-doh too." It links together, you don't chop it up.*
+   El pensamiento posterior de Futaro conserva "had to".
+2. **«profesor» (Futaro al profe):** "sir" ("Thank you, sir."); la placa sigue siendo **Teacher**.
+3. **«gemelas»** (primera impresión de Futaro, prólogo): **twins**.
+4. **Frase de Maruo «Tu padre lleva media vida prometiéndome cosas»:** "Your father has been promising me
+   things for half his life." Maruo sin contracciones en todo el archivo.
+5. **Itsuki (inicio):** formal con la boca abierta ("I do not need you.", "do not go near him"), contracciones
+   cuando baja la guardia o se disculpa/ablanda.
+6. **Pistas del juego de adivinanza (apertura):** los lugares van con la etiqueta de color y coinciden con los hubs:
+   rehearsal room, shopping mall, library, track, empty classroom.
+7. **«Hermanito» de Raiha en estas escenas:** `[mc]` al llamarlo o al darle órdenes ("[mc]! Come down for dinner
+   already!"); **big brother** cuando se pone cariñosa, bromea o da ánimos ("Good luck, big brother!").
+8. **Nombre del capítulo en el guardado:** «Prólogo» → **Prologue**, «Capítulo 1» → **Chapter 1**.
