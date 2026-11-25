@@ -61,17 +61,17 @@ Si un día va más lento, se usa el colchón del viernes 4. No se recorta la fas
 | **Lun 23** | A. Encuesta en español lista para Google Forms y publicada | Chat | Sonnet 5.5 · medio | Sí (chat nuevo) |
 | **Lun 23** | B. Montar `tl/english`, selector de idioma, glosario, inventario de texto fuera del diálogo | Code | Opus 5.5 · alto | Sí |
 | **Mar 24** | C1. Prólogo + apertura (~6.000) | Code | Sonnet 5.5 · alto | Sí |
-| **Mié 25** | C2. Los 5 eventos de hermana (~7.700) | Code | Sonnet 5.5 · alto | Sí |
-| **Jue 26** | C3. Beats de Itsuki, Nino y casa + final malo (~9.800) | Code | Sonnet 5.5 · alto | Sí |
-| **Vie 27** | C4. Conexiones (~8.800) | Code | Sonnet 5.5 · alto | Sí |
-| **Sáb 28** | C5. Evento 6, primera mitad (~6.500) | Code | Sonnet 5.5 · alto | Sí |
-| **Dom 29** | C6. Evento 6, segunda mitad (~6.500) | Code | Sonnet 5.5 · alto | Puede seguir la del Dom 29 si el contexto no está lleno; si no, nueva |
-| **Lun 30** | D. Interfaz, minijuegos, chat de grupo, boletín, créditos, imágenes con texto | Code | Opus 5.5 · alto | Sí |
-| **Mar 1** | E1. Control automático (revisor) + pruebas manuales, primera mitad | Code | Opus 5.5 · alto | Sí |
-| **Mié 2** | E2. Pruebas manuales, segunda mitad + correcciones | Code | Sonnet 5.5 · medio | Puede seguir la del Mié 2 |
-| **Jue 3** | F1. Builds Windows/Android/Linux, publicar v1.1 | Manual (launcher) | — | — |
-| **Jue 3** | F2. Página de itch bilingüe, devlog v1.1, encuesta en inglés, textos de redes | Chat | Sonnet 5.5 · medio | Sí (chat nuevo) |
-| **Vie 4** | Colchón. Si sobra: leer las respuestas de la encuesta y erratas en español | Chat | Opus 5.5 · alto | Sí |
+| **Mar 24** | C2. Los 5 eventos de hermana (~7.700) | Code | Sonnet 5.5 · alto | Sí |
+| **Mar 24** | C3. Beats de Itsuki, Nino y casa + final malo (~9.800) | Code | Sonnet 5.5 · alto | Sí |
+| **Mié 25** | C4. Conexiones (~8.800) | Code | Sonnet 5.5 · alto | Sí |
+| **Mié 25** | C5. Evento 6, primera mitad (~6.500) | Code | Sonnet 5.5 · alto | Sí |
+| **Mié 25** | C6. Evento 6, segunda mitad (~6.500) | Code | Sonnet 5.5 · alto | Puede seguir la del Dom 29 si el contexto no está lleno; si no, nueva |
+| **Jue 26** | D. Interfaz, minijuegos, chat de grupo, boletín, créditos, imágenes con texto | Code | Opus 5.5 · alto | Sí |
+| **Jue 26*** | E1. Control automático (revisor) + pruebas manuales, primera mitad | Code | Opus 5.5 · alto | Sí |
+| **Jue 26*** | E2. Pruebas manuales, segunda mitad + correcciones | Code | Sonnet 5.5 · medio | Puede seguir la del Mié 2 |
+| **Vie 27** | F1. Builds Windows/Android/Linux, publicar v1.1 | Manual (launcher) | — | — |
+| **Vie 27** | F2. Página de itch bilingüe, devlog v1.1, encuesta en inglés, textos de redes | Chat | Sonnet 5.5 · medio | Sí (chat nuevo) |
+| **Sab 28** | Colchón. Si sobra: leer las respuestas de la encuesta y erratas en español | Chat | Opus 5.5 · alto | Sí |
 
 **Por qué estos modelos**
 - **Opus 5.5 · alto**: tareas de motor e interfaz (montaje, imágenes, revisor), donde un error se propaga a todo el juego.
@@ -168,7 +168,7 @@ Cómo trabajar:
   actualiza Progreso en el plan, commit y push.
 ```
 
-### D · Lun 30 · Todo lo que no es diálogo (Code, Opus 5.5 · alto, sesión nueva)
+### D · Jue 26 · Todo lo que no es diálogo (Code, Opus 5.5 · alto, sesión nueva)
 
 ```
 Lee docs/PLAN_TRADUCCION_Y_ENCUESTA.md, docs/GLOSARIO_EN.md, docs/IMAGENES_CON_TEXTO.md,
@@ -184,7 +184,7 @@ docs/GUIA_UI.md y docs/GUIA_RENPY.md. Hoy toca la tarea D.
 4. Lint, prueba de arranque en inglés, actualizar Progreso, commit y push.
 ```
 
-### E1 · Mar 1 · Revisor automático + pruebas (Code, Opus 5.5 · alto, sesión nueva)
+### E1 · Jue 26 · Revisor automático + pruebas (Code, Opus 5.5 · alto, sesión nueva)
 
 ```
 Lee docs/PLAN_TRADUCCION_Y_ENCUESTA.md y docs/GLOSARIO_EN.md. Hoy toca la tarea E1: control de calidad.
@@ -202,7 +202,7 @@ Lee docs/PLAN_TRADUCCION_Y_ENCUESTA.md y docs/GLOSARIO_EN.md. Hoy toca la tarea 
 4. Yo juego la checklist. Lo que te reporte, lo corriges. Actualiza Progreso, commit y push.
 ```
 
-### E2 · Mié 2 · Cierre de pruebas (Code, Sonnet 5.5 · medio; puede seguir la sesión E1)
+### E2 · Jue 26 · Cierre de pruebas (Code, Sonnet 5.5 · medio; puede seguir la sesión E1)
 
 ```
 Seguimos con docs/CHECKLIST_PRUEBAS_EN.md. Te voy pasando lo que encuentro jugando; corrige cada punto,
@@ -211,7 +211,7 @@ docs/ERRATAS_ES.md al español, regenera la traducción solo de esas líneas y t
 en options.rpy, escribe el changelog en docs/CHANGELOG.md, actualiza Progreso, commit y push.
 ```
 
-### F2 · Jue 3 · Página, devlog y encuesta en inglés (Chat, Sonnet 5.5 · medio, chat nuevo)
+### F2 · Vie 27 · Página, devlog y encuesta en inglés (Chat, Sonnet 5.5 · medio, chat nuevo)
 
 ```
 Lee docs/PLAN_TRADUCCION_Y_ENCUESTA.md y docs/CHANGELOG.md del proyecto. Hoy publico la v1.1 con inglés.
@@ -225,7 +225,7 @@ Necesito:
 4. Textos cortos para TikTok (@thefifthchoiceo_o) e Instagram (@thefifthchoice) anunciando la versión en inglés.
 ```
 
-### Vie 4 · Colchón / análisis (Chat, Opus 5.5 · alto, chat nuevo)
+### Vie 27 · Colchón / análisis (Chat, Opus 5.5 · alto, chat nuevo)
 
 ```
 Lee docs/PLAN_TRADUCCION_Y_ENCUESTA.md. Te paso las respuestas de la encuesta (CSV exportado de Google Forms).
@@ -245,8 +245,8 @@ Cap. 2, sin cambiar su estructura.
 | B · Montaje tl / selector / glosario | ✅ | 23/11 | `tl/english` generado por CLI (36 archivos, `new` = copia del español). Texto de interfaz y Python marcado con `_()`/`__()`. Selector en Opciones (tabla `IDIOMAS`). GLOSARIO_EN, IMAGENES_CON_TEXTO (ninguna imagen con texto en español), ERRATAS_ES. 5 [DECIDIR] en el glosario. Las etiquetas de prueba (`prueba`, debug del E6) no se marcaron: no hace falta traducirlas. |
 | C1 · Prólogo + apertura | ✅ | 24/11 | 733 bloques + 16 cadenas traducidas; lint sin errores en los archivos de hoy; tono aprobado por Adrian. La placa «Estudiante Nueva» se traduce en la tarea D (`tl/english/00_definiciones.rpy`). Líneas idénticas al español a propósito: nombres y «...». Chiste de «jad tu» adaptado (glosario §11). 1 errata anotada. |
 | C2 · 5 eventos | ✅ | 24/11 | Ichika 199, Nino 197, Miku 198, Yotsuba 206, Itsuki 170 bloques + 25 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 25 idénticas al español son «...», «Itsuki.» y «No.»). Tono revisado por Adrian archivo por archivo; Ichika y Nino repasadas después para quitar frases con aire de IA. 1 errata anotada (Itsuki:148). |
-| C3 · Beats + final malo | ✅ | 24/11 | beat_Itsuki 121, beat_Nino 198, beat_casa 361, final_malo 479 bloques + 7 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 21 idénticas al español son «...», «No.» y nombres). Tono revisado por Adrian archivo por archivo. 0 erratas. Los recuerdos de beat_casa reutilizan las frases ya traducidas en C1/C2. |
-| C4 · Conexiones | ✅ | 25/11 | 1.161 bloques + 16 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 6 idénticas al español son «...» y nombres). 7 erratas anotadas (tildes y un punto final). Decisiones en glosario §13. Tono pendiente de revisión de Adrian. |
+| C3 · Beats + final malo | ⬜ | | |
+| C4 · Conexiones | ✅ | 25/11 | 1.161 bloques + 16 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 6 idénticas al español son «...» y nombres). Tono aprobado por Adrian. 8 erratas anotadas (7 de tildes/punto y el cartel «Casa de Futaro» con nombre fijo; en inglés va `[nombre_jugador]'s House`). Decisiones en glosario §13. De paso se retocó la línea de la sal de Miku (`02_cap1_Miku.rpy`). |
 | C5 · Evento 6 (1/2) | ⬜ | | |
 | C6 · Evento 6 (2/2) | ⬜ | | |
 | D · Interfaz, minijuegos, créditos, imágenes | ⬜ | | |
