@@ -19,3 +19,4 @@ Formato: una fila por errata. «Archivo:línea» tal como está en el momento de
 | `08_extras.rpy:1198` | «Diviértete jugandolos.» | «Diviértete jugándolos.» | Claude, 23/11/2026 |
 | `02_cap1_evento6.rpy:1895` + `07_ui.rpy` / `13_transiciones.rpy` | HUD «Quedan [tiempo_restante!t]» con «un examen» → «Quedan un examen» | «Queda un examen». Arreglo propuesto: la plantilla del HUD distingue singular, o el valor pasa a «solo un examen» con «Queda». En inglés no afecta ("one exam left"). | Claude, 23/11/2026 |
 | `02_cap1_apertura.rpy:275` | «Es una observación minuiciosa.» | «Es una observación minuciosa.» | Claude, 24/11/2026 |
+| `02_cap1_Itsuki.rpy:148` | «Cuando Itsuki tiene la respuesta, no repite la pregunta con la misma frase.» | «...no repite la respuesta con la misma frase.» (repite su respuesta, no la pregunta). En inglés se tradujo por el sentido: "she never repeats a line word for word". | Claude, 24/11/2026 |

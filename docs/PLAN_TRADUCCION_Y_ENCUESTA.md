@@ -241,10 +241,10 @@ Cap. 2, sin cambiar su estructura.
 
 | Tarea | Estado | Fecha | Notas |
 |---|---|---|---|
-| A · Encuesta ES | ⬜ | | |
+| A · Encuesta ES | ✅ | 23/11 | Se ha generado mas de 200 respuestas de los usuarios en poco tiempo, las respuestas son demasiado útiles para el desarrollo del juego |
 | B · Montaje tl / selector / glosario | ✅ | 23/11 | `tl/english` generado por CLI (36 archivos, `new` = copia del español). Texto de interfaz y Python marcado con `_()`/`__()`. Selector en Opciones (tabla `IDIOMAS`). GLOSARIO_EN, IMAGENES_CON_TEXTO (ninguna imagen con texto en español), ERRATAS_ES. 5 [DECIDIR] en el glosario. Las etiquetas de prueba (`prueba`, debug del E6) no se marcaron: no hace falta traducirlas. |
 | C1 · Prólogo + apertura | ✅ | 24/11 | 733 bloques + 16 cadenas traducidas; lint sin errores en los archivos de hoy; tono aprobado por Adrian. La placa «Estudiante Nueva» se traduce en la tarea D (`tl/english/00_definiciones.rpy`). Líneas idénticas al español a propósito: nombres y «...». Chiste de «jad tu» adaptado (glosario §11). 1 errata anotada. |
-| C2 · 5 eventos | ⬜ | | |
+| C2 · 5 eventos | ✅ | 24/11 | Ichika 199, Nino 197, Miku 198, Yotsuba 206, Itsuki 170 bloques + 25 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 25 idénticas al español son «...», «Itsuki.» y «No.»). Tono revisado por Adrian archivo por archivo; Ichika y Nino repasadas después para quitar frases con aire de IA. 1 errata anotada (Itsuki:148). |
 | C3 · Beats + final malo | ⬜ | | |
 | C4 · Conexiones | ⬜ | | |
 | C5 · Evento 6 (1/2) | ⬜ | | |
