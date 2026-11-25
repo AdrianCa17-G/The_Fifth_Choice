@@ -20,3 +20,11 @@ Formato: una fila por errata. «Archivo:línea» tal como está en el momento de
 | `02_cap1_evento6.rpy:1895` + `07_ui.rpy` / `13_transiciones.rpy` | HUD «Quedan [tiempo_restante!t]» con «un examen» → «Quedan un examen» | «Queda un examen». Arreglo propuesto: la plantilla del HUD distingue singular, o el valor pasa a «solo un examen» con «Queda». En inglés no afecta ("one exam left"). | Claude, 23/11/2026 |
 | `02_cap1_apertura.rpy:275` | «Es una observación minuiciosa.» | «Es una observación minuciosa.» | Claude, 24/11/2026 |
 | `02_cap1_Itsuki.rpy:148` | «Cuando Itsuki tiene la respuesta, no repite la pregunta con la misma frase.» | «...no repite la respuesta con la misma frase.» (repite su respuesta, no la pregunta). En inglés se tradujo por el sentido: "she never repeats a line word for word". | Claude, 24/11/2026 |
+| `02_cap1_conexiones.rpy:491` | «Anoche rehíce el ejercicio.» | «Anoche rehice el ejercicio.» (sin tilde) | Claude, 25/11/2026 |
+| `02_cap1_conexiones.rpy:580` | «Lo rehíciste.» | «Lo rehiciste.» (sin tilde) | Claude, 25/11/2026 |
+| `02_cap1_conexiones.rpy:2685` | «Esa semana si es importante...» | «Esa semana sí es importante...» | Claude, 25/11/2026 |
+| `02_cap1_conexiones.rpy:3108` | «Adios.» (quintillizas) | «Adiós.» | Claude, 25/11/2026 |
+| `02_cap1_conexiones.rpy:3430` | «...Pero pensandolo bien.» | «...Pero pensándolo bien.» | Claude, 25/11/2026 |
+| `02_cap1_conexiones.rpy:3455` | «Ya lo veremos en la semana de examenes.» | «...en la semana de exámenes.» | Claude, 25/11/2026 |
+| `02_cap1_conexiones.rpy:4021` | «Ni siquiera se tomaron la molestia en contestarme» | Falta el punto final: «...en contestarme.» | Claude, 25/11/2026 |
+| `02_cap1_conexiones.rpy:4091` | `_("Casa de Futaro")` (nombre fijo) | `_("Casa de [nombre_jugador]")`, como ya hace «Habitación de [nombre_jugador]» en `07_ui.rpy`. Si el jugador cambia el nombre, el cartel sigue diciendo «Futaro». En inglés ya va con `[nombre_jugador]`. | Claude, 25/11/2026 |

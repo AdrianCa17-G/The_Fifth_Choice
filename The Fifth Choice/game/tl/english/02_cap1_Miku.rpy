@@ -520,7 +520,7 @@ translate english hub_Miku_bbf649e3:
 translate english hub_Miku_b97d77d1:
 
     # miku "Sin mar no hay sal. Y sin sal no se podía guardar la comida: no existían las neveras."
-    miku "No sea, no salt. And without salt you couldn't keep food: there were no refrigerators."
+    miku "Without a sea there's no salt. And without salt you couldn't store food: no refrigerators."
 
 # game/02_cap1_Miku.rpy:258
 translate english hub_Miku_632ee815:

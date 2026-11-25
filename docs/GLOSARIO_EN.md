@@ -289,3 +289,21 @@ Son globales: cada una se traduce una vez. Contexto comprobado en el código:
 4. **«despido temprano»** en narración: "early dismissal" (minúscula); la etiqueta de menú/extra sigue siendo **Early Dismissal**.
 5. **Profesor en el aula:** "Nakano. Wake up." y "You may begin."; las alumnas le dicen "sir".
 6. **Mensaje de Maruo:** "Apartment. Five o'clock. Maruo." (departamento → apartment, como en el resto).
+
+---
+
+## 13. Decisiones de traducción del día C4 (25/11/2026)
+
+1. **Raiha en las conexiones:** `[mc]` al saludar o dar órdenes ("Good morning, [mc]!") y también cuando finge alegría
+   ("Good night, [mc]!" tras el sobre del banco); **big brother** cuando bromea o se pone tierna ("Curry is liquid love,
+   big brother!", "Big brother, this came. I'll leave it here, okay?").
+2. **Nino:** «tonto» → **idiot**; «Idiota.» → "Idiot."; «Ni creas que me molesta» → "Don't think it bothers me."
+3. **«señora obvia»** (Futaro a Itsuki): "Captain Obvious."
+4. **Despedidas de Miku e Itsuki:** Miku "...See you tomorrow." (narración: "A few words..."); Itsuki "Until tomorrow."
+   (narración: "Two words..."), para que el recuento de palabras del narrador cuadre.
+5. **«aprobado a medias» / «sesenta por ciento»** (Itsuki a Yotsuba): "It's a barely-passing grade, Yotsuba."
+6. **Léxico fijo:** tardes libres → **free afternoons**; «busca y encuentra» → **hide-and-seek**; «dejar en visto» → **leave on read**;
+   ojeras → **dark circles** (en la opción de menú del desayuno: "I'm running on eye bags."); pulpito de salchicha → **sausage octopus**;
+   «hoja de diagnóstico» → **diagnostic sheet**; Maruo: "I have seen enough." (sin contracciones).
+7. **Etiquetas de lugar** (`ui_escena`): Azotea → **Rooftop**, Departamento → **Apartment**, Casa de Futaro → **[nombre_jugador]'s House** (nunca "Futaro" fijo: el jugador puede cambiarse el nombre).
+8. **Mensajes del chat del sábado (opciones de menú):** entre comillas rectas, con el mismo orden que el español.
