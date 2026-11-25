@@ -307,3 +307,27 @@ Son globales: cada una se traduce una vez. Contexto comprobado en el código:
    «hoja de diagnóstico» → **diagnostic sheet**; Maruo: "I have seen enough." (sin contracciones).
 7. **Etiquetas de lugar** (`ui_escena`): Azotea → **Rooftop**, Departamento → **Apartment**, Casa de Futaro → **[nombre_jugador]'s House** (nunca "Futaro" fijo: el jugador puede cambiarse el nombre).
 8. **Mensajes del chat del sábado (opciones de menú):** entre comillas rectas, con el mismo orden que el español.
+
+---
+
+## 14. Decisiones de traducción del día C5 (25/11/2026) · Evento 6, primera mitad
+
+Corte de C5/C6: C5 llega hasta `e6_miku_gesto_no_visitada` (lunes + los cinco exámenes de la mañana); C6 empieza en `e6_despues`.
+
+1. **Rótulos del HUD:** «Aula · Japonés» → **Classroom · Japanese**, y así con **Math / English / Science / Social Studies**.
+   «Semana de exámenes» → **Exam Week**. Contador: «cinco / cuatro / tres / dos exámenes» → **five / four / three / two exams**,
+   «un examen» → **one exam** (queda "one exam left"). En la tarea D, «Aula · Día» (`07_ui.rpy`) debe seguir el mismo patrón: **Classroom · Day**.
+2. **«No tengo que poder con todo.»** (Ichika, también en el minijuego `10_mj_ichika.rpy:21`) → **"I don't have to handle everything."**
+   El monólogo cortado «No tengo que po—» → "I don't have to han—". Usar la misma frase en el minijuego (tarea D).
+3. **Voces interiores (`*_int`):** Itsuki interior **sin contracciones** ("I do not know where"), como en el resto de su registro formal;
+   Yotsuba, Ichika y Nino con contracciones. Miku interior conserva «...» inicial **salvo** en el monólogo del minijuego (el original ya no lo lleva).
+4. **Pregunta de examen de Yotsuba:** "What does the main character feel when he's left alone?" (siempre "main character", no "protagonist").
+5. **Frases que enlazan con eventos anteriores** (se repiten tal cual): "my starting point wasn't zero. It never was.",
+   "Then focus on running. If it's your thing, do it well.", "I run and cheer.", "If you have the energy to make jokes,
+   you have the energy to study.", "Only time will prove it.", "I'm going to last.", "I'm only telling you where to look.",
+   "...Ten days. Twelve if it rained.", "Then stop picking up everyone else's pieces and take care of your own.", "And who picks up yours?".
+6. **Nino:** «el golpe» (el rechazo que ve venir) → **the blow** ("I always see the blow coming"); «táper» → **container** (como en el beat de Nino).
+   «tonto» → **idiot** (§13). Su monólogo del minijuego usa «treinta y dos días» → "thirty-two days".
+7. **Yotsuba:** «vuelta de ventaja» → **bonus lap**; «testigo» (relevos) → **baton**; «tomar las fechas / fórmulas» (ambiguo) → "went over dates with Miku and formulas with Ichika".
+8. **Profesor:** "Nakano. If you're done, you may hand it in." / "Nakano. You're smiling." Las alumnas: "sir".
+9. **Maruo (cita en la mente de Futaro):** "If even one of them fails, it's over." (sin contracciones, como siempre en su voz).

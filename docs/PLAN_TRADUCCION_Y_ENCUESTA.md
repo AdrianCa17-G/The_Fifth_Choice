@@ -71,7 +71,7 @@ Si un día va más lento, se usa el colchón del viernes 4. No se recorta la fas
 | **Jue 26*** | E2. Pruebas manuales, segunda mitad + correcciones | Code | Sonnet 5.5 · medio | Puede seguir la del Mié 2 |
 | **Vie 27** | F1. Builds Windows/Android/Linux, publicar v1.1 | Manual (launcher) | — | — |
 | **Vie 27** | F2. Página de itch bilingüe, devlog v1.1, encuesta en inglés, textos de redes | Chat | Sonnet 5.5 · medio | Sí (chat nuevo) |
-| **Sab 28** | Colchón. Si sobra: leer las respuestas de la encuesta y erratas en español | Chat | Opus 5.5 · alto | Sí |
+| **Vie 27** | Colchón. Si sobra: leer las respuestas de la encuesta y erratas en español | Chat | Opus 5.5 · alto | Sí |
 
 **Por qué estos modelos**
 - **Opus 5.5 · alto**: tareas de motor e interfaz (montaje, imágenes, revisor), donde un error se propaga a todo el juego.
@@ -247,7 +247,7 @@ Cap. 2, sin cambiar su estructura.
 | C2 · 5 eventos | ✅ | 24/11 | Ichika 199, Nino 197, Miku 198, Yotsuba 206, Itsuki 170 bloques + 25 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 25 idénticas al español son «...», «Itsuki.» y «No.»). Tono revisado por Adrian archivo por archivo; Ichika y Nino repasadas después para quitar frases con aire de IA. 1 errata anotada (Itsuki:148). |
 | C3 · Beats + final malo | ✅ | 24/11 | beat_Itsuki 121, beat_Nino 198, beat_casa 361, final_malo 479 bloques + 7 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 21 idénticas al español son «...», «No.» y nombres). Tono revisado por Adrian archivo por archivo. 0 erratas. Los recuerdos de beat_casa reutilizan las frases ya traducidas en C1/C2. |
 | C4 · Conexiones | ✅ | 25/11 | 1.161 bloques + 16 cadenas de menú; lint sin errores; 0 líneas sin traducir (las 6 idénticas al español son «...» y nombres). Tono aprobado por Adrian. 8 erratas anotadas (7 de tildes/punto y el cartel «Casa de Futaro» con nombre fijo; en inglés va `[nombre_jugador]'s House`). Decisiones en glosario §13. De paso se retocó la línea de la sal de Miku (`02_cap1_Miku.rpy`). |
-| C5 · Evento 6 (1/2) | ⬜ | | |
+| C5 · Evento 6 (1/2) | ✅ | 25/11 | Corte en `e6_despues` (lunes + 5 exámenes de la mañana, ~6.400 palabras): 645 bloques + 11 cadenas (rótulos del HUD); lint sin errores; 0 líneas sin traducir en esa mitad. Tono revisado por Adrian. 1 errata anotada (Nino: «Aun»). Decisiones en glosario §14. |
 | C6 · Evento 6 (2/2) | ⬜ | | |
 | D · Interfaz, minijuegos, créditos, imágenes | ⬜ | | |
 | E1 · Revisor + checklist | ⬜ | | |

@@ -28,3 +28,4 @@ Formato: una fila por errata. «Archivo:línea» tal como está en el momento de
 | `02_cap1_conexiones.rpy:3455` | «Ya lo veremos en la semana de examenes.» | «...en la semana de exámenes.» | Claude, 25/11/2026 |
 | `02_cap1_conexiones.rpy:4021` | «Ni siquiera se tomaron la molestia en contestarme» | Falta el punto final: «...en contestarme.» | Claude, 25/11/2026 |
 | `02_cap1_conexiones.rpy:4091` | `_("Casa de Futaro")` (nombre fijo) | `_("Casa de [nombre_jugador]")`, como ya hace «Habitación de [nombre_jugador]» en `07_ui.rpy`. Si el jugador cambia el nombre, el cartel sigue diciendo «Futaro». En inglés ya va con `[nombre_jugador]`. | Claude, 25/11/2026 |
+| `02_cap1_evento6.rpy:1481` | «No. Aun me falta revisar unas cosas.» (Nino) | «No. Aún me falta revisar unas cosas.» (sin tilde en «Aún») | Claude, 25/11/2026 |
