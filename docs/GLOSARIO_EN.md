@@ -274,3 +274,18 @@ Son globales: cada una se traduce una vez. Contexto comprobado en el código:
 7. **«Hermanito» de Raiha en estas escenas:** `[mc]` al llamarlo o al darle órdenes ("[mc]! Come down for dinner
    already!"); **big brother** cuando se pone cariñosa, bromea o da ánimos ("Good luck, big brother!").
 8. **Nombre del capítulo en el guardado:** «Prólogo» → **Prologue**, «Capítulo 1» → **Chapter 1**.
+
+---
+
+## 12. Decisiones de traducción del día C3 (24/11/2026)
+
+1. **Frases citadas en `beat_casa` (la libreta):** repiten exactamente lo ya traducido en C1/C2: "stage rest",
+   "Contract", "It links together, you don't chop it up.", "You won't last a week.", "Battles are won by whoever
+   moves the rice.", "...Right?", "I mean, of course you will!", "I run and cheer.", "As long as it takes.",
+   "The unit doesn't cancel there.", "Forget what I said.". Si se retoca una, se retoca en todas.
+2. **«¡Hermanito!» de Raiha** (final malo y beat de la casa): `[mc]!` al llamarlo o saludarlo; **big brother**
+   cuando pide ayuda, se preocupa o consuela. El revisor marcará esas líneas como «[mc] sin original»: es a propósito.
+3. **Maruo** sin contracciones en todo el archivo ("I do not need to tell you which."). Nino y el resto, con contracciones.
+4. **«despido temprano»** en narración: "early dismissal" (minúscula); la etiqueta de menú/extra sigue siendo **Early Dismissal**.
+5. **Profesor en el aula:** "Nakano. Wake up." y "You may begin."; las alumnas le dicen "sir".
+6. **Mensaje de Maruo:** "Apartment. Five o'clock. Maruo." (departamento → apartment, como en el resto).
