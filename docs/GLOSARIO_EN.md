@@ -331,3 +331,30 @@ Corte de C5/C6: C5 llega hasta `e6_miku_gesto_no_visitada` (lunes + los cinco ex
 7. **Yotsuba:** «vuelta de ventaja» → **bonus lap**; «testigo» (relevos) → **baton**; «tomar las fechas / fórmulas» (ambiguo) → "went over dates with Miku and formulas with Ichika".
 8. **Profesor:** "Nakano. If you're done, you may hand it in." / "Nakano. You're smiling." Las alumnas: "sir".
 9. **Maruo (cita en la mente de Futaro):** "If even one of them fails, it's over." (sin contracciones, como siempre en su voz).
+
+---
+
+## 15. Decisiones de traducción del día C6 (25/11/2026) · Evento 6, segunda mitad
+
+C6 cubre desde `e6_despues` (tarde del viernes) hasta `e6_retrato` (cierre del capítulo).
+
+1. **Maruo:** «señor» (Futaro a Maruo) → **sir** ("Good afternoon, sir.", "Yes, sir."). Nadie dice «Mr. Maruo». Maruo sin contracciones, como siempre.
+   Su mensaje: «Cinco. Departamento.» → "Five. Apartment." Futaro: «la cuenta / la hora» → **the tally / the hour**.
+2. **Boletín (papel de notas)** → **report card** en todo el capítulo («Cinco boletines» → "five report cards"). Mini-secuencia final: «Cien» → **100**
+   cuando va en lista ("100, 100, 100, 100, 100"), y «alumno que no existe» → "a student who doesn't exist".
+3. **Itsuki, «el juego»:** enlaza con su evento ("The game ends today." / "Then I won the game."): en C6 → "I said the game ended today. I never said who won."
+4. **Raiha en la noche del Evento 6:** `[mc]!` al recibirlo con el curry ("[mc]! I made curry…"); **big brother** en el cuarto, cuando se pone cariñosa o
+   preocupada ("Big brother, are you still up?", "Good night, big brother."). Frases clave: «voz de "ojalá"» → **"I hope so" voice**; «¿¡Acerté!?» → "Was I right?!".
+5. **Isanari:** «examen sorpresa» → **pop quiz** ("Pop quiz passed."), igual que en el evento 1; «Gracias por la comida» → **"Thanks for the food."**
+6. **Menú del domingo:** «Llevar a Raiha a algún sitio.» → **Take Raiha somewhere.** · «Contestar al grupo.» → **Answer the group.** ·
+   «Cumplir una promesa.» → **Keep a promise.** · «Dormir hasta tarde. Por una vez.» → **Sleep in. Just this once.**
+   Rótulo: «Aula · Viernes por la tarde» → **Classroom · Friday Afternoon**.
+7. **Foto de las cinco:** «¡Digan "cinco"!» → **Say "five"!**; la respuesta del coro (`quintillizas`) → "Five!!".
+8. **Miku:** «La página ciento veinte» → "Page one-twenty." / "One twenty-two."; en la rama cálida (sin «...») habla de corrido; en las demás conserva «...».
+9. **Yotsuba:** «vueltas de ventaja» → **bonus laps** (como en C5); «Empecé en el uno por ciento» → "I started at one percent." (motivo del Cap. 1).
+10. **«cosa de ceremonias» / «vocación»** (cierre de Futaro): "I always said I didn't study because of some calling. That was for ceremonies." y
+    "If that isn't a calling…" para que el último verso conecte.
+11. **Pendiente para la tarea D:** el chat de grupo (`chat_e6`), el boletín animado (`12_e6_boletin.rpy`) y los textos que llegan por Python/pantallas.
+    Los nombres de las promesas (`[e6_p1!t]`, `[e6_p2!t]`) se dejan idénticos (son nombres propios).
+12. **Cita de la libreta:** "Head-on, all five at once, I always lose." (igual en apertura, evento 6 y final malo). Revisión de naturalidad (25/11):
+    en C1 se suavizaron 29 líneas rígidas de Prólogo y Apertura ("I'm here to tutor you, not to make friends.", "Not happening.", "Fair point. But you'll want to hear about the pay.").

@@ -58,7 +58,7 @@ translate english prologo_5120e485:
 translate english prologo_61dfff7b:
 
     # mc_pensamiento "Luego está Raiha, que, sin lugar a dudas, merece un futuro mejor que esta pobreza."
-    mc_pensamiento "And then there's Raiha, who deserves a better future than this poverty. No question."
+    mc_pensamiento "And then there's Raiha, who deserves a better future than this. No question."
 
 # game/01_prologo.rpy:88
 translate english prologo_067610ba:
@@ -70,7 +70,7 @@ translate english prologo_067610ba:
 translate english prologo_a5ee6bda:
 
     # mc_pensamiento "No por vocación o por esas cosas bonitas que dicen los profesores en las ceremonias de ingreso."
-    mc_pensamiento "Not out of passion, or any of that nice stuff teachers say at entrance ceremonies."
+    mc_pensamiento "Not out of passion, or whatever they tell you at entrance ceremonies."
 
 # game/01_prologo.rpy:92
 translate english prologo_8f60f29f:
@@ -82,7 +82,7 @@ translate english prologo_8f60f29f:
 translate english prologo_f11f2bd9:
 
     # mc_pensamiento "Esta pila de libros es la única herramienta que tengo para cambiar nuestra realidad."
-    mc_pensamiento "This stack of books is the only tool I have to change our reality."
+    mc_pensamiento "This stack of books is the only tool I have to change our situation."
 
 # game/01_prologo.rpy:99
 translate english prologo_c0f406b4:
@@ -100,7 +100,7 @@ translate english prologo_323874ec:
 translate english prologo_e7b66fca:
 
     # narrador "De repente, una voz infantil interrumpió mis pensamientos intrusivos."
-    narrador "Suddenly, a child's voice interrupted my intrusive thoughts."
+    narrador "Then a little voice cut through my thoughts."
 
 # game/01_prologo.rpy:105
 translate english prologo_40cdc0a1:
@@ -172,7 +172,7 @@ translate english prologo_0ea7ab85:
 translate english prologo_7dd3e132:
 
     # narrador "Ya en la mesa, devoré el plato en cuestión de segundos."
-    narrador "Once at the table, I wolfed down the dish in question in a matter of seconds."
+    narrador "At the table, I wolfed it down in seconds."
 
 # game/01_prologo.rpy:137
 translate english prologo_3169b299:
@@ -232,7 +232,7 @@ translate english prologo_f7473115:
 translate english prologo_b531d1dc:
 
     # narrador "De repente, mi padre, Isanari, entró en el comedor y dejó caer un papel sobre la mesa."
-    narrador "Suddenly, my father, Isanari, walked into the dining room and dropped a paper on the table."
+    narrador "Then my father, Isanari, walked into the dining room and dropped a paper on the table."
 
 # game/01_prologo.rpy:177
 translate english prologo_59c8b7e6:
@@ -274,7 +274,7 @@ translate english prologo_c41d5931:
 translate english prologo_3f63a0d4:
 
     # isanari "En eso tienes un punto, pero lo que sí te va a interesar es saber el pago."
-    isanari "You've got a point there, but what you will want to hear about is the pay."
+    isanari "Fair point. But you'll want to hear about the pay."
 
 # game/01_prologo.rpy:193
 translate english prologo_168a19e4:
@@ -634,7 +634,7 @@ translate english prologo_4fb83fb8:
 translate english prologo_0ffe885a:
 
     # narrador "Sostuvo los palillos a mitad de camino y fijó su mirada en la hoja de examen que llevaba en la mano."
-    narrador "She held her chopsticks halfway up and fixed her gaze on the exam paper in my hand."
+    narrador "She froze with her chopsticks halfway up, eyes on the exam in my hand."
 
 # game/01_prologo.rpy:374
 translate english prologo_859337e5:
@@ -694,7 +694,7 @@ translate english prologo_67abb878:
 translate english prologo_c3fb7f53:
 
     # mc "Invertir mi tiempo para explicar cosas básicas no tiene sentido para mí."
-    mc "Spending my time explaining basic things makes no sense to me."
+    mc "Wasting my time explaining basics makes no sense to me."
 
 # game/01_prologo.rpy:397
 translate english prologo_59971692:
@@ -748,7 +748,7 @@ translate english prologo_5fe51928:
 translate english prologo_6123d893:
 
     # narrador "Recogió sus cosas rápidamente y abandonó el aula sin ocultar su indignación."
-    narrador "She gathered her things quickly and left the classroom without hiding her indignation."
+    narrador "She gathered her things and stormed out, making no effort to hide her indignation."
 
 # game/01_prologo.rpy:426
 translate english prologo_6cd18920:
@@ -802,7 +802,7 @@ translate english prologo_fc1100d8:
 translate english prologo_9b59f880:
 
     # narrador "Mientras reflexionaba, mi momento de tranquilidad duró poco."
-    narrador "As I reflected, my moment of peace didn't last long."
+    narrador "My moment of peace didn't last long."
 
 # game/01_prologo.rpy:454
 translate english prologo_b8ee38f9:
@@ -1156,7 +1156,7 @@ translate english prologo_1f9186ae:
 translate english prologo_db92eae3:
 
     # mc "Esa clase de advertencias suelen ser de todo menos tranquilizadoras."
-    mc "That kind of warning is usually anything but reassuring."
+    mc "That kind of warning never reassures anyone."
 
 # game/01_prologo.rpy:636
 translate english prologo_ae1a897f:
@@ -1396,7 +1396,7 @@ translate english prologo_76c4990c:
 translate english prologo_202cf30d:
 
     # mc "Mi trabajo es ser su tutor, no formar amistades bonitas con ustedes."
-    mc "My job is to be your tutor, not to make nice friendships with you."
+    mc "I'm here to tutor you, not to make friends."
 
 # game/01_prologo.rpy:752
 translate english prologo_44da2f44:
@@ -1426,7 +1426,7 @@ translate english prologo_5dbf3bd4:
 translate english prologo_887ec15c:
 
     # nino "Déjalo. Lo único que le interesa ha de ser los libros para nerds."
-    nino "Forget it. The only thing he cares about must be books for nerds."
+    nino "Forget it. All he cares about is his nerdy books."
 
 # game/01_prologo.rpy:773
 translate english prologo_113a8679:
@@ -1570,7 +1570,7 @@ translate english prologo_4184706b:
 translate english prologo_f66648c4:
 
     # narrador "Se detuvo en seco a mitad del pasillo, congelada con la bolsa del supermercado en la mano."
-    narrador "She stopped dead in the middle of the hallway, frozen, the grocery bag in her hand."
+    narrador "She stopped dead in the hallway, frozen, grocery bag in hand."
 
 # game/01_prologo.rpy:846
 translate english prologo_08f625d9:
@@ -1870,7 +1870,7 @@ translate english prologo_9f90e41c:
 translate english prologo_9deccd01:
 
     # maruo "Te contraté porque tu único objetivo es asegurar que aprueben y se gradúen."
-    maruo "I hired you because your sole objective is to ensure they pass and graduate."
+    maruo "I hired you for one objective: that they pass and graduate."
 
 # game/01_prologo.rpy:1026
 translate english prologo_85318d70:
@@ -1894,7 +1894,7 @@ translate english prologo_81c5ddc9:
 translate english prologo_2bd8e0a1:
 
     # narrador "Lo dijo con total frialdad. Sin amenazar, simplemente dejando las cosas claras."
-    narrador "He said it with complete coldness. No threat, simply making things clear."
+    narrador "He said it coldly. Not a threat, just stating the terms."
 
 # game/01_prologo.rpy:1034
 translate english prologo_4de31490:
@@ -2026,7 +2026,7 @@ translate english prologo_d4340e75:
 translate english prologo_0ed03a3c:
 
     # narrador "Cinco pares de ojos se clavaron en mí con distintos niveles de desprecio y desinterés."
-    narrador "Five pairs of eyes fixed on me with varying degrees of contempt and disinterest."
+    narrador "Five pairs of eyes on me, somewhere between contempt and indifference."
 
 # game/01_prologo.rpy:1102
 translate english prologo_4a37bee9:
@@ -2248,19 +2248,19 @@ translate english prologo_dfaa5937:
 translate english prologo_585820d6:
 
     # nino "Un extraño dándome órdenes en mi propia casa... eso sí que no lo pienso tolerar."
-    nino "A stranger giving me orders in my own house... that I will definitely not tolerate."
+    nino "A stranger giving me orders in my own house? Not happening."
 
 # game/01_prologo.rpy:1192
 translate english prologo_9128fae9:
 
     # narrador "Agarró su hoja sin tocar el lápiz y se retiró a su habitación, cerrando la puerta con fuerza."
-    narrador "She grabbed her sheet without touching the pencil and withdrew to her room, slamming the door."
+    narrador "She snatched her sheet, left the pencil alone and stormed off to her room, slamming the door."
 
 # game/01_prologo.rpy:1194
 translate english prologo_45681e35:
 
     # narrador "Su salida fue solo el detonante de un fracaso que ya se veía venir."
-    narrador "Her exit was only the trigger for a failure that had been coming all along."
+    narrador "Her exit just set off a collapse that had been coming all along."
 
 # game/01_prologo.rpy:1199
 translate english prologo_468dfc46:
@@ -2326,7 +2326,7 @@ translate english prologo_92a8ed42:
 translate english prologo_57497922:
 
     # mc "Te seré sincero: me quedó bastante claro desde los dos primeros minutos."
-    mc "To be honest: that was pretty clear to me within the first two minutes."
+    mc "Honestly, I figured that out in the first two minutes."
 
 # game/01_prologo.rpy:1230
 translate english prologo_c4b41ed7:
@@ -2362,7 +2362,7 @@ translate english prologo_a2ceb214:
 translate english prologo_34660c5f:
 
     # itsuki "Qué actitud tan desagradable."
-    itsuki "What a disagreeable attitude."
+    itsuki "What an unpleasant attitude."
 
 # game/01_prologo.rpy:1251
 translate english prologo_eb51a126:

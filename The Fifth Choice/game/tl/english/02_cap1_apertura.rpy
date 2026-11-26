@@ -184,7 +184,7 @@ translate english cap1_apertura_9c738aaf:
 translate english cap1_apertura_1007a7d0:
 
     # mc_pensamiento "(Aunque el silencio, viniendo de ella, se siente casi más pesado que los gritos.)"
-    mc_pensamiento "(Though silence coming from her feels almost heavier than the shouting.)"
+    mc_pensamiento "(Though her silence feels almost heavier than the shouting.)"
 
 # game/02_cap1_apertura.rpy:128
 translate english cap1_apertura_a9650fbf:
@@ -568,7 +568,7 @@ translate english cap1_apertura_3e90f2ab:
 translate english cap1_apertura_942bbd38:
 
     # nino "Voy a hacer que quede claro lo que ya era obvio ayer."
-    nino "I'm going to make clear what was already obvious yesterday."
+    nino "I'm just making official what was obvious yesterday."
 
 # game/02_cap1_apertura.rpy:293
 translate english cap1_apertura_ac0f536b:
@@ -970,7 +970,7 @@ translate english cap1_apertura_f1966eb0:
 translate english cap1_apertura_7b64568f:
 
     # narrador "La cena transcurrió casi en silencio, solo se escuchaba el sonido de los cubiertos."
-    narrador "Dinner passed almost in silence; all you could hear was the clink of silverware."
+    narrador "Dinner went by almost in silence, just the clink of silverware."
 
 # game/02_cap1_apertura.rpy:508
 translate english cap1_apertura_b7de8e94:
@@ -1036,7 +1036,7 @@ translate english cap1_apertura_d92d1190:
 translate english cap1_apertura_04ff9120:
 
     # isanari "Cinco cabezas puestas de acuerdo contra una... suena a un problema serio."
-    isanari "Five heads agreeing against one... sounds like a serious problem."
+    isanari "Five of them against you... sounds like a serious problem."
 
 # game/02_cap1_apertura.rpy:547
 translate english cap1_apertura_5776ad29:
@@ -1264,7 +1264,7 @@ translate english cap1_apertura_60fc6406:
 translate english cap1_apertura_8675b762:
 
     # narrador "Lo dijo muy segura. Casi."
-    narrador "She said it very sure. Almost."
+    narrador "She sounded very sure. Almost."
 
 # game/02_cap1_apertura.rpy:678
 translate english cap1_apertura_c43cfb07:
@@ -1492,7 +1492,7 @@ translate english cap1_adivinanza_hermanas_756eb8be:
 translate english cap1_adivinanza_hermanas_d8cbdc9f:
 
     # mc_pensamiento "Un rincón secreto que sería la biblioteca."
-    mc_pensamiento "A secret corner that would be the library."
+    mc_pensamiento "A secret corner, meaning the library."
 
 # game/02_cap1_apertura.rpy:778
 translate english cap1_adivinanza_hermanas_5edb953d:
