@@ -176,10 +176,12 @@ init python:
         return cuenta
 
     def final_sprite(hermana, logrado):
-        base = Crop((90, 0, 580, 560), hermana + " neutral")
+        ## Va colocado desde arriba (ypos 16): el adorno extra se compensa subiéndolo.
+        base, extra = sprite_busto("images/sprites/%s_sprites/%s_neutral.png" % (hermana, hermana), hermana + " neutral")
+        sube = -int(round(extra * 0.55))
         if logrado:
-            return Transform(base, zoom=0.55)
-        return Transform(base, zoom=0.55, matrixcolor=TintMatrix("#0B0712"), alpha=0.85)
+            return Transform(base, zoom=0.55, yoffset=sube)
+        return Transform(base, zoom=0.55, yoffset=sube, matrixcolor=TintMatrix("#0B0712"), alpha=0.85)
 
     def ui_cinta_menu(color, icono, activa):
         """Fondo de una cinta del menú (reposo o activa). icono=None -> solo borde."""

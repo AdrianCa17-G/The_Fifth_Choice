@@ -163,8 +163,9 @@ init python:
 
     ## --- Piezas -----------------------------------------------------------
     def prog_busto(ruta):
-        """Busto del sprite (mismo recorte que final_sprite), al ancho de la tarjeta."""
-        return Transform(Crop((90, 0, 580, 560), ruta), zoom=PROG_TARJ_W / 580.0)
+        """Busto del sprite (mismo recorte que final_sprite), al ancho de la tarjeta.
+        Va alineado abajo (prog_capa): el adorno extra sube y la caja lo recorta."""
+        return Transform(sprite_busto(ruta)[0], zoom=PROG_TARJ_W / 580.0)
 
     def prog_silueta(ruta):
         return Transform(prog_busto(ruta), matrixcolor=BrightnessMatrix(-1.0))

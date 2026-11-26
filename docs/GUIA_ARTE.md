@@ -163,6 +163,17 @@ a una escala distinta por dentro y en pantalla no parecían quintillizas.
 | `itsuki_sonriendo` | 53,9 | 1,431 |
 | `itsuki_neutral` | 48,7 | **1,584** |
 
+**Corrección del 26/11/2026.** Medidas en pantalla con el mismo detector de iris,
+`itsuki_neutral` daba IPD 72,4 (con su `zoom 1.01`, 73,1) e `itsuki_timida` 72,8:
+un 5–6 % más pequeñas que el resto del elenco (77 ± 2). Se reescalaron ×1,066 y
+×1,060 **alrededor de la línea de ojos y del eje de la falda** (los ojos siguen a
+729 px del borde de abajo), con filas extra arriba para que no se corte el ahoge:
+lienzos de 760 × 946 y 760 × 945. Ahora miden 77,3 y 77,6.
+Se quitaron los `zoom` propios de `00_definiciones.rpy` (Itsuki neutral 1.01 y
+sonriendo 1.02; Yotsuba incomoda 0.99 y seria 0.98): con `pj` anclado abajo, un
+zoom sube o baja los ojos (1.06 los subiría 44 px). **No corrijas el tamaño con
+`zoom` en Ren'Py: corrige el PNG alrededor de los ojos.**
+
 **Generar en vertical 768 × 1280 importa mucho.** Yotsuba y Nino vinieron así y
 salieron a escala 1,01 y 1,08, prácticamente sin reescalar. Las cuatro de Itsuki
 vinieron apaisadas a 1280 × 720 y necesitaron hasta 1,58 de ampliación. Se
@@ -553,9 +564,14 @@ son las lecciones que valen para todo lo que venga:
     transparentes arriba (lienzo 760 × 930+N, ojos en 199+N). `pj` ancla por
     abajo, así que los ojos y la cabeza quedan donde las de las hermanas.
   - El script avisa si queda contenido en la fila 0.
-  - Primer caso: `yotsuba_seria` (N = 50, 760 × 980).
-  - No lo uses con sprites que se recorten con coordenadas fijas: solo
-    `neutral`, en `08_extras.rpy`.
+  - Primer caso: `yotsuba_seria` (N = 50, 760 × 980). Desde el 26/11/2026 los
+    cinco sprites de Yotsuba van así (lazo completo).
+  - Los bustos recortados desde arriba ya lo tienen en cuenta: `sprite_busto()`
+    (`07_ui.rpy`) suma las N filas en la barra de progreso (`14_progreso_chicas.rpy`)
+    y en las tarjetas de Finales (`final_sprite`, `08_extras.rpy`), y
+    `busto()` del generador de imágenes de itch.io (`TFC_itchio/herramientas/
+    generar_imagenes.py`) recorta desde la misma línea de ojos. Si añades otro
+    recorte con coordenadas fijas, usa `sprite_busto()`.
 - **Los sprites vienen con luz de estudio plana y los fondos con luz cálida.** Se
   arregla con un tinte cálido por escena aplicado a los sprites, no al fondo. No
   hay que regenerar nada.

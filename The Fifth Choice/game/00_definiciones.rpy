@@ -253,8 +253,9 @@ image raiha preocupada      = "sprites/raiha_sprites/raiha_preocupada.png"
 image isanari neutral      = "sprites/isanari_sprites/isanari_neutral.png"
 image isanari sonriendo    = "sprites/isanari_sprites/isanari_sonrisa.png"
 
-image itsuki neutral   = Transform("sprites/itsuki_sprites/itsuki_neutral.png", zoom=1.01)
-image itsuki sonriendo   = Transform("sprites/itsuki_sprites/itsuki_sonriendo.png", zoom=1.02)
+## neutral y timida reescaladas a la IPD del set (26/11/2026; lienzo 946/945 por el ahoge): sin zoom propio.
+image itsuki neutral   = "sprites/itsuki_sprites/itsuki_neutral.png"
+image itsuki sonriendo   = "sprites/itsuki_sprites/itsuki_sonriendo.png"
 image itsuki molesta   = "sprites/itsuki_sprites/itsuki_molesta.png"
 image itsuki sorprendida   = "sprites/itsuki_sprites/itsuki_sorprendida.png"
 image itsuki timida   = "sprites/itsuki_sprites/itsuki_timida.png"
@@ -277,9 +278,10 @@ image miku encogida   = "sprites/miku_sprites/miku_encogida.png"
 
 image yotsuba neutral  = "sprites/yotsuba_sprites/yotsuba_neutral.png"
 image yotsuba sonriendo   = "sprites/yotsuba_sprites/yotsuba_sonriendo.png"
-image yotsuba incomoda   = Transform("sprites/yotsuba_sprites/yotsuba_incomoda.png", zoom=0.99)
+## Sprites rehechos (26/11/2026): las cinco comparten escala y línea de ojos, sin zoom propio.
+image yotsuba incomoda   = "sprites/yotsuba_sprites/yotsuba_incomoda.png"
 image yotsuba sorprendida = "sprites/yotsuba_sprites/yotsuba_sorprendida.png"
-image yotsuba seria       = Transform("sprites/yotsuba_sprites/yotsuba_seria.png", zoom=0.98)
+image yotsuba seria       = "sprites/yotsuba_sprites/yotsuba_seria.png"
 
 
 ################################################################################

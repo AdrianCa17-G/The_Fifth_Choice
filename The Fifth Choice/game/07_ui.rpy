@@ -244,6 +244,22 @@ init -5 python:
             return s
         return s.translate({ord(","): ".", ord("."): ","})
 
+    _sprite_extra = {}
+
+    def sprite_extra_arriba(ruta):
+        """Filas añadidas encima del lienzo estándar 760×930 para que quepa un adorno
+        (el lazo de Yotsuba: 980 → 50). Los ojos siguen a la misma distancia del borde
+        de abajo, así que un recorte medido desde arriba tiene que sumarlas."""
+        if ruta not in _sprite_extra:
+            _sprite_extra[ruta] = max(0, renpy.image_size(ruta)[1] - 930)
+        return _sprite_extra[ruta]
+
+    def sprite_busto(ruta, img=None):
+        """Busto común (progreso y finales): de la coronilla al pecho, con la ventana
+        alargada hacia arriba lo que mida el adorno. Devuelve (busto, extra)."""
+        extra = sprite_extra_arriba(ruta)
+        return Crop((90, 0, 580, 560 + extra), img or ruta), extra
+
     def ui_personaje(nombre, color, petalo=None, deco=None):
         """Personaje con caja rellena de su color (y motivo opcional)."""
         placa = ui_mezclar(color, "#FFFFFF", 0.45)
