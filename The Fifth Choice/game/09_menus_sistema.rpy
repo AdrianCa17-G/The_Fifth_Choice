@@ -383,9 +383,9 @@ screen file_slots(title):
         $ pagina = str(FileCurrentPage())
         $ encabezado = __("PÁGINA") + " " + pagina
         if pagina == "auto":
-            $ encabezado = _("GUARDADO AUTOMÁTICO")
+            $ encabezado = __("GUARDADO AUTOMÁTICO")
         elif pagina == "quick":
-            $ encabezado = _("GUARDADO RÁPIDO")
+            $ encabezado = __("GUARDADO RÁPIDO")
 
         fixed:
             xysize (1022, 960)
@@ -420,10 +420,10 @@ screen file_slots(title):
                 key "save_page_prev" action FilePagePrevious()
 
                 if config.has_autosave:
-                    use punto_pagina("A", FilePage("auto"), 0)
+                    use punto_pagina(_("{#auto_page}A"), FilePage("auto"), 0)
 
                 if config.has_quicksave:
-                    use punto_pagina("R", FilePage("quick"), 1)
+                    use punto_pagina(_("{#quick_page}R"), FilePage("quick"), 1)
 
                 for p in range(1, 10):
                     use punto_pagina(str(p), FilePage(p), p + 1)

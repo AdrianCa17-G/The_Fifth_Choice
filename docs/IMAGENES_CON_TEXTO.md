@@ -10,6 +10,10 @@ y sobre las de `game/ui`, `game/gui`, `game/images/hubs`, `menu`, `chibis` y el 
 cortinillas, HUD, minijuegos, créditos, menús) se dibuja con `Text` de Ren'Py y ya entra en
 `game/tl/english/` como `translate english strings`. No hace falta rehacer ninguna imagen para la v1.1.
 
+**Tarea D (26/11/2026):** confirmado. No ha entrado ninguna imagen nueva desde el 23/11, y el arranque en inglés
+(26 pantallas capturadas: menús, extras, mapa, HUD, chat, boletín, progreso, «Continuará» y los cinco minijuegos)
+no muestra texto en español dentro de ninguna imagen. **Lista de imágenes para rehacer a mano: vacía.**
+
 ## Imágenes que sí contienen texto (se quedan como están)
 
 | Ruta (desde `game/`) | Texto | Decisión |

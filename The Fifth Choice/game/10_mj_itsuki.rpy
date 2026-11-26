@@ -124,12 +124,11 @@ init python:
             Transform(Solid(fondo), xpos=3, ypos=3, xsize=IT1_OPCION[0] - 6, ysize=IT1_OPCION[1] - 6))
 
     def it1_agrupar(n):
-        """12345 -> '12.345'."""
-        s = "{:,}".format(int(n))
-        return s.replace(",", ".")
+        """12345 -> '12.345' (en inglés '12,345')."""
+        return ui_num("{:,}".format(int(n)))
 
     def it1_fmt(valor):
-        """Fraction decimal exacta -> texto en español ('0,002', '2.700')."""
+        """Fraction decimal exacta -> texto con los separadores del idioma ('0,002', '2.700' en español)."""
         f = Fraction(valor)
         for k in range(0, 10):
             m = f * (10 ** k)
@@ -142,8 +141,8 @@ init python:
                     s = "0" + s
                 ent = s[:len(s) - k]
                 dec = s[len(s) - k:]
-                return it1_agrupar(int(ent)) + "," + dec
-        return ("{:.4f}".format(float(f))).replace(".", ",")
+                return ui_num("{:,}".format(int(ent)) + "." + dec)
+        return ui_num("{:.4f}".format(float(f)))
 
     def it1_aplicar(valor, paso):
         f = Fraction(paso[3])

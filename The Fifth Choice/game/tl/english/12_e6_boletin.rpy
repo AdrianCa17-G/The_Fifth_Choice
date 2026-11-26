@@ -22,5 +22,5 @@ translate english strings:
 
     # game/12_e6_boletin.rpy:187
     old "LA CUENTA"
-    new "LA CUENTA"
+    new "THE TALLY"
 

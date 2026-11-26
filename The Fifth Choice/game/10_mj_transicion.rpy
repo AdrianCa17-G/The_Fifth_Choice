@@ -189,8 +189,8 @@ screen mj_transicion(hermana, tipo, titulo):
             fixed:
                 fit_first True
                 xalign 0.5
-                text titulo style "mjtr_titulo" substitute False at mjtr_oculto
-                text titulo style "mjtr_titulo" substitute False at titulo_t
+                text __(titulo) style "mjtr_titulo" substitute False at mjtr_oculto
+                text __(titulo) style "mjtr_titulo" substitute False at titulo_t
 
         ## --- Encima de todo ----------------------------------------------------
         if hermana == "ichika":

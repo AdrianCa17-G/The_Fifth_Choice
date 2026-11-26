@@ -237,6 +237,13 @@ init -5 python:
             resultado = resultado + "{:02x}".format(v)
         return resultado
 
+    def ui_num(s):
+        """Número ya formateado por Python ('2,700.5') -> separadores del idioma
+        activo: '2.700,5' en español; en inglés queda tal cual."""
+        if _preferences.language == "english":
+            return s
+        return s.translate({ord(","): ".", ord("."): ","})
+
     def ui_personaje(nombre, color, petalo=None, deco=None):
         """Personaje con caja rellena de su color (y motivo opcional)."""
         placa = ui_mezclar(color, "#FFFFFF", 0.45)

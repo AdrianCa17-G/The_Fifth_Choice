@@ -557,7 +557,7 @@ screen mj_y2(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ en_error = (vivo.fase == "cae" or vivo.fase == "falsa")
     $ en_intro = (vivo.fase == "intro")
     $ ritmo = vivo.ritmo()
-    $ ritmo_txt = "{:.1f}".format(ritmo).replace(".", ",")
+    $ ritmo_txt = ui_num("{:.1f}".format(ritmo))
     $ py = Y2_PISTA_Y
     $ ph = Y2_PISTA_H
     $ pw = Y2_PISTA_W

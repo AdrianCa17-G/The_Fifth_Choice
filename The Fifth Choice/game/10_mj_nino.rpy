@@ -162,8 +162,8 @@ init python:
         return N1_ESTANTES_Y + (MJ_AREA_Y + MJ_AREA_H - N1_ESTANTES_Y - alto) // 2
 
     def n1_seg(x):
-        """1.5 -> '1,5'."""
-        return "{:g}".format(x).replace(".", ",")
+        """1.5 -> '1,5' (en inglés '1.5')."""
+        return ui_num("{:g}".format(x))
 
     def n1_ritmo(nivel):
         if nivel == "dificil":
@@ -175,7 +175,7 @@ init python:
     def n1_reglas(p):
         """Reglas de la pantalla de explicación, según los parámetros vigentes."""
         reglas = []
-        reglas.append((_("LEE LA LISTA"), _("Cada pedido está en inglés y las cajas se parecen mucho. Busca la que dice EXACTAMENTE lo mismo.")))
+        reglas.append((_("LEE LA LISTA"), __("Cada pedido está en inglés y las cajas se parecen mucho. Busca la que dice EXACTAMENTE lo mismo.")))
 
         partes = []
         if p["deriva"] > 0:
@@ -189,7 +189,7 @@ init python:
         reglas.append((_("BUSCA RÁPIDO"), " ".join(partes)))
 
         reglas.append((_("NO TE EQUIVOQUES"), __("Cada error resta {} s y bloquea esa caja. Cada {} aciertos seguidos suman +{} s.").format(n1_seg(p["penalizacion"]), N1_RACHA_N, n1_seg(p["racha_bonus"]))))
-        reglas.append((_("EL SEXTO HUECO"), _("Tras la quinta lista queda un hueco en la cesta. Ahí no hay respuesta correcta: elige tú.")))
+        reglas.append((_("EL SEXTO HUECO"), __("Tras la quinta lista queda un hueco en la cesta. Ahí no hay respuesta correcta: elige tú.")))
         return reglas
 
     class MJN1(object):

@@ -29,3 +29,5 @@ Formato: una fila por errata. «Archivo:línea» tal como está en el momento de
 | `02_cap1_conexiones.rpy:4021` | «Ni siquiera se tomaron la molestia en contestarme» | Falta el punto final: «...en contestarme.» | Claude, 25/11/2026 |
 | `02_cap1_conexiones.rpy:4091` | `_("Casa de Futaro")` (nombre fijo) | `_("Casa de [nombre_jugador]")`, como ya hace «Habitación de [nombre_jugador]» en `07_ui.rpy`. Si el jugador cambia el nombre, el cartel sigue diciendo «Futaro». En inglés ya va con `[nombre_jugador]`. | Claude, 25/11/2026 |
 | `02_cap1_evento6.rpy:1481` | «No. Aun me falta revisar unas cosas.» (Nino) | «No. Aún me falta revisar unas cosas.» (sin tilde en «Aún») | Claude, 25/11/2026 |
+| `screens.rpy:1212-1217` (Ayuda → Teclado) | «Av. pág.» → «Retrocede al diálogo anterior.» y «Re. pág.» → «Avanza hacia el diálogo siguiente.» | Las teclas están cruzadas: Re. pág. (Page Up) retrocede y Av. pág. (Page Down) avanza. Basta con intercambiar las dos etiquetas. En inglés ya va bien ("Page Up · Rolls back…", "Page Down · Rolls forward…"). | Claude, 26/11/2026 |
+| `08_extras.rpy:1002` | `_("El climax")` (Extras → Animaciones) | «El clímax» | Claude, 26/11/2026 |

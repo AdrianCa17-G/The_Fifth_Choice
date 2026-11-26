@@ -358,3 +358,33 @@ C6 cubre desde `e6_despues` (tarde del viernes) hasta `e6_retrato` (cierre del c
     Los nombres de las promesas (`[e6_p1!t]`, `[e6_p2!t]`) se dejan idénticos (son nombres propios).
 12. **Cita de la libreta:** "Head-on, all five at once, I always lose." (igual en apertura, evento 6 y final malo). Revisión de naturalidad (25/11):
     en C1 se suavizaron 29 líneas rígidas de Prólogo y Apertura ("I'm here to tutor you, not to make friends.", "Not happening.", "Fair point. But you'll want to hear about the pay.").
+
+---
+
+## 16. Decisiones de traducción de la tarea D (26/11/2026) · Interfaz, minijuegos, chat y créditos
+
+1. **Lugares (HUD y mapa):** «Habitación de [nombre_jugador]» → **[nombre_jugador]'s Room** · «Casa Uesugi» → **Uesugi House** ·
+   «Instituto Asaba» → **Asaba High** · «Edificio de las Nakano» → **The Nakanos' Building** · «Piso de las Nakano» → **Nakano Apartment** ·
+   «Sala de ensayo» → **Rehearsal Room** · «Centro comercial» → **Shopping Mall** · «Biblioteca» → **Library** · «Pista» → **Track** ·
+   «Aula vacía» → **Empty Classroom**. Momento del día tras « · »: **Day / Evening / Sunset** («Azotea · Atardecer» → Rooftop · Sunset).
+2. **Rótulos del HUD:** ENCUENTRO → **ENCOUNTER** · ESCENA CLAVE → **KEY SCENE** · DECISIÓN → **DECISION** · HORA DE DECIDIR → **TIME TO DECIDE**.
+   «Quedan [tiempo_restante]» → **"[tiempo_restante!tc] left"**: `!tc` pone en mayúscula la primera letra cuando abre la frase
+   (también en los pensamientos de Ichika, Nino, Miku e Itsuki; el de Yotsuba empieza por "Only" y sigue con `!t`).
+3. **Títulos de los minijuegos:** «Relevo de las cinco» → **Quintuplet Relay** (en la pantalla de reglas, «EL RELEVO DE LAS CINCO» → THE QUINTUPLET RELAY,
+   como en español) · «La máscara se cansa» → **The Mask Grows Tired** · «Compras para seis» → **Shopping for Six** ·
+   «Cadena de conversiones» → **Conversion Chain** · «El compás» → **The Beat**.
+4. **Minijuego de Ichika:** «sincera / sincero» → **honest** ("An honest line lowers it", "IT CAN ONLY BE HONEST"); «actuar» → **acting**.
+5. **Opciones de fallo:** «Inténtalo de nuevo» → **Try again** · «Saltarlo» → **Skip it** · «Que lo haga ella» → **Let her do it**.
+6. **Extras:** Galería → **Gallery** · Finales → **Endings** · cálida / tibia / fría → **Warm / Lukewarm / Cold** · dificultad
+   **Hard / Medium / Assisted** · «Fin del prólogo» → **End of Prologue** (sin artículo, para caber en la tarjeta de animaciones) ·
+   «Un estudiante perfecto» → **A Perfect Student** · «Continuará...» → **To be continued...**
+7. **Chat de grupo:** «¡Equipo Quintillizas + Tutor!» → **Team Quintuplets + Tutor!**; Itsuki sin contracciones ("It is a fact, not a celebration.",
+   "Acknowledged."); Miku conserva «...»; Yotsuba en mayúsculas y con «!!» como en español.
+8. **Boletín:** «LA CUENTA» → **THE TALLY**; materias según §4 (Japanese, Math, English, Science, Social Studies).
+9. **Formato de números (decisión 5 del plan):** los separadores siguen el idioma activo con `ui_num()` (`07_ui.rpy`): en inglés **1,000** y **1.5**;
+   en español no cambia (1.000 y 1,5). Las fechas de guardado en orden de EE. UU. (**11/26/2026 · 20:13**) con la entrada manual
+   `{#file_time}` de `tl/english/09_menus_sistema.rpy`. El espacio antes de «%» (100 %) se mantiene en inglés porque lo pone el código
+   en la galería, la barra de progreso y el medidor de Ichika.
+10. **Pistas de los finales:** deben caber en 2 líneas como en español. Nino: «Quien más distancia pone, en el fondo solo espera a alguien
+    que no se rinda con ella.» → "Behind all that distance, she's only waiting for someone who won't give up on her."
+11. **Créditos:** sin mencionar herramientas de IA de texto; mismo texto en `tl/english/16_creditos.rpy` y en la sección inglesa de `CREDITOS.md`.

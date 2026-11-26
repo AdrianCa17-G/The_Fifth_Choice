@@ -4,9 +4,9 @@ translate english strings:
 
     # game/02_cap1_hubs.rpy:52
     old "dos semanas"
-    new "dos semanas"
+    new "two weeks"
 
     # game/02_cap1_hubs.rpy:81
     old "pocos días"
-    new "pocos días"
+    new "a few days"
 

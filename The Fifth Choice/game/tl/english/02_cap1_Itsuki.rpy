@@ -964,7 +964,7 @@ translate english itsuki_m5_7d85ac5f:
 translate english itsuki_m5_47430c21:
 
     # mc_pensamiento "Quedan [tiempo_restante!t]."
-    mc_pensamiento "[tiempo_restante!t] left."
+    mc_pensamiento "[tiempo_restante!tc] left."
 
 # game/02_cap1_Itsuki.rpy:522
 translate english itsuki_m5_0597ee2a:

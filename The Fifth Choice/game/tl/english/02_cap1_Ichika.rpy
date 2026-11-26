@@ -1084,7 +1084,7 @@ translate english ichika_m6_193001f8:
 translate english ichika_m6_47430c21:
 
     # mc_pensamiento "Quedan [tiempo_restante!t]."
-    mc_pensamiento "[tiempo_restante!t] left."
+    mc_pensamiento "[tiempo_restante!tc] left."
 
 # game/02_cap1_Ichika.rpy:601
 translate english ichika_m6_2d141dd0:

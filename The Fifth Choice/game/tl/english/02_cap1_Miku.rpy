@@ -1114,7 +1114,7 @@ translate english miku_m5_e9dbfcbb:
 translate english miku_m5_47430c21:
 
     # mc_pensamiento "Quedan [tiempo_restante!t]."
-    mc_pensamiento "[tiempo_restante!t] left."
+    mc_pensamiento "[tiempo_restante!tc] left."
 
 # game/02_cap1_Miku.rpy:586
 translate english miku_m5_1a0d9191:

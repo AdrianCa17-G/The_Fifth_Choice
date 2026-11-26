@@ -1120,7 +1120,7 @@ translate english nino_m5_ee406bcf:
 translate english nino_m5_47430c21:
 
     # mc_pensamiento "Quedan [tiempo_restante!t]."
-    mc_pensamiento "[tiempo_restante!t] left."
+    mc_pensamiento "[tiempo_restante!tc] left."
 
 # game/02_cap1_Nino.rpy:587
 translate english nino_m5_fc038905:

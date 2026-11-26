@@ -4,5 +4,5 @@ translate english strings:
 
     # game/14_progreso_chicas.rpy:472
     old "CLIC PARA CONTINUAR"
-    new "CLIC PARA CONTINUAR"
+    new "CLICK TO CONTINUE"
 

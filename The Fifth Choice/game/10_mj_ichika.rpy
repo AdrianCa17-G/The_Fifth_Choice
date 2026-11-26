@@ -451,7 +451,7 @@ screen mj_i1(hermana, params, inicio, intento, fallos, nivel, titulo):
     $ ultima = vivo.es_ultima()
     $ puede_s = vivo.puede_sincera()
     $ costo_s = int(round(vivo.costo_sincera()))
-    $ hold_txt = "{:.1f}".format(vivo.req_hold()).replace(".", ",")
+    $ hold_txt = ui_num("{:.1f}".format(vivo.req_hold()))
     $ en_juego = (vivo.estado != "listo")
 
     $ col_masc = color
