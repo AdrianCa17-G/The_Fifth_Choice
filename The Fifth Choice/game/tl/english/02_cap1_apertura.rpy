@@ -61,10 +61,10 @@ translate english cap1_apertura_6edea804:
     narrador "Itsuki had her eyes glued to her notebook."
 
 # game/02_cap1_apertura.rpy:65
-translate english cap1_apertura_b47bd2ce:
+translate english cap1_apertura_650b2e9f:
 
-    # narrador "Con una concentración que no le hacía falta a las siete y media de la mañana."
-    narrador "With a concentration nobody needs at seven-thirty in the morning."
+    # narrador "Con una concentración que no le hacía falta a las 7:30 de la mañana."
+    narrador "With a concentration nobody needs at 7:30 in the morning."
 
 # game/02_cap1_apertura.rpy:67
 translate english cap1_apertura_6bda9fa8:
@@ -205,16 +205,16 @@ translate english cap1_apertura_bd9482c7:
     mc_pensamiento "It wasn't that she hated me."
 
 # game/02_cap1_apertura.rpy:134
-translate english cap1_apertura_b12413a1:
+translate english cap1_apertura_0fd6a383:
 
-    # mc_pensamiento "Era que iba a odiarme desde las ocho hasta las tres."
-    mc_pensamiento "It was that she was going to hate me from eight to three."
+    # mc_pensamiento "Era que iba a odiarme desde las 8 hasta las 3."
+    mc_pensamiento "It was that she was going to hate me from 8 to 3."
 
 # game/02_cap1_apertura.rpy:136
-translate english cap1_apertura_357f7df0:
+translate english cap1_apertura_56d6adf2:
 
-    # mc_pensamiento "Y después, desde las cuatro hasta que me fuera de su casa."
-    mc_pensamiento "And then, from four until I left her house."
+    # mc_pensamiento "Y después, desde las 4 hasta que me fuera de su casa."
+    mc_pensamiento "And then, from 4 until I left her house."
 
 # game/02_cap1_apertura.rpy:138
 translate english cap1_apertura_1879b1e7:
@@ -229,10 +229,10 @@ translate english cap1_apertura_2095459a:
     mc_pensamiento "Full-time."
 
 # game/02_cap1_apertura.rpy:158
-translate english cap1_apertura_f6ffc7f2:
+translate english cap1_apertura_981fd95a:
 
-    # narrador "Toqué a las cuatro en punto."
-    narrador "I knocked at four on the dot."
+    # narrador "Toqué a las 4 en punto."
+    narrador "I knocked at 4 on the dot."
 
 # game/02_cap1_apertura.rpy:162
 translate english cap1_apertura_11a15e52:
@@ -961,10 +961,10 @@ translate english cap1_apertura_457ad5de:
     mc_pensamiento "Thirty days for five students who today organized themselves to fail."
 
 # game/02_cap1_apertura.rpy:496
-translate english cap1_apertura_f1966eb0:
+translate english cap1_apertura_2bc40726:
 
-    # narrador "Salí del edificio pasadas las siete. Fui directo a casa."
-    narrador "I left the building after seven. I went straight home."
+    # narrador "Salí del edificio pasadas las 7. Fui directo a casa."
+    narrador "I left the building after 7. I went straight home."
 
 # game/02_cap1_apertura.rpy:503
 translate english cap1_apertura_7b64568f:

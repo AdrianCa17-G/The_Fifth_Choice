@@ -62,7 +62,7 @@ label cap1_apertura:
 
     narrador "Itsuki tenía la mirada clavada en su cuaderno."
     
-    narrador "Con una concentración que no le hacía falta a las siete y media de la mañana."
+    narrador "Con una concentración que no le hacía falta a las 7:30 de la mañana."
 
     mc_pensamiento "Me dejó el sitio a propósito." 
     
@@ -131,9 +131,9 @@ label cap1_apertura:
 
     mc_pensamiento "No era que me odiara."
 
-    mc_pensamiento "Era que iba a odiarme desde las ocho hasta las tres." 
+    mc_pensamiento "Era que iba a odiarme desde las 8 hasta las 3." 
     
-    mc_pensamiento "Y después, desde las cuatro hasta que me fuera de su casa."
+    mc_pensamiento "Y después, desde las 4 hasta que me fuera de su casa."
 
     mc_pensamiento "Sin pausa. Sin cambio de escenario."
 
@@ -155,7 +155,7 @@ label cap1_apertura:
     
     play sound audio.sfx_toque_puerta volume 1.5
 
-    narrador "Toqué a las cuatro en punto."
+    narrador "Toqué a las 4 en punto."
 
     play sound audio.sfx_puerta_abre volume 1.5
 
@@ -493,7 +493,7 @@ label cap1_apertura:
     scene bg_negro
     with fade
 
-    narrador "Salí del edificio pasadas las siete. Fui directo a casa."
+    narrador "Salí del edificio pasadas las 7. Fui directo a casa."
 
     play music cena fadeout 1.5 fadein 2.0
 
