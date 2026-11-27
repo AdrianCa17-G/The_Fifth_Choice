@@ -112,9 +112,9 @@ label hub_Ichika:
 
     mc_pensamiento "Esa no es su voz normal."
 
-    mc_pensamiento "Su voz normal tiene dirección de escena."
+    mc_pensamiento "Su voz normal suena ensayada."
 
-    mc_pensamiento "Esta no tenía ninguna."
+    mc_pensamiento "Esta no."
 
     narrador "Duró medio segundo."
 
@@ -366,7 +366,7 @@ label ichika_m4a:
     show ichika sonriendo at pj_calla(0.5)
     with disolucion_lenta
 
-    narrador "Guardó el guion en la mochila, todavía sin la actuación completa de vuelta."
+    narrador "Guardó el guion en la mochila, todavía sin volver a actuar del todo."
 
     mc_pensamiento "Volvió a sonreír. Pero le costó."
 
@@ -446,7 +446,7 @@ label ichika_m4c:
     show ichika neutral at pj_habla(0.5)
     with disolucion_lenta
 
-    narrador "La sonrisa no desapareció del todo, pero algo detrás de ella sí."
+    narrador "La sonrisa siguió ahí, pero ya no era la misma."
 
     ichika "..."
 
@@ -622,7 +622,7 @@ label ichika_m6:
 
         mc_pensamiento "Y aun con todo lo que le dije, aceptó un papel más antes de que llegáramos a la salida."
 
-        mc_pensamiento "Hoy solo le enseñé a esconder mejor la cuenta."
+        mc_pensamiento "Hoy solo le enseñé a disimular mejor."
 
     # Marca el evento como consumido para el evento 6 y para que el hub
     # ofrezca la revisita corta en lugar del evento completo.

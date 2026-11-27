@@ -168,17 +168,17 @@ translate english hub_Ichika_b503f5fa:
     # mc_pensamiento "Esa no es su voz normal."
     mc_pensamiento "That's not her normal voice."
 
+# game/02_cap1_Ichika.rpy:115
+translate english hub_Ichika_750e926b:
+
+    # mc_pensamiento "Su voz normal suena ensayada."
+    mc_pensamiento "Her normal voice sounds rehearsed."
+
 # game/02_cap1_Ichika.rpy:117
-translate english hub_Ichika_9885b390:
+translate english hub_Ichika_0f3f270a:
 
-    # mc_pensamiento "Su voz normal tiene dirección de escena."
-    mc_pensamiento "Her normal voice comes with stage directions."
-
-# game/02_cap1_Ichika.rpy:119
-translate english hub_Ichika_d1048ce4:
-
-    # mc_pensamiento "Esta no tenía ninguna."
-    mc_pensamiento "This one didn't have any."
+    # mc_pensamiento "Esta no."
+    mc_pensamiento "This one didn't."
 
 # game/02_cap1_Ichika.rpy:121
 translate english hub_Ichika_976d04a9:
@@ -678,11 +678,11 @@ translate english ichika_m4a_bdb90174:
     # ichika "...Gracias por no decir la frase obvia."
     ichika "...Thanks for not saying the obvious thing."
 
-# game/02_cap1_Ichika.rpy:375
-translate english ichika_m4a_2b83b5cf:
+# game/02_cap1_Ichika.rpy:369
+translate english ichika_m4a_7f8c2efa:
 
-    # narrador "Guardó el guion en la mochila, todavía sin la actuación completa de vuelta."
-    narrador "She put the script in her bag, still without the full act back."
+    # narrador "Guardó el guion en la mochila, todavía sin volver a actuar del todo."
+    narrador "She put the script in her bag, still not quite back in character."
 
 # game/02_cap1_Ichika.rpy:371
 translate english ichika_m4a_51948e86:
@@ -810,11 +810,11 @@ translate english ichika_m4c_5cdb123d:
     # mc "Si tienes energía para hacer chistes, tienes energía para estudiar."
     mc "If you have the energy to make jokes, you have the energy to study."
 
-# game/02_cap1_Ichika.rpy:455
-translate english ichika_m4c_3145906b:
+# game/02_cap1_Ichika.rpy:449
+translate english ichika_m4c_ed659a10:
 
-    # narrador "La sonrisa no desapareció del todo, pero algo detrás de ella sí."
-    narrador "The smile didn't disappear completely, but something behind it did."
+    # narrador "La sonrisa siguió ahí, pero ya no era la misma."
+    narrador "The smile stayed, but it wasn't the same one."
 
 # game/02_cap1_Ichika.rpy:457
 translate english ichika_m4c_2a88e035:
@@ -1147,10 +1147,10 @@ translate english ichika_m6_ae577c3e:
     mc_pensamiento "And after everything I said to her, she took one more part before we even reached the exit."
 
 # game/02_cap1_Ichika.rpy:625
-translate english ichika_m6_990a835c:
+translate english ichika_m6_a024a020:
 
-    # mc_pensamiento "Hoy solo le enseñé a esconder mejor la cuenta."
-    mc_pensamiento "All I taught her today was how to hide the total better."
+    # mc_pensamiento "Hoy solo le enseñé a disimular mejor."
+    mc_pensamiento "All I taught her today was to hide it better."
 
 translate english strings:
 
