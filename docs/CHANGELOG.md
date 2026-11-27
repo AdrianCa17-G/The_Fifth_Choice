@@ -1,10 +1,14 @@
 # Changelog
 
-## v1.1 · 26/11/2026
+## v1.1 · 27/11/2026
 
 ### Nuevo
 - Traducción completa al inglés: diálogo, menús, interfaz, minijuegos, chat de grupo, boletín y créditos.
 - Selector de idioma (Español / English) en Opciones.
+
+### Diálogos
+- Prólogo y capítulo 1 reescritos en las líneas que sonaban repetitivas o demasiado poéticas, en español e inglés. No cambian las decisiones, las ramas ni los finales.
+- Horarios, tiempos de carrera y cifras que se comparan, ahora en números.
 
 ### Arte
 - Sprites de Yotsuba rehechos, con el lazo completo.
