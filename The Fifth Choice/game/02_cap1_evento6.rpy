@@ -880,9 +880,9 @@ label e6_ichika_mono_calida:
 
     play music descubrimiento fadein 2.0
 
-    ichika_int "Pregunta cuatro. Un tren sale a las cuatro cuarenta y cinco."
+    ichika_int "Pregunta cuatro. Un tren sale a las 4:45."
 
-    ichika_int "Seis minutos a la estación, cuatro para cambiarse. Hay que salir a las cuatro treinta y cinco."
+    ichika_int "Seis minutos a la estación, cuatro para cambiarse. Hay que salir a las 4:35."
 
     ichika_int "Me salió antes de terminar de leer. Siempre lo supe. Nunca pensé que eso era matemáticas."
 
@@ -921,7 +921,7 @@ label e6_ichika_mono_calida:
 
 label e6_ichika_mono_tibia:
 
-    ichika_int "Pregunta cuatro. Trenes. Salen las cuatro treinta y cinco."
+    ichika_int "Pregunta cuatro. Trenes. Salen las 4:35."
 
     ichika_int "Me sale tan rápido que me da un poco de miedo. Cuando algo sale tan fácil, ¿es mío?"
 
@@ -944,7 +944,7 @@ label e6_ichika_mono_tibia:
 
 label e6_ichika_mono_fria:
 
-    ichika_int "Pregunta cuatro. Trenes. Cuatro treinta y cinco."
+    ichika_int "Pregunta cuatro. Trenes. 4:35."
 
     ichika_int "«Si tienes energía para hacer chistes, tienes energía para estudiar.» Eso dijo."
 
@@ -963,7 +963,7 @@ label e6_ichika_mono_fria:
 
 label e6_ichika_mono_no_visitada:
 
-    ichika_int "Pregunta cuatro. Trenes. Cuatro treinta y cinco. Sale sola."
+    ichika_int "Pregunta cuatro. Trenes. 4:35. Sale sola."
 
     ichika_int "Ensayé tres formas de recibirlo, si venía. La graciosa. La dramática. La de «qué sorpresa»."
 

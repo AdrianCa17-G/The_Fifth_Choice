@@ -1303,16 +1303,16 @@ translate english e6_ichika_nucleo_9b11c265:
     mc_pensamiento "Breathing room is exactly what she doesn't have."
 
 # game/02_cap1_evento6.rpy:883
-translate english e6_ichika_mono_calida_00de8fec:
+translate english e6_ichika_mono_calida_56b1aed8:
 
-    # ichika_int "Pregunta cuatro. Un tren sale a las cuatro cuarenta y cinco."
-    ichika_int "Question four. A train leaves at four forty-five."
+    # ichika_int "Pregunta cuatro. Un tren sale a las 4:45."
+    ichika_int "Question four. A train leaves at 4:45."
 
 # game/02_cap1_evento6.rpy:885
-translate english e6_ichika_mono_calida_85cdd8a0:
+translate english e6_ichika_mono_calida_c04ec682:
 
-    # ichika_int "Seis minutos a la estación, cuatro para cambiarse. Hay que salir a las cuatro treinta y cinco."
-    ichika_int "Six minutes to the station, four to change. Have to leave at four thirty-five."
+    # ichika_int "Seis minutos a la estación, cuatro para cambiarse. Hay que salir a las 4:35."
+    ichika_int "Six minutes to the station, four to change. Have to leave at 4:35."
 
 # game/02_cap1_evento6.rpy:887
 translate english e6_ichika_mono_calida_dc95ef76:
@@ -1411,10 +1411,10 @@ translate english e6_ichika_mono_calida_bae927b7:
     ichika_int "Let's run them. Today I want to see which ones are mine."
 
 # game/02_cap1_evento6.rpy:924
-translate english e6_ichika_mono_tibia_8819b37f:
+translate english e6_ichika_mono_tibia_b160bc6a:
 
-    # ichika_int "Pregunta cuatro. Trenes. Salen las cuatro treinta y cinco."
-    ichika_int "Question four. Trains. Leave at four thirty-five."
+    # ichika_int "Pregunta cuatro. Trenes. Salen las 4:35."
+    ichika_int "Question four. Trains. Leave at 4:35."
 
 # game/02_cap1_evento6.rpy:926
 translate english e6_ichika_mono_tibia_c58b0ebf:
@@ -1465,10 +1465,10 @@ translate english e6_ichika_mono_tibia_37c6a00f:
     ichika_int "Next question!"
 
 # game/02_cap1_evento6.rpy:947
-translate english e6_ichika_mono_fria_d37a7783:
+translate english e6_ichika_mono_fria_d3b94d99:
 
-    # ichika_int "Pregunta cuatro. Trenes. Cuatro treinta y cinco."
-    ichika_int "Question four. Trains. Four thirty-five."
+    # ichika_int "Pregunta cuatro. Trenes. 4:35."
+    ichika_int "Question four. Trains. 4:35."
 
 # game/02_cap1_evento6.rpy:949
 translate english e6_ichika_mono_fria_e972780c:
@@ -1507,10 +1507,10 @@ translate english e6_ichika_mono_fria_4aa9a3d4:
     ichika_int "I'm fine. For the record."
 
 # game/02_cap1_evento6.rpy:966
-translate english e6_ichika_mono_no_visitada_0cdee912:
+translate english e6_ichika_mono_no_visitada_71303697:
 
-    # ichika_int "Pregunta cuatro. Trenes. Cuatro treinta y cinco. Sale sola."
-    ichika_int "Question four. Trains. Four thirty-five. It comes out on its own."
+    # ichika_int "Pregunta cuatro. Trenes. 4:35. Sale sola."
+    ichika_int "Question four. Trains. 4:35. It comes out on its own."
 
 # game/02_cap1_evento6.rpy:968
 translate english e6_ichika_mono_no_visitada_35ea05d1:
