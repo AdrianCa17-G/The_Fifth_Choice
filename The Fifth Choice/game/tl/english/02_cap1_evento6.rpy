@@ -49,22 +49,16 @@ translate english e6_lunes_dc99b692:
     narrador "All five were already in the classroom, books closed."
 
 # game/02_cap1_evento6.rpy:234
-translate english e6_lunes_a1da08b1:
+translate english e6_lunes_165261c2:
 
-    # narrador "No por desinterés: por haber llegado al final de lo que se podía repasar."
-    narrador "Not because they didn't care. There was just nothing left to review."
+    # narrador "Ya no quedaba nada que repasar."
+    narrador "There was nothing left to review."
 
 # game/02_cap1_evento6.rpy:236
 translate english e6_lunes_bb092f3d:
 
     # narrador "Me miraron, y cada una se acercó hacia mí."
     narrador "They looked at me, and each of them came over."
-
-# game/02_cap1_evento6.rpy:238
-translate english e6_lunes_d511a015:
-
-    # narrador "Cada una."
-    narrador "Every single one."
 
 # game/02_cap1_evento6.rpy:240
 translate english e6_lunes_d6c15725:
@@ -282,11 +276,11 @@ translate english e6_lunes_597b43ad:
     # ichika "Hoy me portaré muy bien. Que conste."
     ichika "I'll be very good today. Just so it's on the record."
 
-# game/02_cap1_evento6.rpy:345
-translate english e6_lunes_85fcb65d:
+# game/02_cap1_evento6.rpy:343
+translate english e6_lunes_e2e42c74:
 
-    # narrador "La sonrisa, en su sitio. Los ojos, en la pizarra."
-    narrador "The smile stayed put. Her eyes stayed on the board."
+    # narrador "Sonreía, pero miraba a la pizarra."
+    narrador "She was smiling, but looking at the board."
 
 # game/02_cap1_evento6.rpy:351
 translate english e6_lunes_1c60b554:
@@ -564,17 +558,11 @@ translate english e6_lunes_2e619dfc:
     # mc "Hagan lo que saben."
     mc "Do what you know."
 
-# game/02_cap1_evento6.rpy:489
-translate english e6_lunes_5a19a1a7:
+# game/02_cap1_evento6.rpy:487
+translate english e6_lunes_54dac2ff:
 
-    # narrador "No era una frase cualquiera."
-    narrador "It wasn't just any line."
-
-# game/02_cap1_evento6.rpy:491
-translate english e6_lunes_70a1d595:
-
-    # narrador "Cada palabra tenía un nombre detrás."
-    narrador "Every word had a name behind it."
+    # narrador "Pensé en cada una al decirlo."
+    narrador "I thought of each of them as I said it."
 
 # game/02_cap1_evento6.rpy:495
 translate english e6_lunes_1fd7eb4b:
@@ -648,17 +636,17 @@ translate english e6_s1_superado_ee044c9d:
     # mc_pensamiento "«Si una sola reprueba, se acabó.» Maruo lo dijo en la cocina y no lo repitió."
     mc_pensamiento "\"If even one of them fails, it's over.\" Maruo said it in the kitchen and never said it again."
 
-# game/02_cap1_evento6.rpy:538
-translate english e6_s1_superado_d703b061:
+# game/02_cap1_evento6.rpy:534
+translate english e6_s1_superado_58aad197:
 
-    # mc_pensamiento "No hacía falta. Una frase así no se repite: se cumple."
-    mc_pensamiento "He didn't have to. A line like that doesn't get repeated. It gets carried out."
+    # mc_pensamiento "Con Maruo no hacía falta: lo iba a cumplir."
+    mc_pensamiento "With Maruo there was no need: he'd follow through."
 
-# game/02_cap1_evento6.rpy:540
-translate english e6_s1_superado_219ee8a3:
+# game/02_cap1_evento6.rpy:536
+translate english e6_s1_superado_83614afa:
 
-    # mc_pensamiento "Cinco exámenes, cinco días, y esa frase sentada al lado de cada uno."
-    mc_pensamiento "Five exams, five days, and that sentence sitting next to each one."
+    # mc_pensamiento "Cinco exámenes, cinco días, y esa frase dándome vueltas en cada uno."
+    mc_pensamiento "Five exams, five days, and that line going round my head through each one."
 
 # game/02_cap1_evento6.rpy:542
 translate english e6_s1_superado_ac02f513:
@@ -666,11 +654,11 @@ translate english e6_s1_superado_ac02f513:
     # mc_pensamiento "Hace un mes comencé este trabajo con una palabra clavada: despedido."
     mc_pensamiento "A month ago I started this job with one word stuck in my head: fired."
 
-# game/02_cap1_evento6.rpy:544
-translate english e6_s1_superado_e3f10a3d:
+# game/02_cap1_evento6.rpy:540
+translate english e6_s1_superado_b1c20f3c:
 
-    # mc_pensamiento "Hoy entro con cinco nombres. Y con la palabra exactamente donde estaba."
-    mc_pensamiento "Today I walk in with five names. And that word exactly where it was."
+    # mc_pensamiento "Hoy entro pensando en cinco nombres. La palabra sigue ahí."
+    mc_pensamiento "Today I walk in thinking about five names. The word is still there."
 
 # game/02_cap1_evento6.rpy:546
 translate english e6_s1_superado_eac5d090:
@@ -678,23 +666,23 @@ translate english e6_s1_superado_eac5d090:
     # mc_pensamiento "La diferencia es que ahora sé quién está detrás de cada hoja."
     mc_pensamiento "The difference is that now I know who's behind each sheet of paper."
 
+# game/02_cap1_evento6.rpy:549
+translate english e6_s1_mixto_92b37e23:
+
+    # mc_pensamiento "En treinta días no se conoce a nadie. Al menos ya no soy un desconocido."
+    mc_pensamiento "Thirty days isn't enough to know anyone. At least I'm not a stranger anymore."
+
+# game/02_cap1_evento6.rpy:551
+translate english e6_s1_mixto_0e7465e3:
+
+    # mc_pensamiento "No sé si fue suficiente. Es todo lo que puedo decir."
+    mc_pensamiento "I don't know if it was enough. That's all I can say."
+
 # game/02_cap1_evento6.rpy:553
-translate english e6_s1_mixto_6ae397f6:
+translate english e6_s1_mixto_bafe5677:
 
-    # mc_pensamiento "Treinta días no alcanzan para saber nada. Solo para dejar de ser un desconocido."
-    mc_pensamiento "Thirty days isn't enough to know anyone. Just enough to stop being a stranger."
-
-# game/02_cap1_evento6.rpy:555
-translate english e6_s1_mixto_c3cc5656:
-
-    # mc_pensamiento "No sé si fue suficiente. Esa es la verdad completa, y es incómodamente corta."
-    mc_pensamiento "I don't know if it was enough. That's the whole truth, and it's uncomfortably short."
-
-# game/02_cap1_evento6.rpy:557
-translate english e6_s1_mixto_1d5ebcad:
-
-    # mc_pensamiento "No tengo una palabra clavada esta vez. Tengo un número: cinco."
-    mc_pensamiento "There's no word stuck in my head this time. There's a number: five."
+    # mc_pensamiento "Esta vez no pienso en el despido. Pienso en un número: cinco."
+    mc_pensamiento "This time I'm not thinking about getting fired. I'm thinking of a number: five."
 
 # game/02_cap1_evento6.rpy:559
 translate english e6_s1_mixto_fa1e4250:
@@ -702,11 +690,11 @@ translate english e6_s1_mixto_fa1e4250:
     # mc_pensamiento "Cinco exámenes que no puedo corregir, ni acompañar, ni adelantar."
     mc_pensamiento "Five exams I can't correct, sit through with them, or get ahead of."
 
-# game/02_cap1_evento6.rpy:561
-translate english e6_s1_mixto_4e4bc0dc:
+# game/02_cap1_evento6.rpy:557
+translate english e6_s1_mixto_72cb8a8c:
 
-    # mc_pensamiento "Hoy no se evalúa lo que yo hice. Se evalúa lo que ellas ya sabían."
-    mc_pensamiento "Today isn't a test of what I did. It's a test of what they already knew."
+    # mc_pensamiento "Hoy les toca a ellas, no a mí."
+    mc_pensamiento "Today it's on them, not me."
 
 # game/02_cap1_evento6.rpy:568
 translate english e6_s1_bueno_d278495e:
@@ -726,11 +714,11 @@ translate english e6_s1_bueno_086fd6ee:
     # mc_pensamiento "Eso no garantiza nada. Lo sé. Una nota es una nota."
     mc_pensamiento "That doesn't guarantee anything. I know. A grade is a grade."
 
-# game/02_cap1_evento6.rpy:574
-translate english e6_s1_bueno_b7d3913c:
+# game/02_cap1_evento6.rpy:570
+translate english e6_s1_bueno_3bad88a8:
 
-    # mc_pensamiento "Pero esta mañana los cinco nombres suenan distinto."
-    mc_pensamiento "But this morning the five names sound different."
+    # mc_pensamiento "Pero esta mañana las veo de otra forma."
+    mc_pensamiento "But this morning I see them differently."
 
 # game/02_cap1_evento6.rpy:576
 translate english e6_s1_bueno_7a14b625:
@@ -785,12 +773,6 @@ translate english e6_yotsuba_nucleo_d40f2caf:
 
     # mc_pensamiento "A Yotsuba."
     mc_pensamiento "Yotsuba."
-
-# game/02_cap1_evento6.rpy:610
-translate english e6_yotsuba_nucleo_80fcb7c8:
-
-    # narrador "En un examen nadie habla. Eso no quiere decir que nadie piense."
-    narrador "Nobody talks during an exam. That doesn't mean nobody's thinking."
 
 # game/02_cap1_evento6.rpy:612
 translate english e6_yotsuba_nucleo_6dc7628f:
@@ -1044,11 +1026,11 @@ translate english e6_yotsuba_mono_no_visitada_9f67163d:
     # yotsuba_int "Escribo que el protagonista espera a alguien y no sabe si llega."
     yotsuba_int "I write that the main character waits for someone and doesn't know if they're coming."
 
-# game/02_cap1_evento6.rpy:718
-translate english e6_yotsuba_mono_no_visitada_c36aea2d:
+# game/02_cap1_evento6.rpy:712
+translate english e6_yotsuba_mono_no_visitada_053769c8:
 
-    # yotsuba_int "Es una buena respuesta. Y es la única que no puedo comprobar."
-    yotsuba_int "It's a good answer. And it's the only one I can't check."
+    # yotsuba_int "Es una buena respuesta. Aunque no sé cómo termina."
+    yotsuba_int "It's a good answer. I just don't know how it ends."
 
 # game/02_cap1_evento6.rpy:732
 translate english e6_yotsuba_mj_1778f0a2:
@@ -1056,11 +1038,11 @@ translate english e6_yotsuba_mj_1778f0a2:
     # narrador "Yotsuba soltó el lápiz un segundo y respiró hondo, como se respira al acabar una serie."
     narrador "Yotsuba put her pencil down for a second and took a deep breath, the way you do after a set."
 
-# game/02_cap1_evento6.rpy:734
-translate english e6_yotsuba_mj_5b9fbe76:
+# game/02_cap1_evento6.rpy:728
+translate english e6_yotsuba_mj_2e489799:
 
-    # yotsuba_int "Cada tramo mide lo mismo. Ninguna carrera la gana una sola."
-    yotsuba_int "Every leg is the same length. Nobody wins a relay alone."
+    # yotsuba_int "En un relevo todas corren lo mismo. Ninguna gana sola."
+    yotsuba_int "In a relay everyone runs the same distance. Nobody wins alone."
 
 # game/02_cap1_evento6.rpy:736
 translate english e6_yotsuba_mj_ee891f04:
@@ -1068,11 +1050,11 @@ translate english e6_yotsuba_mj_ee891f04:
     # yotsuba_int "Yo importo igual que mis hermanas."
     yotsuba_int "I matter just as much as my sisters."
 
-# game/02_cap1_evento6.rpy:738
-translate english e6_yotsuba_mj_ed921e90:
+# game/02_cap1_evento6.rpy:732
+translate english e6_yotsuba_mj_abd3c2f6:
 
-    # yotsuba_int "Y el testigo no pesa menos por pasar por mis manos."
-    yotsuba_int "And the baton doesn't weigh any less because it passes through my hands."
+    # yotsuba_int "Y mi tramo vale igual."
+    yotsuba_int "And my leg counts just as much."
 
 # game/02_cap1_evento6.rpy:740
 translate english e6_yotsuba_mj_949a5b69:
@@ -1092,11 +1074,11 @@ translate english e6_yotsuba_mj_fba68d0a:
     # yotsuba_int "Alguien llegó. Y esta vez... supe recibir el testigo."
     yotsuba_int "Someone showed up. And this time... I knew how to take the baton."
 
-# game/02_cap1_evento6.rpy:748
-translate english e6_yotsuba_mj_ca4e8787:
+# game/02_cap1_evento6.rpy:742
+translate english e6_yotsuba_mj_7acfd184:
 
-    # narrador "Hay carreras que se corren por dentro. Esta la corrió entera, de un tirón."
-    narrador "Some races are run in your head. This one she ran start to finish, in one breath."
+    # narrador "Terminó de un tirón."
+    narrador "She finished in one go."
 
 # game/02_cap1_evento6.rpy:755
 translate english e6_yotsuba_promesa_017f8d52:
@@ -1170,11 +1152,11 @@ translate english e6_yotsuba_gesto_tibia_6578a2b3:
     # narrador "Miró a las demás, volvió a la hoja y siguió con la pregunta dos, a toda velocidad."
     narrador "She looked at the others, went back to the page, and sped through question two."
 
-# game/02_cap1_evento6.rpy:793
-translate english e6_yotsuba_gesto_tibia_50a16968:
+# game/02_cap1_evento6.rpy:787
+translate english e6_yotsuba_gesto_tibia_df864075:
 
-    # mc_pensamiento "Esta vez no era una hoja en blanco. Era una frase en blanco."
-    mc_pensamiento "This time it wasn't a blank sheet. It was a blank sentence."
+    # mc_pensamiento "Esta vez no dejó la hoja en blanco. Solo una frase."
+    mc_pensamiento "This time she didn't leave the sheet blank. Just one sentence."
 
 # game/02_cap1_evento6.rpy:795
 translate english e6_yotsuba_gesto_tibia_51f0f665:
@@ -1194,11 +1176,11 @@ translate english e6_yotsuba_gesto_fria_5f44a559:
     # narrador "Pasó junto a mi pupitre sin mirarme. En la muñeca, ninguna cuenta."
     narrador "She walked past my desk without looking at me. No tally on her wrist."
 
-# game/02_cap1_evento6.rpy:808
-translate english e6_yotsuba_gesto_fria_eadac5b8:
+# game/02_cap1_evento6.rpy:802
+translate english e6_yotsuba_gesto_fria_0010150a:
 
-    # mc_pensamiento "Esta vez la hoja estaba llena. Esta vez no miró a nadie."
-    mc_pensamiento "This time the sheet was full. This time she didn't look at anyone."
+    # mc_pensamiento "La hoja estaba llena. Y no miró a nadie."
+    mc_pensamiento "The sheet was full. And she didn't look at anyone."
 
 # game/02_cap1_evento6.rpy:810
 translate english e6_yotsuba_gesto_fria_122f859e:
@@ -1224,11 +1206,11 @@ translate english e6_yotsuba_gesto_no_visitada_8318c4cc:
     # mc_pensamiento "Ni siquiera la miró para saberlo. Eso no se aprende en un libro."
     mc_pensamiento "She didn't even look to find out. You can't learn that from a book."
 
-# game/02_cap1_evento6.rpy:825
-translate english e6_yotsuba_gesto_no_visitada_e804431f:
+# game/02_cap1_evento6.rpy:819
+translate english e6_yotsuba_gesto_no_visitada_1451fb16:
 
-    # mc_pensamiento "Reparte lo que le sobra antes de que se lo pidan. Y se queda con lo que le falta."
-    mc_pensamiento "She hands out what she has extra before anyone asks. And keeps what she's missing."
+    # mc_pensamiento "Ayuda antes de que se lo pidan. Lo suyo lo deja para después."
+    mc_pensamiento "She helps before anyone asks. Her own stuff waits."
 
 # game/02_cap1_evento6.rpy:844
 translate english e6_ichika_nucleo_c7d4ea20:
@@ -1290,17 +1272,17 @@ translate english e6_ichika_nucleo_25f889c1:
     # mc_pensamiento "La pregunta cuatro era un problema de trenes."
     mc_pensamiento "Question four was a train problem."
 
-# game/02_cap1_evento6.rpy:872
-translate english e6_ichika_nucleo_5c5db6b6:
+# game/02_cap1_evento6.rpy:866
+translate english e6_ichika_nucleo_543fb069:
 
-    # mc_pensamiento "De los que se resuelven con una resta y un poco de aire."
-    mc_pensamiento "The kind you solve with one subtraction and a little breathing room."
+    # mc_pensamiento "Se resuelve con una resta y un poco de calma."
+    mc_pensamiento "All it takes is a subtraction and a bit of calm."
 
-# game/02_cap1_evento6.rpy:874
-translate english e6_ichika_nucleo_9b11c265:
+# game/02_cap1_evento6.rpy:868
+translate english e6_ichika_nucleo_ff38a0b1:
 
-    # mc_pensamiento "Aire es justo lo que a ella no le sobra."
-    mc_pensamiento "Breathing room is exactly what she doesn't have."
+    # mc_pensamiento "Y calma es lo que menos le sobra."
+    mc_pensamiento "And calm is the one thing she's short on."
 
 # game/02_cap1_evento6.rpy:883
 translate english e6_ichika_mono_calida_56b1aed8:
@@ -1434,11 +1416,11 @@ translate english e6_ichika_mono_tibia_2b4a2a91:
     # ichika_int "El dragón leía contratos de audición. Lo bauticé «Contrato». Mi mejor material."
     ichika_int "The dragon read audition contracts. I named him \"Contract.\" My best material."
 
-# game/02_cap1_evento6.rpy:932
-translate english e6_ichika_mono_tibia_a4f7c714:
+# game/02_cap1_evento6.rpy:926
+translate english e6_ichika_mono_tibia_5ac7a4bc:
 
-    # ichika_int "O mi mejor escondite. Hablamos diez minutos de un dragón. Los dos sabíamos de qué no."
-    ichika_int "Or my best hiding place. Ten minutes on a dragon, both of us knowing what we weren't talking about."
+    # ichika_int "O mi mejor escondite. Diez minutos de dragón para no hablar de lo otro."
+    ichika_int "Or my best hiding place. Ten minutes of dragon to avoid the other thing."
 
 # game/02_cap1_evento6.rpy:934
 translate english e6_ichika_mono_tibia_703fffdf:
@@ -1572,11 +1554,11 @@ translate english e6_ichika_mj_ab9df165:
     # ichika_int "Pregunta cinco. Antes de contestar, respiro."
     ichika_int "Question five. Before I answer, I breathe."
 
-# game/02_cap1_evento6.rpy:1002
-translate english e6_ichika_mj_685b28de:
+# game/02_cap1_evento6.rpy:996
+translate english e6_ichika_mj_59aaf9f4:
 
-    # narrador "Hay ensayos que se hacen por dentro, sin público. Este lo hizo completo."
-    narrador "Some rehearsals happen inside, with no audience. She ran this one in full."
+    # narrador "Siguió con el examen."
+    narrador "She went on with the exam."
 
 # game/02_cap1_evento6.rpy:1009
 translate english e6_ichika_promesa_6a3da951:
@@ -1602,11 +1584,11 @@ translate english e6_ichika_promesa_10bcf216:
     # mc_pensamiento "Que no le dé tiempo a preparar ninguna cara."
     mc_pensamiento "So she doesn't have time to put on a face."
 
-# game/02_cap1_evento6.rpy:1022
-translate english e6_ichika_gesto_calida_3810e4ad:
+# game/02_cap1_evento6.rpy:1016
+translate english e6_ichika_gesto_calida_1512e335:
 
-    # narrador "Ichika resolvió el examen en lo que tarda en cerrarse una puerta."
-    narrador "Ichika finished the exam in the time it takes a door to close."
+    # narrador "Ichika resolvió el examen en nada."
+    narrador "Ichika got through the exam in no time."
 
 # game/02_cap1_evento6.rpy:1024
 translate english e6_ichika_gesto_calida_43565820:
@@ -1662,23 +1644,23 @@ translate english e6_ichika_gesto_fria_1cd1f1c3:
     # narrador "Resolvió el examen sin una pausa, sin un tachón, sin una mirada a nadie."
     narrador "She finished the exam without a pause, without a crossed-out line, without a glance at anyone."
 
-# game/02_cap1_evento6.rpy:1060
-translate english e6_ichika_gesto_fria_e8fec61c:
+# game/02_cap1_evento6.rpy:1052
+translate english e6_ichika_gesto_fria_cbf7fbb9:
 
-    # narrador "La sonrisa estaba en su cara desde que empezó, igual de quieta que el reloj de la pared."
-    narrador "The smile had been on her face since she started, as still as the clock on the wall."
+    # narrador "La sonrisa estaba en su cara desde que empezó y no se movió."
+    narrador "The smile had been there since she started, and it never moved."
 
-# game/02_cap1_evento6.rpy:1062
-translate english e6_ichika_gesto_fria_0aaf094f:
+# game/02_cap1_evento6.rpy:1054
+translate english e6_ichika_gesto_fria_11ea4f70:
 
-    # mc_pensamiento "Una hoja perfecta y una sonrisa perfecta. Eso era lo que se veía."
-    mc_pensamiento "A perfect sheet and a perfect smile. That's what you could see."
+    # mc_pensamiento "La hoja perfecta y la sonrisa perfecta. Por fuera, al menos."
+    mc_pensamiento "A perfect sheet and a perfect smile. On the outside, at least."
 
-# game/02_cap1_evento6.rpy:1064
-translate english e6_ichika_gesto_fria_f8455f7b:
+# game/02_cap1_evento6.rpy:1056
+translate english e6_ichika_gesto_fria_22a03c53:
 
-    # mc_pensamiento "Contesta como se contesta cuando alguien tiene razón: rápido y sin adornos."
-    mc_pensamiento "She answers the way you do when somebody's right: quick and plain."
+    # mc_pensamiento "Contesta rápido y sin adornos, como si me diera la razón."
+    mc_pensamiento "She answers fast and plain, as if she's proving me right."
 
 # game/02_cap1_evento6.rpy:1073
 translate english e6_ichika_gesto_no_visitada_a0f86482:
@@ -1698,29 +1680,23 @@ translate english e6_ichika_gesto_no_visitada_93229a2e:
     # narrador "Resolvía una pregunta, ensayaba una línea."
     narrador "One question solved, one line rehearsed."
 
-# game/02_cap1_evento6.rpy:1079
-translate english e6_ichika_gesto_no_visitada_0e0c52a9:
+# game/02_cap1_evento6.rpy:1071
+translate english e6_ichika_gesto_no_visitada_bba554a6:
 
-    # narrador "Una línea, una pregunta. Las dos cosas a medias, y las dos bien."
-    narrador "One line, one question. Both half done, and both done well."
+    # narrador "Hacía las dos cosas a medias, y las dos le salían."
+    narrador "She was half doing both, and both were working."
 
-# game/02_cap1_evento6.rpy:1081
-translate english e6_ichika_gesto_no_visitada_102f45cd:
+# game/02_cap1_evento6.rpy:1073
+translate english e6_ichika_gesto_no_visitada_4ea2ea85:
 
-    # mc_pensamiento "Eso no es hacer dos cosas. Es no soltar ninguna."
-    mc_pensamiento "That's not doing two things. It's not letting go of either."
+    # mc_pensamiento "No quiere soltar ninguna."
+    mc_pensamiento "She won't let go of either one."
 
-# game/02_cap1_evento6.rpy:1083
-translate english e6_ichika_gesto_no_visitada_1aefe40e:
+# game/02_cap1_evento6.rpy:1075
+translate english e6_ichika_gesto_no_visitada_9529d354:
 
-    # mc_pensamiento "Con ella el cansancio nunca se nota en lo que hace."
-    mc_pensamiento "With her, the tiredness never shows in what she does."
-
-# game/02_cap1_evento6.rpy:1085
-translate english e6_ichika_gesto_no_visitada_ab2ca29e:
-
-    # mc_pensamiento "Se nota en que nunca para."
-    mc_pensamiento "It shows in the fact that she never stops."
+    # mc_pensamiento "Y el problema es que nunca para."
+    mc_pensamiento "And the problem is she never stops."
 
 # game/02_cap1_evento6.rpy:1104
 translate english e6_nino_nucleo_318cf511:
@@ -1788,11 +1764,11 @@ translate english e6_nino_nucleo_333e97a9:
     # mc_pensamiento "Si se lo hiciera notar, lo negaría."
     mc_pensamiento "If I pointed it out, she'd deny it."
 
-# game/02_cap1_evento6.rpy:1134
-translate english e6_nino_nucleo_b60672f2:
+# game/02_cap1_evento6.rpy:1124
+translate english e6_nino_nucleo_470a0e29:
 
-    # mc_pensamiento "Así que no se lo dije. Hay cosas que es mejor no señalarlas."
-    mc_pensamiento "So I didn't. Some things are better left unmentioned."
+    # mc_pensamiento "Así que no se lo dije."
+    mc_pensamiento "So I didn't tell her."
 
 # game/02_cap1_evento6.rpy:1136
 translate english e6_nino_nucleo_774d3623:
@@ -1806,11 +1782,11 @@ translate english e6_nino_nucleo_42bdec1d:
     # narrador "Los demás seguían en la primera pregunta."
     narrador "The others were still on the first question."
 
-# game/02_cap1_evento6.rpy:1140
-translate english e6_nino_nucleo_a67b395c:
+# game/02_cap1_evento6.rpy:1130
+translate english e6_nino_nucleo_5da42b7e:
 
-    # narrador "Nino iba a la velocidad de un tren que no frena."
-    narrador "Nino was moving like a train that doesn't brake."
+    # narrador "Nino iba a toda velocidad."
+    narrador "Nino was going at full speed."
 
 # game/02_cap1_evento6.rpy:1142
 translate english e6_nino_nucleo_e5755ac7:
@@ -1968,11 +1944,11 @@ translate english e6_nino_mono_calida_583efec2:
     # nino_int "Siempre veo venir el golpe. Me adelanto: me cierro antes, pido que se vayan antes."
     nino_int "I always see the blow coming. I get ahead of it: I shut down first, I ask them to leave first."
 
-# game/02_cap1_evento6.rpy:1222
-translate english e6_nino_mono_calida_498d6e26:
+# game/02_cap1_evento6.rpy:1210
+translate english e6_nino_mono_calida_27379f80:
 
-    # nino_int "Así nunca duele a tiempo. Duele por adelantado. Y duele siempre."
-    nino_int "That way it never hurts on time. It hurts in advance. And it hurts all the time."
+    # nino_int "Así duele por adelantado. Y duele siempre."
+    nino_int "That way it hurts in advance. And it always hurts."
 
 # game/02_cap1_evento6.rpy:1224
 translate english e6_nino_mono_calida_ba058fc0:
@@ -2010,11 +1986,11 @@ translate english e6_nino_mono_calida_82bf547e:
     # nino_int "La receta de la tarjeta me la sé de memoria. La llevo igual."
     nino_int "I know the recipe on the card by heart. I carry it anyway."
 
-# game/02_cap1_evento6.rpy:1236
-translate english e6_nino_mono_calida_f1ab343c:
+# game/02_cap1_evento6.rpy:1224
+translate english e6_nino_mono_calida_86091793:
 
-    # nino_int "Hay letras que, si dejas de mirarlas, se te olvida cómo eran."
-    nino_int "Some handwriting, if you stop looking at it, you forget what it looked like."
+    # nino_int "Si dejo de mirarla, se me olvida cómo era la letra."
+    nino_int "If I stop looking at it, I'll forget what the handwriting was like."
 
 # game/02_cap1_evento6.rpy:1238
 translate english e6_nino_mono_calida_8b03cb79:
@@ -2274,23 +2250,17 @@ translate english e6_nino_mono_no_visitada_0675fbb4:
     # nino_int "Sigo siendo yo."
     nino_int "I'm still me."
 
-# game/02_cap1_evento6.rpy:1359
-translate english e6_nino_mj_6b1dae8f:
+# game/02_cap1_evento6.rpy:1347
+translate english e6_nino_mj_512d1b34:
 
-    # narrador "Nino dejó el lápiz sobre la mesa. No lo soltó: lo dejó. Hay una diferencia."
-    narrador "Nino set the pencil on the desk. She didn't drop it. She set it down. There's a difference."
+    # narrador "Nino dejó el lápiz sobre la mesa con cuidado."
+    narrador "Nino set her pencil down on the desk carefully."
 
-# game/02_cap1_evento6.rpy:1363
-translate english e6_nino_mj_e29d1c7d:
+# game/02_cap1_evento6.rpy:1351
+translate english e6_nino_mj_a5e6a83a:
 
-    # narrador "Hay compras que se hacen de memoria."
-    narrador "Some shopping gets done from memory."
-
-# game/02_cap1_evento6.rpy:1365
-translate english e6_nino_mj_52bb7e2f:
-
-    # narrador "Esta la hizo completa, de un tirón."
-    narrador "This one she did in full, in one go."
+    # narrador "La lista de la compra la hizo de memoria, de un tirón."
+    narrador "She made the shopping list from memory, in one go."
 
 # game/02_cap1_evento6.rpy:1369
 translate english e6_nino_mj_a1ca8be4:
@@ -2334,11 +2304,11 @@ translate english e6_nino_mj_fec01759:
     # nino_int "Dejé la sexta línea en blanco."
     nino_int "I left the sixth line blank."
 
-# game/02_cap1_evento6.rpy:1387
-translate english e6_nino_mj_0bdb6364:
+# game/02_cap1_evento6.rpy:1373
+translate english e6_nino_mj_2364c391:
 
-    # nino_int "Sin tachar. Una línea en blanco no se pierde: se espera."
-    nino_int "Not crossed out. You don't lose a blank line, you wait on it."
+    # nino_int "Sin tachar. Puede esperar."
+    nino_int "Not crossed out. It can wait."
 
 # game/02_cap1_evento6.rpy:1389
 translate english e6_nino_mj_3babb5c4:
@@ -2346,11 +2316,11 @@ translate english e6_nino_mj_3babb5c4:
     # nino_int "No pienso adelantar el golpe."
     nino_int "I'm not going to get ahead of the blow."
 
-# game/02_cap1_evento6.rpy:1391
-translate english e6_nino_mj_f118ecb1:
+# game/02_cap1_evento6.rpy:1377
+translate english e6_nino_mj_a5ef2747:
 
-    # nino_int "Si cae, cae. Pero no voy a ganarle la mano para que duela primero."
-    nino_int "If it falls, it falls. But I won't beat it to the punch just so it hurts first."
+    # nino_int "Si cae, cae. Pero no voy a sufrirlo antes de tiempo."
+    nino_int "If it hits, it hits. But I won't suffer it ahead of time."
 
 # game/02_cap1_evento6.rpy:1393
 translate english e6_nino_mj_c70092e7:
@@ -2436,29 +2406,17 @@ translate english e6_nino_gesto_calida_c7f936b8:
     # narrador "Se levantó, dejó la hoja en la mesa del profesor y fue hacia la puerta sin mirar atrás."
     narrador "She got up, left the sheet on the teacher's desk and headed for the door without looking back."
 
-# game/02_cap1_evento6.rpy:1433
-translate english e6_nino_gesto_calida_7779a98e:
+# game/02_cap1_evento6.rpy:1419
+translate english e6_nino_gesto_calida_20f15132:
 
-    # narrador "A las demás no les echó ni una mirada de guardia. Ni una."
-    narrador "She didn't throw her sisters one guard's glance. Not one."
+    # narrador "A las demás no las miró ni una vez."
+    narrador "She didn't look at the others even once."
 
-# game/02_cap1_evento6.rpy:1435
-translate english e6_nino_gesto_calida_e263e1b3:
+# game/02_cap1_evento6.rpy:1423
+translate english e6_nino_gesto_calida_1ebb276f:
 
-    # narrador "Ya no hacía falta vigilar a las demás."
-    narrador "There was no need to keep watch over the others anymore."
-
-# game/02_cap1_evento6.rpy:1439
-translate english e6_nino_gesto_calida_ac3ef838:
-
-    # mc_pensamiento "Quien ve venir el golpe se queda a esperarlo. Quien no lo adelanta, sale."
-    mc_pensamiento "Whoever sees the blow coming stays to wait for it. Whoever doesn't get ahead of it, leaves."
-
-# game/02_cap1_evento6.rpy:1441
-translate english e6_nino_gesto_calida_7c494dac:
-
-    # mc_pensamiento "Se fue sin vigilarlas. Y nadie se cayó."
-    mc_pensamiento "She left without watching them. And nobody fell."
+    # mc_pensamiento "Se fue sin vigilarlas. Y no pasó nada."
+    mc_pensamiento "She left without watching over them. And nothing happened."
 
 # game/02_cap1_evento6.rpy:1452
 translate english e6_nino_gesto_tibia_cb5092b2:
@@ -2994,11 +2952,11 @@ translate english e6_itsuki_mj_f369964a:
     # itsuki_int "Preguntar no es perder."
     itsuki_int "Asking is not losing."
 
-# game/02_cap1_evento6.rpy:1736
-translate english e6_itsuki_mj_a2b130e5:
+# game/02_cap1_evento6.rpy:1718
+translate english e6_itsuki_mj_6c1688ab:
 
-    # narrador "Levantó la mano. Despacio, con el codo recto, como se levanta algo que pesa."
-    narrador "She raised her hand. Slowly, elbow straight, the way you lift something heavy."
+    # narrador "Levantó la mano. Despacio, con el codo recto, como si le pesara."
+    narrador "She raised her hand. Slowly, elbow straight, as if it were heavy."
 
 # game/02_cap1_evento6.rpy:1738
 translate english e6_itsuki_mj_a7dedf8b:
@@ -3144,17 +3102,17 @@ translate english e6_itsuki_gesto_calida_9381532f:
     # narrador "Asintió una vez, seca. Dato confirmado, sin pedir aplausos."
     narrador "She gave one curt nod. Fact confirmed, no applause requested."
 
-# game/02_cap1_evento6.rpy:1798
-translate english e6_itsuki_gesto_calida_02255f8e:
+# game/02_cap1_evento6.rpy:1780
+translate english e6_itsuki_gesto_calida_4269b5c5:
 
-    # mc_pensamiento "Hace un mes apartar la mirada era su forma de no deberme nada."
-    mc_pensamiento "A month ago, looking away was her way of owing me nothing."
+    # mc_pensamiento "Hace un mes me apartaba la mirada para no deberme nada."
+    mc_pensamiento "A month ago she'd look away so she wouldn't owe me anything."
 
-# game/02_cap1_evento6.rpy:1800
-translate english e6_itsuki_gesto_calida_64a8ba87:
+# game/02_cap1_evento6.rpy:1782
+translate english e6_itsuki_gesto_calida_8587126a:
 
-    # mc_pensamiento "Hoy mirar era no ocultar nada."
-    mc_pensamiento "Today, looking wasn't hiding anything."
+    # mc_pensamiento "Hoy ya no esconde nada."
+    mc_pensamiento "Today she isn't hiding anything."
 
 # game/02_cap1_evento6.rpy:1802
 translate english e6_itsuki_gesto_calida_4749e59f:
@@ -3192,11 +3150,11 @@ translate english e6_itsuki_gesto_tibia_0fd269a5:
     # mc_pensamiento "Pudo preguntar. Eligió tardarse."
     mc_pensamiento "She could have asked. She chose to be slow."
 
-# game/02_cap1_evento6.rpy:1823
-translate english e6_itsuki_gesto_tibia_871e8780:
+# game/02_cap1_evento6.rpy:1805
+translate english e6_itsuki_gesto_tibia_34f891af:
 
-    # mc_pensamiento "Con ella, tardarse también es una forma de orgullo."
-    mc_pensamiento "With her, being slow is also a kind of pride."
+    # mc_pensamiento "Tarda, pero no cede."
+    mc_pensamiento "She takes longer, but she won't give in."
 
 # game/02_cap1_evento6.rpy:1825
 translate english e6_itsuki_gesto_tibia_3f43119e:
@@ -3204,11 +3162,11 @@ translate english e6_itsuki_gesto_tibia_3f43119e:
     # mc_pensamiento "Revisó desde el principio, sola."
     mc_pensamiento "She went back over it from the beginning, alone."
 
-# game/02_cap1_evento6.rpy:1827
-translate english e6_itsuki_gesto_tibia_3bf7dcca:
+# game/02_cap1_evento6.rpy:1809
+translate english e6_itsuki_gesto_tibia_de735139:
 
-    # mc_pensamiento "Apretaba el lápiz no por rabia, sino por su forma de ser."
-    mc_pensamiento "She gripped the pencil hard, not out of anger, but because that's how she is."
+    # mc_pensamiento "Apretaba fuerte el lápiz. Es su manera de ser."
+    mc_pensamiento "She was gripping the pencil hard. That's just how she is."
 
 # game/02_cap1_evento6.rpy:1836
 translate english e6_itsuki_gesto_fria_a36c0705:
@@ -3276,11 +3234,11 @@ translate english e6_itsuki_gesto_no_visitada_2f3f1513:
     # mc_pensamiento "Nunca me pidió nada. Y yo nunca fui."
     mc_pensamiento "She never asked me for anything. And I never went."
 
-# game/02_cap1_evento6.rpy:1865
-translate english e6_itsuki_gesto_no_visitada_9eabce91:
+# game/02_cap1_evento6.rpy:1847
+translate english e6_itsuki_gesto_no_visitada_b12f1c9f:
 
-    # mc_pensamiento "Los dos dejamos la misma pregunta sin hacer. Nadie avanzó."
-    mc_pensamiento "We both left the same question unasked. Nobody moved forward."
+    # mc_pensamiento "Ninguno de los dos preguntó."
+    mc_pensamiento "Neither of us asked."
 
 # game/02_cap1_evento6.rpy:1884
 translate english e6_miku_nucleo_746954f5:
@@ -3354,11 +3312,11 @@ translate english e6_miku_nucleo_81d63113:
     # mc_pensamiento "La pregunta tres no decía «sal». Decía «rutas de comercio»."
     mc_pensamiento "Question three didn't say \"salt.\" It said \"trade routes.\""
 
-# game/02_cap1_evento6.rpy:1916
-translate english e6_miku_nucleo_2c87d2b1:
+# game/02_cap1_evento6.rpy:1898
+translate english e6_miku_nucleo_a812e121:
 
-    # mc_pensamiento "Lo que escribiera de más sería ella. Lo que no escribiera, también."
-    mc_pensamiento "Whatever she wrote beyond that would be her. Whatever she left out would be, too."
+    # mc_pensamiento "Escribir de más o callarse dependía solo de ella."
+    mc_pensamiento "Writing more or holding back was entirely up to her."
 
 # game/02_cap1_evento6.rpy:1925
 translate english e6_miku_mono_calida_9277727a:
@@ -3450,17 +3408,11 @@ translate english e6_miku_mono_calida_acba649c:
     # miku_int "...Voy a escribir pensando en ella."
     miku_int "...I'm going to write thinking of it."
 
-# game/02_cap1_evento6.rpy:1955
-translate english e6_miku_mono_calida_530563c2:
+# game/02_cap1_evento6.rpy:1937
+translate english e6_miku_mono_calida_0b2c1330:
 
-    # miku_int "...Cuando acabe de pensar en esa canción, quedará el sonido del reloj del aula."
-    miku_int "...When I finish thinking about that song, what's left is the sound of the classroom clock."
-
-# game/02_cap1_evento6.rpy:1957
-translate english e6_miku_mono_calida_c6781134:
-
-    # miku_int "...El reloj nunca ha pedido perdón."
-    miku_int "...The clock has never apologized."
+    # miku_int "...Cuando se me acabe, solo quedará el reloj del aula."
+    miku_int "...When it runs out, there'll only be the classroom clock."
 
 # game/02_cap1_evento6.rpy:1959
 translate english e6_miku_mono_calida_5ee08b2a:
@@ -3660,17 +3612,11 @@ translate english e6_miku_mj_332c0045:
     # narrador "Escribía sin levantar la cabeza. Sin detenerse al final de cada línea. Sin borrar."
     narrador "She wrote without lifting her head. Without pausing at the end of each line. Without erasing."
 
-# game/02_cap1_evento6.rpy:2054
-translate english e6_miku_mj_90e17eb1:
+# game/02_cap1_evento6.rpy:2034
+translate english e6_miku_mj_87f89625:
 
-    # narrador "Hay respuestas que se escriben solas."
-    narrador "Some answers write themselves."
-
-# game/02_cap1_evento6.rpy:2056
-translate english e6_miku_mj_48dea9e3:
-
-    # narrador "Esta lo hizo de una vez, de principio a fin."
-    narrador "This one came out all at once, start to finish."
+    # narrador "Lo escribió todo de una vez."
+    narrador "She wrote it all in one go."
 
 # game/02_cap1_evento6.rpy:2063
 translate english e6_miku_promesa_1f6de007:
@@ -3720,17 +3666,17 @@ translate english e6_miku_gesto_calida_cd9b2c3d:
     # narrador "Sin un solo borrón."
     narrador "Not a single smudge."
 
-# game/02_cap1_evento6.rpy:2084
-translate english e6_miku_gesto_calida_f1616cc9:
+# game/02_cap1_evento6.rpy:2062
+translate english e6_miku_gesto_calida_41713fa6:
 
-    # mc_pensamiento "La goma seguía siendo una goma."
-    mc_pensamiento "The eraser was still just an eraser."
+    # mc_pensamiento "No usó la goma ni una vez."
+    mc_pensamiento "She didn't use the eraser once."
 
-# game/02_cap1_evento6.rpy:2086
-translate english e6_miku_gesto_calida_0eab25ac:
+# game/02_cap1_evento6.rpy:2064
+translate english e6_miku_gesto_calida_b457d68d:
 
-    # mc_pensamiento "Hace un mes eso habría sido una noticia."
-    mc_pensamiento "A month ago that would have been news."
+    # mc_pensamiento "Hace un mes eso habría sido impensable."
+    mc_pensamiento "A month ago that would've been unthinkable."
 
 # game/02_cap1_evento6.rpy:2088
 translate english e6_miku_gesto_calida_68710b55:
@@ -3744,11 +3690,11 @@ translate english e6_miku_gesto_calida_3347484e:
     # narrador "Los miró un segundo, por si se movían solos."
     narrador "She looked at them a second, in case they moved on their own."
 
-# game/02_cap1_evento6.rpy:2092
-translate english e6_miku_gesto_calida_53c0d4a1:
+# game/02_cap1_evento6.rpy:2070
+translate english e6_miku_gesto_calida_5e5e478e:
 
-    # mc_pensamiento "Plegados, no puestos. Como se dejan las llaves en la entrada."
-    mc_pensamiento "Folded, not on. The way you leave your keys by the door."
+    # mc_pensamiento "Plegados. Hoy no le hacían falta."
+    mc_pensamiento "Folded. She didn't need them today."
 
 # game/02_cap1_evento6.rpy:2094
 translate english e6_miku_gesto_calida_9c1b4b8d:
@@ -3786,11 +3732,11 @@ translate english e6_miku_gesto_tibia_1e49ac00:
     # mc_pensamiento "No borró. Se detuvo."
     mc_pensamiento "She didn't erase. She stopped."
 
-# game/02_cap1_evento6.rpy:2113
-translate english e6_miku_gesto_tibia_3fe63165:
+# game/02_cap1_evento6.rpy:2091
+translate english e6_miku_gesto_tibia_f80606ca:
 
-    # mc_pensamiento "Es una forma de borrar en la que no se usa goma."
-    mc_pensamiento "It's a way of erasing that doesn't use an eraser."
+    # mc_pensamiento "Para el caso, es lo mismo que borrar."
+    mc_pensamiento "It amounts to the same as erasing."
 
 # game/02_cap1_evento6.rpy:2122
 translate english e6_miku_gesto_fria_40e37a8c:
@@ -3822,11 +3768,11 @@ translate english e6_miku_gesto_fria_b88b83e6:
     # mc_pensamiento "Era una respuesta correcta y me dolió mirarla."
     mc_pensamiento "It was a correct answer and it hurt to look at."
 
-# game/02_cap1_evento6.rpy:2132
-translate english e6_miku_gesto_fria_d1682ed0:
+# game/02_cap1_evento6.rpy:2110
+translate english e6_miku_gesto_fria_67bcc9a3:
 
-    # mc_pensamiento "Tuve razón en la letra del temario. Esa fue otra forma de no ganar."
-    mc_pensamiento "I was right about the letter of the syllabus. That was another way of not winning."
+    # mc_pensamiento "Yo tenía razón sobre el temario. Y no me alegraba."
+    mc_pensamiento "I was right about the syllabus. And it didn't make me happy."
 
 # game/02_cap1_evento6.rpy:2141
 translate english e6_miku_gesto_no_visitada_5ea3b840:
@@ -4002,11 +3948,11 @@ translate english e6_despues_5c549769:
     # mc "Luego las miraba a ustedes."
     mc "Then I'd watch all of you."
 
-# game/02_cap1_evento6.rpy:2280
-translate english e6_despues_663107e3:
+# game/02_cap1_evento6.rpy:2258
+translate english e6_despues_5eb0440c:
 
-    # narrador "Hubo un silencio corto. De los que se llenan solos."
-    narrador "There was a short silence. The kind that fills itself."
+    # narrador "Hubo un silencio corto."
+    narrador "There was a short silence."
 
 # game/02_cap1_evento6.rpy:2282
 translate english e6_despues_4f3d481c:
@@ -4134,11 +4080,11 @@ translate english e6_despues_19a99e1b:
     # mc_pensamiento "Mañana un papel diría si seguía. Ellas lo sabían igual que yo."
     mc_pensamiento "Tomorrow a piece of paper would say whether I stayed. They knew it as well as I did."
 
-# game/02_cap1_evento6.rpy:2350
-translate english e6_despues_3d4ab836:
+# game/02_cap1_evento6.rpy:2328
+translate english e6_despues_ae469760:
 
-    # narrador "Me miraron las cinco. Cinco preguntas iguales, y ninguna en voz alta."
-    narrador "All five looked at me. Five identical questions, and not one out loud."
+    # narrador "Me miraron las cinco. Querían preguntar lo mismo, y ninguna lo hizo."
+    narrador "All five looked at me. They wanted to ask the same thing, and none did."
 
 # game/02_cap1_evento6.rpy:2354
 translate english e6_despues_11b46661:
@@ -4278,11 +4224,11 @@ translate english e6_despues_5ce22d67:
     # mc_pensamiento "Hoy solo parecía un aula vacía un viernes."
     mc_pensamiento "Today it just looked like an empty classroom on a Friday."
 
-# game/02_cap1_evento6.rpy:2436
-translate english e6_despues_e3dd053b:
+# game/02_cap1_evento6.rpy:2414
+translate english e6_despues_5915c661:
 
-    # mc_pensamiento "Las aulas vacías se vuelven a llenar."
-    mc_pensamiento "Empty classrooms fill up again."
+    # mc_pensamiento "El lunes se vuelve a llenar."
+    mc_pensamiento "On Monday it fills up again."
 
 # game/02_cap1_evento6.rpy:2448
 translate english e6_despues_ccd84697:
@@ -4350,11 +4296,11 @@ translate english e6_despues_b20ea739:
     # mc_pensamiento "Pero esta tarde nadie se quedó de último."
     mc_pensamiento "But this afternoon, nobody was left behind."
 
-# game/02_cap1_evento6.rpy:2470
-translate english e6_despues_e8014904:
+# game/02_cap1_evento6.rpy:2448
+translate english e6_despues_682b6570:
 
-    # narrador "No saberlo todavía me pesaba. Lo que cambió fue que esta vez no lo cargaba solo."
-    narrador "Not knowing yet weighed on me. What had changed was that this time I wasn't carrying it alone."
+    # narrador "No saberlo me pesaba, pero esta vez no estaba solo."
+    narrador "Not knowing weighed on me, but this time I wasn't alone."
 
 # game/02_cap1_evento6.rpy:2481
 translate english e6_s_tarde_superado_d86866d7:
@@ -4422,11 +4368,11 @@ translate english e6_s_tarde_bueno_3144e43f:
     # mc_pensamiento "Hoy, además, las había visto escribir. A las cinco, una por una."
     mc_pensamiento "Today, on top of that, I'd watched them write. All five, one by one."
 
-# game/02_cap1_evento6.rpy:2513
-translate english e6_s_tarde_bueno_430daca3:
+# game/02_cap1_evento6.rpy:2491
+translate english e6_s_tarde_bueno_3dab1812:
 
-    # mc_pensamiento "Aun así, un papel puede decir otra cosa. Los papeles no conocen a nadie."
-    mc_pensamiento "Still, a piece of paper can say something else. Papers don't know anyone."
+    # mc_pensamiento "Aun así, la nota puede decir otra cosa."
+    mc_pensamiento "Even so, the grade could say something else."
 
 # game/02_cap1_evento6.rpy:2524
 translate english e6_yotsuba_tarde_calida_f63042ca:
@@ -4590,11 +4536,11 @@ translate english e6_ichika_tarde_calida_e834f2b1:
     # ichika "Al terminar me quedé mirando la hoja como si la hubiera hecho otra persona."
     ichika "When I finished, I stared at the page like someone else had written it."
 
-# game/02_cap1_evento6.rpy:2620
-translate english e6_ichika_tarde_calida_42c8bad3:
+# game/02_cap1_evento6.rpy:2598
+translate english e6_ichika_tarde_calida_299e07ec:
 
-    # ichika "No era otra persona. Eso es lo que todavía no me creo."
-    ichika "It wasn't someone else. That's the part I still can't believe."
+    # ichika "Era yo. Eso es lo que todavía no me creo."
+    ichika "It was me. That's the part I still can't believe."
 
 # game/02_cap1_evento6.rpy:2622
 translate english e6_ichika_tarde_calida_46a4fce0:
@@ -4692,11 +4638,11 @@ translate english e6_ichika_tarde_no_visitada_7499b3d0:
     # ichika "...Ah. Esa."
     ichika "...Ah. That one."
 
-# game/02_cap1_evento6.rpy:2683
-translate english e6_ichika_tarde_no_visitada_636578b0:
+# game/02_cap1_evento6.rpy:2661
+translate english e6_ichika_tarde_no_visitada_de5bed8a:
 
-    # narrador "No sonrió para nadie. Fue una sonrisa pequeña, de las que no se ensayan."
-    narrador "She wasn't smiling for anyone. It was a small smile, the kind you don't rehearse."
+    # narrador "No sonrió para nadie. Fue una sonrisa pequeña, sin ensayar."
+    narrador "She wasn't smiling for anyone. It was a small, unrehearsed smile."
 
 # game/02_cap1_evento6.rpy:2695
 translate english e6_nino_tarde_calida_9f93309f:
@@ -5136,11 +5082,11 @@ translate english e6_tarde_pregunta_a081fed2:
     # narrador "Yotsuba, siempre la primera en incluir a todas."
     narrador "Yotsuba, always the first to include everyone."
 
-# game/02_cap1_evento6.rpy:2958
-translate english e6_tarde_pregunta_edc3468d:
+# game/02_cap1_evento6.rpy:2936
+translate english e6_tarde_pregunta_da3fbae6:
 
-    # narrador "Hasta al que nunca entraba en la cuenta: yo."
-    narrador "Even the one who never made it into the count: me."
+    # narrador "Hasta a mí, que nunca entraba en la cuenta."
+    narrador "Even me, who never got counted."
 
 # game/02_cap1_evento6.rpy:2964
 translate english e6_tarde_pregunta_2149f99b:
@@ -5154,11 +5100,11 @@ translate english e6_tarde_pregunta_2069ed84:
     # ichika "¿Y a ti cómo te fue, tutor?"
     ichika "So how did it go for you, tutor?"
 
-# game/02_cap1_evento6.rpy:2968
-translate english e6_tarde_pregunta_49e1f5c1:
+# game/02_cap1_evento6.rpy:2946
+translate english e6_tarde_pregunta_4fd061f6:
 
-    # narrador "Lo preguntó como hermana mayor. Por costumbre de contar a todos."
-    narrador "She asked it like an older sister. Out of habit, counting everybody."
+    # narrador "Lo preguntó como hermana mayor, siempre pendiente de todos."
+    narrador "She asked like a big sister, always keeping an eye on everyone."
 
 # game/02_cap1_evento6.rpy:2982
 translate english e6_nino_puerta_calida_aef490c8:
@@ -5255,12 +5201,6 @@ translate english e6_nino_puerta_fria_269036d8:
 
     # narrador "Cerró detrás de mí. Despacio."
     narrador "She closed it behind me. Slowly."
-
-# game/02_cap1_evento6.rpy:3038
-translate english e6_nino_puerta_fria_e9bbd532:
-
-    # narrador "Como se cierra algo que todavía no ha terminado."
-    narrador "The way you close something that isn't finished yet."
 
 # game/02_cap1_evento6.rpy:3051
 translate english e6_nino_puerta_no_visitada_0b77854c:
@@ -5580,11 +5520,11 @@ translate english e6_s2_mixto_42571ef2:
     # narrador "No dijo en qué, entonces. Y yo no me atreví a preguntarlo."
     narrador "He didn't say on what, then. And I didn't dare ask."
 
-# game/02_cap1_evento6.rpy:3213
-translate english e6_s2_mixto_3ee8e374:
+# game/02_cap1_evento6.rpy:3189
+translate english e6_s2_mixto_b52cbdf4:
 
-    # mc_pensamiento "No sonó a elogio. Tampoco a reproche. Sonó a alguien que sigue haciendo la cuenta."
-    mc_pensamiento "It didn't sound like praise. Or blame. It sounded like someone still doing the math."
+    # mc_pensamiento "Ni elogio ni reproche. Parecía seguir haciendo cuentas."
+    mc_pensamiento "Neither praise nor blame. He seemed to still be doing the math."
 
 # game/02_cap1_evento6.rpy:3215
 translate english e6_s2_mixto_eaab06fb:
@@ -5724,11 +5664,11 @@ translate english e6_cinco_bb6ecf9b:
     # narrador "Esperé a que ellas salieran."
     narrador "I waited for them to come out."
 
-# game/02_cap1_evento6.rpy:3284
-translate english e6_cinco_1f3cc878:
+# game/02_cap1_evento6.rpy:3260
+translate english e6_cinco_9009355d:
 
-    # narrador "En esta sala el silencio y la espera siempre han sido lo mismo."
-    narrador "In this room, silence and waiting have always been the same thing."
+    # narrador "En esta sala siempre me toca esperar en silencio."
+    narrador "In this room I always end up waiting in silence."
 
 # game/02_cap1_evento6.rpy:3288
 translate english e6_cinco_bfb9c098:
@@ -5742,11 +5682,11 @@ translate english e6_cinco_24606078:
     # narrador "Las dos últimas puertas tardaron un poco más."
     narrador "The last two doors took a little longer."
 
-# game/02_cap1_evento6.rpy:3301
-translate english e6_cinco_91687e5e:
+# game/02_cap1_evento6.rpy:3277
+translate english e6_cinco_66c4335f:
 
-    # narrador "Detrás de esas no había falta de ganas. Había costumbre de esperar."
-    narrador "Behind those, it wasn't reluctance. It was the habit of waiting."
+    # narrador "No es que no quisieran salir. Están acostumbradas a esperar."
+    narrador "It isn't that they didn't want to come out. They're used to waiting."
 
 # game/02_cap1_evento6.rpy:3309
 translate english e6_cinco_de3a775f:
@@ -5754,11 +5694,11 @@ translate english e6_cinco_de3a775f:
     # narrador "Cada una vino a por su boletín. Boca abajo, sin mirarlo."
     narrador "Each one came for her report card. Face down, without looking at it."
 
-# game/02_cap1_evento6.rpy:3311
-translate english e6_cinco_a4e561e5:
+# game/02_cap1_evento6.rpy:3287
+translate english e6_cinco_685cecba:
 
-    # narrador "Como se lleva algo que todavía no es de uno."
-    narrador "The way you carry something that isn't yet yours."
+    # narrador "Como si todavía no fuera suyo."
+    narrador "As if it weren't theirs yet."
 
 # game/02_cap1_evento6.rpy:3328
 translate english e6_yotsuba_eco_calida_505d6b25:
@@ -5868,11 +5808,11 @@ translate english e6_yotsuba_eco_fria_5353064e:
     # narrador "Lo dijo igual de fuerte las dos veces. Una de las dos sobraba."
     narrador "She said it just as loud both times. One of them was one too many."
 
-# game/02_cap1_evento6.rpy:3397
-translate english e6_yotsuba_eco_no_visitada_2fa67223:
+# game/02_cap1_evento6.rpy:3373
+translate english e6_yotsuba_eco_no_visitada_adb31728:
 
-    # narrador "Yotsuba miró su boletín con la cara con la que se mira una pista vacía."
-    narrador "Yotsuba looked at her report card the way you look at an empty track."
+    # narrador "Yotsuba miró su boletín sin su energía de siempre."
+    narrador "Yotsuba looked at her report card without her usual energy."
 
 # game/02_cap1_evento6.rpy:3401
 translate english e6_yotsuba_eco_no_visitada_084b6902:
@@ -6252,11 +6192,11 @@ translate english e6_itsuki_eco_tibia_95aa10b3:
     # itsuki "Aquel día dijiste «revisarlo desde el principio». ...¿Qué ibas a—"
     itsuki "That day you said \"go over it from the beginning.\" ...What were you going to—"
 
-# game/02_cap1_evento6.rpy:3639
-translate english e6_itsuki_eco_tibia_08434cdd:
+# game/02_cap1_evento6.rpy:3615
+translate english e6_itsuki_eco_tibia_555c116e:
 
-    # narrador "Se detuvo. La oración se quedó abierta, sin sujeto. En ella, eso es casi un grito."
-    narrador "She stopped. The sentence hung open, with no subject. For her, that's almost a scream."
+    # narrador "Se detuvo. La oración se quedó abierta. Viniendo de ella, es rarísimo."
+    narrador "She stopped. The sentence hung open. Coming from her, that's really strange."
 
 # game/02_cap1_evento6.rpy:3641
 translate english e6_itsuki_eco_tibia_f6878a68:
@@ -6354,11 +6294,11 @@ translate english e6_miku_eco_calida_eb6346b4:
     # mc "Ciento veintidós."
     mc "One twenty-two."
 
-# game/02_cap1_evento6.rpy:3706
-translate english e6_miku_eco_calida_e8af20a9:
+# game/02_cap1_evento6.rpy:3682
+translate english e6_miku_eco_calida_829d85a6:
 
-    # narrador "Se rió. Una sola nota, corta, como un acorde."
-    narrador "She laughed. A single short note, like a chord."
+    # narrador "Soltó una risa corta."
+    narrador "She let out a short laugh."
 
 # game/02_cap1_evento6.rpy:3708
 translate english e6_miku_eco_calida_186791e7:
@@ -6432,11 +6372,11 @@ translate english e6_miku_eco_fria_fb26e6e3:
     # narrador "No dijo a qué. No hizo falta."
     narrador "She didn't say what. She didn't need to."
 
-# game/02_cap1_evento6.rpy:3757
-translate english e6_miku_eco_no_visitada_10722dae:
+# game/02_cap1_evento6.rpy:3733
+translate english e6_miku_eco_no_visitada_8f99a2a1:
 
-    # narrador "Miku se detuvo en la puerta con el boletín contra el pecho, como se lleva un libro."
-    narrador "Miku stopped at the door with her report card against her chest, the way you carry a book."
+    # narrador "Miku se detuvo en la puerta con el boletín contra el pecho, igual que sus libros."
+    narrador "Miku stopped in the doorway, report card to her chest, like one of her books."
 
 # game/02_cap1_evento6.rpy:3761
 translate english e6_miku_eco_no_visitada_c7d2331f:
@@ -6546,17 +6486,17 @@ translate english e6_intento_04fc34b6:
     # yotsuba "¡¡Esperen!! ¡Antes de que se arruguen! ¡Los boletines! ¡Ya están en la mesa!"
     yotsuba "Wait!! Before they get wrinkled! The report cards! They're already on the table!"
 
-# game/02_cap1_evento6.rpy:3809
-translate english e6_intento_42601d6d:
+# game/02_cap1_evento6.rpy:3785
+translate english e6_intento_f988307d:
 
-    # narrador "Itsuki se calló. Yo también me callé. La frase se quedó entre los dos, sin dueño."
-    narrador "Itsuki went quiet. So did I. The sentence stayed between us, with no owner."
+    # narrador "Itsuki se calló. Yo también. La frase se quedó a medias."
+    narrador "Itsuki stopped talking. So did I. The sentence was left half-done."
 
-# game/02_cap1_evento6.rpy:3811
-translate english e6_intento_1178654c:
+# game/02_cap1_evento6.rpy:3787
+translate english e6_intento_6c2fd796:
 
-    # mc_pensamiento "La disculpa seguía entre nosotros. Y esta vez no me pareció tarde: me pareció pendiente."
-    mc_pensamiento "The apology was still between us. And this time it didn't feel late. It felt pending."
+    # mc_pensamiento "La disculpa seguía pendiente. Todavía estábamos a tiempo."
+    mc_pensamiento "The apology was still pending. There was still time."
 
 # game/02_cap1_evento6.rpy:3815
 translate english e6_intento_83e0586c:
@@ -7116,17 +7056,17 @@ translate english e6_mesa_59b17a63:
     # itsuki "Breve. Aceptable. Bien dicho."
     itsuki "Brief. Acceptable. Well said."
 
-# game/02_cap1_evento6.rpy:4080
-translate english e6_mesa_5a412baf:
+# game/02_cap1_evento6.rpy:4056
+translate english e6_mesa_588a90ee:
 
-    # mc_pensamiento "Hace un mes se pusieron de acuerdo para fallar igual."
-    mc_pensamiento "A month ago they all agreed to fail the same way."
+    # mc_pensamiento "Hace un mes reaccionaban todas igual: en mi contra."
+    mc_pensamiento "A month ago they all reacted the same way: against me."
 
-# game/02_cap1_evento6.rpy:4082
-translate english e6_mesa_fa02da09:
+# game/02_cap1_evento6.rpy:4058
+translate english e6_mesa_95199c4b:
 
-    # mc_pensamiento "Hoy se pusieron de acuerdo para mostrarse distintas."
-    mc_pensamiento "Today they agreed to show how different they are."
+    # mc_pensamiento "Hoy, cada una a su manera."
+    mc_pensamiento "Today, each in her own way."
 
 # game/02_cap1_evento6.rpy:4088
 translate english e6_mesa_8ccf94a5:
@@ -7254,11 +7194,11 @@ translate english e6_mesa_bc3f6581:
     # narrador "Nadie se rio. Se quedaron un momento en silencio, juntas, cada una en su sitio, con la hoja en alto."
     narrador "Nobody laughed. They stayed quiet for a moment, together, each in her spot, sheet held high."
 
-# game/02_cap1_evento6.rpy:4158
-translate english e6_mesa_87185050:
+# game/02_cap1_evento6.rpy:4134
+translate english e6_mesa_a03d5cf5:
 
-    # mc_pensamiento "Pensé en decirles que la foto ya estaba. No lo dije. Hay cosas que un «ya está» arruina."
-    mc_pensamiento "I thought about telling them the photo was done. I didn't. Some things a \"that's it\" would ruin."
+    # mc_pensamiento "Pensé en decirles que la foto ya estaba. No quise arruinar el momento."
+    mc_pensamiento "I thought of telling them I'd got the shot. I didn't want to spoil the moment."
 
 # game/02_cap1_evento6.rpy:4160
 translate english e6_mesa_4d9473bb:
@@ -7380,11 +7320,11 @@ translate english e6_mesa_dbb873b1:
     # mc_pensamiento "No hacía falta: cinco caras que ya no fingían nada."
     mc_pensamiento "I didn't need to: five faces that weren't pretending anything anymore."
 
-# game/02_cap1_evento6.rpy:4200
-translate english e6_mesa_ad78afc4:
+# game/02_cap1_evento6.rpy:4176
+translate english e6_mesa_4e5ec988:
 
-    # mc_pensamiento "Ahora formo parte de ellas, y ellas de mí."
-    mc_pensamiento "Now I'm part of them, and they're part of me."
+    # mc_pensamiento "Ya me sentía parte de ellas."
+    mc_pensamiento "I already felt like part of them."
 
 # game/02_cap1_evento6.rpy:4214
 translate english e6_casa_909e3643:
@@ -7554,11 +7494,11 @@ translate english e6_casa_5ca7bee3:
     # mc_pensamiento "Hace un mes, «cinco veces la tarifa» era lo único que oía en esa frase."
     mc_pensamiento "A month ago, \"five times the rate\" was all I heard."
 
-# game/02_cap1_evento6.rpy:4289
-translate english e6_casa_e224371b:
+# game/02_cap1_evento6.rpy:4265
+translate english e6_casa_45888c15:
 
-    # mc_pensamiento "Esta noche la oí de fondo, como se oye un reloj en otro cuarto."
-    mc_pensamiento "Tonight I heard it in the background, like a clock ticking in another room."
+    # mc_pensamiento "Esta noche casi ni la escuché."
+    mc_pensamiento "Tonight I barely heard it."
 
 # game/02_cap1_evento6.rpy:4291
 translate english e6_casa_08c5a4c2:
@@ -7566,11 +7506,11 @@ translate english e6_casa_08c5a4c2:
     # mc "Gracias por la comida."
     mc "Thanks for the food."
 
-# game/02_cap1_evento6.rpy:4293
-translate english e6_casa_04a8dd43:
+# game/02_cap1_evento6.rpy:4269
+translate english e6_casa_81944acc:
 
-    # narrador "Lo dije por costumbre. Pero esta vez la costumbre pesaba lo mismo que las palabras."
-    narrador "I said it out of habit. But this time the habit weighed as much as the words."
+    # narrador "Lo dije por costumbre. Pero esta vez lo decía en serio."
+    narrador "I said it out of habit. But this time I meant it."
 
 # game/02_cap1_evento6.rpy:4295
 translate english e6_casa_d3eed548:
@@ -7578,11 +7518,11 @@ translate english e6_casa_d3eed548:
     # mc_pensamiento "Hace un mes, «todo» era una deuda y una hermana pequeña."
     mc_pensamiento "A month ago, \"everything\" was a debt and a little sister."
 
-# game/02_cap1_evento6.rpy:4297
-translate english e6_casa_b5fb2a52:
+# game/02_cap1_evento6.rpy:4273
+translate english e6_casa_1e534e22:
 
-    # mc_pensamiento "Esta noche el «todo» tenía cinco personas más. Y ninguna cabía en una factura."
-    mc_pensamiento "Tonight \"everything\" had five more people in it. And none of them fit on an invoice."
+    # mc_pensamiento "Ahora hay cinco personas más. Y no salen en ninguna factura."
+    mc_pensamiento "Now there are five more people. And they don't show up on any bill."
 
 # game/02_cap1_evento6.rpy:4318
 translate english e6_cuarto_8db134a4:
@@ -7674,11 +7614,11 @@ translate english e6_cuarto_89bfa230:
     # mc_pensamiento "Cinco hojas en fila. Cinco notas de cien. Cada cien, de una persona distinta."
     mc_pensamiento "Five sheets in a row. Five grades of a hundred. Each hundred from a different person."
 
-# game/02_cap1_evento6.rpy:4366
-translate english e6_cuarto_37789c5c:
+# game/02_cap1_evento6.rpy:4342
+translate english e6_cuarto_53abe3e6:
 
-    # mc_pensamiento "Y entonces lo entendí, lo que siempre me estaba preguntando."
-    mc_pensamiento "And then I understood what I'd been asking myself all along."
+    # mc_pensamiento "Y ahí estaba la respuesta que llevaba un mes buscando."
+    mc_pensamiento "And there was the answer I'd been looking for all month."
 
 # game/02_cap1_evento6.rpy:4368
 translate english e6_cuarto_7cd9ffb5:
@@ -7740,11 +7680,11 @@ translate english e6_cuarto_2221951f:
     # mc_pensamiento "Dos promesas hechas sin que nadie me las pidiera."
     mc_pensamiento "Two promises made without anyone asking me to."
 
-# game/02_cap1_evento6.rpy:4403
-translate english e6_cuarto_9a056ee1:
+# game/02_cap1_evento6.rpy:4379
+translate english e6_cuarto_0a996f07:
 
-    # mc_pensamiento "Esas no caducan. Se cumplen."
-    mc_pensamiento "Those don't expire. They get kept."
+    # mc_pensamiento "Esas sí las voy a cumplir."
+    mc_pensamiento "Those ones I'm going to keep."
 
 # game/02_cap1_evento6.rpy:4420
 translate english e6_s3_superado_fed68ca2:
@@ -7752,11 +7692,11 @@ translate english e6_s3_superado_fed68ca2:
     # mc_pensamiento "Maruo dijo «cinco». No dijo «para siempre»."
     mc_pensamiento "Maruo said \"five.\" He didn't say \"forever.\""
 
-# game/02_cap1_evento6.rpy:4422
-translate english e6_s3_superado_0156c5e7:
+# game/02_cap1_evento6.rpy:4398
+translate english e6_s3_superado_7e04661e:
 
-    # mc_pensamiento "La condición no se venció: se renovó."
-    mc_pensamiento "The condition didn't expire: it was renewed."
+    # mc_pensamiento "La condición sigue en pie para la próxima."
+    mc_pensamiento "The condition still stands for next time."
 
 # game/02_cap1_evento6.rpy:4424
 translate english e6_s3_superado_87d3c0e4:
@@ -7782,11 +7722,11 @@ translate english e6_s3_mixto_50c363c2:
     # mc_pensamiento "La libreta no tiene una casilla para eso."
     mc_pensamiento "The notebook doesn't have a box for that."
 
-# game/02_cap1_evento6.rpy:4442
-translate english e6_s3_bueno_408b21a9:
+# game/02_cap1_evento6.rpy:4418
+translate english e6_s3_bueno_60cf30cd:
 
-    # mc_pensamiento "Abrí las fotos sin contener el aire. Hace un mes no sabía hacerlo."
-    mc_pensamiento "I opened the photos without holding my breath. A month ago I didn't know how."
+    # mc_pensamiento "Abrí las fotos sin aguantar la respiración. Hace un mes no sabía hacerlo."
+    mc_pensamiento "I opened the photos without holding my breath. A month ago I couldn't."
 
 # game/02_cap1_evento6.rpy:4444
 translate english e6_s3_bueno_649b6b24:
@@ -7794,11 +7734,11 @@ translate english e6_s3_bueno_649b6b24:
     # mc_pensamiento "Los cinco nombres ya no son una lista. Son cinco personas que salieron bien."
     mc_pensamiento "The five names aren't a list anymore. They're five people who made it through."
 
-# game/02_cap1_evento6.rpy:4446
-translate english e6_s3_bueno_73791287:
+# game/02_cap1_evento6.rpy:4422
+translate english e6_s3_bueno_cff37ba0:
 
-    # mc_pensamiento "Y cuando alguien te importa, lo único que queda por temer es lo que viene después."
-    mc_pensamiento "And when someone matters to you, the only thing left to fear is what comes next."
+    # mc_pensamiento "Y como me importan, ya me preocupa lo que viene."
+    mc_pensamiento "And because I care about them, I'm already worried about what's next."
 
 # game/02_cap1_evento6.rpy:4469
 translate english e6_retrato_13fe8e7a:
@@ -7842,11 +7782,11 @@ translate english e6_retrato_f401aa67:
     # mc_pensamiento "La foto de siempre. La que miro cada noche sin mirarla de verdad."
     mc_pensamiento "The same old photo. The one I look at every night without really seeing it."
 
-# game/02_cap1_evento6.rpy:4488
-translate english e6_retrato_30bbaa14:
+# game/02_cap1_evento6.rpy:4464
+translate english e6_retrato_b4f3bb48:
 
-    # mc_pensamiento "Con la lámpara encendida, el reflejo de mi familia."
-    mc_pensamiento "With the lamp on, my family's reflection."
+    # mc_pensamiento "Con la lámpara encendida, ahí está mi familia."
+    mc_pensamiento "With the lamp on, there's my family."
 
 # game/02_cap1_evento6.rpy:4490
 translate english e6_retrato_416b026e:
@@ -7908,11 +7848,11 @@ translate english e6_retrato_d6f76ca7:
     # mc_pensamiento "Y aun así, este mes me equivoqué. Dos tardes que no fueron. Dos nombres esperando."
     mc_pensamiento "And still, this month I was wrong. Two afternoons that never happened. Two names waiting."
 
-# game/02_cap1_evento6.rpy:4516
-translate english e6_retrato_b2ce8e7d:
+# game/02_cap1_evento6.rpy:4492
+translate english e6_retrato_2b863d29:
 
-    # mc_pensamiento "Pensé que lo pagaría caro. No lo pagué solo."
-    mc_pensamiento "I thought I'd pay dearly for it. I didn't pay alone."
+    # mc_pensamiento "Pensé que lo pagaría caro. Pero no estuve solo."
+    mc_pensamiento "I thought I'd pay dearly for it. But I wasn't alone."
 
 # game/02_cap1_evento6.rpy:4518
 translate english e6_retrato_e466ee99:
@@ -7920,11 +7860,11 @@ translate english e6_retrato_e466ee99:
     # mc_pensamiento "Cinco personas que tampoco podían fallar se sentaron conmigo en la misma semana."
     mc_pensamiento "Five people who couldn't afford to fail either sat down with me in the same week."
 
-# game/02_cap1_evento6.rpy:4520
-translate english e6_retrato_eb11744a:
+# game/02_cap1_evento6.rpy:4496
+translate english e6_retrato_d0a362f1:
 
-    # mc_pensamiento "Eso no viene en ningún libro: los que no pueden equivocarse no tienen por qué hacerlo solos."
-    mc_pensamiento "That isn't in any book: those who can't afford to be wrong don't have to carry it alone."
+    # mc_pensamiento "Eso no viene en ningún libro: no tenía por qué cargarlo yo solo."
+    mc_pensamiento "No book says it: I didn't have to carry it on my own."
 
 # game/02_cap1_evento6.rpy:4522
 translate english e6_retrato_24406603:
@@ -8412,29 +8352,23 @@ translate english e6_retrato_778d9be6:
     # mc_pensamiento "Un mes de «examen sorpresa». Era la primera vez que venía con nota."
     mc_pensamiento "A month of \"pop quizzes.\" It was the first one that came with a grade."
 
-# game/02_cap1_evento6.rpy:4775
-translate english e6_retrato_b2316118:
+# game/02_cap1_evento6.rpy:4751
+translate english e6_retrato_516ef1ef:
 
-    # mc_pensamiento "De mi madre recuerdo poco. Cómo daba las gracias no estaba entre eso."
-    mc_pensamiento "I remember little about my mother. How she said thank you wasn't part of it."
+    # mc_pensamiento "De mi madre recuerdo poco. Ni siquiera cómo daba las gracias."
+    mc_pensamiento "I remember little about my mother. Not even how she said thank you."
 
-# game/02_cap1_evento6.rpy:4777
-translate english e6_retrato_96fb6c5b:
+# game/02_cap1_evento6.rpy:4753
+translate english e6_retrato_c3a94472:
 
-    # mc_pensamiento "Resulta que lo llevaba yo. Sin saberlo."
-    mc_pensamiento "Turns out I'd been carrying it. Without knowing."
+    # mc_pensamiento "Resulta que lo hago igual que ella. Sin saberlo."
+    mc_pensamiento "Turns out I do it just like her. Without knowing."
 
 # game/02_cap1_evento6.rpy:4787
 translate english e6_retrato_436450aa:
 
     # narrador "Dejé el celular boca abajo, junto a la foto."
     narrador "I left the phone face down, next to the photo."
-
-# game/02_cap1_evento6.rpy:4789
-translate english e6_retrato_f37b873c:
-
-    # narrador "Como se dejan los boletines antes de leerlos."
-    narrador "The way you leave report cards before reading them."
 
 # game/02_cap1_evento6.rpy:4791
 translate english e6_retrato_08504ba9:

@@ -231,11 +231,9 @@ label e6_lunes:
 
     narrador "Las cinco ya estaban en el aula, con los libros cerrados."
 
-    narrador "No por desinterés: por haber llegado al final de lo que se podía repasar."
+    narrador "Ya no quedaba nada que repasar."
 
     narrador "Me miraron, y cada una se acercó hacia mí."
-
-    narrador "Cada una."
 
     mc_pensamiento "Supongo que esperan una frase de ánimo."
 
@@ -342,7 +340,7 @@ label e6_lunes:
 
         ichika "Hoy me portaré muy bien. Que conste."
 
-        narrador "La sonrisa, en su sitio. Los ojos, en la pizarra."
+        narrador "Sonreía, pero miraba a la pizarra."
 
     else:
 
@@ -486,9 +484,7 @@ label e6_lunes:
 
     mc "Hagan lo que saben."
 
-    narrador "No era una frase cualquiera."
-
-    narrador "Cada palabra tenía un nombre detrás."
+    narrador "Pensé en cada una al decirlo."
 
     if persistent.final_malo_temprano_b_visto:
 
@@ -535,13 +531,13 @@ label e6_s1_superado:
 
     mc_pensamiento "«Si una sola reprueba, se acabó.» Maruo lo dijo en la cocina y no lo repitió."
 
-    mc_pensamiento "No hacía falta. Una frase así no se repite: se cumple."
+    mc_pensamiento "Con Maruo no hacía falta: lo iba a cumplir."
 
-    mc_pensamiento "Cinco exámenes, cinco días, y esa frase sentada al lado de cada uno."
+    mc_pensamiento "Cinco exámenes, cinco días, y esa frase dándome vueltas en cada uno."
 
     mc_pensamiento "Hace un mes comencé este trabajo con una palabra clavada: despedido."
 
-    mc_pensamiento "Hoy entro con cinco nombres. Y con la palabra exactamente donde estaba."
+    mc_pensamiento "Hoy entro pensando en cinco nombres. La palabra sigue ahí."
 
     mc_pensamiento "La diferencia es que ahora sé quién está detrás de cada hoja."
 
@@ -550,15 +546,15 @@ label e6_s1_superado:
 
 label e6_s1_mixto:
 
-    mc_pensamiento "Treinta días no alcanzan para saber nada. Solo para dejar de ser un desconocido."
+    mc_pensamiento "En treinta días no se conoce a nadie. Al menos ya no soy un desconocido."
 
-    mc_pensamiento "No sé si fue suficiente. Esa es la verdad completa, y es incómodamente corta."
+    mc_pensamiento "No sé si fue suficiente. Es todo lo que puedo decir."
 
-    mc_pensamiento "No tengo una palabra clavada esta vez. Tengo un número: cinco."
+    mc_pensamiento "Esta vez no pienso en el despido. Pienso en un número: cinco."
 
     mc_pensamiento "Cinco exámenes que no puedo corregir, ni acompañar, ni adelantar."
 
-    mc_pensamiento "Hoy no se evalúa lo que yo hice. Se evalúa lo que ellas ya sabían."
+    mc_pensamiento "Hoy les toca a ellas, no a mí."
 
     return
 
@@ -571,7 +567,7 @@ label e6_s1_bueno:
 
     mc_pensamiento "Eso no garantiza nada. Lo sé. Una nota es una nota."
 
-    mc_pensamiento "Pero esta mañana los cinco nombres suenan distinto." 
+    mc_pensamiento "Pero esta mañana las veo de otra forma." 
     
     mc_pensamiento "Sé cómo estudia cada una. Y qué hace cuando se atasca."
 
@@ -606,8 +602,6 @@ label e6_yotsuba_nucleo:
     narrador "Las cinco lo hacían a la vez; yo solo podía mirar a una."
 
     mc_pensamiento "A Yotsuba."
-
-    narrador "En un examen nadie habla. Eso no quiere decir que nadie piense."
 
     narrador "Yotsuba escribió su nombre primero. Siempre lo hace."
 
@@ -715,7 +709,7 @@ label e6_yotsuba_mono_no_visitada:
 
     yotsuba_int "Escribo que el protagonista espera a alguien y no sabe si llega."
 
-    yotsuba_int "Es una buena respuesta. Y es la única que no puedo comprobar."
+    yotsuba_int "Es una buena respuesta. Aunque no sé cómo termina."
 
     return
 
@@ -731,11 +725,11 @@ label e6_yotsuba_mj:
 
     narrador "Yotsuba soltó el lápiz un segundo y respiró hondo, como se respira al acabar una serie."
 
-    yotsuba_int "Cada tramo mide lo mismo. Ninguna carrera la gana una sola."
+    yotsuba_int "En un relevo todas corren lo mismo. Ninguna gana sola."
 
     yotsuba_int "Yo importo igual que mis hermanas."
 
-    yotsuba_int "Y el testigo no pesa menos por pasar por mis manos."
+    yotsuba_int "Y mi tramo vale igual."
 
     yotsuba_int "La segunda pregunta trataba de eso."
 
@@ -745,7 +739,7 @@ label e6_yotsuba_mj:
 
     if e6_res == "saltado":
 
-        narrador "Hay carreras que se corren por dentro. Esta la corrió entera, de un tirón."
+        narrador "Terminó de un tirón."
 
     return
 
@@ -790,7 +784,7 @@ label e6_yotsuba_gesto_tibia:
 
     narrador "Miró a las demás, volvió a la hoja y siguió con la pregunta dos, a toda velocidad."
 
-    mc_pensamiento "Esta vez no era una hoja en blanco. Era una frase en blanco."
+    mc_pensamiento "Esta vez no dejó la hoja en blanco. Solo una frase."
 
     mc_pensamiento "Lo que iba a escribir, lo dejó a medias. Y yo no sabía qué era."
 
@@ -805,7 +799,7 @@ label e6_yotsuba_gesto_fria:
 
     narrador "Pasó junto a mi pupitre sin mirarme. En la muñeca, ninguna cuenta."
 
-    mc_pensamiento "Esta vez la hoja estaba llena. Esta vez no miró a nadie."
+    mc_pensamiento "La hoja estaba llena. Y no miró a nadie."
 
     mc_pensamiento "Lo que mejor sabe hacer, leer a las demás, lo había apagado. Y lo apagué yo."
 
@@ -822,7 +816,7 @@ label e6_yotsuba_gesto_no_visitada:
 
     mc_pensamiento "Ni siquiera la miró para saberlo. Eso no se aprende en un libro."
 
-    mc_pensamiento "Reparte lo que le sobra antes de que se lo pidan. Y se queda con lo que le falta."
+    mc_pensamiento "Ayuda antes de que se lo pidan. Lo suyo lo deja para después."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -869,9 +863,9 @@ label e6_ichika_nucleo:
 
     mc_pensamiento "La pregunta cuatro era un problema de trenes."
 
-    mc_pensamiento "De los que se resuelven con una resta y un poco de aire."
+    mc_pensamiento "Se resuelve con una resta y un poco de calma."
 
-    mc_pensamiento "Aire es justo lo que a ella no le sobra."
+    mc_pensamiento "Y calma es lo que menos le sobra."
 
     return
 
@@ -929,7 +923,7 @@ label e6_ichika_mono_tibia:
 
     ichika_int "El dragón leía contratos de audición. Lo bauticé «Contrato». Mi mejor material."
 
-    ichika_int "O mi mejor escondite. Hablamos diez minutos de un dragón. Los dos sabíamos de qué no."
+    ichika_int "O mi mejor escondite. Diez minutos de dragón para no hablar de lo otro."
 
     ichika_int "¿Me dejó escapar porque era amable, o porque no quiso mirar?"
 
@@ -999,7 +993,7 @@ label e6_ichika_mj:
 
     if e6_res == "saltado":
 
-        narrador "Hay ensayos que se hacen por dentro, sin público. Este lo hizo completo."
+        narrador "Siguió con el examen."
 
     return
 
@@ -1019,7 +1013,7 @@ label e6_ichika_promesa:
 
 label e6_ichika_gesto_calida:
 
-    narrador "Ichika resolvió el examen en lo que tarda en cerrarse una puerta."
+    narrador "Ichika resolvió el examen en nada."
 
     narrador "Después se quedó mirando la hoja, como si la hubiera hecho otra persona."
 
@@ -1055,11 +1049,11 @@ label e6_ichika_gesto_fria:
 
     narrador "Resolvió el examen sin una pausa, sin un tachón, sin una mirada a nadie."
 
-    narrador "La sonrisa estaba en su cara desde que empezó, igual de quieta que el reloj de la pared."
+    narrador "La sonrisa estaba en su cara desde que empezó y no se movió."
 
-    mc_pensamiento "Una hoja perfecta y una sonrisa perfecta. Eso era lo que se veía."
+    mc_pensamiento "La hoja perfecta y la sonrisa perfecta. Por fuera, al menos."
 
-    mc_pensamiento "Contesta como se contesta cuando alguien tiene razón: rápido y sin adornos."
+    mc_pensamiento "Contesta rápido y sin adornos, como si me diera la razón."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1074,13 +1068,11 @@ label e6_ichika_gesto_no_visitada:
 
     narrador "Resolvía una pregunta, ensayaba una línea."
 
-    narrador "Una línea, una pregunta. Las dos cosas a medias, y las dos bien."
+    narrador "Hacía las dos cosas a medias, y las dos le salían."
 
-    mc_pensamiento "Eso no es hacer dos cosas. Es no soltar ninguna."
+    mc_pensamiento "No quiere soltar ninguna."
 
-    mc_pensamiento "Con ella el cansancio nunca se nota en lo que hace."
-
-    mc_pensamiento "Se nota en que nunca para."
+    mc_pensamiento "Y el problema es que nunca para."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1129,13 +1121,13 @@ label e6_nino_nucleo:
 
     mc_pensamiento "Si se lo hiciera notar, lo negaría."
 
-    mc_pensamiento "Así que no se lo dije. Hay cosas que es mejor no señalarlas."
+    mc_pensamiento "Así que no se lo dije."
 
     mc_pensamiento "Además, en un examen no se habla."
 
     narrador "Los demás seguían en la primera pregunta."
 
-    narrador "Nino iba a la velocidad de un tren que no frena."
+    narrador "Nino iba a toda velocidad."
 
     mc_pensamiento "A los quince minutos había terminado."
 
@@ -1215,7 +1207,7 @@ label e6_nino_mono_calida:
 
     nino_int "Siempre veo venir el golpe. Me adelanto: me cierro antes, pido que se vayan antes."
 
-    nino_int "Así nunca duele a tiempo. Duele por adelantado. Y duele siempre."
+    nino_int "Así duele por adelantado. Y duele siempre."
 
     nino_int "Hoy no me ha dolido por adelantado."
 
@@ -1229,7 +1221,7 @@ label e6_nino_mono_calida:
 
     nino_int "La receta de la tarjeta me la sé de memoria. La llevo igual."
 
-    nino_int "Hay letras que, si dejas de mirarlas, se te olvida cómo eran."
+    nino_int "Si dejo de mirarla, se me olvida cómo era la letra."
 
     nino_int "Cinco listas, una por hermana. La mía la escribo la última, y es la más corta."
 
@@ -1352,13 +1344,11 @@ label e6_nino_mj:
 
     stop music fadeout 3.0
 
-    narrador "Nino dejó el lápiz sobre la mesa. No lo soltó: lo dejó. Hay una diferencia."
+    narrador "Nino dejó el lápiz sobre la mesa con cuidado."
 
     if e6_res == "saltado":
 
-        narrador "Hay compras que se hacen de memoria."
-
-        narrador "Esta la hizo completa, de un tirón."
+        narrador "La lista de la compra la hizo de memoria, de un tirón."
 
     if e6_sexto_valor() == "taza":
 
@@ -1380,11 +1370,11 @@ label e6_nino_mj:
 
         nino_int "Dejé la sexta línea en blanco."
 
-        nino_int "Sin tachar. Una línea en blanco no se pierde: se espera."
+        nino_int "Sin tachar. Puede esperar."
 
     nino_int "No pienso adelantar el golpe."
 
-    nino_int "Si cae, cae. Pero no voy a ganarle la mano para que duela primero."
+    nino_int "Si cae, cae. Pero no voy a sufrirlo antes de tiempo."
 
     nino_int "Esperar no es rendirse. Me costó treinta y dos días entenderlo."
 
@@ -1426,15 +1416,11 @@ label e6_nino_gesto_calida:
 
     narrador "Se levantó, dejó la hoja en la mesa del profesor y fue hacia la puerta sin mirar atrás."
 
-    narrador "A las demás no les echó ni una mirada de guardia. Ni una."
-
-    narrador "Ya no hacía falta vigilar a las demás."
+    narrador "A las demás no las miró ni una vez."
 
     play sound audio.sfx_puerta_cierra volume 1.0
 
-    mc_pensamiento "Quien ve venir el golpe se queda a esperarlo. Quien no lo adelanta, sale."
-
-    mc_pensamiento "Se fue sin vigilarlas. Y nadie se cayó."
+    mc_pensamiento "Se fue sin vigilarlas. Y no pasó nada."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1729,7 +1715,7 @@ label e6_itsuki_mj:
 
     elif it1_frase() == "A":
 
-        narrador "Levantó la mano. Despacio, con el codo recto, como se levanta algo que pesa."
+        narrador "Levantó la mano. Despacio, con el codo recto, como si le pesara."
 
         profe "¿Sí, Nakano?"
 
@@ -1791,9 +1777,9 @@ label e6_itsuki_gesto_calida:
 
     narrador "Asintió una vez, seca. Dato confirmado, sin pedir aplausos."
 
-    mc_pensamiento "Hace un mes apartar la mirada era su forma de no deberme nada."
+    mc_pensamiento "Hace un mes me apartaba la mirada para no deberme nada."
 
-    mc_pensamiento "Hoy mirar era no ocultar nada."
+    mc_pensamiento "Hoy ya no esconde nada."
 
     mc_pensamiento "No necesitó que yo le dijera dónde mirar el error."
 
@@ -1816,11 +1802,11 @@ label e6_itsuki_gesto_tibia:
 
     mc_pensamiento "Pudo preguntar. Eligió tardarse."
 
-    mc_pensamiento "Con ella, tardarse también es una forma de orgullo."
+    mc_pensamiento "Tarda, pero no cede."
 
     mc_pensamiento "Revisó desde el principio, sola."
 
-    mc_pensamiento "Apretaba el lápiz no por rabia, sino por su forma de ser."
+    mc_pensamiento "Apretaba fuerte el lápiz. Es su manera de ser."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1858,7 +1844,7 @@ label e6_itsuki_gesto_no_visitada:
 
     mc_pensamiento "Nunca me pidió nada. Y yo nunca fui."
 
-    mc_pensamiento "Los dos dejamos la misma pregunta sin hacer. Nadie avanzó."
+    mc_pensamiento "Ninguno de los dos preguntó."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1909,7 +1895,7 @@ label e6_miku_nucleo:
 
     mc_pensamiento "La pregunta tres no decía «sal». Decía «rutas de comercio»."
 
-    mc_pensamiento "Lo que escribiera de más sería ella. Lo que no escribiera, también."
+    mc_pensamiento "Escribir de más o callarse dependía solo de ella."
 
     return
 
@@ -1948,9 +1934,7 @@ label e6_miku_mono_calida:
 
     miku_int "...Voy a escribir pensando en ella."
 
-    miku_int "...Cuando acabe de pensar en esa canción, quedará el sonido del reloj del aula."
-
-    miku_int "...El reloj nunca ha pedido perdón."
+    miku_int "...Cuando se me acabe, solo quedará el reloj del aula."
 
     miku_int "...Vamos."
 
@@ -2047,9 +2031,7 @@ label e6_miku_mj:
 
     if e6_res == "saltado":
 
-        narrador "Hay respuestas que se escriben solas."
-
-        narrador "Esta lo hizo de una vez, de principio a fin."
+        narrador "Lo escribió todo de una vez."
 
     return
 
@@ -2077,15 +2059,15 @@ label e6_miku_gesto_calida:
 
     narrador "Sin un solo borrón."
 
-    mc_pensamiento "La goma seguía siendo una goma."
+    mc_pensamiento "No usó la goma ni una vez."
 
-    mc_pensamiento "Hace un mes eso habría sido una noticia."
+    mc_pensamiento "Hace un mes eso habría sido impensable."
 
     narrador "No recogió los audífonos enseguida." 
     
     narrador "Los miró un segundo, por si se movían solos."
 
-    mc_pensamiento "Plegados, no puestos. Como se dejan las llaves en la entrada."
+    mc_pensamiento "Plegados. Hoy no le hacían falta."
 
     narrador "Al final los recogió. Se los colgó al cuello."
 
@@ -2106,7 +2088,7 @@ label e6_miku_gesto_tibia:
 
     mc_pensamiento "No borró. Se detuvo."
 
-    mc_pensamiento "Es una forma de borrar en la que no se usa goma."
+    mc_pensamiento "Para el caso, es lo mismo que borrar."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -2125,7 +2107,7 @@ label e6_miku_gesto_fria:
 
     mc_pensamiento "Era una respuesta correcta y me dolió mirarla."
 
-    mc_pensamiento "Tuve razón en la letra del temario. Esa fue otra forma de no ganar."
+    mc_pensamiento "Yo tenía razón sobre el temario. Y no me alegraba."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -2273,7 +2255,7 @@ label e6_despues:
 
     call e6_foco("", "") from _call_e6_foco_16
 
-    narrador "Hubo un silencio corto. De los que se llenan solos."
+    narrador "Hubo un silencio corto."
 
     narrador "Alguien se rió primero. Después, las demás. No supe quién empezó."
 
@@ -2343,7 +2325,7 @@ label e6_despues:
 
     mc_pensamiento "Mañana un papel diría si seguía. Ellas lo sabían igual que yo."
 
-    narrador "Me miraron las cinco. Cinco preguntas iguales, y ninguna en voz alta."
+    narrador "Me miraron las cinco. Querían preguntar lo mismo, y ninguna lo hizo."
 
     call e6_foco("nino", "neutral") from _call_e6_foco_27
 
@@ -2429,7 +2411,7 @@ label e6_despues:
 
     mc_pensamiento "Hoy solo parecía un aula vacía un viernes."
 
-    mc_pensamiento "Las aulas vacías se vuelven a llenar."
+    mc_pensamiento "El lunes se vuelve a llenar."
 
     call expression ("e6_nino_puerta_" + e6_estado_de("nino")) from _call_expression_16
 
@@ -2463,7 +2445,7 @@ label e6_despues:
 
     mc_pensamiento "Pero esta tarde nadie se quedó de último."
 
-    narrador "No saberlo todavía me pesaba. Lo que cambió fue que esta vez no lo cargaba solo."
+    narrador "No saberlo me pesaba, pero esta vez no estaba solo."
 
     stop music fadeout 3.0
 
@@ -2506,7 +2488,7 @@ label e6_s_tarde_bueno:
 
     mc_pensamiento "Hoy, además, las había visto escribir. A las cinco, una por una."
 
-    mc_pensamiento "Aun así, un papel puede decir otra cosa. Los papeles no conocen a nadie."
+    mc_pensamiento "Aun así, la nota puede decir otra cosa."
 
     return
 
@@ -2613,7 +2595,7 @@ label e6_ichika_tarde_calida:
 
     call e6_foco("ichika", "neutral") from _call_e6_foco_45
 
-    ichika "No era otra persona. Eso es lo que todavía no me creo."
+    ichika "Era yo. Eso es lo que todavía no me creo."
 
     ichika "Tú lo viste antes que yo, [mc]. En la sala de ensayo."
 
@@ -2676,7 +2658,7 @@ label e6_ichika_tarde_no_visitada:
 
     ichika "...Ah. Esa."
 
-    narrador "No sonrió para nadie. Fue una sonrisa pequeña, de las que no se ensayan."
+    narrador "No sonrió para nadie. Fue una sonrisa pequeña, sin ensayar."
 
     return
 
@@ -2951,7 +2933,7 @@ label e6_tarde_pregunta:
 
         narrador "Yotsuba, siempre la primera en incluir a todas."
 
-        narrador "Hasta al que nunca entraba en la cuenta: yo."
+        narrador "Hasta a mí, que nunca entraba en la cuenta."
 
     else:
 
@@ -2961,7 +2943,7 @@ label e6_tarde_pregunta:
 
         ichika "¿Y a ti cómo te fue, tutor?"
 
-        narrador "Lo preguntó como hermana mayor. Por costumbre de contar a todos."
+        narrador "Lo preguntó como hermana mayor, siempre pendiente de todos."
 
     call e6_foco("", "") from _call_e6_foco_75
 
@@ -3030,8 +3012,6 @@ label e6_nino_puerta_fria:
     play sound audio.sfx_puerta_cierra volume 1.0
 
     narrador "Cerró detrás de mí. Despacio."
-
-    narrador "Como se cierra algo que todavía no ha terminado."
 
     hide nino
     with dissolve
@@ -3206,7 +3186,7 @@ label e6_s2_mixto:
 
     narrador "No dijo en qué, entonces. Y yo no me atreví a preguntarlo."
 
-    mc_pensamiento "No sonó a elogio. Tampoco a reproche. Sonó a alguien que sigue haciendo la cuenta."
+    mc_pensamiento "Ni elogio ni reproche. Parecía seguir haciendo cuentas."
 
     maruo "No me corresponde alegrarme. Tampoco quejarme."
 
@@ -3277,7 +3257,7 @@ label e6_cinco:
 
     narrador "Esperé a que ellas salieran."
 
-    narrador "En esta sala el silencio y la espera siempre han sido lo mismo."
+    narrador "En esta sala siempre me toca esperar en silencio."
 
     if persistent.final_malo_temprano_b_visto:
 
@@ -3294,7 +3274,7 @@ label e6_cinco:
 
             narrador "Las dos últimas puertas tardaron un poco más."
 
-            narrador "Detrás de esas no había falta de ganas. Había costumbre de esperar."
+            narrador "No es que no quisieran salir. Están acostumbradas a esperar."
 
         play sound audio.sfx_puerta_abre volume 1.2
 
@@ -3304,7 +3284,7 @@ label e6_cinco:
 
             narrador "Cada una vino a por su boletín. Boca abajo, sin mirarlo."
 
-            narrador "Como se lleva algo que todavía no es de uno."
+            narrador "Como si todavía no fuera suyo."
 
         call expression ("e6_" + e6_h + "_eco_" + e6_estado_de(e6_h)) from _call_expression_18
 
@@ -3390,7 +3370,7 @@ label e6_yotsuba_eco_fria:
 
 label e6_yotsuba_eco_no_visitada:
 
-    narrador "Yotsuba miró su boletín con la cara con la que se mira una pista vacía."
+    narrador "Yotsuba miró su boletín sin su energía de siempre."
 
     call e6_foco("yotsuba", "sonriendo") from _call_e6_foco_85
 
@@ -3632,7 +3612,7 @@ label e6_itsuki_eco_tibia:
 
     itsuki "Aquel día dijiste «revisarlo desde el principio». ...¿Qué ibas a—"
 
-    narrador "Se detuvo. La oración se quedó abierta, sin sujeto. En ella, eso es casi un grito."
+    narrador "Se detuvo. La oración se quedó abierta. Viniendo de ella, es rarísimo."
 
     mc "Cuando quieras."
 
@@ -3699,7 +3679,7 @@ label e6_miku_eco_calida:
 
     call e6_foco("miku", "relajada") from _call_e6_foco_119
 
-    narrador "Se rió. Una sola nota, corta, como un acorde."
+    narrador "Soltó una risa corta."
 
     miku "Quería ver tu cara. Ya la vi."
 
@@ -3750,7 +3730,7 @@ label e6_miku_eco_fria:
 
 label e6_miku_eco_no_visitada:
 
-    narrador "Miku se detuvo en la puerta con el boletín contra el pecho, como se lleva un libro."
+    narrador "Miku se detuvo en la puerta con el boletín contra el pecho, igual que sus libros."
 
     call e6_foco("miku", "neutral") from _call_e6_foco_125
 
@@ -3802,9 +3782,9 @@ label e6_intento:
 
     yotsuba "¡¡Esperen!! ¡Antes de que se arruguen! ¡Los boletines! ¡Ya están en la mesa!"
 
-    narrador "Itsuki se calló. Yo también me callé. La frase se quedó entre los dos, sin dueño."
+    narrador "Itsuki se calló. Yo también. La frase se quedó a medias."
 
-    mc_pensamiento "La disculpa seguía entre nosotros. Y esta vez no me pareció tarde: me pareció pendiente."
+    mc_pensamiento "La disculpa seguía pendiente. Todavía estábamos a tiempo."
 
     call e6_foco("itsuki", "timida") from _call_e6_foco_129
 
@@ -4073,9 +4053,9 @@ label e6_mesa:
 
     itsuki "Breve. Aceptable. Bien dicho."
 
-    mc_pensamiento "Hace un mes se pusieron de acuerdo para fallar igual."
+    mc_pensamiento "Hace un mes reaccionaban todas igual: en mi contra."
 
-    mc_pensamiento "Hoy se pusieron de acuerdo para mostrarse distintas."
+    mc_pensamiento "Hoy, cada una a su manera."
 
     play music main_theme fadein 2.0
 
@@ -4151,7 +4131,7 @@ label e6_mesa:
 
     narrador "Nadie se rio. Se quedaron un momento en silencio, juntas, cada una en su sitio, con la hoja en alto."
 
-    mc_pensamiento "Pensé en decirles que la foto ya estaba. No lo dije. Hay cosas que un «ya está» arruina."
+    mc_pensamiento "Pensé en decirles que la foto ya estaba. No quise arruinar el momento."
 
     ichika "Oigan. ¿Les confieso algo?"
 
@@ -4193,7 +4173,7 @@ label e6_mesa:
     
     mc_pensamiento "No hacía falta: cinco caras que ya no fingían nada."
 
-    mc_pensamiento "Ahora formo parte de ellas, y ellas de mí."
+    mc_pensamiento "Ya me sentía parte de ellas."
 
     return
 
@@ -4282,15 +4262,15 @@ label e6_casa:
 
     mc_pensamiento "Hace un mes, «cinco veces la tarifa» era lo único que oía en esa frase."
 
-    mc_pensamiento "Esta noche la oí de fondo, como se oye un reloj en otro cuarto."
+    mc_pensamiento "Esta noche casi ni la escuché."
 
     mc "Gracias por la comida."
 
-    narrador "Lo dije por costumbre. Pero esta vez la costumbre pesaba lo mismo que las palabras."
+    narrador "Lo dije por costumbre. Pero esta vez lo decía en serio."
 
     mc_pensamiento "Hace un mes, «todo» era una deuda y una hermana pequeña."
 
-    mc_pensamiento "Esta noche el «todo» tenía cinco personas más. Y ninguna cabía en una factura."
+    mc_pensamiento "Ahora hay cinco personas más. Y no salen en ninguna factura."
 
     return
 
@@ -4359,7 +4339,7 @@ label e6_cuarto:
 
     mc_pensamiento "Cinco hojas en fila. Cinco notas de cien. Cada cien, de una persona distinta."
 
-    mc_pensamiento "Y entonces lo entendí, lo que siempre me estaba preguntando."
+    mc_pensamiento "Y ahí estaba la respuesta que llevaba un mes buscando."
 
     mc_pensamiento "Cada una, sola, es una quinta parte. Brillante, pero una parte."
 
@@ -4396,7 +4376,7 @@ label e6_cuarto:
 
     mc_pensamiento "Dos promesas hechas sin que nadie me las pidiera."
 
-    mc_pensamiento "Esas no caducan. Se cumplen."
+    mc_pensamiento "Esas sí las voy a cumplir."
 
     call expression ("e6_s3_" + e6_estado_entrada) from _call_expression_19
 
@@ -4415,7 +4395,7 @@ label e6_s3_superado:
 
     mc_pensamiento "Maruo dijo «cinco». No dijo «para siempre»."
 
-    mc_pensamiento "La condición no se venció: se renovó."
+    mc_pensamiento "La condición sigue en pie para la próxima."
 
     mc_pensamiento "Esta vez, un punto de margen. ¿Cuántos tendré la próxima?"
 
@@ -4435,11 +4415,11 @@ label e6_s3_mixto:
 
 label e6_s3_bueno:
 
-    mc_pensamiento "Abrí las fotos sin contener el aire. Hace un mes no sabía hacerlo."
+    mc_pensamiento "Abrí las fotos sin aguantar la respiración. Hace un mes no sabía hacerlo."
 
     mc_pensamiento "Los cinco nombres ya no son una lista. Son cinco personas que salieron bien."
 
-    mc_pensamiento "Y cuando alguien te importa, lo único que queda por temer es lo que viene después."
+    mc_pensamiento "Y como me importan, ya me preocupa lo que viene."
 
     return
 
@@ -4481,7 +4461,7 @@ label e6_retrato:
 
     mc_pensamiento "La foto de siempre. La que miro cada noche sin mirarla de verdad."
 
-    mc_pensamiento "Con la lámpara encendida, el reflejo de mi familia."
+    mc_pensamiento "Con la lámpara encendida, ahí está mi familia."
 
     mc_pensamiento "La deuda sigue donde estaba. Un mes de sueldo no la borra: apenas la reduce."
 
@@ -4509,11 +4489,11 @@ label e6_retrato:
 
     mc_pensamiento "Y aun así, este mes me equivoqué. Dos tardes que no fueron. Dos nombres esperando."
 
-    mc_pensamiento "Pensé que lo pagaría caro. No lo pagué solo."
+    mc_pensamiento "Pensé que lo pagaría caro. Pero no estuve solo."
 
     mc_pensamiento "Cinco personas que tampoco podían fallar se sentaron conmigo en la misma semana."
 
-    mc_pensamiento "Eso no viene en ningún libro: los que no pueden equivocarse no tienen por qué hacerlo solos."
+    mc_pensamiento "Eso no viene en ningún libro: no tenía por qué cargarlo yo solo."
 
     mc_pensamiento "Siempre dije que no estudiaba por vocación. Que eso era cosa de ceremonias."
 
@@ -4768,9 +4748,9 @@ label e6_retrato:
 
     mc_pensamiento "Un mes de «examen sorpresa». Era la primera vez que venía con nota."
 
-    mc_pensamiento "De mi madre recuerdo poco. Cómo daba las gracias no estaba entre eso."
+    mc_pensamiento "De mi madre recuerdo poco. Ni siquiera cómo daba las gracias."
 
-    mc_pensamiento "Resulta que lo llevaba yo. Sin saberlo."
+    mc_pensamiento "Resulta que lo hago igual que ella. Sin saberlo."
 
     hide isanari
     with dissolve
@@ -4781,8 +4761,6 @@ label e6_retrato:
     with disolucion_lenta
 
     narrador "Dejé el celular boca abajo, junto a la foto."
-
-    narrador "Como se dejan los boletines antes de leerlos."
 
     narrador "Apagué la lámpara."
 
