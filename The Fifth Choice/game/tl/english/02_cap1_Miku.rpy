@@ -978,11 +978,11 @@ translate english miku_m4b_e69e3b87:
     # mc_pensamiento "Le acabo de poner una nota."
     mc_pensamiento "I just gave her a grade."
 
-# game/02_cap1_Miku.rpy:500
-translate english miku_m4b_cf7cb543:
+# game/02_cap1_Miku.rpy:494
+translate english miku_m4b_fa37e64f:
 
-    # mc_pensamiento "Y una nota es otra forma de decirle que ya puede dejar de hablar."
-    mc_pensamiento "And a grade is another way of telling her she can stop talking."
+    # mc_pensamiento "Y para ella, una nota significa que ya puede callarse."
+    mc_pensamiento "And to her, a grade means she can stop talking now."
 
 # game/02_cap1_Miku.rpy:502
 translate english miku_m4b_77871b40:

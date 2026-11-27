@@ -491,7 +491,7 @@ label miku_m4b:
 
     mc_pensamiento "Le acabo de poner una nota."
 
-    mc_pensamiento "Y una nota es otra forma de decirle que ya puede dejar de hablar."
+    mc_pensamiento "Y para ella, una nota significa que ya puede callarse."
 
     narrador "El libro le subió hasta media cara, y ahí se quedó."
 
