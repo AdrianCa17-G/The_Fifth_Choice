@@ -75,7 +75,7 @@ label reaccion_ichika:
 
         ichika "Yo puedo hacerlo. Si me dejas."
 
-        narrador "Lo dijo sin exclamación. Se dio cuenta un segundo después."
+        narrador "Se le escapó sin su tono de siempre. Se dio cuenta tarde."
 
         show ichika sonriendo at pj_habla(0.5)
         with disolucion_lenta
@@ -294,7 +294,7 @@ label reaccion_miku:
 
         miku "...Casi nadie la aguanta."
 
-        narrador "Se quedó mirando cómo la abría. Como quien espera una nota."
+        narrador "Se quedó mirando cómo la abría, esperando el veredicto."
 
         mc "...Sabe a pasto."
 
@@ -347,7 +347,7 @@ label reaccion_miku:
 
         narrador "No hubo reproche." 
 
-        narrador "Eso fue lo peor: lo dijo como quien acepta un reglamento."
+        narrador "Eso fue lo peor: sonó a que aceptaba un reglamento."
 
     
     stop music fadeout 1.5
@@ -736,7 +736,7 @@ label queja_nino:
     show nino at pj_calla(0.5)
     with disolucion_lenta
 
-    narrador "Se fue antes de que pudiera contestarle, con el paso apretado de quien dijo más de la cuenta."
+    narrador "Se fue a paso rápido antes de que pudiera contestar. Había hablado de más."
 
     hide nino
     with moveoutleft
@@ -1158,7 +1158,7 @@ label cap1_interconexion_1:
     show itsuki at pj_calla(X_ITSUKI)
     with disolucion_lenta
 
-    mc_pensamiento "No era una broma. Era una revancha por la hoja de diagnóstico."
+    mc_pensamiento "Iba en serio: era la revancha por la hoja de diagnóstico."
 
     mc_pensamiento "Pero en parte es mi culpa: fui yo quien preguntó."
 
@@ -1385,7 +1385,7 @@ label cap1_interconexion_2:
 
             raiha "¡Desayunar también es importante! ¡Lo dijo la maestra!"
 
-            narrador "Lo dijo con el tono de quien ya tomó una decisión por los dos."
+            narrador "Con ese tono, la decisión ya estaba tomada por los dos."
 
             show raiha regano at pj_habla(0.50)
             with disolucion_lenta
@@ -1564,9 +1564,7 @@ label cap1_interconexion_2:
 
             nino "Te dije que ibas a hacerles daño. No pensé que tardarías tan poco."
 
-            mc_pensamiento "No estaba enojada. Estaba decepcionada."
-
-            mc_pensamiento "Y eso dolía mucho más que un grito."
+            mc_pensamiento "Más que enojada, estaba decepcionada."
 
             nino "Hoy no la saludes." 
             
@@ -1644,7 +1642,7 @@ label cap1_interconexion_3:
 
         mc_pensamiento "Eso no es falta de esfuerzo."
 
-        mc_pensamiento "Es que nadie le ha dicho dónde mirar. Y ella no va a pedirlo."
+        mc_pensamiento "Nadie le ha dicho dónde mirar. Y ella no va a pedirlo."
 
     else:
 
@@ -1818,7 +1816,7 @@ label cap1_interconexion_3:
             
             narrador "El «1» seguía ahí, a medio borrar."
 
-            narrador "Sonrió como quien comprueba un resultado."
+            narrador "Sonrió. El resultado le cuadraba."
 
         elif rama_hub == "tibia":
 
@@ -1946,7 +1944,7 @@ label cap1_interconexion_4:
 
         mc_pensamiento "A [nombre_h!t] le dije lo que me pareció correcto."
 
-        mc_pensamiento "Correcto no es lo mismo que útil. Lo estoy aprendiendo tarde."
+        mc_pensamiento "Correcto no siempre es útil. Lo estoy aprendiendo tarde."
 
 
     mc_pensamiento "Dos de cinco. Y el calendario seguía corriendo."
@@ -2080,7 +2078,7 @@ label cap1_interconexion_4:
 
             yotsuba "¡Y eso está bien! ¡A veces igual es lo mejor que se puede pedir!"
 
-            narrador "Lo dijo sonriendo. Pero la sonrisa tardó en llegar a sus ojos."
+            narrador "Sonreía, pero los ojos tardaron en seguirla."
 
             show yotsuba incomoda at pj_habla(0.5)
             with disolucion_lenta
@@ -2107,7 +2105,7 @@ label cap1_interconexion_4:
 
                 yotsuba "[mc]. ¿Tienes un minuto?"
 
-            narrador "Lo dijo sin levantar la voz. Sin sonrisa."
+            narrador "En voz baja. Sin sonrisa."
 
             narrador "En el aula, delante de todas, era la primera vez que la veía así."
 
@@ -2951,7 +2949,7 @@ label cap1_interconexion_5:
         show miku at pj_calla(X_MIKU)
         with disolucion_lenta
 
-        narrador "Lo dijo como quien oye una frase en otro idioma y asiente por educación."
+        narrador "Asintió por educación, como si le hablara en otro idioma."
 
     ## --- Itsuki ---
 
@@ -3032,7 +3030,7 @@ label cap1_interconexion_5:
 
         ichika "Contigo ya no me sale."
 
-        narrador "Lo dijo bajito. Sin chiste detrás."
+        narrador "Bajito. Sin chiste detrás."
 
         show ichika sonriendo at pj_habla(X_ICHIKA)
         with disolucion_lenta
@@ -3540,7 +3538,7 @@ label cap1_interconexion_6:
         show itsuki neutral at pj_calla(X_ITSUKI)
         with disolucion_lenta
 
-        mc_pensamiento "Era la primera vez que un «va a salir bien» no sonaba a deseo, sino a plan."
+        mc_pensamiento "Ese «va a salir bien» no sonaba a deseo, sino a plan."
 
     elif clima_cap1 == "mixta":
 
@@ -3639,7 +3637,7 @@ label cap1_interconexion_6:
 
         narrador "Nino e Itsuki comparaban respuestas en voz baja, codo con codo, sin mirarse." 
         
-        narrador "Como quien negocia una tregua."
+        narrador "Parecía una tregua."
 
         narrador "Miku tenía los audífonos colgados del cuello. Sin tocarlos."
 
@@ -3657,7 +3655,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "No sé cómo les irá." 
         
-        mc_pensamiento "Por primera vez, tengo motivos para pensar que bien."
+        mc_pensamiento "Esta vez tengo motivos para pensar que bien."
 
         mc_pensamiento "De eso estoy seguro."
 
@@ -3833,7 +3831,7 @@ label cap1_interconexion_6:
 
         narrador "Ichika se estiró y soltó un bostezo de verdad. No de actuación."
 
-        narrador "Y, por primera vez, no dijo que el estrés le arruinaba la piel."
+        narrador "Y esta vez no dijo que el estrés le arruinaba la piel."
 
         narrador "Nino e Itsuki seguían comparando respuestas. Ya no discutían. Se corregían."
 
@@ -3841,7 +3839,7 @@ label cap1_interconexion_6:
 
         itsuki "...Gracias."
 
-        narrador "Lo dijo tan bajito que Nino fingió no oírlo."
+        narrador "Tan bajito que Nino fingió no oírlo."
 
         narrador "Miku fue la última en guardar el libro. Antes de irse se detuvo en la puerta."
 
@@ -3849,7 +3847,7 @@ label cap1_interconexion_6:
 
         mc "Lo fue."
 
-        narrador "Lo dijo sin subirse los audífonos. Y sin pedir perdón después."
+        narrador "Sin subirse los audífonos. Y sin pedir perdón después."
 
         mc_pensamiento "Parecía que, por fin, me habían aceptado como su tutor."
 
@@ -3871,7 +3869,7 @@ label cap1_interconexion_6:
 
         yotsuba "¡Mañana seguiremos! ¡Y será mejor!"
 
-        narrador "Lo dijo guardando lápices más tiempo del necesario, esperando que alguien le contestara."
+        narrador "Guardó los lápices más lento de lo necesario, esperando respuesta."
 
         mc "Mañana seguiremos."
 
@@ -3899,7 +3897,7 @@ label cap1_interconexion_6:
         
         narrador "Se frotó la cara y dijo «mañana me pongo al día»."
 
-        narrador "Sin gracia. Sin guiño. Como quien lo repite desde hace semanas."
+        narrador "Sin gracia. Sin guiño. Ya sonaba a frase gastada."
 
         narrador "Miku salió con los audífonos puestos y sonando." 
         
@@ -3907,11 +3905,11 @@ label cap1_interconexion_6:
 
         narrador "Nino pasó a mi lado con la hoja en blanco, doblada en cuatro."
 
-        narrador "No la dejó sobre la mesa. Se la llevó, como quien guarda una prueba."
+        narrador "Se la llevó en vez de dejarla. Como una prueba."
 
         yotsuba "¡Mañana lo hago mejor! ¡Lo prometo!"
 
-        narrador "Lo dijo sonriendo. Con la hoja casi vacía todavía en la mano."
+        narrador "Sonreía con la hoja casi vacía en la mano."
 
         narrador "Ya no sabía si me lo decía a mí o se lo decía a ella."
 

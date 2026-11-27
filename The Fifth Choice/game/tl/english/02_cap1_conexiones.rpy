@@ -55,10 +55,10 @@ translate english reaccion_ichika_7c62ad93:
     ichika "I could. If you let me."
 
 # game/02_cap1_conexiones.rpy:78
-translate english reaccion_ichika_cccfcdb8:
+translate english reaccion_ichika_b09b58a0:
 
-    # narrador "Lo dijo sin exclamación. Se dio cuenta un segundo después."
-    narrador "She said it without her usual exclamation mark. She noticed a second too late."
+    # narrador "Se le escapó sin su tono de siempre. Se dio cuenta tarde."
+    narrador "It slipped out without her usual tone. She noticed too late."
 
 # game/02_cap1_conexiones.rpy:83
 translate english reaccion_ichika_ed2f7a98:
@@ -421,10 +421,10 @@ translate english reaccion_miku_62b79402:
     miku "...Almost nobody can stand it."
 
 # game/02_cap1_conexiones.rpy:297
-translate english reaccion_miku_2e9d7068:
+translate english reaccion_miku_01850c40:
 
-    # narrador "Se quedó mirando cómo la abría. Como quien espera una nota."
-    narrador "She watched me open it. Like someone waiting for a grade."
+    # narrador "Se quedó mirando cómo la abría, esperando el veredicto."
+    narrador "She watched me open it, waiting for the verdict."
 
 # game/02_cap1_conexiones.rpy:299
 translate english reaccion_miku_58645d20:
@@ -505,10 +505,10 @@ translate english reaccion_miku_62dc8e3a:
     narrador "There was no reproach."
 
 # game/02_cap1_conexiones.rpy:350
-translate english reaccion_miku_703b612e:
+translate english reaccion_miku_44fa0dbd:
 
-    # narrador "Eso fue lo peor: lo dijo como quien acepta un reglamento."
-    narrador "That was the worst part: she said it like someone accepting a rulebook."
+    # narrador "Eso fue lo peor: sonó a que aceptaba un reglamento."
+    narrador "That was the worst part: it sounded like she was accepting a rulebook."
 
 # game/02_cap1_conexiones.rpy:371
 translate english reaccion_yotsuba_7167a37b:
@@ -1195,10 +1195,10 @@ translate english queja_nino_1b421292:
     nino "And stop making that guilty face! It wasn't a complaint!"
 
 # game/02_cap1_conexiones.rpy:739
-translate english queja_nino_42d4f1f7:
+translate english queja_nino_eb5d9630:
 
-    # narrador "Se fue antes de que pudiera contestarle, con el paso apretado de quien dijo más de la cuenta."
-    narrador "She left before I could answer, her steps tight, like someone who'd said more than she meant to."
+    # narrador "Se fue a paso rápido antes de que pudiera contestar. Había hablado de más."
+    narrador "She hurried off before I could answer. She'd said too much."
 
 # game/02_cap1_conexiones.rpy:756
 translate english queja_miku_f0045840:
@@ -1891,10 +1891,10 @@ translate english cap1_interconexion_1_01d164cb:
     itsuki "I'm grading you. Just like you graded us with your sheet."
 
 # game/02_cap1_conexiones.rpy:1161
-translate english cap1_interconexion_1_ef1dee19:
+translate english cap1_interconexion_1_e3ece90d:
 
-    # mc_pensamiento "No era una broma. Era una revancha por la hoja de diagnóstico."
-    mc_pensamiento "It wasn't a joke. It was payback for the diagnostic sheet."
+    # mc_pensamiento "Iba en serio: era la revancha por la hoja de diagnóstico."
+    mc_pensamiento "She was serious: it was payback for the diagnostic sheet."
 
 # game/02_cap1_conexiones.rpy:1163
 translate english cap1_interconexion_1_6a1c48e4:
@@ -2263,10 +2263,10 @@ translate english cap1_interconexion_2_2d01493b:
     raiha "Breakfast matters too! Teacher said so!"
 
 # game/02_cap1_conexiones.rpy:1388
-translate english cap1_interconexion_2_4304f925:
+translate english cap1_interconexion_2_99e00ba2:
 
-    # narrador "Lo dijo con el tono de quien ya tomó una decisión por los dos."
-    narrador "She said it like someone who'd already made the decision for both of us."
+    # narrador "Con ese tono, la decisión ya estaba tomada por los dos."
+    narrador "With that tone, the decision had been made for both of us."
 
 # game/02_cap1_conexiones.rpy:1393
 translate english cap1_interconexion_2_23f80cef:
@@ -2587,16 +2587,10 @@ translate english cap1_interconexion_2_35f8065d:
     nino "I told you you'd hurt them. I just didn't think it'd happen this fast."
 
 # game/02_cap1_conexiones.rpy:1567
-translate english cap1_interconexion_2_be43eb3d:
+translate english cap1_interconexion_2_2d688fc1:
 
-    # mc_pensamiento "No estaba enojada. Estaba decepcionada."
-    mc_pensamiento "She wasn't angry. She was disappointed."
-
-# game/02_cap1_conexiones.rpy:1569
-translate english cap1_interconexion_2_284225ca:
-
-    # mc_pensamiento "Y eso dolía mucho más que un grito."
-    mc_pensamiento "And that hurt a lot more than yelling."
+    # mc_pensamiento "Más que enojada, estaba decepcionada."
+    mc_pensamiento "She was more disappointed than angry."
 
 # game/02_cap1_conexiones.rpy:1571
 translate english cap1_interconexion_2_d7cd1064:
@@ -2700,11 +2694,11 @@ translate english cap1_interconexion_3_12d17ddf:
     # mc_pensamiento "Eso no es falta de esfuerzo."
     mc_pensamiento "That isn't a lack of effort."
 
-# game/02_cap1_conexiones.rpy:1647
-translate english cap1_interconexion_3_7c500f90:
+# game/02_cap1_conexiones.rpy:1645
+translate english cap1_interconexion_3_817c842f:
 
-    # mc_pensamiento "Es que nadie le ha dicho dónde mirar. Y ella no va a pedirlo."
-    mc_pensamiento "It's that nobody's told her where to look. And she won't ask."
+    # mc_pensamiento "Nadie le ha dicho dónde mirar. Y ella no va a pedirlo."
+    mc_pensamiento "Nobody's told her where to look. And she's not going to ask."
 
 # game/02_cap1_conexiones.rpy:1651
 translate english cap1_interconexion_3_29925c6c:
@@ -2988,11 +2982,11 @@ translate english cap1_interconexion_3_fd0ea5b8:
     # narrador "El «1» seguía ahí, a medio borrar."
     narrador "The \"1\" was still there, half rubbed out."
 
-# game/02_cap1_conexiones.rpy:1821
-translate english cap1_interconexion_3_157e4ae3:
+# game/02_cap1_conexiones.rpy:1819
+translate english cap1_interconexion_3_63aac0d7:
 
-    # narrador "Sonrió como quien comprueba un resultado."
-    narrador "She smiled like someone checking a result."
+    # narrador "Sonrió. El resultado le cuadraba."
+    narrador "She smiled. The numbers added up."
 
 # game/02_cap1_conexiones.rpy:1825
 translate english cap1_interconexion_3_62668801:
@@ -3156,11 +3150,11 @@ translate english cap1_interconexion_4_f7ee22bb:
     # mc_pensamiento "A [nombre_h!t] le dije lo que me pareció correcto."
     mc_pensamiento "I told [nombre_h!t] what seemed right to me."
 
-# game/02_cap1_conexiones.rpy:1949
-translate english cap1_interconexion_4_7e8000bb:
+# game/02_cap1_conexiones.rpy:1947
+translate english cap1_interconexion_4_2caa80e2:
 
-    # mc_pensamiento "Correcto no es lo mismo que útil. Lo estoy aprendiendo tarde."
-    mc_pensamiento "Right isn't the same as useful. I'm learning that late."
+    # mc_pensamiento "Correcto no siempre es útil. Lo estoy aprendiendo tarde."
+    mc_pensamiento "Correct isn't always useful. I'm learning that late."
 
 # game/02_cap1_conexiones.rpy:1952
 translate english cap1_interconexion_4_f0cba07e:
@@ -3354,11 +3348,11 @@ translate english cap1_interconexion_4_a74c6d59:
     # yotsuba "¡Y eso está bien! ¡A veces igual es lo mejor que se puede pedir!"
     yotsuba "And that's good! Sometimes the same is the best you can ask for!"
 
-# game/02_cap1_conexiones.rpy:2083
-translate english cap1_interconexion_4_e51d9344:
+# game/02_cap1_conexiones.rpy:2081
+translate english cap1_interconexion_4_d72964d9:
 
-    # narrador "Lo dijo sonriendo. Pero la sonrisa tardó en llegar a sus ojos."
-    narrador "She said it smiling. But the smile took a while to reach her eyes."
+    # narrador "Sonreía, pero los ojos tardaron en seguirla."
+    narrador "She was smiling, but her eyes were slow to catch up."
 
 # game/02_cap1_conexiones.rpy:2088
 translate english cap1_interconexion_4_2a90e30e:
@@ -3390,11 +3384,11 @@ translate english cap1_interconexion_4_272683a7:
     # yotsuba "[mc]. ¿Tienes un minuto?"
     yotsuba "[mc]. Got a minute?"
 
-# game/02_cap1_conexiones.rpy:2110
-translate english cap1_interconexion_4_611d979e:
+# game/02_cap1_conexiones.rpy:2108
+translate english cap1_interconexion_4_4fe42f1c:
 
-    # narrador "Lo dijo sin levantar la voz. Sin sonrisa."
-    narrador "She said it without raising her voice. Without a smile."
+    # narrador "En voz baja. Sin sonrisa."
+    narrador "Quietly. No smile."
 
 # game/02_cap1_conexiones.rpy:2112
 translate english cap1_interconexion_4_3e1d7331:
@@ -4914,11 +4908,11 @@ translate english cap1_interconexion_5_a5f054e5:
     # miku "...Está bien."
     miku "...Okay."
 
-# game/02_cap1_conexiones.rpy:2954
-translate english cap1_interconexion_5_f022d3cb:
+# game/02_cap1_conexiones.rpy:2952
+translate english cap1_interconexion_5_d7e0050f:
 
-    # narrador "Lo dijo como quien oye una frase en otro idioma y asiente por educación."
-    narrador "She said it like someone hearing a sentence in another language and nodding to be polite."
+    # narrador "Asintió por educación, como si le hablara en otro idioma."
+    narrador "She nodded to be polite, as if I'd spoken another language."
 
 # game/02_cap1_conexiones.rpy:2958
 translate english cap1_interconexion_5_539c14c1:
@@ -5064,11 +5058,11 @@ translate english cap1_interconexion_5_20eac0bf:
     # ichika "Contigo ya no me sale."
     ichika "With you, it just doesn't come out anymore."
 
-# game/02_cap1_conexiones.rpy:3035
-translate english cap1_interconexion_5_f8b2502b:
+# game/02_cap1_conexiones.rpy:3033
+translate english cap1_interconexion_5_cdebc8d7:
 
-    # narrador "Lo dijo bajito. Sin chiste detrás."
-    narrador "She said it softly. No joke behind it."
+    # narrador "Bajito. Sin chiste detrás."
+    narrador "Quietly. No joke behind it."
 
 # game/02_cap1_conexiones.rpy:3040
 translate english cap1_interconexion_5_be8699f6:
@@ -5880,11 +5874,11 @@ translate english cap1_interconexion_6_131fe0a0:
     # itsuki "En la semana de exámenes se lo agradeceremos, si se lo merece."
     itsuki "We'll thank him during exam week, if he earns it."
 
-# game/02_cap1_conexiones.rpy:3543
-translate english cap1_interconexion_6_eb2669d2:
+# game/02_cap1_conexiones.rpy:3541
+translate english cap1_interconexion_6_bbbbc59f:
 
-    # mc_pensamiento "Era la primera vez que un «va a salir bien» no sonaba a deseo, sino a plan."
-    mc_pensamiento "It was the first time a \"it'll go well\" sounded like a plan instead of a wish."
+    # mc_pensamiento "Ese «va a salir bien» no sonaba a deseo, sino a plan."
+    mc_pensamiento "That \"it'll be fine\" didn't sound like a wish. It sounded like a plan."
 
 # game/02_cap1_conexiones.rpy:3550
 translate english cap1_interconexion_6_d647101c:
@@ -6030,11 +6024,11 @@ translate english cap1_interconexion_6_e3a98f42:
     # narrador "Nino e Itsuki comparaban respuestas en voz baja, codo con codo, sin mirarse."
     narrador "Nino and Itsuki were comparing answers in low voices, elbow to elbow, not looking at each other."
 
-# game/02_cap1_conexiones.rpy:3642
-translate english cap1_interconexion_6_8517036b:
+# game/02_cap1_conexiones.rpy:3640
+translate english cap1_interconexion_6_90cd3469:
 
-    # narrador "Como quien negocia una tregua."
-    narrador "Like people negotiating a truce."
+    # narrador "Parecía una tregua."
+    narrador "It looked like a truce."
 
 # game/02_cap1_conexiones.rpy:3644
 translate english cap1_interconexion_6_7d5178a0:
@@ -6084,11 +6078,11 @@ translate english cap1_interconexion_6_80bb3c1c:
     # mc_pensamiento "No sé cómo les irá."
     mc_pensamiento "I don't know how they'll do."
 
-# game/02_cap1_conexiones.rpy:3660
-translate english cap1_interconexion_6_afcc39b4:
+# game/02_cap1_conexiones.rpy:3658
+translate english cap1_interconexion_6_96b676b7:
 
-    # mc_pensamiento "Por primera vez, tengo motivos para pensar que bien."
-    mc_pensamiento "For the first time, I have reason to think it'll go well."
+    # mc_pensamiento "Esta vez tengo motivos para pensar que bien."
+    mc_pensamiento "This time I've got reasons to think it'll go well."
 
 # game/02_cap1_conexiones.rpy:3662
 translate english cap1_interconexion_6_17ec1501:
@@ -6456,11 +6450,11 @@ translate english cap1_interconexion_6_09bf44ca:
     # narrador "Ichika se estiró y soltó un bostezo de verdad. No de actuación."
     narrador "Ichika stretched and let out a real yawn. Not an act."
 
-# game/02_cap1_conexiones.rpy:3836
-translate english cap1_interconexion_6_2870129f:
+# game/02_cap1_conexiones.rpy:3834
+translate english cap1_interconexion_6_ac5d5130:
 
-    # narrador "Y, por primera vez, no dijo que el estrés le arruinaba la piel."
-    narrador "And for the first time, she didn't claim stress was ruining her skin."
+    # narrador "Y esta vez no dijo que el estrés le arruinaba la piel."
+    narrador "And this time she didn't say the stress was ruining her skin."
 
 # game/02_cap1_conexiones.rpy:3838
 translate english cap1_interconexion_6_6b21f1a9:
@@ -6480,11 +6474,11 @@ translate english cap1_interconexion_6_739f11a5:
     # itsuki "...Gracias."
     itsuki "...Thank you."
 
-# game/02_cap1_conexiones.rpy:3844
-translate english cap1_interconexion_6_a23f018b:
+# game/02_cap1_conexiones.rpy:3842
+translate english cap1_interconexion_6_14505214:
 
-    # narrador "Lo dijo tan bajito que Nino fingió no oírlo."
-    narrador "She said it so quietly Nino pretended not to hear."
+    # narrador "Tan bajito que Nino fingió no oírlo."
+    narrador "So quietly that Nino pretended not to hear."
 
 # game/02_cap1_conexiones.rpy:3846
 translate english cap1_interconexion_6_f7020fa3:
@@ -6504,11 +6498,11 @@ translate english cap1_interconexion_6_3348a18d:
     # mc "Lo fue."
     mc "It was."
 
-# game/02_cap1_conexiones.rpy:3852
-translate english cap1_interconexion_6_50fa95c7:
+# game/02_cap1_conexiones.rpy:3850
+translate english cap1_interconexion_6_494bb9a9:
 
-    # narrador "Lo dijo sin subirse los audífonos. Y sin pedir perdón después."
-    narrador "She said it without pulling her headphones up. And without apologizing afterward."
+    # narrador "Sin subirse los audífonos. Y sin pedir perdón después."
+    narrador "Without putting her headphones up. And without apologizing after."
 
 # game/02_cap1_conexiones.rpy:3854
 translate english cap1_interconexion_6_b4867af8:
@@ -6564,11 +6558,11 @@ translate english cap1_interconexion_6_8657e07d:
     # yotsuba "¡Mañana seguiremos! ¡Y será mejor!"
     yotsuba "We'll keep going tomorrow! And it'll be better!"
 
-# game/02_cap1_conexiones.rpy:3874
-translate english cap1_interconexion_6_a1be46cc:
+# game/02_cap1_conexiones.rpy:3872
+translate english cap1_interconexion_6_ec29a107:
 
-    # narrador "Lo dijo guardando lápices más tiempo del necesario, esperando que alguien le contestara."
-    narrador "She said it while putting away pencils for longer than necessary, waiting for someone to answer."
+    # narrador "Guardó los lápices más lento de lo necesario, esperando respuesta."
+    narrador "She put the pencils away slower than needed, waiting for an answer."
 
 # game/02_cap1_conexiones.rpy:3876
 translate english cap1_interconexion_6_7d0f5309:
@@ -6642,11 +6636,11 @@ translate english cap1_interconexion_6_ca2b3580:
     # narrador "Se frotó la cara y dijo «mañana me pongo al día»."
     narrador "She rubbed her face and said, \"I'll catch up tomorrow.\""
 
-# game/02_cap1_conexiones.rpy:3902
-translate english cap1_interconexion_6_bd2e9301:
+# game/02_cap1_conexiones.rpy:3900
+translate english cap1_interconexion_6_a46df618:
 
-    # narrador "Sin gracia. Sin guiño. Como quien lo repite desde hace semanas."
-    narrador "No flair. No wink. Like someone who's been saying it for weeks."
+    # narrador "Sin gracia. Sin guiño. Ya sonaba a frase gastada."
+    narrador "No charm. No wink. It already sounded worn out."
 
 # game/02_cap1_conexiones.rpy:3904
 translate english cap1_interconexion_6_f48aab32:
@@ -6666,11 +6660,11 @@ translate english cap1_interconexion_6_cb8cb3c1:
     # narrador "Nino pasó a mi lado con la hoja en blanco, doblada en cuatro."
     narrador "Nino walked past me with her blank sheet, folded in four."
 
-# game/02_cap1_conexiones.rpy:3910
-translate english cap1_interconexion_6_a1f47aee:
+# game/02_cap1_conexiones.rpy:3908
+translate english cap1_interconexion_6_6238d7ad:
 
-    # narrador "No la dejó sobre la mesa. Se la llevó, como quien guarda una prueba."
-    narrador "She didn't leave it on the table. She took it, like someone keeping evidence."
+    # narrador "Se la llevó en vez de dejarla. Como una prueba."
+    narrador "She took it with her instead of leaving it. Like evidence."
 
 # game/02_cap1_conexiones.rpy:3912
 translate english cap1_interconexion_6_4360b091:
@@ -6678,11 +6672,11 @@ translate english cap1_interconexion_6_4360b091:
     # yotsuba "¡Mañana lo hago mejor! ¡Lo prometo!"
     yotsuba "I'll do better tomorrow! I promise!"
 
-# game/02_cap1_conexiones.rpy:3914
-translate english cap1_interconexion_6_371037a1:
+# game/02_cap1_conexiones.rpy:3912
+translate english cap1_interconexion_6_a3b869f8:
 
-    # narrador "Lo dijo sonriendo. Con la hoja casi vacía todavía en la mano."
-    narrador "She said it smiling. The nearly empty sheet still in her hand."
+    # narrador "Sonreía con la hoja casi vacía en la mano."
+    narrador "She was smiling, the nearly blank sheet in her hand."
 
 # game/02_cap1_conexiones.rpy:3916
 translate english cap1_interconexion_6_9d5af914:
