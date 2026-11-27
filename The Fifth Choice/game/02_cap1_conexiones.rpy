@@ -2578,7 +2578,7 @@ label cap1_interconexion_5:
 
     play sound audio.sfx_celular volume 1.0
 
-    narrador "Pasadas las once, me sonó el teléfono. En la pantalla decía «Maruo»."
+    narrador "Pasadas las 11, me sonó el teléfono. En la pantalla decía «Maruo»."
 
     mc "¿Diga?"
 
@@ -2620,7 +2620,7 @@ label cap1_interconexion_5:
 
     narrador "Colgó antes de que pudiera contestarle."
 
-    mc_pensamiento "Me llamó desde un hospital, a las once, para preguntar si sus hijas habían cenado."
+    mc_pensamiento "Me llamó desde un hospital, a las 11, para preguntar si sus hijas habían cenado."
 
     mc_pensamiento "No parecía un hombre que no quisiera estar en casa."
 
@@ -3821,7 +3821,7 @@ label cap1_interconexion_6:
 
     if clima_cap1 == "buena":
 
-        narrador "Terminamos pasadas las seis. Nadie quería ser la primera en irse."
+        narrador "Terminamos pasadas las 6. Nadie quería ser la primera en irse."
 
         narrador "Yotsuba llevaba diez minutos diciendo que era su última pregunta."
 
@@ -3859,7 +3859,7 @@ label cap1_interconexion_6:
 
     elif clima_cap1 == "mixta":
 
-        narrador "Terminamos pasadas las seis. Nadie se fue corriendo, pero nadie se quedó de más."
+        narrador "Terminamos pasadas las 6. Nadie se fue corriendo, pero nadie se quedó de más."
 
         narrador "Ichika recogió sus cosas todavía medio dormida y se despidió con la mano. Sin chiste."
 
@@ -3893,7 +3893,7 @@ label cap1_interconexion_6:
 
     else:
 
-        narrador "Terminamos pasadas las seis. Se fueron saliendo de a una, sin despedirse del todo."
+        narrador "Terminamos pasadas las 6. Se fueron saliendo de a una, sin despedirse del todo."
 
         narrador "Ichika se despertó cuando ya nadie la miraba." 
         
@@ -4043,7 +4043,7 @@ label cap1_interconexion_6:
 
     play sound audio.sfx_puerta_cierra volume 1.2
 
-    narrador "Pasadas las ocho salí del departamento, después de dejarles las últimas hojas de repaso."
+    narrador "Pasadas las 8 salí del departamento, después de dejarles las últimas hojas de repaso."
 
     narrador "El pasillo tenía cinco puertas. Debajo de cada una, una raya de luz."
 

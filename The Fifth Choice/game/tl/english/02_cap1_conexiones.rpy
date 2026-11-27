@@ -4249,10 +4249,10 @@ translate english cap1_interconexion_5_1b3eeeff:
     mc_pensamiento "Just never in front of us."
 
 # game/02_cap1_conexiones.rpy:2581
-translate english cap1_interconexion_5_77c2520a:
+translate english cap1_interconexion_5_dafb8b8f:
 
-    # narrador "Pasadas las once, me sonó el teléfono. En la pantalla decía «Maruo»."
-    narrador "A little after eleven, my phone rang. The screen said \"Maruo.\""
+    # narrador "Pasadas las 11, me sonó el teléfono. En la pantalla decía «Maruo»."
+    narrador "A little after 11, my phone rang. The screen said \"Maruo.\""
 
 # game/02_cap1_conexiones.rpy:2583
 translate english cap1_interconexion_5_22b8942e:
@@ -4357,10 +4357,10 @@ translate english cap1_interconexion_5_61ad566e:
     narrador "He hung up before I could answer."
 
 # game/02_cap1_conexiones.rpy:2623
-translate english cap1_interconexion_5_3023b774:
+translate english cap1_interconexion_5_c74cb338:
 
-    # mc_pensamiento "Me llamó desde un hospital, a las once, para preguntar si sus hijas habían cenado."
-    mc_pensamiento "He called me from a hospital, at eleven, to ask whether his daughters had eaten."
+    # mc_pensamiento "Me llamó desde un hospital, a las 11, para preguntar si sus hijas habían cenado."
+    mc_pensamiento "He called me from a hospital, at 11, to ask whether his daughters had eaten."
 
 # game/02_cap1_conexiones.rpy:2625
 translate english cap1_interconexion_5_e6631429:
@@ -6421,10 +6421,10 @@ translate english cap1_interconexion_6_aa067f33:
     mc_pensamiento "I hope that day never comes."
 
 # game/02_cap1_conexiones.rpy:3824
-translate english cap1_interconexion_6_ddf2c1a3:
+translate english cap1_interconexion_6_3fe9cad6:
 
-    # narrador "Terminamos pasadas las seis. Nadie quería ser la primera en irse."
-    narrador "We finished a little after six. Nobody wanted to be the first to leave."
+    # narrador "Terminamos pasadas las 6. Nadie quería ser la primera en irse."
+    narrador "We finished a little after 6. Nobody wanted to be the first to leave."
 
 # game/02_cap1_conexiones.rpy:3826
 translate english cap1_interconexion_6_af707b41:
@@ -6529,10 +6529,10 @@ translate english cap1_interconexion_6_b3a3b561:
     mc_pensamiento "A month ago I'd have paid for an afternoon like this. And I wouldn't have believed it existed."
 
 # game/02_cap1_conexiones.rpy:3862
-translate english cap1_interconexion_6_3bcd8959:
+translate english cap1_interconexion_6_ab28c06b:
 
-    # narrador "Terminamos pasadas las seis. Nadie se fue corriendo, pero nadie se quedó de más."
-    narrador "We finished a little after six. Nobody ran out, but nobody lingered either."
+    # narrador "Terminamos pasadas las 6. Nadie se fue corriendo, pero nadie se quedó de más."
+    narrador "We finished a little after 6. Nobody ran out, but nobody lingered either."
 
 # game/02_cap1_conexiones.rpy:3864
 translate english cap1_interconexion_6_812a5994:
@@ -6625,10 +6625,10 @@ translate english cap1_interconexion_6_c39a0182:
     mc_pensamiento "I don't know."
 
 # game/02_cap1_conexiones.rpy:3896
-translate english cap1_interconexion_6_f39c2417:
+translate english cap1_interconexion_6_5c53543a:
 
-    # narrador "Terminamos pasadas las seis. Se fueron saliendo de a una, sin despedirse del todo."
-    narrador "We finished a little after six. They left one by one, never quite saying goodbye."
+    # narrador "Terminamos pasadas las 6. Se fueron saliendo de a una, sin despedirse del todo."
+    narrador "We finished a little after 6. They left one by one, never quite saying goodbye."
 
 # game/02_cap1_conexiones.rpy:3898
 translate english cap1_interconexion_6_bf5c1869:
@@ -6883,10 +6883,10 @@ translate english cap1_interconexion_6_6fda3b22:
     narrador "I spent the day going over papers I already knew by heart."
 
 # game/02_cap1_conexiones.rpy:4046
-translate english cap1_interconexion_6_64d39d1a:
+translate english cap1_interconexion_6_48262801:
 
-    # narrador "Pasadas las ocho salí del departamento, después de dejarles las últimas hojas de repaso."
-    narrador "After eight I left the apartment, having dropped off the last review sheets."
+    # narrador "Pasadas las 8 salí del departamento, después de dejarles las últimas hojas de repaso."
+    narrador "After 8 I left the apartment, having dropped off the last review sheets."
 
 # game/02_cap1_conexiones.rpy:4048
 translate english cap1_interconexion_6_3ce8736b:
