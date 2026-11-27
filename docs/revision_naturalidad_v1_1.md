@@ -435,3 +435,149 @@ Auditoría por búsqueda de muletillas con su contexto, no lectura completa. «a
 | 01_prologo | Como si la respuesta llevara horas esperando su turno. | BORRADA |
 | 01_prologo | Lo dijo con total frialdad. Sin amenazar, simplemente dejando las cosas claras. | Frío. Sin amenazar, solo dejando las cosas claras. |
 | 01_prologo | La calma de quien ya dio una orden y no acepta réplicas. | La calma de alguien que da la orden por cumplida. |
+
+## Lectura completa de prólogo, conexiones, Evento 6 y final malo (27/11, ✅ aplicado)
+
+Segunda pasada, leyendo todo el diálogo: líneas poéticas o de molde.
+
+| archivo:línea | antes | ahora |
+|---|---|---|
+| 01_prologo:78 | El restaurante que abrió con mi padre cerró poco después. La deuda no cerró con él. | El restaurante que abrió con mi padre cerró poco después. La deuda sigue ahí. |
+| 01_prologo:205 | El tipo de silencio que delata a alguien que ya aceptó la propuesta en su mente. | Y a mí me delató: en mi cabeza ya había aceptado. |
+| 01_prologo:317 | Es el único rato del día en que este sitio no me echa nada en cara. | A esta hora nadie me recuerda que los demás sí pueden permitirse estar tranquilos. |
+| 01_prologo:319 | Que los demás sí pueden permitirse estar tranquilos. | BORRADA |
+| 01_prologo:491 | Saqué mis apuntes de la mochila y dejé que el silencio hiciera su trabajo. | Saqué mis apuntes de la mochila y me puse a lo mío. |
+| 01_prologo:531 | Como dos países que firman una tregua sin reconocerse. | Una tregua que ninguno de los dos iba a admitir. |
+| 01_prologo:580 | Es curioso lo tranquilo que uno puede estar cuando no sabe a lo que se enfrenta. | Estaba tranquilo. Todavía no sabía a lo que me enfrentaba. |
+| 01_prologo:582 | Piso alto. Puerta doble de madera fina. El tipo de lugar que impone silencio solo con verlo. | Piso alto. Puerta doble de madera fina. Daba hasta reparo tocarla. |
+| 01_prologo:987 | Y yo de pie con la mochila colgando y la sensación exacta de haber firmado algo sin leerlo. | Y yo ahí parado, con la mochila colgando, como si hubiera firmado algo sin leerlo. |
+| 02_cap1_conexiones:519 | Para ella, decirme que lo había hecho sola ya era una forma de darme las gracias. | Viniendo de ella, eso era un gracias. |
+| 02_cap1_conexiones:601 | Ella me la devolvía a su manera: tachada. | Y ella me devolvió la mía tachada. |
+| 02_cap1_conexiones:896 | Se detuvo. Una oración de Itsuki sin cerrar era como ver a alguien tropezar en terreno plano. | Se detuvo. En Itsuki, dejar una frase a medias es rarísimo. |
+| 02_cap1_conexiones:1503 | La excusa le llegó un segundo tarde. La pregunta, no. | Preguntó rápido. La excusa tardó más. |
+| 02_cap1_conexiones:1870 | Solo digo que el reloj no espera. | Solo digo que te queda poco tiempo. |
+| 02_cap1_conexiones:1872 | Y cada uno lo sabe. | BORRADA |
+| 02_cap1_conexiones:1881 | Todas se marcharon, esperando que yo dé el siguiente paso. | Todas se marcharon, esperando que yo diera el siguiente paso. |
+| 02_cap1_conexiones:1895 | Cada tarde que le brindo a una es una tarde que no tienen las demás. | Cada tarde con una es una menos para las demás. |
+| 02_cap1_conexiones:1931 | No sé si sabré hacerlo otra vez. Con la siguiente, la puerta será otra. | No sé si sabré hacerlo otra vez. Con la siguiente tendré que buscar otra forma. |
+| 02_cap1_conexiones:2190 | No sonó a reproche. Sonó a algo que llevaba un rato pensando. | Más que un reproche, parecía algo que llevaba rato pensando. |
+| 02_cap1_conexiones:2274 | El hueco entre Ichika y Miku se notaba más que cualquier cosa que dijeran. | El hueco entre Ichika y Miku se notaba mucho. |
+| 02_cap1_conexiones:2439 | Supongo que a veces el silencio es lo único que cabe entre dos personas. | Supongo que a veces no hay más que decir. |
+| 02_cap1_conexiones:2558 | No me quites la culpa. Es lo único que me sobra. | No me quites la culpa. Esa es mía. |
+| 02_cap1_conexiones:2623 | No parecía un hombre que no quisiera estar en casa. | Quizá no es que no quiera estar en casa. |
+| 02_cap1_conexiones:2625 | Parecía uno que no sabía cómo volver. | Quizá es que no sabe cómo volver. |
+| 02_cap1_conexiones:2673 | Mirando el calendario da igual: la cuenta asusta igual. | Y mirando el calendario asusta igual. |
+| 02_cap1_conexiones:2752 | No sonó a reproche. Más bien sonó a un ruego disfrazado de orden. | Más que una orden, era un ruego. |
+| 02_cap1_conexiones:2812 | Esa calma no era suya. La había heredado. | Esa calma la sacó de él. |
+| 02_cap1_conexiones:2814 | Y yo se la había hecho usar. | Y la estaba usando por mi culpa. |
+| 02_cap1_conexiones:3575 | Cuando Ichika no rellena un silencio con un chiste, ese silencio es molestia. | Si ni Ichika suelta un chiste, es que están molestas. |
+| 02_cap1_conexiones:3660 | De eso estoy seguro. | BORRADA |
+| 02_cap1_conexiones:3759 | Lo peor no era la amenaza. Era que sonaba a algo ya decidido. | Lo peor era que sonaba a algo ya decidido. |
+| 02_cap1_conexiones:3761 | Mi destino ya estaba sellado. | BORRADA |
+| 02_cap1_conexiones:3920 | Dos palabras, sin una pizca de rencor. Y sin una sola de calidez. | Dos palabras. Sin rencor, pero secas. |
+| 02_cap1_conexiones:4054 | Hacía un mes, cada puerta cerrada era un portazo. | Hace un mes me cerraban la puerta en la cara. |
+| 02_cap1_conexiones:4056 | Esa noche estaban cerradas por la misma razón. | Esa noche estaban cerradas porque estaban estudiando. |
+| 02_cap1_evento6:234 | No por desinterés: por haber llegado al final de lo que se podía repasar. | Ya no quedaba nada que repasar. |
+| 02_cap1_evento6:238 | Cada una. | BORRADA |
+| 02_cap1_evento6:345 | La sonrisa, en su sitio. Los ojos, en la pizarra. | Sonreía, pero miraba a la pizarra. |
+| 02_cap1_evento6:489 | No era una frase cualquiera. | BORRADA |
+| 02_cap1_evento6:491 | Cada palabra tenía un nombre detrás. | Pensé en cada una al decirlo. |
+| 02_cap1_evento6:538 | No hacía falta. Una frase así no se repite: se cumple. | Con Maruo no hacía falta: lo iba a cumplir. |
+| 02_cap1_evento6:540 | Cinco exámenes, cinco días, y esa frase sentada al lado de cada uno. | Cinco exámenes, cinco días, y esa frase dándome vueltas en cada uno. |
+| 02_cap1_evento6:544 | Hoy entro con cinco nombres. Y con la palabra exactamente donde estaba. | Hoy entro pensando en cinco nombres. La palabra sigue ahí. |
+| 02_cap1_evento6:553 | Treinta días no alcanzan para saber nada. Solo para dejar de ser un desconocido. | En treinta días no se conoce a nadie. Al menos ya no soy un desconocido. |
+| 02_cap1_evento6:555 | No sé si fue suficiente. Esa es la verdad completa, y es incómodamente corta. | No sé si fue suficiente. Es todo lo que puedo decir. |
+| 02_cap1_evento6:557 | No tengo una palabra clavada esta vez. Tengo un número: cinco. | Esta vez no pienso en el despido. Pienso en un número: cinco. |
+| 02_cap1_evento6:561 | Hoy no se evalúa lo que yo hice. Se evalúa lo que ellas ya sabían. | Hoy les toca a ellas, no a mí. |
+| 02_cap1_evento6:574 | Pero esta mañana los cinco nombres suenan distinto. | Pero esta mañana las veo de otra forma. |
+| 02_cap1_evento6:610 | En un examen nadie habla. Eso no quiere decir que nadie piense. | BORRADA |
+| 02_cap1_evento6:718 | Es una buena respuesta. Y es la única que no puedo comprobar. | Es una buena respuesta. Aunque no sé cómo termina. |
+| 02_cap1_evento6:734 | Cada tramo mide lo mismo. Ninguna carrera la gana una sola. | En un relevo todas corren lo mismo. Ninguna gana sola. |
+| 02_cap1_evento6:738 | Y el testigo no pesa menos por pasar por mis manos. | Y mi tramo vale igual. |
+| 02_cap1_evento6:748 | Hay carreras que se corren por dentro. Esta la corrió entera, de un tirón. | Terminó de un tirón. |
+| 02_cap1_evento6:793 | Esta vez no era una hoja en blanco. Era una frase en blanco. | Esta vez no dejó la hoja en blanco. Solo una frase. |
+| 02_cap1_evento6:808 | Esta vez la hoja estaba llena. Esta vez no miró a nadie. | La hoja estaba llena. Y no miró a nadie. |
+| 02_cap1_evento6:825 | Reparte lo que le sobra antes de que se lo pidan. Y se queda con lo que le falta. | Ayuda antes de que se lo pidan. Lo suyo lo deja para después. |
+| 02_cap1_evento6:872 | De los que se resuelven con una resta y un poco de aire. | Se resuelve con una resta y un poco de calma. |
+| 02_cap1_evento6:874 | Aire es justo lo que a ella no le sobra. | Y calma es lo que menos le sobra. |
+| 02_cap1_evento6:932 | O mi mejor escondite. Hablamos diez minutos de un dragón. Los dos sabíamos de qué no. | O mi mejor escondite. Diez minutos de dragón para no hablar de lo otro. |
+| 02_cap1_evento6:1002 | Hay ensayos que se hacen por dentro, sin público. Este lo hizo completo. | Siguió con el examen. |
+| 02_cap1_evento6:1022 | Ichika resolvió el examen en lo que tarda en cerrarse una puerta. | Ichika resolvió el examen en nada. |
+| 02_cap1_evento6:1058 | La sonrisa estaba en su cara desde que empezó, igual de quieta que el reloj de la pared. | La sonrisa estaba en su cara desde que empezó y no se movió. |
+| 02_cap1_evento6:1060 | Una hoja perfecta y una sonrisa perfecta. Eso era lo que se veía. | La hoja perfecta y la sonrisa perfecta. Por fuera, al menos. |
+| 02_cap1_evento6:1062 | Contesta como se contesta cuando alguien tiene razón: rápido y sin adornos. | Contesta rápido y sin adornos, como si me diera la razón. |
+| 02_cap1_evento6:1077 | Una línea, una pregunta. Las dos cosas a medias, y las dos bien. | Hacía las dos cosas a medias, y las dos le salían. |
+| 02_cap1_evento6:1079 | Eso no es hacer dos cosas. Es no soltar ninguna. | No quiere soltar ninguna. |
+| 02_cap1_evento6:1081 | Con ella el cansancio nunca se nota en lo que hace. | Y el problema es que nunca para. |
+| 02_cap1_evento6:1083 | Se nota en que nunca para. | BORRADA |
+| 02_cap1_evento6:1132 | Así que no se lo dije. Hay cosas que es mejor no señalarlas. | Así que no se lo dije. |
+| 02_cap1_evento6:1138 | Nino iba a la velocidad de un tren que no frena. | Nino iba a toda velocidad. |
+| 02_cap1_evento6:1218 | Así nunca duele a tiempo. Duele por adelantado. Y duele siempre. | Así duele por adelantado. Y duele siempre. |
+| 02_cap1_evento6:1232 | Hay letras que, si dejas de mirarlas, se te olvida cómo eran. | Si dejo de mirarla, se me olvida cómo era la letra. |
+| 02_cap1_evento6:1355 | Nino dejó el lápiz sobre la mesa. No lo soltó: lo dejó. Hay una diferencia. | Nino dejó el lápiz sobre la mesa con cuidado. |
+| 02_cap1_evento6:1359 | Hay compras que se hacen de memoria. | La lista de la compra la hizo de memoria, de un tirón. |
+| 02_cap1_evento6:1361 | Esta la hizo completa, de un tirón. | BORRADA |
+| 02_cap1_evento6:1383 | Sin tachar. Una línea en blanco no se pierde: se espera. | Sin tachar. Puede esperar. |
+| 02_cap1_evento6:1387 | Si cae, cae. Pero no voy a ganarle la mano para que duela primero. | Si cae, cae. Pero no voy a sufrirlo antes de tiempo. |
+| 02_cap1_evento6:1429 | A las demás no les echó ni una mirada de guardia. Ni una. | A las demás no las miró ni una vez. |
+| 02_cap1_evento6:1431 | Ya no hacía falta vigilar a las demás. | BORRADA |
+| 02_cap1_evento6:1435 | Quien ve venir el golpe se queda a esperarlo. Quien no lo adelanta, sale. | BORRADA |
+| 02_cap1_evento6:1437 | Se fue sin vigilarlas. Y nadie se cayó. | Se fue sin vigilarlas. Y no pasó nada. |
+| 02_cap1_evento6:1732 | Levantó la mano. Despacio, con el codo recto, como se levanta algo que pesa. | Levantó la mano. Despacio, con el codo recto, como si le pesara. |
+| 02_cap1_evento6:1794 | Hace un mes apartar la mirada era su forma de no deberme nada. | Hace un mes me apartaba la mirada para no deberme nada. |
+| 02_cap1_evento6:1796 | Hoy mirar era no ocultar nada. | Hoy ya no esconde nada. |
+| 02_cap1_evento6:1819 | Con ella, tardarse también es una forma de orgullo. | Tarda, pero no cede. |
+| 02_cap1_evento6:1823 | Apretaba el lápiz no por rabia, sino por su forma de ser. | Apretaba fuerte el lápiz. Es su manera de ser. |
+| 02_cap1_evento6:1861 | Los dos dejamos la misma pregunta sin hacer. Nadie avanzó. | Ninguno de los dos preguntó. |
+| 02_cap1_evento6:1912 | Lo que escribiera de más sería ella. Lo que no escribiera, también. | Escribir de más o callarse dependía solo de ella. |
+| 02_cap1_evento6:1951 | ...Cuando acabe de pensar en esa canción, quedará el sonido del reloj del aula. | ...Cuando se me acabe, solo quedará el reloj del aula. |
+| 02_cap1_evento6:1953 | ...El reloj nunca ha pedido perdón. | BORRADA |
+| 02_cap1_evento6:2050 | Hay respuestas que se escriben solas. | BORRADA |
+| 02_cap1_evento6:2052 | Esta lo hizo de una vez, de principio a fin. | Lo escribió todo de una vez. |
+| 02_cap1_evento6:2080 | La goma seguía siendo una goma. | No usó la goma ni una vez. |
+| 02_cap1_evento6:2082 | Hace un mes eso habría sido una noticia. | Hace un mes eso habría sido impensable. |
+| 02_cap1_evento6:2088 | Plegados, no puestos. Como se dejan las llaves en la entrada. | Plegados. Hoy no le hacían falta. |
+| 02_cap1_evento6:2109 | Es una forma de borrar en la que no se usa goma. | Para el caso, es lo mismo que borrar. |
+| 02_cap1_evento6:2128 | Tuve razón en la letra del temario. Esa fue otra forma de no ganar. | Yo tenía razón sobre el temario. Y no me alegraba. |
+| 02_cap1_evento6:2276 | Hubo un silencio corto. De los que se llenan solos. | Hubo un silencio corto. |
+| 02_cap1_evento6:2346 | Me miraron las cinco. Cinco preguntas iguales, y ninguna en voz alta. | Me miraron las cinco. Querían preguntar lo mismo, y ninguna lo hizo. |
+| 02_cap1_evento6:2432 | Las aulas vacías se vuelven a llenar. | El lunes se vuelve a llenar. |
+| 02_cap1_evento6:2466 | No saberlo todavía me pesaba. Lo que cambió fue que esta vez no lo cargaba solo. | No saberlo me pesaba, pero esta vez no estaba solo. |
+| 02_cap1_evento6:2509 | Aun así, un papel puede decir otra cosa. Los papeles no conocen a nadie. | Aun así, la nota puede decir otra cosa. |
+| 02_cap1_evento6:2616 | No era otra persona. Eso es lo que todavía no me creo. | Era yo. Eso es lo que todavía no me creo. |
+| 02_cap1_evento6:2679 | No sonrió para nadie. Fue una sonrisa pequeña, de las que no se ensayan. | No sonrió para nadie. Fue una sonrisa pequeña, sin ensayar. |
+| 02_cap1_evento6:2954 | Hasta al que nunca entraba en la cuenta: yo. | Hasta a mí, que nunca entraba en la cuenta. |
+| 02_cap1_evento6:2964 | Lo preguntó como hermana mayor. Por costumbre de contar a todos. | Lo preguntó como hermana mayor, siempre pendiente de todos. |
+| 02_cap1_evento6:3034 | Como se cierra algo que todavía no ha terminado. | BORRADA |
+| 02_cap1_evento6:3209 | No sonó a elogio. Tampoco a reproche. Sonó a alguien que sigue haciendo la cuenta. | Ni elogio ni reproche. Parecía seguir haciendo cuentas. |
+| 02_cap1_evento6:3280 | En esta sala el silencio y la espera siempre han sido lo mismo. | En esta sala siempre me toca esperar en silencio. |
+| 02_cap1_evento6:3297 | Detrás de esas no había falta de ganas. Había costumbre de esperar. | No es que no quisieran salir. Están acostumbradas a esperar. |
+| 02_cap1_evento6:3307 | Como se lleva algo que todavía no es de uno. | Como si todavía no fuera suyo. |
+| 02_cap1_evento6:3393 | Yotsuba miró su boletín con la cara con la que se mira una pista vacía. | Yotsuba miró su boletín sin su energía de siempre. |
+| 02_cap1_evento6:3635 | Se detuvo. La oración se quedó abierta, sin sujeto. En ella, eso es casi un grito. | Se detuvo. La oración se quedó abierta. Viniendo de ella, es rarísimo. |
+| 02_cap1_evento6:3702 | Se rió. Una sola nota, corta, como un acorde. | Soltó una risa corta. |
+| 02_cap1_evento6:3753 | Miku se detuvo en la puerta con el boletín contra el pecho, como se lleva un libro. | Miku se detuvo en la puerta con el boletín contra el pecho, igual que sus libros. |
+| 02_cap1_evento6:3805 | Itsuki se calló. Yo también me callé. La frase se quedó entre los dos, sin dueño. | Itsuki se calló. Yo también. La frase se quedó a medias. |
+| 02_cap1_evento6:3807 | La disculpa seguía entre nosotros. Y esta vez no me pareció tarde: me pareció pendiente. | La disculpa seguía pendiente. Todavía estábamos a tiempo. |
+| 02_cap1_evento6:4076 | Hace un mes se pusieron de acuerdo para fallar igual. | Hace un mes reaccionaban todas igual: en mi contra. |
+| 02_cap1_evento6:4078 | Hoy se pusieron de acuerdo para mostrarse distintas. | Hoy, cada una a su manera. |
+| 02_cap1_evento6:4154 | Pensé en decirles que la foto ya estaba. No lo dije. Hay cosas que un «ya está» arruina. | Pensé en decirles que la foto ya estaba. No quise arruinar el momento. |
+| 02_cap1_evento6:4196 | Ahora formo parte de ellas, y ellas de mí. | Ya me sentía parte de ellas. |
+| 02_cap1_evento6:4285 | Esta noche la oí de fondo, como se oye un reloj en otro cuarto. | Esta noche casi ni la escuché. |
+| 02_cap1_evento6:4289 | Lo dije por costumbre. Pero esta vez la costumbre pesaba lo mismo que las palabras. | Lo dije por costumbre. Pero esta vez lo decía en serio. |
+| 02_cap1_evento6:4293 | Esta noche el «todo» tenía cinco personas más. Y ninguna cabía en una factura. | Ahora hay cinco personas más. Y no salen en ninguna factura. |
+| 02_cap1_evento6:4362 | Y entonces lo entendí, lo que siempre me estaba preguntando. | Y ahí estaba la respuesta que llevaba un mes buscando. |
+| 02_cap1_evento6:4399 | Esas no caducan. Se cumplen. | Esas sí las voy a cumplir. |
+| 02_cap1_evento6:4418 | La condición no se venció: se renovó. | La condición sigue en pie para la próxima. |
+| 02_cap1_evento6:4438 | Abrí las fotos sin contener el aire. Hace un mes no sabía hacerlo. | Abrí las fotos sin aguantar la respiración. Hace un mes no sabía hacerlo. |
+| 02_cap1_evento6:4442 | Y cuando alguien te importa, lo único que queda por temer es lo que viene después. | Y como me importan, ya me preocupa lo que viene. |
+| 02_cap1_evento6:4484 | Con la lámpara encendida, el reflejo de mi familia. | Con la lámpara encendida, ahí está mi familia. |
+| 02_cap1_evento6:4512 | Pensé que lo pagaría caro. No lo pagué solo. | Pensé que lo pagaría caro. Pero no estuve solo. |
+| 02_cap1_evento6:4516 | Eso no viene en ningún libro: los que no pueden equivocarse no tienen por qué hacerlo solos. | Eso no viene en ningún libro: no tenía por qué cargarlo yo solo. |
+| 02_cap1_evento6:4771 | De mi madre recuerdo poco. Cómo daba las gracias no estaba entre eso. | De mi madre recuerdo poco. Ni siquiera cómo daba las gracias. |
+| 02_cap1_evento6:4773 | Resulta que lo llevaba yo. Sin saberlo. | Resulta que lo hago igual que ella. Sin saberlo. |
+| 02_cap1_evento6:4785 | Como se dejan los boletines antes de leerlos. | BORRADA |
+| 02_cap1_final_malo:98 | Lo que ella había pedido a gritos acababa de pasar sin que nadie gritara. | Nino acababa de conseguir lo que pedía a gritos. |
+| 02_cap1_final_malo:732 | Solo que esta vez la función no era para nadie. | Solo que esta vez no actuaba para nadie. |
+| 02_cap1_final_malo:1103 | Cada vez que alguien necesitaba que me quedara callado, hablé. | Hablé cuando debía callarme, y me callé cuando debía hablar. |
+| 02_cap1_final_malo:1105 | Y cada vez que necesitaba hablar, me quedé callado. | BORRADA |
