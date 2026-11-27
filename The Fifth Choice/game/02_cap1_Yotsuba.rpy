@@ -228,7 +228,7 @@ label hub_Yotsuba:
 
     yotsuba "Yo corro y animo. Así que lo hago lo mejor que puedo."
 
-    narrador "Sonrió. Era una sonrisa buena, sin fisuras visibles."
+    narrador "Sonrió. Parecía una sonrisa de verdad."
 
     mc_pensamiento "Si no supiera lo que acaba de decir, pensaría que está contenta."
 
@@ -485,7 +485,7 @@ label yotsuba_m4b:
 
     yotsuba "¡Mi cabeza va a donde van las piernas! ¡Equipo completo!"
 
-    narrador "Se rió de su propio chiste. Era una risa fácil, sin trampa."
+    narrador "Se rió de su propio chiste, con ganas."
 
     mc_pensamiento "Esquivó el tema." 
                                  
@@ -555,7 +555,7 @@ label yotsuba_m4c:
 
     mc_pensamiento "Acabo de decirle a alguien que se concentre en la única cosa que cree que la hace valer."
 
-    mc_pensamiento "Y ahora mismo no sé si le di una instrucción o una sentencia."
+    mc_pensamiento "Y ahora mismo no sé si eso le hizo bien o mal."
 
     jump yotsuba_m5  
 

@@ -445,10 +445,10 @@ translate english hub_Yotsuba_f478a62d:
     yotsuba "I run and cheer. So I do it as well as I can."
 
 # game/02_cap1_Yotsuba.rpy:231
-translate english hub_Yotsuba_f524c16f:
+translate english hub_Yotsuba_1aa90196:
 
-    # narrador "Sonrió. Era una sonrisa buena, sin fisuras visibles."
-    narrador "She smiled. A good smile, with no visible cracks."
+    # narrador "Sonrió. Parecía una sonrisa de verdad."
+    narrador "She smiled. It looked like a real smile."
 
 # game/02_cap1_Yotsuba.rpy:233
 translate english hub_Yotsuba_0175ae5f:
@@ -948,11 +948,11 @@ translate english yotsuba_m4b_5f541407:
     # yotsuba "¡Mi cabeza va a donde van las piernas! ¡Equipo completo!"
     yotsuba "My head goes where my legs go! Full team!"
 
-# game/02_cap1_Yotsuba.rpy:492
-translate english yotsuba_m4b_155c062d:
+# game/02_cap1_Yotsuba.rpy:488
+translate english yotsuba_m4b_fca9fc9d:
 
-    # narrador "Se rió de su propio chiste. Era una risa fácil, sin trampa."
-    narrador "She laughed at her own joke. An easy laugh, no catch."
+    # narrador "Se rió de su propio chiste, con ganas."
+    narrador "She laughed hard at her own joke."
 
 # game/02_cap1_Yotsuba.rpy:494
 translate english yotsuba_m4b_7449d565:
@@ -1086,11 +1086,11 @@ translate english yotsuba_m4c_b4bd44bb:
     # mc_pensamiento "Acabo de decirle a alguien que se concentre en la única cosa que cree que la hace valer."
     mc_pensamiento "I just told someone to focus on the only thing she thinks makes her worth anything."
 
-# game/02_cap1_Yotsuba.rpy:562
-translate english yotsuba_m4c_946a5c21:
+# game/02_cap1_Yotsuba.rpy:558
+translate english yotsuba_m4c_e7331d6d:
 
-    # mc_pensamiento "Y ahora mismo no sé si le di una instrucción o una sentencia."
-    mc_pensamiento "And right now I don't know if I gave her an instruction or a sentence."
+    # mc_pensamiento "Y ahora mismo no sé si eso le hizo bien o mal."
+    mc_pensamiento "And right now I don't know if that helped her or hurt her."
 
 # game/02_cap1_Yotsuba.rpy:577
 translate english yotsuba_m5_cbf71d57:
