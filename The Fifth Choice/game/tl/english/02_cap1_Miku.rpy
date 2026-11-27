@@ -151,10 +151,10 @@ translate english hub_Miku_57d53baa:
     mc "Someone told me quiet people always have a secret corner."
 
 # game/02_cap1_Miku.rpy:104
-translate english hub_Miku_39f3464f:
+translate english hub_Miku_711fe208:
 
-    # narrador "Algo se le movió en la cara al oír eso, tan rápido que no me dio tiempo a leerlo."
-    narrador "Something shifted in her face when she heard that, too fast for me to read."
+    # narrador "Puso una cara rara al oírlo, tan rápido que no me dio tiempo a leerla."
+    narrador "She made a strange face at that, so fast I didn't have time to read it."
 
 # game/02_cap1_Miku.rpy:106
 translate english hub_Miku_cbb424b3:
@@ -187,10 +187,10 @@ translate english hub_Miku_0a09b3be:
     miku "...Oh."
 
 # game/02_cap1_Miku.rpy:116
-translate english hub_Miku_cec371de:
+translate english hub_Miku_94a808ee:
 
-    # narrador "No pareció convencerle del todo, pero tampoco se levantó."
-    narrador "She didn't seem totally convinced, but she didn't get up either."
+    # narrador "No parecía convencida del todo, pero tampoco se levantó."
+    narrador "She didn't seem entirely convinced, but she didn't get up either."
 
 # game/02_cap1_Miku.rpy:125
 translate english hub_Miku_9994e0f6:
@@ -325,16 +325,10 @@ translate english hub_Miku_35301942:
     mc_pensamiento "Ready to slip them on the second someone talks to her."
 
 # game/02_cap1_Miku.rpy:172
-translate english hub_Miku_fabeaccc:
+translate english hub_Miku_520c35e9:
 
-    # mc_pensamiento "No es que no sepa."
-    mc_pensamiento "It's not that she doesn't know."
-
-# game/02_cap1_Miku.rpy:174
-translate english hub_Miku_51a75f36:
-
-    # mc_pensamiento "Es que no piensa hablar de nada que le importe delante de alguien que va a calificarla."
-    mc_pensamiento "She just won't talk about anything she cares about in front of someone who's going to grade her."
+    # mc_pensamiento "Sí sabe. Pero no va a hablar de lo que le importa con alguien que la va a calificar."
+    mc_pensamiento "She does know. But she won't talk about what matters to her with someone who's going to grade her."
 
 # game/02_cap1_Miku.rpy:176
 translate english hub_Miku_5c0d2ed1:
@@ -444,11 +438,11 @@ translate english hub_Miku_cea1a719:
     # narrador "Miku cerró el libro sobre el dedo índice, para no perder la página."
     narrador "Miku closed the book over her index finger to keep her place."
 
-# game/02_cap1_Miku.rpy:226
-translate english hub_Miku_a878b252:
+# game/02_cap1_Miku.rpy:224
+translate english hub_Miku_499ed199:
 
-    # mc_pensamiento "Era la primera vez que dejaba de mirar a otro lado."
-    mc_pensamiento "It was the first time she'd stopped looking away."
+    # mc_pensamiento "Por fin dejó de mirar a otro lado."
+    mc_pensamiento "She finally stopped looking somewhere else."
 
 # game/02_cap1_Miku.rpy:231
 translate english hub_Miku_6579a48c:
@@ -684,17 +678,11 @@ translate english hub_Miku_2869e2a8:
     # narrador "Se paró en mitad de la palabra."
     narrador "She stopped in the middle of a word."
 
-# game/02_cap1_Miku.rpy:320
-translate english hub_Miku_2f08b67b:
+# game/02_cap1_Miku.rpy:318
+translate english hub_Miku_2bede631:
 
-    # narrador "Creo que se oyó."
-    narrador "I think she heard it."
-
-# game/02_cap1_Miku.rpy:322
-translate english hub_Miku_cd3d67c8:
-
-    # narrador "Fue eso: se oyó a sí misma hablando en voz alta durante un minuto entero."
-    narrador "That was it: she'd heard herself talking out loud for a whole minute."
+    # narrador "Se había oído: llevaba un minuto entero hablando en voz alta."
+    narrador "She'd heard herself: she'd been talking out loud for a whole minute."
 
 # game/02_cap1_Miku.rpy:324
 translate english hub_Miku_5058e8da_4:
@@ -750,11 +738,11 @@ translate english hub_Miku_75174b79:
     # mc_pensamiento "Tercera vez que dice algo que nadie le pidió. Y otra vez, el perdón detrás."
     mc_pensamiento "Third time she's said something nobody asked for. And the apology right behind it, again."
 
-# game/02_cap1_Miku.rpy:352
-translate english hub_Miku_68b114ec:
+# game/02_cap1_Miku.rpy:348
+translate english hub_Miku_4158b8e0:
 
-    # mc_pensamiento "Nadie le enseñó a callarse. Se lo fueron enseñando las caras de los demás."
-    mc_pensamiento "Nobody taught her to be quiet. Other people's faces did, one at a time."
+    # mc_pensamiento "A callarse no la mandó nadie. Lo aprendió viendo las caras de la gente."
+    mc_pensamiento "Nobody told her to shut up. She learned it from watching people's faces."
 
 # game/02_cap1_Miku.rpy:360
 translate english hub_Miku_57a39a85:
@@ -816,17 +804,17 @@ translate english miku_m4a_cbcb41f7:
     # miku "Eso es lo que a la gente se le esca—"
     miku "That's what people over—"
 
-# game/02_cap1_Miku.rpy:407
-translate english miku_m4a_6afbd7dc:
+# game/02_cap1_Miku.rpy:403
+translate english miku_m4a_7d3fd9f7:
 
-    # narrador "Se detuvo otra vez. Pero esta vez se detuvo distinto."
-    narrador "She stopped again. But this time it was different."
+    # narrador "Se detuvo otra vez."
+    narrador "She stopped again."
 
-# game/02_cap1_Miku.rpy:409
-translate english miku_m4a_2fe1dc42:
+# game/02_cap1_Miku.rpy:405
+translate english miku_m4a_1f7d0573:
 
-    # narrador "Se detuvo mirándome a mí, no al libro."
-    narrador "She stopped looking at me, not at the book."
+    # narrador "Pero ahora me miraba a mí, no al libro."
+    narrador "But now she was looking at me, not at the book."
 
 # game/02_cap1_Miku.rpy:411
 translate english miku_m4a_4e6d0084:
@@ -852,11 +840,11 @@ translate english miku_m4a_82fa21d2:
     # mc "Estabas contestando una pregunta que te hice yo. Eso no se disculpa."
     mc "You were answering a question I asked. You don't apologize for that."
 
-# game/02_cap1_Miku.rpy:419
-translate english miku_m4a_d7097891:
+# game/02_cap1_Miku.rpy:415
+translate english miku_m4a_4ebcf3c3:
 
-    # narrador "No dijo nada. Se le puso el libro a media altura, sin llegar a subirlo del todo."
-    narrador "She said nothing. The book hung at half height, not quite going back up."
+    # narrador "El libro se le quedó a media altura, sin llegar a subir del todo."
+    narrador "The book stayed halfway up, never quite getting all the way."
 
 # game/02_cap1_Miku.rpy:421
 translate english miku_m4a_2ef9ed9f:
@@ -882,29 +870,23 @@ translate english miku_m4a_435d662f:
     # miku "...Lo de la sal está en la ciento veinte."
     miku "...The salt part is on one-twenty."
 
+# game/02_cap1_Miku.rpy:431
+translate english miku_m4a_6b21fdaa:
+
+    # mc_pensamiento "Ahí lo había entendido ella."
+    mc_pensamiento "That's when she got it."
+
+# game/02_cap1_Miku.rpy:433
+translate english miku_m4a_1cc6e298:
+
+    # mc_pensamiento "Le daba igual que yo supiera del tema."
+    mc_pensamiento "She didn't care whether I knew the subject."
+
 # game/02_cap1_Miku.rpy:435
-translate english miku_m4a_ab305321:
+translate english miku_m4a_ea6b417d:
 
-    # narrador "Lo dijo despacio, como quien termina una cuenta."
-    narrador "She said it slowly, like someone finishing a sum."
-
-# game/02_cap1_Miku.rpy:437
-translate english miku_m4a_5c585618:
-
-    # mc_pensamiento "Ahí estaba lo que acababa de entender."
-    mc_pensamiento "That's what I'd just realized."
-
-# game/02_cap1_Miku.rpy:439
-translate english miku_m4a_a5f9b32d:
-
-    # mc_pensamiento "No que yo supiera de esto."
-    mc_pensamiento "It wasn't that I knew about this."
-
-# game/02_cap1_Miku.rpy:441
-translate english miku_m4a_d497cd25:
-
-    # mc_pensamiento "Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche en ello."
-    mc_pensamiento "It was the opposite: I knew nothing, and I'd still spent the whole night on it."
+    # mc_pensamiento "Lo que le llegó es que, sin saber nada, me pasé la noche leyéndolo."
+    mc_pensamiento "What got to her was that, knowing nothing, I'd spent the night reading it."
 
 # game/02_cap1_Miku.rpy:443
 translate english miku_m4a_92b924c1:
@@ -1032,11 +1014,11 @@ translate english miku_m4c_6d725350:
     # narrador "No protestó. No se defendió."
     narrador "She didn't protest. She didn't defend herself."
 
-# game/02_cap1_Miku.rpy:524
-translate english miku_m4c_e20bfc3f:
+# game/02_cap1_Miku.rpy:518
+translate english miku_m4c_124dcd25:
 
-    # narrador "Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba."
-    narrador "She nodded once, very slowly, as if I'd confirmed something she already suspected."
+    # narrador "Asintió una vez, muy despacio. Eso ya se lo esperaba."
+    narrador "She nodded once, very slowly. She'd seen that one coming."
 
 # game/02_cap1_Miku.rpy:529
 translate english miku_m4c_78db6ee4:

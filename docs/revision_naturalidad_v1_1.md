@@ -175,3 +175,38 @@ contrastes «No es X. Es Y.» seguidos (quedan 1: la revelación de las líneas 
 |---|---|---|---|---|---|---|
 | ITS-23 | 144 | narrador | Lo repitió exactamente igual, palabra por palabra. | las líneas 138 y 142 no son iguales | Me contestó casi con las mismas palabras. | ✅ aplicado 27/11 |
 | ITS-24 | 237 | narrador | El segundo paso tiene mal la conversión de unidades. | presente en una narración en pasado | El segundo paso tenía mal la conversión de unidades. | ✅ aplicado 27/11 |
+
+## 02_cap1_Miku.rpy
+
+El horario de este archivo ya se aplicó (HOR-17). El relato de Miku sobre la sal no se toca: suena a ella.
+«como quien» pasa de 2 a 1 (queda la 496). La frase duplicada de la 435 sigue en `beat_casa`; se revisa en su tanda.
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| MIK-01 | 104 | narrador | Algo se le movió en la cara al oír eso, tan rápido que no me dio tiempo a leerlo. | muletilla («algo») | Puso una cara rara al oírlo, tan rápido que no me dio tiempo a leerla. | ✅ aplicado 27/11 |
+| MIK-02 | 172 | mc_pensamiento | No es que no sepa. | 4 | BORRAR | ✅ aplicado 27/11 |
+| MIK-03 | 174 | mc_pensamiento | Es que no piensa hablar de nada que le importe delante de alguien que va a calificarla. | 4 | Sí sabe. Pero no va a hablar de lo que le importa con alguien que la va a calificar. | ✅ aplicado 27/11 |
+| MIK-04 | 226 | mc_pensamiento | Era la primera vez que dejaba de mirar a otro lado. | 5 | Por fin dejó de mirar a otro lado. | ✅ aplicado 27/11 |
+| MIK-05 | 320 | narrador | Creo que se oyó. | 7 (repite la 322) | BORRAR | ✅ aplicado 27/11 |
+| MIK-06 | 322 | narrador | Fue eso: se oyó a sí misma hablando en voz alta durante un minuto entero. | 7 | Se había oído: llevaba un minuto entero hablando en voz alta. | ✅ aplicado 27/11 |
+| MIK-07 | 352 | mc_pensamiento | Nadie le enseñó a callarse. Se lo fueron enseñando las caras de los demás. | 6, 7 | A callarse no la mandó nadie. Lo aprendió viendo las caras de la gente. | ✅ aplicado 27/11 |
+| MIK-08 | 407 | narrador | Se detuvo otra vez. Pero esta vez se detuvo distinto. | 3 | Se detuvo otra vez. | ✅ aplicado 27/11 |
+| MIK-09 | 409 | narrador | Se detuvo mirándome a mí, no al libro. | 3 (va con MIK-08) | Pero ahora me miraba a mí, no al libro. | ✅ aplicado 27/11 |
+| MIK-10 | 419 | narrador | No dijo nada. Se le puso el libro a media altura, sin llegar a subirlo del todo. | 5 | El libro se le quedó a media altura, sin llegar a subir del todo. | ✅ aplicado 27/11 |
+| MIK-11 | 435 | narrador | Lo dijo despacio, como quien termina una cuenta. | 1, 2 (duplicada en beat_casa) | BORRAR | ✅ aplicado 27/11 |
+| MIK-12 | 437 | mc_pensamiento | Ahí estaba lo que acababa de entender. | 7 | Ahí lo había entendido ella. | ✅ aplicado 27/11 |
+| MIK-13 | 439 | mc_pensamiento | No que yo supiera de esto. | 4 | Le daba igual que yo supiera del tema. | ✅ aplicado 27/11 |
+| MIK-14 | 441 | mc_pensamiento | Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche en ello. | 4, 7 | Lo que le llegó es que, sin saber nada, me pasé la noche leyéndolo. | ✅ aplicado 27/11 |
+| MIK-15 | 524 | narrador | Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba. | 5, muletilla («algo») | Asintió una vez, muy despacio. Eso ya se lo esperaba. | ✅ aplicado 27/11 |
+
+### Notas de coherencia (para aprobar aparte)
+
+| ID | línea | personaje | texto actual | problema | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| MIK-16 | 116 | narrador | No pareció convencerle del todo, pero tampoco se levantó. | gramática: el sujeto es Miku | No parecía convencida del todo, pero tampoco se levantó. | ✅ aplicado 27/11 |
+
+### Se dejan como están (a propósito)
+
+- **64-66** «Así no se estudia. / Así se lee.» y **154** «Un muro de ladrillo, pero educado.»: son la voz del MC.
+- **496** «como quien cierra una puerta con educación»: es el único «como quien» del archivo.
+- **586-588** «Miku no es callada. / Está callada, que no es lo mismo.»: la distinción es la idea de la ruta.

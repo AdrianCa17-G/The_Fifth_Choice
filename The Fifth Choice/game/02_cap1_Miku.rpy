@@ -101,7 +101,7 @@ label hub_Miku:
 
     mc "Alguien me dijo que las calladas siempre tienen un rincón secreto."
 
-    narrador "Algo se le movió en la cara al oír eso, tan rápido que no me dio tiempo a leerlo."
+    narrador "Puso una cara rara al oírlo, tan rápido que no me dio tiempo a leerla."
 
     miku "...¿Y entonces?"
 
@@ -113,7 +113,7 @@ label hub_Miku:
 
     miku "...Ah."
 
-    narrador "No pareció convencerle del todo, pero tampoco se levantó."
+    narrador "No parecía convencida del todo, pero tampoco se levantó."
 
     ############################################################################
     ##  MOVIMIENTO 2 · El intento por la puerta principal
@@ -169,9 +169,7 @@ label hub_Miku:
     
     mc_pensamiento "Listos para subírselos en cuanto alguien le hable."
 
-    mc_pensamiento "No es que no sepa." 
-    
-    mc_pensamiento "Es que no piensa hablar de nada que le importe delante de alguien que va a calificarla."
+    mc_pensamiento "Sí sabe. Pero no va a hablar de lo que le importa con alguien que la va a calificar."
 
     mc_pensamiento "Y no se me ocurrió ninguna forma de resolver eso."
 
@@ -223,7 +221,7 @@ label hub_Miku:
 
     narrador "Miku cerró el libro sobre el dedo índice, para no perder la página."
 
-    mc_pensamiento "Era la primera vez que dejaba de mirar a otro lado."
+    mc_pensamiento "Por fin dejó de mirar a otro lado."
 
     show miku neutral at pj_habla(0.5)
     with dissolve
@@ -317,9 +315,7 @@ label hub_Miku:
 
     narrador "Se paró en mitad de la palabra."
 
-    narrador "Creo que se oyó."
-
-    narrador "Fue eso: se oyó a sí misma hablando en voz alta durante un minuto entero."
+    narrador "Se había oído: llevaba un minuto entero hablando en voz alta."
 
     miku "..."
 
@@ -349,7 +345,7 @@ label hub_Miku:
 
     mc_pensamiento "Tercera vez que dice algo que nadie le pidió. Y otra vez, el perdón detrás."
 
-    mc_pensamiento "Nadie le enseñó a callarse. Se lo fueron enseñando las caras de los demás."
+    mc_pensamiento "A callarse no la mandó nadie. Lo aprendió viendo las caras de la gente."
 
     ## Menú de Miku.
 
@@ -404,9 +400,9 @@ label miku_m4a:
     show miku encogida at pj_habla(0.5)
     with disolucion_lenta
 
-    narrador "Se detuvo otra vez. Pero esta vez se detuvo distinto."
+    narrador "Se detuvo otra vez."
 
-    narrador "Se detuvo mirándome a mí, no al libro."
+    narrador "Pero ahora me miraba a mí, no al libro."
 
     miku "...Per—"
 
@@ -416,7 +412,7 @@ label miku_m4a:
 
     mc "Estabas contestando una pregunta que te hice yo. Eso no se disculpa."
 
-    narrador "No dijo nada. Se le puso el libro a media altura, sin llegar a subirlo del todo."
+    narrador "El libro se le quedó a media altura, sin llegar a subir del todo."
 
     narrador "Y entonces miró el ejemplar que yo había dejado sobre la mesa."
 
@@ -432,13 +428,11 @@ label miku_m4a:
     show miku at pj_calla(0.5)
     with disolucion_lenta
 
-    narrador "Lo dijo despacio, como quien termina una cuenta."
+    mc_pensamiento "Ahí lo había entendido ella."
 
-    mc_pensamiento "Ahí estaba lo que acababa de entender."
+    mc_pensamiento "Le daba igual que yo supiera del tema."
 
-    mc_pensamiento "No que yo supiera de esto."
-
-    mc_pensamiento "Justo lo contrario: que no sabía nada, y que aun así me había pasado la noche en ello."
+    mc_pensamiento "Lo que le llegó es que, sin saber nada, me pasé la noche leyéndolo."
 
     mc "Voy a llegar a la ciento veinte."
 
@@ -521,7 +515,7 @@ label miku_m4c:
 
     narrador "No protestó. No se defendió."
 
-    narrador "Asintió una vez, muy despacio, como si le hubieran confirmado algo que ya sospechaba."
+    narrador "Asintió una vez, muy despacio. Eso ya se lo esperaba."
 
     show miku neutral at pj_habla(0.5)
     with disolucion_lenta
