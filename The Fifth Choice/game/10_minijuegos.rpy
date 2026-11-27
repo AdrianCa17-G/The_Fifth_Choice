@@ -86,8 +86,8 @@ define MJ_PARAMS = {
         "asistida": {"tiempo_total": 115, "productos": 3, "distractores": 1, "mezclado": False, "deriva": 0,   "memoria": 999.0, "mirar_costo": 0.0, "retardo_traduccion": 0.0, "penalizacion": 1, "racha_bonus": 3.0, "puntos_control": [1, 2, 3, 4, 5]},
     },
     "it1": {
-        "dificil":  {"pasos": 5, "tiempo": 55,  "numeros_trampa": 2, "trampa_marcada": False, "intentos": 3,    "ayuda_usos": 1,    "ayuda_costo": 10, "plausibilidad": False, "puntos_control": []},
-        "media":    {"pasos": 4, "tiempo": 80,  "numeros_trampa": 1, "trampa_marcada": False, "intentos": 5,    "ayuda_usos": 2,    "ayuda_costo": 5,  "plausibilidad": True,  "puntos_control": []},
+        "dificil":  {"pasos": 4, "tiempo": 75,  "numeros_trampa": 2, "trampa_marcada": False, "intentos": 4,    "ayuda_usos": 1,    "ayuda_costo": 8,  "plausibilidad": True,  "puntos_control": []},
+        "media":    {"pasos": 3, "tiempo": 100, "numeros_trampa": 1, "trampa_marcada": False, "intentos": 6,    "ayuda_usos": 2,    "ayuda_costo": 4,  "plausibilidad": True,  "puntos_control": []},
         "asistida": {"pasos": 3, "tiempo": 110, "numeros_trampa": 1, "trampa_marcada": True,  "intentos": None, "ayuda_usos": None, "ayuda_costo": 0,  "plausibilidad": True,  "puntos_control": []},
     },
     "m3": {

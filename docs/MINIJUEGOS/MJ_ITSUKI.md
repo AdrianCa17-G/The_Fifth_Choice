@@ -51,7 +51,19 @@ Fuera del cuaderno se usan los estilos `mj_*`: el título, el texto y las reglas
 3. La equivalencia va sobre un trazo de marcador amarillo, y el número arrastrado, a lápiz en la esquina de la página derecha.
 4. **«Sin ayuda»** es `cinta_boton(..., activo=False)`: aspecto deshabilitado estándar, ya no un `Solid`.
 5. Las filas de la hoja tienen `hover_sound` + `activate_sound` (se tocan para rehacer); las opciones también.
-6. Mecánica, `MJ_PARAMS["it1"]`, tiempos e `it1_frase()` sin cambios.
+6. Mecánica, tiempos e `it1_frase()` sin cambios en esta adaptación. `MJ_PARAMS["it1"]` se rebajó en v1.1 (ver abajo).
+
+## Parámetros (`MJ_PARAMS["it1"]`, v1.1)
+
+| Nivel | pasos | tiempo | trampas | marcada | intentos | ayuda (usos / costo) | plausibilidad |
+|---|---|---|---|---|---|---|---|
+| difícil | 4 | 75 s | 2 | no | 4 | 1 / 8 s | sí |
+| media | 3 | 100 s | 1 | no | 6 | 2 / 4 s | sí |
+| asistida | 3 | 110 s | 1 | sí | sin límite | sin límite / 0 s | sí |
+
+Antes de v1.1, difícil era 5 pasos, 55 s, 3 intentos, 1 ayuda de 10 s y sin plausibilidad; media, 4 pasos, 80 s, 5 intentos y 2 ayudas de 5 s.
+
+Asistencia a medio camino (2 fallos, `mj_mezclar` con t = 0,5): de difícil sale 4 pasos, 88 s, 2 trampas, 5 intentos, 2 ayudas de 6 s. `round()` de Python 3 redondea al par, así que 3,5 pasos y 1,5 trampas quedan en 4 y 2: el medio escalón solo da tiempo, intentos y ayuda; los pasos y las trampas bajan en el escalón completo (4 fallos). De media a asistida, a medio camino: 3 pasos, 105 s, y ya sin límite de intentos ni de ayuda (los `None` saltan en t ≥ 0,5).
 
 ## Para la sesión de animaciones de entrada y salida
 
