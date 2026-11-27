@@ -19,10 +19,10 @@ translate english beat_casa_1058aa43:
     narrador "The exam was the next day."
 
 # game/02_cap1_beat_casa.rpy:38
-translate english beat_casa_ca66e571:
+translate english beat_casa_fd3e9970:
 
-    # narrador "Faltaban horas, no días."
-    narrador "Hours away, not days."
+    # narrador "Solo faltaban horas."
+    narrador "Only hours to go."
 
 # game/02_cap1_beat_casa.rpy:42
 translate english beat_casa_26ff33cd:
@@ -79,10 +79,10 @@ translate english beat_casa_80e67789:
     raiha "Ever since you became a tutor, you're always late."
 
 # game/02_cap1_beat_casa.rpy:66
-translate english beat_casa_f6d12eb1:
+translate english beat_casa_01339946:
 
-    # narrador "No sonó a reproche. Ya llevaba la cuenta."
-    narrador "It didn't sound like a complaint. She was already keeping count."
+    # narrador "Ya llevaba la cuenta."
+    narrador "She'd been keeping count."
 
 # game/02_cap1_beat_casa.rpy:74
 translate english beat_casa_a6c75f14:
@@ -516,11 +516,11 @@ translate english beat_casa_160444a6:
     # mc_pensamiento "Treinta días después, la letra sigue siendo la misma."
     mc_pensamiento "Thirty days later, the handwriting is still the same."
 
-# game/02_cap1_beat_casa.rpy:279
-translate english beat_casa_e72ef923:
+# game/02_cap1_beat_casa.rpy:273
+translate english beat_casa_682607f3:
 
-    # mc_pensamiento "Solo que ahora sé lo que cuesta cada nombre."
-    mc_pensamiento "Only now I know what each name costs."
+    # mc_pensamiento "Solo que ahora sé quién es cada una."
+    mc_pensamiento "Only now I know who each of them is."
 
 # game/02_cap1_beat_casa.rpy:281
 translate english beat_casa_ab99ffd4:
@@ -558,11 +558,11 @@ translate english beat_casa_d6898884:
     # mc_pensamiento "Si mañana me voy, me voy sabiendo exactamente por qué."
     mc_pensamiento "If I go tomorrow, I'll go knowing exactly why."
 
-# game/02_cap1_beat_casa.rpy:295
-translate english beat_casa_254a3808:
+# game/02_cap1_beat_casa.rpy:289
+translate english beat_casa_f4d3f561:
 
-    # mc_pensamiento "Todo el peso de mis decisiones caerá mañana."
-    mc_pensamiento "The full weight of my decisions lands tomorrow."
+    # mc_pensamiento "Mañana se verá si decidí bien."
+    mc_pensamiento "Tomorrow will show if I chose right."
 
 # game/02_cap1_beat_casa.rpy:323
 translate english bcl_menu_6e7eb285:
@@ -588,11 +588,11 @@ translate english bcl_ichika_81179cc9:
     # mc_pensamiento "Pidió perdón por adelantado por el desorden, el ruido y todo lo que iba a ver."
     mc_pensamiento "She apologized in advance for the mess, the noise, and everything I was about to see."
 
-# game/02_cap1_beat_casa.rpy:378
-translate english bcl_ichika_60bbcaa4:
+# game/02_cap1_beat_casa.rpy:372
+translate english bcl_ichika_e49073b3:
 
-    # mc_pensamiento "Pensé que era cortesía. Era un aviso."
-    mc_pensamiento "I thought it was politeness. It was a warning."
+    # mc_pensamiento "Resultó que lo decía en serio."
+    mc_pensamiento "Turns out she meant it."
 
 # game/02_cap1_beat_casa.rpy:380
 translate english bcl_ichika_26a8d439:
@@ -642,11 +642,11 @@ translate english bcl_ichika_cc537d41:
     # mc_pensamiento "Al despertar, durante medio segundo, no hubo actuación."
     mc_pensamiento "When she woke up, for half a second, there was no act."
 
-# game/02_cap1_beat_casa.rpy:398
-translate english bcl_ichika_aab04e95:
+# game/02_cap1_beat_casa.rpy:392
+translate english bcl_ichika_292e57fb:
 
-    # mc_pensamiento "Dijo «perdí la tarde entera» con una voz que no tenía dirección de escena."
-    mc_pensamiento "She said \"I lost the whole afternoon\" in a voice with no stage direction."
+    # mc_pensamiento "Dijo «perdí la tarde entera» sin nada de teatro en la voz."
+    mc_pensamiento "She said \"I lost the whole afternoon\" with no theater in her voice at all."
 
 # game/02_cap1_beat_casa.rpy:400
 translate english bcl_ichika_6b06d1dd:
@@ -798,11 +798,11 @@ translate english bcl_ichika_5dc84379:
     # mc_pensamiento "Lo dijo de corrido, sin contar con los dedos. Y después lo llamó «ser organizada»."
     mc_pensamiento "She rattled it off, no counting on her fingers. And then called it \"being organized.\""
 
-# game/02_cap1_beat_casa.rpy:458
-translate english bcl_ichika_f225e95c:
+# game/02_cap1_beat_casa.rpy:452
+translate english bcl_ichika_3a14f24f:
 
-    # mc_pensamiento "Una cabeza así no se improvisa. Y ella ni siquiera lo considera un talento."
-    mc_pensamiento "A head like that isn't improvised. And she doesn't even count it as a talent."
+    # mc_pensamiento "Eso no le sale a cualquiera. Y ella ni siquiera lo considera un talento."
+    mc_pensamiento "Not just anyone can do that. And she doesn't even count it as a talent."
 
 # game/02_cap1_beat_casa.rpy:466
 translate english bcl_ichika_39e0ffbc:
@@ -960,11 +960,11 @@ translate english bcl_nino_0dafda5e:
     # mc_pensamiento "Que sus hermanas se ilusionan cada vez, y que después les toca ver a alguien irse."
     mc_pensamiento "That her sisters get their hopes up every time, and then have to watch someone leave."
 
-# game/02_cap1_beat_casa.rpy:539
-translate english bcl_nino_e25f926f:
+# game/02_cap1_beat_casa.rpy:533
+translate english bcl_nino_ab122f0f:
 
-    # mc_pensamiento "No desconfía de mí. Desconfía del puesto."
-    mc_pensamiento "She doesn't distrust me. She distrusts the position."
+    # mc_pensamiento "Su desconfianza es con cualquiera que ocupe este puesto."
+    mc_pensamiento "Her distrust is for whoever holds this job."
 
 # game/02_cap1_beat_casa.rpy:543
 translate english bcl_nino_a0c299e2:
@@ -1692,11 +1692,11 @@ translate english bcl_yotsuba_35e8422e:
     # mc_pensamiento "Al día siguiente me llamó «tutor», con el tono que se usa con un desconocido."
     mc_pensamiento "The next day she called me \"tutor,\" in the tone you use with a stranger."
 
-# game/02_cap1_beat_casa.rpy:875
-translate english bcl_yotsuba_628574a9:
+# game/02_cap1_beat_casa.rpy:867
+translate english bcl_yotsuba_fadd42c6:
 
-    # mc_pensamiento "Le confirmé la única cosa de la que nadie debería haberla convencido."
-    mc_pensamiento "I confirmed the one thing nobody should ever have convinced her of."
+    # mc_pensamiento "Le di la razón en lo peor que cree de sí misma."
+    mc_pensamiento "I agreed with the worst thing she believes about herself."
 
 # game/02_cap1_beat_casa.rpy:877
 translate english bcl_yotsuba_45f8b50a:
@@ -1776,11 +1776,11 @@ translate english bcl_yotsuba_a3de6c14:
     # mc_pensamiento "Sigo sin saber qué hace cuando nadie la mira."
     mc_pensamiento "I still don't know what she does when nobody's watching."
 
-# game/02_cap1_beat_casa.rpy:911
-translate english bcl_yotsuba_6faaffe7:
+# game/02_cap1_beat_casa.rpy:903
+translate english bcl_yotsuba_aad3a696:
 
-    # mc_pensamiento "Solo la sonrisa que le pone a todo, incluso a lo que no debería sonreírse."
-    mc_pensamiento "Only the smile she puts on everything, even things she shouldn't smile at."
+    # mc_pensamiento "Solo conozco la sonrisa. Se la pone hasta cuando no toca."
+    mc_pensamiento "I only know the smile. She puts it on even when it doesn't belong."
 
 # game/02_cap1_beat_casa.rpy:932
 translate english bcl_itsuki_f796f532:
@@ -2064,11 +2064,11 @@ translate english bcl_itsuki_88eb0e7f:
     # mc_pensamiento "Se me voló una hoja hasta la valla y ninguno fue a buscarla."
     mc_pensamiento "A page of mine blew off to the fence and neither of us went after it."
 
-# game/02_cap1_beat_casa.rpy:1040
-translate english bcl_itsuki_8b2096a2:
+# game/02_cap1_beat_casa.rpy:1032
+translate english bcl_itsuki_bdda6ee8:
 
-    # mc_pensamiento "Esas semanas la estaban gastando a ella tanto como a mí."
-    mc_pensamiento "Those weeks were wearing her down as much as me."
+    # mc_pensamiento "Esas semanas la estaban cansando tanto como a mí."
+    mc_pensamiento "Those weeks were wearing her out as much as me."
 
 # game/02_cap1_beat_casa.rpy:1046
 translate english bcl_itsuki_dd17fee9:

@@ -35,7 +35,7 @@ label beat_casa:
 
     narrador "El examen era al día siguiente."
 
-    narrador "Faltaban horas, no días."
+    narrador "Solo faltaban horas."
 
     play music cena fadeout 1.5 fadein 2.0
 
@@ -63,7 +63,7 @@ label beat_casa:
 
     raiha "Desde que eres tutor, siempre llegas tarde."
 
-    narrador "No sonó a reproche. Ya llevaba la cuenta."
+    narrador "Ya llevaba la cuenta."
 
     ############################################################################
     ##  MOVIMIENTO 2 · El gesto
@@ -270,7 +270,7 @@ label beat_casa:
 
     mc_pensamiento "Treinta días después, la letra sigue siendo la misma."
 
-    mc_pensamiento "Solo que ahora sé lo que cuesta cada nombre."
+    mc_pensamiento "Solo que ahora sé quién es cada una."
 
     narrador "Dejé la vista quieta un momento antes de cerrarla."
 
@@ -286,7 +286,7 @@ label beat_casa:
 
         mc_pensamiento "Si mañana me voy, me voy sabiendo exactamente por qué."
 
-        mc_pensamiento "Todo el peso de mis decisiones caerá mañana."
+        mc_pensamiento "Mañana se verá si decidí bien."
 
     else:
 
@@ -369,7 +369,7 @@ label beat_casa:
 
                 mc_pensamiento "Pidió perdón por adelantado por el desorden, el ruido y todo lo que iba a ver."
 
-                mc_pensamiento "Pensé que era cortesía. Era un aviso."
+                mc_pensamiento "Resultó que lo decía en serio."
 
                 mc_pensamiento "Al día siguiente fingió dormir para no contestar una hoja que ya habían decidido fallar."
 
@@ -389,7 +389,7 @@ label beat_casa:
 
                 mc_pensamiento "Al despertar, durante medio segundo, no hubo actuación."
 
-                mc_pensamiento "Dijo «perdí la tarde entera» con una voz que no tenía dirección de escena."
+                mc_pensamiento "Dijo «perdí la tarde entera» sin nada de teatro en la voz."
 
                 mc_pensamiento "Después volvió la sonrisa, y con ella el chiste del «descanso escénico»."
 
@@ -449,7 +449,7 @@ label beat_casa:
 
                 mc_pensamiento "Lo dijo de corrido, sin contar con los dedos. Y después lo llamó «ser organizada»."
 
-                mc_pensamiento "Una cabeza así no se improvisa. Y ella ni siquiera lo considera un talento."
+                mc_pensamiento "Eso no le sale a cualquiera. Y ella ni siquiera lo considera un talento."
 
                 call collage_cerrar from _call_collage_cerrar
 
@@ -530,7 +530,7 @@ label beat_casa:
 
                 mc_pensamiento "Que sus hermanas se ilusionan cada vez, y que después les toca ver a alguien irse."
 
-                mc_pensamiento "No desconfía de mí. Desconfía del puesto."
+                mc_pensamiento "Su desconfianza es con cualquiera que ocupe este puesto."
 
                 if nino_rama_cap1 == "calida":
 
@@ -864,7 +864,7 @@ label beat_casa:
 
                     mc_pensamiento "Al día siguiente me llamó «tutor», con el tono que se usa con un desconocido."
 
-                    mc_pensamiento "Le confirmé la única cosa de la que nadie debería haberla convencido."
+                    mc_pensamiento "Le di la razón en lo peor que cree de sí misma."
 
                 mc_pensamiento "Cuando me fui, ya había vuelto a la pista. No se despidió, ninguno de los dos lo hizo."
 
@@ -900,7 +900,7 @@ label beat_casa:
 
                 mc_pensamiento "Sigo sin saber qué hace cuando nadie la mira."
 
-                mc_pensamiento "Solo la sonrisa que le pone a todo, incluso a lo que no debería sonreírse."
+                mc_pensamiento "Solo conozco la sonrisa. Se la pone hasta cuando no toca."
 
             jump bcl_fin
 
@@ -1029,7 +1029,7 @@ label beat_casa:
 
             mc_pensamiento "Se me voló una hoja hasta la valla y ninguno fue a buscarla."
 
-            mc_pensamiento "Esas semanas la estaban gastando a ella tanto como a mí."
+            mc_pensamiento "Esas semanas la estaban cansando tanto como a mí."
 
             if itsuki_visitada_cap1:
 
