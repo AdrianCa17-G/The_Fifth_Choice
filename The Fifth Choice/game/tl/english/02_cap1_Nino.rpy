@@ -24,12 +24,6 @@ translate english hub_Nino_43de03df:
     # narrador "Casi nadie a esa hora."
     narrador "Hardly anyone at that hour."
 
-# game/02_cap1_Nino.rpy:53
-translate english hub_Nino_ab6b64ff:
-
-    # narrador "El resto de la sección estaba vacío."
-    narrador "The rest of the section was empty."
-
 # game/02_cap1_Nino.rpy:55
 translate english hub_Nino_8bebe7b3:
 
@@ -72,11 +66,11 @@ translate english hub_Nino_35ef0cd8:
     # mc_pensamiento "Y aun así no dijeron hacia dónde."
     mc_pensamiento "And even then they couldn't say which way she went."
 
-# game/02_cap1_Nino.rpy:71
-translate english hub_Nino_77d635ab:
+# game/02_cap1_Nino.rpy:69
+translate english hub_Nino_03ce3cbd:
 
-    # narrador "La encontré por descarte, no porque alguien me lo dijera."
-    narrador "I found her by elimination, not because anyone told me."
+    # narrador "La encontré por descarte."
+    narrador "I found her by process of elimination."
 
 # game/02_cap1_Nino.rpy:76
 translate english hub_Nino_150347d3:
@@ -102,17 +96,11 @@ translate english hub_Nino_073113c6:
     # narrador "Movía los labios leyendo, muy bajo, casi sin sonido."
     narrador "Her lips moved as she read, very quietly, almost without sound."
 
-# game/02_cap1_Nino.rpy:84
-translate english hub_Nino_524b6260:
+# game/02_cap1_Nino.rpy:82
+translate english hub_Nino_014afbc1:
 
-    # mc_pensamiento "No estaba traduciendo con esfuerzo."
-    mc_pensamiento "She wasn't translating with effort."
-
-# game/02_cap1_Nino.rpy:86
-translate english hub_Nino_f4dc9899:
-
-    # mc_pensamiento "Estaba leyendo, directo, como quien no necesita traducir nada."
-    mc_pensamiento "She was just reading, straight through, like someone who doesn't need to translate anything."
+    # mc_pensamiento "Estaba leyendo de corrido, sin traducir nada."
+    mc_pensamiento "She was reading straight through, not translating a thing."
 
 # game/02_cap1_Nino.rpy:88
 translate english hub_Nino_3cf4aae8:
@@ -234,12 +222,6 @@ translate english hub_Nino_3bb7a420:
     # narrador "Dio un paso y se interpuso entre la estantería de importados y yo."
     narrador "She took a step and planted herself between the import shelf and me."
 
-# game/02_cap1_Nino.rpy:146
-translate english hub_Nino_0b8b3792:
-
-    # narrador "Como si me hubiera acercado a un terreno prohibido."
-    narrador "As if I'd wandered somewhere off-limits."
-
 # game/02_cap1_Nino.rpy:148
 translate english hub_Nino_72005fb0:
 
@@ -257,12 +239,6 @@ translate english hub_Nino_8e711572:
 
     # nino "Porque en la despensa no hay nada que valga la pena."
     nino "Because there's nothing in the pantry worth having."
-
-# game/02_cap1_Nino.rpy:154
-translate english hub_Nino_934c0f28:
-
-    # narrador "Lo dijo cortante, cerrando el tema de un golpe."
-    narrador "She said it flatly, shutting the subject down."
 
 # game/02_cap1_Nino.rpy:156
 translate english hub_Nino_30f61624:
@@ -318,11 +294,11 @@ translate english hub_Nino_d73637df:
     # nino "Extracto de vainilla. Doble concentración."
     nino "Vanilla extract. Double strength."
 
-# game/02_cap1_Nino.rpy:174
-translate english hub_Nino_d6b7e73f:
+# game/02_cap1_Nino.rpy:166
+translate english hub_Nino_6ae5aa3f:
 
-    # narrador "Lo leyó sin pausa, sin buscar la palabra, como si estuviera leyendo en japonés."
-    narrador "She read it without a pause, without searching for the word, as if she were reading Japanese."
+    # narrador "Lo leyó de corrido, sin pensarse ni una palabra."
+    narrador "She read it straight through, without having to think about a single word."
 
 # game/02_cap1_Nino.rpy:176
 translate english hub_Nino_b8968611:
@@ -342,11 +318,11 @@ translate english hub_Nino_82f3e835:
     # nino "'Confectioners' sugar."
     nino "Confectioners' sugar."
 
-# game/02_cap1_Nino.rpy:182
-translate english hub_Nino_be5d63ab:
+# game/02_cap1_Nino.rpy:174
+translate english hub_Nino_7e976212:
 
-    # narrador "Lo dijo bien."
-    narrador "She said it perfectly."
+    # narrador "Y lo pronunció bien."
+    narrador "And she pronounced it well."
 
 # game/02_cap1_Nino.rpy:184
 translate english hub_Nino_15f34e5a:
@@ -510,17 +486,11 @@ translate english hub_Nino_6ab837d4:
     # nino "Y a la semana siguiente ya no estaban."
     nino "And the next week they were gone."
 
-# game/02_cap1_Nino.rpy:254
-translate english hub_Nino_3b769318:
+# game/02_cap1_Nino.rpy:246
+translate english hub_Nino_145120b4:
 
-    # mc_pensamiento "No está hablando de mí."
-    mc_pensamiento "She's not talking about me."
-
-# game/02_cap1_Nino.rpy:256
-translate english hub_Nino_6b3bc61a:
-
-    # mc_pensamiento "Está hablando de todos los que vinieron antes."
-    mc_pensamiento "She's talking about all the ones who came before."
+    # mc_pensamiento "Habla de todos los que vinieron antes."
+    mc_pensamiento "She's talking about everyone who came before."
 
 # game/02_cap1_Nino.rpy:258
 translate english hub_Nino_280f331c:
@@ -558,17 +528,11 @@ translate english hub_Nino_43e5fe8a:
     # mc_pensamiento "Lo nuevo era cómo apretaba esa tarjeta mientras lo decía."
     mc_pensamiento "What was new was how hard she gripped that card while she said it."
 
-# game/02_cap1_Nino.rpy:274
-translate english hub_Nino_873579ec:
+# game/02_cap1_Nino.rpy:264
+translate english hub_Nino_cf4acce5:
 
-    # mc_pensamiento "No está protegiéndose a ella."
-    mc_pensamiento "She's not protecting herself."
-
-# game/02_cap1_Nino.rpy:276
-translate english hub_Nino_5624abc2:
-
-    # mc_pensamiento "Está protegiendo a sus hermanas de algo que ya les pasó demasiadas veces."
-    mc_pensamiento "She's protecting her sisters from something that's already happened to them too many times."
+    # mc_pensamiento "Más que a ella, cuida a sus hermanas de algo que ya les pasó demasiadas veces."
+    mc_pensamiento "More than herself, she's looking out for her sisters over something that's hit them too many times."
 
 # game/02_cap1_Nino.rpy:286
 translate english hub_Nino_5d06c2b7_2:
@@ -582,11 +546,11 @@ translate english hub_Nino_dae5acbb:
     # nino "Olvida lo que dije."
     nino "Forget what I said."
 
-# game/02_cap1_Nino.rpy:293
-translate english hub_Nino_8765adca:
+# game/02_cap1_Nino.rpy:281
+translate english hub_Nino_570f230f:
 
-    # narrador "Ahí estaba el «olvídalo». Tarde, como le llega siempre que habla de más."
-    narrador "There it was, the \"forget it.\" Late, the way it always comes when she says too much."
+    # narrador "Ahí estaba el «olvídalo». Llegó tarde."
+    narrador "There was the \"forget it\". It showed up late."
 
 # game/02_cap1_Nino.rpy:295
 translate english hub_Nino_60f6f993:
@@ -606,11 +570,11 @@ translate english hub_Nino_37cf4131:
     # mc_pensamiento "No pregunté más. Habría sido pedirle algo que no me tocaba todavía."
     mc_pensamiento "I didn't ask more. It would have been asking for something that wasn't mine to ask for yet."
 
-# game/02_cap1_Nino.rpy:301
-translate english hub_Nino_dc424b2e:
+# game/02_cap1_Nino.rpy:289
+translate english hub_Nino_6c62dba4:
 
-    # narrador "Se acomodó el uniforme, como si con eso pudiera acomodar también lo que acababa de decir."
-    narrador "She straightened her uniform, as if that could straighten out what she'd just said, too."
+    # narrador "Se acomodó el uniforme y no volvió sobre el tema."
+    narrador "She straightened her uniform and didn't go back to the subject."
 
 # game/02_cap1_Nino.rpy:311
 translate english hub_Nino_7e985eac:
@@ -684,11 +648,11 @@ translate english nino_m4a_035c2dca:
     # mc "Hablar de más no va a convencerte."
     mc "Saying more won't convince you."
 
-# game/02_cap1_Nino.rpy:363
-translate english nino_m4a_46f91654:
+# game/02_cap1_Nino.rpy:351
+translate english nino_m4a_0147613a:
 
-    # narrador "Se quedó quieta, con la cesta a medio subir, como si esperara el resto de la frase que no llegó."
-    narrador "She froze, the basket halfway up her arm, as if waiting for the rest of a sentence that never came."
+    # narrador "Se quedó con la cesta a medio subir, esperando el resto de la frase."
+    narrador "She stood with the basket half raised, waiting for the rest of the sentence."
 
 # game/02_cap1_Nino.rpy:368
 translate english nino_m4a_5d06c2b7:
@@ -714,11 +678,11 @@ translate english nino_m4a_37e0c68c:
     # mc "No he hecho nada que lo merezca."
     mc "I haven't done anything to earn one."
 
-# game/02_cap1_Nino.rpy:376
-translate english nino_m4a_de85e23f:
+# game/02_cap1_Nino.rpy:364
+translate english nino_m4a_8203b165:
 
-    # narrador "Lo pensó un momento, sin la hostilidad de antes ni la calma que tampoco tiene."
-    narrador "She thought about it a moment, no longer hostile, but not calm either."
+    # narrador "Lo pensó un momento. Ya sin tanta hostilidad."
+    narrador "She thought about it for a moment. Not as hostile anymore."
 
 # game/02_cap1_Nino.rpy:381
 translate english nino_m4a_28d3c23e:
@@ -738,11 +702,11 @@ translate english nino_m4a_7130b483:
     # nino "Bien. Que quede claro."
     nino "Good. Let's be clear."
 
-# game/02_cap1_Nino.rpy:387
-translate english nino_m4a_ee3b05fb:
+# game/02_cap1_Nino.rpy:375
+translate english nino_m4a_85daf683:
 
-    # narrador "Se quedó mirando la tarjeta de receta un segundo más, antes de guardarla del todo."
-    narrador "She looked at the recipe card a second longer before putting it away for good."
+    # narrador "Se quedó un segundo con la mano sobre el bolsillo de la tarjeta."
+    narrador "She stood there a second with her hand over the pocket with the card."
 
 # game/02_cap1_Nino.rpy:392
 translate english nino_m4a_6f120042:
@@ -750,11 +714,11 @@ translate english nino_m4a_6f120042:
     # nino "...No le digas a mis hermanas que hablé de más."
     nino "...Don't tell my sisters I talked too much."
 
-# game/02_cap1_Nino.rpy:394
-translate english nino_m4a_b08b2dda:
+# game/02_cap1_Nino.rpy:382
+translate english nino_m4a_3e37ca1c:
 
-    # mc "No dije nada de más."
-    mc "I haven't said anything."
+    # mc "No dijiste nada de más."
+    mc "You didn't say too much."
 
 # game/02_cap1_Nino.rpy:399
 translate english nino_m4a_d0f0edaf:
@@ -888,12 +852,6 @@ translate english nino_m4b_12e72bdc:
     # mc_pensamiento "Y yo preferí dejarlo así."
     mc_pensamiento "And I preferred to leave it that way."
 
-# game/02_cap1_Nino.rpy:467
-translate english nino_m4b_23b1fa09:
-
-    # mc_pensamiento "A veces el silencio es lo único que se puede compartir."
-    mc_pensamiento "Sometimes silence is all you can share."
-
 # game/02_cap1_Nino.rpy:481
 translate english nino_m4c_76ac5db7:
 
@@ -984,11 +942,11 @@ translate english nino_m4c_a9ff46cb:
     # mc_pensamiento "Y lo peor es que lo dije pensando que la iba a ayudar."
     mc_pensamiento "And the worst part is I said it thinking it would help her."
 
-# game/02_cap1_Nino.rpy:514
-translate english nino_m4c_278c000e:
+# game/02_cap1_Nino.rpy:500
+translate english nino_m4c_4b81e164:
 
-    # narrador "Caminó hacia la caja sin esperarme, ocultando el papel antes de que pudiera ver algo más."
-    narrador "She headed for the register without waiting, hiding the paper before I could see anything more."
+    # narrador "Caminó hacia la caja sin esperarme, con una mano sobre el bolsillo."
+    narrador "She headed to the register without waiting for me, one hand over her pocket."
 
 # game/02_cap1_Nino.rpy:529
 translate english nino_m5_90abc0f5:
@@ -1080,11 +1038,11 @@ translate english nino_m5_cb1ee93c:
     # mc_pensamiento "No dijo por qué."
     mc_pensamiento "She didn't say why."
 
-# game/02_cap1_Nino.rpy:562
-translate english nino_m5_4f797266:
+# game/02_cap1_Nino.rpy:548
+translate english nino_m5_1ed5e7f1:
 
-    # mc_pensamiento "Y por primera vez, no sonó a que me odiara."
-    mc_pensamiento "And for the first time, it didn't sound like she hated me."
+    # mc_pensamiento "Y esta vez no sonó a que me odiara."
+    mc_pensamiento "And this time it didn't sound like she hated me."
 
 # game/02_cap1_Nino.rpy:564
 translate english nino_m5_a3679f45:
@@ -1134,11 +1092,11 @@ translate english nino_m5_a7152823:
     # mc_pensamiento "Lo dijo ella misma, y no tengo motivos para no creerle."
     mc_pensamiento "She said so herself, and I have no reason not to believe her."
 
-# game/02_cap1_Nino.rpy:591
-translate english nino_m5_88c5e563:
+# game/02_cap1_Nino.rpy:577
+translate english nino_m5_9a5d2dd6:
 
-    # mc_pensamiento "Pero por primera vez no me trató como al siguiente de la fila."
-    mc_pensamiento "But for the first time, she didn't treat me like the next one in line."
+    # mc_pensamiento "Pero ya no me trató como al siguiente de la fila."
+    mc_pensamiento "But she didn't treat me like the next one in line anymore."
 
 # game/02_cap1_Nino.rpy:593
 translate english nino_m5_8a31bc5d:

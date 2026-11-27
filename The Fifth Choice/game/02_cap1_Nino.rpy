@@ -50,8 +50,6 @@ label hub_Nino:
 
     narrador "Casi nadie a esa hora."
 
-    narrador "El resto de la sección estaba vacío." 
-    
     narrador "Un carrito abandonado a medio pasillo, sin dueño."
 
     play music nino fadein 1.5 fadeout 2.0
@@ -68,7 +66,7 @@ label hub_Nino:
 
     mc_pensamiento "Y aun así no dijeron hacia dónde."
 
-    narrador "La encontré por descarte, no porque alguien me lo dijera."
+    narrador "La encontré por descarte."
 
     scene cg_nino_centro_comercial
     with dissolve
@@ -81,9 +79,7 @@ label hub_Nino:
 
     narrador "Movía los labios leyendo, muy bajo, casi sin sonido."
 
-    mc_pensamiento "No estaba traduciendo con esfuerzo."
-
-    mc_pensamiento "Estaba leyendo, directo, como quien no necesita traducir nada."
+    mc_pensamiento "Estaba leyendo de corrido, sin traducir nada."
 
     narrador "Sacó una tarjeta de receta del bolsillo y volvió a comparar."
 
@@ -143,15 +139,11 @@ label hub_Nino:
 
     narrador "Dio un paso y se interpuso entre la estantería de importados y yo."
 
-    narrador "Como si me hubiera acercado a un terreno prohibido."
-
     mc "En tu casa hay despensa." 
     
     mc "¿Para qué venir hasta aquí?"
 
     nino "Porque en la despensa no hay nada que valga la pena."
-
-    narrador "Lo dijo cortante, cerrando el tema de un golpe."
 
     mc "¿Vas a comprar toda la tienda o solo la mitad?"
 
@@ -171,7 +163,7 @@ label hub_Nino:
 
     nino "Extracto de vainilla. Doble concentración."
 
-    narrador "Lo leyó sin pausa, sin buscar la palabra, como si estuviera leyendo en japonés."
+    narrador "Lo leyó de corrido, sin pensarse ni una palabra."
 
     mc "¿Y esto?"
 
@@ -179,7 +171,7 @@ label hub_Nino:
 
     nino "'Confectioners' sugar."
 
-    narrador "Lo dijo bien." 
+    narrador "Y lo pronunció bien." 
     
     narrador "Demasiado bien para alguien que en clase apenas levanta la mano."
 
@@ -251,9 +243,7 @@ label hub_Nino:
 
     nino "Y a la semana siguiente ya no estaban."
 
-    mc_pensamiento "No está hablando de mí."
-
-    mc_pensamiento "Está hablando de todos los que vinieron antes."
+    mc_pensamiento "Habla de todos los que vinieron antes."
 
     mc_pensamiento "Y me pone en la misma fila sin que yo haya hecho nada todavía."
 
@@ -271,9 +261,7 @@ label hub_Nino:
 
     else:
 
-        mc_pensamiento "No está protegiéndose a ella."
-
-        mc_pensamiento "Está protegiendo a sus hermanas de algo que ya les pasó demasiadas veces."
+        mc_pensamiento "Más que a ella, cuida a sus hermanas de algo que ya les pasó demasiadas veces."
 
     scene bg_centro_comercial
     with dissolve
@@ -290,7 +278,7 @@ label hub_Nino:
     show nino neutral at pj_calla(0.5) 
     with disolucion_lenta
 
-    narrador "Ahí estaba el «olvídalo». Tarde, como le llega siempre que habla de más."
+    narrador "Ahí estaba el «olvídalo». Llegó tarde."
 
     narrador "Guardó la tarjeta en su bolsillo."
 
@@ -298,7 +286,7 @@ label hub_Nino:
 
     mc_pensamiento "No pregunté más. Habría sido pedirle algo que no me tocaba todavía."
 
-    narrador "Se acomodó el uniforme, como si con eso pudiera acomodar también lo que acababa de decir."
+    narrador "Se acomodó el uniforme y no volvió sobre el tema."
 
     ############################################################################
     ##  MOVIMIENTO 3 · La decisión
@@ -360,7 +348,7 @@ label nino_m4a:
 
     mc "Hablar de más no va a convencerte."
 
-    narrador "Se quedó quieta, con la cesta a medio subir, como si esperara el resto de la frase que no llegó."
+    narrador "Se quedó con la cesta a medio subir, esperando el resto de la frase."
 
     show nino nerviosa at pj_habla(0.5)
     with disolucion_lenta
@@ -373,7 +361,7 @@ label nino_m4a:
 
     mc "No he hecho nada que lo merezca."
 
-    narrador "Lo pensó un momento, sin la hostilidad de antes ni la calma que tampoco tiene."
+    narrador "Lo pensó un momento. Ya sin tanta hostilidad."
 
     show nino molesta at pj_habla(0.5)
     with disolucion_lenta
@@ -384,14 +372,14 @@ label nino_m4a:
 
     nino "Bien. Que quede claro."
 
-    narrador "Se quedó mirando la tarjeta de receta un segundo más, antes de guardarla del todo."
+    narrador "Se quedó un segundo con la mano sobre el bolsillo de la tarjeta."
 
     show nino pillada at pj_habla(0.5)
     with disolucion_lenta
 
     nino "...No le digas a mis hermanas que hablé de más."
 
-    mc "No dije nada de más."
+    mc "No dijiste nada de más."
 
     show nino pillada at pj_habla(0.5)
     with disolucion_lenta
@@ -464,8 +452,6 @@ label nino_m4b:
 
     mc_pensamiento "Y yo preferí dejarlo así."
 
-    mc_pensamiento "A veces el silencio es lo único que se puede compartir."
-
     jump nino_m5
 
 
@@ -511,7 +497,7 @@ label nino_m4c:
 
     mc_pensamiento "Y lo peor es que lo dije pensando que la iba a ayudar."
 
-    narrador "Caminó hacia la caja sin esperarme, ocultando el papel antes de que pudiera ver algo más."
+    narrador "Caminó hacia la caja sin esperarme, con una mano sobre el bolsillo."
 
     jump nino_m5
 
@@ -559,7 +545,7 @@ label nino_m5:
 
     mc_pensamiento "No dijo por qué."
 
-    mc_pensamiento "Y por primera vez, no sonó a que me odiara."
+    mc_pensamiento "Y esta vez no sonó a que me odiara."
 
     mc_pensamiento "Sonó a que no sabía cómo explicarlo sin decir de más."
 
@@ -588,7 +574,7 @@ label nino_m5:
 
         mc_pensamiento "Lo dijo ella misma, y no tengo motivos para no creerle."
 
-        mc_pensamiento "Pero por primera vez no me trató como al siguiente de la fila."
+        mc_pensamiento "Pero ya no me trató como al siguiente de la fila."
 
         mc_pensamiento "Me trató como algo todavía sin decidir."
 

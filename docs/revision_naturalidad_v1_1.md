@@ -210,3 +210,38 @@ El horario de este archivo ya se aplicó (HOR-17). El relato de Miku sobre la sa
 - **64-66** «Así no se estudia. / Así se lee.» y **154** «Un muro de ladrillo, pero educado.»: son la voz del MC.
 - **496** «como quien cierra una puerta con educación»: es el único «como quien» del archivo.
 - **586-588** «Miku no es callada. / Está callada, que no es lo mismo.»: la distinción es la idea de la ruta.
+
+## 02_cap1_Nino.rpy
+
+Las réplicas de Nino son cortas y cortantes, y no se tocan. «como quien» pasa de 2 a 1 (queda la 297),
+«como si» de 6 a 3 y «por primera vez» del MC de 2 a 0.
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| NIN-01 | 53 | narrador | El resto de la sección estaba vacío. | repite la 51 | BORRAR | ✅ aplicado 27/11 |
+| NIN-02 | 71 | narrador | La encontré por descarte, no porque alguien me lo dijera. | 4 | La encontré por descarte. | ✅ aplicado 27/11 |
+| NIN-03 | 84 | mc_pensamiento | No estaba traduciendo con esfuerzo. | 4 | BORRAR | ✅ aplicado 27/11 |
+| NIN-04 | 86 | mc_pensamiento | Estaba leyendo, directo, como quien no necesita traducir nada. | 1, 4 | Estaba leyendo de corrido, sin traducir nada. | ✅ aplicado 27/11 |
+| NIN-05 | 146 | narrador | Como si me hubiera acercado a un terreno prohibido. | 5, 6 | BORRAR | ✅ aplicado 27/11 |
+| NIN-06 | 154 | narrador | Lo dijo cortante, cerrando el tema de un golpe. | 2 | BORRAR | ✅ aplicado 27/11 |
+| NIN-07 | 174 | narrador | Lo leyó sin pausa, sin buscar la palabra, como si estuviera leyendo en japonés. | 5 | Lo leyó de corrido, sin pensarse ni una palabra. | ✅ aplicado 27/11 |
+| NIN-08 | 182 | narrador | Lo dijo bien. | 2 | Y lo pronunció bien. | ✅ aplicado 27/11 |
+| NIN-09 | 254 | mc_pensamiento | No está hablando de mí. | 4 | BORRAR | ✅ aplicado 27/11 |
+| NIN-10 | 256 | mc_pensamiento | Está hablando de todos los que vinieron antes. | 4 (va con NIN-09) | Habla de todos los que vinieron antes. | ✅ aplicado 27/11 |
+| NIN-11 | 274 | mc_pensamiento | No está protegiéndose a ella. | 4 | BORRAR | ✅ aplicado 27/11 |
+| NIN-12 | 276 | mc_pensamiento | Está protegiendo a sus hermanas de algo que ya les pasó demasiadas veces. | 4 (va con NIN-11) | Más que a ella, cuida a sus hermanas de algo que ya les pasó demasiadas veces. | ✅ aplicado 27/11 |
+| NIN-13 | 293 | narrador | Ahí estaba el «olvídalo». Tarde, como le llega siempre que habla de más. | 6 | Ahí estaba el «olvídalo». Llegó tarde. | ✅ aplicado 27/11 |
+| NIN-14 | 301 | narrador | Se acomodó el uniforme, como si con eso pudiera acomodar también lo que acababa de decir. | 5, 6 | Se acomodó el uniforme y no volvió sobre el tema. | ✅ aplicado 27/11 |
+| NIN-15 | 363 | narrador | Se quedó quieta, con la cesta a medio subir, como si esperara el resto de la frase que no llegó. | 5 | Se quedó con la cesta a medio subir, esperando el resto de la frase. | ✅ aplicado 27/11 |
+| NIN-16 | 376 | narrador | Lo pensó un momento, sin la hostilidad de antes ni la calma que tampoco tiene. | 6 | Lo pensó un momento. Ya sin tanta hostilidad. | ✅ aplicado 27/11 |
+| NIN-17 | 467 | mc_pensamiento | A veces el silencio es lo único que se puede compartir. | 6, 7 | BORRAR | ✅ aplicado 27/11 |
+| NIN-18 | 562 | mc_pensamiento | Y por primera vez, no sonó a que me odiara. | 5 | Y esta vez no sonó a que me odiara. | ✅ aplicado 27/11 |
+| NIN-19 | 591 | mc_pensamiento | Pero por primera vez no me trató como al siguiente de la fila. | 5 | Pero ya no me trató como al siguiente de la fila. | ✅ aplicado 27/11 |
+
+### Notas de coherencia (para aprobar aparte)
+
+| ID | línea | personaje | texto actual | problema | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| NIN-20 | 387 | narrador | Se quedó mirando la tarjeta de receta un segundo más, antes de guardarla del todo. | la 295 ya la guardó en el bolsillo | Se quedó un segundo con la mano sobre el bolsillo de la tarjeta. | ✅ aplicado 27/11 |
+| NIN-21 | 394 | mc | No dije nada de más. | quien «habló de más» fue Nino | No dijiste nada de más. | ✅ aplicado 27/11 |
+| NIN-22 | 514 | narrador | Caminó hacia la caja sin esperarme, ocultando el papel antes de que pudiera ver algo más. | la tarjeta ya estaba guardada | Caminó hacia la caja sin esperarme, con una mano sobre el bolsillo. | ✅ aplicado 27/11 |
