@@ -775,10 +775,10 @@ translate english reaccion_itsuki_f4c2e2eb:
     narrador "She didn't look at me. But she didn't turn her chair toward the window either."
 
 # game/02_cap1_conexiones.rpy:519
-translate english reaccion_itsuki_f715f641:
+translate english reaccion_itsuki_7abbd2c7:
 
-    # mc_pensamiento "Para ella, decirme que lo había hecho sola ya era una forma de darme las gracias."
-    mc_pensamiento "For her, telling me she'd done it alone was already a way of thanking me."
+    # mc_pensamiento "Viniendo de ella, eso era un gracias."
+    mc_pensamiento "Coming from her, that was a thank-you."
 
 # game/02_cap1_conexiones.rpy:526
 translate english reaccion_itsuki_896713de:
@@ -955,10 +955,10 @@ translate english reaccion_itsuki_899650e5:
     mc_pensamiento "I'd taken her answer away."
 
 # game/02_cap1_conexiones.rpy:601
-translate english reaccion_itsuki_f980a872:
+translate english reaccion_itsuki_d2542918:
 
-    # mc_pensamiento "Ella me la devolvía a su manera: tachada."
-    mc_pensamiento "She was handing it back in her own way: crossed out."
+    # mc_pensamiento "Y ella me devolvió la mía tachada."
+    mc_pensamiento "And she handed mine back crossed out."
 
 # game/02_cap1_conexiones.rpy:625
 translate english queja_ichika_2d4cde37:
@@ -1477,10 +1477,10 @@ translate english queja_itsuki_c8ab1241:
     itsuki "I wasn't going to ask you to. Asking would have been..."
 
 # game/02_cap1_conexiones.rpy:896
-translate english queja_itsuki_52acdbee:
+translate english queja_itsuki_6f79e92f:
 
-    # narrador "Se detuvo. Una oración de Itsuki sin cerrar era como ver a alguien tropezar en terreno plano."
-    narrador "She stopped. An unfinished sentence from Itsuki was like watching someone trip on flat ground."
+    # narrador "Se detuvo. En Itsuki, dejar una frase a medias es rarísimo."
+    narrador "She stopped. Itsuki leaving a sentence half-done is really strange."
 
 # game/02_cap1_conexiones.rpy:898
 translate english queja_itsuki_4966a73e:
@@ -2455,10 +2455,10 @@ translate english cap1_interconexion_2_f0d4f881:
     mc_pensamiento "I couldn't tell if it was red."
 
 # game/02_cap1_conexiones.rpy:1503
-translate english cap1_interconexion_2_80219083:
+translate english cap1_interconexion_2_9c56dba0:
 
-    # mc_pensamiento "La excusa le llegó un segundo tarde. La pregunta, no."
-    mc_pensamiento "The excuse arrived a second late. The question didn't."
+    # mc_pensamiento "Preguntó rápido. La excusa tardó más."
+    mc_pensamiento "The question came out fast. The excuse took longer."
 
 # game/02_cap1_conexiones.rpy:1510
 translate english cap1_interconexion_2_07da98d6:
@@ -3054,22 +3054,16 @@ translate english cap1_interconexion_3_57599b99:
     # itsuki "No me importa a quién elijas."
     itsuki "I don't care who you pick."
 
-# game/02_cap1_conexiones.rpy:1872
-translate english cap1_interconexion_3_a16cb3a1:
+# game/02_cap1_conexiones.rpy:1870
+translate english cap1_interconexion_3_2d128d05:
 
-    # itsuki "Solo digo que el reloj no espera."
-    itsuki "I'm only saying the clock doesn't wait."
+    # itsuki "Solo digo que te queda poco tiempo."
+    itsuki "I'm only saying you don't have much time left."
 
-# game/02_cap1_conexiones.rpy:1874
-translate english cap1_interconexion_3_274ae7cf:
+# game/02_cap1_conexiones.rpy:1879
+translate english cap1_interconexion_3_e3fac892:
 
-    # itsuki "Y cada uno lo sabe."
-    itsuki "And everyone knows it."
-
-# game/02_cap1_conexiones.rpy:1883
-translate english cap1_interconexion_3_31e49dd2:
-
-    # mc_pensamiento "Todas se marcharon, esperando que yo dé el siguiente paso."
+    # mc_pensamiento "Todas se marcharon, esperando que yo diera el siguiente paso."
     mc_pensamiento "They all left, waiting for me to make the next move."
 
 # game/02_cap1_conexiones.rpy:1893
@@ -3084,11 +3078,11 @@ translate english cap1_interconexion_3_2bc359c9:
     # mc_pensamiento "Dos tardes libres. Cuatro hermanas por alcanzar."
     mc_pensamiento "Two free afternoons. Four sisters left to reach."
 
-# game/02_cap1_conexiones.rpy:1897
-translate english cap1_interconexion_3_1c7fd4ec:
+# game/02_cap1_conexiones.rpy:1893
+translate english cap1_interconexion_3_6c73cc58:
 
-    # mc_pensamiento "Cada tarde que le brindo a una es una tarde que no tienen las demás."
-    mc_pensamiento "Every afternoon I give one of them is an afternoon the others don't get."
+    # mc_pensamiento "Cada tarde con una es una menos para las demás."
+    mc_pensamiento "Every afternoon with one is one less for the others."
 
 # game/02_cap1_conexiones.rpy:1899
 translate english cap1_interconexion_3_7e31de5a:
@@ -3114,11 +3108,11 @@ translate english cap1_interconexion_4_fe4162cb:
     # mc_pensamiento "Con [nombre_h!t] encontré por dónde entrar."
     mc_pensamiento "With [nombre_h!t], I found a way in."
 
-# game/02_cap1_conexiones.rpy:1933
-translate english cap1_interconexion_4_9fe10580:
+# game/02_cap1_conexiones.rpy:1929
+translate english cap1_interconexion_4_80187300:
 
-    # mc_pensamiento "No sé si sabré hacerlo otra vez. Con la siguiente, la puerta será otra."
-    mc_pensamiento "I don't know if I can do it again. With the next one, the door will be different."
+    # mc_pensamiento "No sé si sabré hacerlo otra vez. Con la siguiente tendré que buscar otra forma."
+    mc_pensamiento "I don't know if I can do it again. With the next one I'll need another way."
 
 # game/02_cap1_conexiones.rpy:1937
 translate english cap1_interconexion_4_8672dc3f:
@@ -3546,11 +3540,11 @@ translate english cap1_interconexion_4_96d490c6:
     # miku "...A mí me debes una página."
     miku "...You owe me a page."
 
-# game/02_cap1_conexiones.rpy:2192
-translate english cap1_interconexion_4_c96179a9:
+# game/02_cap1_conexiones.rpy:2188
+translate english cap1_interconexion_4_4bd73453:
 
-    # narrador "No sonó a reproche. Sonó a algo que llevaba un rato pensando."
-    narrador "It didn't sound like a reproach. It sounded like something she'd been thinking about for a while."
+    # narrador "Más que un reproche, parecía algo que llevaba rato pensando."
+    narrador "Less a complaint than something she'd been thinking about for a while."
 
 # game/02_cap1_conexiones.rpy:2202
 translate english cap1_interconexion_4_439ee237:
@@ -3690,11 +3684,11 @@ translate english cap1_interconexion_4_6e8dceb4:
     # narrador "Las otras cuatro seguían ahí."
     narrador "The other four were still there."
 
-# game/02_cap1_conexiones.rpy:2276
-translate english cap1_interconexion_4_c69a3877:
+# game/02_cap1_conexiones.rpy:2272
+translate english cap1_interconexion_4_e4902c26:
 
-    # narrador "El hueco entre Ichika y Miku se notaba más que cualquier cosa que dijeran."
-    narrador "The gap between Ichika and Miku stood out more than anything they said."
+    # narrador "El hueco entre Ichika y Miku se notaba mucho."
+    narrador "The gap between Ichika and Miku really stood out."
 
 # game/02_cap1_conexiones.rpy:2278
 translate english cap1_interconexion_4_f19c45ec:
@@ -3954,11 +3948,11 @@ translate english cap1_interconexion_5_a8c9c411:
     # mc_pensamiento "Ninguno dijo nada que valiera la pena."
     mc_pensamiento "Neither of us said anything worth saying."
 
-# game/02_cap1_conexiones.rpy:2441
-translate english cap1_interconexion_5_b3b7e9cb:
+# game/02_cap1_conexiones.rpy:2437
+translate english cap1_interconexion_5_0f0852af:
 
-    # mc_pensamiento "Supongo que a veces el silencio es lo único que cabe entre dos personas."
-    mc_pensamiento "I guess sometimes silence is the only thing that fits between two people."
+    # mc_pensamiento "Supongo que a veces no hay más que decir."
+    mc_pensamiento "I guess sometimes there's nothing else to say."
 
 # game/02_cap1_conexiones.rpy:2445
 translate english cap1_interconexion_5_1f301da6:
@@ -4212,11 +4206,11 @@ translate english cap1_interconexion_5_dddfc1ec:
     # isanari "Después de que yo dijera que sí."
     isanari "After I said yes."
 
-# game/02_cap1_conexiones.rpy:2560
-translate english cap1_interconexion_5_9b3a9269:
+# game/02_cap1_conexiones.rpy:2556
+translate english cap1_interconexion_5_bcd08a78:
 
-    # isanari "No me quites la culpa. Es lo único que me sobra."
-    isanari "Don't take the blame away from me. It's the only thing I've got to spare."
+    # isanari "No me quites la culpa. Esa es mía."
+    isanari "Don't take the blame off me. That one's mine."
 
 # game/02_cap1_conexiones.rpy:2565
 translate english cap1_interconexion_5_2fce6d55:
@@ -4356,17 +4350,17 @@ translate english cap1_interconexion_5_c74cb338:
     # mc_pensamiento "Me llamó desde un hospital, a las 11, para preguntar si sus hijas habían cenado."
     mc_pensamiento "He called me from a hospital, at 11, to ask whether his daughters had eaten."
 
-# game/02_cap1_conexiones.rpy:2625
-translate english cap1_interconexion_5_e6631429:
+# game/02_cap1_conexiones.rpy:2621
+translate english cap1_interconexion_5_1b6b1d3d:
 
-    # mc_pensamiento "No parecía un hombre que no quisiera estar en casa."
-    mc_pensamiento "He didn't sound like a man who didn't want to be home."
+    # mc_pensamiento "Quizá no es que no quiera estar en casa."
+    mc_pensamiento "Maybe it isn't that he doesn't want to be home."
 
-# game/02_cap1_conexiones.rpy:2627
-translate english cap1_interconexion_5_fdcb8e3b:
+# game/02_cap1_conexiones.rpy:2623
+translate english cap1_interconexion_5_51fc9df7:
 
-    # mc_pensamiento "Parecía uno que no sabía cómo volver."
-    mc_pensamiento "He sounded like one who didn't know how to get back."
+    # mc_pensamiento "Quizá es que no sabe cómo volver."
+    mc_pensamiento "Maybe he just doesn't know how to come back."
 
 # game/02_cap1_conexiones.rpy:2629
 translate english cap1_interconexion_5_fe6f9721:
@@ -4434,11 +4428,11 @@ translate english cap1_interconexion_5_e6548c3f:
     # mc_pensamiento "Contando con los dedos da la sensación de que queda menos."
     mc_pensamiento "Counting on my fingers makes it feel like there's less time left."
 
-# game/02_cap1_conexiones.rpy:2675
-translate english cap1_interconexion_5_90d7da78:
+# game/02_cap1_conexiones.rpy:2671
+translate english cap1_interconexion_5_acf289f3:
 
-    # mc_pensamiento "Mirando el calendario da igual: la cuenta asusta igual."
-    mc_pensamiento "Checking the calendar doesn't help: the count is just as scary."
+    # mc_pensamiento "Y mirando el calendario asusta igual."
+    mc_pensamiento "And looking at the calendar is just as scary."
 
 # game/02_cap1_conexiones.rpy:2677
 translate english cap1_interconexion_5_fe467f48:
@@ -4572,11 +4566,11 @@ translate english cap1_interconexion_5_5776ef9c:
     # nino "Si me preguntas, no voy a saber qué contestar."
     nino "If you ask, I won't know what to say."
 
-# game/02_cap1_conexiones.rpy:2754
-translate english cap1_interconexion_5_12f63035:
+# game/02_cap1_conexiones.rpy:2750
+translate english cap1_interconexion_5_28fc552d:
 
-    # narrador "No sonó a reproche. Más bien sonó a un ruego disfrazado de orden."
-    narrador "It didn't sound like a reproach. More like a plea dressed up as an order."
+    # narrador "Más que una orden, era un ruego."
+    narrador "It was less an order than a plea."
 
 # game/02_cap1_conexiones.rpy:2761
 translate english cap1_interconexion_5_be896031:
@@ -4686,17 +4680,17 @@ translate english cap1_interconexion_5_ba0b3264:
     # narrador "Con la misma calma que su padre."
     narrador "With the same calm as her father."
 
-# game/02_cap1_conexiones.rpy:2814
-translate english cap1_interconexion_5_5c833cea:
+# game/02_cap1_conexiones.rpy:2810
+translate english cap1_interconexion_5_13533ffc:
 
-    # mc_pensamiento "Esa calma no era suya. La había heredado."
-    mc_pensamiento "That calm wasn't hers. She'd inherited it."
+    # mc_pensamiento "Esa calma la sacó de él."
+    mc_pensamiento "She gets that calm from him."
 
-# game/02_cap1_conexiones.rpy:2816
-translate english cap1_interconexion_5_605534fd:
+# game/02_cap1_conexiones.rpy:2812
+translate english cap1_interconexion_5_70bc47c8:
 
-    # mc_pensamiento "Y yo se la había hecho usar."
-    mc_pensamiento "And I'd made her use it."
+    # mc_pensamiento "Y la estaba usando por mi culpa."
+    mc_pensamiento "And she was using it because of me."
 
 # game/02_cap1_conexiones.rpy:2831
 translate english cap1_interconexion_5_fec64cf2:
@@ -5916,11 +5910,11 @@ translate english cap1_interconexion_6_6ce34949:
     # narrador "Nadie se rió. Ni siquiera Ichika."
     narrador "Nobody laughed. Not even Ichika."
 
-# game/02_cap1_conexiones.rpy:3577
-translate english cap1_interconexion_6_8b07fcb7:
+# game/02_cap1_conexiones.rpy:3573
+translate english cap1_interconexion_6_b68fda2c:
 
-    # mc_pensamiento "Cuando Ichika no rellena un silencio con un chiste, ese silencio es molestia."
-    mc_pensamiento "When Ichika doesn't fill a silence with a joke, that silence means she's annoyed."
+    # mc_pensamiento "Si ni Ichika suelta un chiste, es que están molestas."
+    mc_pensamiento "If not even Ichika cracks a joke, they're upset."
 
 # game/02_cap1_conexiones.rpy:3579
 translate english cap1_interconexion_6_774f8cb1:
@@ -6083,12 +6077,6 @@ translate english cap1_interconexion_6_96b676b7:
 
     # mc_pensamiento "Esta vez tengo motivos para pensar que bien."
     mc_pensamiento "This time I've got reasons to think it'll go well."
-
-# game/02_cap1_conexiones.rpy:3662
-translate english cap1_interconexion_6_17ec1501:
-
-    # mc_pensamiento "De eso estoy seguro."
-    mc_pensamiento "I'm sure of that."
 
 # game/02_cap1_conexiones.rpy:3671
 translate english cap1_interconexion_6_063b1d84:
@@ -6288,17 +6276,11 @@ translate english cap1_interconexion_6_c3660936:
     # narrador "Cerró con la calma de siempre."
     narrador "He shut the door with his usual calm."
 
-# game/02_cap1_conexiones.rpy:3761
-translate english cap1_interconexion_6_9514a6ae:
+# game/02_cap1_conexiones.rpy:3755
+translate english cap1_interconexion_6_a91e7a3c:
 
-    # mc_pensamiento "Lo peor no era la amenaza. Era que sonaba a algo ya decidido."
-    mc_pensamiento "The worst part wasn't the threat. It was how it sounded like something already decided."
-
-# game/02_cap1_conexiones.rpy:3763
-translate english cap1_interconexion_6_36e688d8:
-
-    # mc_pensamiento "Mi destino ya estaba sellado."
-    mc_pensamiento "My fate was sealed."
+    # mc_pensamiento "Lo peor era que sonaba a algo ya decidido."
+    mc_pensamiento "The worst part was that it sounded already decided."
 
 # game/02_cap1_conexiones.rpy:3767
 translate english cap1_interconexion_6_13bf9935:
@@ -6696,11 +6678,11 @@ translate english cap1_interconexion_6_fee3c319:
     # itsuki "Hasta mañana."
     itsuki "Until tomorrow."
 
-# game/02_cap1_conexiones.rpy:3922
-translate english cap1_interconexion_6_5c632bc0:
+# game/02_cap1_conexiones.rpy:3914
+translate english cap1_interconexion_6_de9a15d7:
 
-    # narrador "Dos palabras, sin una pizca de rencor. Y sin una sola de calidez."
-    narrador "Two words, without a trace of resentment. And without a trace of warmth."
+    # narrador "Dos palabras. Sin rencor, pero secas."
+    narrador "Two words. No grudge, but curt."
 
 # game/02_cap1_conexiones.rpy:3924
 translate english cap1_interconexion_6_8c3b762a:
@@ -6894,17 +6876,17 @@ translate english cap1_interconexion_6_07413052:
     # narrador "Cinco puertas. Cinco rayas de luz. Ninguna dormía."
     narrador "Five doors. Five lines of light. None of them were sleeping."
 
-# game/02_cap1_conexiones.rpy:4056
-translate english cap1_interconexion_6_e78f86ae:
+# game/02_cap1_conexiones.rpy:4048
+translate english cap1_interconexion_6_a11123b6:
 
-    # mc_pensamiento "Hacía un mes, cada puerta cerrada era un portazo."
-    mc_pensamiento "A month ago, every closed door was a slam."
+    # mc_pensamiento "Hace un mes me cerraban la puerta en la cara."
+    mc_pensamiento "A month ago they were shutting doors in my face."
 
-# game/02_cap1_conexiones.rpy:4058
-translate english cap1_interconexion_6_7619d3eb:
+# game/02_cap1_conexiones.rpy:4050
+translate english cap1_interconexion_6_1b7e5ecd:
 
-    # mc_pensamiento "Esa noche estaban cerradas por la misma razón."
-    mc_pensamiento "That night they were all closed for the same reason."
+    # mc_pensamiento "Esa noche estaban cerradas porque estaban estudiando."
+    mc_pensamiento "Tonight they were shut because they were studying."
 
 # game/02_cap1_conexiones.rpy:4064
 translate english cap1_interconexion_6_922be737:

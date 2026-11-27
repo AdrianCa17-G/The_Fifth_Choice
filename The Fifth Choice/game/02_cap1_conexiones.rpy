@@ -516,7 +516,7 @@ label reaccion_itsuki:
 
         narrador "No me miró. Pero tampoco giró la silla hacia la ventana."
 
-        mc_pensamiento "Para ella, decirme que lo había hecho sola ya era una forma de darme las gracias."
+        mc_pensamiento "Viniendo de ella, eso era un gracias."
 
     elif rama_hub == "tibia":
 
@@ -598,7 +598,7 @@ label reaccion_itsuki:
 
         mc_pensamiento "Le había quitado la respuesta." 
         
-        mc_pensamiento "Ella me la devolvía a su manera: tachada."
+        mc_pensamiento "Y ella me devolvió la mía tachada."
 
     
     stop music fadeout 1.5
@@ -893,7 +893,7 @@ label queja_itsuki:
 
     itsuki "Yo no iba a pedírtelo. Pedirlo habría sido..."
 
-    narrador "Se detuvo. Una oración de Itsuki sin cerrar era como ver a alguien tropezar en terreno plano."
+    narrador "Se detuvo. En Itsuki, dejar una frase a medias es rarísimo."
 
     mc "¿Habría sido qué?"
 
@@ -1500,7 +1500,7 @@ label cap1_interconexion_2:
 
             mc_pensamiento "No pude ver si estaba roja." 
             
-            mc_pensamiento "La excusa le llegó un segundo tarde. La pregunta, no."
+            mc_pensamiento "Preguntó rápido. La excusa tardó más."
 
         elif rama_hub == "tibia":
 
@@ -1867,9 +1867,7 @@ label cap1_interconexion_3:
 
     itsuki "No me importa a quién elijas."
 
-    itsuki "Solo digo que el reloj no espera."
-
-    itsuki "Y cada uno lo sabe."
+    itsuki "Solo digo que te queda poco tiempo."
 
     hide itsuki
     hide yotsuba
@@ -1878,7 +1876,7 @@ label cap1_interconexion_3:
     hide ichika
     with disolucion_lenta
 
-    mc_pensamiento "Todas se marcharon, esperando que yo dé el siguiente paso."
+    mc_pensamiento "Todas se marcharon, esperando que yo diera el siguiente paso."
 
     stop music fadeout 1.5
 
@@ -1892,7 +1890,7 @@ label cap1_interconexion_3:
 
     mc_pensamiento "Dos tardes libres. Cuatro hermanas por alcanzar."
 
-    mc_pensamiento "Cada tarde que le brindo a una es una tarde que no tienen las demás."
+    mc_pensamiento "Cada tarde con una es una menos para las demás."
 
     mc "Bien. A ver a quién busco hoy."
 
@@ -1928,7 +1926,7 @@ label cap1_interconexion_4:
 
         mc_pensamiento "Con [nombre_h!t] encontré por dónde entrar."
 
-        mc_pensamiento "No sé si sabré hacerlo otra vez. Con la siguiente, la puerta será otra."
+        mc_pensamiento "No sé si sabré hacerlo otra vez. Con la siguiente tendré que buscar otra forma."
 
     elif rama_hub == "tibia":
 
@@ -2187,7 +2185,7 @@ label cap1_interconexion_4:
 
                 miku "...A mí me debes una página."
 
-                narrador "No sonó a reproche. Sonó a algo que llevaba un rato pensando."
+                narrador "Más que un reproche, parecía algo que llevaba rato pensando."
 
             show miku at pj_calla(0.5)
             with disolucion_lenta
@@ -2271,7 +2269,7 @@ label cap1_interconexion_4:
 
     narrador "Las otras cuatro seguían ahí." 
     
-    narrador "El hueco entre Ichika y Miku se notaba más que cualquier cosa que dijeran."
+    narrador "El hueco entre Ichika y Miku se notaba mucho."
 
     mc "Disculpen, chicas."
 
@@ -2436,7 +2434,7 @@ label cap1_interconexion_5:
         
         mc_pensamiento "Ninguno dijo nada que valiera la pena."
 
-        mc_pensamiento "Supongo que a veces el silencio es lo único que cabe entre dos personas."
+        mc_pensamiento "Supongo que a veces no hay más que decir."
 
     else:
 
@@ -2555,7 +2553,7 @@ label cap1_interconexion_5:
 
     isanari "Después de que yo dijera que sí."
 
-    isanari "No me quites la culpa. Es lo único que me sobra."
+    isanari "No me quites la culpa. Esa es mía."
 
     show isanari sonriendo at pj_habla(0.5)
     with disolucion_lenta
@@ -2620,9 +2618,9 @@ label cap1_interconexion_5:
 
     mc_pensamiento "Me llamó desde un hospital, a las 11, para preguntar si sus hijas habían cenado."
 
-    mc_pensamiento "No parecía un hombre que no quisiera estar en casa."
+    mc_pensamiento "Quizá no es que no quiera estar en casa."
 
-    mc_pensamiento "Parecía uno que no sabía cómo volver."
+    mc_pensamiento "Quizá es que no sabe cómo volver."
 
     mc_pensamiento "Solo me quedaba una última tarde libre."
 
@@ -2670,7 +2668,7 @@ label cap1_interconexion_5:
 
             mc_pensamiento "Contando con los dedos da la sensación de que queda menos."
 
-            mc_pensamiento "Mirando el calendario da igual: la cuenta asusta igual."
+            mc_pensamiento "Y mirando el calendario asusta igual."
 
             mc_pensamiento "No por mí, sino por ellas."
 
@@ -2749,7 +2747,7 @@ label cap1_interconexion_5:
         show nino at pj_calla(0.5)
         with disolucion_lenta
 
-        narrador "No sonó a reproche. Más bien sonó a un ruego disfrazado de orden."
+        narrador "Más que una orden, era un ruego."
 
     elif nino_rama_beat == "tibia":
 
@@ -2809,9 +2807,9 @@ label cap1_interconexion_5:
         
         narrador "Con la misma calma que su padre."
 
-        mc_pensamiento "Esa calma no era suya. La había heredado."
+        mc_pensamiento "Esa calma la sacó de él."
 
-        mc_pensamiento "Y yo se la había hecho usar."
+        mc_pensamiento "Y la estaba usando por mi culpa."
 
     stop music fadeout 1.5
 
@@ -3572,7 +3570,7 @@ label cap1_interconexion_6:
 
         narrador "Nadie se rió. Ni siquiera Ichika."
 
-        mc_pensamiento "Cuando Ichika no rellena un silencio con un chiste, ese silencio es molestia."
+        mc_pensamiento "Si ni Ichika suelta un chiste, es que están molestas."
 
         mc_pensamiento "Saben que lo arruiné."
 
@@ -3656,8 +3654,6 @@ label cap1_interconexion_6:
         mc_pensamiento "No sé cómo les irá." 
         
         mc_pensamiento "Esta vez tengo motivos para pensar que bien."
-
-        mc_pensamiento "De eso estoy seguro."
 
     elif clima_cap1 == "mixta":
 
@@ -3756,9 +3752,7 @@ label cap1_interconexion_6:
             
             narrador "Cerró con la calma de siempre."
 
-            mc_pensamiento "Lo peor no era la amenaza. Era que sonaba a algo ya decidido."
-
-            mc_pensamiento "Mi destino ya estaba sellado."
+            mc_pensamiento "Lo peor era que sonaba a algo ya decidido."
 
         else:
 
@@ -3917,7 +3911,7 @@ label cap1_interconexion_6:
 
         itsuki "Hasta mañana."
 
-        narrador "Dos palabras, sin una pizca de rencor. Y sin una sola de calidez."
+        narrador "Dos palabras. Sin rencor, pero secas."
 
         mc_pensamiento "Nada ha cambiado desde el primer día."
 
@@ -4051,9 +4045,9 @@ label cap1_interconexion_6:
 
         narrador "Cinco puertas. Cinco rayas de luz. Ninguna dormía."
 
-        mc_pensamiento "Hacía un mes, cada puerta cerrada era un portazo."
+        mc_pensamiento "Hace un mes me cerraban la puerta en la cara."
 
-        mc_pensamiento "Esa noche estaban cerradas por la misma razón."
+        mc_pensamiento "Esa noche estaban cerradas porque estaban estudiando."
 
     elif clima_cap1 == "mixta":
 
