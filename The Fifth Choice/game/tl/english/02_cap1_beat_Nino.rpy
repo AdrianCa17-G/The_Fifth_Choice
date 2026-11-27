@@ -799,10 +799,10 @@ translate english nino_beat_m4a_9876ea63:
     narrador "She stared at her cup for a long while."
 
 # game/02_cap1_beat_Nino.rpy:435
-translate english nino_beat_m4a_0f880d76:
+translate english nino_beat_m4a_cc3d8559:
 
-    # nino "Hay que hacer la cena. Son las cinco."
-    nino "Dinner needs making. It's five o'clock."
+    # nino "Hay que hacer la cena. Son las 5."
+    nino "Dinner needs making. It's 5 o'clock."
 
 # game/02_cap1_beat_Nino.rpy:437
 translate english nino_beat_m4a_5c602d0c:

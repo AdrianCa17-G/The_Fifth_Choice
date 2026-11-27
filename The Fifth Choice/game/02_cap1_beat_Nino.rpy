@@ -432,7 +432,7 @@ label beat_Nino:
         show nino pillada at pj(0.5)
         with disolucion_lenta
 
-        nino "Hay que hacer la cena. Son las cinco."
+        nino "Hay que hacer la cena. Son las 5."
 
         mc "¿Y?"
 
