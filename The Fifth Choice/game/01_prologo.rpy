@@ -690,7 +690,7 @@ label prologo:
 
     narrador "Levantó la vista antes de que terminara la pregunta."
     
-    narrador "No con molestia: con la cautela de quien preferiría no haber sido vista."
+    narrador "No molesta: incómoda de que la hubieran visto."
 
     narrador "Cerró el libro contra el pecho, como si lo hubiera atrapado leyendo algo que no debía."
 
@@ -706,10 +706,8 @@ label prologo:
 
     miku "...No. Es logística."
 
-    narrador "Lo dijo sin levantar la vista, pero sin pensarlo." 
+    narrador "Contestó sin levantar la vista y sin pensarlo." 
     
-    narrador "Como si la respuesta llevara horas esperando su turno."
-
     miku "Las batallas las gana quien mueve el arroz. No quien mueve la espada."
 
     narrador "Entonces pareció darse cuenta de que había hablado, y el libro volvió a subirle hasta media cara."
@@ -1029,7 +1027,7 @@ label prologo:
 
     maruo "Entonces no hay trabajo, no hay pago y fin de la historia."
 
-    narrador "Lo dijo con total frialdad. Sin amenazar, simplemente dejando las cosas claras."
+    narrador "Frío. Sin amenazar, solo dejando las cosas claras."
 
     maruo "Han pasado tutores antes. Ninguno duró más de una semana."
 
@@ -1085,7 +1083,7 @@ label prologo:
 
     narrador "Se dio la vuelta y se fue, cerrando la puerta con calma." 
     
-    narrador "La calma de quien ya dio una orden y no acepta réplicas."
+    narrador "La calma de alguien que da la orden por cumplida."
     
     ############################################################################
     ##  ESCENA 7 · El primer intento

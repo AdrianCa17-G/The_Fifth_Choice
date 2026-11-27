@@ -1291,10 +1291,10 @@ translate english prologo_b0b79945:
     narrador "She looked up before I finished the question."
 
 # game/01_prologo.rpy:693
-translate english prologo_3b0eebb3:
+translate english prologo_6197847d:
 
-    # narrador "No con molestia: con la cautela de quien preferiría no haber sido vista."
-    narrador "Not annoyed: wary, like someone who'd rather not have been seen."
+    # narrador "No molesta: incómoda de que la hubieran visto."
+    narrador "Not annoyed: uncomfortable at being seen."
 
 # game/01_prologo.rpy:695
 translate english prologo_bf6c6bd4:
@@ -1339,16 +1339,10 @@ translate english prologo_01b2dba5:
     miku "...No. It's logistics."
 
 # game/01_prologo.rpy:709
-translate english prologo_a592dad1:
+translate english prologo_5f87f753:
 
-    # narrador "Lo dijo sin levantar la vista, pero sin pensarlo."
-    narrador "She said it without looking up, but without having to think."
-
-# game/01_prologo.rpy:711
-translate english prologo_ba5a0e30:
-
-    # narrador "Como si la respuesta llevara horas esperando su turno."
-    narrador "As if the answer had been waiting its turn for hours."
+    # narrador "Contestó sin levantar la vista y sin pensarlo."
+    narrador "She answered without looking up and without thinking."
 
 # game/01_prologo.rpy:713
 translate english prologo_3735cb33:
@@ -1890,11 +1884,11 @@ translate english prologo_81c5ddc9:
     # maruo "Entonces no hay trabajo, no hay pago y fin de la historia."
     maruo "Then there is no job, no pay, and that is the end of it."
 
-# game/01_prologo.rpy:1032
-translate english prologo_2bd8e0a1:
+# game/01_prologo.rpy:1030
+translate english prologo_dec8c9a5:
 
-    # narrador "Lo dijo con total frialdad. Sin amenazar, simplemente dejando las cosas claras."
-    narrador "He said it coldly. Not a threat, just stating the terms."
+    # narrador "Frío. Sin amenazar, solo dejando las cosas claras."
+    narrador "Cold. Not a threat, just making things clear."
 
 # game/01_prologo.rpy:1034
 translate english prologo_4de31490:
@@ -2004,11 +1998,11 @@ translate english prologo_da72c2d2:
     # narrador "Se dio la vuelta y se fue, cerrando la puerta con calma."
     narrador "He turned and left, closing the door calmly."
 
-# game/01_prologo.rpy:1088
-translate english prologo_55be39d4:
+# game/01_prologo.rpy:1086
+translate english prologo_61154ae8:
 
-    # narrador "La calma de quien ya dio una orden y no acepta réplicas."
-    narrador "The calm of someone who has given an order and accepts no replies."
+    # narrador "La calma de alguien que da la orden por cumplida."
+    narrador "The calm of someone who takes the order as already obeyed."
 
 # game/01_prologo.rpy:1094
 translate english prologo_5b83343b:
