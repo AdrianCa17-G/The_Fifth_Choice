@@ -117,9 +117,9 @@ label hub_Itsuki:
 
     mc "Sí me incumbe."
 
-    itsuki "Me incumbe a mí. Tú te vas a las cuatro."
+    itsuki "Me incumbe a mí. Tú te vas a las 4."
 
-    mc "Son las cuatro y media."
+    mc "Son las 4:30."
 
     narrador "No contestó a eso."
 

@@ -169,16 +169,16 @@ translate english hub_Itsuki_28bdb33d:
     mc "It is my business."
 
 # game/02_cap1_Itsuki.rpy:120
-translate english hub_Itsuki_f48e5143:
+translate english hub_Itsuki_61a49a6c:
 
-    # itsuki "Me incumbe a mí. Tú te vas a las cuatro."
-    itsuki "It's my business. You go home at four."
+    # itsuki "Me incumbe a mí. Tú te vas a las 4."
+    itsuki "It's my business. You go home at 4."
 
 # game/02_cap1_Itsuki.rpy:122
-translate english hub_Itsuki_84b58792:
+translate english hub_Itsuki_245ecd15:
 
-    # mc "Son las cuatro y media."
-    mc "It's four thirty."
+    # mc "Son las 4:30."
+    mc "It's 4:30."
 
 # game/02_cap1_Itsuki.rpy:124
 translate english hub_Itsuki_6208a3ce:
