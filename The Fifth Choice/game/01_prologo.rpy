@@ -75,7 +75,7 @@ label prologo:
 
     mc_pensamiento "Mi madre murió cuando yo era pequeño."
 
-    mc_pensamiento "El restaurante que abrió con mi padre cerró poco después. La deuda no cerró con él."
+    mc_pensamiento "El restaurante que abrió con mi padre cerró poco después. La deuda sigue ahí."
 
     mc_pensamiento "Mi padre hace fotos por encargo: bodas, graduaciones, lo que salga."
 
@@ -202,7 +202,7 @@ label prologo:
 
     narrador "Hubo un silencio breve." 
     
-    narrador "El tipo de silencio que delata a alguien que ya aceptó la propuesta en su mente."
+    narrador "Y a mí me delató: en mi cabeza ya había aceptado."
 
     mc "...Entiendo. ¿Tienes más detalles?"
 
@@ -314,10 +314,8 @@ label prologo:
 
     mc_pensamiento "Prefiero esta hora, cuando los pasillos todavía están vacíos."
 
-    mc_pensamiento "Es el único rato del día en que este sitio no me echa nada en cara." 
+    mc_pensamiento "A esta hora nadie me recuerda que los demás sí pueden permitirse estar tranquilos." 
     
-    mc_pensamiento "Que los demás sí pueden permitirse estar tranquilos."
-
     play music cotidiano fadein 2.5
 
     mc_pensamiento "(Cierto... hoy entregan los resultados de los exámenes de práctica. Iré al salón)."
@@ -488,7 +486,7 @@ label prologo:
         
         "Sacar los apuntes. No le debo conversación.":
 
-            narrador "Saqué mis apuntes de la mochila y dejé que el silencio hiciera su trabajo."
+            narrador "Saqué mis apuntes de la mochila y me puse a lo mío."
 
             show itsuki molesta at pj(0.5)
             with disolucion_lenta
@@ -528,7 +526,7 @@ label prologo:
 
     mc_pensamiento "Permanecimos en silencio con la luz del atardecer, cada uno en un extremo del banco." 
     
-    mc_pensamiento "Como dos países que firman una tregua sin reconocerse."
+    mc_pensamiento "Una tregua que ninguno de los dos iba a admitir."
 
     mc_pensamiento "Ella sabía mi nombre por el profesor." 
     
@@ -577,9 +575,9 @@ label prologo:
 
     mc_pensamiento "Nada que no haya resuelto antes en papel."
 
-    narrador "Es curioso lo tranquilo que uno puede estar cuando no sabe a lo que se enfrenta."
+    narrador "Estaba tranquilo. Todavía no sabía a lo que me enfrentaba."
 
-    mc_pensamiento "Piso alto. Puerta doble de madera fina. El tipo de lugar que impone silencio solo con verlo."
+    mc_pensamiento "Piso alto. Puerta doble de madera fina. Daba hasta reparo tocarla."
 
     play sound audio.sfx_toque_puerta volume 1.5
 
@@ -984,7 +982,7 @@ label prologo:
 
     nino "Quintillizas. Búscalo en un diccionario."
 
-    narrador "Y yo de pie con la mochila colgando y la sensación exacta de haber firmado algo sin leerlo."
+    narrador "Y yo ahí parado, con la mochila colgando, como si hubiera firmado algo sin leerlo."
 
     mc_pensamiento "Cinco veces la tarifa normal."
 

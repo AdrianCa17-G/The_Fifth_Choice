@@ -31,10 +31,10 @@ translate english prologo_9d86e401:
     mc_pensamiento "My mother died when I was little."
 
 # game/01_prologo.rpy:78
-translate english prologo_6475cece:
+translate english prologo_1d2a1938:
 
-    # mc_pensamiento "El restaurante que abrió con mi padre cerró poco después. La deuda no cerró con él."
-    mc_pensamiento "The restaurant my parents opened closed soon after. The debt didn't close with it."
+    # mc_pensamiento "El restaurante que abrió con mi padre cerró poco después. La deuda sigue ahí."
+    mc_pensamiento "The restaurant she opened with my father closed soon after. The debt's still here."
 
 # game/01_prologo.rpy:80
 translate english prologo_6ca985c3:
@@ -307,10 +307,10 @@ translate english prologo_0c5eb183:
     narrador "There was a brief silence."
 
 # game/01_prologo.rpy:205
-translate english prologo_b43000e9:
+translate english prologo_5afcf733:
 
-    # narrador "El tipo de silencio que delata a alguien que ya aceptó la propuesta en su mente."
-    narrador "The kind of silence that gives away someone who's already said yes in their head."
+    # narrador "Y a mí me delató: en mi cabeza ya había aceptado."
+    narrador "And it gave me away: in my head I'd already accepted."
 
 # game/01_prologo.rpy:207
 translate english prologo_2798abd1:
@@ -523,16 +523,10 @@ translate english prologo_1550b31a:
     mc_pensamiento "I prefer this hour, when the hallways are still empty."
 
 # game/01_prologo.rpy:317
-translate english prologo_fa04d70b:
+translate english prologo_ec9a4634:
 
-    # mc_pensamiento "Es el único rato del día en que este sitio no me echa nada en cara."
-    mc_pensamiento "It's the only time of day this place doesn't rub anything in my face."
-
-# game/01_prologo.rpy:319
-translate english prologo_2aa44cb1:
-
-    # mc_pensamiento "Que los demás sí pueden permitirse estar tranquilos."
-    mc_pensamiento "Like the fact that everyone else can afford to relax."
+    # mc_pensamiento "A esta hora nadie me recuerda que los demás sí pueden permitirse estar tranquilos."
+    mc_pensamiento "At this hour nobody reminds me that everyone else can afford to relax."
 
 # game/01_prologo.rpy:323
 translate english prologo_b279ef73:
@@ -882,11 +876,11 @@ translate english prologo_da840b62:
     # mc_pensamiento "Uno de los dos va a tener que romper esto. O ninguno." nointeract
     mc_pensamiento "One of us is going to have to break this. Or neither." nointeract
 
-# game/01_prologo.rpy:491
-translate english prologo_ecff0fe7:
+# game/01_prologo.rpy:489
+translate english prologo_b6b324af:
 
-    # narrador "Saqué mis apuntes de la mochila y dejé que el silencio hiciera su trabajo."
-    narrador "I took my notes out of my bag and let the silence do its work."
+    # narrador "Saqué mis apuntes de la mochila y me puse a lo mío."
+    narrador "I took my notes out of my bag and got on with my own thing."
 
 # game/01_prologo.rpy:496
 translate english prologo_5e8dcb77:
@@ -966,11 +960,11 @@ translate english prologo_5b1ff7e5:
     # mc_pensamiento "Permanecimos en silencio con la luz del atardecer, cada uno en un extremo del banco."
     mc_pensamiento "We sat in silence in the evening light, each at one end of the bench."
 
-# game/01_prologo.rpy:531
-translate english prologo_c899e238:
+# game/01_prologo.rpy:529
+translate english prologo_20683cd7:
 
-    # mc_pensamiento "Como dos países que firman una tregua sin reconocerse."
-    mc_pensamiento "Like two countries signing a truce without recognizing each other."
+    # mc_pensamiento "Una tregua que ninguno de los dos iba a admitir."
+    mc_pensamiento "A truce neither of us was going to admit to."
 
 # game/01_prologo.rpy:533
 translate english prologo_9f8c92d7:
@@ -1062,17 +1056,17 @@ translate english prologo_4339ef5c:
     # mc_pensamiento "Nada que no haya resuelto antes en papel."
     mc_pensamiento "Nothing I haven't already solved on paper."
 
+# game/01_prologo.rpy:578
+translate english prologo_92599583:
+
+    # narrador "Estaba tranquilo. Todavía no sabía a lo que me enfrentaba."
+    narrador "I was calm. I didn't know yet what I was up against."
+
 # game/01_prologo.rpy:580
-translate english prologo_21ee2fc7:
+translate english prologo_27e9ee44:
 
-    # narrador "Es curioso lo tranquilo que uno puede estar cuando no sabe a lo que se enfrenta."
-    narrador "It's funny how calm you can be when you don't know what you're up against."
-
-# game/01_prologo.rpy:582
-translate english prologo_c8e620b7:
-
-    # mc_pensamiento "Piso alto. Puerta doble de madera fina. El tipo de lugar que impone silencio solo con verlo."
-    mc_pensamiento "High floor. Double door of thin wood. The kind of place that demands silence at a glance."
+    # mc_pensamiento "Piso alto. Puerta doble de madera fina. Daba hasta reparo tocarla."
+    mc_pensamiento "Top floor. Double doors in fine wood. I almost didn't dare knock."
 
 # game/01_prologo.rpy:586
 translate english prologo_4d64b739:
@@ -1794,11 +1788,11 @@ translate english prologo_8d41c08f:
     # nino "Quintillizas. Búscalo en un diccionario."
     nino "Quintuplets. Look it up in a dictionary."
 
-# game/01_prologo.rpy:989
-translate english prologo_4bafe675:
+# game/01_prologo.rpy:985
+translate english prologo_da2aad2b:
 
-    # narrador "Y yo de pie con la mochila colgando y la sensación exacta de haber firmado algo sin leerlo."
-    narrador "And there I stood, backpack dangling, feeling like I'd signed something without reading it."
+    # narrador "Y yo ahí parado, con la mochila colgando, como si hubiera firmado algo sin leerlo."
+    narrador "And me standing there, bag hanging, as if I'd signed something without reading it."
 
 # game/01_prologo.rpy:991
 translate english prologo_4b557a71:
