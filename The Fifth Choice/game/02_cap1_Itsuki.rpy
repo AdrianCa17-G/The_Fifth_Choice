@@ -141,15 +141,9 @@ label hub_Itsuki:
 
     narrador "Me contestó casi con las mismas palabras."
 
-    mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la respuesta con la misma frase."
+    mc_pensamiento "Cuando Itsuki tiene la respuesta, no la repite igual: la mejora."
 
-    mc_pensamiento "La cambia." 
-    
-    mc_pensamiento "La corrige." 
-    
-    mc_pensamiento "La mejora."
-
-    mc_pensamiento "Esta vez solo la dejó ahí."
+    mc_pensamiento "Esta vez la repitió tal cual."
 
     mc_pensamiento "Está esperando a que el error se corrija solo."
 
@@ -341,7 +335,7 @@ label itsuki_m4a:
 
     itsuki "...Es el que tenía que dar."
 
-    narrador "Sonó a dato, no a triunfo. Seguía sin mirarme."
+    narrador "No sonaba contenta. Seguía sin mirarme."
 
     show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta

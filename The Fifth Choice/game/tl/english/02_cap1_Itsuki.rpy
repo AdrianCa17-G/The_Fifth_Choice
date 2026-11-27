@@ -240,35 +240,17 @@ translate english hub_Itsuki_99ac5984:
     # narrador "Me contestó casi con las mismas palabras."
     narrador "She answered with almost the same words."
 
-# game/02_cap1_Itsuki.rpy:148
-translate english hub_Itsuki_4383a36a:
+# game/02_cap1_Itsuki.rpy:144
+translate english hub_Itsuki_b365aa6f:
 
-    # mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la respuesta con la misma frase."
-    mc_pensamiento "When Itsuki has the answer, she never repeats a line word for word."
+    # mc_pensamiento "Cuando Itsuki tiene la respuesta, no la repite igual: la mejora."
+    mc_pensamiento "When Itsuki has the answer, she doesn't repeat it as is: she improves it."
 
-# game/02_cap1_Itsuki.rpy:150
-translate english hub_Itsuki_adfbe6d1:
+# game/02_cap1_Itsuki.rpy:146
+translate english hub_Itsuki_dac70646:
 
-    # mc_pensamiento "La cambia."
-    mc_pensamiento "She changes it."
-
-# game/02_cap1_Itsuki.rpy:152
-translate english hub_Itsuki_57b266fb:
-
-    # mc_pensamiento "La corrige."
-    mc_pensamiento "She corrects it."
-
-# game/02_cap1_Itsuki.rpy:154
-translate english hub_Itsuki_75dedc8b:
-
-    # mc_pensamiento "La mejora."
-    mc_pensamiento "She improves it."
-
-# game/02_cap1_Itsuki.rpy:156
-translate english hub_Itsuki_d3c43c4a:
-
-    # mc_pensamiento "Esta vez solo la dejó ahí."
-    mc_pensamiento "This time she just left it there."
+    # mc_pensamiento "Esta vez la repitió tal cual."
+    mc_pensamiento "This time she repeated it word for word."
 
 # game/02_cap1_Itsuki.rpy:154
 translate english hub_Itsuki_563b9cd1:
@@ -642,11 +624,11 @@ translate english itsuki_m4a_53c680de:
     # itsuki "...Es el que tenía que dar."
     itsuki "...It's the one it should have been."
 
-# game/02_cap1_Itsuki.rpy:344
-translate english itsuki_m4a_7342c6ab:
+# game/02_cap1_Itsuki.rpy:338
+translate english itsuki_m4a_70126d03:
 
-    # narrador "Sonó a dato, no a triunfo. Seguía sin mirarme."
-    narrador "It sounded like data, not a win. She still wasn't looking at me."
+    # narrador "No sonaba contenta. Seguía sin mirarme."
+    narrador "She didn't sound pleased. She still wasn't looking at me."
 
 # game/02_cap1_Itsuki.rpy:363
 translate english itsuki_m4a_f97f783c:
