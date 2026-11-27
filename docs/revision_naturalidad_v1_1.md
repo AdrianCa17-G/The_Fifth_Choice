@@ -245,3 +245,27 @@ Las réplicas de Nino son cortas y cortantes, y no se tocan. «como quien» pasa
 | NIN-20 | 387 | narrador | Se quedó mirando la tarjeta de receta un segundo más, antes de guardarla del todo. | la 295 ya la guardó en el bolsillo | Se quedó un segundo con la mano sobre el bolsillo de la tarjeta. | ✅ aplicado 27/11 |
 | NIN-21 | 394 | mc | No dije nada de más. | quien «habló de más» fue Nino | No dijiste nada de más. | ✅ aplicado 27/11 |
 | NIN-22 | 514 | narrador | Caminó hacia la caja sin esperarme, ocultando el papel antes de que pudiera ver algo más. | la tarjeta ya estaba guardada | Caminó hacia la caja sin esperarme, con una mano sobre el bolsillo. | ✅ aplicado 27/11 |
+
+## 02_cap1_Yotsuba.rpy
+
+Las réplicas de Yotsuba (exclamaciones, «¡Equipo completo!») suenan a ella y no se tocan. «como quien / de quien»
+pasa de 2 a 1 (queda la 529) y «como si» de 6 a 2 (289 y 305).
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| YOT-01 | 151 | narrador | Como si acabara de darse cuenta de que alguien la estaba viendo. | 5 | Acababa de darse cuenta de que alguien la miraba. | ✅ aplicado 27/11 |
+| YOT-02 | 167 | narrador | Luego asintió con la solemnidad de quien acaba de recordar algo obvio. | 1 | Luego asintió, muy solemne. | ✅ aplicado 27/11 |
+| YOT-03 | 173 | narrador | La pregunta la pilló sin la exclamación preparada. | 6 | Esa pregunta no la vio venir. | ✅ aplicado 27/11 |
+| YOT-04 | 201 | narrador | Algo cambió en la forma en que se apoyó en la valla. | muletilla («algo») | Se reacomodó contra la valla. | ✅ aplicado 27/11 |
+| YOT-05 | 237 | mc_pensamiento | Como si destrozarse el cuerpo en esa pista fuera un precio justo por sentirse útil. | 5 | Y destrozarse en esa pista le parece un precio justo por sentirse útil. | ✅ aplicado 27/11 |
+| YOT-06 | 266 | narrador | Como si así pudiera sacudirse también lo que acababa de decir. | 5, 6 | BORRAR | ✅ aplicado 27/11 |
+| YOT-07 | 385 | narrador | Hubo un breve silencio. | 5 (va con YOT-08) | BORRAR | ✅ aplicado 27/11 |
+| YOT-08 | 387 | narrador | Un silencio de una Yotsuba que está comprobando si todo eso fue verdad. | 6 | Se quedó callada, repasando si todo eso era verdad. | ✅ aplicado 27/11 |
+| YOT-09 | 415 | narrador | No dijo nada. Miraba la pista, pero no la pista de verdad. | 4, 6 | No dijo nada. Miraba la pista sin verla. | ✅ aplicado 27/11 |
+| YOT-10 | 593 | mc_pensamiento | Solo volvió a correr, como si la conversación nunca hubiera interrumpido nada. | 5 | Solo siguió corriendo. | ✅ aplicado 27/11 |
+
+### Notas de coherencia (para aprobar aparte)
+
+| ID | línea | personaje | texto actual | problema | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| YOT-11 | 450 | narrador | Ya no se gritaba ánimos. Ahora la cuenta la llevábamos entre dos. | gramática | Ya no se gritaba ánimos a sí misma. La cuenta la llevábamos entre dos. | ✅ aplicado 27/11 |

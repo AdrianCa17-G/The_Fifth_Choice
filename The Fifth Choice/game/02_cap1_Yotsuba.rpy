@@ -148,7 +148,7 @@ label hub_Yotsuba:
 
     narrador "Bajó la mirada, con las manos recogidas contra el pecho."
     
-    narrador "Como si acabara de darse cuenta de que alguien la estaba viendo."
+    narrador "Acababa de darse cuenta de que alguien la miraba."
 
     narrador "En el antebrazo, las marcas de rotulador corridas por el sudor."
 
@@ -164,13 +164,13 @@ label hub_Yotsuba:
 
     narrador "Lo procesó un segundo."
 
-    narrador "Luego asintió con la solemnidad de quien acaba de recordar algo obvio."
+    narrador "Luego asintió, muy solemne."
 
     yotsuba "¡Ah, claro! ¡Eso tiene sentido! ¡Pues bienvenido a la pista!"
 
     mc "Gracias. ¿Por qué sigues aquí si el club ya se fue?"
 
-    narrador "La pregunta la pilló sin la exclamación preparada."
+    narrador "Esa pregunta no la vio venir."
 
     yotsuba "...Quería terminar las series."
 
@@ -198,7 +198,7 @@ label hub_Yotsuba:
 
     mc "¿Y el club no se queda?"
 
-    narrador "Algo cambió en la forma en que se apoyó en la valla."
+    narrador "Se reacomodó contra la valla."
 
     yotsuba "El club tiene sus propios objetivos. Yo tengo los míos."
 
@@ -234,7 +234,7 @@ label hub_Yotsuba:
 
     mc_pensamiento "Pero lo que acaba de decir es que su única razón para estar aquí es no quedarse atrás."
 
-    mc_pensamiento  "Como si destrozarse el cuerpo en esa pista fuera un precio justo por sentirse útil."
+    mc_pensamiento  "Y destrozarse en esa pista le parece un precio justo por sentirse útil."
 
     ############################################################################
     ##  MOVIMIENTO 3 ·  La decisión
@@ -263,8 +263,6 @@ label hub_Yotsuba:
 
     narrador "Dio un par de saltos en el sitio, sacudiendo los brazos." 
     
-    narrador "Como si así pudiera sacudirse también lo que acababa de decir."
-
     yotsuba "¡Vamos, no hay tiempo que perder! ¡El sol no espera!"
 
     scene cg_yotsuba_cronometro
@@ -382,9 +380,7 @@ label yotsuba_m4a:
 
     mc "Nadie te lo pidió. Ni siquiera ella."
 
-    narrador "Hubo un breve silencio."
-
-    narrador "Un silencio de una Yotsuba que está comprobando si todo eso fue verdad."
+    narrador "Se quedó callada, repasando si todo eso era verdad."
 
     show yotsuba incomoda at pj_habla(0.5)
     with disolucion_lenta
@@ -412,7 +408,7 @@ label yotsuba_m4a:
 
     mc "Tú lo haces de forma natural con cinco personas a la vez."
 
-    narrador "No dijo nada. Miraba la pista, pero no la pista de verdad."
+    narrador "No dijo nada. Miraba la pista sin verla."
 
     mc "No te digo que sea suficiente para el examen. "
 
@@ -447,7 +443,7 @@ label yotsuba_m4a:
 
     narrador "Yo le contesté con el tiempo."
 
-    narrador "Ya no se gritaba ánimos. Ahora la cuenta la llevábamos entre dos."
+    narrador "Ya no se gritaba ánimos a sí misma. La cuenta la llevábamos entre dos."
 
     jump yotsuba_m5
     
@@ -590,7 +586,7 @@ label yotsuba_m5:
 
     mc_pensamiento "No se despidió."
 
-    mc_pensamiento "Solo volvió a correr, como si la conversación nunca hubiera interrumpido nada."
+    mc_pensamiento "Solo siguió corriendo."
 
     mc_pensamiento "Un 'nos vemos mañana'. Hoy ninguno de los dos lo dijo."
 

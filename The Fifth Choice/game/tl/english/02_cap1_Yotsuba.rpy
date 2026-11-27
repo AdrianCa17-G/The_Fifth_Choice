@@ -241,10 +241,10 @@ translate english hub_Yotsuba_6eb6d5d7:
     narrador "She lowered her gaze, hands tucked against her chest."
 
 # game/02_cap1_Yotsuba.rpy:151
-translate english hub_Yotsuba_77b6409d:
+translate english hub_Yotsuba_07b00026:
 
-    # narrador "Como si acabara de darse cuenta de que alguien la estaba viendo."
-    narrador "As if she'd just realized someone was watching her."
+    # narrador "Acababa de darse cuenta de que alguien la miraba."
+    narrador "She'd just realized someone was watching her."
 
 # game/02_cap1_Yotsuba.rpy:153
 translate english hub_Yotsuba_9c063e63:
@@ -283,10 +283,10 @@ translate english hub_Yotsuba_e3aab386:
     narrador "She processed that for a second."
 
 # game/02_cap1_Yotsuba.rpy:167
-translate english hub_Yotsuba_af644779:
+translate english hub_Yotsuba_33f4ba82:
 
-    # narrador "Luego asintió con la solemnidad de quien acaba de recordar algo obvio."
-    narrador "Then she nodded, with the solemnity of someone remembering something obvious."
+    # narrador "Luego asintió, muy solemne."
+    narrador "Then she nodded, very solemn."
 
 # game/02_cap1_Yotsuba.rpy:169
 translate english hub_Yotsuba_3a76904c:
@@ -301,10 +301,10 @@ translate english hub_Yotsuba_d59e10d5:
     mc "Thanks. Why are you still here if the club already left?"
 
 # game/02_cap1_Yotsuba.rpy:173
-translate english hub_Yotsuba_e9196700:
+translate english hub_Yotsuba_185942de:
 
-    # narrador "La pregunta la pilló sin la exclamación preparada."
-    narrador "The question caught her without an exclamation ready."
+    # narrador "Esa pregunta no la vio venir."
+    narrador "She didn't see that question coming."
 
 # game/02_cap1_Yotsuba.rpy:175
 translate english hub_Yotsuba_05471eea:
@@ -385,10 +385,10 @@ translate english hub_Yotsuba_48507ed8:
     mc "And the club doesn't stay?"
 
 # game/02_cap1_Yotsuba.rpy:201
-translate english hub_Yotsuba_52cfb733:
+translate english hub_Yotsuba_794d477f:
 
-    # narrador "Algo cambió en la forma en que se apoyó en la valla."
-    narrador "Something shifted in the way she leaned on the fence."
+    # narrador "Se reacomodó contra la valla."
+    narrador "She shifted against the fence."
 
 # game/02_cap1_Yotsuba.rpy:203
 translate english hub_Yotsuba_7fc07a40:
@@ -463,10 +463,10 @@ translate english hub_Yotsuba_093e5510:
     mc_pensamiento "But what she just said is that her only reason to be here is not getting left behind."
 
 # game/02_cap1_Yotsuba.rpy:237
-translate english hub_Yotsuba_b4a1d854:
+translate english hub_Yotsuba_0f0207a7:
 
-    # mc_pensamiento "Como si destrozarse el cuerpo en esa pista fuera un precio justo por sentirse útil."
-    mc_pensamiento "As if wrecking her body on that track were a fair price for feeling useful."
+    # mc_pensamiento "Y destrozarse en esa pista le parece un precio justo por sentirse útil."
+    mc_pensamiento "And wrecking herself on that track seems to her a fair price for feeling useful."
 
 # game/02_cap1_Yotsuba.rpy:245
 translate english hub_Yotsuba_4ada2643:
@@ -521,12 +521,6 @@ translate english hub_Yotsuba_9c7789cd:
 
     # narrador "Dio un par de saltos en el sitio, sacudiendo los brazos."
     narrador "She did a couple of hops in place, shaking out her arms."
-
-# game/02_cap1_Yotsuba.rpy:266
-translate english hub_Yotsuba_7619be4e:
-
-    # narrador "Como si así pudiera sacudirse también lo que acababa de decir."
-    narrador "As if she could shake off what she'd just said, too."
 
 # game/02_cap1_Yotsuba.rpy:268
 translate english hub_Yotsuba_ef08b681:
@@ -732,17 +726,11 @@ translate english yotsuba_m4a_b7af9099:
     # mc "Nadie te lo pidió. Ni siquiera ella."
     mc "Nobody asked you to. Not even her."
 
-# game/02_cap1_Yotsuba.rpy:385
-translate english yotsuba_m4a_d829e611:
+# game/02_cap1_Yotsuba.rpy:383
+translate english yotsuba_m4a_295806ef:
 
-    # narrador "Hubo un breve silencio."
-    narrador "There was a brief silence."
-
-# game/02_cap1_Yotsuba.rpy:387
-translate english yotsuba_m4a_8d245b73:
-
-    # narrador "Un silencio de una Yotsuba que está comprobando si todo eso fue verdad."
-    narrador "The silence of a Yotsuba checking whether all of that was true."
+    # narrador "Se quedó callada, repasando si todo eso era verdad."
+    narrador "She went quiet, going over whether all of that was true."
 
 # game/02_cap1_Yotsuba.rpy:392
 translate english yotsuba_m4a_b4f4a658:
@@ -804,11 +792,11 @@ translate english yotsuba_m4a_22772cd2:
     # mc "Tú lo haces de forma natural con cinco personas a la vez."
     mc "You do it naturally, with five people at once."
 
-# game/02_cap1_Yotsuba.rpy:415
-translate english yotsuba_m4a_1f150474:
+# game/02_cap1_Yotsuba.rpy:411
+translate english yotsuba_m4a_650cf3e1:
 
-    # narrador "No dijo nada. Miraba la pista, pero no la pista de verdad."
-    narrador "She said nothing. She was looking at the track, but not the real one."
+    # narrador "No dijo nada. Miraba la pista sin verla."
+    narrador "She didn't say anything. She stared at the track without seeing it."
 
 # game/02_cap1_Yotsuba.rpy:417
 translate english yotsuba_m4a_be4b5158:
@@ -882,11 +870,11 @@ translate english yotsuba_m4a_a64d389b:
     # narrador "Yo le contesté con el tiempo."
     narrador "I answered with her time."
 
-# game/02_cap1_Yotsuba.rpy:450
-translate english yotsuba_m4a_cf01fd5a:
+# game/02_cap1_Yotsuba.rpy:446
+translate english yotsuba_m4a_856136b6:
 
-    # narrador "Ya no se gritaba ánimos. Ahora la cuenta la llevábamos entre dos."
-    narrador "She wasn't cheering herself on anymore. Now the two of us were keeping count."
+    # narrador "Ya no se gritaba ánimos a sí misma. La cuenta la llevábamos entre dos."
+    narrador "She wasn't cheering herself on anymore. The two of us were keeping count."
 
 # game/02_cap1_Yotsuba.rpy:460
 translate english yotsuba_m4b_c91c4f75:
@@ -1140,11 +1128,11 @@ translate english yotsuba_m5_aa624164:
     # mc_pensamiento "No se despidió."
     mc_pensamiento "She didn't say goodbye."
 
-# game/02_cap1_Yotsuba.rpy:593
-translate english yotsuba_m5_e86f7895:
+# game/02_cap1_Yotsuba.rpy:589
+translate english yotsuba_m5_4f8716c6:
 
-    # mc_pensamiento "Solo volvió a correr, como si la conversación nunca hubiera interrumpido nada."
-    mc_pensamiento "She just went back to running, as if the conversation had never interrupted anything."
+    # mc_pensamiento "Solo siguió corriendo."
+    mc_pensamiento "She just kept running."
 
 # game/02_cap1_Yotsuba.rpy:595
 translate english yotsuba_m5_86bd8720:
