@@ -133,10 +133,10 @@ translate english final_malo_beat_09c9220c:
     narrador "His back to both of us alike."
 
 # game/02_cap1_final_malo.rpy:98
-translate english final_malo_beat_947de305:
+translate english final_malo_beat_7f384c07:
 
-    # mc_pensamiento "Lo que ella había pedido a gritos acababa de pasar sin que nadie gritara."
-    mc_pensamiento "What she'd demanded at the top of her lungs had just happened, and nobody had shouted."
+    # mc_pensamiento "Nino acababa de conseguir lo que pedía a gritos."
+    mc_pensamiento "Nino had just got what she'd been shouting for."
 
 # game/02_cap1_final_malo.rpy:115
 translate english final_malo_beat_7fbdb494:
@@ -1231,10 +1231,10 @@ translate english final_malo_hub3_6e20a4d4:
     mc_pensamiento "Just like the second day. The same performance."
 
 # game/02_cap1_final_malo.rpy:732
-translate english final_malo_hub3_12b17fd7:
+translate english final_malo_hub3_2b95b9ef:
 
-    # mc_pensamiento "Solo que esta vez la función no era para nadie."
-    mc_pensamiento "Only this time the performance wasn't for anyone."
+    # mc_pensamiento "Solo que esta vez no actuaba para nadie."
+    mc_pensamiento "Only this time she wasn't performing for anyone."
 
 # game/02_cap1_final_malo.rpy:734
 translate english final_malo_hub3_f8d0e10c:
@@ -1963,16 +1963,10 @@ translate english final_malo_hub3_5e529733:
     mc_pensamiento "On two of them I said what seemed right. And right wasn't enough."
 
 # game/02_cap1_final_malo.rpy:1103
-translate english final_malo_hub3_f0acaf03:
+translate english final_malo_hub3_bc72d0ae:
 
-    # mc_pensamiento "Cada vez que alguien necesitaba que me quedara callado, hablé."
-    mc_pensamiento "Every time someone needed me to stay quiet, I talked."
-
-# game/02_cap1_final_malo.rpy:1105
-translate english final_malo_hub3_f8ffa467:
-
-    # mc_pensamiento "Y cada vez que necesitaba hablar, me quedé callado."
-    mc_pensamiento "And every time someone needed me to speak, I stayed quiet."
+    # mc_pensamiento "Hablé cuando debía callarme, y me callé cuando debía hablar."
+    mc_pensamiento "I talked when I should've kept quiet, and kept quiet when I should've talked."
 
 # game/02_cap1_final_malo.rpy:1112
 translate english final_malo_hub3_959b7044:

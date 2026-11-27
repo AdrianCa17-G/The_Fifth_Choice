@@ -95,7 +95,7 @@ label final_malo_beat:
 
     narrador "Dándonos la espalda a los dos por igual."
 
-    mc_pensamiento "Lo que ella había pedido a gritos acababa de pasar sin que nadie gritara."
+    mc_pensamiento "Nino acababa de conseguir lo que pedía a gritos."
 
     ############################################################################
     ##  MOVIMIENTO 2 · Lo que pidió
@@ -729,7 +729,7 @@ label final_malo_hub3:
 
     mc_pensamiento "Igual que el segundo día. La misma función."
 
-    mc_pensamiento "Solo que esta vez la función no era para nadie."
+    mc_pensamiento "Solo que esta vez no actuaba para nadie."
 
     profe "Nakano. Despierte."
 
@@ -1100,9 +1100,7 @@ label final_malo_hub3:
     
     mc_pensamiento "En dos dije lo que me pareció correcto. Y lo correcto no alcanzó."
 
-    mc_pensamiento "Cada vez que alguien necesitaba que me quedara callado, hablé."
-
-    mc_pensamiento "Y cada vez que necesitaba hablar, me quedé callado."
+    mc_pensamiento "Hablé cuando debía callarme, y me callé cuando debía hablar."
 
     play sound audio.sfx_toque_puerta volume 1.5 
     
