@@ -365,3 +365,73 @@ es el candidato a quedarse como el único del capítulo; el otro (124) se quita.
 |---|---|---|---|---|---|---|
 | BI-08 | 79 | mc_pensamiento | Y hoy trajo el cuaderno de todas formas, al mismo sitio del que dijo que venía a escapar. | el sentido queda al revés | Y hoy igual trajo el cuaderno, justo al sitio al que dijo que venía a escapar. | ✅ aplicado 27/11 |
 | BI-09 | 159 | mc_pensamiento | Ella, que llena una hoja de tachones antes que nadie termine la primera línea. | gramática | Ella, que llena una hoja de tachones antes de que nadie termine la primera línea. | ✅ aplicado 27/11 |
+
+## Conexiones, Evento 6, final malo y prólogo (27/11, aplicado sin revisión previa, a pedido tuyo)
+
+Auditoría por búsqueda de muletillas con su contexto, no lectura completa. «antes → ahora» según git.
+
+| archivo | antes | ahora |
+|---|---|---|
+| 02_cap1_conexiones | Lo dijo sin exclamación. Se dio cuenta un segundo después. | Se le escapó sin su tono de siempre. Se dio cuenta tarde. |
+| 02_cap1_conexiones | Se quedó mirando cómo la abría. Como quien espera una nota. | Se quedó mirando cómo la abría, esperando el veredicto. |
+| 02_cap1_conexiones | Eso fue lo peor: lo dijo como quien acepta un reglamento. | Eso fue lo peor: sonó a que aceptaba un reglamento. |
+| 02_cap1_conexiones | Se fue antes de que pudiera contestarle, con el paso apretado de quien dijo más de la cuenta. | Se fue a paso rápido antes de que pudiera contestar. Había hablado de más. |
+| 02_cap1_conexiones | No era una broma. Era una revancha por la hoja de diagnóstico. | Iba en serio: era la revancha por la hoja de diagnóstico. |
+| 02_cap1_conexiones | Lo dijo con el tono de quien ya tomó una decisión por los dos. | Con ese tono, la decisión ya estaba tomada por los dos. |
+| 02_cap1_conexiones | No estaba enojada. Estaba decepcionada. | Más que enojada, estaba decepcionada. |
+| 02_cap1_conexiones | Y eso dolía mucho más que un grito. | BORRADA |
+| 02_cap1_conexiones | Es que nadie le ha dicho dónde mirar. Y ella no va a pedirlo. | Nadie le ha dicho dónde mirar. Y ella no va a pedirlo. |
+| 02_cap1_conexiones | Sonrió como quien comprueba un resultado. | Sonrió. El resultado le cuadraba. |
+| 02_cap1_conexiones | Correcto no es lo mismo que útil. Lo estoy aprendiendo tarde. | Correcto no siempre es útil. Lo estoy aprendiendo tarde. |
+| 02_cap1_conexiones | Lo dijo sonriendo. Pero la sonrisa tardó en llegar a sus ojos. | Sonreía, pero los ojos tardaron en seguirla. |
+| 02_cap1_conexiones | Lo dijo sin levantar la voz. Sin sonrisa. | En voz baja. Sin sonrisa. |
+| 02_cap1_conexiones | Lo dijo como quien oye una frase en otro idioma y asiente por educación. | Asintió por educación, como si le hablara en otro idioma. |
+| 02_cap1_conexiones | Lo dijo bajito. Sin chiste detrás. | Bajito. Sin chiste detrás. |
+| 02_cap1_conexiones | Era la primera vez que un «va a salir bien» no sonaba a deseo, sino a plan. | Ese «va a salir bien» no sonaba a deseo, sino a plan. |
+| 02_cap1_conexiones | Como quien negocia una tregua. | Parecía una tregua. |
+| 02_cap1_conexiones | Por primera vez, tengo motivos para pensar que bien. | Esta vez tengo motivos para pensar que bien. |
+| 02_cap1_conexiones | Y, por primera vez, no dijo que el estrés le arruinaba la piel. | Y esta vez no dijo que el estrés le arruinaba la piel. |
+| 02_cap1_conexiones | Lo dijo tan bajito que Nino fingió no oírlo. | Tan bajito que Nino fingió no oírlo. |
+| 02_cap1_conexiones | Lo dijo sin subirse los audífonos. Y sin pedir perdón después. | Sin subirse los audífonos. Y sin pedir perdón después. |
+| 02_cap1_conexiones | Lo dijo guardando lápices más tiempo del necesario, esperando que alguien le contestara. | Guardó los lápices más lento de lo necesario, esperando respuesta. |
+| 02_cap1_conexiones | Sin gracia. Sin guiño. Como quien lo repite desde hace semanas. | Sin gracia. Sin guiño. Ya sonaba a frase gastada. |
+| 02_cap1_conexiones | No la dejó sobre la mesa. Se la llevó, como quien guarda una prueba. | Se la llevó en vez de dejarla. Como una prueba. |
+| 02_cap1_conexiones | Lo dijo sonriendo. Con la hoja casi vacía todavía en la mano. | Sonreía con la hoja casi vacía en la mano. |
+| 02_cap1_evento6 | Y no, no te estaba esperando. ...Contaba los días. Es distinto. | Y no, no te estaba esperando. ...Solo contaba los días. |
+| 02_cap1_evento6 | Después se quedó mirando los resultados, como si se lo hubiera hecho otra persona. | Después se quedó mirando la hoja, como si la hubiera hecho otra persona. |
+| 02_cap1_evento6 | No era otra persona, era ella. Y lo sabía. | BORRADA |
+| 02_cap1_evento6 | Eso no es confiar. Es llevar la cuenta. Es distinto. | Eso no es confiar. Es llevar la cuenta. |
+| 02_cap1_evento6 | Es distinto. | BORRADA |
+| 02_cap1_evento6 | No lo reconozco. Lo anoto. Son cosas distintas. | No lo reconozco. Solo lo anoto. |
+| 02_cap1_evento6 | Se quedó revisando como quien patrulla una frontera. Sin mirar a nadie. A nadie. | Se quedó revisando, en guardia. Sin mirar a nadie. A nadie. |
+| 02_cap1_evento6 | Revisaba con el método de quien ya sabe cómo acaba y quiere llegar preparada. | Revisaba como si ya supiera el final y quisiera llegar preparada. |
+| 02_cap1_evento6 | No con odio. Con la cara de quien comprueba que algo sigue donde lo dejó. | No con odio. Comprobaba que algo siguiera donde lo dejó. |
+| 02_cap1_evento6 | Asintió una vez, seca, como quien confirma un dato y no pide aplauso. | Asintió una vez, seca. Dato confirmado, sin pedir aplausos. |
+| 02_cap1_evento6 | Los miró un segundo, como quien comprueba que no se mueven solos. | Los miró un segundo, por si se movían solos. |
+| 02_cap1_evento6 | Lo dejó en tres líneas. Las de quien no quiere molestar. | Lo dejó en tres líneas. Cortas, para no molestar. |
+| 02_cap1_evento6 | Sin pausa delante. Lo dijo como se dice algo que ya estaba decidido. | Sin pausa delante. Ya lo tenía decidido. |
+| 02_cap1_evento6 | Lo dijo sin gritar. En Yotsuba, eso sonaba más fuerte que un grito. | Sin gritar. En Yotsuba, eso se oye más. |
+| 02_cap1_evento6 | Lo dijo como siempre. Esta vez no le salió la mentira, y no intentó arreglarla. | El tono de siempre. Pero la mentira no le salió, y no intentó arreglarla. |
+| 02_cap1_evento6 | Estaba en casa. Por primera vez en un mes, sin nada que repasar. | Estaba en casa. Después de un mes, sin nada que repasar. |
+| 02_cap1_evento6 | Aprobar no es lo mismo que salvarse. Hoy, por hoy, me alcanzaba con aprobar. | Aprobar no es salvarse. Hoy, por hoy, me alcanzaba con aprobar. |
+| 02_cap1_evento6 | Lo dijo como se anuncia un horario. Y por eso pesó el doble. | Con tono de anunciar un horario. Por eso pesó el doble. |
+| 02_cap1_evento6 | Lo dijo sin rabia. Como quien deja una nota pegada en la nevera. | Sin rabia. Como una nota pegada en la nevera. |
+| 02_cap1_evento6 | Nino se quedó junto al marco de la puerta, a media sala, como quien no ha decidido si entra. | Nino se quedó en el marco de la puerta, sin decidir si entraba. |
+| 02_cap1_evento6 | Dijo mi nombre como quien firma al pie de un informe. | Dijo mi nombre con tono de firma al pie de un informe. |
+| 02_cap1_evento6 | Itsuki llegó con el boletín doblado por la mitad y el gesto de quien ya revisó dos veces. | Itsuki llegó con el boletín doblado y cara de haberlo revisado dos veces. |
+| 02_cap1_evento6 | Éramos seis en la sala, y por primera vez nadie parecía estar aquí por obligación. | Éramos seis en la sala, y ya nadie parecía estar aquí por obligación. |
+| 02_cap1_evento6 | Raiha se rió. Me miró un rato, como quien busca algo que no encuentra. | Raiha se rió. Me miró un rato, buscando algo sin encontrarlo. |
+| 02_cap1_evento6 | Lo dijo como lo dice alguien que espera a su hermano cada noche con la cena hecha. | Ella sabe de eso: me espera cada noche con la cena hecha. |
+| 02_cap1_evento6 | Estoy cansado. Es distinto. | Estoy cansado. Nada más. |
+| 02_cap1_final_malo | Lo dijo con esa mirada fría, como siempre. | La misma mirada fría de siempre. |
+| 02_cap1_final_malo | Y tenía la cara de quien consigue justo lo que pidió. | Y tenía la cara de haber conseguido justo lo que pidió. |
+| 02_cap1_final_malo | Pero sin un sabor de victoria. | Pero no le sabía a victoria. |
+| 02_cap1_final_malo | Me miró una sola vez. No con una mirada de odio. | Me miró una sola vez. Sin odio. |
+| 02_cap1_final_malo | Con una mirada de quien sabía que lo qué decía era correcto. | Con la cara de saber que tenía razón. |
+| 02_cap1_final_malo | Lo dijo sin dureza. Y por eso me dolió más. | Sin dureza. Peor así. |
+| 02_cap1_final_malo | Eso era lo más cruel. | BORRADA |
+| 01_prologo | No con molestia: con la cautela de quien preferiría no haber sido vista. | No molesta: incómoda de que la hubieran visto. |
+| 01_prologo | Lo dijo sin levantar la vista, pero sin pensarlo. | Contestó sin levantar la vista y sin pensarlo. |
+| 01_prologo | Como si la respuesta llevara horas esperando su turno. | BORRADA |
+| 01_prologo | Lo dijo con total frialdad. Sin amenazar, simplemente dejando las cosas claras. | Frío. Sin amenazar, solo dejando las cosas claras. |
+| 01_prologo | La calma de quien ya dio una orden y no acepta réplicas. | La calma de alguien que da la orden por cumplida. |
