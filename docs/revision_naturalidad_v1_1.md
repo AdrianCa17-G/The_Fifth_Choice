@@ -1,0 +1,139 @@
+# Revisión de naturalidad de diálogos · v1.1
+
+Auditoría por tandas. Los números de línea son los de antes de aplicar cada tanda. **No se edita ningún `.rpy` hasta que la línea esté aprobada.** Cada cambio en español
+cambia el id de traducción de Ren'Py y deja huérfana la línea inglesa, así que lo aprobado se aplica en una
+sola pasada con el mismo proceso que las erratas de E2 (aplicar → regenerar → volver a enlazar el inglés).
+
+## Reglas
+
+QUÉ BUSCAR (conteos aproximados en todo el Prólogo + Cap. 1)
+1. "como quien ..." (~29). Objetivo: como máximo 1 por archivo. Hay frases duplicadas entre archivos,
+   como "Lo dijo despacio, como quien termina una cuenta" (Miku y beat_casa).
+2. Narrador que empieza con "Lo dijo..." (~65), sobre todo el molde "No lo dijo con X. Lo dijo como quien Y".
+   Muchas se pueden borrar: si el diálogo ya transmite el tono, la acotación sobra.
+3. "Es distinto" / "y eso es distinto" usado como remate (~10, en varios personajes y en el MC).
+   Objetivo: como mucho uno en todo el capítulo, y solo si funciona como chiste o callback.
+4. El contraste "No era X. Era Y." / "No fue X. Fue Y." / "No es que X. Es que Y.".
+5. Exceso de "como si" (~73), "casi" (~52), "por primera vez" (~16), "No dije nada" (~14) y "en silencio" (~14).
+   No hay que eliminarlos: solo reducir los que estén amontonados o repetidos cerca.
+6. Líneas de las chicas demasiado poéticas o sentenciosas: aforismos, metáforas elaboradas,
+   remates redondos al final de cada intercambio. Hay que hacerlas más directas y coloquiales,
+   con interrupciones, muletillas humanas ("eh", "o sea", "bueno...") y frases a medias.
+7. Pensamientos del MC que explican la emoción en vez de dejar que se note
+   ("Y eso dolía mucho más que un grito"). Proponer cortarlos o hacerlos más secos.
+
+REGLAS PARA LAS PROPUESTAS
+- Si una línea suena natural, no se toca, aunque contenga una palabra de la lista.
+- Respetar la voz que ya tiene cada personaje en el archivo; no homogeneizar.
+  La rama fría sigue siendo el MC del día 1, distante pero nunca cruel.
+- Máximo ~100 caracteres por línea (dos líneas de la caja de texto).
+- No introducir muletillas nuevas ("de alguna manera", "algo en su mirada", "por un instante",
+  "y ahí lo entendí", etc.).
+- Misma información, mismo orden, mismas ramas. Proponer "BORRAR" está permitido si la línea sobra.
+- Ortografía española correcta (¿?, ¡!, tildes), pero registro hablado.
+
+**Formato de ID:** `<archivo>-<nn>` (ICH = Ichika, ITS = Itsuki, MIK = Miku, NIN = Nino, YOT = Yotsuba,
+APE = apertura, CON = conexiones, E6 = evento6, FM = final_malo, BC/BI/BN = beats, PRO = prólogo,
+HOR = horarios). Las líneas son de `The Fifth Choice/game/` a fecha 27/11/2026 (v1.1, commit 4cdceae).
+En **aprobado** se marca ✅, ❌ o se escribe la versión corregida.
+
+## 02_cap1_Ichika.rpy
+
+Conteo en el archivo: «como quien» 0 · «Lo dijo» (narrador) 6 · «como si» 6 · «casi» 3 · «sin exclamación» 2 (+1
+«no vino con exclamación») · «sin (la) actuación» 3 · «guardó / guardar» 8. Pasan de 6 a 2 los «Lo dijo» y de
+8 a 5 los «guardar», sin tocar el motivo (Ichika guarda todo) en las líneas 566 y 375/427/471.
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| ICH-01 | 103 | narrador | Me preguntó sin actuación, sin la voz que usa para todo. | 2, 7 (111-119 ya dicen que la voz suena plana) | BORRAR | ✅ aplicado 27/11 |
+| ICH-02 | 176 | narrador | Lo dijo con una sonrisa, pero cambió de tema otra vez, y esta ya era la segunda. | 2 | Sonrió. Y volvió a cambiar de tema. Ya iban dos. | ✅ aplicado 27/11 |
+| ICH-03 | 205 | mc | Lo dijiste de corrido, sin titubear, como si ya tuvieras la cuenta hecha en la cabeza. | 5 (el MC habla como narrador) | Lo dijiste de corrido. Ya tenías la cuenta hecha. | ✅ aplicado 27/11 |
+| ICH-04 | 330 | narrador | Lo dijo sin exclamación. | 2 (repite la 111) | BORRAR | ✅ aplicado 27/11 |
+| ICH-05 | 332 | narrador | La primera frase larga de toda la tarde sin una sola. | 2 (depende de la 330; además «Fingir que puedo con las dos» no es una frase larga) | BORRAR | ✅ aplicado 27/11 |
+| ICH-06 | 338 | ichika | Yo también me lo digo, y no me lo creo ni cuando lo digo yo. | 6 | Me lo digo yo sola todo el tiempo. Y ni yo me lo creo. | ✅ aplicado 27/11 |
+| ICH-07 | 355 | ichika | ¿No vas a decir nada aprovechado sobre esto? | 6 («aprovechado» no suena hablado) | ¿No vas a decir nada sobre esto? | ✅ aplicado 27/11 |
+| ICH-08 | 377 | mc_pensamiento | Volvió la sonrisa. Pero tardó, y no vino con exclamación. | 5 (tercera «exclamación»), 7 | Volvió a sonreír. Pero le costó. | ✅ aplicado 27/11 |
+| ICH-09 | 461 | narrador | Lo dijo con la voz más parecida a la de un adulto que le hubiera oído usar. | 2 | Fue la voz más adulta que le había oído. | ✅ aplicado 27/11 |
+| ICH-10 | 481 | mc_pensamiento | No fue grosera. Fue correcta. | 4 | No fue grosera. Solo... correcta. | ✅ aplicado 27/11 |
+| ICH-11 | 483 | mc_pensamiento | Y eso, viniendo de ella, es peor que un portazo. | 7 (el mismo molde que «dolía más que un grito») | BORRAR | ✅ aplicado 27/11 |
+| ICH-12 | 500 | narrador | Terminó de guardar el guion en la mochila cuando el teléfono le vibró en el bolsillo. | 5 (las tres ramas acaban de guardar el guion) | Se estaba colgando la mochila cuando le vibró el teléfono en el bolsillo. | ✅ aplicado 27/11 |
+| ICH-13 | 507 | narrador | Pero en cuanto vio la pantalla, algo en su postura cambió. | muletilla vetada («algo en su») | Pero al ver la pantalla, se enderezó. | ✅ aplicado 27/11 |
+| ICH-14 | 548 | ichika | Esa que dice que vas a sumar otra cosa a la lista de preguntas que no me vas a hacer. | 6 | Esa. La de «otra cosa más que no te voy a preguntar». | ✅ aplicado 27/11 |
+| ICH-15 | 554 | narrador | Lo dijo casi riendo, y por un segundo volvió a ser la de siempre. | 2, 5, muletilla («por un segundo») | Se le escapó una risa. Esa sí era la de siempre. | ✅ aplicado 27/11 |
+| ICH-16 | 559 | ichika | Contestaré luego. Ahora tengo que acompañarte a la salida antes de que cierren el edificio. | 6 (futuro formal, 92 car.) | Luego contesto. Ahora te acompaño a la salida, que van a cerrar el edificio. | ✅ aplicado 27/11 |
+| ICH-17 | 568 | narrador | Guardó el teléfono en el bolsillo de la falda. | 5 (la 566 ya dice «Solo lo guardó») | BORRAR | ✅ aplicado 27/11 |
+| ICH-18 | 570 | narrador | Con el mismo movimiento con el que había guardado el guion. | 5, 7 (explica el paralelo que la 566 ya marca) | BORRAR | ✅ aplicado 27/11 |
+| ICH-19 | 609 | mc_pensamiento | Como si admitir que no puede con todo no cambiara en nada lo que va a seguir haciendo mañana. | 5, 7 | Admitirlo no le cambió nada. Mañana va a seguir igual. | ✅ aplicado 27/11 |
+| ICH-20 | 621 | mc_pensamiento | Siento como si no hubiera hecho nada para ayudarla. | 7 (la 617 y la 619 ya lo dicen) | No la ayudé en nada. | ✅ aplicado 27/11 |
+| ICH-21 | 637 | mc_pensamiento | Como si hoy solo le hubiera enseñado a esconder mejor la cuenta. | 5, 7 | Hoy solo le enseñé a esconder mejor la cuenta. | ✅ aplicado 27/11 |
+| ICH-22 | 639 | mc_pensamiento | No a hacerla más corta. | 6 (remate redondo; la 637 ya lo transmite) | BORRAR | ✅ aplicado 27/11 |
+
+### Se dejan como están (a propósito)
+
+- **111-119** («Lo dijo plano. Sin exclamación.» / «Su voz normal tiene dirección de escena.»): es la primera vez
+  que se ve su voz sin actuar y la imagen teatral es de Ichika. Al borrar la 103 y la 330 queda una sola vez.
+- **157-159** («...casi no lo noto. / Casi.»): funciona como chiste.
+- **224-226**, **475-477**, **379**: son la voz analítica del MC y no se repiten.
+- **592-594** «Una de cinco. Y esta...»: los cinco hubs cierran igual (Itsuki 516, Miku 579, Nino 581,
+  Yotsuba 614). Parece un callback a propósito, así que no se toca aquí. Si se quiere variar, hay que decidirlo
+  para los cinco a la vez.
+
+### Notas de coherencia (aprobadas y aplicadas el 27/11 con las propuestas de abajo)
+
+- **265** «Tres cosas que acabo de ver...» contradice la 216-226, que enumera cuatro («Cuatro ya son un patrón»).
+  Propuesta: «Cuatro cosas, y un chiste encima de cada una.»
+- **479** (rama fría) dice que Ichika *sale primero* sosteniendo la puerta, pero en el movimiento 5 sigue en la
+  sala guardando cosas y dice «tengo que acompañarte a la salida». Al cierre, la 633 vuelve a hablar de la puerta.
+  Propuesta mínima para la 479: «Fue hasta la puerta antes que yo y me esperó ahí, sin mirarme.»
+  (Sin esto, «Sostuvo la puerta el tiempo justo» en la 633 se refiere a una salida que no ocurre después.)
+
+## Horarios en números (todos los archivos)
+
+En la encuesta dicen que los horarios en letras confunden, sobre todo la cuenta de trenes de Ichika
+(«las cuatro treinta y cinco... el tren de las cuatro cuarenta y cinco») y su eco en el Evento 6. No hay ningún
+arreglo ni lista que genere estas horas: están escritas a mano en cada línea, así que el cambio es línea por
+línea, en español **y** en inglés (el inglés también las tiene en letras).
+
+Criterio: hora del reloj → cifras (`4:35`, `a las 3`). Las horas en punto van sin «:00» («a las 4 en punto»).
+Las duraciones («veinticinco», «media hora», «hora y media») se quedan en letras.
+
+**No se cambia:** `02_cap1_evento6.rpy:3097-3099` («Cinco. Departamento.» / «Cinco: la hora. O la cuenta.»). El
+chiste es justamente que el «cinco» del mensaje de Maruo es ambiguo, y con «5» se pierde.
+
+| ID | archivo:línea | texto actual (ES) | propuesta (ES) | propuesta (EN) | aprobado |
+|---|---|---|---|---|---|
+| HOR-01 | 01_prologo:155 | ...Anoche también te escuché pasar páginas a las tres. | ...Anoche también te escuché pasar páginas a las 3. | ...I heard you turning pages at 3 last night, too. | ✅ aplicado 27/11 |
+| HOR-02 | 01_prologo:1282 | Salí del edificio pasadas las nueve. La ciudad... | Salí del edificio pasadas las 9. La ciudad... | I left the building past 9. The city... | ✅ aplicado 27/11 |
+| HOR-03 | 01_prologo:1296 | Son más de las nueve, Raiha. | Son más de las 9, Raiha. | It's after 9, Raiha. | ✅ aplicado 27/11 |
+| HOR-04 | apertura:65 | ...a las siete y media de la mañana. | ...a las 7:30 de la mañana. | ...at 7:30 in the morning. | ✅ aplicado 27/11 |
+| HOR-05 | apertura:134 | Era que iba a odiarme desde las ocho hasta las tres. | Era que iba a odiarme desde las 8 hasta las 3. | ...hate me from 8 to 3. | ✅ aplicado 27/11 |
+| HOR-06 | apertura:136 | Y después, desde las cuatro hasta que me fuera de su casa. | Y después, desde las 4 hasta que me fuera de su casa. | And then, from 4 until I left her house. | ✅ aplicado 27/11 |
+| HOR-07 | apertura:158 | Toqué a las cuatro en punto. | Toqué a las 4 en punto. | I knocked at 4 on the dot. | ✅ aplicado 27/11 |
+| HOR-08 | apertura:496 | Salí del edificio pasadas las siete. Fui directo a casa. | Salí del edificio pasadas las 7. Fui directo a casa. | I left the building after 7. I went straight home. | ✅ aplicado 27/11 |
+| HOR-09 | Ichika:105 | Las cuatro y media. | Las 4:30. | 4:30. | ✅ aplicado 27/11 |
+| HOR-10 | Ichika:191 | Martes a las cinco y veinte. Nunca antes de eso. | Martes a las 5:20. Nunca antes de eso. | Tuesday at 5:20. Never before that. | ✅ aplicado 27/11 |
+| HOR-11 | Ichika:193 | ¿Por qué no a las cinco? Es más redondo. | ¿Por qué no a las 5? Es más redondo. | Why not 5? It's a rounder number. | ✅ aplicado 27/11 |
+| HOR-12 | Ichika:195 | Salgo del ensayo a las cuatro treinta y cinco. Cuatro minutos para cambiarme. | Salgo del ensayo a las 4:35. Cuatro minutos para cambiarme. | Rehearsal ends at 4:35. Four minutes to change. | ✅ aplicado 27/11 |
+| HOR-13 | Ichika:197 | Seis hasta la estación. El tren de las cuatro cuarenta y cinco tarda veinticinco. | Seis hasta la estación. El tren de las 4:45 tarda veinticinco. | Six to the station. The 4:45 train takes twenty-five. | ✅ aplicado 27/11 |
+| HOR-14 | Ichika:199 | Y diez andando hasta casa. Cinco y veinte. | Y diez andando hasta casa. Las 5:20. | And ten more on foot to get home. 5:20. | ✅ aplicado 27/11 |
+| HOR-15 | Itsuki:120 | Me incumbe a mí. Tú te vas a las cuatro. | Me incumbe a mí. Tú te vas a las 4. | It's my business. You go home at 4. | ✅ aplicado 27/11 |
+| HOR-16 | Itsuki:122 | Son las cuatro y media. | Son las 4:30. | It's 4:30. | ✅ aplicado 27/11 |
+| HOR-17 | Miku:209 | ...Me quedé dormido a las tres. | ...Me quedé dormido a las 3. | ...Fell asleep at 3. | ✅ aplicado 27/11 |
+| HOR-18 | beat_Nino:435 | Hay que hacer la cena. Son las cinco. | Hay que hacer la cena. Son las 5. | Dinner needs making. It's 5 o'clock. | ✅ aplicado 27/11 |
+| HOR-19 | beat_casa:264 | Me encerré en mi cuarto antes de las diez. | Me encerré en mi cuarto antes de las 10. | I shut myself in my room before 10. | ✅ aplicado 27/11 |
+| HOR-20 | conexiones:2581 | Pasadas las once, me sonó el teléfono... | Pasadas las 11, me sonó el teléfono... | A little after 11, my phone rang... | ✅ aplicado 27/11 |
+| HOR-21 | conexiones:2623 | Me llamó desde un hospital, a las once, para preguntar... | Me llamó desde un hospital, a las 11, para preguntar... | ...from a hospital, at 11, to ask... | ✅ aplicado 27/11 |
+| HOR-22 | conexiones:3824 / 3862 / 3896 | Terminamos pasadas las seis. ... (×3, una por clima) | Terminamos pasadas las 6. ... | We finished a little after 6. ... | ✅ aplicado 27/11 |
+| HOR-23 | conexiones:4046 | Pasadas las ocho salí del departamento... | Pasadas las 8 salí del departamento... | After 8 I left the apartment... | ✅ aplicado 27/11 |
+| HOR-24 | evento6:883 | Pregunta cuatro. Un tren sale a las cuatro cuarenta y cinco. | Pregunta cuatro. Un tren sale a las 4:45. | Question four. A train leaves at 4:45. | ✅ aplicado 27/11 |
+| HOR-25 | evento6:885 | ...Hay que salir a las cuatro treinta y cinco. | ...Hay que salir a las 4:35. | ...Have to leave at 4:35. | ✅ aplicado 27/11 |
+| HOR-26 | evento6:924 | Pregunta cuatro. Trenes. Salen las cuatro treinta y cinco. | Pregunta cuatro. Trenes. Salen las 4:35. | Question four. Trains. Leave at 4:35. | ✅ aplicado 27/11 |
+| HOR-27 | evento6:947 | Pregunta cuatro. Trenes. Cuatro treinta y cinco. | Pregunta cuatro. Trenes. 4:35. | Question four. Trains. 4:35. | ✅ aplicado 27/11 |
+| HOR-28 | evento6:966 | Pregunta cuatro. Trenes. Cuatro treinta y cinco. Sale sola. | Pregunta cuatro. Trenes. 4:35. Sale sola. | Question four. Trains. 4:35. It comes out on its own. | ✅ aplicado 27/11 |
+
+Notas:
+- HOR-10 a HOR-14 y HOR-24 a HOR-28 van juntas: el Evento 6 repite la cuenta del hub de Ichika y tienen que
+  verse igual. La cuenta cuadra (4:35 + 4 + 6 = 4:45; + 25 + 10 = 5:20).
+- «Pregunta cuatro» se deja en letras porque es el número de la pregunta, no una hora.
+- Al aplicarlo, `tools/revisar_traduccion.py` compara las etiquetas, no los números; conviene buscar `[0-9]:[0-9]`
+  en `tl/english` después de regenerar para confirmar que no quedó ninguna hora en letras.
