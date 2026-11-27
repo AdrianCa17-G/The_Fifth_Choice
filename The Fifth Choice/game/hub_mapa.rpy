@@ -74,7 +74,16 @@ init python:
     HUB_CABEZA    = 150    # y donde queda la coronilla de TODAS
     HUB_GUIA      = False  # True = línea de cabeza + datos medidos
 
-    _hub_bbox = {}
+    # Medidos de antemano (alfa ≥ 20): así no se abre el PNG entero en el juego
+    # (primera vez: tarjeta del Cap. 1, las cinco a la vez). Si cambias un sprite
+    # de images/hubs/, actualiza su par; si falta, hub_bbox lo mide como antes.
+    _hub_bbox = {
+        "hubs/ichika_hub.png":  (1, 1273),
+        "hubs/nino_hub.png":    (1, 1256),
+        "hubs/miku_hub.png":    (0, 1274),
+        "hubs/yotsuba_hub.png": (0, 1084),
+        "hubs/itsuki_hub.png":  (0, 1319),
+    }
 
     def hub_bbox(ruta):
         """(top, bottom) del contenido NO transparente, en px del archivo.

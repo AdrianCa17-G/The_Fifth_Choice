@@ -614,7 +614,10 @@ hasta los zapatos**, a diferencia de los del juego, que se cortan bajo la rodill
 Exclusivos del mapa de hubs (game/images/hubs/<hermana>_hub.png). Una pose propia por hermana,
 cintura para arriba, 768×1280, fondo blanco, solo LoRA de personaje a 0.8. Fondo quitado en 
 Photoshop. No usan el estándar de 760×930: hub_sprite los escala por la altura real del contenido. 
-Si un lazo o el ahoge sobresale, se pasa coronilla en HUB_DESTINOS (Yotsuba 57, Itsuki 84).
+Si un lazo o el ahoge sobresale, se pasa coronilla en HUB_DESTINOS (Yotsuba 124, Itsuki 90).
+**Si se cambia un PNG de hubs/, hay que actualizar su par (arriba, abajo) en `_hub_bbox`** (`hub_mapa.rpy`):
+son las filas del primer y el último píxel con alfa ≥ 20, medidas de antemano para no abrir el PNG en el juego.
+Si se borra el par, el juego lo vuelve a medir solo.
 
 ## 12. Chibis
 
