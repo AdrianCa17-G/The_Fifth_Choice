@@ -197,6 +197,10 @@ default desaires_cap1 = 0
 
 default hub_visitadas = []
 
+## Nombre de la hermana del hub en curso, para [nombre_h!t] en las interconexiones.
+## Cada interconexión lo asigna; el default evita la pantalla de error si una línea lo lee antes.
+default nombre_h = ""
+
 ## --- Evento 6 · cierre del Capítulo 1 ----------------------------------------
 ## e6_iniciar() (10_minijuegos.rpy) los rellena. Aquí solo el valor inicial.
 default e6_estado_entrada = "mixto"

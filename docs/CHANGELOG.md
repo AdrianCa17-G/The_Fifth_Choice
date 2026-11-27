@@ -10,6 +10,12 @@
 - Prólogo y capítulo 1 reescritos en las líneas que sonaban repetitivas o demasiado poéticas, en español e inglés. No cambian las decisiones, las ramas ni los finales.
 - Horarios, tiempos de carrera y cifras que se comparan, ahora en números.
 
+### Minijuegos
+- Cadena de conversiones de Itsuki más amable: en difícil, 4 pasos y 75 s (antes 5 y 55 s), 4 entregas erróneas y aviso de resultado raro; en media, 3 pasos y 100 s, 6 entregas. La asistida no cambia.
+
+### Correcciones
+- Una variable sin valor inicial podía mostrar la pantalla de error de Ren'Py en un diálogo de las interconexiones.
+
 ### Arte
 - Sprites de Yotsuba rehechos, con el lazo completo.
 - Yotsuba e Itsuki ajustadas a la escala del resto de las hermanas.
