@@ -100,9 +100,7 @@ label hub_Ichika:
 
     ichika "...¿Qué hora es?"
 
-    narrador "Me preguntó sin actuación, sin la voz que usa para todo."
-
-    mc "Las cuatro y media."
+    mc "Las 4:30."
 
     ichika "..."
 
@@ -173,7 +171,7 @@ label hub_Ichika:
    
     ichika "¿Y desde cuándo un tutor pide cifras de algo que no entra en el examen?"
 
-    narrador "Lo dijo con una sonrisa, pero cambió de tema otra vez, y esta ya era la segunda."
+    narrador "Sonrió. Y volvió a cambiar de tema. Ya iban dos."
 
     play sound audio.sfx_hoja
 
@@ -188,21 +186,21 @@ label hub_Ichika:
     show ichika determinada at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "Martes a las cinco y veinte. Nunca antes de eso."
+    ichika "Martes a las 5:20. Nunca antes de eso."
 
-    mc "¿Por qué no a las cinco? Es más redondo."
+    mc "¿Por qué no a las 5? Es más redondo."
 
-    ichika "Salgo del ensayo a las cuatro treinta y cinco. Cuatro minutos para cambiarme."
+    ichika "Salgo del ensayo a las 4:35. Cuatro minutos para cambiarme."
 
-    ichika "Seis hasta la estación. El tren de las cuatro cuarenta y cinco tarda veinticinco."
+    ichika "Seis hasta la estación. El tren de las 4:45 tarda veinticinco."
 
-    ichika "Y diez andando hasta casa. Cinco y veinte."
+    ichika "Y diez andando hasta casa. Las 5:20."
 
     mc_pensamiento "Vaya, tiene un horario muy bien cronometrado."
 
     mc_pensamiento "Lo cual me preocupa bastante."
 
-    mc "Lo dijiste de corrido, sin titubear, como si ya tuvieras la cuenta hecha en la cabeza."
+    mc "Lo dijiste de corrido. Ya tenías la cuenta hecha."
 
     mc "Nadie improvisa ese número tan rápido."
 
@@ -262,7 +260,7 @@ label hub_Ichika:
     show ichika sonriendo at pj_calla(0.5)
     with dissolve
 
-    mc_pensamiento "Tres cosas que acabo de ver, y un chiste encima de cada una." 
+    mc_pensamiento "Cuatro cosas que acabo de ver, y un chiste encima de cada una." 
     
     mc_pensamiento "Ahora espera el siguiente. El mío."
 
@@ -327,15 +325,11 @@ label ichika_m4a:
 
     ichika "Fingir que puedo con las dos."
 
-    narrador "Lo dijo sin exclamación."
-
-    narrador "La primera frase larga de toda la tarde sin una sola."
-
     mc "No dije que no pudieras."
 
     ichika "No hacía falta."
 
-    ichika "Yo también me lo digo, y no me lo creo ni cuando lo digo yo."
+    ichika "Me lo digo yo sola todo el tiempo. Y ni yo me lo creo."
 
     narrador "Se quedó mirando el guion, sin pasar la página."
 
@@ -352,7 +346,7 @@ label ichika_m4a:
 
     ichika "..."
 
-    ichika "¿No vas a decir nada aprovechado sobre esto?"
+    ichika "¿No vas a decir nada sobre esto?"
 
     mc "¿Cómo qué?"
 
@@ -374,7 +368,7 @@ label ichika_m4a:
 
     narrador "Guardó el guion en la mochila, todavía sin la actuación completa de vuelta."
 
-    mc_pensamiento "Volvió la sonrisa. Pero tardó, y no vino con exclamación."
+    mc_pensamiento "Volvió a sonreír. Pero le costó."
 
     mc_pensamiento "Es la primera vez que la veo actuar despacio."
 
@@ -458,7 +452,7 @@ label ichika_m4c:
 
     ichika "Ya veo."
 
-    narrador "Lo dijo con la voz más parecida a la de un adulto que le hubiera oído usar."
+    narrador "Fue la voz más adulta que le había oído."
 
     show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
@@ -476,11 +470,9 @@ label ichika_m4c:
 
     mc_pensamiento "Y ella me contestó exactamente lo que le contesta a un padre."
 
-    narrador "Salió primero, sosteniendo la puerta apenas el tiempo justo para no dejarla cerrarse en mi cara."
+    narrador "Fue hasta la puerta antes que yo y me esperó ahí, sin mirarme."
 
-    mc_pensamiento "No fue grosera. Fue correcta."
-
-    mc_pensamiento "Y eso, viniendo de ella, es peor que un portazo."
+    mc_pensamiento "No fue grosera. Solo... correcta."
 
     jump ichika_m5
 
@@ -497,14 +489,14 @@ label ichika_m5:
     $ duck()
     play sound audio.sfx_celular volume 1.5
 
-    narrador "Terminó de guardar el guion en la mochila cuando el teléfono le vibró en el bolsillo."
+    narrador "Se estaba colgando la mochila cuando le vibró el teléfono en el bolsillo."
 
     show ichika neutral at pj(0.5)
     with dissolve
 
     narrador "Lo sacó sin mirar quién era, por costumbre."
 
-    narrador "Pero en cuanto vio la pantalla, algo en su postura cambió."
+    narrador "Pero al ver la pantalla, se enderezó."
 
     show ichika determinada at pj_habla(0.5)
     with disolucion_lenta
@@ -545,18 +537,18 @@ label ichika_m5:
 
     mc "¿Qué cara?"
 
-    ichika "Esa que dice que vas a sumar otra cosa a la lista de preguntas que no me vas a hacer."
+    ichika "Esa. La de «otra cosa más que no te voy a preguntar»."
 
     mc "No iba a preguntar nada."
 
     ichika "Mentiroso."
 
-    narrador "Lo dijo casi riendo, y por un segundo volvió a ser la de siempre."
+    narrador "Se le escapó una risa. Esa sí era la de siempre."
 
     show ichika sonriendo at pj_habla(0.5)
     with disolucion_lenta
 
-    ichika "Contestaré luego. Ahora tengo que acompañarte a la salida antes de que cierren el edificio."
+    ichika "Luego contesto. Ahora te acompaño a la salida, que van a cerrar el edificio."
 
     show ichika at pj_calla(0.5)
     with disolucion_lenta
@@ -564,10 +556,6 @@ label ichika_m5:
     mc_pensamiento "No contestó el mensaje. Ni siquiera lo volvió a mirar."
 
     mc_pensamiento "Solo lo guardó, como guarda todo lo demás."
-
-    narrador "Guardó el teléfono en el bolsillo de la falda."
-
-    narrador "Con el mismo movimiento con el que había guardado el guion."
 
     jump ichika_m6
 
@@ -606,7 +594,7 @@ label ichika_m6:
 
         mc_pensamiento "Y aun así, en cuanto llegó el mensaje del papel nuevo, dijo que sí sin pensarlo dos veces."
 
-        mc_pensamiento "Como si admitir que no puede con todo no cambiara en nada lo que va a seguir haciendo mañana."
+        mc_pensamiento "Admitirlo no le cambió nada. Mañana va a seguir igual."
 
     elif ichika_rama_cap1 == "tibia":
 
@@ -618,7 +606,7 @@ label ichika_m6:
 
         mc_pensamiento "No hubo ningún cambio en ella."
 
-        mc_pensamiento "Siento como si no hubiera hecho nada para ayudarla."
+        mc_pensamiento "No la ayudé en nada."
 
         mc_pensamiento "Y cuando le ofrecieron el papel que quería, aceptó antes de que yo dijera nada."
 
@@ -634,9 +622,7 @@ label ichika_m6:
 
         mc_pensamiento "Y aun con todo lo que le dije, aceptó un papel más antes de que llegáramos a la salida."
 
-        mc_pensamiento "Como si hoy solo le hubiera enseñado a esconder mejor la cuenta."
-
-        mc_pensamiento "No a hacerla más corta."
+        mc_pensamiento "Hoy solo le enseñé a esconder mejor la cuenta."
 
     # Marca el evento como consumido para el evento 6 y para que el hub
     # ofrezca la revisita corta en lugar del evento completo.

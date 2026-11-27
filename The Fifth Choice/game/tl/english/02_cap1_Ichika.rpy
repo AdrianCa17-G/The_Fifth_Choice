@@ -133,16 +133,10 @@ translate english hub_Ichika_f62c3c00:
     ichika "...What time is it?"
 
 # game/02_cap1_Ichika.rpy:103
-translate english hub_Ichika_aecc1e7b:
+translate english hub_Ichika_7a1e0ce3:
 
-    # narrador "Me preguntó sin actuación, sin la voz que usa para todo."
-    narrador "She asked it without any act, without the voice she uses for everything."
-
-# game/02_cap1_Ichika.rpy:105
-translate english hub_Ichika_3318ad43:
-
-    # mc "Las cuatro y media."
-    mc "Four thirty."
+    # mc "Las 4:30."
+    mc "4:30."
 
 # game/02_cap1_Ichika.rpy:107
 translate english hub_Ichika_2a88e035:
@@ -306,11 +300,11 @@ translate english hub_Ichika_444e33d9:
     # ichika "¿Y desde cuándo un tutor pide cifras de algo que no entra en el examen?"
     ichika "And since when does a tutor ask for figures on something that isn't on the exam?"
 
-# game/02_cap1_Ichika.rpy:176
-translate english hub_Ichika_ea25d5cd:
+# game/02_cap1_Ichika.rpy:174
+translate english hub_Ichika_85217e4c:
 
-    # narrador "Lo dijo con una sonrisa, pero cambió de tema otra vez, y esta ya era la segunda."
-    narrador "She said it with a smile, but she changed the subject again, and that made two."
+    # narrador "Sonrió. Y volvió a cambiar de tema. Ya iban dos."
+    narrador "She smiled. And changed the subject again. That made two."
 
 # game/02_cap1_Ichika.rpy:180
 translate english hub_Ichika_c9aa19af:
@@ -336,35 +330,35 @@ translate english hub_Ichika_2ad32c22:
     # narrador "Se lo pregunté sin pensar mucho, solo para cambiar de tema yo también."
     narrador "I asked without thinking much, just to change the subject myself."
 
-# game/02_cap1_Ichika.rpy:191
-translate english hub_Ichika_a25952ba:
+# game/02_cap1_Ichika.rpy:189
+translate english hub_Ichika_70ff3426:
 
-    # ichika "Martes a las cinco y veinte. Nunca antes de eso."
-    ichika "Tuesday at five twenty. Never before that."
+    # ichika "Martes a las 5:20. Nunca antes de eso."
+    ichika "Tuesday at 5:20. Never before that."
+
+# game/02_cap1_Ichika.rpy:191
+translate english hub_Ichika_b6dc608a:
+
+    # mc "¿Por qué no a las 5? Es más redondo."
+    mc "Why not 5? It's a rounder number."
 
 # game/02_cap1_Ichika.rpy:193
-translate english hub_Ichika_eeb5e024:
+translate english hub_Ichika_9bd7291f:
 
-    # mc "¿Por qué no a las cinco? Es más redondo."
-    mc "Why not five? It's a rounder number."
+    # ichika "Salgo del ensayo a las 4:35. Cuatro minutos para cambiarme."
+    ichika "Rehearsal ends at 4:35. Four minutes to change."
 
 # game/02_cap1_Ichika.rpy:195
-translate english hub_Ichika_bce9c4c6:
+translate english hub_Ichika_fc8af83d:
 
-    # ichika "Salgo del ensayo a las cuatro treinta y cinco. Cuatro minutos para cambiarme."
-    ichika "Rehearsal ends at four thirty-five. Four minutes to change."
+    # ichika "Seis hasta la estación. El tren de las 4:45 tarda veinticinco."
+    ichika "Six to the station. The 4:45 train takes twenty-five."
 
 # game/02_cap1_Ichika.rpy:197
-translate english hub_Ichika_497cb95b:
+translate english hub_Ichika_7698633d:
 
-    # ichika "Seis hasta la estación. El tren de las cuatro cuarenta y cinco tarda veinticinco."
-    ichika "Six to the station. The four forty-five train takes twenty-five."
-
-# game/02_cap1_Ichika.rpy:199
-translate english hub_Ichika_6787c90e:
-
-    # ichika "Y diez andando hasta casa. Cinco y veinte."
-    ichika "And ten more on foot to get home. Five twenty."
+    # ichika "Y diez andando hasta casa. Las 5:20."
+    ichika "And ten more on foot to get home. 5:20."
 
 # game/02_cap1_Ichika.rpy:201
 translate english hub_Ichika_7f68fb33:
@@ -378,11 +372,11 @@ translate english hub_Ichika_91823512:
     # mc_pensamiento "Lo cual me preocupa bastante."
     mc_pensamiento "Which worries me quite a bit."
 
-# game/02_cap1_Ichika.rpy:205
-translate english hub_Ichika_ab9441fb:
+# game/02_cap1_Ichika.rpy:203
+translate english hub_Ichika_7defac03:
 
-    # mc "Lo dijiste de corrido, sin titubear, como si ya tuvieras la cuenta hecha en la cabeza."
-    mc "You said that straight off, no hesitation, like you'd already done the math in your head."
+    # mc "Lo dijiste de corrido. Ya tenías la cuenta hecha."
+    mc "You said that straight off. You'd already done the math."
 
 # game/02_cap1_Ichika.rpy:207
 translate english hub_Ichika_5541ffec:
@@ -486,11 +480,11 @@ translate english hub_Ichika_e9f22916:
     # narrador "La que suele devolverle cualquiera que hable con ella."
     narrador "The one anybody who talks to her usually throws right back."
 
-# game/02_cap1_Ichika.rpy:265
-translate english hub_Ichika_a71b6ba8:
+# game/02_cap1_Ichika.rpy:263
+translate english hub_Ichika_fd022470:
 
-    # mc_pensamiento "Tres cosas que acabo de ver, y un chiste encima de cada una."
-    mc_pensamiento "Three things I just saw, and she's got a joke ready on top of each one."
+    # mc_pensamiento "Cuatro cosas que acabo de ver, y un chiste encima de cada una."
+    mc_pensamiento "Four things I just saw, and she's got a joke ready on top of each one."
 
 # game/02_cap1_Ichika.rpy:267
 translate english hub_Ichika_5b7b7e0d:
@@ -588,18 +582,6 @@ translate english ichika_m4a_a28ffc56:
     # ichika "Fingir que puedo con las dos."
     ichika "Pretending I can handle both."
 
-# game/02_cap1_Ichika.rpy:330
-translate english ichika_m4a_f48097ab:
-
-    # narrador "Lo dijo sin exclamación."
-    narrador "She said it without an exclamation."
-
-# game/02_cap1_Ichika.rpy:332
-translate english ichika_m4a_1e5d3425:
-
-    # narrador "La primera frase larga de toda la tarde sin una sola."
-    narrador "Her first long sentence all afternoon, and not one exclamation point."
-
 # game/02_cap1_Ichika.rpy:334
 translate english ichika_m4a_a4e034ea:
 
@@ -612,11 +594,11 @@ translate english ichika_m4a_fa4f86ef:
     # ichika "No hacía falta."
     ichika "You didn't have to."
 
-# game/02_cap1_Ichika.rpy:338
-translate english ichika_m4a_a4f97406:
+# game/02_cap1_Ichika.rpy:332
+translate english ichika_m4a_9c9c50a4:
 
-    # ichika "Yo también me lo digo, y no me lo creo ni cuando lo digo yo."
-    ichika "I tell myself that too, and I don't believe it even when I'm the one saying it."
+    # ichika "Me lo digo yo sola todo el tiempo. Y ni yo me lo creo."
+    ichika "I tell myself that all the time. And not even I believe it."
 
 # game/02_cap1_Ichika.rpy:340
 translate english ichika_m4a_f25d0f69:
@@ -654,10 +636,10 @@ translate english ichika_m4a_2a88e035:
     # ichika "..."
     ichika "..."
 
-# game/02_cap1_Ichika.rpy:355
-translate english ichika_m4a_248f241d:
+# game/02_cap1_Ichika.rpy:349
+translate english ichika_m4a_e4371edb:
 
-    # ichika "¿No vas a decir nada aprovechado sobre esto?"
+    # ichika "¿No vas a decir nada sobre esto?"
     ichika "Aren't you going to turn this into a lesson?"
 
 # game/02_cap1_Ichika.rpy:357
@@ -702,11 +684,11 @@ translate english ichika_m4a_2b83b5cf:
     # narrador "Guardó el guion en la mochila, todavía sin la actuación completa de vuelta."
     narrador "She put the script in her bag, still without the full act back."
 
-# game/02_cap1_Ichika.rpy:377
-translate english ichika_m4a_d1f59608:
+# game/02_cap1_Ichika.rpy:371
+translate english ichika_m4a_51948e86:
 
-    # mc_pensamiento "Volvió la sonrisa. Pero tardó, y no vino con exclamación."
-    mc_pensamiento "The smile came back. But late, and without the exclamation."
+    # mc_pensamiento "Volvió a sonreír. Pero le costó."
+    mc_pensamiento "She smiled again. But it took her a while."
 
 # game/02_cap1_Ichika.rpy:379
 translate english ichika_m4a_ea405858:
@@ -846,10 +828,10 @@ translate english ichika_m4c_640597d0:
     # ichika "Ya veo."
     ichika "I see."
 
-# game/02_cap1_Ichika.rpy:461
-translate english ichika_m4c_d422da2f:
+# game/02_cap1_Ichika.rpy:455
+translate english ichika_m4c_3c17c6eb:
 
-    # narrador "Lo dijo con la voz más parecida a la de un adulto que le hubiera oído usar."
+    # narrador "Fue la voz más adulta que le había oído."
     narrador "It was the most grown-up voice I'd ever heard from her."
 
 # game/02_cap1_Ichika.rpy:466
@@ -882,29 +864,23 @@ translate english ichika_m4c_af408e6b:
     # mc_pensamiento "Y ella me contestó exactamente lo que le contesta a un padre."
     mc_pensamiento "And she answered exactly what she answers a parent."
 
-# game/02_cap1_Ichika.rpy:479
-translate english ichika_m4c_c1a69890:
+# game/02_cap1_Ichika.rpy:473
+translate english ichika_m4c_9f0f2b3a:
 
-    # narrador "Salió primero, sosteniendo la puerta apenas el tiempo justo para no dejarla cerrarse en mi cara."
-    narrador "She went out first, holding the door just long enough that it wouldn't shut in my face."
+    # narrador "Fue hasta la puerta antes que yo y me esperó ahí, sin mirarme."
+    narrador "She went to the door ahead of me and waited there, not looking at me."
 
-# game/02_cap1_Ichika.rpy:481
-translate english ichika_m4c_a9e05477:
+# game/02_cap1_Ichika.rpy:475
+translate english ichika_m4c_e359a56c:
 
-    # mc_pensamiento "No fue grosera. Fue correcta."
-    mc_pensamiento "She wasn't rude. She was polite."
+    # mc_pensamiento "No fue grosera. Solo... correcta."
+    mc_pensamiento "She wasn't rude. Just... polite."
 
-# game/02_cap1_Ichika.rpy:483
-translate english ichika_m4c_fabc9b0b:
+# game/02_cap1_Ichika.rpy:492
+translate english ichika_m5_483d30db:
 
-    # mc_pensamiento "Y eso, viniendo de ella, es peor que un portazo."
-    mc_pensamiento "And coming from her, that's worse than a slammed door."
-
-# game/02_cap1_Ichika.rpy:500
-translate english ichika_m5_c66efc96:
-
-    # narrador "Terminó de guardar el guion en la mochila cuando el teléfono le vibró en el bolsillo."
-    narrador "She was finishing packing the script when the phone buzzed in her pocket."
+    # narrador "Se estaba colgando la mochila cuando le vibró el teléfono en el bolsillo."
+    narrador "She was slinging her bag over her shoulder when the phone buzzed in her pocket."
 
 # game/02_cap1_Ichika.rpy:505
 translate english ichika_m5_d3638b1b:
@@ -912,11 +888,11 @@ translate english ichika_m5_d3638b1b:
     # narrador "Lo sacó sin mirar quién era, por costumbre."
     narrador "She pulled it out without looking at who it was, out of habit."
 
-# game/02_cap1_Ichika.rpy:507
-translate english ichika_m5_fdf138de:
+# game/02_cap1_Ichika.rpy:499
+translate english ichika_m5_c1d9379a:
 
-    # narrador "Pero en cuanto vio la pantalla, algo en su postura cambió."
-    narrador "But the moment she saw the screen, something in her posture changed."
+    # narrador "Pero al ver la pantalla, se enderezó."
+    narrador "But when she saw the screen, she straightened up."
 
 # game/02_cap1_Ichika.rpy:512
 translate english ichika_m5_2a88e035:
@@ -1008,11 +984,11 @@ translate english ichika_m5_2d25235f:
     # mc "¿Qué cara?"
     mc "What face?"
 
-# game/02_cap1_Ichika.rpy:548
-translate english ichika_m5_49e0e23b:
+# game/02_cap1_Ichika.rpy:540
+translate english ichika_m5_2574fd70:
 
-    # ichika "Esa que dice que vas a sumar otra cosa a la lista de preguntas que no me vas a hacer."
-    ichika "The one that says you're about to add another item to the list of questions you won't ask me."
+    # ichika "Esa. La de «otra cosa más que no te voy a preguntar»."
+    ichika "That one. The \"one more thing I'm not going to ask you\" face."
 
 # game/02_cap1_Ichika.rpy:550
 translate english ichika_m5_b18c251b:
@@ -1026,17 +1002,17 @@ translate english ichika_m5_e100f91b:
     # ichika "Mentiroso."
     ichika "Liar."
 
-# game/02_cap1_Ichika.rpy:554
-translate english ichika_m5_6589e086:
+# game/02_cap1_Ichika.rpy:546
+translate english ichika_m5_d4f6ce47:
 
-    # narrador "Lo dijo casi riendo, y por un segundo volvió a ser la de siempre."
-    narrador "She said it almost laughing, and for a second she was her usual self again."
+    # narrador "Se le escapó una risa. Esa sí era la de siempre."
+    narrador "A laugh slipped out. That one was her usual self."
 
-# game/02_cap1_Ichika.rpy:559
-translate english ichika_m5_d8123619:
+# game/02_cap1_Ichika.rpy:551
+translate english ichika_m5_b6cd774e:
 
-    # ichika "Contestaré luego. Ahora tengo que acompañarte a la salida antes de que cierren el edificio."
-    ichika "I'll answer later. Right now I have to walk you out before they lock up the building."
+    # ichika "Luego contesto. Ahora te acompaño a la salida, que van a cerrar el edificio."
+    ichika "I'll answer later. Right now I'm walking you out, they're about to lock up."
 
 # game/02_cap1_Ichika.rpy:564
 translate english ichika_m5_2c52f71b:
@@ -1049,18 +1025,6 @@ translate english ichika_m5_fdae3d29:
 
     # mc_pensamiento "Solo lo guardó, como guarda todo lo demás."
     mc_pensamiento "She just put it away, the way she puts away everything else."
-
-# game/02_cap1_Ichika.rpy:568
-translate english ichika_m5_7ae606a0:
-
-    # narrador "Guardó el teléfono en el bolsillo de la falda."
-    narrador "She slipped the phone into her skirt pocket."
-
-# game/02_cap1_Ichika.rpy:570
-translate english ichika_m5_1f8303e8:
-
-    # narrador "Con el mismo movimiento con el que había guardado el guion."
-    narrador "With the same move she'd used to put away the script."
 
 # game/02_cap1_Ichika.rpy:590
 translate english ichika_m6_84f8fd7e:
@@ -1110,11 +1074,11 @@ translate english ichika_m6_2d1f7225:
     # mc_pensamiento "Y aun así, en cuanto llegó el mensaje del papel nuevo, dijo que sí sin pensarlo dos veces."
     mc_pensamiento "And even so, the moment the message about the new part came, she said yes without thinking twice."
 
-# game/02_cap1_Ichika.rpy:609
-translate english ichika_m6_0c6a70a5:
+# game/02_cap1_Ichika.rpy:597
+translate english ichika_m6_39061e30:
 
-    # mc_pensamiento "Como si admitir que no puede con todo no cambiara en nada lo que va a seguir haciendo mañana."
-    mc_pensamiento "As if admitting she can't handle everything changed nothing about what she'll do tomorrow."
+    # mc_pensamiento "Admitirlo no le cambió nada. Mañana va a seguir igual."
+    mc_pensamiento "Admitting it didn't change a thing. Tomorrow she'll do the same."
 
 # game/02_cap1_Ichika.rpy:613
 translate english ichika_m6_6580d73a:
@@ -1140,11 +1104,11 @@ translate english ichika_m6_91814221:
     # mc_pensamiento "No hubo ningún cambio en ella."
     mc_pensamiento "Nothing changed in her."
 
-# game/02_cap1_Ichika.rpy:621
-translate english ichika_m6_f2d855f1:
+# game/02_cap1_Ichika.rpy:609
+translate english ichika_m6_58a2a0f3:
 
-    # mc_pensamiento "Siento como si no hubiera hecho nada para ayudarla."
-    mc_pensamiento "I feel like I did nothing to help her."
+    # mc_pensamiento "No la ayudé en nada."
+    mc_pensamiento "I didn't help her at all."
 
 # game/02_cap1_Ichika.rpy:623
 translate english ichika_m6_92cac049:
@@ -1182,17 +1146,11 @@ translate english ichika_m6_ae577c3e:
     # mc_pensamiento "Y aun con todo lo que le dije, aceptó un papel más antes de que llegáramos a la salida."
     mc_pensamiento "And after everything I said to her, she took one more part before we even reached the exit."
 
-# game/02_cap1_Ichika.rpy:637
-translate english ichika_m6_ba69d736:
+# game/02_cap1_Ichika.rpy:625
+translate english ichika_m6_990a835c:
 
-    # mc_pensamiento "Como si hoy solo le hubiera enseñado a esconder mejor la cuenta."
-    mc_pensamiento "As if all I'd taught her today was how to hide the total better."
-
-# game/02_cap1_Ichika.rpy:639
-translate english ichika_m6_1f1f69d3:
-
-    # mc_pensamiento "No a hacerla más corta."
-    mc_pensamiento "Not how to make it smaller."
+    # mc_pensamiento "Hoy solo le enseñé a esconder mejor la cuenta."
+    mc_pensamiento "All I taught her today was how to hide the total better."
 
 translate english strings:
 
