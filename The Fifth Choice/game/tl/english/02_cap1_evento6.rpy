@@ -2539,9 +2539,9 @@ translate english e6_nino_gesto_fria_a5cae4d3:
     profe "Nakano. If you're done, you may hand it in."
 
 # game/02_cap1_evento6.rpy:1481
-translate english e6_nino_gesto_fria_5303dcd4:
+translate english e6_nino_gesto_fria_4a8cbc81:
 
-    # nino "No. Aun me falta revisar unas cosas."
+    # nino "No. Aún me falta revisar unas cosas."
     nino "No. I still have a few things to check."
 
 # game/02_cap1_evento6.rpy:1483

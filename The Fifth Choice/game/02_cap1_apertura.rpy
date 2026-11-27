@@ -272,7 +272,7 @@ label cap1_apertura:
 
     nino "Qué observación tan interesante."
 
-    mc "Es una observación minuiciosa."
+    mc "Es una observación minuciosa."
     
     mc "Si querían perder el tiempo, tenían formas más baratas."
 

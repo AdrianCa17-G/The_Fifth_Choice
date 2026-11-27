@@ -761,4 +761,4 @@ screen marco_juego():
             use hud_cinta_vista(ui_lugar, etiqueta, clave, cinta, tinta_hud, hud_cinta_entrada)
 
             if ui_modo != "normal":
-                text _("Quedan [tiempo_restante!t]") xpos 44 ypos 94 size 22 color "#FFFFFF" outlines [(3, "#1B102699", 0, 0)]
+                text (_("Queda [tiempo_restante!t]") if tiempo_restante == "un examen" else _("Quedan [tiempo_restante!t]")) xpos 44 ypos 94 size 22 color "#FFFFFF" outlines [(3, "#1B102699", 0, 0)]

@@ -49,7 +49,7 @@ translate english strings:
     new "Why Are You in My Seat?"
 
     # game/08_extras.rpy:11
-    old "Un encuentro incomodo"
+    old "Un encuentro incómodo"
     new "An Awkward Encounter"
 
     # game/08_extras.rpy:11
@@ -113,7 +113,7 @@ translate english strings:
     new "The Mask"
 
     # game/08_extras.rpy:11
-    old "No puedo mas"
+    old "No puedo más"
     new "I Can't Go On"
 
     # game/08_extras.rpy:11
@@ -129,7 +129,7 @@ translate english strings:
     new "Translating"
 
     # game/08_extras.rpy:11
-    old "Una receta con transfondo"
+    old "Una receta con trasfondo"
     new "A Recipe with a Backstory"
 
     # game/08_extras.rpy:11
@@ -165,7 +165,7 @@ translate english strings:
     new "Surprise"
 
     # game/08_extras.rpy:11
-    old "Quiero usar mis audifonos"
+    old "Quiero usar mis audífonos"
     new "I Want My Headphones"
 
     # game/08_extras.rpy:11
@@ -497,7 +497,7 @@ translate english strings:
     new "Reach the first free afternoon."
 
     # game/08_extras.rpy:998
-    old "El climax"
+    old "El clímax"
     new "The Climax"
 
     # game/08_extras.rpy:998
@@ -573,7 +573,7 @@ translate english strings:
     new "Play it during exam week."
 
     # game/08_extras.rpy:1198
-    old "Los cinco minijuegos de la semana de exámenes. Diviértete jugandolos."
+    old "Los cinco minijuegos de la semana de exámenes. Diviértete jugándolos."
     new "The five exam-week minigames. Have fun playing them."
 
     # game/08_extras.rpy:1208

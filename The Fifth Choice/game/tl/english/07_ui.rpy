@@ -110,3 +110,7 @@ translate english strings:
     old "Quedan [tiempo_restante!t]"
     new "[tiempo_restante!tc] left"
 
+    # game/07_ui.rpy:764
+    old "Queda [tiempo_restante!t]"
+    new "[tiempo_restante!tc] left"
+

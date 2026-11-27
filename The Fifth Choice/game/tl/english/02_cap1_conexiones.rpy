@@ -709,9 +709,9 @@ translate english reaccion_itsuki_cab5bbc2:
     narrador "She was quiet for a moment, one hand on her notebook."
 
 # game/02_cap1_conexiones.rpy:491
-translate english reaccion_itsuki_6a9d1721:
+translate english reaccion_itsuki_90f131cd:
 
-    # itsuki "Anoche rehíce el ejercicio."
+    # itsuki "Anoche rehice el ejercicio."
     itsuki "Last night I redid the exercise."
 
 # game/02_cap1_conexiones.rpy:493
@@ -901,9 +901,9 @@ translate english reaccion_itsuki_4c24b037:
     narrador "Underneath, she'd redone the whole exercise in her cramped handwriting."
 
 # game/02_cap1_conexiones.rpy:580
-translate english reaccion_itsuki_8bf99d33:
+translate english reaccion_itsuki_6f8a4a07:
 
-    # mc "Lo rehíciste."
+    # mc "Lo rehiciste."
     mc "You redid it."
 
 # game/02_cap1_conexiones.rpy:582
@@ -4465,9 +4465,9 @@ translate english cap1_interconexion_5_48b7bfd4:
     mc_pensamiento "I didn't even buy it myself."
 
 # game/02_cap1_conexiones.rpy:2685
-translate english cap1_interconexion_5_9ecb0954:
+translate english cap1_interconexion_5_e5e031a3:
 
-    # mc_pensamiento "Esa semana si es importante, no puedo andar con juegos."
+    # mc_pensamiento "Esa semana sí es importante, no puedo andar con juegos."
     mc_pensamiento "This week matters. I can't be playing games."
 
 # game/02_cap1_conexiones.rpy:2694
@@ -5185,9 +5185,9 @@ translate english cap1_interconexion_5_42eff1ee:
     mc "It'll all be fine, I promise."
 
 # game/02_cap1_conexiones.rpy:3108
-translate english cap1_interconexion_5_35914219:
+translate english cap1_interconexion_5_91928090:
 
-    # quintillizas "Adios."
+    # quintillizas "Adiós."
     quintillizas "Bye."
 
 # game/02_cap1_conexiones.rpy:3110
@@ -5671,9 +5671,9 @@ translate english cap1_interconexion_6_dec2abf0:
     nino "Nothing special."
 
 # game/02_cap1_conexiones.rpy:3430
-translate english cap1_interconexion_6_2706c22c:
+translate english cap1_interconexion_6_a8370f4e:
 
-    # nino "...Pero pensandolo bien."
+    # nino "...Pero pensándolo bien."
     nino "...But come to think of it."
 
 # game/02_cap1_conexiones.rpy:3432
@@ -5731,9 +5731,9 @@ translate english cap1_interconexion_6_bc07b2f8:
     mc "It did, don't doubt it."
 
 # game/02_cap1_conexiones.rpy:3455
-translate english cap1_interconexion_6_e17e1780:
+translate english cap1_interconexion_6_8ae195cf:
 
-    # nino "Ya lo veremos en la semana de examenes."
+    # nino "Ya lo veremos en la semana de exámenes."
     nino "We'll see during exam week."
 
 # game/02_cap1_conexiones.rpy:3461
@@ -6859,9 +6859,9 @@ translate english cap1_interconexion_6_1180b0f9:
     mc_pensamiento "Just not the one you want."
 
 # game/02_cap1_conexiones.rpy:4021
-translate english cap1_interconexion_6_197d63f5:
+translate english cap1_interconexion_6_1f70072b:
 
-    # mc_pensamiento "Ni siquiera se tomaron la molestia en contestarme"
+    # mc_pensamiento "Ni siquiera se tomaron la molestia en contestarme."
     mc_pensamiento "They didn't even bother to answer me."
 
 # game/02_cap1_conexiones.rpy:4023
@@ -7029,6 +7029,6 @@ translate english strings:
     new "\"If it goes wrong, blame me. That's what I'm paid for.\""
 
     # game/02_cap1_conexiones.rpy:4091
-    old "Casa de Futaro"
+    old "Casa de [nombre_jugador]"
     new "[nombre_jugador]'s House"
 

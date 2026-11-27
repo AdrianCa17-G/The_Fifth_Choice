@@ -517,9 +517,9 @@ translate english cap1_apertura_8f81fbe0:
     nino "What an interesting observation."
 
 # game/02_cap1_apertura.rpy:275
-translate english cap1_apertura_934b2227:
+translate english cap1_apertura_3268b679:
 
-    # mc "Es una observación minuiciosa."
+    # mc "Es una observación minuciosa."
     mc "It's a careful observation."
 
 # game/02_cap1_apertura.rpy:277

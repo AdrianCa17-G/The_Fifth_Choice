@@ -253,9 +253,9 @@ translate english hub_Itsuki_84a34b6b:
     narrador "And that's what gave her away."
 
 # game/02_cap1_Itsuki.rpy:148
-translate english hub_Itsuki_134ca3ad:
+translate english hub_Itsuki_4383a36a:
 
-    # mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la pregunta con la misma frase."
+    # mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la respuesta con la misma frase."
     mc_pensamiento "When Itsuki has the answer, she never repeats a line word for word."
 
 # game/02_cap1_Itsuki.rpy:150

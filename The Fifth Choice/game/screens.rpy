@@ -1210,11 +1210,11 @@ screen keyboard_help():
         text _("Activa/desactiva el salto de diálogo.")
 
     hbox:
-        label _("Av. pág.")
+        label _("Re. pág.")
         text _("Retrocede al diálogo anterior.")
 
     hbox:
-        label _("Re. pág.")
+        label _("Av. pág.")
         text _("Avanza hacia el diálogo siguiente.")
 
     hbox:

@@ -228,7 +228,7 @@ translate english strings:
 
     # game/screens.rpy:1213
     old "Av. pág."
-    new "Page Up"
+    new "Page Down"
 
     # game/screens.rpy:1214
     old "Retrocede al diálogo anterior."
@@ -236,7 +236,7 @@ translate english strings:
 
     # game/screens.rpy:1217
     old "Re. pág."
-    new "Page Down"
+    new "Page Up"
 
     # game/screens.rpy:1218
     old "Avanza hacia el diálogo siguiente."

@@ -145,7 +145,7 @@ label hub_Itsuki:
 
     narrador "Y eso fue lo que la delató."
 
-    mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la pregunta con la misma frase."
+    mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la respuesta con la misma frase."
 
     mc_pensamiento "La cambia." 
     

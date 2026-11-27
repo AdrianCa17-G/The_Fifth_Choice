@@ -1478,7 +1478,7 @@ label e6_nino_gesto_fria:
 
     profe "Nakano. Si ya terminó, puede entregar."
 
-    nino "No. Aun me falta revisar unas cosas."
+    nino "No. Aún me falta revisar unas cosas."
 
     narrador "Se quedó revisando como quien patrulla una frontera. Sin mirar a nadie. A nadie."
 

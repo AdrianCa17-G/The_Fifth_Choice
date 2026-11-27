@@ -14,7 +14,7 @@ define GALERIA = [
         ("cg_calificacion", _("Mi lugar de pensamientos")),
         ("cg_examen", _("Examen perfecto")),
         ("cg_itsuki_sentada", _("¿Por qué estás en mi asiento?")),
-        ("cg_itsuki_azotea", _("Un encuentro incomodo")),
+        ("cg_itsuki_azotea", _("Un encuentro incómodo")),
         ("cg_manija_edificio", _("Abriendo mi sentencia")),
         ("cg_maruo_reunion", _("El contrato")),
         ("cg_hermanas_estudiando", _("La primera clase")),
@@ -35,13 +35,13 @@ define GALERIA = [
         ("cg_ichika_ensayo", _("Sala de ensayo")),
         ("cg_ichika_desarmada", _("Sin máscara")),
         ("cg_ichika_mascara", _("La máscara")),
-        ("cg_ichika_fracaso", _("No puedo mas")),
+        ("cg_ichika_fracaso", _("No puedo más")),
         ("cg_ichika_examen", _("Las cuentas sí salieron")),
     ]),
     ("nino", _("Nino"), "nino", [
         ("cg_nino_pasillo", _("Ni una semana")),
         ("cg_nino_centro_comercial", _("Traduciendo")),
-        ("cg_nino_receta", _("Una receta con transfondo")),
+        ("cg_nino_receta", _("Una receta con trasfondo")),
         ("cg_nino_llamada", _("¿Está hablando de mí?")),
         ("cg_nino_confrontacion_cocina", _("Una discusión intensa")),
         ("cg_nino_grieta_cocina", _("La crisis de Nino")),
@@ -53,7 +53,7 @@ define GALERIA = [
         ("cg_miku_biblioteca", _("Biblioteca")),
         ("cg_miku_estudio", _("El temario")),
         ("cg_miku_sorpresa", _("Sorpresa")),
-        ("cg_miku_fracaso", _("Quiero usar mis audifonos")),
+        ("cg_miku_fracaso", _("Quiero usar mis audífonos")),
         ("cg_miku_examen", _("Mi propia historia")),
     ]),
     ("yotsuba", _("Yotsuba"), "yotsuba", [
@@ -1001,7 +1001,7 @@ init 1 python:
             ("prologo_fin", _("Fin del prólogo"), _("Cinco alumnas, cero interés"), CORT_LILA, _("Termina el prólogo.")),
             ("cap1_inicio", _("Capítulo 1"), _("Días de tutoría"), CORT_ROSA, _("Empieza el Capítulo 1.")),
             ("hub", _("Tarde libre"), _("Empieza tu decisión"), CORT_LILA, _("Llega a la primera tarde libre.")),
-            ("cap1_examenes", _("Semana de exámenes"), _("El climax"), CORT_ORO, _("Llega a la semana de exámenes.")),
+            ("cap1_examenes", _("Semana de exámenes"), _("El clímax"), CORT_ORO, _("Llega a la semana de exámenes.")),
             ("cap1_fin", _("Fin del Capítulo 1"), _("Un estudiante perfecto"), CORT_ROSA, _("Termina el Capítulo 1.")),
             ("final_malo", _("Final malo"), _("Despido temprano"), "#9AA7A8", _("Pierde el trabajo antes de tiempo.")),
         ]
@@ -1197,7 +1197,7 @@ screen extra_minijuegos():
             ypos 70
             spacing 40
 
-            text _("Los cinco minijuegos de la semana de exámenes. Diviértete jugandolos.") size 24 color "#CFC6E0"
+            text _("Los cinco minijuegos de la semana de exámenes. Diviértete jugándolos.") size 24 color "#CFC6E0"
 
             hbox:
                 spacing 13

@@ -488,7 +488,7 @@ label reaccion_itsuki:
 
         narrador "Se quedó callada un momento, con la mano sobre el cuaderno."
 
-        itsuki "Anoche rehíce el ejercicio."
+        itsuki "Anoche rehice el ejercicio."
 
         itsuki "Desde el principio. Sin mirar la corrección."
 
@@ -577,7 +577,7 @@ label reaccion_itsuki:
 
         narrador "Debajo, ella había rehecho el ejercicio entero, con su letra apretada."
 
-        mc "Lo rehíciste."
+        mc "Lo rehiciste."
 
         itsuki "Anoche. Sola."
 
@@ -2682,7 +2682,7 @@ label cap1_interconexion_5:
 
             mc_pensamiento "No me lo creía ni yo."
 
-            mc_pensamiento "Esa semana si es importante, no puedo andar con juegos."
+            mc_pensamiento "Esa semana sí es importante, no puedo andar con juegos."
 
     ############################################################################
     ##  Aula · chequeo corto y tenso
@@ -3105,7 +3105,7 @@ label cap1_interconexion_5:
     show yotsuba at pj_habla(X_YOTSUBA)
     with disolucion_lenta
 
-    quintillizas "Adios."
+    quintillizas "Adiós."
 
     narrador "Todas se fueron."
 
@@ -3427,7 +3427,7 @@ label cap1_interconexion_6:
 
     if clima_cap1 == "buena":
 
-        nino "...Pero pensandolo bien."
+        nino "...Pero pensándolo bien."
 
         nino "...Hasta ahora no fue el peor tutor que hemos tenido."
 
@@ -3452,7 +3452,7 @@ label cap1_interconexion_6:
 
         mc "Si sirvió, no lo dudes."
 
-        nino "Ya lo veremos en la semana de examenes."
+        nino "Ya lo veremos en la semana de exámenes."
 
     else:
 
@@ -4018,7 +4018,7 @@ label cap1_interconexion_6:
 
         mc_pensamiento "Solo que no es la que uno quiere."
 
-        mc_pensamiento "Ni siquiera se tomaron la molestia en contestarme"
+        mc_pensamiento "Ni siquiera se tomaron la molestia en contestarme."
 
         mc_pensamiento "Bueno, no es que me sorprenda, están completamente decepcionadas de mí."
 
@@ -4088,7 +4088,7 @@ label cap1_interconexion_6:
 
     ## beat_casa lee despido_cap1 para mostrar la duda de Futaro.
        
-    $ ui_escena("beat", None, _("Casa de Futaro"))
+    $ ui_escena("beat", None, _("Casa de [nombre_jugador]"))
 
     call beat_casa from _call_beat_casa
 

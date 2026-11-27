@@ -28,7 +28,7 @@ define gui.show_name = True
 
 ## Versión del juego.
 
-define config.version = "1.0"
+define config.version = "1.1"
 
 
 ## CRÉDITOS — fuente única en 16_creditos.rpy (CREDITOS_AVISO, CREDITOS_GRATIS,

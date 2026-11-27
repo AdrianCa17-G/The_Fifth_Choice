@@ -8,6 +8,9 @@ Por eso las erratas **no se corrigen al encontrarlas**: se anotan aquí y se cor
 fase, regenerando después la traducción de esas líneas (Generate Translations) y revisando que no quede ninguna
 huérfana.
 
+**Estado:** las filas de abajo hasta el 26/11/2026 se aplicaron en la v1.1 (26/11/2026), con su traducción
+re-enlazada. Las erratas nuevas se anotan debajo de ellas.
+
 Formato: una fila por errata. «Archivo:línea» tal como está en el momento de anotarla.
 
 | Archivo:línea | Texto actual | Corrección | Anotada por / fecha |
