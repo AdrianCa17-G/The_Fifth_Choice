@@ -309,7 +309,7 @@ música es 0,7 y no 1,0.
 ## 6. Ducking: eliminado en v1.1
 
 Existió una `duck()` que hacía dos `renpy.music.set_volume` seguidos (bajar a 0.4
-en 0,2 s y volver a 1.0 en 1,5 s), en 16 sitios del prólogo, del Capítulo 1 y del
+en 0,2 s y volver a 1.0 en 1,5 s), en 15 sitios del prólogo, del Capítulo 1 y del
 chat. **Nunca sonó.** El canal tiene una sola rampa de volumen: la segunda llamada
 sustituye a la primera y arranca desde el volumen de ese instante, que aún es 1.0.
 Como todo el juego se calibró y se probó sin la bajada, se quitó en vez de
