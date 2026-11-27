@@ -1176,11 +1176,11 @@ translate english nino_beat_m5_1fd4a4b2:
     # mc_pensamiento "Yo cerré la mía igual, una hora después y en la misma cocina."
     mc_pensamiento "I closed mine the same way, an hour later in the same kitchen."
 
-# game/02_cap1_beat_Nino.rpy:626
-translate english nino_beat_m5_f9a7b19f:
+# game/02_cap1_beat_Nino.rpy:624
+translate english nino_beat_m5_2b51d7e6:
 
-    # mc_pensamiento "Ella tuvo que ver la misma puerta cerrarse dos veces en una tarde."
-    mc_pensamiento "She had to watch the same door close twice in one afternoon."
+    # mc_pensamiento "Le cerraron la conversación dos veces en una tarde."
+    mc_pensamiento "She got shut down twice in one afternoon."
 
 translate english strings:
 

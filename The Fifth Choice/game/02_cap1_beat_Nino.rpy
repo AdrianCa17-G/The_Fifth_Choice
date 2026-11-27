@@ -621,7 +621,7 @@ label beat_Nino:
 
             mc_pensamiento "Yo cerré la mía igual, una hora después y en la misma cocina."
 
-            mc_pensamiento "Ella tuvo que ver la misma puerta cerrarse dos veces en una tarde."                        
+            mc_pensamiento "Le cerraron la conversación dos veces en una tarde."                        
  
     return 
     
