@@ -129,9 +129,7 @@ label hub_Itsuki:
     
     mc_pensamiento "Misma cifra las tres veces."
 
-    mc_pensamiento "Eso no es no saber."
-
-    mc_pensamiento "Eso es equivocarse siempre en el mismo sitio sin encontrarlo."
+    mc_pensamiento "Se equivoca siempre en el mismo sitio y no lo encuentra."
 
     mc "¿Cuánto llevas con ese ejercicio?"
 
@@ -141,9 +139,7 @@ label hub_Itsuki:
 
     itsuki "El que haga falta, he dicho."
 
-    narrador "Lo repitió exactamente igual, palabra por palabra."
-
-    narrador "Y eso fue lo que la delató."
+    narrador "Me contestó casi con las mismas palabras."
 
     mc_pensamiento "Cuando Itsuki tiene la respuesta, no repite la respuesta con la misma frase."
 
@@ -155,7 +151,7 @@ label hub_Itsuki:
 
     mc_pensamiento "Esta vez solo la dejó ahí."
 
-    mc_pensamiento "No está pensando. Está esperando a que el error se corrija solo."
+    mc_pensamiento "Está esperando a que el error se corrija solo."
 
     mc "Las demás no estudian nada y les va igual de mal que a ti."
 
@@ -170,11 +166,7 @@ label hub_Itsuki:
 
     itsuki "Yo no tengo esa excusa."
     
-    narrador "Eso sí le tocó algo."
-
-    narrador "Lo dijo rápido. Más rápido que el resto de la conversación."
-
-    narrador "Como quien suelta algo antes de poder impedírselo."
+    narrador "Lo soltó mucho más rápido que todo lo demás."
 
     itsuki "..."
 
@@ -186,11 +178,9 @@ label hub_Itsuki:
 
     mc_pensamiento "Es que le va mal {i}estudiando{/i}."
 
-    mc_pensamiento "Y esa es la única excusa que no tiene guardada."
-
     narrador "Bajó la vista al cuaderno."
 
-    narrador "La postura no había cambiado, pero algo en los hombros sí."
+    narrador "Seguía sentada igual, pero se le cayeron los hombros."
 
     scene cg_itsuki_contraida
     with dissolve
@@ -207,7 +197,7 @@ label hub_Itsuki:
 
     mc_pensamiento "Preguntarme a mí sería peor."
 
-    mc_pensamiento "Sería darme la razón sobre por qué estoy como su tutor."
+    mc_pensamiento "Sería admitir que sí necesita un tutor."
 
     mc_pensamiento "Así que no le pregunta a nadie."
 
@@ -234,17 +224,15 @@ label hub_Itsuki:
 
     narrador "Tres líneas de planteamiento correctas."
 
-    narrador "El segundo paso tiene mal la conversión de unidades."
+    narrador "El segundo paso tenía mal la conversión de unidades."
 
     narrador "El mismo error, repetido igual las tres veces."
 
     narrador "Porque volvía a copiar el número equivocado del primer intento cada vez que empezaba de nuevo."
 
-    mc_pensamiento "No es que no sepa resolverlo."
-
-    mc_pensamiento "Es que no está revisando desde el principio." 
+    mc_pensamiento "Sabe resolverlo. Solo que no revisa desde el principio." 
     
-    mc_pensamiento "Está corrigiendo el final y arrastrando el error del medio sin tocarlo."
+    mc_pensamiento "Corrige el final y arrastra el error del medio."
 
     scene bg_aula_tarde
     with dissolve
@@ -267,7 +255,7 @@ label hub_Itsuki:
 
     mc_pensamiento "Sé dónde está el error. Ella no." 
     
-    mc_pensamiento "Lo difícil no es el ejercicio. Es cómo decírselo."
+    mc_pensamiento "Lo difícil va a ser decírselo."
 
     ## Menu de Itsuki
  
@@ -353,9 +341,7 @@ label itsuki_m4a:
 
     itsuki "...Es el que tenía que dar."
 
-    narrador "No lo dijo como un triunfo."
-
-    narrador "Lo dijo como quien reporta un dato, todavía sin mirarme."
+    narrador "Sonó a dato, no a triunfo. Seguía sin mirarme."
 
     show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
@@ -374,8 +360,6 @@ label itsuki_m4a:
     narrador "Levantó la vista, un segundo, para comprobar si hablaba en serio."
 
     narrador "Y volvió al cuaderno sin decir nada más."
-
-    narrador "Pero sin pedirme que me fuera tampoco."
 
     jump itsuki_m5
 
@@ -466,9 +450,7 @@ label itsuki_m4c:
     show itsuki neutral at pj_calla(0.5)
     with disolucion_lenta
 
-    narrador "Lo dijo sin agradecerlo y sin discutirlo."
-
-    narrador "En ella, esa es la forma más fría de aceptar algo."
+    narrador "Ni me dio las gracias ni discutió."
 
     mc_pensamiento "Se lo resolví bien." 
     
@@ -476,9 +458,7 @@ label itsuki_m4c:
 
     mc_pensamiento "Y le quité la única cosa que estaba defendiendo."
 
-    mc_pensamiento "No era el ejercicio." 
-    
-    mc_pensamiento "Era hacerlo ella sola."
+    mc_pensamiento "Hacerlo ella sola."
 
     show itsuki neutral at pj_habla(0.5)
     with disolucion_lenta
@@ -523,7 +503,7 @@ label itsuki_m5:
 
         mc_pensamiento "Pero tampoco me dijo que me fuera."
 
-        mc_pensamiento "Con ella empiezo a entender que eso cuenta más que un gracias."
+        mc_pensamiento "Con ella, eso cuenta más que un gracias."
 
     elif itsuki_rama_cap1 == "tibia":
 

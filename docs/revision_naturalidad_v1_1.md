@@ -137,3 +137,41 @@ Notas:
 - «Pregunta cuatro» se deja en letras porque es el número de la pregunta, no una hora.
 - Al aplicarlo, `tools/revisar_traduccion.py` compara las etiquetas, no los números; conviene buscar `[0-9]:[0-9]`
   en `tl/english` después de regenerar para confirmar que no quedó ninguna hora en letras.
+
+## 02_cap1_Itsuki.rpy
+
+Los horarios de este archivo ya se aplicaron (HOR-15 y HOR-16). Itsuki casi no se toca: sus frases son cortas y
+suenan a ella. El problema está en la narración y los pensamientos del MC: «como quien» 2 (pasa a 0) y cinco
+contrastes «No es X. Es Y.» seguidos (quedan 1: la revelación de las líneas 185-187).
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| ITS-01 | 132 | mc_pensamiento | Eso no es no saber. | 4 | BORRAR | ✅ aplicado 27/11 |
+| ITS-02 | 134 | mc_pensamiento | Eso es equivocarse siempre en el mismo sitio sin encontrarlo. | 4 (va con ITS-01) | Se equivoca siempre en el mismo sitio y no lo encuentra. | ✅ aplicado 27/11 |
+| ITS-03 | 146 | narrador | Y eso fue lo que la delató. | 7 (la 148-156 ya lo explica) | BORRAR | ✅ aplicado 27/11 |
+| ITS-04 | 158 | mc_pensamiento | No está pensando. Está esperando a que el error se corrija solo. | 4 | Está esperando a que el error se corrija solo. | ✅ aplicado 27/11 |
+| ITS-05 | 173 | narrador | Eso sí le tocó algo. | 7 | BORRAR | ✅ aplicado 27/11 |
+| ITS-06 | 175 | narrador | Lo dijo rápido. Más rápido que el resto de la conversación. | 2 | Lo soltó mucho más rápido que todo lo demás. | ✅ aplicado 27/11 |
+| ITS-07 | 177 | narrador | Como quien suelta algo antes de poder impedírselo. | 1 | BORRAR | ✅ aplicado 27/11 |
+| ITS-08 | 189 | mc_pensamiento | Y esa es la única excusa que no tiene guardada. | 6, 7 (repite lo que Itsuki dice en 169-171) | BORRAR | ✅ aplicado 27/11 |
+| ITS-09 | 193 | narrador | La postura no había cambiado, pero algo en los hombros sí. | muletilla vetada («algo en») | Seguía sentada igual, pero se le cayeron los hombros. | ✅ aplicado 27/11 |
+| ITS-10 | 210 | mc_pensamiento | Sería darme la razón sobre por qué estoy como su tutor. | frase enredada | Sería admitir que sí necesita un tutor. | ✅ aplicado 27/11 |
+| ITS-11 | 243 | mc_pensamiento | No es que no sepa resolverlo. | 4 | BORRAR | ✅ aplicado 27/11 |
+| ITS-12 | 245 | mc_pensamiento | Es que no está revisando desde el principio. | 4 | Sabe resolverlo. Solo que no revisa desde el principio. | ✅ aplicado 27/11 |
+| ITS-13 | 247 | mc_pensamiento | Está corrigiendo el final y arrastrando el error del medio sin tocarlo. | 5 | Corrige el final y arrastra el error del medio. | ✅ aplicado 27/11 |
+| ITS-14 | 270 | mc_pensamiento | Lo difícil no es el ejercicio. Es cómo decírselo. | 4 | Lo difícil va a ser decírselo. | ✅ aplicado 27/11 |
+| ITS-15 | 356 | narrador | No lo dijo como un triunfo. | 2 | BORRAR | ✅ aplicado 27/11 |
+| ITS-16 | 358 | narrador | Lo dijo como quien reporta un dato, todavía sin mirarme. | 1, 2 | Sonó a dato, no a triunfo. Seguía sin mirarme. | ✅ aplicado 27/11 |
+| ITS-17 | 378 | narrador | Pero sin pedirme que me fuera tampoco. | 5 (repite la 339 y la 524) | BORRAR | ✅ aplicado 27/11 |
+| ITS-18 | 469 | narrador | Lo dijo sin agradecerlo y sin discutirlo. | 2 | Ni me dio las gracias ni discutió. | ✅ aplicado 27/11 |
+| ITS-19 | 471 | narrador | En ella, esa es la forma más fría de aceptar algo. | 6, 7 | BORRAR | ✅ aplicado 27/11 |
+| ITS-20 | 479 | mc_pensamiento | No era el ejercicio. | 4 | BORRAR | ✅ aplicado 27/11 |
+| ITS-21 | 481 | mc_pensamiento | Era hacerlo ella sola. | 4 (va con ITS-20) | Hacerlo ella sola. | ✅ aplicado 27/11 |
+| ITS-22 | 526 | mc_pensamiento | Con ella empiezo a entender que eso cuenta más que un gracias. | 7 | Con ella, eso cuenta más que un gracias. | ✅ aplicado 27/11 |
+
+### Notas de coherencia (para aprobar aparte)
+
+| ID | línea | personaje | texto actual | problema | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| ITS-23 | 144 | narrador | Lo repitió exactamente igual, palabra por palabra. | las líneas 138 y 142 no son iguales | Me contestó casi con las mismas palabras. | ✅ aplicado 27/11 |
+| ITS-24 | 237 | narrador | El segundo paso tiene mal la conversión de unidades. | presente en una narración en pasado | El segundo paso tenía mal la conversión de unidades. | ✅ aplicado 27/11 |

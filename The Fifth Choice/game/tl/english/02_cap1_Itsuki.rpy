@@ -205,16 +205,10 @@ translate english hub_Itsuki_f86b0e51:
     mc_pensamiento "The same number all three times."
 
 # game/02_cap1_Itsuki.rpy:132
-translate english hub_Itsuki_a9a419e8:
+translate english hub_Itsuki_db8bc35b:
 
-    # mc_pensamiento "Eso no es no saber."
-    mc_pensamiento "That's not ignorance."
-
-# game/02_cap1_Itsuki.rpy:134
-translate english hub_Itsuki_bc5bad8e:
-
-    # mc_pensamiento "Eso es equivocarse siempre en el mismo sitio sin encontrarlo."
-    mc_pensamiento "That's making the same mistake every time and never finding it."
+    # mc_pensamiento "Se equivoca siempre en el mismo sitio y no lo encuentra."
+    mc_pensamiento "She gets it wrong in the same spot every time and can't find it."
 
 # game/02_cap1_Itsuki.rpy:136
 translate english hub_Itsuki_2aa71e8a:
@@ -240,17 +234,11 @@ translate english hub_Itsuki_0349b090:
     # itsuki "El que haga falta, he dicho."
     itsuki "As long as it takes, I said."
 
-# game/02_cap1_Itsuki.rpy:144
-translate english hub_Itsuki_2fe71597:
+# game/02_cap1_Itsuki.rpy:142
+translate english hub_Itsuki_99ac5984:
 
-    # narrador "Lo repitió exactamente igual, palabra por palabra."
-    narrador "She repeated it exactly the same, word for word."
-
-# game/02_cap1_Itsuki.rpy:146
-translate english hub_Itsuki_84a34b6b:
-
-    # narrador "Y eso fue lo que la delató."
-    narrador "And that's what gave her away."
+    # narrador "Me contestó casi con las mismas palabras."
+    narrador "She answered with almost the same words."
 
 # game/02_cap1_Itsuki.rpy:148
 translate english hub_Itsuki_4383a36a:
@@ -282,11 +270,11 @@ translate english hub_Itsuki_d3c43c4a:
     # mc_pensamiento "Esta vez solo la dejó ahí."
     mc_pensamiento "This time she just left it there."
 
-# game/02_cap1_Itsuki.rpy:158
-translate english hub_Itsuki_e0756e3d:
+# game/02_cap1_Itsuki.rpy:154
+translate english hub_Itsuki_563b9cd1:
 
-    # mc_pensamiento "No está pensando. Está esperando a que el error se corrija solo."
-    mc_pensamiento "She's not thinking. She's waiting for the mistake to fix itself."
+    # mc_pensamiento "Está esperando a que el error se corrija solo."
+    mc_pensamiento "She's waiting for the mistake to fix itself."
 
 # game/02_cap1_Itsuki.rpy:160
 translate english hub_Itsuki_a7b5fe36:
@@ -318,23 +306,11 @@ translate english hub_Itsuki_5976761b:
     # itsuki "Yo no tengo esa excusa."
     itsuki "I don't have that excuse."
 
-# game/02_cap1_Itsuki.rpy:173
-translate english hub_Itsuki_15681973:
+# game/02_cap1_Itsuki.rpy:169
+translate english hub_Itsuki_7e288a1e:
 
-    # narrador "Eso sí le tocó algo."
-    narrador "That one hit something."
-
-# game/02_cap1_Itsuki.rpy:175
-translate english hub_Itsuki_0de9247a:
-
-    # narrador "Lo dijo rápido. Más rápido que el resto de la conversación."
-    narrador "She said it fast. Faster than the rest of the conversation."
-
-# game/02_cap1_Itsuki.rpy:177
-translate english hub_Itsuki_432e283f:
-
-    # narrador "Como quien suelta algo antes de poder impedírselo."
-    narrador "Like someone blurting something out before she can stop herself."
+    # narrador "Lo soltó mucho más rápido que todo lo demás."
+    narrador "It came out much faster than everything else."
 
 # game/02_cap1_Itsuki.rpy:179
 translate english hub_Itsuki_97eba050:
@@ -366,23 +342,17 @@ translate english hub_Itsuki_42dc6997:
     # mc_pensamiento "Es que le va mal {i}estudiando{/i}."
     mc_pensamiento "It's that she does badly {i}even when she studies{/i}."
 
-# game/02_cap1_Itsuki.rpy:189
-translate english hub_Itsuki_ffd8b807:
-
-    # mc_pensamiento "Y esa es la única excusa que no tiene guardada."
-    mc_pensamiento "And that's the one excuse she doesn't keep in reserve."
-
 # game/02_cap1_Itsuki.rpy:191
 translate english hub_Itsuki_543b2146:
 
     # narrador "Bajó la vista al cuaderno."
     narrador "She looked down at the notebook."
 
-# game/02_cap1_Itsuki.rpy:193
-translate english hub_Itsuki_f97c0ad7:
+# game/02_cap1_Itsuki.rpy:183
+translate english hub_Itsuki_fa191492:
 
-    # narrador "La postura no había cambiado, pero algo en los hombros sí."
-    narrador "Her posture hadn't changed, but something in her shoulders had."
+    # narrador "Seguía sentada igual, pero se le cayeron los hombros."
+    narrador "She sat the same way, but her shoulders dropped."
 
 # game/02_cap1_Itsuki.rpy:198
 translate english hub_Itsuki_9b4c1903:
@@ -420,11 +390,11 @@ translate english hub_Itsuki_a6ad99cc:
     # mc_pensamiento "Preguntarme a mí sería peor."
     mc_pensamiento "Asking me would be worse."
 
-# game/02_cap1_Itsuki.rpy:210
-translate english hub_Itsuki_3cf5c169:
+# game/02_cap1_Itsuki.rpy:200
+translate english hub_Itsuki_cc6a9c54:
 
-    # mc_pensamiento "Sería darme la razón sobre por qué estoy como su tutor."
-    mc_pensamiento "It would mean conceding why I'm her tutor in the first place."
+    # mc_pensamiento "Sería admitir que sí necesita un tutor."
+    mc_pensamiento "It'd be admitting she does need a tutor."
 
 # game/02_cap1_Itsuki.rpy:212
 translate english hub_Itsuki_92fc6436:
@@ -462,11 +432,11 @@ translate english hub_Itsuki_22afd1f7:
     # narrador "Tres líneas de planteamiento correctas."
     narrador "Three lines of setup, all correct."
 
-# game/02_cap1_Itsuki.rpy:237
-translate english hub_Itsuki_a66006cb:
+# game/02_cap1_Itsuki.rpy:227
+translate english hub_Itsuki_c71fe02c:
 
-    # narrador "El segundo paso tiene mal la conversión de unidades."
-    narrador "The second step has the unit conversion wrong."
+    # narrador "El segundo paso tenía mal la conversión de unidades."
+    narrador "The second step had the unit conversion wrong."
 
 # game/02_cap1_Itsuki.rpy:239
 translate english hub_Itsuki_30f95d40:
@@ -480,23 +450,17 @@ translate english hub_Itsuki_70446c68:
     # narrador "Porque volvía a copiar el número equivocado del primer intento cada vez que empezaba de nuevo."
     narrador "Every time she started over, she copied the wrong number from her first attempt."
 
-# game/02_cap1_Itsuki.rpy:243
-translate english hub_Itsuki_57d56382:
+# game/02_cap1_Itsuki.rpy:233
+translate english hub_Itsuki_4d9696d5:
 
-    # mc_pensamiento "No es que no sepa resolverlo."
-    mc_pensamiento "It's not that she can't solve it."
+    # mc_pensamiento "Sabe resolverlo. Solo que no revisa desde el principio."
+    mc_pensamiento "She knows how to solve it. She just isn't checking from the start."
 
-# game/02_cap1_Itsuki.rpy:245
-translate english hub_Itsuki_abf27448:
+# game/02_cap1_Itsuki.rpy:235
+translate english hub_Itsuki_640f1472:
 
-    # mc_pensamiento "Es que no está revisando desde el principio."
-    mc_pensamiento "She just isn't checking from the beginning."
-
-# game/02_cap1_Itsuki.rpy:247
-translate english hub_Itsuki_8c1db11f:
-
-    # mc_pensamiento "Está corrigiendo el final y arrastrando el error del medio sin tocarlo."
-    mc_pensamiento "She's fixing the end and dragging the error from the middle along, never touching it."
+    # mc_pensamiento "Corrige el final y arrastra el error del medio."
+    mc_pensamiento "She fixes the end and drags the mistake in the middle along."
 
 # game/02_cap1_Itsuki.rpy:257
 translate english hub_Itsuki_6193e676:
@@ -528,11 +492,11 @@ translate english hub_Itsuki_cf2364e9:
     # mc_pensamiento "Sé dónde está el error. Ella no."
     mc_pensamiento "I know where the error is. She doesn't."
 
-# game/02_cap1_Itsuki.rpy:270
-translate english hub_Itsuki_1d0b206b:
+# game/02_cap1_Itsuki.rpy:258
+translate english hub_Itsuki_18d316ca:
 
-    # mc_pensamiento "Lo difícil no es el ejercicio. Es cómo decírselo."
-    mc_pensamiento "The hard part isn't the exercise. It's how to tell her."
+    # mc_pensamiento "Lo difícil va a ser decírselo."
+    mc_pensamiento "The hard part's going to be telling her."
 
 # game/02_cap1_Itsuki.rpy:278
 translate english hub_Itsuki_74878fee:
@@ -678,17 +642,11 @@ translate english itsuki_m4a_53c680de:
     # itsuki "...Es el que tenía que dar."
     itsuki "...It's the one it should have been."
 
-# game/02_cap1_Itsuki.rpy:356
-translate english itsuki_m4a_6d803c93:
+# game/02_cap1_Itsuki.rpy:344
+translate english itsuki_m4a_7342c6ab:
 
-    # narrador "No lo dijo como un triunfo."
-    narrador "She didn't say it like a triumph."
-
-# game/02_cap1_Itsuki.rpy:358
-translate english itsuki_m4a_ea860a59:
-
-    # narrador "Lo dijo como quien reporta un dato, todavía sin mirarme."
-    narrador "She said it like someone reporting a fact, still not looking at me."
+    # narrador "Sonó a dato, no a triunfo. Seguía sin mirarme."
+    narrador "It sounded like data, not a win. She still wasn't looking at me."
 
 # game/02_cap1_Itsuki.rpy:363
 translate english itsuki_m4a_f97f783c:
@@ -725,12 +683,6 @@ translate english itsuki_m4a_6f72332e:
 
     # narrador "Y volvió al cuaderno sin decir nada más."
     narrador "And went back to the notebook without another word."
-
-# game/02_cap1_Itsuki.rpy:378
-translate english itsuki_m4a_db52e6d6:
-
-    # narrador "Pero sin pedirme que me fuera tampoco."
-    narrador "But without telling me to leave, either."
 
 # game/02_cap1_Itsuki.rpy:394
 translate english itsuki_m4b_e0815342:
@@ -882,17 +834,11 @@ translate english itsuki_m4c_b7838e65:
     # itsuki "Ya lo veo."
     itsuki "So I see."
 
-# game/02_cap1_Itsuki.rpy:469
-translate english itsuki_m4c_9ad805b4:
+# game/02_cap1_Itsuki.rpy:453
+translate english itsuki_m4c_43288477:
 
-    # narrador "Lo dijo sin agradecerlo y sin discutirlo."
-    narrador "She said it without thanking me and without arguing."
-
-# game/02_cap1_Itsuki.rpy:471
-translate english itsuki_m4c_d10310b7:
-
-    # narrador "En ella, esa es la forma más fría de aceptar algo."
-    narrador "For her, that's the coldest way of accepting something."
+    # narrador "Ni me dio las gracias ni discutió."
+    narrador "She didn't thank me, and she didn't argue."
 
 # game/02_cap1_Itsuki.rpy:473
 translate english itsuki_m4c_2cbd2252:
@@ -912,17 +858,11 @@ translate english itsuki_m4c_d170fdef:
     # mc_pensamiento "Y le quité la única cosa que estaba defendiendo."
     mc_pensamiento "And I took away the one thing she was defending."
 
-# game/02_cap1_Itsuki.rpy:479
-translate english itsuki_m4c_e45e46c4:
+# game/02_cap1_Itsuki.rpy:461
+translate english itsuki_m4c_a5fb30c9:
 
-    # mc_pensamiento "No era el ejercicio."
-    mc_pensamiento "It wasn't the exercise."
-
-# game/02_cap1_Itsuki.rpy:481
-translate english itsuki_m4c_4be6db5e:
-
-    # mc_pensamiento "Era hacerlo ella sola."
-    mc_pensamiento "It was doing it herself."
+    # mc_pensamiento "Hacerlo ella sola."
+    mc_pensamiento "Doing it on her own."
 
 # game/02_cap1_Itsuki.rpy:486
 translate english itsuki_m4c_68e0ff4c:
@@ -978,11 +918,11 @@ translate english itsuki_m5_13c319bb:
     # mc_pensamiento "Pero tampoco me dijo que me fuera."
     mc_pensamiento "But she didn't tell me to leave, either."
 
-# game/02_cap1_Itsuki.rpy:526
-translate english itsuki_m5_be4385d0:
+# game/02_cap1_Itsuki.rpy:506
+translate english itsuki_m5_b2bfe659:
 
-    # mc_pensamiento "Con ella empiezo a entender que eso cuenta más que un gracias."
-    mc_pensamiento "With her, I'm starting to understand that counts for more than a thank-you."
+    # mc_pensamiento "Con ella, eso cuenta más que un gracias."
+    mc_pensamiento "With her, that counts for more than a thank-you."
 
 # game/02_cap1_Itsuki.rpy:530
 translate english itsuki_m5_d0557763:
