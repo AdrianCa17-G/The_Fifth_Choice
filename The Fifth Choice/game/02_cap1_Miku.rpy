@@ -206,7 +206,7 @@ label hub_Miku:
 
     narrador "No dijo nada. Pero tampoco volvió al libro."
 
-    mc "Llegué hasta la página noventa. Me quedé dormido a las tres."
+    mc "Llegué hasta la página noventa. Me quedé dormido a las 3."
 
     mc "Y creo que el tipo que lo escribió se equivoca."
 

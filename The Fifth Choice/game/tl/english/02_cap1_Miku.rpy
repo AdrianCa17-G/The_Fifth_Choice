@@ -403,10 +403,10 @@ translate english hub_Miku_1bd107fa:
     narrador "She didn't say anything. But she didn't go back to her book either."
 
 # game/02_cap1_Miku.rpy:209
-translate english hub_Miku_fabed595:
+translate english hub_Miku_0315af14:
 
-    # mc "Llegué hasta la página noventa. Me quedé dormido a las tres."
-    mc "I got to page ninety. Fell asleep at three."
+    # mc "Llegué hasta la página noventa. Me quedé dormido a las 3."
+    mc "I got to page ninety. Fell asleep at 3."
 
 # game/02_cap1_Miku.rpy:211
 translate english hub_Miku_65b46e2a:
