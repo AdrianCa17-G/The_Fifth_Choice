@@ -192,17 +192,11 @@ translate english cap1_apertura_a9650fbf:
     # narrador "Volvió a su cuaderno con un gesto seco y no dijo una palabra más en toda la mañana."
     narrador "She went back to her notebook with a curt gesture and didn't say another word all morning."
 
-# game/02_cap1_apertura.rpy:132
-translate english cap1_apertura_bd9482c7:
+# game/02_cap1_apertura.rpy:130
+translate english cap1_apertura_176843b6:
 
-    # mc_pensamiento "No era que me odiara."
-    mc_pensamiento "It wasn't that she hated me."
-
-# game/02_cap1_apertura.rpy:134
-translate english cap1_apertura_0fd6a383:
-
-    # mc_pensamiento "Era que iba a odiarme desde las 8 hasta las 3."
-    mc_pensamiento "It was that she was going to hate me from 8 to 3."
+    # mc_pensamiento "Ahora iba a odiarme desde las 8 hasta las 3."
+    mc_pensamiento "Now she was going to hate me from 8 to 3."
 
 # game/02_cap1_apertura.rpy:136
 translate english cap1_apertura_56d6adf2:
@@ -210,11 +204,11 @@ translate english cap1_apertura_56d6adf2:
     # mc_pensamiento "Y después, desde las 4 hasta que me fuera de su casa."
     mc_pensamiento "And then, from 4 until I left her house."
 
-# game/02_cap1_apertura.rpy:138
-translate english cap1_apertura_1879b1e7:
+# game/02_cap1_apertura.rpy:134
+translate english cap1_apertura_e0fbecfa:
 
-    # mc_pensamiento "Sin pausa. Sin cambio de escenario."
-    mc_pensamiento "No breaks. No change of scenery."
+    # mc_pensamiento "Sin descansos."
+    mc_pensamiento "No breaks."
 
 # game/02_cap1_apertura.rpy:140
 translate english cap1_apertura_2095459a:
@@ -474,17 +468,17 @@ translate english cap1_apertura_a6f09f1c:
     # narrador "Palabra por palabra."
     narrador "Word for word."
 
-# game/02_cap1_apertura.rpy:255
-translate english cap1_apertura_41b6c109:
+# game/02_cap1_apertura.rpy:251
+translate english cap1_apertura_be4a408c:
 
-    # mc_pensamiento "No es que no supieran hacerlo."
-    mc_pensamiento "It's not that they didn't know how."
+    # mc_pensamiento "Saben hacerlo."
+    mc_pensamiento "They know how to do it."
 
-# game/02_cap1_apertura.rpy:257
-translate english cap1_apertura_0da7f35c:
+# game/02_cap1_apertura.rpy:253
+translate english cap1_apertura_128bd4dd:
 
-    # mc_pensamiento "Es que se pusieron de acuerdo en cómo hacerlo mal."
-    mc_pensamiento "It's that they'd agreed on how to get it wrong."
+    # mc_pensamiento "Solo se pusieron de acuerdo para hacerlo mal."
+    mc_pensamiento "They just agreed to get it wrong."
 
 # game/02_cap1_apertura.rpy:264
 translate english cap1_apertura_b05e67f1:
@@ -834,11 +828,11 @@ translate english cap1_apertura_4dd09698:
     # mc_pensamiento "Esta vez, además, pidió perdón."
     mc_pensamiento "This time, she also apologized."
 
-# game/02_cap1_apertura.rpy:430
-translate english cap1_apertura_5459710f:
+# game/02_cap1_apertura.rpy:428
+translate english cap1_apertura_c96d08c2:
 
-    # mc_pensamiento "Nadie pide perdón por decir la verdad, salvo que ya le haya salido caro antes."
-    mc_pensamiento "Nobody apologizes for telling the truth, unless it's already cost them before."
+    # mc_pensamiento "Si pide perdón por decir la verdad, es que ya le salió caro antes."
+    mc_pensamiento "If she apologizes for telling the truth, it's cost her before."
 
 # game/02_cap1_apertura.rpy:434
 translate english cap1_apertura_d2fb33a5:
@@ -1254,11 +1248,11 @@ translate english cap1_apertura_60fc6406:
     # raiha "¡Sé que puedes con las cinco a la vez!"
     raiha "I know you can handle all five at once!"
 
-# game/02_cap1_apertura.rpy:668
-translate english cap1_apertura_8675b762:
+# game/02_cap1_apertura.rpy:664
+translate english cap1_apertura_84192ca1:
 
-    # narrador "Lo dijo muy segura. Casi."
-    narrador "She sounded very sure. Almost."
+    # narrador "Sonaba segura. Casi."
+    narrador "She sounded sure. Almost."
 
 # game/02_cap1_apertura.rpy:678
 translate english cap1_apertura_c43cfb07:

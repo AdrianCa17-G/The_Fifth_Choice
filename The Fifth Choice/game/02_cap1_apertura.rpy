@@ -127,13 +127,11 @@ label cap1_apertura:
 
     narrador "Volvió a su cuaderno con un gesto seco y no dijo una palabra más en toda la mañana."
 
-    mc_pensamiento "No era que me odiara."
-
-    mc_pensamiento "Era que iba a odiarme desde las 8 hasta las 3." 
+    mc_pensamiento "Ahora iba a odiarme desde las 8 hasta las 3." 
     
     mc_pensamiento "Y después, desde las 4 hasta que me fuera de su casa."
 
-    mc_pensamiento "Sin pausa. Sin cambio de escenario."
+    mc_pensamiento "Sin descansos."
 
     mc_pensamiento "Jornada completa."
 
@@ -250,9 +248,9 @@ label cap1_apertura:
     
     narrador "Palabra por palabra."
 
-    mc_pensamiento "No es que no supieran hacerlo."
+    mc_pensamiento "Saben hacerlo."
 
-    mc_pensamiento "Es que se pusieron de acuerdo en cómo hacerlo mal."
+    mc_pensamiento "Solo se pusieron de acuerdo para hacerlo mal."
 
     play music caos fadeout 0.5 fadein 1.0
 
@@ -427,7 +425,7 @@ label cap1_apertura:
 
     mc_pensamiento "Esta vez, además, pidió perdón."
 
-    mc_pensamiento "Nadie pide perdón por decir la verdad, salvo que ya le haya salido caro antes."
+    mc_pensamiento "Si pide perdón por decir la verdad, es que ya le salió caro antes."
 
     mc_pensamiento "Segundo día. Segundo fracaso."
 
@@ -663,7 +661,7 @@ label cap1_apertura:
 
     raiha "¡Sé que puedes con las cinco a la vez!"
 
-    narrador "Lo dijo muy segura. Casi."
+    narrador "Sonaba segura. Casi."
 
     ############################################################################
     ##  ESCENA 6 · El mapa de las cinco
