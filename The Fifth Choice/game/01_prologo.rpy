@@ -152,7 +152,7 @@ label prologo:
     show raiha preocupada at pj(0.20)
     with disolucion_lenta
 
-    raiha "...Anoche también te escuché pasar páginas a las tres."
+    raiha "...Anoche también te escuché pasar páginas a las 3."
 
     narrador "Lo dijo sin gritar, que en ella era prácticamente un susurro."
 
@@ -1279,7 +1279,7 @@ label prologo:
     scene bg_negro
     with fade
 
-    narrador "Salí del edificio pasadas las nueve. La ciudad estaba fría y el trayecto a casa era largo."
+    narrador "Salí del edificio pasadas las 9. La ciudad estaba fría y el trayecto a casa era largo."
 
     scene bg_comedor
     with fade
@@ -1293,7 +1293,7 @@ label prologo:
 
     raiha "Papá me mandó a dormir, pero no le hice caso."
 
-    mc "Son más de las nueve, Raiha."
+    mc "Son más de las 9, Raiha."
 
     raiha "¡Ya sé qué hora es! Por eso te estaba esperando."
 

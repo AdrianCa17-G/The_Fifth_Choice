@@ -211,10 +211,10 @@ translate english prologo_d61f09f0:
     raiha "It's not! Taking care of your health by sleeping well matters too!"
 
 # game/01_prologo.rpy:155
-translate english prologo_d9d79435:
+translate english prologo_0104dad0:
 
-    # raiha "...Anoche también te escuché pasar páginas a las tres."
-    raiha "...I heard you turning pages at three last night, too."
+    # raiha "...Anoche también te escuché pasar páginas a las 3."
+    raiha "...I heard you turning pages at 3 last night, too."
 
 # game/01_prologo.rpy:157
 translate english prologo_2c0a1e35:
@@ -2413,10 +2413,10 @@ translate english prologo_10b95e3f:
     narrador "I don't know what she read into it, but she didn't press the matter again."
 
 # game/01_prologo.rpy:1282
-translate english prologo_3dfa933e:
+translate english prologo_65b62bc6:
 
-    # narrador "Salí del edificio pasadas las nueve. La ciudad estaba fría y el trayecto a casa era largo."
-    narrador "I left the building past nine. The city was cold and the trip home was long."
+    # narrador "Salí del edificio pasadas las 9. La ciudad estaba fría y el trayecto a casa era largo."
+    narrador "I left the building past 9. The city was cold and the trip home was long."
 
 # game/01_prologo.rpy:1287
 translate english prologo_89a8a491:
@@ -2437,10 +2437,10 @@ translate english prologo_eccdda0e:
     raiha "Dad sent me to bed, but I didn't listen."
 
 # game/01_prologo.rpy:1296
-translate english prologo_28345b6a:
+translate english prologo_e4e159d0:
 
-    # mc "Son más de las nueve, Raiha."
-    mc "It's after nine, Raiha."
+    # mc "Son más de las 9, Raiha."
+    mc "It's after 9, Raiha."
 
 # game/01_prologo.rpy:1298
 translate english prologo_1979280a:
