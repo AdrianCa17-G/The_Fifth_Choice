@@ -220,7 +220,6 @@ label cap1_apertura:
 
     mc "Página doce. Empezamos por lo más simple del temario."
 
-    $ duck()
     play sound audio.sfx_papel_mesa volume 2.5
 
     narrador "Repartí el ejercicio."
@@ -235,7 +234,6 @@ label cap1_apertura:
 
     mc_pensamiento "Eso también estaba mal."
 
-    $ duck()
     play sound audio.sfx_hoja volume 2.0
 
     narrador "Corregí la primera hoja. Seis de seis mal."

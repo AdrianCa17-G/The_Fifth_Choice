@@ -203,8 +203,8 @@ forma de escribirla aburrida de verdad más adelante.
 
 ## 8. Montaje de audio del prólogo
 
-Los cues están escritos y probados. La escala de volumen, las fuentes y la función
-`duck()` están en `docs/GUIA_AUDIO.md`.
+Los cues están escritos y probados. La escala de volumen y las fuentes están en
+`docs/GUIA_AUDIO.md`.
 
 ### Reparto medido de cada pista
 

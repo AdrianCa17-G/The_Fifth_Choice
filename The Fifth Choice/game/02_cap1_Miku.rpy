@@ -528,7 +528,6 @@ label miku_m4c:
 
     miku "...Hoy no."
     
-    $ duck()
     play sound audio.sfx_silla volume 2.5
 
     show miku at pj_calla(0.5)

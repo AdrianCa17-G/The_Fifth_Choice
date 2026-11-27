@@ -163,8 +163,8 @@ init python:
         """Hace entrar chat_lista[desde:] con su ritmo. Un clic lo completa.
         Sin animación (estado final directo) en rollback o partida cargada, en modo
         saltar y con «Transiciones» apagado. Suena sfx_celular una vez por ráfaga
-        (mensajes seguidos de la misma hermana): la primera con duck, las demás a
-        la mitad y sin duck, para que la música no bombee. El MC no suena."""
+        (mensajes seguidos de la misma hermana): la primera a 1.5, las demás a
+        0.75. El MC no suena."""
         lista = store.chat_lista
         if renpy.in_rollback() or renpy.is_skipping() or preferences.transitions == 0:
             store.chat_n = len(lista)
@@ -177,7 +177,6 @@ init python:
             store.chat_n = k + 1
             if quien in PETALO_COLOR and quien != ultimo:
                 if primero:
-                    duck(0.4, 0.2, 2.5)
                     renpy.sound.play(audio.sfx_celular, relative_volume=1.5)
                     primero = False
                 else:

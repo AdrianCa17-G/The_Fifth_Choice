@@ -192,10 +192,10 @@ que entiende su buscador.
 | `sfx_taza_mesa` | Freesound |	Golpe seco de cerámica, sin rebote |
 | `sfx_mochila_suelo` | Freesound |	Tela sobre concreto, un golpe sordo sin eco |
 | `sfx_lapiz_mesa` | 	Freesound |	Madera contra madera, pequeño y seco |
-| `sfx_celular` | Freesound |	Vibración corta. En el chat del grupo lo lanza `chat_reproducir`: una vez por ráfaga, la primera a 1.5 con duck y las demás a 0.75 sin duck |
+| `sfx_celular` | Freesound |	Vibración corta. En el chat del grupo lo lanza `chat_reproducir`: una vez por ráfaga, la primera a 1.5 y las demás a 0.75 |
 | `sfx_estomago` | Freesound | Beat de Itsuki, 3,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
 | `sfx_camara` | Freesound | Evento 6, foto del grupo, 0,6 s; `play audio`, volumen 1.5. CC0 (sin atribución) |
-| `sfx_acierto` | Síntesis (`generar_cortinillas.py mj`) | Acierto dentro de los minijuegos. Lo lanza `mj_sfx("acierto")` por el canal `audio`, sin duck; dos iguales en 0,08 s suenan una vez |
+| `sfx_acierto` | Síntesis (`generar_cortinillas.py mj`) | Acierto dentro de los minijuegos. Lo lanza `mj_sfx("acierto")` por el canal `audio`; dos iguales en 0,08 s suenan una vez |
 | `sfx_fallo` | Síntesis (`generar_cortinillas.py mj`) | Fallo dentro de los minijuegos, con `mj_sfx("fallo")`. Mismas reglas que el acierto |
 
 ### Cortinillas
@@ -265,12 +265,13 @@ nivel sino de enmascaramiento.
 ### Nivel global de la mezcla
 
 ```renpy
-renpy.music.set_volume(0.8, channel="music")
+define config.default_music_volume = 0.7
+define config.default_sfx_volume = 1.0
 ```
 
-En el `init python` de `00_definiciones.rpy`. La música arranca al 80 %. Con las
-ocho pistas al 100 % los efectos suaves quedaban tapados por completo. Esto no
-pisa el control del jugador, solo cambia el punto de partida.
+En `options.rpy`. Con la música al 100 % los efectos suaves quedaban tapados por
+completo. Es solo el punto de partida del jugador: el botón **Restablecer** de
+Opciones vuelve a estos valores.
 
 **Ojo al depurar:** el control de música de las preferencias es un multiplicador
 global. Si el jugador lo pone al máximo y los efectos a la mitad, la proporción la
@@ -286,8 +287,7 @@ En este orden:
 2. **Comprimir y volver a normalizar.** El compresor sube todo lo que está por
    debajo del pico y hace que el sonido ocupe más aunque el máximo no cambie. Ese
    orden —comprimir, luego normalizar— es el que gana volumen percibido.
-3. **Ducking**, solo si sigue perdiéndose.
-4. **Cambiar el archivo.** Si después de todo esto sigue tapado, la respuesta
+3. **Cambiar el archivo.** Si después de todo esto sigue tapado, la respuesta
    honesta no es seguir apretando: hay sonidos intrínsecamente pequeños y hay
    pistas que no les dejan sitio.
    
@@ -306,37 +306,18 @@ música es 0,7 y no 1,0.
 
 ---
 
-## 6. Ducking
+## 6. Ducking: eliminado en v1.1
 
-```renpy
-$ duck()
-play sound sfx_papel_mesa volume 2.5
-```
+Existió una `duck()` que hacía dos `renpy.music.set_volume` seguidos (bajar a 0.4
+en 0,2 s y volver a 1.0 en 1,5 s), en 16 sitios del prólogo, del Capítulo 1 y del
+chat. **Nunca sonó.** El canal tiene una sola rampa de volumen: la segunda llamada
+sustituye a la primera y arranca desde el volumen de ese instante, que aún es 1.0.
+Como todo el juego se calibró y se probó sin la bajada, se quitó en vez de
+arreglarla.
 
-La función vive en el `init python` de `00_definiciones.rpy`:
-
-```renpy
-def duck(nivel=0.4, bajada=0.2, subida=1.5):
-    renpy.music.set_volume(nivel, delay=bajada, channel="music")
-    renpy.music.set_volume(1.0, delay=subida, channel="music")
-```
-
-Las dos llamadas no se encadenan: se lanzan a la vez con sus tiempos propios. Por
-eso la subida es más lenta que la bajada — «se aparta rápido, vuelve despacio» es
-lo que lo hace imperceptible. Al revés se nota muchísimo.
-
-**Solo para sonidos sin ataque que compiten con una pista ya sonando.** Si se usa
-en todas partes deja de ser una excepción y se oye como bombeo: una pista que se
-encoge y se estira catorce veces suena a fallo técnico, no a intención.
-
-En el prólogo hay exactamente tres: el papel bajo cena, la silla bajo incomodo y 
-la bolsa bajo caos. En el Capítulo 1 se suman los suaves que caen sobre música: 
-`hoja`, `mochila`, `lápiz`, `pisadas` y `celular`. Nunca en puertas, toque de 
-puerta ni tazas: tienen ataque y se oyen solos. Si el efecto cae sobre silencio,
-tampoco hace falta.
-
-Si un sitio necesita más margen, `duck(0.3)`. Si necesita más tiempo,
-`duck(0.4, 0.2, 2.5)`.
+Si algún día hace falta apartar la música, la subida tiene que lanzarse cuando la
+bajada ya ha terminado (con un `timer` de pantalla, por ejemplo), nunca en la línea
+siguiente. Y al escucharlo, comprobar que la bajada se oye de verdad.
 
 ---
 

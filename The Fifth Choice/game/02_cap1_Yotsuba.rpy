@@ -71,7 +71,6 @@ label hub_Yotsuba:
 
     narrador "Me quedé observándola y memorizando el número de vueltas que llevaba."
 
-    $ duck()
     play sound audio.sfx_pisadas_pista loop volume 1.75
 
     yotsuba "¡Veintidós! ¡Esto es fácil! ¡Podría hacer cien! ¡Bueno, quizás no cien, pero sí veinticinco!" 
@@ -462,7 +461,6 @@ label yotsuba_m4b:
 
     mc "Preparado."
 
-    $ duck()
     play sound audio.sfx_pisadas_pista loop volume 1.75
 
     narrador "Salió disparada. Era rápida de verdad."

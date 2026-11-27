@@ -73,7 +73,6 @@ label hub_Ichika:
 
     mc_pensamiento "No llegué a decidirlo."
 
-    $ duck()
     play sound audio.sfx_hoja volume 2.0
 
     narrador "El guion terminó de resbalarle de la mano y cayó al piso."
@@ -486,7 +485,6 @@ label ichika_m4c:
 
 label ichika_m5:
 
-    $ duck()
     play sound audio.sfx_celular volume 1.5
 
     narrador "Se estaba colgando la mochila cuando le vibró el teléfono en el bolsillo."

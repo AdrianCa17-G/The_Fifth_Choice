@@ -363,22 +363,9 @@ init python:
     ## regular desde el control de musica de las preferencias.
     renpy.music.register_channel("ambiente", "music", loop=True)
 
-    ## Ducking: aparta la musica un instante para que un efecto suave se lea
-    ## por encima. La bajada es rapida y la vuelta lenta; al reves se nota.
-    ##
-    ## SOLO para sonidos sin ataque que compiten con una pista ya sonando. Los
-    ## impactos (portazo, puertas, campana) no lo necesitan, y si esto se usa
-    ## en todas partes deja de ser una excepcion y se oye como bombeo.
-    def duck(nivel=0.4, bajada=0.2, subida=1.5):
-        renpy.music.set_volume(nivel, delay=bajada, channel="music")
-        renpy.music.set_volume(1.0, delay=subida, channel="music")
-
-    ## En el `init python` de `00_definiciones.rpy`: reinicia el canal tras un `duck()`.
     ## El punto de partida del jugador lo fija `config.default_music_volume = 0.7` (y
     ## `config.default_sfx_volume = 1.0`) en `options.rpy`; el botón **Restablecer** de
     ## Opciones vuelve a esos valores.
-
-    renpy.music.set_volume(1.0, channel="music")
 
 ## Musica --------------------------------------------------------------------
 ## `hogar` suena SOLO dos veces en todo el prologo: bajo el retrato

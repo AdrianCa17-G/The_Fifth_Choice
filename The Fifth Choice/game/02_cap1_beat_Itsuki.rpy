@@ -82,7 +82,6 @@ label beat_Itsuki:
 
     mc_pensamiento "Ya van varias veces que la veo así, en apenas unos días."
 
-    $ duck()
     play sound audio.sfx_mochila_suelo volume 1.5
 
     narrador "Me senté a un par de metros, sin decir nada todavía."

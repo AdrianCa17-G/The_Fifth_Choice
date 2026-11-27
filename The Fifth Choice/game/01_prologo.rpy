@@ -163,7 +163,6 @@ label prologo:
     ############################################################################
 
     ## Compite con `cena`, guitarra acustica en su mismo rango.
-    $ duck()
     play sound audio.sfx_papel_mesa volume 2.5
 
     narrador "De repente, mi padre, Isanari, entró en el comedor y dejó caer un papel sobre la mesa."
@@ -402,7 +401,6 @@ label prologo:
     with disolucion_lenta
 
     ## Compite con `incomodo`. El arrastre no tiene ataque y se disuelve.
-    $ duck()
     play sound audio.sfx_silla volume 2.5
 
     narrador "La chica apretó los dientes y masticó el último bocado a la fuerza." 
@@ -834,7 +832,6 @@ label prologo:
     with dissolve
 
     ## Compite con `caos`, que va a tope en esta escena.
-    $ duck()
     play sound audio.sfx_bolsa volume 2.5
 
     narrador "Se detuvo en seco a mitad del pasillo, congelada con la bolsa del supermercado en la mano."

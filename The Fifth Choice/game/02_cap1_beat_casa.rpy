@@ -98,7 +98,6 @@ label beat_casa:
 
     narrador "Levantó la vista de la hoja antes de corregir."
 
-    $ duck()
     play sound audio.sfx_lapiz_mesa volume 2.5
 
     narrador "Dejó el lápiz sobre la mesa, despacio."
