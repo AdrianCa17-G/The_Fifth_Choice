@@ -836,7 +836,7 @@ label beat_casa:
 
                 mc_pensamiento "Llevaba la cuenta anotada en la muñeca con rotulador. Si no, pierde el número."
 
-                mc_pensamiento "Primero dijo veinticinco series. Después, treinta."
+                mc_pensamiento "Primero dijo 25 series. Después, 30."
 
                 mc_pensamiento "Dijo que sus hermanas son mejores que ella en casi todo."
 
@@ -858,7 +858,7 @@ label beat_casa:
 
                 elif yotsuba_rama_cap1 == "tibia":
 
-                    mc_pensamiento "Le tomé el tiempo: un minuto con diecisiete."
+                    mc_pensamiento "Le tomé el tiempo: 1:17."
 
                     mc_pensamiento "Se rió, esquivó el tema y dijo que sus piernas le hablan en un idioma secreto."
 

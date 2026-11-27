@@ -269,3 +269,8 @@ pasa de 2 a 1 (queda la 529) y «como si» de 6 a 2 (289 y 305).
 | ID | línea | personaje | texto actual | problema | propuesta | aprobado |
 |---|---|---|---|---|---|---|
 | YOT-11 | 450 | narrador | Ya no se gritaba ánimos. Ahora la cuenta la llevábamos entre dos. | gramática | Ya no se gritaba ánimos a sí misma. La cuenta la llevábamos entre dos. | ✅ aplicado 27/11 |
+
+### Cifras que se comparan (27/11, a pedido tuyo) · ✅ aplicado
+
+Números solo donde se comparan: tiempos del cronómetro (`1:17`, `1:14`) y «25 → 30», en Yotsuba, beat_casa,
+conexiones y Evento 6. Las vueltas contadas en voz alta y las duraciones siguen en letras.

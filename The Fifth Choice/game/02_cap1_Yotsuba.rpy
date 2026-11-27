@@ -184,9 +184,9 @@ label hub_Yotsuba:
 
     narrador "Treinta vueltas después de que el club cerró."
 
-    mc_pensamiento "Antes dijo veinticinco."
+    mc_pensamiento "Antes dijo 25."
 
-    mc_pensamiento "Ahora dice treinta."
+    mc_pensamiento "Ahora dice 30."
 
     mc_pensamiento "Eso es entre nueve y doce kilómetros, dependiendo del tamaño de la pista."
 
@@ -471,7 +471,7 @@ label yotsuba_m4b:
 
     stop sound fadeout 1.0
 
-    mc "Un minuto con diecisiete."
+    mc "1:17."
 
     yotsuba "¡Sabía que hoy estaba bien! ¡Lo noté en el calentamiento!"
 
@@ -623,7 +623,7 @@ label yotsuba_m6:
 
     elif yotsuba_rama_cap1 == "tibia":
 
-        mc_pensamiento "Un minuto con diecisiete. Un minuto con catorce en la última."
+        mc_pensamiento "1:17. En la última, 1:14."
 
         mc_pensamiento "No sé si mejoró por el cronómetro o a pesar de él."
 

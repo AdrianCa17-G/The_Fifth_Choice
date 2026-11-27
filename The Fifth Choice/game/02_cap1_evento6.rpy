@@ -653,7 +653,7 @@ label e6_yotsuba_mono_tibia:
 
     yotsuba_int "Pregunta uno. ¿Qué siente el protagonista cuando se queda solo?"
 
-    yotsuba_int "Un minuto con diecisiete. Después, catorce. Tres segundos menos."
+    yotsuba_int "1:17. Después, 1:14. Tres segundos menos."
 
     yotsuba_int "Dijo «claro, dame el cronómetro» sin preguntar nada más."
 
@@ -3356,7 +3356,7 @@ label e6_yotsuba_eco_tibia:
 
     call e6_foco("yotsuba", "neutral") from _call_e6_foco_80
 
-    yotsuba "Un minuto con catorce. Eso lo sé. Lo demás, no tanto."
+    yotsuba "1:14. Eso lo sé. Lo demás, no tanto."
 
     yotsuba "No sé si me ayudaste o solo me dejaste correr."
 

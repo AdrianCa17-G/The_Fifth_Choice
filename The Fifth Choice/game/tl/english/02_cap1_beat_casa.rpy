@@ -1627,10 +1627,10 @@ translate english bcl_yotsuba_eb59a1cc:
     mc_pensamiento "She kept the count in marker on her wrist. Otherwise, she loses the number."
 
 # game/02_cap1_beat_casa.rpy:839
-translate english bcl_yotsuba_210624e1:
+translate english bcl_yotsuba_d6aa7145:
 
-    # mc_pensamiento "Primero dijo veinticinco series. Después, treinta."
-    mc_pensamiento "First she said twenty-five sets. Then thirty."
+    # mc_pensamiento "Primero dijo 25 series. Después, 30."
+    mc_pensamiento "First she said 25 sets. Then 30."
 
 # game/02_cap1_beat_casa.rpy:841
 translate english bcl_yotsuba_0247550a:
@@ -1681,10 +1681,10 @@ translate english bcl_yotsuba_f91f9a8a:
     mc_pensamiento "The next day she wrote a \"1\" on my wrist with a crooked heart. She said it was one lap."
 
 # game/02_cap1_beat_casa.rpy:861
-translate english bcl_yotsuba_b39ad384:
+translate english bcl_yotsuba_9eff3bb3:
 
-    # mc_pensamiento "Le tomé el tiempo: un minuto con diecisiete."
-    mc_pensamiento "I timed her: one minute seventeen."
+    # mc_pensamiento "Le tomé el tiempo: 1:17."
+    mc_pensamiento "I timed her: 1:17."
 
 # game/02_cap1_beat_casa.rpy:863
 translate english bcl_yotsuba_cb5d9f6f:

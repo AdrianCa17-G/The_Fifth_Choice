@@ -343,16 +343,16 @@ translate english hub_Yotsuba_d66e996f:
     narrador "Thirty laps after the club closed."
 
 # game/02_cap1_Yotsuba.rpy:187
-translate english hub_Yotsuba_aa9fc9b7:
+translate english hub_Yotsuba_512f0c24:
 
-    # mc_pensamiento "Antes dijo veinticinco."
-    mc_pensamiento "She said twenty-five before."
+    # mc_pensamiento "Antes dijo 25."
+    mc_pensamiento "Before, she said 25."
 
 # game/02_cap1_Yotsuba.rpy:189
-translate english hub_Yotsuba_565e5b29:
+translate english hub_Yotsuba_66552457:
 
-    # mc_pensamiento "Ahora dice treinta."
-    mc_pensamiento "Now she says thirty."
+    # mc_pensamiento "Ahora dice 30."
+    mc_pensamiento "Now she says 30."
 
 # game/02_cap1_Yotsuba.rpy:191
 translate english hub_Yotsuba_d488ab22:
@@ -906,11 +906,11 @@ translate english yotsuba_m4b_e8e249b7:
     # narrador "Cuando terminó la vuelta, frenó delante de mí con los brazos abiertos, esperando el tiempo."
     narrador "When she finished the lap, she skidded to a stop in front of me, arms wide, waiting for her time."
 
-# game/02_cap1_Yotsuba.rpy:478
-translate english yotsuba_m4b_ad780f00:
+# game/02_cap1_Yotsuba.rpy:474
+translate english yotsuba_m4b_4bb9e8d7:
 
-    # mc "Un minuto con diecisiete."
-    mc "One minute seventeen."
+    # mc "1:17."
+    mc "1:17."
 
 # game/02_cap1_Yotsuba.rpy:480
 translate english yotsuba_m4b_9396c512:
@@ -1176,11 +1176,11 @@ translate english yotsuba_m6_c978604d:
     # mc_pensamiento "De eso sí estoy seguro."
     mc_pensamiento "That much I'm sure of."
 
-# game/02_cap1_Yotsuba.rpy:630
-translate english yotsuba_m6_c3b9806e:
+# game/02_cap1_Yotsuba.rpy:626
+translate english yotsuba_m6_f62aa386:
 
-    # mc_pensamiento "Un minuto con diecisiete. Un minuto con catorce en la última."
-    mc_pensamiento "One minute seventeen. One fourteen on the last lap."
+    # mc_pensamiento "1:17. En la última, 1:14."
+    mc_pensamiento "1:17. 1:14 on the last lap."
 
 # game/02_cap1_Yotsuba.rpy:632
 translate english yotsuba_m6_76f373e9:

@@ -601,10 +601,10 @@ translate english reaccion_yotsuba_dec8ae13:
     yotsuba "It's not a heart! It's... a lap!"
 
 # game/02_cap1_conexiones.rpy:418
-translate english reaccion_yotsuba_c62e3e9f:
+translate english reaccion_yotsuba_b59f1ea4:
 
-    # yotsuba "¡Mira! ¡Un minuto con catorce!"
-    yotsuba "Look! One minute fourteen!"
+    # yotsuba "¡Mira! ¡1:14!"
+    yotsuba "Look! 1:14!"
 
 # game/02_cap1_conexiones.rpy:420
 translate english reaccion_yotsuba_bc2da795:

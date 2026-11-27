@@ -415,7 +415,7 @@ label reaccion_yotsuba:
         show yotsuba sonriendo at pj_habla(0.5)
         with dissolve
 
-        yotsuba "¡Mira! ¡Un minuto con catorce!"
+        yotsuba "¡Mira! ¡1:14!"
 
         narrador "Levantó el brazo: lo había anotado en la muñeca con rotulador, otra vez."
 

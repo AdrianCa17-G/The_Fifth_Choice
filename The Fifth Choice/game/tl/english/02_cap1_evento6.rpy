@@ -889,10 +889,10 @@ translate english e6_yotsuba_mono_tibia_4202f45a:
     yotsuba_int "Question one. What does the main character feel when he's left alone?"
 
 # game/02_cap1_evento6.rpy:656
-translate english e6_yotsuba_mono_tibia_8e8444c6:
+translate english e6_yotsuba_mono_tibia_c06f26c6:
 
-    # yotsuba_int "Un minuto con diecisiete. Después, catorce. Tres segundos menos."
-    yotsuba_int "One minute seventeen. Then fourteen. Three seconds off."
+    # yotsuba_int "1:17. Después, 1:14. Tres segundos menos."
+    yotsuba_int "1:17. Then 1:14. Three seconds off."
 
 # game/02_cap1_evento6.rpy:658
 translate english e6_yotsuba_mono_tibia_e43ad275:
@@ -5821,10 +5821,10 @@ translate english e6_yotsuba_eco_tibia_782d1ae4:
     narrador "Yotsuba held the report card in both hands, without turning it over."
 
 # game/02_cap1_evento6.rpy:3359
-translate english e6_yotsuba_eco_tibia_ac24c9e8:
+translate english e6_yotsuba_eco_tibia_532a0e33:
 
-    # yotsuba "Un minuto con catorce. Eso lo sé. Lo demás, no tanto."
-    yotsuba "One minute fourteen. That I know. The rest, not so much."
+    # yotsuba "1:14. Eso lo sé. Lo demás, no tanto."
+    yotsuba "1:14. That I know. The rest, not so much."
 
 # game/02_cap1_evento6.rpy:3361
 translate english e6_yotsuba_eco_tibia_d74b7ab6:
