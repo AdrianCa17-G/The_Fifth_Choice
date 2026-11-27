@@ -139,10 +139,10 @@ translate english beat_Itsuki_8f246bc9:
     itsuki "It doesn't matter. You're here now."
 
 # game/02_cap1_beat_Itsuki.rpy:102
-translate english beat_Itsuki_60be9b5f:
+translate english beat_Itsuki_b179a827:
 
-    # narrador "Sin la hostilidad de siempre. Más dato que queja."
-    narrador "None of the usual hostility. More a fact than a complaint."
+    # narrador "Sin la hostilidad de siempre."
+    narrador "None of the usual hostility."
 
 # game/02_cap1_beat_Itsuki.rpy:110
 translate english beat_Itsuki_a6f9f702:

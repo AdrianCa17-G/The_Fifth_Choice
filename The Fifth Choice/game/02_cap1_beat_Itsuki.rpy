@@ -99,7 +99,7 @@ label beat_Itsuki:
 
     itsuki "Da igual. Ya estás aquí."
 
-    narrador "Sin la hostilidad de siempre. Más dato que queja."
+    narrador "Sin la hostilidad de siempre."
 
     ############################################################################
     ##  MOVIMIENTO 2 · El peso compartido
