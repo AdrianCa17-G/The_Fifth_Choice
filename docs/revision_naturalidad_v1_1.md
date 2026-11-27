@@ -343,3 +343,25 @@ El horario (HOR-18) ya se aplicó. La discusión con Maruo y el desahogo de Nino
 | BN-08 | 286 | narrador | Como si las piernas hubieran dejado de sostenerla el tiempo justo. | 5, 6 | Las piernas ya no le daban. | ✅ aplicado 27/11 |
 | BN-09 | 362 | narrador | Como quien intenta recomponer algo que ya se salió de su sitio. | 1, 6 | BORRAR | ✅ aplicado 27/11 |
 | BN-10 | 618 | mc_pensamiento | Hoy el silencio fue el único acuerdo que cabía entre los dos. | 6 | Hoy en lo único que coincidimos fue en callarnos. | ✅ aplicado 27/11 |
+
+## 02_cap1_beat_Itsuki.rpy
+
+El diálogo de Itsuki no se toca. El «Es distinto» de la 320 («Estoy descansando la vista») funciona como chiste y
+es el candidato a quedarse como el único del capítulo; el otro (124) se quita.
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| BI-01 | 102 | narrador | Lo dijo sin la hostilidad de siempre. Sonó más a un hecho que a una queja. | 2 | Sin la hostilidad de siempre. Más dato que queja. | ✅ aplicado 27/11 |
+| BI-02 | 124 | mc_pensamiento | Simplemente no tenía más que decir, y eso es distinto. | 3 | Simplemente no tenía más que decir. | ✅ aplicado 27/11 |
+| BI-03 | 146 | narrador | Como si reacomodarlo fuera, de algún modo, una respuesta. | 5, muletilla («de algún modo») | BORRAR | ✅ aplicado 27/11 |
+| BI-04 | 150 | mc_pensamiento | Como quien ya no sabe estar en un sitio sin la excusa de tener algo que hacer ahí. | 1 | Ya no sabe estar en un sitio sin tener algo que hacer ahí. | ✅ aplicado 27/11 |
+| BI-05 | 165 | narrador | Pero por debajo de él comenzó a percibirse otra cosa... | 6 | Pero por debajo se empezó a oír otra cosa... | ✅ aplicado 27/11 |
+| BI-06 | 177 | narrador | No contestó. Pero no volvió a preguntar tampoco. | 5 | No volvió a preguntar. | ✅ aplicado 27/11 |
+| BI-07 | 370 | mc_pensamiento | En el único sitio que le quedaba para no estarlo del todo. | 6 (no se entiende) | BORRAR | ✅ aplicado 27/11 |
+
+### Notas de coherencia (para aprobar aparte)
+
+| ID | línea | personaje | texto actual | problema | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| BI-08 | 79 | mc_pensamiento | Y hoy trajo el cuaderno de todas formas, al mismo sitio del que dijo que venía a escapar. | el sentido queda al revés | Y hoy igual trajo el cuaderno, justo al sitio al que dijo que venía a escapar. | ✅ aplicado 27/11 |
+| BI-09 | 159 | mc_pensamiento | Ella, que llena una hoja de tachones antes que nadie termine la primera línea. | gramática | Ella, que llena una hoja de tachones antes de que nadie termine la primera línea. | ✅ aplicado 27/11 |

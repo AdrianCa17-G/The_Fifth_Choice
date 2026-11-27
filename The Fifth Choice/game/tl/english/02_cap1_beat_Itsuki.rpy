@@ -97,10 +97,10 @@ translate english beat_Itsuki_1cdee404:
     mc_pensamiento "Those unpleasant people were me."
 
 # game/02_cap1_beat_Itsuki.rpy:79
-translate english beat_Itsuki_e888bbee:
+translate english beat_Itsuki_2b8a6ec9:
 
-    # mc_pensamiento "Y hoy trajo el cuaderno de todas formas, al mismo sitio del que dijo que venía a escapar."
-    mc_pensamiento "And today she brought the notebook anyway, to the same place she said she came to escape."
+    # mc_pensamiento "Y hoy igual trajo el cuaderno, justo al sitio al que dijo que venía a escapar."
+    mc_pensamiento "And today she brought the notebook anyway, right to the place she said she came to escape."
 
 # game/02_cap1_beat_Itsuki.rpy:81
 translate english beat_Itsuki_beaafcb8:
@@ -139,10 +139,10 @@ translate english beat_Itsuki_8f246bc9:
     itsuki "It doesn't matter. You're here now."
 
 # game/02_cap1_beat_Itsuki.rpy:102
-translate english beat_Itsuki_145e3603:
+translate english beat_Itsuki_60be9b5f:
 
-    # narrador "Lo dijo sin la hostilidad de siempre. Sonó más a un hecho que a una queja."
-    narrador "She said it without her usual hostility. It sounded more like a fact than a complaint."
+    # narrador "Sin la hostilidad de siempre. Más dato que queja."
+    narrador "None of the usual hostility. More a fact than a complaint."
 
 # game/02_cap1_beat_Itsuki.rpy:110
 translate english beat_Itsuki_a6f9f702:
@@ -187,10 +187,10 @@ translate english beat_Itsuki_022decdb:
     mc_pensamiento "She didn't trail off mid-thought. She finished it."
 
 # game/02_cap1_beat_Itsuki.rpy:124
-translate english beat_Itsuki_53ca2ad6:
+translate english beat_Itsuki_4848c246:
 
-    # mc_pensamiento "Simplemente no tenía más que decir, y eso es distinto."
-    mc_pensamiento "She just had nothing more to say, and that's different."
+    # mc_pensamiento "Simplemente no tenía más que decir."
+    mc_pensamiento "She simply had nothing more to say."
 
 # game/02_cap1_beat_Itsuki.rpy:126
 translate english beat_Itsuki_713904f1:
@@ -252,23 +252,17 @@ translate english beat_Itsuki_755b4911:
     # narrador "Cambió el cuaderno de posición sobre las rodillas."
     narrador "She shifted the notebook on her knees."
 
-# game/02_cap1_beat_Itsuki.rpy:146
-translate english beat_Itsuki_ee63a17c:
-
-    # narrador "Como si reacomodarlo fuera, de algún modo, una respuesta."
-    narrador "As if rearranging it were, somehow, an answer."
-
 # game/02_cap1_beat_Itsuki.rpy:148
 translate english beat_Itsuki_967f2777:
 
     # mc_pensamiento "Lo trajo por costumbre, no porque pensara usarlo."
     mc_pensamiento "She brought it out of habit, not because she meant to use it."
 
-# game/02_cap1_beat_Itsuki.rpy:150
-translate english beat_Itsuki_4904d129:
+# game/02_cap1_beat_Itsuki.rpy:148
+translate english beat_Itsuki_434da6e1:
 
-    # mc_pensamiento "Como quien ya no sabe estar en un sitio sin la excusa de tener algo que hacer ahí."
-    mc_pensamiento "Like someone who no longer knows how to be anywhere without an excuse to be busy there."
+    # mc_pensamiento "Ya no sabe estar en un sitio sin tener algo que hacer ahí."
+    mc_pensamiento "She doesn't know how to be somewhere anymore without something to do there."
 
 # game/02_cap1_beat_Itsuki.rpy:155
 translate english beat_Itsuki_85ebeff8:
@@ -282,11 +276,11 @@ translate english beat_Itsuki_61008e06:
     # mc_pensamiento "No había escrito nada en toda la mañana."
     mc_pensamiento "She hadn't written anything all morning."
 
-# game/02_cap1_beat_Itsuki.rpy:159
-translate english beat_Itsuki_15263854:
+# game/02_cap1_beat_Itsuki.rpy:157
+translate english beat_Itsuki_8c84ab35:
 
-    # mc_pensamiento "Ella, que llena una hoja de tachones antes que nadie termine la primera línea."
-    mc_pensamiento "Her, of all people, who crosses out half a page before anyone else finishes a line."
+    # mc_pensamiento "Ella, que llena una hoja de tachones antes de que nadie termine la primera línea."
+    mc_pensamiento "Her, who fills a page with crossings-out before anyone finishes the first line."
 
 # game/02_cap1_beat_Itsuki.rpy:163
 translate english beat_Itsuki_449555e5:
@@ -294,11 +288,11 @@ translate english beat_Itsuki_449555e5:
     # narrador "El viento seguía soplando igual que siempre aquí arriba."
     narrador "The wind kept blowing the way it always does up here."
 
-# game/02_cap1_beat_Itsuki.rpy:165
-translate english beat_Itsuki_b1eff768:
+# game/02_cap1_beat_Itsuki.rpy:163
+translate english beat_Itsuki_176d38d5:
 
-    # narrador "Pero por debajo de él comenzó a percibirse otra cosa..."
-    narrador "But underneath it, something else began to come through..."
+    # narrador "Pero por debajo se empezó a oír otra cosa..."
+    narrador "But underneath it, something else started to come through..."
 
 # game/02_cap1_beat_Itsuki.rpy:167
 translate english beat_Itsuki_21e21582:
@@ -330,11 +324,11 @@ translate english beat_Itsuki_46306375:
     # mc "Porque ya lo sé."
     mc "Because I already know."
 
-# game/02_cap1_beat_Itsuki.rpy:177
-translate english beat_Itsuki_c4e74035:
+# game/02_cap1_beat_Itsuki.rpy:175
+translate english beat_Itsuki_9cdf6e0a:
 
-    # narrador "No contestó. Pero no volvió a preguntar tampoco."
-    narrador "She didn't answer. But she didn't ask again, either."
+    # narrador "No volvió a preguntar."
+    narrador "She didn't ask again."
 
 # game/02_cap1_beat_Itsuki.rpy:187
 translate english beat_Itsuki_dc6d25ea:
@@ -701,12 +695,6 @@ translate english beat_Itsuki_275aa602:
 
     # mc_pensamiento "Sola, con un cuaderno que no necesita."
     mc_pensamiento "Alone, with a notebook she doesn't need."
-
-# game/02_cap1_beat_Itsuki.rpy:370
-translate english beat_Itsuki_10fdf302:
-
-    # mc_pensamiento "En el único sitio que le quedaba para no estarlo del todo."
-    mc_pensamiento "In the only place she had left where she wasn't completely alone."
 
 # game/02_cap1_beat_Itsuki.rpy:374
 translate english beat_Itsuki_759092d3:

@@ -76,7 +76,7 @@ label beat_Itsuki:
 
     mc_pensamiento "Esa gente desagradable era yo."
 
-    mc_pensamiento "Y hoy trajo el cuaderno de todas formas, al mismo sitio del que dijo que venía a escapar."
+    mc_pensamiento "Y hoy igual trajo el cuaderno, justo al sitio al que dijo que venía a escapar."
 
     mc_pensamiento "Sin nada de comer al lado."
 
@@ -99,7 +99,7 @@ label beat_Itsuki:
 
     itsuki "Da igual. Ya estás aquí."
 
-    narrador "Lo dijo sin la hostilidad de siempre. Sonó más a un hecho que a una queja."
+    narrador "Sin la hostilidad de siempre. Más dato que queja."
 
     ############################################################################
     ##  MOVIMIENTO 2 · El peso compartido
@@ -121,7 +121,7 @@ label beat_Itsuki:
 
     mc_pensamiento "No se cortó a media idea. La terminó."
 
-    mc_pensamiento "Simplemente no tenía más que decir, y eso es distinto."
+    mc_pensamiento "Simplemente no tenía más que decir."
 
     narrador "Extendí la mano hacia la mochila y saqué mi propio libro."
 
@@ -143,11 +143,9 @@ label beat_Itsuki:
 
     narrador "Cambió el cuaderno de posición sobre las rodillas." 
     
-    narrador "Como si reacomodarlo fuera, de algún modo, una respuesta."
-
     mc_pensamiento "Lo trajo por costumbre, no porque pensara usarlo."
 
-    mc_pensamiento "Como quien ya no sabe estar en un sitio sin la excusa de tener algo que hacer ahí."
+    mc_pensamiento "Ya no sabe estar en un sitio sin tener algo que hacer ahí."
 
     scene cg_itsuki_azotea_manos
     with dissolve
@@ -156,13 +154,13 @@ label beat_Itsuki:
 
     mc_pensamiento "No había escrito nada en toda la mañana."
 
-    mc_pensamiento "Ella, que llena una hoja de tachones antes que nadie termine la primera línea."
+    mc_pensamiento "Ella, que llena una hoja de tachones antes de que nadie termine la primera línea."
 
     play music tregua fadein 1.5 fadeout 2.0
 
     narrador "El viento seguía soplando igual que siempre aquí arriba."
 
-    narrador "Pero por debajo de él comenzó a percibirse otra cosa..."
+    narrador "Pero por debajo se empezó a oír otra cosa..."
 
     narrador "Un sonido tenue, casi imperceptible."
 
@@ -174,7 +172,7 @@ label beat_Itsuki:
 
     mc "Porque ya lo sé."
 
-    narrador "No contestó. Pero no volvió a preguntar tampoco."
+    narrador "No volvió a preguntar."
 
     scene bg_azotea 
     with dissolve
@@ -366,8 +364,6 @@ label beat_Itsuki:
     mc_pensamiento "Y ella va a pasarlo igual que hoy."
 
     mc_pensamiento "Sola, con un cuaderno que no necesita."
-
-    mc_pensamiento "En el único sitio que le quedaba para no estarlo del todo."
 
     if not itsuki_visitada_cap1:
 
