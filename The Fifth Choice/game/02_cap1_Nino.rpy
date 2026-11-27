@@ -261,7 +261,7 @@ label hub_Nino:
 
     else:
 
-        mc_pensamiento "Más que a ella, cuida a sus hermanas de algo que ya les pasó demasiadas veces."
+        mc_pensamiento "Más que a sí misma, protege a sus hermanas de algo que ya les pasó demasiado."
 
     scene bg_centro_comercial
     with dissolve
@@ -545,9 +545,9 @@ label nino_m5:
 
     mc_pensamiento "No dijo por qué."
 
-    mc_pensamiento "Y esta vez no sonó a que me odiara."
+    mc_pensamiento "Esta vez no parecía odio."
 
-    mc_pensamiento "Sonó a que no sabía cómo explicarlo sin decir de más."
+    mc_pensamiento "Parecía que no sabía explicarlo sin hablar de más."
 
     ############################################################################
     ## Movimiento 6 · Cierre final (varía según la rama elegida)
@@ -576,7 +576,7 @@ label nino_m5:
 
         mc_pensamiento "Pero ya no me trató como al siguiente de la fila."
 
-        mc_pensamiento "Me trató como algo todavía sin decidir."
+        mc_pensamiento "Ahora todavía no sabe qué pensar de mí."
 
     elif nino_rama_cap1 == "tibia":
 

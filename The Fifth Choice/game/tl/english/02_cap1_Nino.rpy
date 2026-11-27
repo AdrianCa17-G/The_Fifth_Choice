@@ -529,10 +529,10 @@ translate english hub_Nino_43e5fe8a:
     mc_pensamiento "What was new was how hard she gripped that card while she said it."
 
 # game/02_cap1_Nino.rpy:264
-translate english hub_Nino_cf4acce5:
+translate english hub_Nino_4108fc2d:
 
-    # mc_pensamiento "Más que a ella, cuida a sus hermanas de algo que ya les pasó demasiadas veces."
-    mc_pensamiento "More than herself, she's looking out for her sisters over something that's hit them too many times."
+    # mc_pensamiento "Más que a sí misma, protege a sus hermanas de algo que ya les pasó demasiado."
+    mc_pensamiento "More than herself, she's protecting her sisters from something that's happened too often."
 
 # game/02_cap1_Nino.rpy:286
 translate english hub_Nino_5d06c2b7_2:
@@ -1039,16 +1039,16 @@ translate english nino_m5_cb1ee93c:
     mc_pensamiento "She didn't say why."
 
 # game/02_cap1_Nino.rpy:548
-translate english nino_m5_1ed5e7f1:
+translate english nino_m5_d8c55a43:
 
-    # mc_pensamiento "Y esta vez no sonó a que me odiara."
-    mc_pensamiento "And this time it didn't sound like she hated me."
+    # mc_pensamiento "Esta vez no parecía odio."
+    mc_pensamiento "This time it didn't seem like hate."
 
-# game/02_cap1_Nino.rpy:564
-translate english nino_m5_a3679f45:
+# game/02_cap1_Nino.rpy:550
+translate english nino_m5_38739522:
 
-    # mc_pensamiento "Sonó a que no sabía cómo explicarlo sin decir de más."
-    mc_pensamiento "It sounded like she didn't know how to explain it without saying too much."
+    # mc_pensamiento "Parecía que no sabía explicarlo sin hablar de más."
+    mc_pensamiento "It seemed she couldn't explain it without saying too much."
 
 # game/02_cap1_Nino.rpy:575
 translate english nino_m5_48add8c3:
@@ -1098,11 +1098,11 @@ translate english nino_m5_9a5d2dd6:
     # mc_pensamiento "Pero ya no me trató como al siguiente de la fila."
     mc_pensamiento "But she didn't treat me like the next one in line anymore."
 
-# game/02_cap1_Nino.rpy:593
-translate english nino_m5_8a31bc5d:
+# game/02_cap1_Nino.rpy:579
+translate english nino_m5_a9bae794:
 
-    # mc_pensamiento "Me trató como algo todavía sin decidir."
-    mc_pensamiento "She treated me like a decision she hadn't made yet."
+    # mc_pensamiento "Ahora todavía no sabe qué pensar de mí."
+    mc_pensamiento "Now she doesn't know what to make of me yet."
 
 # game/02_cap1_Nino.rpy:597
 translate english nino_m5_7d8f1809:
