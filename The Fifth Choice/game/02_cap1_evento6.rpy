@@ -468,7 +468,7 @@ label e6_lunes:
 
         nino "Repasé inglés sola, con las etiquetas de la cocina, en voz baja. ...Nadie me escuchó. Mejor para mí."
 
-        nino "Y no, no te estaba esperando. ...Contaba los días. Es distinto."
+        nino "Y no, no te estaba esperando. ...Solo contaba los días."
 
         nino "Ahora cállate un momento y déjame repasar la última página."
 
@@ -1021,9 +1021,7 @@ label e6_ichika_gesto_calida:
 
     narrador "Ichika resolvió el examen en lo que tarda en cerrarse una puerta."
 
-    narrador "Después se quedó mirando los resultados, como si se lo hubiera hecho otra persona."
-
-    narrador "No era otra persona, era ella. Y lo sabía."
+    narrador "Después se quedó mirando la hoja, como si la hubiera hecho otra persona."
 
     mc_pensamiento "Ojos abiertos. El guion en el bolsillo, sin tocar. Ni una vez miró el reloj con miedo."
 
@@ -1211,9 +1209,7 @@ label e6_nino_mono_calida:
 
     nino_int "Yotsuba no sabía nada."
 
-    nino_int "Eso no es confiar. Es llevar la cuenta. Es distinto."
-
-    nino_int "Es distinto."
+    nino_int "Eso no es confiar. Es llevar la cuenta."
 
     call expression ("e6_nino_beat_" + nino_rama_beat) from _call_expression_6
 
@@ -1285,7 +1281,7 @@ label e6_nino_mono_fria:
 
     nino_int "Prometió durar. Ha durado. Eso hay que reconocérselo."
 
-    nino_int "No lo reconozco. Lo anoto. Son cosas distintas."
+    nino_int "No lo reconozco. Solo lo anoto."
 
     call expression ("e6_nino_beat_" + nino_rama_beat) from _call_expression_8
 
@@ -1480,11 +1476,11 @@ label e6_nino_gesto_fria:
 
     nino "No. Aún me falta revisar unas cosas."
 
-    narrador "Se quedó revisando como quien patrulla una frontera. Sin mirar a nadie. A nadie."
+    narrador "Se quedó revisando, en guardia. Sin mirar a nadie. A nadie."
 
     mc_pensamiento "Ni a mí, ni a ellas. Hace un mes me miraba para odiarme. Ahora ni eso."
 
-    mc_pensamiento "Revisaba con el método de quien ya sabe cómo acaba y quiere llegar preparada."
+    mc_pensamiento "Revisaba como si ya supiera el final y quisiera llegar preparada."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -1501,7 +1497,7 @@ label e6_nino_gesto_no_visitada:
 
     narrador "Revisó cuarenta minutos. A la media hora levantó la vista y me miró una sola vez."
 
-    mc_pensamiento "No con odio. Con la cara de quien comprueba que algo sigue donde lo dejó."
+    mc_pensamiento "No con odio. Comprobaba que algo siguiera donde lo dejó."
 
     mc_pensamiento "Seguía en mi asiento. Para ella, eso ya era una respuesta."
 
@@ -1793,7 +1789,7 @@ label e6_itsuki_gesto_calida:
 
     narrador "Al pasar junto a mi pupitre me miró un segundo. Esta vez no apartó la vista."
 
-    narrador "Asintió una vez, seca, como quien confirma un dato y no pide aplauso."
+    narrador "Asintió una vez, seca. Dato confirmado, sin pedir aplausos."
 
     mc_pensamiento "Hace un mes apartar la mirada era su forma de no deberme nada."
 
@@ -2087,7 +2083,7 @@ label e6_miku_gesto_calida:
 
     narrador "No recogió los audífonos enseguida." 
     
-    narrador "Los miró un segundo, como quien comprueba que no se mueven solos."
+    narrador "Los miró un segundo, por si se movían solos."
 
     mc_pensamiento "Plegados, no puestos. Como se dejan las llaves en la entrada."
 
@@ -2146,7 +2142,7 @@ label e6_miku_gesto_no_visitada:
 
     mc_pensamiento "Desde la segunda fila no pude leer lo que borró. Pude ver cuánto ocupaba."
 
-    mc_pensamiento "Lo dejó en tres líneas. Las de quien no quiere molestar."
+    mc_pensamiento "Lo dejó en tres líneas. Cortas, para no molestar."
 
     play sound audio.sfx_timbre volume 1.5
 
@@ -2377,7 +2373,7 @@ label e6_despues:
 
         miku "Así nadie se queda de última."
 
-        narrador "Sin pausa delante. Lo dijo como se dice algo que ya estaba decidido."
+        narrador "Sin pausa delante. Ya lo tenía decidido."
 
     else:
 
@@ -2533,7 +2529,7 @@ label e6_yotsuba_tarde_calida:
 
     yotsuba "No sé si está bien. Pero esta vez la hoja también era mía."
 
-    narrador "Lo dijo sin gritar. En Yotsuba, eso sonaba más fuerte que un grito."
+    narrador "Sin gritar. En Yotsuba, eso se oye más."
 
     return
 
@@ -2704,7 +2700,7 @@ label e6_nino_tarde_calida:
 
     nino "...No sé de qué hablas."
 
-    narrador "Lo dijo como siempre. Esta vez no le salió la mentira, y no intentó arreglarla."
+    narrador "El tono de siempre. Pero la mentira no le salió, y no intentó arreglarla."
 
     return
 
@@ -3080,7 +3076,7 @@ label e6_resultados:
 
     narrador "Sábado a media mañana."
 
-    narrador "Estaba en casa. Por primera vez en un mes, sin nada que repasar."
+    narrador "Estaba en casa. Después de un mes, sin nada que repasar."
 
     mc_pensamiento "No hacía nada más que pensar en los resultados de los exámenes."
 
@@ -3162,7 +3158,7 @@ label e6_resultados:
 
     narrador "Se puso el abrigo y salió. Sin portazo, como siempre. Esta vez, sin que doliera."
 
-    mc_pensamiento "Aprobar no es lo mismo que salvarse. Hoy, por hoy, me alcanzaba con aprobar."
+    mc_pensamiento "Aprobar no es salvarse. Hoy, por hoy, me alcanzaba con aprobar."
 
     return
 
@@ -3181,7 +3177,7 @@ label e6_s2_superado:
 
     maruo "Un punto menos y esta conversación sería otra."
 
-    narrador "Lo dijo como se anuncia un horario. Y por eso pesó el doble."
+    narrador "Con tono de anunciar un horario. Por eso pesó el doble."
 
     mc_pensamiento "Un punto. Todo el mes colgando de un punto, y sin saber de cuál de las cinco."
 
@@ -3557,7 +3553,7 @@ label e6_nino_eco_fria:
 
     nino "Pues anota la fecha. Para cuando te canses."
 
-    narrador "Lo dijo sin rabia. Como quien deja una nota pegada en la nevera."
+    narrador "Sin rabia. Como una nota pegada en la nevera."
 
     narrador "Sabe que voy a seguir con el trabajo."
 
@@ -3570,7 +3566,7 @@ label e6_nino_eco_fria:
 
 label e6_nino_eco_no_visitada:
 
-    narrador "Nino se quedó junto al marco de la puerta, a media sala, como quien no ha decidido si entra."
+    narrador "Nino se quedó en el marco de la puerta, sin decidir si entraba."
 
     call e6_foco("nino", "seria") from _call_e6_foco_107
 
@@ -3619,7 +3615,7 @@ label e6_itsuki_eco_calida:
 
         itsuki "No levanté la mano. Pero ya sé que puedo. Es un informe, no una invitación a aplaudir."
 
-    narrador "Dijo mi nombre como quien firma al pie de un informe."
+    narrador "Dijo mi nombre con tono de firma al pie de un informe."
 
     narrador "Y aun así tardó en soltar el bolígrafo."
 
@@ -3630,7 +3626,7 @@ label e6_itsuki_eco_calida:
 
 label e6_itsuki_eco_tibia:
 
-    narrador "Itsuki llegó con el boletín doblado por la mitad y el gesto de quien ya revisó dos veces."
+    narrador "Itsuki llegó con el boletín doblado y cara de haberlo revisado dos veces."
 
     call e6_foco("itsuki", "neutral") from _call_e6_foco_111
 
@@ -3774,7 +3770,7 @@ label e6_miku_eco_no_visitada:
 ## --- El intento interrumpido (la disculpa NO se gasta) ----------------------------
 label e6_intento:
 
-    narrador "Éramos seis en la sala, y por primera vez nadie parecía estar aquí por obligación."
+    narrador "Éramos seis en la sala, y ya nadie parecía estar aquí por obligación."
 
     narrador "La primera en querer hablar fue ella, Itsuki."
 
@@ -4613,7 +4609,7 @@ label e6_retrato:
 
     raiha "...Algún día quiero conocerla."
 
-    narrador "Raiha se rió. Me miró un rato, como quien busca algo que no encuentra."
+    narrador "Raiha se rió. Me miró un rato, buscando algo sin encontrarlo."
 
     raiha "Oye. Mañana es domingo."
 
@@ -4696,7 +4692,7 @@ label e6_retrato:
 
             raiha "Entonces tienes que ir. Esperar es lo peor."
 
-            narrador "Lo dijo como lo dice alguien que espera a su hermano cada noche con la cena hecha."
+            narrador "Ella sabe de eso: me espera cada noche con la cena hecha."
 
         "Dormir hasta tarde. Por una vez.":
 
@@ -4709,7 +4705,7 @@ label e6_retrato:
 
             raiha "...¿Estás enfermo?"
 
-            mc "Estoy cansado. Es distinto."
+            mc "Estoy cansado. Nada más."
 
             raiha "Hermanito... Nunca te había oído decir eso."
 
