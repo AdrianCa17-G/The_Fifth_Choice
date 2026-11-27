@@ -181,22 +181,16 @@ translate english cap1_apertura_9c738aaf:
     mc_pensamiento "Less noise, fewer arguments."
 
 # game/02_cap1_apertura.rpy:122
-translate english cap1_apertura_1007a7d0:
+translate english cap1_apertura_42d92219:
 
-    # mc_pensamiento "(Aunque el silencio, viniendo de ella, se siente casi más pesado que los gritos.)"
-    mc_pensamiento "(Though her silence feels almost heavier than the shouting.)"
+    # mc_pensamiento "(Aunque, viniendo de ella, casi prefiero que me grite.)"
+    mc_pensamiento "(Though coming from her, I'd almost rather she yelled at me.)"
 
 # game/02_cap1_apertura.rpy:128
 translate english cap1_apertura_a9650fbf:
 
     # narrador "Volvió a su cuaderno con un gesto seco y no dijo una palabra más en toda la mañana."
     narrador "She went back to her notebook with a curt gesture and didn't say another word all morning."
-
-# game/02_cap1_apertura.rpy:130
-translate english cap1_apertura_fb11f01c:
-
-    # mc_pensamiento "Ahí estaba lo verdaderamente incómodo del asunto."
-    mc_pensamiento "That was the truly uncomfortable part."
 
 # game/02_cap1_apertura.rpy:132
 translate english cap1_apertura_bd9482c7:
@@ -552,11 +546,11 @@ translate english cap1_apertura_ea6f144d:
     # mc_pensamiento "Ahí estaba."
     mc_pensamiento "There it was."
 
-# game/02_cap1_apertura.rpy:287
-translate english cap1_apertura_737fdb67:
+# game/02_cap1_apertura.rpy:285
+translate english cap1_apertura_4ffa87d1:
 
-    # mc_pensamiento "No querían echarme a gritos. Querían mi carta de renuncia."
-    mc_pensamiento "They didn't want to run me off by yelling. They wanted my resignation letter."
+    # mc_pensamiento "Nada de echarme a gritos: querían mi carta de renuncia."
+    mc_pensamiento "No yelling me out the door: they wanted my resignation letter."
 
 # game/02_cap1_apertura.rpy:289
 translate english cap1_apertura_3e90f2ab:
@@ -612,11 +606,11 @@ translate english cap1_apertura_c5bb8959:
     # mc_pensamiento "Yotsuba no está de acuerdo con Nino."
     mc_pensamiento "Yotsuba doesn't agree with Nino."
 
-# game/02_cap1_apertura.rpy:326
-translate english cap1_apertura_f80a9f0c:
+# game/02_cap1_apertura.rpy:324
+translate english cap1_apertura_a41f90e3:
 
-    # mc_pensamiento "Pero está obedeciéndola, que no es lo mismo."
-    mc_pensamiento "But she's obeying her, which is not the same thing."
+    # mc_pensamiento "Pero igual le hace caso."
+    mc_pensamiento "But she does what Nino says anyway."
 
 # game/02_cap1_apertura.rpy:332
 translate english cap1_apertura_9da0659d:
@@ -810,17 +804,17 @@ translate english cap1_apertura_847e5e0a:
     # miku "...No fue idea mía."
     miku "...It wasn't my idea."
 
+# game/02_cap1_apertura.rpy:417
+translate english cap1_apertura_bfe1e136:
+
+    # narrador "Lo dijo tan bajo que tardé un segundo en entenderlo."
+    narrador "She said it so quietly it took me a second to understand it."
+
 # game/02_cap1_apertura.rpy:419
-translate english cap1_apertura_29acebe4:
+translate english cap1_apertura_dc3a5d27:
 
-    # narrador "Lo dijo tan bajo que tuve que reconstruirlo un segundo después, cuando ya no estaba."
-    narrador "She said it so quietly I had to piece it together a second later, once she was gone."
-
-# game/02_cap1_apertura.rpy:421
-translate english cap1_apertura_94e38a52:
-
-    # narrador "Porque en cuanto lo dijo, se dio cuenta de que lo había dicho."
-    narrador "Because the moment she said it, she realized she'd said it."
+    # narrador "Y en cuanto se oyó, se dio cuenta de lo que había dicho."
+    narrador "And as soon as she heard herself, she realized what she'd said."
 
 # game/02_cap1_apertura.rpy:423
 translate english cap1_apertura_02210516:
@@ -840,11 +834,11 @@ translate english cap1_apertura_4dd09698:
     # mc_pensamiento "Esta vez, además, pidió perdón."
     mc_pensamiento "This time, she also apologized."
 
-# game/02_cap1_apertura.rpy:432
-translate english cap1_apertura_3bb019af:
+# game/02_cap1_apertura.rpy:430
+translate english cap1_apertura_5459710f:
 
-    # mc_pensamiento "Nadie se disculpa por decir algo cierto, a menos que le hayan enseñado que decirlo cuesta."
-    mc_pensamiento "Nobody apologizes for saying something true, unless they've learned that saying it has a cost."
+    # mc_pensamiento "Nadie pide perdón por decir la verdad, salvo que ya le haya salido caro antes."
+    mc_pensamiento "Nobody apologizes for telling the truth, unless it's already cost them before."
 
 # game/02_cap1_apertura.rpy:434
 translate english cap1_apertura_d2fb33a5:
@@ -852,11 +846,11 @@ translate english cap1_apertura_d2fb33a5:
     # mc_pensamiento "Segundo día. Segundo fracaso."
     mc_pensamiento "Second day. Second failure."
 
-# game/02_cap1_apertura.rpy:436
-translate english cap1_apertura_e9b64b81:
+# game/02_cap1_apertura.rpy:434
+translate english cap1_apertura_b2358e32:
 
-    # mc_pensamiento "Pero por primera vez me llevaba algo a casa."
-    mc_pensamiento "But for the first time, I was taking something home."
+    # mc_pensamiento "Pero esta vez me llevaba algo a casa."
+    mc_pensamiento "But this time I was taking something home."
 
 # game/02_cap1_apertura.rpy:444
 translate english cap1_apertura_1a2fc047:
@@ -912,11 +906,11 @@ translate english cap1_apertura_6ea26ecb:
     # mc "Eso no lo hace alguien que no entiende el ejercicio."
     mc "That's not something someone who doesn't understand the exercise can do."
 
-# game/02_cap1_apertura.rpy:467
-translate english cap1_apertura_0f17b80c:
+# game/02_cap1_apertura.rpy:465
+translate english cap1_apertura_4f658afd:
 
-    # narrador "Me miró un momento más largo de lo que me había mirado el día anterior."
-    narrador "He looked at me a moment longer than he had the day before."
+    # narrador "Me miró más rato que el día anterior."
+    narrador "He looked at me longer than he had the day before."
 
 # game/02_cap1_apertura.rpy:469
 translate english cap1_apertura_394e1530:
@@ -942,11 +936,11 @@ translate english cap1_apertura_f1d8c19b:
     # maruo "Ya te lo dije ayer. No lo repito."
     maruo "I told you yesterday. I do not repeat myself."
 
-# game/02_cap1_apertura.rpy:479
-translate english cap1_apertura_aa8f1143:
+# game/02_cap1_apertura.rpy:477
+translate english cap1_apertura_d15ae3b8:
 
-    # narrador "Se fue como se había ido el día anterior, sin subir la voz y sin dejar espacio para contestar."
-    narrador "He left the way he had the day before: no raised voice, no room for a reply."
+    # narrador "Se fue igual que ayer, sin subir la voz y sin dejarme contestar."
+    narrador "He left just like yesterday, without raising his voice or letting me answer."
 
 # game/02_cap1_apertura.rpy:481
 translate english cap1_apertura_e7cb92b5:
@@ -1164,11 +1158,11 @@ translate english cap1_apertura_b7c23c57:
     # mc_pensamiento "Hoy sé que el problema es otro."
     mc_pensamiento "Today I know the problem is something else."
 
-# game/02_cap1_apertura.rpy:622
-translate english cap1_apertura_3387dd17:
+# game/02_cap1_apertura.rpy:620
+translate english cap1_apertura_a7979382:
 
-    # mc_pensamiento "No es que no puedan. Es que se defienden."
-    mc_pensamiento "It's not that they can't. It's that they're defending themselves."
+    # mc_pensamiento "Sí pueden. Se están defendiendo."
+    mc_pensamiento "They can. They're defending themselves."
 
 # game/02_cap1_apertura.rpy:624
 translate english cap1_apertura_342d9666:
@@ -1488,11 +1482,11 @@ translate english cap1_adivinanza_hermanas_756eb8be:
     # raiha "Las calladas siempre tienen su rincón secreto."
     raiha "The quiet ones always have a secret corner."
 
-# game/02_cap1_apertura.rpy:776
-translate english cap1_adivinanza_hermanas_d8cbdc9f:
+# game/02_cap1_apertura.rpy:774
+translate english cap1_adivinanza_hermanas_32384167:
 
-    # mc_pensamiento "Un rincón secreto que sería la biblioteca."
-    mc_pensamiento "A secret corner, meaning the library."
+    # mc_pensamiento "Así que el rincón secreto es la biblioteca."
+    mc_pensamiento "So the secret hideout is the library."
 
 # game/02_cap1_apertura.rpy:778
 translate english cap1_adivinanza_hermanas_5edb953d:
@@ -1704,11 +1698,11 @@ translate english cap1_adivinanza_hermanas_ec075563:
     # mc_pensamiento "Cinco respuestas idénticas en cuatro minutos."
     mc_pensamiento "Five identical answers in four minutes."
 
-# game/02_cap1_apertura.rpy:871
-translate english cap1_adivinanza_hermanas_b3a907db:
+# game/02_cap1_apertura.rpy:869
+translate english cap1_adivinanza_hermanas_f46d8ab4:
 
-    # mc_pensamiento "Eso requiere ponerse de acuerdo antes y concordar el error."
-    mc_pensamiento "That takes agreeing beforehand and matching the mistake."
+    # mc_pensamiento "Para eso hay que ponerse de acuerdo antes, hasta en los errores."
+    mc_pensamiento "For that you have to agree beforehand, even on the mistakes."
 
 # game/02_cap1_apertura.rpy:873
 translate english cap1_adivinanza_hermanas_da63ad50:

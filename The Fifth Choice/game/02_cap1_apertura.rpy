@@ -119,15 +119,13 @@ label cap1_apertura:
             
             mc_pensamiento "Menos ruido, menos discusiones."
 
-            mc_pensamiento "(Aunque el silencio, viniendo de ella, se siente casi más pesado que los gritos.)"
+            mc_pensamiento "(Aunque, viniendo de ella, casi prefiero que me grite.)"
 
 
     scene cg_itsuki_apertura
     with dissolve
 
     narrador "Volvió a su cuaderno con un gesto seco y no dijo una palabra más en toda la mañana."
-
-    mc_pensamiento "Ahí estaba lo verdaderamente incómodo del asunto."
 
     mc_pensamiento "No era que me odiara."
 
@@ -284,7 +282,7 @@ label cap1_apertura:
 
     mc_pensamiento "Ahí estaba."
 
-    mc_pensamiento "No querían echarme a gritos. Querían mi carta de renuncia."
+    mc_pensamiento "Nada de echarme a gritos: querían mi carta de renuncia."
 
     mc "Vas a hacer que reprueben para que me despidan."
 
@@ -323,7 +321,7 @@ label cap1_apertura:
 
     mc_pensamiento "Yotsuba no está de acuerdo con Nino."
 
-    mc_pensamiento "Pero está obedeciéndola, que no es lo mismo."
+    mc_pensamiento "Pero igual le hace caso."
 
     show ichika sonriendo at pj_habla(0.50)
     show nino at pj_calla(0.20)
@@ -416,9 +414,9 @@ label cap1_apertura:
 
     miku "...No fue idea mía."
 
-    narrador "Lo dijo tan bajo que tuve que reconstruirlo un segundo después, cuando ya no estaba."
+    narrador "Lo dijo tan bajo que tardé un segundo en entenderlo."
 
-    narrador "Porque en cuanto lo dijo, se dio cuenta de que lo había dicho."
+    narrador "Y en cuanto se oyó, se dio cuenta de lo que había dicho."
 
     miku "...Olvídalo. Perdón."
 
@@ -429,11 +427,11 @@ label cap1_apertura:
 
     mc_pensamiento "Esta vez, además, pidió perdón."
 
-    mc_pensamiento "Nadie se disculpa por decir algo cierto, a menos que le hayan enseñado que decirlo cuesta."
+    mc_pensamiento "Nadie pide perdón por decir la verdad, salvo que ya le haya salido caro antes."
 
     mc_pensamiento "Segundo día. Segundo fracaso."
 
-    mc_pensamiento "Pero por primera vez me llevaba algo a casa."
+    mc_pensamiento "Pero esta vez me llevaba algo a casa."
 
     ############################################################################
     ##  ESCENA 3 · El plazo
@@ -464,7 +462,7 @@ label cap1_apertura:
 
     mc "Eso no lo hace alguien que no entiende el ejercicio."
 
-    narrador "Me miró un momento más largo de lo que me había mirado el día anterior."
+    narrador "Me miró más rato que el día anterior."
 
     maruo "Los exámenes son en un mes."
 
@@ -476,7 +474,7 @@ label cap1_apertura:
 
     play sound audio.sfx_puerta_cierra volume 1.0
 
-    narrador "Se fue como se había ido el día anterior, sin subir la voz y sin dejar espacio para contestar."
+    narrador "Se fue igual que ayer, sin subir la voz y sin dejarme contestar."
 
     mc_pensamiento "Un mes."
 
@@ -619,7 +617,7 @@ label cap1_apertura:
 
     mc_pensamiento "Hoy sé que el problema es otro."
 
-    mc_pensamiento "No es que no puedan. Es que se defienden."
+    mc_pensamiento "Sí pueden. Se están defendiendo."
 
     mc_pensamiento "Y se defienden juntas."
 
@@ -773,7 +771,7 @@ label cap1_apertura:
 
                 raiha "Las calladas siempre tienen su rincón secreto."
 
-                mc_pensamiento "Un rincón secreto que sería la biblioteca."
+                mc_pensamiento "Así que el rincón secreto es la biblioteca."
                 
                 mc_pensamiento "Si la encuentro ahí, al menos no tendré que gritar para que me escuche."
 
@@ -868,7 +866,7 @@ label cap1_apertura:
 
     mc_pensamiento "Cinco respuestas idénticas en cuatro minutos."
 
-    mc_pensamiento "Eso requiere ponerse de acuerdo antes y concordar el error." 
+    mc_pensamiento "Para eso hay que ponerse de acuerdo antes, hasta en los errores." 
     
     mc_pensamiento "Y sostenerlo delante de mí sin que falle ninguna."
 

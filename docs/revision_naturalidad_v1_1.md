@@ -274,3 +274,29 @@ pasa de 2 a 1 (queda la 529) y «como si» de 6 a 2 (289 y 305).
 
 Números solo donde se comparan: tiempos del cronómetro (`1:17`, `1:14`) y «25 → 30», en Yotsuba, beat_casa,
 conexiones y Evento 6. Las vueltas contadas en voz alta y las duraciones siguen en letras.
+
+## 02_cap1_apertura.rpy
+
+Los horarios ya se aplicaron (HOR-04 a HOR-08). Los diálogos suenan naturales y casi no se tocan. Quedan dos
+contrastes «No es que X. Es que Y.» con peso (255-257 y 891-893). No toqué las líneas partidas en dos renglones.
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| APE-01 | 122 | mc_pensamiento | (Aunque el silencio, viniendo de ella, se siente casi más pesado que los gritos.) | 6, 7 | (Aunque, viniendo de ella, casi prefiero que me grite.) | ✅ aplicado 27/11 |
+| APE-02 | 130 | mc_pensamiento | Ahí estaba lo verdaderamente incómodo del asunto. | 7 | BORRAR | ✅ aplicado 27/11 |
+| APE-03 | 287 | mc_pensamiento | No querían echarme a gritos. Querían mi carta de renuncia. | 4 | Nada de echarme a gritos: querían mi carta de renuncia. | ✅ aplicado 27/11 |
+| APE-04 | 326 | mc_pensamiento | Pero está obedeciéndola, que no es lo mismo. | 3 | Pero igual le hace caso. | ✅ aplicado 27/11 |
+| APE-05 | 432 | mc_pensamiento | Nadie se disculpa por decir algo cierto, a menos que le hayan enseñado que decirlo cuesta. | 6 | Nadie pide perdón por decir la verdad, salvo que ya le haya salido caro antes. | ✅ aplicado 27/11 |
+| APE-06 | 436 | mc_pensamiento | Pero por primera vez me llevaba algo a casa. | 5 | Pero esta vez me llevaba algo a casa. | ✅ aplicado 27/11 |
+| APE-07 | 467 | narrador | Me miró un momento más largo de lo que me había mirado el día anterior. | frase enredada | Me miró más rato que el día anterior. | ✅ aplicado 27/11 |
+| APE-08 | 479 | narrador | Se fue como se había ido el día anterior, sin subir la voz y sin dejar espacio para contestar. | 5 | Se fue igual que ayer, sin subir la voz y sin dejarme contestar. | ✅ aplicado 27/11 |
+| APE-09 | 622 | mc_pensamiento | No es que no puedan. Es que se defienden. | 4 | Sí pueden. Se están defendiendo. | ✅ aplicado 27/11 |
+| APE-10 | 776 | mc_pensamiento | Un rincón secreto que sería la biblioteca. | frase enredada | Así que el rincón secreto es la biblioteca. | ✅ aplicado 27/11 |
+| APE-11 | 871 | mc_pensamiento | Eso requiere ponerse de acuerdo antes y concordar el error. | 6 («concordar el error») | Para eso hay que ponerse de acuerdo antes, hasta en los errores. | ✅ aplicado 27/11 |
+
+### Notas de coherencia (para aprobar aparte)
+
+| ID | línea | personaje | texto actual | problema | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| APE-12 | 419 | narrador | Lo dijo tan bajo que tuve que reconstruirlo un segundo después, cuando ya no estaba. | Miku sigue ahí: habla otra vez en la 423 | Lo dijo tan bajo que tardé un segundo en entenderlo. | ✅ aplicado 27/11 |
+| APE-13 | 421 | narrador | Porque en cuanto lo dijo, se dio cuenta de que lo había dicho. | va con APE-12 | Y en cuanto se oyó, se dio cuenta de lo que había dicho. | ✅ aplicado 27/11 |
