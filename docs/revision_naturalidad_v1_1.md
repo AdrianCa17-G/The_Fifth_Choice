@@ -300,3 +300,28 @@ contrastes «No es que X. Es que Y.» con peso (255-257 y 891-893). No toqué la
 |---|---|---|---|---|---|---|
 | APE-12 | 419 | narrador | Lo dijo tan bajo que tuve que reconstruirlo un segundo después, cuando ya no estaba. | Miku sigue ahí: habla otra vez en la 423 | Lo dijo tan bajo que tardé un segundo en entenderlo. | ✅ aplicado 27/11 |
 | APE-13 | 421 | narrador | Porque en cuanto lo dijo, se dio cuenta de que lo había dicho. | va con APE-12 | Y en cuanto se oyó, se dio cuenta de lo que había dicho. | ✅ aplicado 27/11 |
+
+## 02_cap1_beat_casa.rpy
+
+El horario (HOR-19) y las series en números ya se aplicaron. Es un repaso de los hubs, así que cuatro líneas
+tienen que volver a coincidir con lo que ya se cambió allí (marcadas «hub»). «como quien» pasa de 5 a 1 (queda la 843).
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| BC-01 | 66 | narrador | No lo dijo con reproche. Lo dijo como quien ya lleva la cuenta. | 1, 2 | No sonó a reproche. Ya llevaba la cuenta. | ✅ aplicado 27/11 |
+| BC-02 | 116 | narrador | Con la misma naturalidad con la que señala cualquier otra cosa. | 6 | BORRAR | ✅ aplicado 27/11 |
+| BC-03 | 118 | mc_pensamiento | No fue un chiste. | 4 | BORRAR | ✅ aplicado 27/11 |
+| BC-04 | 120 | mc_pensamiento | Se lo tomó como algo raro de verdad. | 4 (va con BC-03) | Para ella fue raro de verdad. | ✅ aplicado 27/11 |
+| BC-05 | 187 | mc_pensamiento | No es que me sorprenda. | 4 | No me sorprende. | ✅ aplicado 27/11 |
+| BC-06 | 189 | mc_pensamiento | Es que llevo un mes viéndolas a ellas cinco fingir que no les importo. | 4 | Pero llevo un mes viéndolas a ellas cinco fingir que no les importo. | ✅ aplicado 27/11 |
+| BC-07 | 191 | mc_pensamiento | Y se siente distinto verlo a él sin fingir nada. | 3 | Él ni se molesta en fingir. | ✅ aplicado 27/11 |
+| BC-08 | 204 | narrador | Lo dijo sin maldad. | 2 | BORRAR | ✅ aplicado 27/11 |
+| BC-09 | 206 | narrador | Con la misma lógica fría con la que arregla todo lo demás. | 2 (va con BC-08) | Sin maldad. Con la misma lógica fría de siempre. | ✅ aplicado 27/11 |
+| BC-10 | 436 | mc_pensamiento | Fue correcta conmigo. Eso, viniendo de ella, es peor que un portazo. | 7, hub | Fue correcta conmigo. Solo... correcta. | ✅ aplicado 27/11 |
+| BC-11 | 511 | mc_pensamiento | No lo dijo con rabia. Lo dijo como quien recita un dato que ya se sabe de memoria. | 1, 2 | Sin rabia. Como un dato que ya se sabe de memoria. | ✅ aplicado 27/11 |
+| BC-12 | 527 | mc_pensamiento | Leía las etiquetas moviendo apenas los labios, como quien lee en su propia lengua. | 1, hub | Leía las etiquetas de corrido, moviendo apenas los labios. | ✅ aplicado 27/11 |
+| BC-13 | 716 | mc_pensamiento | Y, por primera vez, miró hacia fuera del libro. | 5, hub | Y por fin miró fuera del libro. | ✅ aplicado 27/11 |
+| BC-14 | 734 | mc_pensamiento | Lo dijo despacio, como quien termina una cuenta. | 1 (duplicada de MIK-11) | BORRAR | ✅ aplicado 27/11 |
+| BC-15 | 946 | mc_pensamiento | Hay algo de ese primer día que sigo sin saldar con ella. | muletilla («algo») | Lo de ese primer día todavía no lo he saldado con ella. | ✅ aplicado 27/11 |
+| BC-16 | 962 | mc_pensamiento | «El tiempo que hace falta», contestó. Y lo repitió palabra por palabra. Eso la delató. | hub (ITS-23) | «El tiempo que hace falta», contestó. Luego lo repitió casi igual. Eso la delató. | ✅ aplicado 27/11 |
+| BC-17 | 972 | mc_pensamiento | No era que no supiera resolverlo. Arrastraba el mismo error del medio sin tocarlo. | 4, hub | Sabía resolverlo. Solo arrastraba el mismo error del medio. | ✅ aplicado 27/11 |

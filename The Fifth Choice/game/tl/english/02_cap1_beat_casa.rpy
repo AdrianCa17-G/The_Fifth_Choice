@@ -79,10 +79,10 @@ translate english beat_casa_80e67789:
     raiha "Ever since you became a tutor, you're always late."
 
 # game/02_cap1_beat_casa.rpy:66
-translate english beat_casa_c17666ad:
+translate english beat_casa_f6d12eb1:
 
-    # narrador "No lo dijo con reproche. Lo dijo como quien ya lleva la cuenta."
-    narrador "She didn't say it as a reproach. She said it like someone already keeping count."
+    # narrador "No sonó a reproche. Ya llevaba la cuenta."
+    narrador "It didn't sound like a complaint. She was already keeping count."
 
 # game/02_cap1_beat_casa.rpy:74
 translate english beat_casa_a6c75f14:
@@ -193,22 +193,10 @@ translate english beat_casa_710a763e:
     narrador "She said it without meaning anything by it."
 
 # game/02_cap1_beat_casa.rpy:116
-translate english beat_casa_c7ef3625:
+translate english beat_casa_76cab158:
 
-    # narrador "Con la misma naturalidad con la que señala cualquier otra cosa."
-    narrador "With the same ease she'd point out anything else."
-
-# game/02_cap1_beat_casa.rpy:118
-translate english beat_casa_318d8e11:
-
-    # mc_pensamiento "No fue un chiste."
-    mc_pensamiento "It wasn't a joke."
-
-# game/02_cap1_beat_casa.rpy:120
-translate english beat_casa_f1178a45:
-
-    # mc_pensamiento "Se lo tomó como algo raro de verdad."
-    mc_pensamiento "She took it as something truly strange."
+    # mc_pensamiento "Para ella fue raro de verdad."
+    mc_pensamiento "To her it really was weird."
 
 # game/02_cap1_beat_casa.rpy:122
 translate english beat_casa_ac6688d5:
@@ -354,23 +342,23 @@ translate english beat_casa_680aacae:
     # narrador "Preguntó si el dinero seguía llegando, en la misma frase."
     narrador "He asked whether the money was still coming, in the same breath."
 
+# game/02_cap1_beat_casa.rpy:183
+translate english beat_casa_ad91afde:
+
+    # mc_pensamiento "No me sorprende."
+    mc_pensamiento "It doesn't surprise me."
+
+# game/02_cap1_beat_casa.rpy:185
+translate english beat_casa_239de804:
+
+    # mc_pensamiento "Pero llevo un mes viéndolas a ellas cinco fingir que no les importo."
+    mc_pensamiento "But I've spent a month watching the five of them pretend they don't care about me."
+
 # game/02_cap1_beat_casa.rpy:187
-translate english beat_casa_b574a272:
+translate english beat_casa_c6e2c52c:
 
-    # mc_pensamiento "No es que me sorprenda."
-    mc_pensamiento "It's not that it surprises me."
-
-# game/02_cap1_beat_casa.rpy:189
-translate english beat_casa_bfd414b4:
-
-    # mc_pensamiento "Es que llevo un mes viéndolas a ellas cinco fingir que no les importo."
-    mc_pensamiento "It's that I've spent a month watching the five of them pretend I don't matter to them."
-
-# game/02_cap1_beat_casa.rpy:191
-translate english beat_casa_eefd576f:
-
-    # mc_pensamiento "Y se siente distinto verlo a él sin fingir nada."
-    mc_pensamiento "And it feels different watching him not pretend at all."
+    # mc_pensamiento "Él ni se molesta en fingir."
+    mc_pensamiento "He doesn't even bother pretending."
 
 # game/02_cap1_beat_casa.rpy:196
 translate english beat_casa_ac4ae086:
@@ -396,17 +384,11 @@ translate english beat_casa_4afff12e:
     # isanari "Si le fuera mal, no seguirían pagando."
     isanari "If he were doing badly, they wouldn't keep paying."
 
-# game/02_cap1_beat_casa.rpy:204
-translate english beat_casa_4708b803:
+# game/02_cap1_beat_casa.rpy:200
+translate english beat_casa_92ab8ed5:
 
-    # narrador "Lo dijo sin maldad."
-    narrador "He said it without malice."
-
-# game/02_cap1_beat_casa.rpy:206
-translate english beat_casa_a89ba614:
-
-    # narrador "Con la misma lógica fría con la que arregla todo lo demás."
-    narrador "With the same cold logic he uses to fix everything else."
+    # narrador "Sin maldad. Con la misma lógica fría de siempre."
+    narrador "No malice. The same cold logic as always."
 
 # game/02_cap1_beat_casa.rpy:208
 translate english beat_casa_74bf1fd6:
@@ -756,11 +738,11 @@ translate english bcl_ichika_7df1aaf7:
     # mc_pensamiento "No se enfadó. Contestó «tienes razón» sonriendo y guardó el guion sin doblarlo."
     mc_pensamiento "She didn't get angry. She said \"you're right,\" smiling, and put the script away without folding it."
 
-# game/02_cap1_beat_casa.rpy:436
-translate english bcl_ichika_8f8f30b5:
+# game/02_cap1_beat_casa.rpy:430
+translate english bcl_ichika_2caba786:
 
-    # mc_pensamiento "Fue correcta conmigo. Eso, viniendo de ella, es peor que un portazo."
-    mc_pensamiento "She was polite with me. Coming from her, that's worse than a slammed door."
+    # mc_pensamiento "Fue correcta conmigo. Solo... correcta."
+    mc_pensamiento "She was polite with me. Just... polite."
 
 # game/02_cap1_beat_casa.rpy:438
 translate english bcl_ichika_eb5a4ce9:
@@ -900,11 +882,11 @@ translate english bcl_nino_ee82f6ed:
     # mc_pensamiento "Me dio una semana. Después dijo que el último tutor había durado cuatro días."
     mc_pensamiento "She gave me a week. Then she said the last tutor had lasted four days."
 
-# game/02_cap1_beat_casa.rpy:511
-translate english bcl_nino_4c37a9dc:
+# game/02_cap1_beat_casa.rpy:505
+translate english bcl_nino_c0dab4b1:
 
-    # mc_pensamiento "No lo dijo con rabia. Lo dijo como quien recita un dato que ya se sabe de memoria."
-    mc_pensamiento "She didn't say it with anger. She said it like someone reciting a fact she knows by heart."
+    # mc_pensamiento "Sin rabia. Como un dato que ya se sabe de memoria."
+    mc_pensamiento "No anger. Like a fact she already knows by heart."
 
 # game/02_cap1_beat_casa.rpy:513
 translate english bcl_nino_970f2289:
@@ -942,11 +924,11 @@ translate english bcl_nino_4bb0e332:
     # mc_pensamiento "La encontré en el pasillo de importados, comparando dos cajas de harina."
     mc_pensamiento "I found her in the imports aisle, comparing two boxes of flour."
 
-# game/02_cap1_beat_casa.rpy:527
-translate english bcl_nino_21fda992:
+# game/02_cap1_beat_casa.rpy:521
+translate english bcl_nino_03467670:
 
-    # mc_pensamiento "Leía las etiquetas moviendo apenas los labios, como quien lee en su propia lengua."
-    mc_pensamiento "She read the labels with her lips barely moving, like someone reading in her own language."
+    # mc_pensamiento "Leía las etiquetas de corrido, moviendo apenas los labios."
+    mc_pensamiento "She was reading the labels straight through, barely moving her lips."
 
 # game/02_cap1_beat_casa.rpy:529
 translate english bcl_nino_ad3e4e34:
@@ -1362,11 +1344,11 @@ translate english bcl_miku_dc984030:
     # mc_pensamiento "Se quedó mirando el ejemplar sobre la mesa."
     mc_pensamiento "She stared at the copy on the table."
 
-# game/02_cap1_beat_casa.rpy:716
-translate english bcl_miku_8008934b:
+# game/02_cap1_beat_casa.rpy:710
+translate english bcl_miku_6a34bf09:
 
-    # mc_pensamiento "Y, por primera vez, miró hacia fuera del libro."
-    mc_pensamiento "And, for the first time, she looked out from behind the book."
+    # mc_pensamiento "Y por fin miró fuera del libro."
+    mc_pensamiento "And she finally looked out past the book."
 
 # game/02_cap1_beat_casa.rpy:718
 translate english bcl_miku_e08c3b47:
@@ -1409,12 +1391,6 @@ translate english bcl_miku_3da30f2a:
 
     # mc_pensamiento "Me dijo que lo de la sal estaba en la página ciento veinte."
     mc_pensamiento "She told me the salt part was on page one-twenty."
-
-# game/02_cap1_beat_casa.rpy:734
-translate english bcl_miku_48cda8da:
-
-    # mc_pensamiento "Lo dijo despacio, como quien termina una cuenta."
-    mc_pensamiento "She said it slowly, like someone finishing a sum."
 
 # game/02_cap1_beat_casa.rpy:736
 translate english bcl_miku_30af61b2:
@@ -1848,11 +1824,11 @@ translate english bcl_itsuki_569a71a7:
     # mc_pensamiento "Dijo que prefería reprobar todos los exámenes antes que recibir una sola clase mía."
     mc_pensamiento "She said she'd rather fail every exam than take a single lesson from me."
 
-# game/02_cap1_beat_casa.rpy:946
-translate english bcl_itsuki_302cf024:
+# game/02_cap1_beat_casa.rpy:938
+translate english bcl_itsuki_a04918d3:
 
-    # mc_pensamiento "Hay algo de ese primer día que sigo sin saldar con ella."
-    mc_pensamiento "There's something from that first day I still haven't settled with her."
+    # mc_pensamiento "Lo de ese primer día todavía no lo he saldado con ella."
+    mc_pensamiento "I still haven't squared things with her over that first day."
 
 # game/02_cap1_beat_casa.rpy:948
 translate english bcl_itsuki_36cbf0a0:
@@ -1890,11 +1866,11 @@ translate english bcl_itsuki_08da3a21:
     # mc_pensamiento "Tenía el lápiz levantado, quieto, y tres respuestas tachadas con la misma cifra al final."
     mc_pensamiento "Her pencil was raised, still, and three answers crossed out with the same figure at the end."
 
-# game/02_cap1_beat_casa.rpy:962
-translate english bcl_itsuki_3a4d1ffe:
+# game/02_cap1_beat_casa.rpy:954
+translate english bcl_itsuki_4f999d5c:
 
-    # mc_pensamiento "«El tiempo que hace falta», contestó. Y lo repitió palabra por palabra. Eso la delató."
-    mc_pensamiento "\"As long as it takes,\" she answered. And she repeated it word for word. That gave her away."
+    # mc_pensamiento "«El tiempo que hace falta», contestó. Luego lo repitió casi igual. Eso la delató."
+    mc_pensamiento "\"As long as it takes,\" she answered. Then she repeated it, almost the same. That gave her away."
 
 # game/02_cap1_beat_casa.rpy:964
 translate english bcl_itsuki_3400efa3:
@@ -1920,11 +1896,11 @@ translate english bcl_itsuki_895f0ba8:
     # mc_pensamiento "Preguntarle a sus hermanas era admitir algo. Preguntarme a mí, darme la razón."
     mc_pensamiento "Asking her sisters meant admitting something. Asking me, conceding the point."
 
-# game/02_cap1_beat_casa.rpy:972
-translate english bcl_itsuki_a17ac3c0:
+# game/02_cap1_beat_casa.rpy:964
+translate english bcl_itsuki_d9a8771f:
 
-    # mc_pensamiento "No era que no supiera resolverlo. Arrastraba el mismo error del medio sin tocarlo."
-    mc_pensamiento "It wasn't that she couldn't solve it. She kept dragging the same mistake from the middle, untouched."
+    # mc_pensamiento "Sabía resolverlo. Solo arrastraba el mismo error del medio."
+    mc_pensamiento "She knew how to solve it. She just kept dragging the same mistake from the middle."
 
 # game/02_cap1_beat_casa.rpy:976
 translate english bcl_itsuki_7b4438d9:

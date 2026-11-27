@@ -63,7 +63,7 @@ label beat_casa:
 
     raiha "Desde que eres tutor, siempre llegas tarde."
 
-    narrador "No lo dijo con reproche. Lo dijo como quien ya lleva la cuenta."
+    narrador "No sonó a reproche. Ya llevaba la cuenta."
 
     ############################################################################
     ##  MOVIMIENTO 2 · El gesto
@@ -113,11 +113,7 @@ label beat_casa:
 
     narrador "Lo dijo sin mala intención." 
     
-    narrador "Con la misma naturalidad con la que señala cualquier otra cosa."
-
-    mc_pensamiento "No fue un chiste." 
-    
-    mc_pensamiento "Se lo tomó como algo raro de verdad."
+    mc_pensamiento "Para ella fue raro de verdad."
 
     mc_pensamiento "Llevo semanas diciéndoles a cinco personas «no te lo voy a resolver, solo mira si está bien»." 
     
@@ -184,11 +180,11 @@ label beat_casa:
 
     narrador "Preguntó si el dinero seguía llegando, en la misma frase."
 
-    mc_pensamiento "No es que me sorprenda."
+    mc_pensamiento "No me sorprende."
 
-    mc_pensamiento "Es que llevo un mes viéndolas a ellas cinco fingir que no les importo."
+    mc_pensamiento "Pero llevo un mes viéndolas a ellas cinco fingir que no les importo."
 
-    mc_pensamiento "Y se siente distinto verlo a él sin fingir nada."
+    mc_pensamiento "Él ni se molesta en fingir."
 
     show raiha regano at pj_habla(0.20)
     with disolucion_lenta
@@ -201,9 +197,7 @@ label beat_casa:
     
     isanari "Si le fuera mal, no seguirían pagando."
 
-    narrador "Lo dijo sin maldad."
-
-    narrador "Con la misma lógica fría con la que arregla todo lo demás."
+    narrador "Sin maldad. Con la misma lógica fría de siempre."
 
     mc "Las cinco van a salir bien."
 
@@ -433,7 +427,7 @@ label beat_casa:
 
                     mc_pensamiento "No se enfadó. Contestó «tienes razón» sonriendo y guardó el guion sin doblarlo."
 
-                    mc_pensamiento "Fue correcta conmigo. Eso, viniendo de ella, es peor que un portazo."
+                    mc_pensamiento "Fue correcta conmigo. Solo... correcta."
 
                     mc_pensamiento "Al día siguiente la sonrisa llegó medio segundo tarde."
 
@@ -508,7 +502,7 @@ label beat_casa:
 
                 mc_pensamiento "Me dio una semana. Después dijo que el último tutor había durado cuatro días."
 
-                mc_pensamiento "No lo dijo con rabia. Lo dijo como quien recita un dato que ya se sabe de memoria."
+                mc_pensamiento "Sin rabia. Como un dato que ya se sabe de memoria."
 
                 mc_pensamiento "Al día siguiente organizó a las cinco para que contestaran igual de mal."
 
@@ -524,7 +518,7 @@ label beat_casa:
 
                 mc_pensamiento "La encontré en el pasillo de importados, comparando dos cajas de harina."
 
-                mc_pensamiento "Leía las etiquetas moviendo apenas los labios, como quien lee en su propia lengua."
+                mc_pensamiento "Leía las etiquetas de corrido, moviendo apenas los labios."
 
                 mc_pensamiento "Llevaba una tarjeta de receta escrita a mano, vieja, de alguien que no era ella."
 
@@ -713,7 +707,7 @@ label beat_casa:
 
                 mc_pensamiento "Se quedó mirando el ejemplar sobre la mesa."
 
-                mc_pensamiento "Y, por primera vez, miró hacia fuera del libro."
+                mc_pensamiento "Y por fin miró fuera del libro."
 
                 mc_pensamiento "Me contó lo de la sal de Takeda Shingen."
 
@@ -730,8 +724,6 @@ label beat_casa:
                     mc_pensamiento "Cuando fue a disculparse, la corté: eso no se disculpa."
 
                     mc_pensamiento "Me dijo que lo de la sal estaba en la página ciento veinte."
-
-                    mc_pensamiento "Lo dijo despacio, como quien termina una cuenta."
 
                     mc_pensamiento "Al día siguiente me pidió que le avisara al llegar a esa página. Quería ver mi cara."
 
@@ -943,7 +935,7 @@ label beat_casa:
 
                 mc_pensamiento "Dijo que prefería reprobar todos los exámenes antes que recibir una sola clase mía."
 
-                mc_pensamiento "Hay algo de ese primer día que sigo sin saldar con ella."
+                mc_pensamiento "Lo de ese primer día todavía no lo he saldado con ella."
 
                 mc_pensamiento "Al día siguiente me dejó mi asiento libre a propósito. Eso también era un mensaje."
 
@@ -959,7 +951,7 @@ label beat_casa:
 
                 mc_pensamiento "Tenía el lápiz levantado, quieto, y tres respuestas tachadas con la misma cifra al final."
 
-                mc_pensamiento "«El tiempo que hace falta», contestó. Y lo repitió palabra por palabra. Eso la delató."
+                mc_pensamiento "«El tiempo que hace falta», contestó. Luego lo repitió casi igual. Eso la delató."
 
                 mc_pensamiento "Dijo que las otras podían decir que no lo habían intentado. Que ella no tenía esa excusa."
 
@@ -969,7 +961,7 @@ label beat_casa:
 
                 mc_pensamiento "Preguntarle a sus hermanas era admitir algo. Preguntarme a mí, darme la razón."
 
-                mc_pensamiento "No era que no supiera resolverlo. Arrastraba el mismo error del medio sin tocarlo."
+                mc_pensamiento "Sabía resolverlo. Solo arrastraba el mismo error del medio."
 
                 if itsuki_rama_cap1 == "calida":
 
