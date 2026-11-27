@@ -261,7 +261,7 @@ label beat_casa:
      
     stop music fadeout 1.5
 
-    narrador "Me encerré en mi cuarto antes de las diez."
+    narrador "Me encerré en mi cuarto antes de las 10."
 
     narrador "Saqué la libreta del cajón." 
     

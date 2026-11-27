@@ -505,10 +505,10 @@ translate english beat_casa_26bb3e75:
     mc_pensamiento "I didn't answer. I didn't know if it was true."
 
 # game/02_cap1_beat_casa.rpy:264
-translate english beat_casa_6bc1941b:
+translate english beat_casa_4bd44ea7:
 
-    # narrador "Me encerré en mi cuarto antes de las diez."
-    narrador "I shut myself in my room before ten."
+    # narrador "Me encerré en mi cuarto antes de las 10."
+    narrador "I shut myself in my room before 10."
 
 # game/02_cap1_beat_casa.rpy:266
 translate english beat_casa_382ff95f:
