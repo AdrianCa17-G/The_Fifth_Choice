@@ -88,7 +88,7 @@ label beat_Nino:
 
     narrador "Me acerqué lo suficiente para ver sin que me vieran a mí."
 
-    mc_pensamiento "No es por mi cara. Es por algo que no tiene nada que ver conmigo."
+    mc_pensamiento "El problema no es mi cara. Ni siquiera tiene que ver conmigo."
 
     nino "No se trata de su cara."
 
@@ -153,7 +153,7 @@ label beat_Nino:
 
         play sound audio.sfx_taza_mesa volume 1.0
 
-        narrador "Dejó la taza sobre la mesa, despacio, sin apurarse."
+        narrador "Dejó la taza sobre la mesa, sin apurarse."
 
         maruo "Llevas más de una semana. Anoche revisé sus cuadernos."
 
@@ -167,7 +167,7 @@ label beat_Nino:
 
         maruo "No te pedí un cronograma. Te pedí resultados."
 
-        narrador "Nino miraba entre los dos, sin intervenir por primera vez en toda la conversación."
+        narrador "Nino nos miraba a los dos y, por una vez, no intervino."
 
         maruo "Las condiciones te las dije el primer día. Hoy te las digo por segunda vez."
 
@@ -175,13 +175,13 @@ label beat_Nino:
 
         maruo "No habrá una tercera."
 
-        narrador "Lo dijo exactamente con el mismo tono que usó para cerrar la puerta esa primera noche."
+        narrador "El mismo tono con el que cerró la puerta aquella primera noche."
 
         mc_pensamiento "No subió la voz ni una vez. No hacía falta."
 
         play sound audio.sfx_puerta_cierra volume 1.0
 
-        narrador "Recogió la taza y salió de la cocina sin esperar respuesta, dándonos la espalda a los dos por igual."
+        narrador "Recogió la taza y salió sin esperar respuesta. A los dos nos dio la espalda."
 
         stop music fadeout 2.0
 
@@ -253,7 +253,7 @@ label beat_Nino:
 
     narrador "Dejó su propia taza sobre la mesa con más fuerza de la necesaria." 
     
-    narrador "El golpe sonó más alto que cualquier cosa que hubiera dicho."
+    narrador "El golpe retumbó en toda la cocina."
 
     nino "Vas a preguntarme qué fue toda esta discusión."
 
@@ -265,7 +265,7 @@ label beat_Nino:
 
     mc "Sé lo que le dijiste a tu padre." 
     
-    mc "No lo que piensas de mí. No es lo mismo."
+    mc "No lo que piensas de mí."
 
     show nino molesta at pj(0.5)
     with disolucion_lenta
@@ -283,7 +283,7 @@ label beat_Nino:
 
     narrador "Se sentó en uno de los bancos de la cocina, de golpe."
 
-    narrador "Como si las piernas hubieran dejado de sostenerla el tiempo justo."
+    narrador "Las piernas ya no le daban."
 
     nino "No es porque seas malo en esto." 
     
@@ -358,8 +358,6 @@ label beat_Nino:
     ############################################################################
 
     narrador "Se puso de pie y se acomodó el uniforme."
-
-    narrador "Como quien intenta recomponer algo que ya se salió de su sitio."
 
     show nino neutral at pj(0.5)
     with disolucion_lenta
@@ -615,7 +613,7 @@ label beat_Nino:
 
             mc_pensamiento "No me echó. Tampoco me dejó quedarme de verdad."
 
-            mc_pensamiento "Hoy el silencio fue el único acuerdo que cabía entre los dos."
+            mc_pensamiento "Hoy en lo único que coincidimos fue en callarnos."
 
         else:
 

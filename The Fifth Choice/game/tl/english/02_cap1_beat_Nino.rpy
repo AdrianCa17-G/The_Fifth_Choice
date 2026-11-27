@@ -103,10 +103,10 @@ translate english beat_Nino_49bb3d8d:
     narrador "I moved close enough to see without being seen."
 
 # game/02_cap1_beat_Nino.rpy:91
-translate english beat_Nino_69ad28d0:
+translate english beat_Nino_009afaf9:
 
-    # mc_pensamiento "No es por mi cara. Es por algo que no tiene nada que ver conmigo."
-    mc_pensamiento "It's not about my face. It's about something that has nothing to do with me."
+    # mc_pensamiento "El problema no es mi cara. Ni siquiera tiene que ver conmigo."
+    mc_pensamiento "The problem isn't my face. It doesn't even have to do with me."
 
 # game/02_cap1_beat_Nino.rpy:93
 translate english beat_Nino_c181f4dd:
@@ -217,10 +217,10 @@ translate english beat_Nino_826f9c06:
     maruo "You interrupted us simply by walking in."
 
 # game/02_cap1_beat_Nino.rpy:156
-translate english beat_Nino_60e342d1:
+translate english beat_Nino_69cdf81f:
 
-    # narrador "Dejó la taza sobre la mesa, despacio, sin apurarse."
-    narrador "He set the cup on the table, slowly, in no hurry."
+    # narrador "Dejó la taza sobre la mesa, sin apurarse."
+    narrador "He set the cup down on the table, in no hurry."
 
 # game/02_cap1_beat_Nino.rpy:158
 translate english beat_Nino_36a51ff8:
@@ -259,10 +259,10 @@ translate english beat_Nino_14f6ecea:
     maruo "I did not ask for a schedule. I asked for results."
 
 # game/02_cap1_beat_Nino.rpy:170
-translate english beat_Nino_7cffa101:
+translate english beat_Nino_b3e3e85a:
 
-    # narrador "Nino miraba entre los dos, sin intervenir por primera vez en toda la conversación."
-    narrador "Nino looked between us, staying out of it for the first time in the whole conversation."
+    # narrador "Nino nos miraba a los dos y, por una vez, no intervino."
+    narrador "Nino looked from one of us to the other and, for once, didn't jump in."
 
 # game/02_cap1_beat_Nino.rpy:172
 translate english beat_Nino_e4530e3e:
@@ -283,10 +283,10 @@ translate english beat_Nino_06a71478:
     maruo "There will not be a third time."
 
 # game/02_cap1_beat_Nino.rpy:178
-translate english beat_Nino_4de4d099:
+translate english beat_Nino_90b70086:
 
-    # narrador "Lo dijo exactamente con el mismo tono que usó para cerrar la puerta esa primera noche."
-    narrador "He said it in exactly the same tone he'd used to close the door that first night."
+    # narrador "El mismo tono con el que cerró la puerta aquella primera noche."
+    narrador "The same tone he used to close the door that first night."
 
 # game/02_cap1_beat_Nino.rpy:180
 translate english beat_Nino_e0705995:
@@ -295,10 +295,10 @@ translate english beat_Nino_e0705995:
     mc_pensamiento "He never raised his voice once. He didn't need to."
 
 # game/02_cap1_beat_Nino.rpy:184
-translate english beat_Nino_c524b12d:
+translate english beat_Nino_938046c6:
 
-    # narrador "Recogió la taza y salió de la cocina sin esperar respuesta, dándonos la espalda a los dos por igual."
-    narrador "He took his cup and left the kitchen without waiting for an answer, his back to both of us alike."
+    # narrador "Recogió la taza y salió sin esperar respuesta. A los dos nos dio la espalda."
+    narrador "He picked up the cup and left without waiting for an answer. He turned his back on both of us."
 
 # game/02_cap1_beat_Nino.rpy:191
 translate english beat_Nino_07414a08:
@@ -427,10 +427,10 @@ translate english beat_Nino_92202cfd:
     narrador "She set her own cup on the table harder than she needed to."
 
 # game/02_cap1_beat_Nino.rpy:256
-translate english beat_Nino_14dac495:
+translate english beat_Nino_6f98ead5:
 
-    # narrador "El golpe sonó más alto que cualquier cosa que hubiera dicho."
-    narrador "The thud was louder than anything she'd said."
+    # narrador "El golpe retumbó en toda la cocina."
+    narrador "The bang rang through the whole kitchen."
 
 # game/02_cap1_beat_Nino.rpy:258
 translate english beat_Nino_3c92634a:
@@ -463,10 +463,10 @@ translate english beat_Nino_188f960e:
     mc "I know what you told your father."
 
 # game/02_cap1_beat_Nino.rpy:268
-translate english beat_Nino_6a9d7622:
+translate english beat_Nino_96a0fa0d:
 
-    # mc "No lo que piensas de mí. No es lo mismo."
-    mc "Not what you think of me. That's not the same thing."
+    # mc "No lo que piensas de mí."
+    mc "Not what you think of me."
 
 # game/02_cap1_beat_Nino.rpy:273
 translate english beat_Nino_5227317f:
@@ -499,10 +499,10 @@ translate english beat_Nino_982d867f:
     narrador "She dropped onto one of the kitchen stools."
 
 # game/02_cap1_beat_Nino.rpy:286
-translate english beat_Nino_ce240ea5:
+translate english beat_Nino_18d33df3:
 
-    # narrador "Como si las piernas hubieran dejado de sostenerla el tiempo justo."
-    narrador "As if her legs had given out, just for a moment."
+    # narrador "Las piernas ya no le daban."
+    narrador "Her legs just gave out."
 
 # game/02_cap1_beat_Nino.rpy:288
 translate english beat_Nino_4a727e2b:
@@ -683,12 +683,6 @@ translate english beat_Nino_ec7b5a72:
 
     # narrador "Se puso de pie y se acomodó el uniforme."
     narrador "She stood up and straightened her uniform."
-
-# game/02_cap1_beat_Nino.rpy:362
-translate english beat_Nino_f36ae5e0:
-
-    # narrador "Como quien intenta recomponer algo que ya se salió de su sitio."
-    narrador "Like someone trying to put back something that's slipped out of place."
 
 # game/02_cap1_beat_Nino.rpy:367
 translate english beat_Nino_010bf62d:
@@ -1164,11 +1158,11 @@ translate english nino_beat_m5_fd2ab357:
     # mc_pensamiento "No me echó. Tampoco me dejó quedarme de verdad."
     mc_pensamiento "She didn't throw me out. She didn't really let me stay, either."
 
-# game/02_cap1_beat_Nino.rpy:618
-translate english nino_beat_m5_e2fe11d3:
+# game/02_cap1_beat_Nino.rpy:616
+translate english nino_beat_m5_942c1223:
 
-    # mc_pensamiento "Hoy el silencio fue el único acuerdo que cabía entre los dos."
-    mc_pensamiento "Today, silence was the only agreement that fit between the two of us."
+    # mc_pensamiento "Hoy en lo único que coincidimos fue en callarnos."
+    mc_pensamiento "Today the only thing we agreed on was keeping quiet."
 
 # game/02_cap1_beat_Nino.rpy:622
 translate english nino_beat_m5_7abdd6a1:

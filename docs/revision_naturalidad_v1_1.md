@@ -325,3 +325,21 @@ tienen que volver a coincidir con lo que ya se cambió allí (marcadas «hub»).
 | BC-15 | 946 | mc_pensamiento | Hay algo de ese primer día que sigo sin saldar con ella. | muletilla («algo») | Lo de ese primer día todavía no lo he saldado con ella. | ✅ aplicado 27/11 |
 | BC-16 | 962 | mc_pensamiento | «El tiempo que hace falta», contestó. Y lo repitió palabra por palabra. Eso la delató. | hub (ITS-23) | «El tiempo que hace falta», contestó. Luego lo repitió casi igual. Eso la delató. | ✅ aplicado 27/11 |
 | BC-17 | 972 | mc_pensamiento | No era que no supiera resolverlo. Arrastraba el mismo error del medio sin tocarlo. | 4, hub | Sabía resolverlo. Solo arrastraba el mismo error del medio. | ✅ aplicado 27/11 |
+
+## 02_cap1_beat_Nino.rpy
+
+El horario (HOR-18) ya se aplicó. La discusión con Maruo y el desahogo de Nino se quedan igual: suenan hablados y
+`beat_casa` los cita. Los cambios son de narrador y pensamientos.
+
+| ID | línea | personaje | texto actual | problema (n.º) | propuesta | aprobado |
+|---|---|---|---|---|---|---|
+| BN-01 | 91 | mc_pensamiento | No es por mi cara. Es por algo que no tiene nada que ver conmigo. | 4, muletilla («algo») | El problema no es mi cara. Ni siquiera tiene que ver conmigo. | ✅ aplicado 27/11 |
+| BN-02 | 156 | narrador | Dejó la taza sobre la mesa, despacio, sin apurarse. | redundante | Dejó la taza sobre la mesa, sin apurarse. | ✅ aplicado 27/11 |
+| BN-03 | 170 | narrador | Nino miraba entre los dos, sin intervenir por primera vez en toda la conversación. | 5 | Nino nos miraba a los dos y, por una vez, no intervino. | ✅ aplicado 27/11 |
+| BN-04 | 178 | narrador | Lo dijo exactamente con el mismo tono que usó para cerrar la puerta esa primera noche. | 2 | El mismo tono con el que cerró la puerta aquella primera noche. | ✅ aplicado 27/11 |
+| BN-05 | 184 | narrador | Recogió la taza y salió de la cocina sin esperar respuesta, dándonos la espalda a los dos por igual. | 6 (101 car.) | Recogió la taza y salió sin esperar respuesta. A los dos nos dio la espalda. | ✅ aplicado 27/11 |
+| BN-06 | 256 | narrador | El golpe sonó más alto que cualquier cosa que hubiera dicho. | 6 | El golpe retumbó en toda la cocina. | ✅ aplicado 27/11 |
+| BN-07 | 268 | mc | No lo que piensas de mí. No es lo mismo. | 3 | No lo que piensas de mí. | ✅ aplicado 27/11 |
+| BN-08 | 286 | narrador | Como si las piernas hubieran dejado de sostenerla el tiempo justo. | 5, 6 | Las piernas ya no le daban. | ✅ aplicado 27/11 |
+| BN-09 | 362 | narrador | Como quien intenta recomponer algo que ya se salió de su sitio. | 1, 6 | BORRAR | ✅ aplicado 27/11 |
+| BN-10 | 618 | mc_pensamiento | Hoy el silencio fue el único acuerdo que cabía entre los dos. | 6 | Hoy en lo único que coincidimos fue en callarnos. | ✅ aplicado 27/11 |
