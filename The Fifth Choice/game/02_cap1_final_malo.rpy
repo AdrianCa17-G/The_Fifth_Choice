@@ -130,7 +130,7 @@ label final_malo_beat:
 
     nino "Era lo que pedí. ¿Qué esperabas? ¿Que me pusiera a llorar por ti?"
 
-    narrador "Lo dijo con esa mirada fría, como siempre."
+    narrador "La misma mirada fría de siempre."
 
     narrador "Pero la frase le tardó medio segundo de más en salir."
 
@@ -142,9 +142,9 @@ label final_malo_beat:
 
     mc_pensamiento "Tenía que sentirse como ganar. Ella lo sabía. Yo lo sabía."
 
-    mc_pensamiento "Y tenía la cara de quien consigue justo lo que pidió."
+    mc_pensamiento "Y tenía la cara de haber conseguido justo lo que pidió."
 
-    mc_pensamiento "Pero sin un sabor de victoria."
+    mc_pensamiento "Pero no le sabía a victoria."
 
     nino "Es mejor así. Hoy. Antes de que se ilusionen más."
 
@@ -793,9 +793,9 @@ label final_malo_hub3:
     
     mc_pensamiento "Para no dejarlas solas."
 
-    narrador "Me miró una sola vez. No con una mirada de odio."
+    narrador "Me miró una sola vez. Sin odio."
     
-    narrador "Con una mirada de quien sabía que lo qué decía era correcto."
+    narrador "Con la cara de saber que tenía razón."
 
     mc_pensamiento "Ella lo había visto venir antes que nadie." 
     
@@ -1204,7 +1204,7 @@ label final_malo_hub3:
 
     maruo "No te rendiste. Tampoco hiciste nada."
 
-    narrador "Lo dijo sin dureza. Y por eso me dolió más."
+    narrador "Sin dureza. Peor así."
 
     maruo "No te pedí que fueras amable con mis hijas." 
     
@@ -1433,8 +1433,6 @@ label final_malo_hub3:
 
     mc_pensamiento "Ni siquiera hubo un portazo." 
     
-    mc_pensamiento "Eso era lo más cruel."
-
     scene bg_negro
     with fade
 

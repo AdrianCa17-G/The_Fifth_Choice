@@ -193,10 +193,10 @@ translate english final_malo_beat_cb36eaec:
     nino "It's what I asked for. What did you expect? For me to cry over you?"
 
 # game/02_cap1_final_malo.rpy:133
-translate english final_malo_beat_cf67458d:
+translate english final_malo_beat_27f96a68:
 
-    # narrador "Lo dijo con esa mirada fría, como siempre."
-    narrador "She said it with that cold look, like always."
+    # narrador "La misma mirada fría de siempre."
+    narrador "The same cold look as always."
 
 # game/02_cap1_final_malo.rpy:135
 translate english final_malo_beat_87ab12d3:
@@ -229,16 +229,16 @@ translate english final_malo_beat_d7b5dac3:
     mc_pensamiento "It should have felt like winning. She knew it. I knew it."
 
 # game/02_cap1_final_malo.rpy:145
-translate english final_malo_beat_6cd79e28:
+translate english final_malo_beat_825837bb:
 
-    # mc_pensamiento "Y tenía la cara de quien consigue justo lo que pidió."
+    # mc_pensamiento "Y tenía la cara de haber conseguido justo lo que pidió."
     mc_pensamiento "And she had the face of someone who got exactly what she asked for."
 
 # game/02_cap1_final_malo.rpy:147
-translate english final_malo_beat_26418847:
+translate english final_malo_beat_44f99a4f:
 
-    # mc_pensamiento "Pero sin un sabor de victoria."
-    mc_pensamiento "But without any taste of victory."
+    # mc_pensamiento "Pero no le sabía a victoria."
+    mc_pensamiento "But it didn't taste like winning."
 
 # game/02_cap1_final_malo.rpy:149
 translate english final_malo_beat_2a629993:
@@ -1369,16 +1369,16 @@ translate english final_malo_hub3_8bf86b7b:
     mc_pensamiento "So she wouldn't leave them alone."
 
 # game/02_cap1_final_malo.rpy:796
-translate english final_malo_hub3_4214bddf:
+translate english final_malo_hub3_475116c9:
 
-    # narrador "Me miró una sola vez. No con una mirada de odio."
-    narrador "She looked at me just once. Not with hatred."
+    # narrador "Me miró una sola vez. Sin odio."
+    narrador "She looked at me just once. No hate."
 
 # game/02_cap1_final_malo.rpy:798
-translate english final_malo_hub3_c4a9d812:
+translate english final_malo_hub3_86ce4a5f:
 
-    # narrador "Con una mirada de quien sabía que lo qué decía era correcto."
-    narrador "With the look of someone who knew what she'd said had been right."
+    # narrador "Con la cara de saber que tenía razón."
+    narrador "With the face of someone who knew she was right."
 
 # game/02_cap1_final_malo.rpy:800
 translate english final_malo_hub3_ebe6bb72:
@@ -2173,10 +2173,10 @@ translate english final_malo_hub3_0eaa9152:
     maruo "You did not give up. You also did nothing."
 
 # game/02_cap1_final_malo.rpy:1207
-translate english final_malo_hub3_cec8a345:
+translate english final_malo_hub3_aed46552:
 
-    # narrador "Lo dijo sin dureza. Y por eso me dolió más."
-    narrador "He said it without harshness. And that is why it hurt more."
+    # narrador "Sin dureza. Peor así."
+    narrador "No harshness. That made it worse."
 
 # game/02_cap1_final_malo.rpy:1209
 translate english final_malo_hub3_d7e2c93b:
@@ -2609,12 +2609,6 @@ translate english final_malo_hub3_49806edb:
 
     # mc_pensamiento "Ni siquiera hubo un portazo."
     mc_pensamiento "There wasn't even a slam."
-
-# game/02_cap1_final_malo.rpy:1436
-translate english final_malo_hub3_2098726d:
-
-    # mc_pensamiento "Eso era lo más cruel."
-    mc_pensamiento "That was the cruelest part."
 
 # game/02_cap1_final_malo.rpy:1453
 translate english final_malo_hub3_ee0e4fa3:
