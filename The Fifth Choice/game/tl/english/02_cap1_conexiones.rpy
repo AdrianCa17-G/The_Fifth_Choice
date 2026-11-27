@@ -2224,7 +2224,7 @@ translate english cap1_interconexion_2_f34110c4:
 translate english cap1_interconexion_2_6d9919e6:
 
     # mc "Café en un tupper. Y listo."
-    mc "Coffee in a Tupperware. Done."
+    mc "Tupperware coffee. Done."
 
 # game/02_cap1_conexiones.rpy:1368
 translate english cap1_interconexion_2_f06e8aec:
@@ -6974,7 +6974,7 @@ translate english strings:
 
     # game/02_cap1_conexiones.rpy:1365
     old "Café en un tupper. Y listo."
-    new "Coffee in a Tupperware. Done."
+    new "Tupperware coffee. Done."
 
     # game/02_cap1_conexiones.rpy:1378
     old "Nada. Con estas ojeras ya voy servido."
@@ -6990,11 +6990,11 @@ translate english strings:
 
     # game/02_cap1_conexiones.rpy:1984
     old "En si las cinco tienen un grupo de chat sobre mí."
-    new "Whether the five of them have a group chat about me."
+    new "Whether all five have a group chat about me."
 
     # game/02_cap1_conexiones.rpy:1994
     old "En nada. Solo camino."
-    new "Nothing. Just walking."
+    new "Nothing. I just walk."
 
     # game/02_cap1_conexiones.rpy:2395
     old "Departamento"
@@ -7018,15 +7018,15 @@ translate english strings:
 
     # game/02_cap1_conexiones.rpy:3962
     old "«Duerman bien. Recuerden que no es el fin del mundo.»"
-    new "\"Sleep well. Remember, it's not the end of the world.\""
+    new "\"Sleep well. It's not the end of the world.\""
 
     # game/02_cap1_conexiones.rpy:3970
     old "«Confío en las cinco. Pase lo que pase el lunes.»"
-    new "\"I trust all five of you. Whatever happens Monday.\""
+    new "\"I trust you five. Whatever happens Monday.\""
 
     # game/02_cap1_conexiones.rpy:3978
     old "«Si algo sale mal, la culpa es mía. Para eso me pagan.»"
-    new "\"If anything goes wrong, it's on me. That's what I'm paid for.\""
+    new "\"If it goes wrong, blame me. That's what I'm paid for.\""
 
     # game/02_cap1_conexiones.rpy:4091
     old "Casa de Futaro"

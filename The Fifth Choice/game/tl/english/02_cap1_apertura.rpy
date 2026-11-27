@@ -1842,11 +1842,11 @@ translate english strings:
 
     # game/02_cap1_apertura.rpy:109
     old "Preguntarme qué cambió desde ayer."
-    new "Wonder what changed since yesterday."
+    new "Wonder what changed overnight."
 
     # game/02_cap1_apertura.rpy:117
     old "Agradecer el silencio."
-    new "Be grateful for the silence."
+    new "Welcome the silence."
 
     # game/02_cap1_apertura.rpy:528
     old "La verdad: se pusieron de acuerdo para fallar."
@@ -1858,5 +1858,5 @@ translate english strings:
 
     # game/02_cap1_apertura.rpy:568
     old "Pedir que hablemos de otra cosa."
-    new "Ask to talk about something else."
+    new "Ask to change the subject."
 

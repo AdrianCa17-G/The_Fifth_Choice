@@ -2356,7 +2356,7 @@ translate english prologo_fad74b59:
 translate english prologo_a2ceb214:
 
     # mc "Porque me pagan."
-    mc "Because I get paid."
+    mc "Because it pays."
 
 # game/01_prologo.rpy:1249
 translate english prologo_34660c5f:
@@ -2576,7 +2576,7 @@ translate english strings:
 
     # game/01_prologo.rpy:261
     old "El dinero. Sin adornos."
-    new "The money. Plain and simple."
+    new "The money. No frills."
 
     # game/01_prologo.rpy:269
     old "La cara de Raiha."
@@ -2588,7 +2588,7 @@ translate english strings:
 
     # game/01_prologo.rpy:490
     old "Sacar los apuntes. No le debo conversación."
-    new "Take out my notes. I owe her no conversation."
+    new "Notes out. I owe her no conversation."
 
     # game/01_prologo.rpy:507
     old "Explicarle por qué fui tan seco."
@@ -2596,11 +2596,11 @@ translate english strings:
 
     # game/01_prologo.rpy:1242
     old "Porque me pagan."
-    new "Because I get paid."
+    new "Because it pays."
 
     # game/01_prologo.rpy:1256
     old "Porque no dejo problemas sin resolver."
-    new "Because I don't leave problems unsolved."
+    new "Because I finish every problem."
 
     # game/01_prologo.rpy:1268
     old "No contestarle. Recoger los cuadernos."

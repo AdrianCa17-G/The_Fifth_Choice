@@ -2170,5 +2170,5 @@ translate english strings:
 
     # game/02_cap1_beat_casa.rpy:341
     old "Cerrar la libreta."
-    new "Close the notebook."
+    new "Shut the notebook."
 

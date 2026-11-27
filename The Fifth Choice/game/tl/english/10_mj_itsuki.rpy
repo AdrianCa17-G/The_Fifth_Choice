@@ -196,5 +196,5 @@ translate english strings:
 
     # game/10_mj_itsuki.rpy:879
     old "Con boost (media)"
-    new "With boost (medium)"
+    new "Boost (medium)"
 

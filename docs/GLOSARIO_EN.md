@@ -388,3 +388,21 @@ C6 cubre desde `e6_despues` (tarde del viernes) hasta `e6_retrato` (cierre del c
 10. **Pistas de los finales:** deben caber en 2 líneas como en español. Nino: «Quien más distancia pone, en el fondo solo espera a alguien
     que no se rinda con ella.» → "Behind all that distance, she's only waiting for someone who won't give up on her."
 11. **Créditos:** sin mencionar herramientas de IA de texto; mismo texto en `tl/english/16_creditos.rpy` y en la sección inglesa de `CREDITOS.md`.
+
+---
+
+## 17. Control de calidad E1 (26/11/2026)
+
+1. **Revisor:** `python tools/revisar_traduccion.py [idioma]` (english por defecto). Las reglas de §1–§16 que se pueden comprobar
+   solas (sin honoríficos, «main character», «report card», inglés americano, «Team Quintuplets + Tutor!», nombres) están en la tabla
+   `GLOSARIO` del script: si se añade una regla aquí, se añade también allí.
+2. **Opciones de menú más cortas que el español** (regla de §1), acortadas en E1. Las que se repiten en otra escena van igual en las dos:
+   - «Sure, hand it over.» (Yotsuba, tibia) = la cita de Yotsuba en el Evento 6: *He said "sure, hand it over"…*
+   - «Because it pays.» (prólogo) y «Tupperware coffee. Done.» (interconexión 2): el protagonista repite la opción en voz alta.
+   - Los tres mensajes del sábado son también las burbujas del chat (`15_chat_grupo.rpy`): «Sleep well. It's not the end of the world.» ·
+     «I trust you five. Whatever happens Monday.» · «If it goes wrong, blame me. That's what I'm paid for.»
+   - El resto: «The money. No frills.» · «Notes out. I owe her no conversation.» · «Because I finish every problem.» ·
+     «Wonder what changed overnight.» · «Welcome the silence.» · «Ask to change the subject.» · «Shut the notebook.» ·
+     «Whether all five have a group chat about me.» · «Nothing. I just walk.» · «Just point out where to look.» ·
+     «Take the notebook, solve it. Save her the afternoon.» · «Carry her basket without a word.»
+3. **«protagonist» → «main character»** también en la narración del final malo (pregunta uno del examen de Yotsuba), como en §14.4.

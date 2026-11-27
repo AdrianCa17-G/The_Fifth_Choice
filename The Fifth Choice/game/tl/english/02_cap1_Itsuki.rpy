@@ -1032,7 +1032,7 @@ translate english strings:
 
     # game/02_cap1_Itsuki.rpy:280
     old "Señalarle dónde mirar. Solo eso."
-    new "Point out where to look. Nothing more."
+    new "Just point out where to look."
 
     # game/02_cap1_Itsuki.rpy:283
     old "¿Quieres que lo revisemos desde el principio?"
@@ -1040,5 +1040,5 @@ translate english strings:
 
     # game/02_cap1_Itsuki.rpy:286
     old "Quitarle el cuaderno y resolverlo. Le ahorro la tarde."
-    new "Take the notebook and solve it. Save her the afternoon."
+    new "Take the notebook, solve it. Save her the afternoon."
 

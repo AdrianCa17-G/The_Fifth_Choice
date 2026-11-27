@@ -1114,7 +1114,7 @@ translate english final_malo_hub3_6469a435:
 translate english final_malo_hub3_62ca4e78:
 
     # narrador "La pregunta uno preguntaba qué siente el protagonista cuando se queda solo."
-    narrador "Question one asked what the protagonist feels when left alone."
+    narrador "Question one asked what the main character feels when left alone."
 
 # game/02_cap1_final_malo.rpy:676
 translate english final_malo_hub3_c63ad062:

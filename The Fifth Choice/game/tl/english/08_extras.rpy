@@ -4,31 +4,31 @@
 translate english extra_ichika_0e1ab093:
 
     # narrador "Extra de Ichika: próximamente."
-    narrador "Extra de Ichika: próximamente."
+    narrador "Ichika's extra: coming soon."
 
 # game/08_extras.rpy:821
 translate english extra_nino_8136f4f2:
 
     # narrador "Extra de Nino: próximamente."
-    narrador "Extra de Nino: próximamente."
+    narrador "Nino's extra: coming soon."
 
 # game/08_extras.rpy:826
 translate english extra_miku_c2fae817:
 
     # narrador "Extra de Miku: próximamente."
-    narrador "Extra de Miku: próximamente."
+    narrador "Miku's extra: coming soon."
 
 # game/08_extras.rpy:831
 translate english extra_yotsuba_1dd4ed1e:
 
     # narrador "Extra de Yotsuba: próximamente."
-    narrador "Extra de Yotsuba: próximamente."
+    narrador "Yotsuba's extra: coming soon."
 
 # game/08_extras.rpy:836
 translate english extra_itsuki_d551ac30:
 
     # narrador "Extra de Itsuki: próximamente."
-    narrador "Extra de Itsuki: próximamente."
+    narrador "Itsuki's extra: coming soon."
 
 translate english strings:
 

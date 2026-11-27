@@ -1198,7 +1198,7 @@ translate english strings:
 
     # game/02_cap1_Nino.rpy:335
     old "Cargarle la cesta, sin decir nada."
-    new "Carry her basket, without saying anything."
+    new "Carry her basket without a word."
 
     # game/02_cap1_Nino.rpy:338
     old "Yo sí voy a durar."

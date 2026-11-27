@@ -1252,7 +1252,7 @@ translate english strings:
 
     # game/02_cap1_Yotsuba.rpy:334
     old "Claro, dame el cronómetro."
-    new "Sure, give me the stopwatch."
+    new "Sure, hand it over."
 
     # game/02_cap1_Yotsuba.rpy:337
     old "Si correr es lo tuyo, concéntrate en eso."

@@ -94,7 +94,7 @@ translate english strings:
 
     # game/15_chat_grupo.rpy:48
     old "Duerman bien. Recuerden que no es el fin del mundo."
-    new "Sleep well. Remember, it's not the end of the world."
+    new "Sleep well. It's not the end of the world."
 
     # game/15_chat_grupo.rpy:48
     old "¡¡Ella ya está lista!!"
@@ -102,7 +102,7 @@ translate english strings:
 
     # game/15_chat_grupo.rpy:48
     old "Confío en las cinco. Pase lo que pase el lunes."
-    new "I trust all five of you. Whatever happens Monday."
+    new "I trust you five. Whatever happens Monday."
 
     # game/15_chat_grupo.rpy:48
     old "¡¡¡¡¡GRACIAS!!!!!!"
@@ -110,7 +110,7 @@ translate english strings:
 
     # game/15_chat_grupo.rpy:48
     old "Si algo sale mal, la culpa es mía. Para eso me pagan."
-    new "If anything goes wrong, it's on me. That's what I'm paid for."
+    new "If it goes wrong, blame me. That's what I'm paid for."
 
     # game/15_chat_grupo.rpy:48
     old "¡La culpa no se paga, se comparte!"

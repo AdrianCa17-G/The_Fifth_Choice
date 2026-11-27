@@ -898,7 +898,7 @@ translate english e6_yotsuba_mono_tibia_8e8444c6:
 translate english e6_yotsuba_mono_tibia_e43ad275:
 
     # yotsuba_int "Dijo «claro, dame el cronómetro» sin preguntar nada más."
-    yotsuba_int "He said \"sure, give me the stopwatch\" and didn't ask anything else."
+    yotsuba_int "He said \"sure, hand it over\" and didn't ask anything else."
 
 # game/02_cap1_evento6.rpy:660
 translate english e6_yotsuba_mono_tibia_811039db:
