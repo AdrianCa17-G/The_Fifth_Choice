@@ -581,3 +581,49 @@ Segunda pasada, leyendo todo el diálogo: líneas poéticas o de molde.
 | 02_cap1_final_malo:732 | Solo que esta vez la función no era para nadie. | Solo que esta vez no actuaba para nadie. |
 | 02_cap1_final_malo:1103 | Cada vez que alguien necesitaba que me quedara callado, hablé. | Hablé cuando debía callarme, y me callé cuando debía hablar. |
 | 02_cap1_final_malo:1105 | Y cada vez que necesitaba hablar, me quedé callado. | BORRADA |
+
+## Lectura completa de hubs de las chicas, apertura y beats (27/11, ✅ aplicado)
+
+Segunda pasada, leyendo todo el diálogo: líneas poéticas o de molde.
+
+| archivo:línea | antes | ahora |
+|---|---|---|
+| 02_cap1_Ichika:115 | Su voz normal tiene dirección de escena. | Su voz normal suena ensayada. |
+| 02_cap1_Ichika:117 | Esta no tenía ninguna. | Esta no. |
+| 02_cap1_Ichika:369 | Guardó el guion en la mochila, todavía sin la actuación completa de vuelta. | Guardó el guion en la mochila, todavía sin volver a actuar del todo. |
+| 02_cap1_Ichika:449 | La sonrisa no desapareció del todo, pero algo detrás de ella sí. | La sonrisa siguió ahí, pero ya no era la misma. |
+| 02_cap1_Ichika:625 | Hoy solo le enseñé a esconder mejor la cuenta. | Hoy solo le enseñé a disimular mejor. |
+| 02_cap1_Itsuki:144 | Cuando Itsuki tiene la respuesta, no repite la respuesta con la misma frase. | Cuando Itsuki tiene la respuesta, no la repite igual: la mejora. |
+| 02_cap1_Itsuki:146 | La cambia. | BORRADA |
+| 02_cap1_Itsuki:148 | La corrige. | BORRADA |
+| 02_cap1_Itsuki:150 | La mejora. | BORRADA |
+| 02_cap1_Itsuki:152 | Esta vez solo la dejó ahí. | Esta vez la repitió tal cual. |
+| 02_cap1_Itsuki:344 | Sonó a dato, no a triunfo. Seguía sin mirarme. | No sonaba contenta. Seguía sin mirarme. |
+| 02_cap1_Miku:494 | Y una nota es otra forma de decirle que ya puede dejar de hablar. | Y para ella, una nota significa que ya puede callarse. |
+| 02_cap1_Nino:264 | Más que a ella, cuida a sus hermanas de algo que ya les pasó demasiadas veces. | Más que a sí misma, protege a sus hermanas de algo que ya les pasó demasiado. |
+| 02_cap1_Nino:548 | Y esta vez no sonó a que me odiara. | Esta vez no parecía odio. |
+| 02_cap1_Nino:550 | Sonó a que no sabía cómo explicarlo sin decir de más. | Parecía que no sabía explicarlo sin hablar de más. |
+| 02_cap1_Nino:579 | Me trató como algo todavía sin decidir. | Ahora todavía no sabe qué pensar de mí. |
+| 02_cap1_Yotsuba:231 | Sonrió. Era una sonrisa buena, sin fisuras visibles. | Sonrió. Parecía una sonrisa de verdad. |
+| 02_cap1_Yotsuba:488 | Se rió de su propio chiste. Era una risa fácil, sin trampa. | Se rió de su propio chiste, con ganas. |
+| 02_cap1_Yotsuba:558 | Y ahora mismo no sé si le di una instrucción o una sentencia. | Y ahora mismo no sé si eso le hizo bien o mal. |
+| 02_cap1_apertura:130 | No era que me odiara. | BORRADA |
+| 02_cap1_apertura:132 | Era que iba a odiarme desde las 8 hasta las 3. | Ahora iba a odiarme desde las 8 hasta las 3. |
+| 02_cap1_apertura:136 | Sin pausa. Sin cambio de escenario. | Sin descansos. |
+| 02_cap1_apertura:253 | No es que no supieran hacerlo. | Saben hacerlo. |
+| 02_cap1_apertura:255 | Es que se pusieron de acuerdo en cómo hacerlo mal. | Solo se pusieron de acuerdo para hacerlo mal. |
+| 02_cap1_apertura:430 | Nadie pide perdón por decir la verdad, salvo que ya le haya salido caro antes. | Si pide perdón por decir la verdad, es que ya le salió caro antes. |
+| 02_cap1_apertura:666 | Lo dijo muy segura. Casi. | Sonaba segura. Casi. |
+| 02_cap1_beat_Itsuki:102 | Sin la hostilidad de siempre. Más dato que queja. | Sin la hostilidad de siempre. |
+| 02_cap1_beat_Nino:624 | Ella tuvo que ver la misma puerta cerrarse dos veces en una tarde. | Le cerraron la conversación dos veces en una tarde. |
+| 02_cap1_beat_casa:38 | Faltaban horas, no días. | Solo faltaban horas. |
+| 02_cap1_beat_casa:66 | No sonó a reproche. Ya llevaba la cuenta. | Ya llevaba la cuenta. |
+| 02_cap1_beat_casa:273 | Solo que ahora sé lo que cuesta cada nombre. | Solo que ahora sé quién es cada una. |
+| 02_cap1_beat_casa:289 | Todo el peso de mis decisiones caerá mañana. | Mañana se verá si decidí bien. |
+| 02_cap1_beat_casa:372 | Pensé que era cortesía. Era un aviso. | Resultó que lo decía en serio. |
+| 02_cap1_beat_casa:392 | Dijo «perdí la tarde entera» con una voz que no tenía dirección de escena. | Dijo «perdí la tarde entera» sin nada de teatro en la voz. |
+| 02_cap1_beat_casa:452 | Una cabeza así no se improvisa. Y ella ni siquiera lo considera un talento. | Eso no le sale a cualquiera. Y ella ni siquiera lo considera un talento. |
+| 02_cap1_beat_casa:533 | No desconfía de mí. Desconfía del puesto. | Su desconfianza es con cualquiera que ocupe este puesto. |
+| 02_cap1_beat_casa:867 | Le confirmé la única cosa de la que nadie debería haberla convencido. | Le di la razón en lo peor que cree de sí misma. |
+| 02_cap1_beat_casa:903 | Solo la sonrisa que le pone a todo, incluso a lo que no debería sonreírse. | Solo conozco la sonrisa. Se la pone hasta cuando no toca. |
+| 02_cap1_beat_casa:1032 | Esas semanas la estaban gastando a ella tanto como a mí. | Esas semanas la estaban cansando tanto como a mí. |
