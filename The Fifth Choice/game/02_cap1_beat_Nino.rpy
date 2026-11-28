@@ -249,7 +249,7 @@ label beat_Nino:
 
     narrador "Entré del todo a la cocina. Ella no se movió de donde estaba."
 
-    play sound audio.sfx_taza_mesa volume 2.0
+    play sound audio.sfx_taza_mesa volume 1.5
 
     narrador "Dejó su propia taza sobre la mesa con más fuerza de la necesaria." 
     
@@ -280,6 +280,8 @@ label beat_Nino:
 
     scene cg_nino_grieta_cocina
     with dissolve
+
+    play sound audio.sfx_silla volume 1.5
 
     narrador "Se sentó en uno de los bancos de la cocina, de golpe."
 

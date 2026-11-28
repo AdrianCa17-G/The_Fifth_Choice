@@ -241,6 +241,8 @@ label hub_Ichika:
 
     narrador "Se sentó en una de las sillas plegables."
 
+    play sound audio.sfx_hoja
+
     narrador "Con el guion otra vez en la mano, y pasó una página sin leerla."
 
     ichika "Bueno, ¿viniste a verme actuar o viniste a regañarme?"

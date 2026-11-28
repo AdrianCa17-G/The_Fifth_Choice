@@ -220,7 +220,7 @@ label cap1_apertura:
 
     mc "Página doce. Empezamos por lo más simple del temario."
 
-    play sound audio.sfx_papel_mesa volume 2.5
+    play sound audio.sfx_papel_mesa volume 1.5
 
     narrador "Repartí el ejercicio."
     

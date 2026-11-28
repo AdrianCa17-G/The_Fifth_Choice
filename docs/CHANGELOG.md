@@ -13,6 +13,10 @@
 ### Música
 - Cortes y cambios de pista para que no se repita tanto: la oferta de Isanari, su llegada en el beat casa, el despertar de Ichika, la víspera de exámenes, la azotea de Itsuki, el camino al instituto y la rama de clima mixto.
 
+### Efectos de sonido
+- Silla, bolsa, papel y taza ya no suenan tan fuerte como un portazo; el lápiz de Itsuki se oye sobre la música.
+- Efectos nuevos en siete momentos que el texto narraba en silencio, y el timbre del examen de Miku suena cuando se menciona.
+
 ### Minijuegos
 - Cadena de conversiones de Itsuki más amable: en difícil, 4 pasos y 75 s (antes 5 y 55 s), 4 entregas erróneas y aviso de resultado raro; en media, 3 pasos y 100 s, 6 entregas. La asistida no cambia.
 

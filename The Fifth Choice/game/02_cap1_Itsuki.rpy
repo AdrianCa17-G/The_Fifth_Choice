@@ -311,7 +311,7 @@ label itsuki_m4a:
 
     mc "No dije que no."
 
-    play sound audio.sfx_lapiz_mesa
+    play sound audio.sfx_lapiz_mesa volume 2.0
 
     narrador "Tachó la línea entera, no solo el número."
 
@@ -425,7 +425,7 @@ label itsuki_m4c:
 
     mc "El error está en el segundo paso, la conversión."
 
-    play sound audio.sfx_lapiz_mesa
+    play sound audio.sfx_lapiz_mesa volume 2.0
 
     narrador "Lo resolví ahí mismo, de pie, con su propio lápiz."
 

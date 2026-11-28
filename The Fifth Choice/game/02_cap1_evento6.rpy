@@ -723,6 +723,8 @@ label e6_yotsuba_mj:
 
     stop music fadeout 3.0
 
+    play sound audio.sfx_lapiz_mesa volume 2.0
+
     narrador "Yotsuba soltó el lápiz un segundo y respiró hondo, como se respira al acabar una serie."
 
     yotsuba_int "En un relevo todas corren lo mismo. Ninguna gana sola."
@@ -1344,6 +1346,8 @@ label e6_nino_mj:
 
     stop music fadeout 3.0
 
+    play sound audio.sfx_lapiz_mesa volume 1.5
+
     narrador "Nino dejó el lápiz sobre la mesa con cuidado."
 
     if e6_res == "saltado":
@@ -1412,7 +1416,7 @@ label e6_nino_gesto_calida:
 
     nino "Sí."
 
-    play sound audio.sfx_silla volume 2.5
+    play sound audio.sfx_silla volume 1.5
 
     narrador "Se levantó, dejó la hoja en la mesa del profesor y fue hacia la puerta sin mirar atrás."
 
@@ -2055,6 +2059,8 @@ label e6_miku_promesa:
 
 label e6_miku_gesto_calida:
 
+    play sound audio.sfx_timbre volume 1.5
+
     narrador "Cuando sonó el timbre, su hoja estaba llena hasta el último renglón."
 
     narrador "Sin un solo borrón."
@@ -2072,8 +2078,6 @@ label e6_miku_gesto_calida:
     narrador "Al final los recogió. Se los colgó al cuello."
 
     narrador "Sin subírselos."
-
-    play sound audio.sfx_timbre volume 1.5
 
     return
 
@@ -3499,6 +3503,8 @@ label e6_nino_eco_calida:
 
 
 label e6_nino_eco_tibia:
+
+    play sound audio.sfx_bolsa volume 1.5
 
     narrador "Nino llegó con una bolsa del supermercado en cada mano, como si el boletín fuera lo de menos."
 

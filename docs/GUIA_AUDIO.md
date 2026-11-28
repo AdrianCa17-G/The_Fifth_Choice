@@ -245,15 +245,16 @@ se delate la repetición.
 
 | Nivel | Qué |
 |---|---|
-| 2.5 | Portazo de Itsuki, los tres suaves de origen (papel, silla, bolsa) y el lápiz del beat casa |
-| 2.0 | Hoja, la puerta de Nino en la escena 7 y la taza de Nino |
+| 2.5 | Portazo de Itsuki y el lápiz del beat casa |
+| 2.0 | Hoja, la puerta de Nino en la escena 7, el lápiz en el evento de Itsuki y el de Yotsuba en el evento 6 |
 | 1.75 | Pasos de Yotsuba (pisadas_pista, con loop) |
-| 1.5 | Campana, toque de puerta, pomo, puerta que abre Ichika, mochila y celular |
-| 1.2 | Las tres puertas que se cierran después de la de Nino |
+| 1.5 | Campana, toque de puerta, pomo, puerta que abre Ichika, mochila, celular, papel, bolsa, la silla fuerte, la taza de Nino y el lápiz de Nino en el evento 6 |
+| 1.2 | Las tres puertas que se cierran después de la de Nino y la puerta de la azotea del prólogo |
 | 1.0 | La puerta de Maruo, su taza, y la puerta de Isanari en el beat casa |
 
-Los tres suaves están arriba **porque el archivo es flojo, no porque la escena lo
-pida**. La de Maruo está abajo a propósito: cierra «con la calma de quien ya dio
+Papel, silla y bolsa estaban a 2.5 porque sus archivos eran flojos. Ya normalizados,
+a ese número sonaban casi como el portazo y recortaban: desde v1.1 van a 1.5, igual
+que la taza de Nino (antes 2.0). La de Maruo está abajo a propósito: cierra «con la calma de quien ya dio
 una orden», y que suene bajísimo comparado con todo lo demás dice exactamente eso.
 
 **Lo que no puede pasar es que un pomo suene como un portazo.** Si hay que subir
@@ -264,8 +265,8 @@ algo, subir el archivo, no el número.
 **Los volúmenes se calibran contra la música que suena debajo, no en abstracto.**
 El papel se puso primero a 0.4 razonando sobre el papel solo, y estaba mal: `cena`
 es guitarra acústica y ocupa su mismo rango de frecuencias. No era cuestión de
-nivel sino de enmascaramiento. (Desde v1.1 en ese punto entra `extraneza`; el 2.5
-se calibró contra `cena`.)
+nivel sino de enmascaramiento. (Desde v1.1 en ese punto entra `extraneza` y el
+papel va a 1.5.)
 
 ### Nivel global de la mezcla
 

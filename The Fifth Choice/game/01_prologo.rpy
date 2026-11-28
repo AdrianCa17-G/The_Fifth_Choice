@@ -165,7 +165,7 @@ label prologo:
     play music extraneza fadeout 1.5 fadein 2.0
 
     ## Compite con `cena`, guitarra acustica en su mismo rango.
-    play sound audio.sfx_papel_mesa volume 2.5
+    play sound audio.sfx_papel_mesa volume 1.5
 
     narrador "De repente, mi padre, Isanari, entró en el comedor y dejó caer un papel sobre la mesa."
 
@@ -403,7 +403,7 @@ label prologo:
     with disolucion_lenta
 
     ## Compite con `incomodo`. El arrastre no tiene ataque y se disuelve.
-    play sound audio.sfx_silla volume 2.5
+    play sound audio.sfx_silla volume 1.5
 
     narrador "La chica apretó los dientes y masticó el último bocado a la fuerza." 
     
@@ -448,6 +448,8 @@ label prologo:
     mc_pensamiento "Pero haber sido tan tajante con la chica nueva me dejó un mal sabor de boca el resto del día."
 
     narrador "Mientras reflexionaba, mi momento de tranquilidad duró poco."
+
+    play sound audio.sfx_puerta_abre volume 1.2
 
     narrador "Apenas diez minutos después, la puerta de la azotea se abrió."
 
@@ -834,7 +836,7 @@ label prologo:
     with dissolve
 
     ## Compite con `caos`, que va a tope en esta escena.
-    play sound audio.sfx_bolsa volume 2.5
+    play sound audio.sfx_bolsa volume 1.5
 
     narrador "Se detuvo en seco a mitad del pasillo, congelada con la bolsa del supermercado en la mano."
 
