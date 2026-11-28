@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.1 · 27/11/2026
+## v1.1 · 28/11/2026
 
 ### Nuevo
 - Traducción completa al inglés: diálogo, menús, interfaz, minijuegos, chat de grupo, boletín y créditos.
@@ -22,11 +22,13 @@
 
 ### Correcciones
 - Una variable sin valor inicial podía mostrar la pantalla de error de Ren'Py en un diálogo de las interconexiones.
+- El mapa de tardes ya no tiene que abrir las cinco imágenes para medirlas la primera vez que aparece (carga más ligera al empezar el Capítulo 1).
 
 ### Arte
 - Sprites de Yotsuba rehechos, con el lazo completo.
 - Yotsuba e Itsuki ajustadas a la escala del resto de las hermanas.
 - Sprites nuevos de Isanari, con las gafas en la cabeza en las dos expresiones.
+- Logo del menú rehecho con las siluetas nuevas de Yotsuba e Itsuki.
 
 ### Correcciones en español
 - Tildes, puntuación y erratas en diálogos y en los títulos de los Extras.

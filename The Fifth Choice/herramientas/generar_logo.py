@@ -26,12 +26,15 @@ ANCHO, ALTO = 1400, 1000
 
 def silueta(hermana, color):
     ruta = os.path.join(JUEGO, "images", "sprites", hermana + "_sprites", hermana + "_neutral.png")
-    sprite = Image.open(ruta).convert("RGBA").crop((100, 0, 660, 430))
+    entero = Image.open(ruta).convert("RGBA")
+    # Filas añadidas sobre el lienzo 760×930 (lazo, ahoge), como sprite_busto en 07_ui.rpy
+    extra = max(0, entero.height - 930)
+    sprite = entero.crop((100, 0, 660, 430 + extra))
     w, h = sprite.size
     desvanecer = Image.new("L", (w, h), 255)
     px = desvanecer.load()
-    for y in range(300, h):
-        v = int(255 * (1 - (y - 300) / float(h - 300)))
+    for y in range(300 + extra, h):
+        v = int(255 * (1 - (y - 300 - extra) / float(h - 300 - extra)))
         for x in range(w):
             px[x, y] = v
     alfa = ImageChops.multiply(sprite.getchannel("A"), desvanecer)
@@ -39,7 +42,7 @@ def silueta(hermana, color):
     forma.putalpha(alfa)
     borde = Image.new("RGBA", (w, h), BLANCO + (255,))
     borde.putalpha(alfa.filter(ImageFilter.MaxFilter(9)))
-    return Image.alpha_composite(borde, forma)
+    return Image.alpha_composite(borde, forma), extra
 
 
 def flor_pequena(d, cx, cy, r, color):
@@ -73,9 +76,10 @@ def componer():
     paso = 215
     x0 = (ANCHO - (ancho_s + paso * 4)) // 2
     for idx in [0, 4, 1, 3, 2]:
-        s = silueta(HERMANAS[idx], COLORES[idx])
+        s, extra = silueta(HERMANAS[idx], COLORES[idx])
         s = s.resize((ancho_s, int(s.height * ancho_s / s.width)), Image.LANCZOS)
-        lienzo.alpha_composite(s, (x0 + idx * paso, 170))
+        sube = round(extra * ancho_s / 560)  # 560 = ancho del recorte
+        lienzo.alpha_composite(s, (x0 + idx * paso, 170 - sube))
 
     # título con resplandor rosa
     titulo = "Fifth Choice"
