@@ -148,13 +148,17 @@ La regla de «solo dos veces» vale únicamente para el prólogo.
 
 Suenan al llegar al hub de cada una, en su reacción de las interconexiones 
 y en su reflexión del beat casa. Cuando llega la decisión, descubrimiento los reemplaza.
+En el evento de Ichika su tema se calla cuando despierta sin actuar (`stop music`) y
+vuelve en el plano de la sala, cuando vuelve la actuación.
 
 ### `guardia` y `tregua`
 
 **guardia:** pista exclusiva de las escenas de tensión intensa (hoy, el beat de Nino). 
 Suena de principio a fin de la escena.
 
-**tregua:** beat de Itsuki, a volumen normal. Al entrar se corta el viento (stop ambiente).
+**tregua:** beat de Itsuki, a volumen normal. Entra sobre el viento, porque la línea
+siguiente dice que sigue soplando; el viento se corta (`stop ambiente`) en el plano
+siguiente de la azotea.
 
 **derrota:** además de los finales malos, se usa en la interconexión 4 porque es de
 las menos usadas y no suena a fracaso total.
@@ -260,7 +264,8 @@ algo, subir el archivo, no el número.
 **Los volúmenes se calibran contra la música que suena debajo, no en abstracto.**
 El papel se puso primero a 0.4 razonando sobre el papel solo, y estaba mal: `cena`
 es guitarra acústica y ocupa su mismo rango de frecuencias. No era cuestión de
-nivel sino de enmascaramiento.
+nivel sino de enmascaramiento. (Desde v1.1 en ese punto entra `extraneza`; el 2.5
+se calibró contra `cena`.)
 
 ### Nivel global de la mezcla
 
@@ -429,11 +434,38 @@ primera.
 |---|---|
 | Cuarto de Futaro | `hogar` siempre |
 | Llegada al hub y reacción de la hermana	| Su tema |
+| Mapa de los hubs | `hub` |
 | Monólogo previo a la decisión hasta el cierre	| `descubrimiento` |
 | Escena de tensión intensa (beat de Nino) | `guardia` |
-| Azotea del beat de Itsuki	| `Viento`, luego `tregua` (corta el viento) |
+| Azotea del beat de Itsuki	| Viento, `tregua` encima y en el plano siguiente se corta el viento |
 | Maruo	| `contrato` |
-| Quejas de la interconexión 6	| `incomodo` |
-| Después de las quejas y domingo	| `cotidiano` en clima buena o mixta, silencio en mala |
+| Víspera de exámenes en el aula (interconexión 5) | `extraneza` |
+| Beat casa: cena con Raiha | `cena`; silencio desde que llega Isanari |
+| Camino al instituto de la interconexión 4 | Silencio |
+| Quejas de la interconexión 6	| `derrota`; el cierre de Itsuki, `incomodo` |
+| Estudio en el departamento tras las quejas | `cotidiano` en clima buena, `extraneza` en mixta, `derrota` en mala |
+| Domingo al salir | `cotidiano` en clima buena, `extraneza` en mixta, silencio en mala |
 | Exámenes | Sin música, `amb_reloj` bajo |
 | Rol de créditos y «Continuará» (`16_creditos.rpy`) | `main_theme`, sigue sin cortes hasta el menú principal |
+
+### Usos por pista
+
+| Pista | Dónde suena |
+|---|---|
+| `hogar` | Prólogo (dos veces), cuarto de Futaro en el Capítulo 1, chat de grupo |
+| `cena` | Cena del prólogo hasta la oferta, apertura, interconexión 2, beat casa hasta Isanari, vuelta a casa del evento 6 |
+| `cotidiano` | Instituto y edificio en el prólogo, apertura, interconexiones 1, 3, 5 y 6, estudio y domingo en clima buena, evento 6 |
+| `extraneza` | Oferta de Isanari, revelación de las cinco (prólogo), apertura, interconexiones 4 y 5, rama mixta de la 6 |
+| `incomodo` | Aula del prólogo, apertura, interconexiones 1, 2, 5 y 6 |
+| `caos` | Prólogo (portazo de Itsuki) y apertura (departamento) |
+| `contrato` | Escenas de Maruo |
+| `derrota` | Prólogo, interconexiones 4 y 6, evento 6, final malo |
+| `descubrimiento` | Decisión de los cinco eventos de hermana y monólogos del evento 6 |
+| `guardia` | Beat de Nino |
+| `tregua` | Beat de Itsuki |
+| `hub` | Mapa de los tres hubs |
+| `main_theme` | Menú principal, mesa del evento 6, créditos |
+
+Una pista de 60-75 s (`cena`, `cotidiano`, `hub`, `ichika_tema`, el viento) no debe
+dar más de unas tres vueltas seguidas, a 4 s por línea de diálogo. Quedan apenas por
+encima el discurso del evento 6 (3,2) y la azotea de Itsuki (3,3).

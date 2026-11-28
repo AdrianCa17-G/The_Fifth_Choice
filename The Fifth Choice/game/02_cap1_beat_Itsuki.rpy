@@ -176,6 +176,8 @@ label beat_Itsuki:
     scene bg_azotea 
     with dissolve
 
+    stop ambiente fadeout 2.0
+
     if itsuki_visitada_cap1 and itsuki_rama_cap1 == "calida":
 
         show itsuki neutral at pj(0.5)

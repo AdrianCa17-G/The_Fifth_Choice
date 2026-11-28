@@ -88,6 +88,8 @@ label hub_Ichika:
     scene bg_sala_ensayo
     with dissolve
 
+    stop music fadeout 1.5
+
     narrador "Abrió los ojos de golpe, sin saber todavía dónde estaba."
 
     scene cg_ichika_desarmada
@@ -121,6 +123,8 @@ label hub_Ichika:
 
     scene bg_sala_ensayo
     with dissolve
+
+    play music ichika fadein 2.0
 
     show ichika agotada at pj(0.5)
     with dissolve

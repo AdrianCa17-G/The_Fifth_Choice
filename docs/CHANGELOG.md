@@ -10,6 +10,9 @@
 - Prólogo y capítulo 1 reescritos en las líneas que sonaban repetitivas o demasiado poéticas, en español e inglés. No cambian las decisiones, las ramas ni los finales.
 - Horarios, tiempos de carrera y cifras que se comparan, ahora en números.
 
+### Música
+- Cortes y cambios de pista para que no se repita tanto: la oferta de Isanari, su llegada en el beat casa, el despertar de Ichika, la víspera de exámenes, la azotea de Itsuki, el camino al instituto y la rama de clima mixto.
+
 ### Minijuegos
 - Cadena de conversiones de Itsuki más amable: en difícil, 4 pasos y 75 s (antes 5 y 55 s), 4 entregas erróneas y aviso de resultado raro; en media, 3 pasos y 100 s, 6 entregas. La asistida no cambia.
 

@@ -149,6 +149,8 @@ label beat_casa:
     scene bg_comedor
     with dissolve
 
+    stop music fadeout 1.5
+
     play sound audio.sfx_puerta_abre volume 1.0
 
     narrador "Mi padre entró cuando Raiha ya estaba guardando el cuaderno."

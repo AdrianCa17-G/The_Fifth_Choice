@@ -1954,7 +1954,7 @@ label cap1_interconexion_4:
     scene bg_escuela
     with fade_dia
 
-    play music cotidiano fadein 2.0
+    stop music fadeout 1.5
 
     narrador "De camino al instituto, la cabeza no me dejaba en paz."
 
@@ -2828,7 +2828,7 @@ label cap1_interconexion_5:
 
     narrador "Las saludé y fui directo al grano en lo que debía decirles."
 
-    play music cotidiano fadein 1.5
+    play music extraneza fadein 1.5
 
     mc "Muy bien, escuchen: los exámenes están a la vuelta de la esquina."
     
@@ -3657,7 +3657,7 @@ label cap1_interconexion_6:
 
     elif clima_cap1 == "mixta":
 
-        play music cotidiano fadein 2.0 
+        play music extraneza fadein 2.0
 
         scene cg_cinco_repasando
         with dissolve
@@ -4051,7 +4051,7 @@ label cap1_interconexion_6:
 
     elif clima_cap1 == "mixta":
 
-        play music cotidiano fadein 2.5
+        play music extraneza fadein 2.5
 
         narrador "Cinco puertas. Tres rayas de luz."
 

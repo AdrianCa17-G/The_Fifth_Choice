@@ -162,6 +162,8 @@ label prologo:
     ##  ESCENA 2 · La oferta
     ############################################################################
 
+    play music extraneza fadeout 1.5 fadein 2.0
+
     ## Compite con `cena`, guitarra acustica en su mismo rango.
     play sound audio.sfx_papel_mesa volume 2.5
 
