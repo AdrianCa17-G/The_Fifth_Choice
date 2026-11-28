@@ -94,7 +94,7 @@ Pistas de [DOVA-SYNDROME](https://dova-s.jp/), hoy **OpenTracks**:
 
 ## Tipografías
 
-**M PLUS Rounded 1c**, **Shippori Mincho B1**, **Klee One** y **Noto Sans JP**,
+**M PLUS Rounded 1c**, **Shippori Mincho B1**, **Klee One**, **Noto Sans JP** y **Noto Serif**,
 bajo [SIL Open Font License 1.1](https://openfontlicense.org/). Cada licencia se
 distribuye con el juego en `game/fonts/`.
 
@@ -214,7 +214,7 @@ Tracks from [DOVA-SYNDROME](https://dova-s.jp/), now **OpenTracks**:
 
 ## Fonts
 
-**M PLUS Rounded 1c**, **Shippori Mincho B1**, **Klee One** and **Noto Sans JP**,
+**M PLUS Rounded 1c**, **Shippori Mincho B1**, **Klee One**, **Noto Sans JP** and **Noto Serif**,
 under the [SIL Open Font License 1.1](https://openfontlicense.org/). Each license
 ships with the game in `game/fonts/`.
 

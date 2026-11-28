@@ -336,7 +336,7 @@ screen galeria():
     $ total = galeria_total()
     $ paginas = (len(items) + 8) // 9
     $ visibles = items[pagina * 9:pagina * 9 + 9]
-    $ titulo_sec = __(sec[1]).upper()
+    $ titulo_sec = ui_mayus(__(sec[1]))
     $ pct_total = 0
     if total[1] > 0:
         $ pct_total = int(round(100.0 * total[0] / total[1]))

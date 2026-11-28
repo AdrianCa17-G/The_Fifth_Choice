@@ -244,6 +244,13 @@ init -5 python:
             return s
         return s.translate({ord(","): ".", ord("."): ","})
 
+    def ui_mayus(s):
+        """.upper() para texto visible: en turco la i lleva punto también en
+        mayúscula (i → İ; la ı ya sale bien como I), y Python no lo sabe."""
+        if _preferences.language == "turkish":
+            s = s.replace("i", "İ")
+        return s.upper()
+
     _sprite_extra = {}
 
     def sprite_extra_arriba(ruta):
@@ -682,7 +689,7 @@ style hud_cinta_win is default:
 ## La cinta en sí. Se ajusta sola al ancho del texto.
 screen hud_cinta_vista(lugar, etiqueta, clave, cinta, tinta, anim, deco=True):
 
-    $ lugar_mayus = renpy.substitute(lugar).upper()
+    $ lugar_mayus = ui_mayus(renpy.substitute(lugar))
     $ tinta_suave = tinta + "BB"
     $ deco_alfa = 0.0
     if deco:

@@ -201,6 +201,12 @@ init python:
     build.classify("herramientas/**", None)
     build.classify("**.patch", None)
 
+    ## Traducciones de colaboradores aún sin terminar (turco y ruso, hasta su T4/R4)
+    ## y pantallas de prueba. Van antes de "game/**.rpy": gana el primer patrón que encaja.
+    build.classify("game/tl/turkish/**", None)
+    build.classify("game/tl/russian/**", None)
+    build.classify("game/showcase_v11.rpy*", None)
+
     build.classify("game/**.rpy", "scripts")
     build.classify("game/**.rpyc", "scripts")
     build.classify("game/images/**", "images")

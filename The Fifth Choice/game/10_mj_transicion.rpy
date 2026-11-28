@@ -177,7 +177,7 @@ screen mj_transicion(hermana, tipo, titulo):
             yanchor 0.5
             spacing 6
 
-            text (__("MINIJUEGO") + " · " + __(E6_MATERIA[hermana]).upper()):
+            text (__("MINIJUEGO") + " · " + ui_mayus(__(E6_MATERIA[hermana]))):
                 style "mjtr_ante"
                 color claro
                 xalign 0.5

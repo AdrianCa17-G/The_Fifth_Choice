@@ -208,7 +208,14 @@ puede saturar: si un efecto cruje, es esto.
 
 **Mayúsculas antes de interpolar rompen `[variable]`.** `.upper()` convierte
 `[mc]` en `[MC]`, que no existe: sustituir primero con `renpy.substitute()` y
-después pasar a mayúsculas.
+después pasar a mayúsculas. Y en texto visible, `ui_mayus(s)` en vez de `s.upper()`:
+en turco la i mayúscula lleva punto (İ) y Python no lo sabe.
+
+**Fuente a la que le faltan letras de un idioma:** se cambia en el bloque
+`translate <idioma> python` de `09_menus_sistema.rpy` con `fuentes_idioma({...})`
+(`config.font_replacement_map`), que alcanza también a las rutas guardadas en
+constantes y `Character`. Cada idioma rehace el mapa: uno nuevo necesita su bloque,
+aunque sea `fuentes_idioma({})`.
 
 **`hovered` / `unhovered` con una variable se quedan «pegados»** si la pantalla
 cambia con el ratón encima. Usar `tooltip` y `GetTooltip()`, que se limpian solos.

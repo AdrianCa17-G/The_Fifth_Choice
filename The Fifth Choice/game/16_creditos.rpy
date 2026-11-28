@@ -87,7 +87,7 @@ define CREDITOS = [
         ("nota", _("Logo compuesto con scripts propios a partir de los sprites del juego")),
     ]),
     (_("Tipografías"), [
-        ("linea", "M PLUS Rounded 1c · Shippori Mincho B1 · Klee One · Noto Sans JP"),
+        ("linea", "M PLUS Rounded 1c · Shippori Mincho B1 · Klee One · Noto Sans JP · Noto Serif"),
         ("nota", _("SIL Open Font License 1.1 — cada licencia va con el juego en game/fonts/")),
     ]),
     (_("Motor"), [

@@ -283,7 +283,7 @@ screen chat_avatar(quien, lado=36):
         xysize (lado, lado)
         if quien == "mc":
             add Transform("ui/hub_sello_fondo.png", matrixcolor=TintMatrix(CHAT_NEUTRO), xysize=(lado, lado))
-            text nombre_jugador[:1].upper():
+            text ui_mayus(nombre_jugador[:1]):
                 align (0.5, 0.5)
                 font gui.name_text_font
                 size int(lado * 0.55)

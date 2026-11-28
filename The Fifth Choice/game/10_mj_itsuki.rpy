@@ -647,7 +647,7 @@ screen it1_juego(vivo, color):
     use it1_cuaderno()
 
     ## --- Página izquierda: tu hoja ---
-    text (__("CUADERNO DE CIENCIAS") + " · " + __(vivo.cadena["titulo"]).upper()):
+    text (__("CUADERNO DE CIENCIAS") + " · " + ui_mayus(__(vivo.cadena["titulo"]))):
         style "it1_rotulo"
         xpos izq
         ypos (IT1_CUAD_Y + 34)

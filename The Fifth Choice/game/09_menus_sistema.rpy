@@ -27,13 +27,40 @@ define EXTRA_COLOR = {
 ## Idiomas del selector de Opciones: (nombre en su propio idioma, carpeta en game/tl/).
 ## None = el español del guion. Para añadir uno (p. ej. ("Русский", "russian")):
 ## generar game/tl/<carpeta>/ con Generate Translations y sumar su fila aquí.
-## Una fila sin carpeta en tl/ no se muestra. Si el idioma usa otro alfabeto,
-## su fuente va en un bloque «translate <carpeta> python» (ver GUIA_RENPY.md).
+## Una fila sin carpeta en tl/ no se muestra. Si a una fuente le faltan letras del
+## idioma, se cambia en su bloque «translate <carpeta> python» (abajo).
+## «Türkçe» ("turkish") vuelve aquí en la T4 del plan, con la traducción integrada.
 define IDIOMAS = [
     ("Español", None),
     ("English", "english"),
-    ("Türkçe", "turkish"),
 ]
+
+## Fuentes por idioma. Se cambian por archivo con config.font_replacement_map: así
+## alcanza también a las rutas guardadas en constantes (HUD_FUENTE, HUB_FUENTE) y en
+## los Character. Al cambiar de idioma Ren'Py vacía la caché de fuentes pero no
+## config, por eso cada idioma rehace el mapa (los que usan las del juego, con {}).
+init python:
+    def fuentes_idioma(cambios):
+        mapa = config.font_replacement_map
+        mapa.clear()
+        for vieja, nueva in cambios.items():
+            for negrita in (False, True):
+                for cursiva in (False, True):
+                    mapa[(vieja, negrita, cursiva)] = (nueva, negrita, cursiva)
+
+translate None python:
+    fuentes_idioma({})
+
+translate english python:
+    fuentes_idioma({})
+
+## Shippori Mincho y Klee One no tienen ğ Ğ ş Ş İ. Noto Serif SemiBold (mismo peso,
+## 600) y M PLUS Rounded tienen las 12 letras turcas y también el cirílico.
+translate turkish python:
+    fuentes_idioma({
+        "fonts/ShipporiMinchoB1-SemiBold.ttf": "fonts/NotoSerif-SemiBold.ttf",
+        "fonts/KleeOne-SemiBold.ttf": "fonts/MPLUSRounded1c-Medium.ttf",
+    })
 
 ## Valores por defecto de los ajustes.
 define AJUSTE_MUSICA = 0.7
@@ -229,7 +256,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     add Solid("#120A1CD2")
     add "ui/menu_panel.png"
 
-    $ titulo_mayus = __(title).upper()
+    $ titulo_mayus = ui_mayus(__(title))
     text titulo_mayus xpos 70 ypos 48 font gui.name_text_font size 60 kerning 8 color "#FFF8FC" outlines [(5, "#1B1026CC", 0, 0)] substitute False
 
         ## --- Cintas de navegación ---
