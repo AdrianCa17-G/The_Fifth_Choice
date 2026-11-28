@@ -108,12 +108,11 @@ Ichika va sin blazer para no parecerse a Nino, que es la única con blazer.
 | Personaje | Pelo | Vestuario |
 |---|---|---|
 | Futaro | Negro corto, con un mechón levantado. | **Cárdigan gris claro abierto**, manga larga, camisa blanca de cuello debajo, pantalón azul marino. No es el blazer azul de las hermanas: son prendas distintas y no hay que mezclarlas. |
-| Isanari | Rubio arena apagado, corto y en pinchos, gafas de sol apoyadas en la cabeza. Ojos marrones. Delgado y fibroso, **no musculado**. | Camiseta gris oscuro de manga corta, cinturón marrón, pantalón beige, zapatos marrones. |
+| Isanari | Rubio arena apagado, corto y en pinchos, gafas de sol apoyadas en la cabeza (en las dos expresiones). Ojos verdes. Atlético, brazos marcados. | Camiseta gris oscuro de manga corta, cinturón marrón, pantalón beige, zapatos marrones. |
 | Raiha | Pelo negro con tinte azul marino, muy largo, flequillo recto, coleta alta que sube y se curva hacia un lado, lazo lila pequeño en la base. **Ojos turquesa, piel clara.** | Camiseta de rayas blancas y rosa coral de manga corta, peto vaquero azul con bajos remangados, sandalias. |
 
-Las marcas en negrita de Isanari y Raiha son correcciones que costaron tandas: el
-modelo tira a hacerle a él cuerpo de gimnasio y a ella la piel clara, y ninguna
-de las dos cede sin tokens redundantes.
+La marca en negrita de Raiha es una corrección que costó tandas: el modelo tira a
+oscurecerle la piel y no cede sin tokens redundantes.
 
 **Miku es la única que no va de uniforme**, y es decisión de guion, no límite de
 la herramienta: la separa del bloque de hermanas justo en las escenas donde el
@@ -200,10 +199,10 @@ fila 1348, muy por debajo del lienzo.
 | | escala | fila de ojos | IPD final |
 |---|---|---|---|
 | Hermanas | referencia | 199 | 77,2 |
-| Isanari | por IPD | **109** | 77,2 |
+| Isanari | render completo (ver abajo) | 119 neutral, 129 sonrisa | ≈54 |
 | Raiha | por altura | **388** | **68,3** |
 
-A los tres el lienzo los corta a la misma altura física del suelo, unos 56 cm.
+A las hermanas y a Raiha el lienzo las corta a la misma altura física del suelo, unos 56 cm.
 Eso es media pantorrilla en un adulto y por encima de la rodilla en una niña, que
 es lo que pasaría en una foto real: la línea de corte es del encuadre, no del
 personaje.
@@ -214,12 +213,28 @@ Tres cosas que no conviene volver a discutir:
   cabeza, y una niña con cabeza de adolescente queda flotando respecto al suelo.
   Su IPD se deriva de la altura una sola vez (68,3) y se aplica igual a sus dos
   expresiones, para que la cara no cambie de tamaño al alternarlas.
-- **Isanari a 109**, aunque recorte 24 px de las puntas del pelo en el neutral y
-  17 en la sonrisa. A 132 quedaba casi a la altura de las hermanas y la diferencia
-  de estatura se perdía entera. Con silueta de pelo en pinchos el recorte no se ve.
-- **109 es el techo del lienzo.** Para subirlo habría que recortarle cráneo, no
-  puntas. Si algún día se quiere más diferencia hay que cambiar el margen superior
-  del set, no su escala.
+- **Isanari va entero, no por IPD (v1.1).** Sus renders llegan encuadrados por
+  encima de la rodilla y con la cabeza más pequeña respecto al cuerpo que las
+  hermanas: forzar la IPD 77,2 lo dejaba enorme, ancho y con las piernas y el
+  pelo cortados. Se mete el render completo a escala 0,665 y, para que se vea más
+  alto sin ensancharlo, se estira solo el pantalón bajo las manos (`--alargar`).
+  La sonrisa lleva 10 px más porque en su render la cabeza y el cinturón están
+  más abajo: así ojos y cinturón coinciden al alternarlas.
+- **No cortar nunca el pelo.** Si no cabe, el lienzo crece o baja la escala.
+
+Receta (desde `herramientas/`):
+
+```
+python normalizar_extra.py isanari_neutral.png   ..\game\images\sprites\isanari_sprites\isanari_neutral.png --personaje isanari --ojos 535,170,617,168     --eje 568.5 --entero 0.665 --pelar 3 --alargar 50
+python normalizar_extra.py isanari_sonriendo.png ..\game\images\sprites\isanari_sprites\isanari_sonrisa.png --personaje isanari --ojos 532.5,188,611,180 --eje 576.5 --entero 0.665 --pelar 3 --alargar 60
+```
+
+Lienzos finales: neutral 760 × 980, sonrisa 760 × 990.
+
+Después quedan los huecos blancos entre los dedos (el fondo del render mide ~252
+y no llega al umbral). Se borran con `borrar_en_puntos()` de `limpiar_halo.py` en
+(220,734) y (538,744) en el neutral y (223,738) y (532,745) en la sonrisa, y un
+borde de 1-2 px claros alrededor.
 
 ---
 
@@ -289,7 +304,7 @@ de Ren'Py. Requieren Python de python.org con `pillow`, `numpy` y `scipy`.
 |---|---|
 | `normalizar_sprite.py` | Recorta el fondo y normaliza un sprite de hermana al estándar del set. Opciones: `--ojos`, `--eje`, `--huecos`, `--sin-huecos`. |
 | `limpiar_halo.py` | Sobre un sprite **ya normalizado**: desmatteado del contorno y borrado de huecos encerrados. `--solo-halo` para Yotsuba. |
-| `normalizar_extra.py` | Lo mismo para Isanari y Raiha, con sus filas de ojos propias y el modo por altura de Raiha. |
+| `normalizar_extra.py` | Lo mismo para Isanari y Raiha. Raiha por altura con su fila de ojos; Isanari con `--entero`, `--pelar` y `--alargar` (sección 3). |
 | `escalar_cgs.py` | Pasa un lote de CG y fondos a 1920×1080 con Lanczos y WebP 95. Realce de nitidez **solo a las fuentes JPEG** y con umbral. |
 | `generar_ui.py` | Genera los PNG de la interfaz en `game/ui/` (cajas, cintas, tarjetas, iconos, decoración por hermana). Ver `GUIA_UI.md` |
 | `generar_logo.py` | Arma el logo del menú con los sprites `neutral` de las hermanas |
@@ -303,10 +318,9 @@ python normalizar_sprite.py entrada.png salida.png
 python limpiar_halo.py entrada.png salida.png [--solo-halo]
 ```
 
-**Detección de ojos: los scripts buscan iris azul.** Isanari los tiene marrones y 
-Maruo negros. Los de Raiha son turquesa, pero `normalizar_extra.py` exige 
-`--ojos` igual., así que con ellos hay que pasar `--ojos x1,y1,x2,y2`
-copiando las coordenadas de las pupilas de otra versión del mismo render. Con los
+**Detección de ojos: `normalizar_sprite.py` busca iris azul.** Isanari los tiene
+verdes y Maruo negros. `normalizar_extra.py` no detecta nada: exige
+`--ojos x1,y1,x2,y2` con las coordenadas de las pupilas en el original. Con los
 ojos cerrados la detección también falla.
 
 Dos trampas ya resueltas en la detección: el umbral del azul subió a `b−r > 60` y
@@ -575,9 +589,6 @@ son las lecciones que valen para todo lo que venga:
 - **Los sprites vienen con luz de estudio plana y los fondos con luz cálida.** Se
   arregla con un tinte cálido por escena aplicado a los sprites, no al fondo. No
   hay que regenerar nada.
-- **Las gafas de Isanari cambian de sitio entre sus dos sprites**: caladas en el
-  neutral, en la frente en la sonrisa. Decisión tomada: se asume. Lo único que
-  conviene evitar es alternarlos en réplicas consecutivas.
 - **La diferencia entre expresiones tiene que estar en la silueta.** Es la regla
   que sale de las cuatro fichas nuevas y vale para todas las que vengan: a un 30 %
   de tamaño la cara no se lee. `nino pillada` descruza los brazos, `yotsuba

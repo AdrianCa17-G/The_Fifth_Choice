@@ -27,6 +27,7 @@ import argparse
 import numpy as np
 from PIL import Image
 from scipy import ndimage
+from limpiar_halo import pelar_borde
 
 CANVAS_W, CANVAS_H = 760, 930
 BOTTOM_EXTEND_MAX = 30
@@ -165,6 +166,15 @@ def main():
     p.add_argument("--corte", type=int, metavar="Y",
                    help="Corta en esta fila Y (imagen ORIGINAL) y escala para llenar el lienzo, "
                         "sin cortar nunca la cabeza.")
+    p.add_argument("--entero", type=float, metavar="ESCALA",
+                   help="Mete el render completo, apoyado abajo, a esa escala: sin cortar pelo ni "
+                        "piernas. Ignora la fila de ojos y la IPD del preset.")
+    p.add_argument("--alargar", type=int, default=0, metavar="PX",
+                   help="Hace el sprite PX filas más alto estirando solo lo que hay bajo la fila "
+                        "800 (pantalón de Isanari, bajo las manos). El ancho no cambia.")
+    p.add_argument("--pelar", type=int, default=0, metavar="N",
+                   help="Pela N capas de halo claro en el ORIGINAL, antes de escalar: el borde "
+                        "queda suavizado (en limpiar_halo.py, ya escalado, sale dentado).")
     p.add_argument("--duro", action="store_true", help="Alpha binario en vez de suave.")
     g = p.add_mutually_exclusive_group()
     g.add_argument("--huecos", action="store_true")
@@ -180,6 +190,8 @@ def main():
     if not args.sin_huecos:
         alpha = remove_enclosed_holes(rgb, alpha, labeled, border)
     rgba = np.dstack([rgb, alpha])
+    if args.pelar:
+        rgba = pelar_borde(rgba, args.pelar, 165)
     H, W = rgba.shape[:2]
 
     v = [float(x) for x in args.ojos.split(",")]
@@ -204,7 +216,10 @@ def main():
     y_bottom_dibujo = int(filas_dibujo[-1])
     max_scale_cabeza = EYE_ROW / (eye_y_raw - y_top_raw)
 
-    if args.corte is not None:
+    if args.entero is not None:
+        scale = args.entero
+        EYE_ROW = CANVAS_H - (H - eye_y_raw) * scale
+    elif args.corte is not None:
         if not (eye_y_raw < args.corte < H):
             sys.exit(f"--corte debe estar entre {eye_y_raw:.0f} (ojos) y {H - 1}.")
 
@@ -279,8 +294,14 @@ def main():
     if len(filas_out):
         print(f"Último renglón dibujado en el lienzo: Y={filas_out[-1]} (debería ser ~{CANVAS_H - 1})")
 
+    if canvas[0, :, 3].max() > 0:
+        print("AVISO: hay contenido en la fila 0 (pelo cortado). Sube --extra-arriba.",
+              file=sys.stderr)
+    if args.alargar:
+        piernas = resize_premultiplied(canvas[800:], (CANVAS_W, CANVAS_H - 800 + args.alargar))
+        canvas = np.vstack([canvas[:800], piernas])
     Image.fromarray(canvas, mode="RGBA").save(args.salida)
-    print(f"Guardado: {args.salida} ({CANVAS_W}x{CANVAS_H})")
+    print(f"Guardado: {args.salida} ({CANVAS_W}x{canvas.shape[0]})")
 
 
 if __name__ == "__main__":

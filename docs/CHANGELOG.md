@@ -26,6 +26,7 @@
 ### Arte
 - Sprites de Yotsuba rehechos, con el lazo completo.
 - Yotsuba e Itsuki ajustadas a la escala del resto de las hermanas.
+- Sprites nuevos de Isanari, con las gafas en la cabeza en las dos expresiones.
 
 ### Correcciones en español
 - Tildes, puntuación y erratas en diálogos y en los títulos de los Extras.
