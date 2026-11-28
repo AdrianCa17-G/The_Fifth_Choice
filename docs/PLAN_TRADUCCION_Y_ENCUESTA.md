@@ -254,14 +254,14 @@ Cap. 2, sin cambiar su estructura.
 | E2 · Pruebas + erratas + v1.1 | ✅ | 26/11 | Sin fallos de pruebas pendientes. Aplicadas las 19 erratas de `ERRATAS_ES.md` (HUD: `07_ui.rpy` distingue «Queda un examen»; cartel con `[nombre_jugador]`; teclas de Ayuda). Regeneradas con `translate english` y re-enlazadas 10 líneas de diálogo y 8 cadenas (1 nueva), sin cambiar el inglés salvo «Page Up/Down» en Ayuda. Versión 1.1, `docs/CHANGELOG.md`. Revisor 0 avisos (6.651), lint sin errores (5.453 = 5.453). |
 | F1 · Builds y publicación | 🟨 | 28/11 | Parte previa hecha: logo regenerado con los sprites nuevos (`generar_logo.py` compensa los lienzos altos), CHANGELOG al día, versión 1.1, lint sin errores, revisor 0 avisos (6.589), `tl/english` en git. Paquete de prueba de Windows sin `docs`, `tools`, `herramientas` ni keystores. Arreglo de audio/pantalla negra en Android: sin aplicar, no entra en la 1.1. Falta compilar y publicar. |
 | F2 · Página, devlog, encuesta EN | ⬜ | | |
-| R0 · Respuesta de winbed13 | 🟨 | 22/11 | Mensaje enviado; esperando respuesta |
+| R0 · Respuesta de winbed13 | ✅ | 28/11 | Respondió. Ahora aparece como $uŊDaý (@sandalistix); se habla por TikTok. Pendiente: si traduce desde el español o desde el inglés, y su nombre para los créditos |
 | R1 · Preparar tl/russian + fuente + paquete | ⬜ | | Después de F1 |
 | R2 · Prueba (prólogo) revisada | ⬜ | | |
 | R3 · Traducción completa recibida | ⬜ | | Sin fecha fija; a su ritmo |
 | R4 · Integración + build privada de prueba | ⬜ | | |
 | R5 · Publicar v1.2 con ruso + créditos | ⬜ | | |
-| T0 · Acuerdo con Aquaaqua31 | ✅ | 27/11 | Aceptó. Traduce desde el inglés. Contacto por Discord (`real_aqua.real`) |
-| T1 · Preparar tl/turkish + fuente + paquete | ⬜ | | Después de F1; puede ir en la misma sesión que R1 |
+| T0 · Acuerdo con Aquaaqua31 | ✅ | 27/11 | Acuerdo cerrado: voluntario, sin pago, con crédito. Traduce desde el inglés. Contacto por Discord (`real_aqua.real`). Nombre en créditos: «Yekta Nevzat» |
+| T1 · Preparar tl/turkish + fuente + paquete | ✅ | 28/11 | `tl/turkish` generado por CLI: 35 archivos, 5.391 bloques (= inglés) y 1.209 cadenas en 34 bloques `translate turkish strings` (el inglés tiene 1 más: la fecha `{#file_time}` añadida a mano; el turco usa el orden español, día/mes). `tools/referencia_traduccion.py turkish`: 6.600 huecos, 0 sin referencia; se puede repetir sin duplicar. «Türkçe» en `IDIOMAS`; lint sin errores (5.391 = 5.391); arranque en turco probado (3 botones caben). **Fuente: pendiente de decisión** — Shippori Mincho (nombres, títulos, botones) y Klee One (libreta) no tienen ğ Ğ ş Ş İ; M PLUS Rounded sí. **Mayúsculas:** `.upper()` en 5 sitios de texto traducido (+ inicial del nombre del jugador en el chat y `!tc`) pondría I en vez de İ; sin arreglar. Guía `docs/TRANSLATOR_GUIDE_EN.md`; paquete `dist_traductores/turkish_v1.zip` (fuera de git). Prueba: `01_prologo.rpy` |
 | T2 · Prueba (prólogo) revisada | ⬜ | | |
 | T3 · Traducción completa recibida | ⬜ | | Sin fecha fija; a su ritmo |
 | T4 · Integración + build privada de prueba | ⬜ | | |
@@ -295,8 +295,9 @@ traducirá desde el inglés, y por dónde prefiere hablar (itch, Discord o email
 **Pasos (Adrian + Claude Code)**
 1. **R1 · Preparar** (después de F1, sesión de Code, Opus 5.5 · alto; no ocupa más de una sesión):
    - Generar `game/tl/russian/` desde el launcher (Generate Translations → "russian").
-   - Si traduce desde el inglés: script en `tools/` que ponga, junto a cada hueco de `tl/russian`, la línea en inglés
-     de `tl/english` como comentario de referencia (las plantillas solo traen el español).
+   - Si traduce desde el inglés: `python tools/referencia_traduccion.py russian` (hecho en T1) pone, junto a cada
+     hueco de `tl/russian`, la línea en inglés de `tl/english` como comentario (las plantillas solo traen el español).
+     La guía para traductores ya existe en inglés: `docs/TRANSLATOR_GUIDE_EN.md` (cambiar `turkish` por `russian`).
    - **Fuente con cirílico:** comprobar si las fuentes del juego tienen caracteres cirílicos. Si no, definir una
      fuente alternativa solo para el ruso (consultar GUIA_UI.md y GUIA_RENPY.md antes).
    - Añadir "Русский" al selector de idioma.
@@ -315,19 +316,22 @@ el español también vale para el ruso: si se corrige una línea en español, su
 
 ## 7. Traducción al turco (colaborador externo, después de la v1.1)
 
-Contexto (27/11/2026): Aquaaqua31 (itch.io) se ofreció a traducir al turco y aceptó la colaboración
-voluntaria, sin pago y con crédito. Traduce desde el inglés. Contacto: Discord `real_aqua.real`.
+Contexto (27/11/2026): Yekta Nevzat (Aquaaqua31 en itch.io) se ofreció a traducir al turco y aceptó la
+colaboración voluntaria, sin pago y con crédito como «Yekta Nevzat». Traduce desde el inglés.
+Contacto: Discord `real_aqua.real`. No recibe el repo, ni los .rpy del juego, ni imágenes ni audio.
 
 Qué se le da, qué no y reglas: las mismas de la sección 6, cambiando `russian` por `turkish`.
 
 1. T1 · Preparar (después de F1; misma sesión que R1, Opus 5.5 · alto):
    - Generar `game/tl/turkish/` (Generate Translations → "turkish").
-   - Reutilizar el script de R1 para poner la línea en inglés como comentario junto a cada hueco (obligatorio).
+   - `python tools/referencia_traduccion.py turkish` pone la línea en inglés como comentario junto a cada hueco
+     (obligatorio). Si cambia el inglés, volver a ejecutarlo: rehace los comentarios sin duplicarlos.
    - Fuente: comprobar ğ Ğ ş Ş ı İ ç Ç ö Ö ü Ü (sobre todo ı e İ). Si falta alguna, fuente alternativa solo para turco.
    - Mayúsculas: buscar .upper()/.lower()/.title() o transformaciones de estilo en texto visible;
      en turco i → İ e ı → I, y Python no lo hace bien por defecto.
    - Añadir "Türkçe" al selector. Imágenes con texto quedan en inglés salvo que él quiera traducirlas.
-   - Paquete (zip con tl/turkish/ + glosario + reglas en inglés) por Discord.
+   - Paquete por Discord: `dist_traductores/turkish_v1.zip` = `tl/turkish/` + `docs/TRANSLATOR_GUIDE_EN.md`
+     (reglas, cómo rellenar un bloque y glosario en inglés, sin spoilers ni datos internos). `dist_traductores/` no va a git.
 2. T2 · Prueba corta: solo el prólogo, revisado con traductor automático o alguien que hable turco.
 3. T3 · Traducción completa: a su ritmo. No bloquea el Cap. 2.
 4. T4 · Integrar: `tools/revisar_traduccion.py turkish` + lint + build privada (Google Drive).

@@ -32,6 +32,7 @@ define EXTRA_COLOR = {
 define IDIOMAS = [
     ("Español", None),
     ("English", "english"),
+    ("Türkçe", "turkish"),
 ]
 
 ## Valores por defecto de los ajustes.
